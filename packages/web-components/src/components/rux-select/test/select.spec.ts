@@ -53,6 +53,27 @@ test.describe('Select', () => {
         await el.locator('select').selectOption('green')
         await expect(el.locator('select')).toHaveValue('green')
     })
+    test('it can be focused programatically', async ({ page }) => {
+        const template = `
+            <rux-select label="Best Thing?" name="bestThing">
+                <rux-option label="Select an option" value=""></rux-option>
+                <rux-option label="Red" value="red"></rux-option>
+                <rux-option value="blue" label="Blue"></rux-option>
+            </rux-select>
+        `
+        await page.setContent(template)
+        const el = await page.locator('rux-select')
+
+        let isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeFalsy()
+
+        await el.evaluate(async (e) => {
+            await (e as HTMLRuxSelectElement).setFocus()
+        })
+
+        isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeTruthy()
+    })
 })
 test.describe('Select in a form', () => {
     test.beforeEach(async ({ page }) => {

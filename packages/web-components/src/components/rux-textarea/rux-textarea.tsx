@@ -8,6 +8,7 @@ import {
     Element,
     Watch,
     State,
+    Method,
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
@@ -32,6 +33,7 @@ let id = 0
 })
 export class RuxTextarea implements FormFieldInterface {
     private inputId = `rux-textarea-${++id}`
+    private textareaEl!: HTMLTextAreaElement
     @State() hasLabelSlot = false
     @State() hasHelpSlot = false
     @State() hasErrorSlot = false
@@ -116,6 +118,14 @@ export class RuxTextarea implements FormFieldInterface {
 
     @Element() el!: HTMLRuxTextareaElement
 
+    /**
+     * Sets element as focused
+     */
+    @Method()
+    async setFocus(options?: FocusOptions) {
+        this.textareaEl.focus(options)
+    }
+
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
@@ -197,6 +207,7 @@ export class RuxTextarea implements FormFieldInterface {
                         </label>
                     ) : null}
                     <textarea
+                        ref={(el) => (this.textareaEl = el!)}
                         name={this.name}
                         disabled={this.disabled}
                         aria-invalid={this.invalid ? 'true' : 'false'}
