@@ -1,5 +1,19 @@
 # @astrouxds/astro-web-components
 
+## 7.9.0
+
+### Minor Changes
+
+-   ee472768: input - added `setFocus` method to programatically set focus
+-   853a3c10: select - adds setFocus method
+-   853a3c10: textarea - adds setFocus method
+
+### Patch Changes
+
+-   f0125d0e: feat(rux-checkbox) add ruxfocus event to rux-checkbox on focus
+-   9bea7f84: fix(rux-breadcrumb-item) add Astro focus state
+-   a2920fa6: Dialog - ruxDialogOpened will now fire after everything has finished loading on open
+
 ## 7.8.0
 
 ### Minor Changes

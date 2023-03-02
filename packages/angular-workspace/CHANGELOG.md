@@ -1,34 +1,54 @@
 # @astrouxds/angular
 
+## 7.9.0
+
+### Minor Changes
+
+- ee472768: input - added `setFocus` method to programatically set focus
+- 853a3c10: select - adds setFocus method
+- 853a3c10: textarea - adds setFocus method
+
+### Patch Changes
+
+- f0125d0e: feat(rux-checkbox) add ruxfocus event to rux-checkbox on focus
+- 9bea7f84: fix(rux-breadcrumb-item) add Astro focus state
+- a2920fa6: Dialog - ruxDialogOpened will now fire after everything has finished loading on open
+- Updated dependencies [f0125d0e]
+- Updated dependencies [9bea7f84]
+- Updated dependencies [a2920fa6]
+- Updated dependencies [ee472768]
+- Updated dependencies [853a3c10]
+- Updated dependencies [853a3c10]
+  - @astrouxds/astro-web-components@7.9.0
+
 ## 7.8.0
 
 ### Minor Changes
 
 #### Accordion
 
--   Added new `ruxcollapsed` event that emits when accordion-item closes
+- Added new `ruxcollapsed` event that emits when accordion-item closes
 
 #### Core
 
--   Design tokens
-    -   Added `color-background-interactive-muted`
-    -   Added light theme token for `color-background-interactive-muted`
-    -   Added light theme tokens for `color-status-off`, `color-status-standby`, `color-status-normal`, `color-status-serious`, `color-status-critical`
+- Design tokens
+  - Added `color-background-interactive-muted`
+  - Added light theme token for `color-background-interactive-muted`
+  - Added light theme tokens for `color-status-off`, `color-status-standby`, `color-status-normal`, `color-status-serious`, `color-status-critical`
 
 #### Pop Up
 
--   Adds `enableAnimationFrame` prop to watch when the trigger moves in order to more accurately place the pop-up.
+- Adds `enableAnimationFrame` prop to watch when the trigger moves in order to more accurately place the pop-up.
 
 ### Patch Changes
 
 #### React
 
--   Added vite support and tree-shaking capability to `@astrouxds/react`.
+- Added vite support and tree-shaking capability to `@astrouxds/react`.
 
 #### Select
 
--   Fixed an issue where rux-option couldn't have it's props dynamically changed
-
+- Fixed an issue where rux-option couldn't have it's props dynamically changed
 
 ## 7.7.0
 
