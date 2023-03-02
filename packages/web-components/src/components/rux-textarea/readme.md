@@ -31,6 +31,19 @@
 | `ruxinput`  | Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event) | `CustomEvent<any>` |
 
 
+## Methods
+
+### `setFocus(options?: FocusOptions) => Promise<void>`
+
+Sets element as focused
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Slots
 
 | Slot           | Description        |
