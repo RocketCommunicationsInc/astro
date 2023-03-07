@@ -20,11 +20,21 @@
     </head>
 
     <body style="display: flex; justify-content: space-between">
-        <div style="width: 200px; margin: auto">
+        <div style="margin: auto; width: 250px">
+            <h3>Datepicker</h3>
+            <p>
+                Currently, datepicker is an encapsulation of the date input and
+                the rux-calendar comp.
+            </p>
             <rux-datepicker> </rux-datepicker>
         </div>
-        <div style="width: 200px; margin: auto auto 5rem auto">
-            <h4>with date-in</h4>
+        <div style="margin: auto">
+            <h3>Calendar</h3>
+            <p style="width: 300px">
+                This calendar uses the 'date-in' prop, which allows the user to
+                set the date on the calendar. The button below will change this
+                prop, and you can see the days and month change on the calendar.
+            </p>
             <rux-calendar id="cal" date-in="2023-12-22T23:59:55.000Z">
                 <!-- <rux-button-group slot="footer">
         <rux-button secondary>Cancel</rux-button>
@@ -34,8 +44,9 @@
             <br />
             <rux-button id="btn">Change datein</rux-button>
         </div>
-        <div style="width: 200px; margin: auto auto 5rem auto">
-            <h4>without date-in</h4>
+        <div style="margin: auto auto 5rem auto">
+            <h3>Calendar, without date-in.</h3>
+            <p>This is the default state of a calendar.</p>
             <rux-calendar>
                 <!-- <rux-button-group slot="footer">
         <rux-button secondary>Cancel</rux-button>
