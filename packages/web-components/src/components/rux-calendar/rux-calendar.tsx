@@ -1,10 +1,19 @@
-import { Component, Host, h, Prop, State } from '@stencil/core'
+import { Component, Host, h, Prop, State, Watch } from '@stencil/core'
 import { getDaysInMonth } from 'date-fns'
 
 const monthMap = {
     1: 'January',
     2: 'February',
     3: 'March',
+    4: 'April',
+    5: 'May',
+    6: 'June',
+    7: 'July',
+    8: 'August',
+    9: 'September',
+    10: 'October',
+    11: 'November',
+    12: 'December',
 }
 
 @Component({
@@ -13,41 +22,52 @@ const monthMap = {
     shadow: true,
 })
 export class RuxCalendar {
-    // I want the month and year pickers to be there by default, but true by default props are bad
-    // @Prop({ attribute: "month-picker"}) monthPicker: boolean = true
-    // @Prop({ attribute: "year-picker"}) yearPicker: boolean = true
-
     /**
      * Option to give the calendar a specfic month/year
      */
     @Prop({ attribute: 'date-in' }) dateIn?: string
+    @Watch('dateIn')
+    handleDateInChange() {
+        //? Should we do some validation here to make sure the passed in date-in is a date string?
+        console.log('heard datin change')
+        this._setStateWithDateIn()
+    }
 
-    @State() dateNow: Date = new Date(Date.now())
-    @State() month: number = new Date(Date.now()).getMonth() + 1 //+ 1 because getMonth returns 0 for jan
-    @State() year: number = new Date(Date.now()).getFullYear()
-    @State() daysInMonth: number = getDaysInMonth(new Date(Date.now()))
+    @State() dateNow: Date = this.dateIn
+        ? new Date(this.dateIn)
+        : new Date(Date.now())
+    @State() month: number = this.dateNow.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
+    @State() year: number = this.dateNow.getFullYear()
+    @State() daysInMonth: number = getDaysInMonth(this.dateNow)
     @State() daysInMonthArr: Array<number> = []
+    @State() nextMonth: number = this.month + 1 > 12 ? 1 : this.month + 1
+    @State() prevMonth: number = this.month - 1 < 1 ? 12 : this.month - 1
 
     connectedCallback() {
         this._fillDaysInMonthArr()
+        console.log(this.nextMonth, 'next month')
+        console.log(this.prevMonth, 'prev monsth')
+        // if (this.dateIn) this.handleDateInChange()
     }
 
     //* Handle date in - all the state needs to be based off of the same time (date-in, or date now)
-    // private _setStateWithDateIn() {
-    //   if(!this.dateIn) return
-    //   this.dateNow =
-    // }
+    private _setStateWithDateIn() {
+        // set all state to use the new datein. Is there a better way?
+        if (!this.dateIn) return
+        this.dateNow = new Date(this.dateIn)
+        this.month = this.dateNow.getMonth() + 1
+        this.year = this.dateNow.getFullYear()
+        this.daysInMonth = getDaysInMonth(this.dateNow)
+        this._fillDaysInMonthArr()
+    }
 
     private _fillDaysInMonthArr() {
+        this.daysInMonthArr = []
+        //daysInMonth is a 0 indexed arr
         for (let i = 0; i < this.daysInMonth; i++) {
-            this.daysInMonthArr.push(i)
+            let accountFor0 = i + 1
+            this.daysInMonthArr.push(accountFor0)
         }
-        let newLast = this.daysInMonthArr.pop()
-        newLast = newLast! += 1
-        let newFirst = this.daysInMonthArr.shift()
-        newFirst = newFirst! += 1
-        this.daysInMonthArr.push(newLast)
-        this.daysInMonthArr.unshift(newFirst)
     }
     render() {
         return (
@@ -69,17 +89,14 @@ export class RuxCalendar {
                                 ></rux-icon>
                             </div>
                             <div class="year-picker">
-                                <rux-icon
-                                    icon="arrow-left"
-                                    class="arrow-left-icon"
-                                    size="34px"
-                                ></rux-icon>
-                                <span>{this.year}</span>
-                                <rux-icon
-                                    icon="arrow-right"
-                                    class="arrow-right-icon"
-                                    size="34px"
-                                ></rux-icon>
+                                <rux-select size="small">
+                                    <rux-option
+                                        label={this.year.toString()}
+                                        value={this.year.toString()}
+                                    >
+                                        {this.year}
+                                    </rux-option>
+                                </rux-select>
                             </div>
                         </slot>
                     </div>

@@ -4,7 +4,7 @@
 .rux-calendar {
     background-color: var(--color-background-base-default);
     border: 2px solid var(--color-border-interactive-muted);
-    height: 350px;
+    // height: 350px;
     width: 400px;
     .calendar-header {
         display: flex;
@@ -24,6 +24,7 @@
     .year-picker {
         display: flex;
         align-items: center;
+        margin-top: var(--spacing-1);
     }
     .calendar-body {
         display: grid;
