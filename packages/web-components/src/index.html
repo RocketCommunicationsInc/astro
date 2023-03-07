@@ -19,37 +19,35 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body>
-        <br />
+    <body style="display: flex; justify-content: space-between">
+        <div style="width: 200px; margin: auto">
+            <rux-datepicker> </rux-datepicker>
+        </div>
         <div style="width: 200px; margin: auto auto 5rem auto">
+            <h4>with date-in</h4>
             <rux-calendar id="cal" date-in="2023-12-22T23:59:55.000Z">
-                <rux-button-group slot="footer">
-                    <rux-button secondary>Cancel</rux-button>
-                    <rux-button>Submit</rux-button>
-                </rux-button-group>
+                <!-- <rux-button-group slot="footer">
+        <rux-button secondary>Cancel</rux-button>
+        <rux-button>Submit</rux-button>
+      </rux-button-group> -->
             </rux-calendar>
             <br />
             <rux-button id="btn">Change datein</rux-button>
         </div>
-        <!-- <div style="width: 200px; margin: auto auto 5rem auto">
-    <h4>without date-in</h4>
-    <rux-calendar id="cal">
-      <rux-button-group slot="footer">
+        <div style="width: 200px; margin: auto auto 5rem auto">
+            <h4>without date-in</h4>
+            <rux-calendar>
+                <!-- <rux-button-group slot="footer">
         <rux-button secondary>Cancel</rux-button>
         <rux-button>Submit</rux-button>
-      </rux-button-group>
-    </rux-calendar>
-  </div>
-  <br />
-  <div style="width: 200px; margin: auto">
-    <rux-datepicker> </rux-datepicker>
-  </div> -->
-        <br />
+      </rux-button-group> -->
+            </rux-calendar>
+        </div>
+
         <script>
             const cal = document.getElementById('cal')
             const btn = document.getElementById('btn')
             btn.addEventListener('click', () => {
-                // cal.setAttribute("date-in", "2023-05-22T23:59:55.000Z")
                 cal.dateIn = '2023-02-22T23:59:55.000Z'
             })
         </script>

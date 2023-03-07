@@ -47,7 +47,6 @@ export class RuxCalendar {
         this._fillDaysInMonthArr()
         console.log(this.nextMonth, 'next month')
         console.log(this.prevMonth, 'prev monsth')
-        // if (this.dateIn) this.handleDateInChange()
     }
 
     //* Handle date in - all the state needs to be based off of the same time (date-in, or date now)
@@ -58,6 +57,9 @@ export class RuxCalendar {
         this.month = this.dateNow.getMonth() + 1
         this.year = this.dateNow.getFullYear()
         this.daysInMonth = getDaysInMonth(this.dateNow)
+        this.nextMonth = this.month + 1 > 12 ? 1 : this.month + 1
+        this.prevMonth = this.month - 1 < 1 ? 12 : this.month - 1
+
         this._fillDaysInMonthArr()
     }
 
