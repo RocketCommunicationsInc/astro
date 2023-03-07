@@ -1,5 +1,6 @@
-import { Component, Host, h, Prop, State, Watch } from '@stencil/core'
-import { getDaysInMonth } from 'date-fns'
+import { Component, Host, h, Prop, Watch } from '@stencil/core'
+import { getDay, getDaysInMonth } from 'date-fns'
+// import { utcToZonedTime } from 'date-fns-tz'
 
 const monthMap = {
     1: 'January',
@@ -33,42 +34,46 @@ export class RuxCalendar {
         this._setStateWithDateIn()
     }
 
-    @State() dateNow: Date = this.dateIn
+    //? Any reason for these to be state vs private vars?
+    private _date: Date = this.dateIn
         ? new Date(this.dateIn)
         : new Date(Date.now())
-    @State() month: number = this.dateNow.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
-    @State() year: number = this.dateNow.getFullYear()
-    @State() daysInMonth: number = getDaysInMonth(this.dateNow)
-    @State() daysInMonthArr: Array<number> = []
-    @State() nextMonth: number = this.month + 1 > 12 ? 1 : this.month + 1
-    @State() prevMonth: number = this.month - 1 < 1 ? 12 : this.month - 1
+    private _month: number = this._date.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
+    private _year: number = this._date.getFullYear()
+    private _daysInMonth: number = getDaysInMonth(this._date)
+    private _daysInMonthArr: Array<number> = []
+    // private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
+    // private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
+    // private _dayOfWeek: number = getDay(this._date)
 
     connectedCallback() {
         this._fillDaysInMonthArr()
-        console.log(this.nextMonth, 'next month')
-        console.log(this.prevMonth, 'prev monsth')
+        //? I don't think this is needed but if something breaks try uncommenting it lol
+        // if (this.dateIn) this._setStateWithDateIn()
     }
 
     //* Handle date in - all the state needs to be based off of the same time (date-in, or date now)
     private _setStateWithDateIn() {
         // set all state to use the new datein. Is there a better way?
         if (!this.dateIn) return
-        this.dateNow = new Date(this.dateIn)
-        this.month = this.dateNow.getMonth() + 1
-        this.year = this.dateNow.getFullYear()
-        this.daysInMonth = getDaysInMonth(this.dateNow)
-        this.nextMonth = this.month + 1 > 12 ? 1 : this.month + 1
-        this.prevMonth = this.month - 1 < 1 ? 12 : this.month - 1
+        this._date = new Date(this.dateIn)
+        this._month = this._date.getMonth() + 1
+        this._year = this._date.getFullYear()
+        this._daysInMonth = getDaysInMonth(this._date)
+
+        // this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
+        // this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
+        // this._dayOfWeek = getDay(this._date)
 
         this._fillDaysInMonthArr()
     }
 
     private _fillDaysInMonthArr() {
-        this.daysInMonthArr = []
+        this._daysInMonthArr = []
         //daysInMonth is a 0 indexed arr
-        for (let i = 0; i < this.daysInMonth; i++) {
+        for (let i = 0; i < this._daysInMonth; i++) {
             let accountFor0 = i + 1
-            this.daysInMonthArr.push(accountFor0)
+            this._daysInMonthArr.push(accountFor0)
         }
     }
     render() {
@@ -83,7 +88,7 @@ export class RuxCalendar {
                                     class="arrow-left-icon"
                                     size="34px"
                                 ></rux-icon>
-                                <span>{(monthMap as any)[this.month]}</span>
+                                <span>{(monthMap as any)[this._month]}</span>
                                 <rux-icon
                                     icon="arrow-right"
                                     class="arrow-right-icon"
@@ -93,10 +98,10 @@ export class RuxCalendar {
                             <div class="year-picker">
                                 <rux-select size="small">
                                     <rux-option
-                                        label={this.year.toString()}
-                                        value={this.year.toString()}
+                                        label={this._year.toString()}
+                                        value={this._year.toString()}
                                     >
-                                        {this.year}
+                                        {this._year}
                                     </rux-option>
                                 </rux-select>
                             </div>
@@ -110,8 +115,41 @@ export class RuxCalendar {
                         <span>THU</span>
                         <span>FRI</span>
                         <span>SAT</span>
-                        {this.daysInMonthArr.map((day) => {
-                            return <div class="calendar-day">{day}</div>
+                        {this._daysInMonthArr.map((day) => {
+                            // get day of the week, add a class (or something) to the returned div that
+                            // adds a grid-column css
+                            // Get a new date from the specifc day of the given month/year
+
+                            //* Need to add a '0' to the day/month if it's >= 9, otherwise its invalid
+                            let dayStr = day.toString()
+                            if (day <= 9) {
+                                dayStr = '0' + dayStr
+                            }
+                            let monthStr = this._month.toString()
+                            if (this._month <= 9) {
+                                monthStr = '0' + monthStr
+                            }
+
+                            //Create a new Date from the day we're on
+                            let tempDateStr = new Date(
+                                `${this._year}-${monthStr}-${dayStr}T00:00:00.000Z`
+                            )
+
+                            //using that date, get the day of the week
+                            let dayOfWeek = getDay(tempDateStr)
+
+                            return (
+                                <div
+                                    class="calendar-day"
+                                    style={{
+                                        'grid-column': (
+                                            dayOfWeek + 1
+                                        ).toString(),
+                                    }}
+                                >
+                                    {day}
+                                </div>
+                            )
                         })}
                     </div>
                     <div class="calendar-footer">
