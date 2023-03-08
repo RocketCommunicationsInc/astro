@@ -1,5 +1,6 @@
 import { Component, Host, h, Prop, Watch } from '@stencil/core'
 import { getDay, getDaysInMonth } from 'date-fns'
+import { utcToZonedTime } from 'date-fns-tz'
 // import { utcToZonedTime } from 'date-fns-tz'
 
 const monthMap = {
@@ -133,19 +134,15 @@ export class RuxCalendar {
                             //Create a new Date from the day we're on
                             //! I've got a T10 here because it was thinking that this was still Feb 28th when it should be
                             //! March 1st. Looks like a timezone issue.
-                            let tempDateStr = new Date(
-                                `${this._year}-${monthStr}-${dayStr}T10:00:00.000Z`
+                            let tempDateStr = utcToZonedTime(
+                                new Date(
+                                    `${this._year}-${monthStr}-${dayStr}T00:00:00.000Z`
+                                ),
+                                'UTC'
                             )
 
                             //using that date, get the day of the week
                             let dayOfWeek = getDay(tempDateStr)
-                            if (day === 1) {
-                                console.log(
-                                    `${this._year}-${monthStr}-${dayStr}`
-                                )
-                                console.log(tempDateStr, 'temp date str')
-                                console.log(dayOfWeek, 'day of week')
-                            }
 
                             return (
                                 <div
