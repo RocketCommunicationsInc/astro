@@ -30,7 +30,7 @@ export class RuxButton {
     /**
      * Changes button style from solid to secondary by setting the rux-button--secondary class
      */
-    @Prop() secondary: boolean = false
+    @Prop({ reflect: true }) secondary: boolean = false
     /**
      * Toggles disabled attribute on the button
      */
@@ -39,7 +39,7 @@ export class RuxButton {
     /**
      * Changes button style from solid to borderless by setting the rux-button--borderless class
      */
-    @Prop() borderless: boolean = false
+    @Prop({ reflect: true }) borderless: boolean = false
 
     /**
      * Changes size of a button from medium to small or large by setting sizing classes
@@ -51,7 +51,7 @@ export class RuxButton {
     /**
      * The button type. Use 'submit' to submit native form data.
      */
-    @Prop() type: 'submit' | 'button' = 'button'
+    @Prop({ reflect: true }) type: 'submit' | 'button' = 'button'
 
     /**
      * Creates and appends a native <button> if used within a form
