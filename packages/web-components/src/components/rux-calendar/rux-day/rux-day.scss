@@ -1,0 +1,15 @@
+.rux-day {
+    border: 1px solid var(--color-border-interactive-default);
+    height: 40px;
+    width: 40px;
+    padding: var(--spacing-2);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-base);
+    background-color: var(--color-background-base-default);
+    color: var(--color-text-white);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+}

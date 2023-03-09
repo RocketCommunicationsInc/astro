@@ -12,6 +12,19 @@
 | `value` _(required)_ | `value`    | The option value            | `string`  | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [rux-calendar](../rux-calendar)
+
+### Graph
+```mermaid
+graph TD;
+  rux-calendar --> rux-option
+  style rux-option fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

@@ -54,11 +54,13 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 
 ### Used by
 
+ - [rux-datepicker](../rux-datepicker)
  - [rux-dialog](../rux-dialog)
 
 ### Graph
 ```mermaid
 graph TD;
+  rux-datepicker --> rux-button-group
   rux-dialog --> rux-button-group
   style rux-button-group fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -246,6 +246,8 @@ export namespace Components {
          */
         "year"?: 'numeric' | '2-digit';
     }
+    interface RuxDay {
+    }
     interface RuxDialog {
         /**
           * Allows dialog to close when clicking off it
@@ -12873,6 +12875,12 @@ declare global {
         prototype: HTMLRuxDatetimeElement;
         new (): HTMLRuxDatetimeElement;
     };
+    interface HTMLRuxDayElement extends Components.RuxDay, HTMLStencilElement {
+    }
+    var HTMLRuxDayElement: {
+        prototype: HTMLRuxDayElement;
+        new (): HTMLRuxDayElement;
+    };
     interface HTMLRuxDialogElement extends Components.RuxDialog, HTMLStencilElement {
     }
     var HTMLRuxDialogElement: {
@@ -19501,6 +19509,7 @@ declare global {
         "rux-container": HTMLRuxContainerElement;
         "rux-datepicker": HTMLRuxDatepickerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
+        "rux-day": HTMLRuxDayElement;
         "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
@@ -20863,6 +20872,8 @@ declare namespace LocalJSX {
           * Format options for year
          */
         "year"?: 'numeric' | '2-digit';
+    }
+    interface RuxDay {
     }
     interface RuxDialog {
         /**
@@ -33430,6 +33441,7 @@ declare namespace LocalJSX {
         "rux-container": RuxContainer;
         "rux-datepicker": RuxDatepicker;
         "rux-datetime": RuxDatetime;
+        "rux-day": RuxDay;
         "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
@@ -34553,6 +34565,7 @@ declare module "@stencil/core" {
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datepicker": LocalJSX.RuxDatepicker & JSXBase.HTMLAttributes<HTMLRuxDatepickerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
+            "rux-day": LocalJSX.RuxDay & JSXBase.HTMLAttributes<HTMLRuxDayElement>;
             "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;

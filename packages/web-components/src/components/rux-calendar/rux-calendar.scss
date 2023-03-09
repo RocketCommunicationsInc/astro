@@ -5,11 +5,17 @@
     background-color: var(--color-background-base-default);
     border: 2px solid var(--color-border-interactive-muted);
     // height: 350px;
-    width: 400px;
+    // width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
     .calendar-header {
         display: flex;
-        justify-content: space-evenly;
+        width: 100%;
         align-items: center;
+        justify-content: space-evenly;
     }
     .calendar-footer {
         display: flex;
@@ -20,6 +26,7 @@
     .month-picker {
         display: flex;
         align-items: center;
+        justify-content: space-between;
     }
     .year-picker {
         display: flex;

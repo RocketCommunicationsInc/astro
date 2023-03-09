@@ -35,29 +35,37 @@ export class RuxCalendar {
         this._setStateWithDateIn()
     }
 
-    //? Any reason for these to be state vs private vars?
+    /*
+      ? Using utcToZonedTime here so that we dont' need to edit it on connectedCallback if date-in is given.
+      ? Using utcToZonedTime on default state (date-in not provided) because I _think_ without it, when
+      ? it's the first of a month, we'll have that timezone issue where it'll say it's the prev month still.
+    */
     private _date: Date = this.dateIn
-        ? new Date(this.dateIn)
-        : new Date(Date.now())
+        ? utcToZonedTime(new Date(this.dateIn), 'UTC')
+        : utcToZonedTime(new Date(Date.now()), 'UTC')
     private _month: number = this._date.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
     private _year: number = this._date.getFullYear()
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
+
+    //? May need these if we show past/future dates
     // private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
     // private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
     // private _dayOfWeek: number = getDay(this._date)
 
     connectedCallback() {
         this._fillDaysInMonthArr()
+
         //? I don't think this is needed but if something breaks try uncommenting it lol
         // if (this.dateIn) this._setStateWithDateIn()
     }
 
     //* Handle date in - all the state needs to be based off of the same time (date-in, or date now)
     private _setStateWithDateIn() {
-        // set all state to use the new datein. Is there a better way?
+        // set all private vars to use the new datein. Is there a better way?
         if (!this.dateIn) return
-        this._date = new Date(this.dateIn)
+        //* Convert the date to be UTC so that we don't get timezone issues.
+        this._date = utcToZonedTime(new Date(this.dateIn), 'UTC')
         this._month = this._date.getMonth() + 1
         this._year = this._date.getFullYear()
         this._daysInMonth = getDaysInMonth(this._date)
@@ -89,7 +97,9 @@ export class RuxCalendar {
                                     class="arrow-left-icon"
                                     size="34px"
                                 ></rux-icon>
-                                <span>{(monthMap as any)[this._month]}</span>
+                                <span id="displayed-month">
+                                    {(monthMap as any)[this._month]}
+                                </span>
                                 <rux-icon
                                     icon="arrow-right"
                                     class="arrow-right-icon"
@@ -132,21 +142,17 @@ export class RuxCalendar {
                             }
 
                             //Create a new Date from the day we're on
-                            //! I've got a T10 here because it was thinking that this was still Feb 28th when it should be
-                            //! March 1st. Looks like a timezone issue.
                             let tempDateStr = utcToZonedTime(
                                 new Date(
                                     `${this._year}-${monthStr}-${dayStr}T00:00:00.000Z`
                                 ),
                                 'UTC'
                             )
-
                             //using that date, get the day of the week
                             let dayOfWeek = getDay(tempDateStr)
 
                             return (
-                                <div
-                                    class="calendar-day"
+                                <rux-day
                                     style={{
                                         'grid-column': (
                                             dayOfWeek + 1
@@ -154,7 +160,7 @@ export class RuxCalendar {
                                     }}
                                 >
                                     {day}
-                                </div>
+                                </rux-day>
                             )
                         })}
                     </div>

@@ -30,14 +30,23 @@
 
 - [rux-pop-up](../rux-pop-up)
 - [rux-icon](../rux-icon)
-- [rux-menu](../rux-menu)
+- [rux-calendar](../rux-calendar)
+- [rux-button-group](../rux-button-group)
+- [rux-button](../rux-button)
 
 ### Graph
 ```mermaid
 graph TD;
   rux-datepicker --> rux-pop-up
   rux-datepicker --> rux-icon
-  rux-datepicker --> rux-menu
+  rux-datepicker --> rux-calendar
+  rux-datepicker --> rux-button-group
+  rux-datepicker --> rux-button
+  rux-calendar --> rux-icon
+  rux-calendar --> rux-select
+  rux-calendar --> rux-option
+  rux-calendar --> rux-day
+  rux-button --> rux-icon
   style rux-datepicker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
