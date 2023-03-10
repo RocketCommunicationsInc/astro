@@ -40,7 +40,7 @@ export class RuxCalendar {
       ? Using utcToZonedTime on default state (date-in not provided) because I _think_ without it, when
       ? it's the first of a month, we'll have that timezone issue where it'll say it's the prev month still.
     */
-    private _currentDate: Date = new Date(Date.now())
+    private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
     private _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
         : utcToZonedTime(new Date(Date.now()), 'UTC')
@@ -79,7 +79,7 @@ export class RuxCalendar {
         this._date = utcToZonedTime(new Date(this.dateIn), 'UTC')
         this._month = this._date.getMonth() + 1
         this._year = this._date.getFullYear()
-        this._currentDay = this._date.getDate()
+        this._currentDay = this._currentDate.getDate()
         this._daysInMonth = getDaysInMonth(this._date)
 
         // this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
@@ -164,11 +164,14 @@ export class RuxCalendar {
                             let dayOfWeek = getDay(tempDateStr)
                             let isCurrentDay = false
 
-                            //! Current day is using date-in time, so it'll be mismatched with the actual IRL day.
-                            //! current day needs to use IRL day, so that if you pass it in a date taht's in the future,
-                            //! You can go back to the actual IRL date and see the current day styled correctly.
-
-                            if (day === this._currentDay) {
+                            //* day needs to match current day and be in the IRL month and year in order
+                            //* to get the 'today' class.
+                            if (
+                                day === this._currentDay &&
+                                this._year ===
+                                    this._currentDate.getFullYear() &&
+                                this._month === this._currentDate.getMonth() + 1
+                            ) {
                                 isCurrentDay = true
                             }
 
