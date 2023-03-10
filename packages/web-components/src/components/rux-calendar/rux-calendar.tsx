@@ -1,7 +1,6 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core'
+import { Component, Host, h, Prop, Watch, Element } from '@stencil/core'
 import { getDay, getDaysInMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
-// import { utcToZonedTime } from 'date-fns-tz'
 
 const monthMap = {
     1: 'January',
@@ -24,6 +23,7 @@ const monthMap = {
     shadow: true,
 })
 export class RuxCalendar {
+    @Element() el!: HTMLRuxCalendarElement
     /**
      * Option to give the calendar a specfic month/year
      */
@@ -46,16 +46,7 @@ export class RuxCalendar {
         : utcToZonedTime(new Date(Date.now()), 'UTC')
     private _month: number = this._date.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
     private _year: number = this._date.getFullYear()
-    // private _currentDay: number = this._date.getDate()
     private _currentDay: number = this._currentDate.getDate()
-    /*
-      _currentDay should probably use the date from when the calendar is rendered - otherwise it'll say the curent
-      day is the day given in the date-in Date
-          private _currentDay: number = utcToZonedTime(
-        new Date(Date.now()),
-        'UTC'
-    ).getDate()
-    */
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
 
@@ -66,9 +57,16 @@ export class RuxCalendar {
 
     connectedCallback() {
         this._fillDaysInMonthArr()
-        console.log(this._currentDay, 'current day in CC')
-        //? I don't think this is needed but if something breaks try uncommenting it lol
-        // if (this.dateIn) this._setStateWithDateIn()
+    }
+
+    //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
+    //? what kind of side effects can this have? What other times will componentWillUpdate fire?
+    componentWillUpdate() {
+        console.log('compWillUpdate fire')
+        const days = this.el.shadowRoot!.querySelectorAll('rux-day')
+        days.forEach((day) => {
+            day.removeAttribute('selected')
+        })
     }
 
     //* Handle date in - all the state needs to be based off of the same time (date-in, or date now)
@@ -199,3 +197,15 @@ export class RuxCalendar {
         )
     }
 }
+
+//! Known Bugs
+/*
+  Selected a date will persist that seleceted state on a different months day
+   (ie, click the 1st on Jan, change month, 1st still selected)
+
+  Worried about timezone issue coming up again. We're changing everything to be UTC in the logic, will that make
+  it so that at some point the day will be off in differnet timezones?
+
+
+
+*/

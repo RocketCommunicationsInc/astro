@@ -1,5 +1,4 @@
 import { Component, Host, h, Prop } from '@stencil/core'
-
 @Component({
     tag: 'rux-day',
     styleUrl: 'rux-day.scss',
