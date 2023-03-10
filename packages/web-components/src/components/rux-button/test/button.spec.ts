@@ -13,6 +13,8 @@ test.describe('Button reflection', () => {
             ;(buttonEl as HTMLRuxButtonElement).icon = 'apps'
         })
 
+        await page.waitForChanges()
+
         const attr = await el.evaluate((buttonEl) => {
             return buttonEl.getAttribute('icon')
         })
@@ -24,6 +26,8 @@ test.describe('Button reflection', () => {
         await el.evaluate((buttonEl) => {
             ;(buttonEl as HTMLRuxButtonElement).iconOnly = true
         })
+
+        await page.waitForChanges()
 
         const attr = await el.evaluate((buttonEl) => {
             return buttonEl.getAttribute('icon-only')
@@ -39,6 +43,8 @@ test.describe('Button reflection', () => {
             ;(buttonEl as HTMLRuxButtonElement).secondary = true
         })
 
+        await page.waitForChanges()
+
         const attr = await el.evaluate((buttonEl) => {
             return buttonEl.getAttribute('secondary')
         })
@@ -50,6 +56,8 @@ test.describe('Button reflection', () => {
         await el.evaluate((buttonEl) => {
             ;(buttonEl as HTMLRuxButtonElement).disabled = true
         })
+
+        await page.waitForChanges()
 
         const attr = await el.evaluate((buttonEl) => {
             return buttonEl.getAttribute('disabled')
@@ -65,6 +73,8 @@ test.describe('Button reflection', () => {
             ;(buttonEl as HTMLRuxButtonElement).borderless = true
         })
 
+        await page.waitForChanges()
+
         const attr = await el.evaluate((buttonEl) => {
             return buttonEl.getAttribute('borderless')
         })
@@ -77,6 +87,8 @@ test.describe('Button reflection', () => {
             ;(buttonEl as HTMLRuxButtonElement).size = 'small'
         })
 
+        await page.waitForChanges()
+
         const attr = await el.evaluate((buttonEl) => {
             return buttonEl.getAttribute('size')
         })
@@ -88,6 +100,8 @@ test.describe('Button reflection', () => {
         await el.evaluate((buttonEl) => {
             ;(buttonEl as HTMLRuxButtonElement).type = 'submit'
         })
+
+        await page.waitForChanges()
 
         const attr = await el.evaluate((buttonEl) => {
             return buttonEl.getAttribute('type')
