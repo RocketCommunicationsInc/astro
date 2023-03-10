@@ -40,11 +40,22 @@ export class RuxCalendar {
       ? Using utcToZonedTime on default state (date-in not provided) because I _think_ without it, when
       ? it's the first of a month, we'll have that timezone issue where it'll say it's the prev month still.
     */
+    private _currentDate: Date = new Date(Date.now())
     private _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
         : utcToZonedTime(new Date(Date.now()), 'UTC')
     private _month: number = this._date.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
     private _year: number = this._date.getFullYear()
+    // private _currentDay: number = this._date.getDate()
+    private _currentDay: number = this._currentDate.getDate()
+    /*
+      _currentDay should probably use the date from when the calendar is rendered - otherwise it'll say the curent
+      day is the day given in the date-in Date
+          private _currentDay: number = utcToZonedTime(
+        new Date(Date.now()),
+        'UTC'
+    ).getDate()
+    */
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
 
@@ -55,7 +66,7 @@ export class RuxCalendar {
 
     connectedCallback() {
         this._fillDaysInMonthArr()
-
+        console.log(this._currentDay, 'current day in CC')
         //? I don't think this is needed but if something breaks try uncommenting it lol
         // if (this.dateIn) this._setStateWithDateIn()
     }
@@ -68,6 +79,7 @@ export class RuxCalendar {
         this._date = utcToZonedTime(new Date(this.dateIn), 'UTC')
         this._month = this._date.getMonth() + 1
         this._year = this._date.getFullYear()
+        this._currentDay = this._date.getDate()
         this._daysInMonth = getDaysInMonth(this._date)
 
         // this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
@@ -119,13 +131,13 @@ export class RuxCalendar {
                         </slot>
                     </div>
                     <div class="calendar-body">
-                        <span>SUN</span>
-                        <span>MON</span>
-                        <span>TUE</span>
-                        <span>WED</span>
-                        <span>THU</span>
-                        <span>FRI</span>
-                        <span>SAT</span>
+                        <span>Sun</span>
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Wed</span>
+                        <span>Thu</span>
+                        <span>Fri</span>
+                        <span>Sat</span>
                         {this._daysInMonthArr.map((day) => {
                             // get day of the week, add a class (or something) to the returned div that
                             // adds a grid-column css
@@ -150,6 +162,15 @@ export class RuxCalendar {
                             )
                             //using that date, get the day of the week
                             let dayOfWeek = getDay(tempDateStr)
+                            let isCurrentDay = false
+
+                            //! Current day is using date-in time, so it'll be mismatched with the actual IRL day.
+                            //! current day needs to use IRL day, so that if you pass it in a date taht's in the future,
+                            //! You can go back to the actual IRL date and see the current day styled correctly.
+
+                            if (day === this._currentDay) {
+                                isCurrentDay = true
+                            }
 
                             return (
                                 <rux-day
@@ -157,6 +178,9 @@ export class RuxCalendar {
                                         'grid-column': (
                                             dayOfWeek + 1
                                         ).toString(),
+                                    }}
+                                    class={{
+                                        today: isCurrentDay,
                                     }}
                                 >
                                     {day}

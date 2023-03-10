@@ -17,7 +17,7 @@ test.describe('Calendar', () => {
         })
         // Need to test that the days are put under the correct heading. ie, if the first is a Monday, it's under Monday not Tuesday
         test('Days are in correct spot', async ({ page }) => {
-            //grid-column: 1 === SUN
+            //grid-column: 1 / auto === SUN
             //First of Jan is a Sun
             const cal = page.locator('rux-calendar')
             const firstDay = cal.locator('rux-day').first()

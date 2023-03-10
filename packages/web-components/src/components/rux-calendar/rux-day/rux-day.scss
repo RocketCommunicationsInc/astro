@@ -1,15 +1,25 @@
 .rux-day {
-    border: 1px solid var(--color-border-interactive-default);
+    border: none;
     height: 40px;
     width: 40px;
-    padding: var(--spacing-2);
+    padding: var(--spacing-4);
+    border-radius: var(--radius-base);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: var(--radius-base);
     background-color: var(--color-background-base-default);
-    color: var(--color-text-white);
+    color: var(--color-text-interactive-default);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
+    &:hover {
+        background-color: var(--color-background-surface-hover);
+        cursor: pointer;
+    }
+    // range styling
+    // background-color: var(--color-background-surface-header)
+}
+.day-selected {
+    background-color: var(--color-background-surface-selected);
+    border: 1px solid var(--color-border-interactive-default);
 }

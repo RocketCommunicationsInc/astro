@@ -247,6 +247,7 @@ export namespace Components {
         "year"?: 'numeric' | '2-digit';
     }
     interface RuxDay {
+        "selected": boolean;
     }
     interface RuxDialog {
         /**
@@ -20874,6 +20875,7 @@ declare namespace LocalJSX {
         "year"?: 'numeric' | '2-digit';
     }
     interface RuxDay {
+        "selected"?: boolean;
     }
     interface RuxDialog {
         /**
