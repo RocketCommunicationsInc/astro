@@ -237,3 +237,42 @@ test.describe('Accordion Events', () => {
         expect(collapsedEvent).toHaveReceivedEventTimes(1)
     })
 })
+
+test.describe('Accordion reflection', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+			<rux-accordion></rux-accordion>
+		`
+        await page.setContent(template)
+    })
+
+    test('the disabled property reflects to an attribute', async ({ page }) => {
+        const el = page.locator('rux-accordion')
+        await el.evaluate((accordionEl) => {
+            ;(accordionEl as HTMLRuxAccordionElement).disabled = true
+        })
+
+        await page.waitForChanges()
+
+        const attr = await el.evaluate((accordionEl) => {
+            return accordionEl.getAttribute('disabled')
+        })
+        expect(attr).not.toBeNull()
+    })
+
+    test('the disallowMultiple property reflects to an attribute', async ({
+        page,
+    }) => {
+        const el = page.locator('rux-accordion')
+        await el.evaluate((accordionEl) => {
+            ;(accordionEl as HTMLRuxAccordionElement).disallowMultiple = true
+        })
+
+        await page.waitForChanges()
+
+        const attr = await el.evaluate((accordionEl) => {
+            return accordionEl.getAttribute('disallow-multiple')
+        })
+        expect(attr).not.toBeNull()
+    })
+})
