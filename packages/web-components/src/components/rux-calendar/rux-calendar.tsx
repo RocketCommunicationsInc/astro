@@ -1,5 +1,5 @@
 import { Component, Host, h, Prop, Watch, Element } from '@stencil/core'
-import { getDay, getDaysInMonth } from 'date-fns'
+import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
 
 const monthMap = {
@@ -49,11 +49,14 @@ export class RuxCalendar {
     private _currentDay: number = this._currentDate.getDate()
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
-
-    //? May need these if we show past/future dates
+    //* create a new date from _nextMonth and _prevMonth using the 1st as the day, then getDay which will
+    //* give us a 0-6. Then slot those accordingly in the grid
     // private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
-    // private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
-    // private _dayOfWeek: number = getDay(this._date)
+    private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
+    private _prevDaysToShow: { [key: string]: any } = {}
+
+    // private _lastDayOfMonth: Date = lastDayOfMonth(this._date)
+    // private _lastDayOfWeek: number = this._lastDayOfMonth.getDate()
 
     connectedCallback() {
         this._fillDaysInMonthArr()
@@ -61,6 +64,7 @@ export class RuxCalendar {
 
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
     //? what kind of side effects can this have? What other times will componentWillUpdate fire?
+    //? Might become an issue when we use the month/year picker to change month/year?
     componentWillUpdate() {
         console.log('compWillUpdate fire')
         const days = this.el.shadowRoot!.querySelectorAll('rux-day')
@@ -79,10 +83,8 @@ export class RuxCalendar {
         this._year = this._date.getFullYear()
         this._currentDay = this._currentDate.getDate()
         this._daysInMonth = getDaysInMonth(this._date)
-
         // this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
-        // this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
-        // this._dayOfWeek = getDay(this._date)
+        this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
 
         this._fillDaysInMonthArr()
     }
@@ -94,6 +96,35 @@ export class RuxCalendar {
             let accountFor0 = i + 1
             this._daysInMonthArr.push(accountFor0)
         }
+    }
+    private _findPrevDaysToShow(monthNum: number) {
+        let paddedMonth = monthNum.toString()
+        if (monthNum <= 9) {
+            paddedMonth = '0' + monthNum.toString()
+        }
+        const newDate = utcToZonedTime(
+            new Date(`${this._year}-${paddedMonth}-01T00:00:00.000Z`),
+            'UTC'
+        )
+        const lastDayOfWeek = lastDayOfMonth(newDate).getDay()
+        // Stop if the last day of the month in prevMonth is a Saturday (6). This means that the first day of
+        // the curent month will be Sunday, so we won't be rendering anything from the prevMonth.
+        if (lastDayOfWeek === 6) return
+
+        //Fill in our _prevDaysToShow with keys being the day of the week (0-5) and values being the
+        // day of the month (24, 25, ect)
+        for (let i = 0; i <= lastDayOfWeek; i++) {
+            // given day is the last day of the month.
+            let lastDay = lastDayOfMonth(newDate).getDate()
+            // subtract i from given day, that will give us the other days we need to show.
+            let dayToUse = lastDay - i
+            // this lastDayOfWeek - i puts the day number in the correct day of week spot.
+            this._prevDaysToShow[lastDayOfWeek - i] = dayToUse
+        }
+        //? Only doing this because I couldn't get Object.keys(prevDaysToShow).forEach to
+        //? Actually render the rux-days in the JSX
+        //return an array from the keys so that we can map thru it in the JSX
+        return Array.from(Object.keys(this._prevDaysToShow))
     }
     render() {
         return (
@@ -136,6 +167,22 @@ export class RuxCalendar {
                         <span>Thu</span>
                         <span>Fri</span>
                         <span>Sat</span>
+                        {this._findPrevDaysToShow(this._prevMonth)?.map(
+                            (day) => {
+                                return (
+                                    <rux-day
+                                        style={{
+                                            'grid-column': (
+                                                parseInt(day) + 1
+                                            ).toString(),
+                                        }}
+                                        class="past-day"
+                                    >
+                                        {this._prevDaysToShow[day]}
+                                    </rux-day>
+                                )
+                            }
+                        )}
                         {this._daysInMonthArr.map((day) => {
                             // get day of the week, add a class (or something) to the returned div that
                             // adds a grid-column css
@@ -200,9 +247,6 @@ export class RuxCalendar {
 
 //! Known Bugs
 /*
-  Selected a date will persist that seleceted state on a different months day
-   (ie, click the 1st on Jan, change month, 1st still selected)
-
   Worried about timezone issue coming up again. We're changing everything to be UTC in the logic, will that make
   it so that at some point the day will be off in differnet timezones?
 

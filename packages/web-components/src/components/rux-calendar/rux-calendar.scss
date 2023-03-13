@@ -55,4 +55,7 @@
     rux-day.today::part(button) {
         color: var(--color-text-white);
     }
+    rux-day.past-day::part(button) {
+        color: var(--color-text-placeholder);
+    }
 }
