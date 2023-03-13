@@ -98,6 +98,7 @@ export class RuxCalendar {
         }
     }
     private _findPrevDaysToShow(monthNum: number) {
+        // If the current month starts on a sunday, we don't need to run any of this code.
         let paddedMonth = monthNum.toString()
         if (monthNum <= 9) {
             paddedMonth = '0' + monthNum.toString()
@@ -106,10 +107,11 @@ export class RuxCalendar {
             new Date(`${this._year}-${paddedMonth}-01T00:00:00.000Z`),
             'UTC'
         )
-        const lastDayOfWeek = lastDayOfMonth(newDate).getDay()
-        // Stop if the last day of the month in prevMonth is a Saturday (6). This means that the first day of
+        console.log(newDate.getDay(), 'newdate get day')
+        // Stop if the last day of the month in prevMonth is a Saturday (5). This means that the first day of
         // the curent month will be Sunday, so we won't be rendering anything from the prevMonth.
-        if (lastDayOfWeek === 6) return
+        if (newDate.getDay() === 5) return
+        const lastDayOfWeek = lastDayOfMonth(newDate).getDay()
 
         //Fill in our _prevDaysToShow with keys being the day of the week (0-5) and values being the
         // day of the month (24, 25, ect)
