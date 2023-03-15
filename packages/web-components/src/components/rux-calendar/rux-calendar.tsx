@@ -49,17 +49,19 @@ export class RuxCalendar {
     private _currentDay: number = this._currentDate.getDate()
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
-    //* create a new date from _nextMonth and _prevMonth using the 1st as the day, then getDay which will
-    //* give us a 0-6. Then slot those accordingly in the grid
-    // private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
+    private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
     private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
     private _prevDaysToShow: { [key: string]: any } = {}
+    private _nextDaysToShow: { [key: string]: any } = {}
+    private _nextWeekToShow: { [key: string]: any } = {}
+    private _testArr: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8]
 
     // private _lastDayOfMonth: Date = lastDayOfMonth(this._date)
     // private _lastDayOfWeek: number = this._lastDayOfMonth.getDate()
 
     connectedCallback() {
         this._fillDaysInMonthArr()
+        this._findNextDaysToShow()
     }
 
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
@@ -83,7 +85,7 @@ export class RuxCalendar {
         this._year = this._date.getFullYear()
         this._currentDay = this._currentDate.getDate()
         this._daysInMonth = getDaysInMonth(this._date)
-        // this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
+        this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
         this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
 
         this._fillDaysInMonthArr()
@@ -97,17 +99,90 @@ export class RuxCalendar {
             this._daysInMonthArr.push(accountFor0)
         }
     }
-    private _findPrevDaysToShow(monthNum: number) {
-        // If the current month starts on a sunday, we don't need to run any of this code.
+
+    /**
+     *
+     * @returns An array of the correct amount of days to render to fill out the 6 week grid.
+     */
+    private _findNextDaysToShow() {
+        let lastDay = lastDayOfMonth(this._date)
+        const dayOfWeekOfLastDay = lastDay.getDay()
+
+        let returnArr = []
+        if (dayOfWeekOfLastDay === 6) {
+            returnArr = [1, 2, 3, 4, 5, 6, 7]
+        } else {
+            //dayOfWeekOfLastDay is 0-6
+            //if its 2, then you need to finish that week, plus the next week. so:
+            // 2 + 5 + 7
+            //need to account for months who's last day is in the 6th row, ie April. In these cases we only need to finish out the week.
+            // this only happens when the first day of the month is a Friday (for months with 31 days) or sat (for months with 30)
+            // get first day of month, and the number of days in the month.
+            // if first day of month is fri (5) and there are 31 days, that'll bleed into the 6th week.
+            // same with FDoM being a sat (6) and having 30 days in the month.
+            let dateFromFirstDay = utcToZonedTime(
+                new Date(
+                    `${this._year}-${this._padMonth(
+                        this._month
+                    )}-01T00:00:00.000Z`
+                ),
+                'UTC'
+            )
+            let firstDayOfCurrMonth = dateFromFirstDay.getDay()
+            let differenceInFirstWeek = 7 - (dayOfWeekOfLastDay + 1)
+            if (
+                (firstDayOfCurrMonth === 5 &&
+                    getDaysInMonth(dateFromFirstDay) === 31) ||
+                (firstDayOfCurrMonth === 6 &&
+                    getDaysInMonth(dateFromFirstDay) === 30) ||
+                (firstDayOfCurrMonth === 6 &&
+                    getDaysInMonth(dateFromFirstDay) === 31)
+            ) {
+                //just finish out the week
+                console.log(differenceInFirstWeek, 'should be in if')
+                for (let i = 1; i < differenceInFirstWeek + 1; i++) {
+                    returnArr.push(i)
+                }
+            } else {
+                //need to finish the 5th week, and do the 6th week.
+                for (let i = 1; i < differenceInFirstWeek + 8; i++) {
+                    returnArr.push(i)
+                }
+            }
+        }
+        return returnArr
+    }
+    /**
+     *
+     * @param monthNum the month number to pad
+     * @returns a string that concatenates a '0' to the month if the month is less than 9. Example: 9 -> 09
+     */
+    private _padMonth(monthNum: number) {
         let paddedMonth = monthNum.toString()
         if (monthNum <= 9) {
             paddedMonth = '0' + monthNum.toString()
         }
+        return paddedMonth
+    }
+
+    /**
+     *
+     * @param monthNum the month number, 1-12
+     * @returns An array from the keys in the _prevDaysToShow variable. Used to map thru and render rux-days
+     */
+    private _findPrevDaysToShow(monthNum: number) {
+        //! I'm going to leave this in because it works, but as you can see from the _findNextDaysToShow
+        //! func, just returning a normal array works. Grid is slotting it correclty still, so idk if we need
+        //! to know the dayOfWeek.
+
+        //! update: yeah it's way too complex for no good reason, afaict. If you remove the
+        //! inline grid styles from where this function is being called, everything still works.
         const newDate = utcToZonedTime(
-            new Date(`${this._year}-${paddedMonth}-01T00:00:00.000Z`),
+            new Date(
+                `${this._year}-${this._padMonth(monthNum)}-01T00:00:00.000Z`
+            ),
             'UTC'
         )
-        console.log(newDate.getDay(), 'newdate get day')
         // Stop if the last day of the month in prevMonth is a Saturday (5). This means that the first day of
         // the curent month will be Sunday, so we won't be rendering anything from the prevMonth.
         if (newDate.getDay() === 5) return
@@ -116,9 +191,9 @@ export class RuxCalendar {
         //Fill in our _prevDaysToShow with keys being the day of the week (0-5) and values being the
         // day of the month (24, 25, ect)
         for (let i = 0; i <= lastDayOfWeek; i++) {
-            // given day is the last day of the month.
+            // get the last day of the month.
             let lastDay = lastDayOfMonth(newDate).getDate()
-            // subtract i from given day, that will give us the other days we need to show.
+            // subtract i from last day, that will give us the other days we need to show.
             let dayToUse = lastDay - i
             // this lastDayOfWeek - i puts the day number in the correct day of week spot.
             this._prevDaysToShow[lastDayOfWeek - i] = dayToUse
@@ -162,13 +237,13 @@ export class RuxCalendar {
                         </slot>
                     </div>
                     <div class="calendar-body">
-                        <span>Sun</span>
-                        <span>Mon</span>
-                        <span>Tue</span>
-                        <span>Wed</span>
-                        <span>Thu</span>
-                        <span>Fri</span>
-                        <span>Sat</span>
+                        <span class="week-header">Sun</span>
+                        <span class="week-header">Mon</span>
+                        <span class="week-header">Tue</span>
+                        <span class="week-header">Wed</span>
+                        <span class="week-header">Thu</span>
+                        <span class="week-header">Fri</span>
+                        <span class="week-header">Sat</span>
                         {this._findPrevDaysToShow(this._prevMonth)?.map(
                             (day) => {
                                 return (
@@ -178,7 +253,7 @@ export class RuxCalendar {
                                                 parseInt(day) + 1
                                             ).toString(),
                                         }}
-                                        class="past-day"
+                                        class="past-future-day"
                                     >
                                         {this._prevDaysToShow[day]}
                                     </rux-day>
@@ -186,10 +261,6 @@ export class RuxCalendar {
                             }
                         )}
                         {this._daysInMonthArr.map((day) => {
-                            // get day of the week, add a class (or something) to the returned div that
-                            // adds a grid-column css
-                            // Get a new date from the specifc day of the given month/year
-
                             //* Need to add a '0' to the day/month if it's >= 9, otherwise its invalid
                             let dayStr = day.toString()
                             if (day <= 9) {
@@ -234,6 +305,19 @@ export class RuxCalendar {
                                     }}
                                 >
                                     {day}
+                                    {isCurrentDay ? (
+                                        <div
+                                            slot="today-dot"
+                                            class="today-dot"
+                                        ></div>
+                                    ) : null}
+                                </rux-day>
+                            )
+                        })}
+                        {this._findNextDaysToShow().map((dayOfMonth) => {
+                            return (
+                                <rux-day class="past-future-day">
+                                    {dayOfMonth}
                                 </rux-day>
                             )
                         })}

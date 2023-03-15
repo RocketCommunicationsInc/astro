@@ -34,6 +34,7 @@ export class RuxDay {
                     <div class="gregorian">
                         <slot name="gregorian"></slot>
                     </div>
+                    <slot name="today-dot"></slot>
                 </button>
             </Host>
         )

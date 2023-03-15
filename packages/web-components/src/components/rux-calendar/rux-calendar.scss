@@ -3,7 +3,7 @@
 }
 .rux-calendar {
     background-color: var(--color-background-base-default);
-    border: 2px solid var(--color-border-interactive-muted);
+    // border: 2px solid var(--color-border-interactive-muted);
     // height: 350px;
     // width: 400px;
     display: flex;
@@ -36,11 +36,17 @@
     .calendar-body {
         display: grid;
         grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(6, 1fr);
         gap: var(--spacing-1);
         row-gap: var(--spacing-2);
         column-gap: var(--spacing-2);
         text-align: center;
         padding: var(--spacing-4) var(--spacing-2);
+        .week-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         .calendar-day {
             border: 1px solid var(--color-border-interactive-default);
             height: 24px;
@@ -54,8 +60,19 @@
     }
     rux-day.today::part(button) {
         color: var(--color-text-white);
+        // padding-top: 0;
+        padding-bottom: 0;
     }
-    rux-day.past-day::part(button) {
+    rux-day.past-future-day::part(button) {
         color: var(--color-text-placeholder);
+    }
+    rux-day {
+        .today-dot {
+            height: 8px;
+            width: 8px;
+            border-radius: 100%;
+            background-color: var(--color-text-interactive-default);
+            margin-top: 4px;
+        }
     }
 }
