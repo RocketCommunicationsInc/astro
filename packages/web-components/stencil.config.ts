@@ -13,12 +13,22 @@ export const config: Config = {
     outputTargets: [
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
-            proxiesFile: '../react/src/components.tsx',
+            proxiesFile: '../react-vite/src/components.tsx',
             //polyfills & defineCustomElements cannot be included at the same time as importCustomElements
             includePolyfills: false,
             includeDefineCustomElements: false,
             includeImportCustomElements: true,
             customElementsDir: 'dist/components',
+        }),
+        reactBooleanFix({
+            attatchPropsFile:
+                '../../react-vite/src/react-component-lib/utils/attachProps.ts',
+        }),
+        reactOutputTarget({
+            componentCorePackage: '@astrouxds/astro-web-components',
+            proxiesFile: '../react/src/components.tsx',
+            includePolyfills: true,
+            includeDefineCustomElements: true,
         }),
         reactBooleanFix({
             attatchPropsFile:
