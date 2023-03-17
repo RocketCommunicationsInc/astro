@@ -11,8 +11,10 @@
     align-items: center;
     background-color: var(--color-background-base-default);
     color: var(--color-text-interactive-default);
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: 700;
+    line-height: 20px;
     &:hover {
         background-color: var(--color-background-surface-hover);
         cursor: pointer;

@@ -27,11 +27,12 @@ export class RuxCalendar {
     /**
      * Option to give the calendar a specfic month/year
      */
-    @Prop({ attribute: 'date-in' }) dateIn?: string
+    @Prop({ attribute: 'date-in' }) dateIn?: string | number
     @Watch('dateIn')
     handleDateInChange() {
         //? Should we do some validation here to make sure the passed in date-in is a date string?
         console.log('heard datin change')
+        console.log(this.dateIn, 'date in')
         this._setStateWithDateIn()
     }
 
@@ -52,9 +53,8 @@ export class RuxCalendar {
     private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
     private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
     private _prevDaysToShow: { [key: string]: any } = {}
-    private _nextDaysToShow: { [key: string]: any } = {}
-    private _nextWeekToShow: { [key: string]: any } = {}
-    private _testArr: Array<number> = [1, 2, 3, 4, 5, 6, 7, 8]
+    // private _nextDaysToShow: { [key: string]: any } = {}
+    // private _nextWeekToShow: { [key: string]: any } = {}
 
     // private _lastDayOfMonth: Date = lastDayOfMonth(this._date)
     // private _lastDayOfWeek: number = this._lastDayOfMonth.getDate()
@@ -120,12 +120,9 @@ export class RuxCalendar {
             // get first day of month, and the number of days in the month.
             // if first day of month is fri (5) and there are 31 days, that'll bleed into the 6th week.
             // same with FDoM being a sat (6) and having 30 days in the month.
+
             let dateFromFirstDay = utcToZonedTime(
-                new Date(
-                    `${this._year}-${this._padMonth(
-                        this._month
-                    )}-01T00:00:00.000Z`
-                ),
+                new Date(`${this._year}-${this._padMonth(this._month)}-01`),
                 'UTC'
             )
             let firstDayOfCurrMonth = dateFromFirstDay.getDay()
@@ -139,7 +136,6 @@ export class RuxCalendar {
                     getDaysInMonth(dateFromFirstDay) === 31)
             ) {
                 //just finish out the week
-                console.log(differenceInFirstWeek, 'should be in if')
                 for (let i = 1; i < differenceInFirstWeek + 1; i++) {
                     returnArr.push(i)
                 }
@@ -178,11 +174,11 @@ export class RuxCalendar {
         //! update: yeah it's way too complex for no good reason, afaict. If you remove the
         //! inline grid styles from where this function is being called, everything still works.
         const newDate = utcToZonedTime(
-            new Date(
-                `${this._year}-${this._padMonth(monthNum)}-01T00:00:00.000Z`
-            ),
+            new Date(`${this._year}-${this._padMonth(monthNum)}-01`),
             'UTC'
         )
+        //try clearing it
+        this._prevDaysToShow = {}
         // Stop if the last day of the month in prevMonth is a Saturday (5). This means that the first day of
         // the curent month will be Sunday, so we won't be rendering anything from the prevMonth.
         if (newDate.getDay() === 5) return
