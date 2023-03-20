@@ -266,12 +266,12 @@ export class RuxCalendar {
                             if (this._month <= 9) {
                                 monthStr = '0' + monthStr
                             }
+                            //? Could replace monthStr and dayStr with padMonth func. Might need to
+                            //? rename it ot padMonthDay if I'm gonna use it for day, tho
 
                             //Create a new Date from the day we're on
                             let tempDateStr = utcToZonedTime(
-                                new Date(
-                                    `${this._year}-${monthStr}-${dayStr}T00:00:00.000Z`
-                                ),
+                                new Date(`${this._year}-${monthStr}-${dayStr}`),
                                 'UTC'
                             )
                             //using that date, get the day of the week

@@ -256,3 +256,17 @@ test.describe('Calendar', () => {
         })
     })
 })
+
+//* Need to test:
+/*
+  * Date changes successfully with date-in prop
+  * Date in prop can dynamically change and year/month/days will update correclty
+  * date-in can recieve an epoch num date or a date string
+  * the rux-day that is today IRL gets the today class. That class does not exisit on other months/years
+  * Leap years are accounted for
+  *   * Days in right spot, correct amount of days in Feb
+  * Each month has correct amount of days
+  * Each month has the previous days, current month days, and next month days in the correct location
+  *   * as well as correct amount of prev, curr and next days.
+
+*/
