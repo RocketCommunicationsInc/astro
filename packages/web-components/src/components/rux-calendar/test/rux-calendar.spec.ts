@@ -32,8 +32,14 @@ test.describe('Calendar', () => {
         test('Shows correct days for February', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(28)
+            let relevantDays: any = []
+            await days.evaluateAll((days) => {
+                return days.filter(
+                    (day) => !day.classList.contains('past-present-day')
+                )
+            })
+            console.log(days, 'days after eval')
+            await expect(relevantDays.length).toEqual(28)
         })
         test('Shows February as month', async ({ page }) => {
             await expect(page.getByText('February')).toBeVisible()

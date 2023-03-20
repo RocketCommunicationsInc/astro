@@ -1,4 +1,12 @@
-import { Component, Host, h, Prop } from '@stencil/core'
+import {
+    Component,
+    Host,
+    h,
+    Prop,
+    Event,
+    EventEmitter,
+    Element,
+} from '@stencil/core'
 @Component({
     tag: 'rux-day',
     styleUrl: 'rux-day.scss',
@@ -7,13 +15,18 @@ import { Component, Host, h, Prop } from '@stencil/core'
 export class RuxDay {
     @Prop({ reflect: true, mutable: true }) selected: boolean = false
 
+    @Element() el!: HTMLRuxDayElement
+
+    @Event({ eventName: 'ruxdayselected' })
+    ruxDaySelected!: EventEmitter<HTMLRuxDayElement>
+
     connectedCallback() {
         this._toggleSelected = this._toggleSelected.bind(this)
     }
 
     private _toggleSelected() {
-        console.log('fired')
         this.selected = !this.selected
+        this.ruxDaySelected.emit(this.el)
     }
 
     render() {

@@ -205,20 +205,23 @@ export class RuxCalendar {
                 <div class="rux-calendar">
                     <div class="calendar-header">
                         <slot name="header">
+                            <rux-icon
+                                icon="keyboard-arrow-left"
+                                class="arrow-left-icon"
+                                size="34px"
+                            ></rux-icon>
                             <div class="month-picker">
-                                <rux-icon
-                                    icon="arrow-left"
-                                    class="arrow-left-icon"
-                                    size="34px"
-                                ></rux-icon>
-                                <span id="displayed-month">
-                                    {(monthMap as any)[this._month]}
-                                </span>
-                                <rux-icon
-                                    icon="arrow-right"
-                                    class="arrow-right-icon"
-                                    size="34px"
-                                ></rux-icon>
+                                <rux-select id="displayed-month" size="small">
+                                    <rux-option
+                                        label={
+                                            monthMap[
+                                                this
+                                                    ._month as keyof typeof monthMap
+                                            ]
+                                        }
+                                        value={this._month.toString()}
+                                    ></rux-option>
+                                </rux-select>
                             </div>
                             <div class="year-picker">
                                 <rux-select size="small">
@@ -230,6 +233,11 @@ export class RuxCalendar {
                                     </rux-option>
                                 </rux-select>
                             </div>
+                            <rux-icon
+                                icon="keyboard-arrow-right"
+                                class="arrow-right-icon"
+                                size="34px"
+                            ></rux-icon>
                         </slot>
                     </div>
                     <div class="calendar-body">
