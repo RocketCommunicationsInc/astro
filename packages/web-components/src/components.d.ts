@@ -78,7 +78,7 @@ export namespace Components {
         /**
           * Option to give the calendar a specfic month/year
          */
-        "dateIn"?: string;
+        "dateIn"?: string | number;
     }
     interface RuxCard {
     }
@@ -12705,6 +12705,10 @@ export interface RuxDatepickerCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxDatepickerElement;
 }
+export interface RuxDayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxDayElement;
+}
 export interface RuxDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxDialogElement;
@@ -20692,7 +20696,7 @@ declare namespace LocalJSX {
         /**
           * Option to give the calendar a specfic month/year
          */
-        "dateIn"?: string;
+        "dateIn"?: string | number;
     }
     interface RuxCard {
     }
@@ -20875,6 +20879,7 @@ declare namespace LocalJSX {
         "year"?: 'numeric' | '2-digit';
     }
     interface RuxDay {
+        "onRuxdayselected"?: (event: RuxDayCustomEvent<HTMLRuxDayElement>) => void;
         "selected"?: boolean;
     }
     interface RuxDialog {
