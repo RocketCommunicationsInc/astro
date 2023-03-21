@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.9.1
+
+### Patch Changes
+
+#### React
+
+-   Revert treeshaking for react in order to fix rux-icon not working in create-react-apps.
+
 ## 7.9.0
 
 ### Minor Changes
