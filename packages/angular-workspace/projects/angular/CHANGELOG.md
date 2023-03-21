@@ -1,5 +1,13 @@
 # @astrouxds/angular
 
+## 7.9.1
+
+### Patch Changes
+
+- 10c32ab3: Revert treeshaking for react in order to fix rux-icon not working in create-react-apps.
+- Updated dependencies [10c32ab3]
+  - @astrouxds/astro-web-components@7.9.1
+
 ## 7.9.0
 
 ### Minor Changes
@@ -29,7 +37,6 @@
 #### Dialog
 
 - `ruxDialogOpened` will now fire after everything has finished loading on open
-
 
 ## 7.8.0
 
