@@ -60,10 +60,30 @@ export class RuxDatepicker {
                             ></rux-icon>
                             <rux-calendar>
                                 {/* We could do an includeFooter prop? should it be there by default? */}
-                                <rux-button-group slot="footer">
-                                    <rux-button secondary>Cancel</rux-button>
-                                    <rux-button>Submit</rux-button>
-                                </rux-button-group>
+                                <div slot="footer" class="date-picker-footer">
+                                    <div class="today-clear">
+                                        <rux-button
+                                            borderless
+                                            icon="today"
+                                            size="small"
+                                        >
+                                            Today
+                                        </rux-button>
+                                        <rux-button
+                                            borderless
+                                            icon="autorenew"
+                                            size="small"
+                                        >
+                                            Clear
+                                        </rux-button>
+                                    </div>
+                                    <rux-button-group hAlign="right">
+                                        <rux-button secondary>
+                                            Cancel
+                                        </rux-button>
+                                        <rux-button>Apply</rux-button>
+                                    </rux-button-group>
+                                </div>
                             </rux-calendar>
                         </rux-pop-up>
                     </div>

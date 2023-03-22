@@ -15,6 +15,8 @@ import {
 export class RuxDay {
     @Prop({ reflect: true, mutable: true }) selected: boolean = false
 
+    //? Should we add a value prop?
+
     @Element() el!: HTMLRuxDayElement
 
     @Event({ eventName: 'ruxdayselected' })

@@ -31,17 +31,13 @@
             </div>
             <div>
                 <h3>Calendar</h3>
-                <p style="width: 300px">
+                <p style="width: 500px">
                     This calendar uses the 'date-in' prop, which allows the user
                     to set the date on the calendar. The button below will
                     change this prop, and you can see the days and month change
                     on the calendar.
                 </p>
                 <rux-calendar id="cal" date-in="2023-01-01T00:00:00.000Z">
-                    <rux-button-group slot="footer">
-                        <rux-button secondary>Cancel</rux-button>
-                        <rux-button>Submit</rux-button>
-                    </rux-button-group>
                 </rux-calendar>
                 <div
                     style="
@@ -66,6 +62,7 @@
             <div>
                 <h3>Calendar, without date-in.</h3>
                 <p>This is the default state of a calendar.</p>
+                <p>It uses the current date by default.</p>
                 <rux-calendar>
                     <!-- <rux-button-group slot="footer">
           <rux-button secondary>Cancel</rux-button>
@@ -150,6 +147,9 @@
             const ruxInput = document.getElementById('rux-date')
             ruxInput.addEventListener('ruxchange', (e) => {
                 cal.dateIn = e.target.value
+            })
+            document.addEventListener('ruxdayselected', (e) => {
+                console.log(e.detail)
             })
         </script>
     </body>

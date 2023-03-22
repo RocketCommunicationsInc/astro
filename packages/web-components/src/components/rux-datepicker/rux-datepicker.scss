@@ -33,7 +33,15 @@
             overflow: hidden;
         }
     }
+
     rux-menu {
         padding: var(--spacing-2);
+    }
+}
+.date-picker-footer {
+    display: flex;
+    align-items: center;
+    .today-clear {
+        margin-right: 3rem;
     }
 }

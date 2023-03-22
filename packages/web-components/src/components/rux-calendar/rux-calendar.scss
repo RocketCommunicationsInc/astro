@@ -42,11 +42,12 @@
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         grid-template-rows: repeat(6, 1fr);
-        gap: var(--spacing-2);
+        // gap: var(--spacing-2);
+        gap: 1px;
         // row-gap: var(--spacing-2);
         // column-gap: var(--spacing-2);
         text-align: center;
-        padding: var(--spacing-4) var(--spacing-2);
+        // padding: var(--spacing-4) var(--spacing-2);
         .week-header {
             display: flex;
             justify-content: center;
