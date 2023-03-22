@@ -50,7 +50,7 @@ export class RuxCalendar {
     private _currentDay: number = this._currentDate.getDate()
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
-    private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
+    // private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
     private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
     private _prevDaysToShow: { [key: string]: any } = {}
     // private _nextDaysToShow: { [key: string]: any } = {}
@@ -85,7 +85,7 @@ export class RuxCalendar {
         this._year = this._date.getFullYear()
         this._currentDay = this._currentDate.getDate()
         this._daysInMonth = getDaysInMonth(this._date)
-        this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
+        // this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
         this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
 
         this._fillDaysInMonthArr()
