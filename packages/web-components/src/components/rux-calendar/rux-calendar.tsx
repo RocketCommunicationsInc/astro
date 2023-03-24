@@ -220,6 +220,17 @@ export class RuxCalendar {
                                             ]
                                         }
                                         value={this._month.toString()}
+                                        {...Object.keys(monthMap).map(
+                                            (value) => {
+                                                console.log('running')
+                                                return (
+                                                    <rux-option
+                                                        label={`${value}`}
+                                                        value={`${value}`}
+                                                    ></rux-option>
+                                                )
+                                            }
+                                        )}
                                     ></rux-option>
                                 </rux-select>
                             </div>
