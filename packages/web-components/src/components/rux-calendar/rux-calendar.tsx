@@ -1,8 +1,12 @@
-import { Component, Host, h, Prop, Watch, Element } from '@stencil/core'
+import { Component, Host, h, Prop, Watch, Element, State } from '@stencil/core'
 import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
 
-const monthMap = {
+type MonthMap = {
+    [key: number]: string
+}
+
+const monthMap: MonthMap = {
     1: 'January',
     2: 'February',
     3: 'March',
@@ -32,7 +36,6 @@ export class RuxCalendar {
     handleDateInChange() {
         //? Should we do some validation here to make sure the passed in date-in is a date string?
         console.log('heard datin change')
-        console.log(this.dateIn, 'date in')
         this._setStateWithDateIn()
     }
 
@@ -42,10 +45,20 @@ export class RuxCalendar {
       ? it's the first of a month, we'll have that timezone issue where it'll say it's the prev month still.
     */
     private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
-    private _date: Date = this.dateIn
+    //* This _date state conrtols what each compuatation uses. If the month updates, it'll update
+    //* this._date with that new month. Same for year.
+    @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
         : utcToZonedTime(new Date(Date.now()), 'UTC')
-    private _month: number = this._date.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
+    @State() _month: number = this._date.getMonth() + 1
+
+    @Watch('_month')
+    handleMonthChange() {
+        console.log('heard month change')
+        this._updateDate(this._year, this._month)
+    }
+
+    // private _month: number = this._date.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
     private _year: number = this._date.getFullYear()
     private _currentDay: number = this._currentDate.getDate()
     private _daysInMonth: number = getDaysInMonth(this._date)
@@ -53,15 +66,13 @@ export class RuxCalendar {
     // private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
     private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
     private _prevDaysToShow: { [key: string]: any } = {}
-    // private _nextDaysToShow: { [key: string]: any } = {}
-    // private _nextWeekToShow: { [key: string]: any } = {}
-
-    // private _lastDayOfMonth: Date = lastDayOfMonth(this._date)
-    // private _lastDayOfWeek: number = this._lastDayOfMonth.getDate()
+    private _nextDaysToShow: Array<Number> = this._findNextDaysToShow()
+    // private _selectedMonth: number | string | null = this._month
 
     connectedCallback() {
         this._fillDaysInMonthArr()
-        this._findNextDaysToShow()
+        this._nextDaysToShow = this._findNextDaysToShow()
+        this._handleSelectChange = this._handleSelectChange.bind(this)
     }
 
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
@@ -75,20 +86,62 @@ export class RuxCalendar {
         })
     }
 
+    /**
+     *
+     * @param year the year
+     * @param month the month
+     * @param day optional: the day
+     * This function updates _date with a new date from the given params. After _date is set with
+     * the new info, it calls _updateState, which will update all other variables using the new _date.
+     */
+    private _updateDate(
+        year?: number,
+        month?: number,
+        day?: number,
+        dateIn?: number | string
+    ) {
+        if (!dateIn) {
+            if (year && month) {
+                if (day) {
+                    this._date = utcToZonedTime(
+                        new Date(`${year}-${this._padMonth(month)}-${day}`),
+                        'UTC'
+                    )
+                } else {
+                    this._date = utcToZonedTime(
+                        new Date(`${year}-${this._padMonth(month)}-01`),
+                        'UTC'
+                    )
+                }
+            }
+        } else {
+            this._date = utcToZonedTime(new Date(this.dateIn!), 'UTC')
+        }
+
+        this._updateState()
+    }
+    /**
+     * This function updates all relevant private variables/state. This is called in _updateDate, and
+     * relies on the new Date to be set in that function.
+     */
+    private _updateState() {
+        this._year = this._date.getFullYear()
+        this._currentDay = this._currentDate.getDate()
+        this._daysInMonth = getDaysInMonth(this._date)
+        this._daysInMonthArr = []
+        this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
+        this._nextDaysToShow = this._findNextDaysToShow()
+        this._month = this._date.getMonth() + 1
+        this._fillDaysInMonthArr()
+    }
+
     //* Handle date in - all the state needs to be based off of the same time (date-in, or date now)
     private _setStateWithDateIn() {
         // set all private vars to use the new datein. Is there a better way?
         if (!this.dateIn) return
         //* Convert the date to be UTC so that we don't get timezone issues.
-        this._date = utcToZonedTime(new Date(this.dateIn), 'UTC')
-        this._month = this._date.getMonth() + 1
-        this._year = this._date.getFullYear()
-        this._currentDay = this._currentDate.getDate()
-        this._daysInMonth = getDaysInMonth(this._date)
-        // this._nextMonth = this._month + 1 > 12 ? 1 : this._month + 1
-        this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
-
-        this._fillDaysInMonthArr()
+        // this._date = utcToZonedTime(new Date(this.dateIn), 'UTC')
+        this._updateDate(undefined, undefined, undefined, this.dateIn)
     }
 
     private _fillDaysInMonthArr() {
@@ -199,6 +252,13 @@ export class RuxCalendar {
         //return an array from the keys so that we can map thru it in the JSX
         return Array.from(Object.keys(this._prevDaysToShow))
     }
+
+    private _handleSelectChange(e: Event) {
+        console.log('heard select change')
+        const tar = e.target as HTMLSelectElement
+        this._month = parseInt(tar.value)
+    }
+
     render() {
         return (
             <Host>
@@ -211,28 +271,27 @@ export class RuxCalendar {
                                 size="34px"
                             ></rux-icon>
                             <div class="month-picker">
-                                <rux-select id="displayed-month" size="small">
-                                    <rux-option
-                                        label={
-                                            monthMap[
-                                                this
-                                                    ._month as keyof typeof monthMap
-                                            ]
-                                        }
-                                        value={this._month.toString()}
-                                        {...Object.keys(monthMap).map(
-                                            (value) => {
-                                                console.log('running')
-                                                return (
-                                                    <rux-option
-                                                        label={`${value}`}
-                                                        value={`${value}`}
-                                                    ></rux-option>
-                                                )
-                                            }
-                                        )}
-                                    ></rux-option>
-                                </rux-select>
+                                <select
+                                    id="displayed-month"
+                                    onChange={this._handleSelectChange}
+                                    // size="small"
+                                    // value={this._month.toString()}
+                                >
+                                    {Object.keys(monthMap).map((key) => {
+                                        return (
+                                            <option
+                                                label={monthMap[parseInt(key)]}
+                                                value={key}
+                                                selected={
+                                                    this._month ===
+                                                    parseInt(key)
+                                                        ? true
+                                                        : false
+                                                }
+                                            ></option>
+                                        )
+                                    })}
+                                </select>
                             </div>
                             <div class="year-picker">
                                 <rux-select size="small">
@@ -329,7 +388,7 @@ export class RuxCalendar {
                                 </rux-day>
                             )
                         })}
-                        {this._findNextDaysToShow().map((dayOfMonth) => {
+                        {this._nextDaysToShow.map((dayOfMonth) => {
                             return (
                                 <rux-day class="past-future-day">
                                     {dayOfMonth}
