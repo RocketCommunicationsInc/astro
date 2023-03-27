@@ -44,13 +44,13 @@ export class RuxCalendar {
       ? Using utcToZonedTime on default state (date-in not provided) because I _think_ without it, when
       ? it's the first of a month, we'll have that timezone issue where it'll say it's the prev month still.
     */
-    private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
-    //* This _date state conrtols what each compuatation uses. If the month updates, it'll update
+
+    //* This _date state controls the date that each compuatation uses. If the month updates, it'll update
     //* this._date with that new month. Same for year.
     @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
         : utcToZonedTime(new Date(Date.now()), 'UTC')
-    @State() _month: number = this._date.getMonth() + 1
+    @State() _month: number = this._date.getMonth() + 1 //getMonth returns a 0 indexed num, so we add 1
 
     @Watch('_month')
     handleMonthChange() {
@@ -58,16 +58,14 @@ export class RuxCalendar {
         this._updateDate(this._year, this._month)
     }
 
-    // private _month: number = this._date.getMonth() + 1 //+ 1 because getMonth returns 0 indexed array
+    private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
     private _year: number = this._date.getFullYear()
     private _currentDay: number = this._currentDate.getDate()
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
-    // private _nextMonth: number = this._month + 1 > 12 ? 1 : this._month + 1
     private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
     private _prevDaysToShow: { [key: string]: any } = {}
     private _nextDaysToShow: Array<Number> = this._findNextDaysToShow()
-    // private _selectedMonth: number | string | null = this._month
 
     connectedCallback() {
         this._fillDaysInMonthArr()
@@ -94,25 +92,18 @@ export class RuxCalendar {
      * This function updates _date with a new date from the given params. After _date is set with
      * the new info, it calls _updateState, which will update all other variables using the new _date.
      */
-    private _updateDate(
-        year?: number,
-        month?: number,
-        day?: number,
-        dateIn?: number | string
-    ) {
-        if (!dateIn) {
-            if (year && month) {
-                if (day) {
-                    this._date = utcToZonedTime(
-                        new Date(`${year}-${this._padMonth(month)}-${day}`),
-                        'UTC'
-                    )
-                } else {
-                    this._date = utcToZonedTime(
-                        new Date(`${year}-${this._padMonth(month)}-01`),
-                        'UTC'
-                    )
-                }
+    private _updateDate(year?: number, month?: number, day?: number) {
+        if (year && month) {
+            if (day) {
+                this._date = utcToZonedTime(
+                    new Date(`${year}-${this._padMonth(month)}-${day}`),
+                    'UTC'
+                )
+            } else {
+                this._date = utcToZonedTime(
+                    new Date(`${year}-${this._padMonth(month)}-01`),
+                    'UTC'
+                )
             }
         } else {
             this._date = utcToZonedTime(new Date(this.dateIn!), 'UTC')
@@ -141,7 +132,7 @@ export class RuxCalendar {
         if (!this.dateIn) return
         //* Convert the date to be UTC so that we don't get timezone issues.
         // this._date = utcToZonedTime(new Date(this.dateIn), 'UTC')
-        this._updateDate(undefined, undefined, undefined, this.dateIn)
+        this._updateDate()
     }
 
     private _fillDaysInMonthArr() {
