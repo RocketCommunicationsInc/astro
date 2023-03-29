@@ -8,20 +8,28 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for January', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(31)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(31))
         })
         test('Shows January as month', async ({ page }) => {
-            await expect(page.getByText('January')).toBeVisible()
+            await page.locator('rux-calendar').locator('#month-picker')
+                .textContent
         })
-        // Need to test that the days are put under the correct heading. ie, if the first is a Monday, it's under Monday not Tuesday
+        // Need to test that the days are put under the correct heading. ie, if the first is a Monday (1), it's under Monday not Tuesday (2)
         test('Days are in correct spot', async ({ page }) => {
+            //because we're always filling out the 7x6 grid, we can't assert just the first rux-day.
+            // It needs to be the first rux-day that doesn't have the 'past-future-day' class.
             //grid-column: 1 / auto === SUN
             //First of Jan is a Sun
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
-            await expect(firstDay).toHaveCSS('grid-column', '1 / auto')
+            //Select all current month's days
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            const first = days.first()
+            await expect(first).toHaveCSS('grid-column', '1 / auto')
         })
     })
     test.describe('February', () => {
@@ -259,6 +267,21 @@ test.describe('Calendar', () => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal.locator('rux-day').first()
             await expect(firstDay).toHaveCSS('grid-column', '6 / auto')
+        })
+    })
+    test.describe('Month picker', () => {
+        test.beforeEach(async ({ page }) => {
+            const template = `<rux-calendar></rux-calendar>`
+            await page.setContent(template)
+        })
+        test('Month picker shows correct month by default', async ({
+            page,
+        }) => {
+            const monthPicker = page.locator('#month-picker').locator('select')
+            const currentMonth = new Date(Date.now()).getMonth() + 1
+            const selectValue = await monthPicker.inputValue()
+            //assert that month picker displays the current month. compare vals
+            expect(selectValue).toEqual(currentMonth.toString())
         })
     })
 })

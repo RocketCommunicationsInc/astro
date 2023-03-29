@@ -50,6 +50,7 @@ export class RuxCalendar {
     @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
         : utcToZonedTime(new Date(Date.now()), 'UTC')
+
     @State() _month: number = this._date.getMonth() + 1 //getMonth returns a 0 indexed num, so we add 1
 
     @Watch('_month')
@@ -71,6 +72,10 @@ export class RuxCalendar {
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
         this._handleSelectChange = this._handleSelectChange.bind(this)
+
+        console.log(this._year, 'year in CC')
+        console.log(this._prevDaysToShow, 'prevDays in CC')
+        console.log(this._nextDaysToShow, 'next days in CC')
     }
 
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
@@ -85,12 +90,11 @@ export class RuxCalendar {
     }
 
     /**
-     *
+     * This function updates _date with a new date from the given params. After _date is set with
+     * the new info, it calls _updateState, which will update all other variables using the new _date.
      * @param year the year
      * @param month the month
      * @param day optional: the day
-     * This function updates _date with a new date from the given params. After _date is set with
-     * the new info, it calls _updateState, which will update all other variables using the new _date.
      */
     private _updateDate(year?: number, month?: number, day?: number) {
         if (year && month) {
@@ -114,6 +118,7 @@ export class RuxCalendar {
     /**
      * This function updates all relevant private variables/state. This is called in _updateDate, and
      * relies on the new Date to be set in that function.
+     * This function should not be called by itself, since it's called in _updateDate.
      */
     private _updateState() {
         this._year = this._date.getFullYear()
@@ -126,7 +131,10 @@ export class RuxCalendar {
         this._fillDaysInMonthArr()
     }
 
-    //* Handle date in - all the state needs to be based off of the same time (date-in, or date now)
+    /**
+     * Handle date in - all the state needs to be based off of the same time (date-in, or date now)
+     * @returns returns early if this._dateIn is falsey.
+     */
     private _setStateWithDateIn() {
         // set all private vars to use the new datein. Is there a better way?
         if (!this.dateIn) return
@@ -135,6 +143,9 @@ export class RuxCalendar {
         this._updateDate()
     }
 
+    /**
+     * Util for filling in this._daysInMonthArr. Accounts for the 0 index.
+     */
     private _fillDaysInMonthArr() {
         this._daysInMonthArr = []
         //daysInMonth is a 0 indexed arr
@@ -145,7 +156,7 @@ export class RuxCalendar {
     }
 
     /**
-     *
+     * Determines the days to show from the next month, if any.
      * @returns An array of the correct amount of days to render to fill out the 6 week grid.
      */
     private _findNextDaysToShow() {
@@ -163,7 +174,7 @@ export class RuxCalendar {
             // this only happens when the first day of the month is a Friday (for months with 31 days) or sat (for months with 30)
             // get first day of month, and the number of days in the month.
             // if first day of month is fri (5) and there are 31 days, that'll bleed into the 6th week.
-            // same with FDoM being a sat (6) and having 30 days in the month.
+            // same with first day of month being a sat (6) and having 30 days in the month.
 
             let dateFromFirstDay = utcToZonedTime(
                 new Date(`${this._year}-${this._padMonth(this._month)}-01`),
@@ -193,7 +204,7 @@ export class RuxCalendar {
         return returnArr
     }
     /**
-     *
+     * Util for creating new dates, where the month needs to be prefixed by a '0' if less than 10.
      * @param monthNum the month number to pad
      * @returns a string that concatenates a '0' to the month if the month is less than 9. Example: 9 -> 09
      */
@@ -206,7 +217,7 @@ export class RuxCalendar {
     }
 
     /**
-     *
+     * Determines the days from the previous month to show on the calendar, if any.
      * @param monthNum the month number, 1-12
      * @returns An array from the keys in the _prevDaysToShow variable. Used to map thru and render rux-days
      */
@@ -217,18 +228,28 @@ export class RuxCalendar {
 
         //! update: yeah it's way too complex for no good reason, afaict. If you remove the
         //! inline grid styles from where this function is being called, everything still works.
-        const newDate = utcToZonedTime(
-            new Date(`${this._year}-${this._padMonth(monthNum)}-01`),
-            'UTC'
-        )
-        //try clearing it
-        this._prevDaysToShow = {}
-        // Stop if the last day of the month in prevMonth is a Saturday (5). This means that the first day of
-        // the curent month will be Sunday, so we won't be rendering anything from the prevMonth.
-        if (newDate.getDay() === 5) return
-        const lastDayOfWeek = lastDayOfMonth(newDate).getDay()
 
-        //Fill in our _prevDaysToShow with keys being the day of the week (0-5) and values being the
+        //* If the current month is 01, then the prev month is 12, and the year is this._year -1.
+        let newDate: Date
+        if (monthNum === 12) {
+            newDate = utcToZonedTime(
+                new Date(`${this._year - 1}-${this._padMonth(monthNum)}-01`),
+                'UTC'
+            )
+        } else {
+            console.log('in else, prev month is not 12, its: ', monthNum)
+            newDate = utcToZonedTime(
+                new Date(`${this._year}-${this._padMonth(monthNum)}-01`),
+                'UTC'
+            )
+        }
+        this._prevDaysToShow = {}
+        //* Stop if the last day of the month in prevMonth is a Saturday (6). This means that the first day of
+        //* the curent month will be Sunday, so we won't be rendering anything from the prevMonth.
+        const lastDayOfWeek = lastDayOfMonth(newDate).getDay()
+        if (lastDayOfWeek === 6) return
+
+        // Fill in our _prevDaysToShow with keys being the day of the week (0-6) and values being the
         // day of the month (24, 25, ect)
         for (let i = 0; i <= lastDayOfWeek; i++) {
             // get the last day of the month.
@@ -244,8 +265,11 @@ export class RuxCalendar {
         return Array.from(Object.keys(this._prevDaysToShow))
     }
 
+    /**
+     * Updates this._month when the month picker value changes.
+     * @param e The select change event.
+     */
     private _handleSelectChange(e: Event) {
-        console.log('heard select change')
         const tar = e.target as HTMLSelectElement
         this._month = parseInt(tar.value)
     }
@@ -262,27 +286,21 @@ export class RuxCalendar {
                                 size="34px"
                             ></rux-icon>
                             <div class="month-picker">
-                                <select
-                                    id="displayed-month"
-                                    onChange={this._handleSelectChange}
-                                    // size="small"
-                                    // value={this._month.toString()}
+                                <rux-select
+                                    id="month-picker"
+                                    onRuxchange={this._handleSelectChange}
+                                    size="small"
+                                    value={this._month.toString()}
                                 >
                                     {Object.keys(monthMap).map((key) => {
                                         return (
-                                            <option
+                                            <rux-option
                                                 label={monthMap[parseInt(key)]}
                                                 value={key}
-                                                selected={
-                                                    this._month ===
-                                                    parseInt(key)
-                                                        ? true
-                                                        : false
-                                                }
-                                            ></option>
+                                            ></rux-option>
                                         )
                                     })}
-                                </select>
+                                </rux-select>
                             </div>
                             <div class="year-picker">
                                 <rux-select size="small">
