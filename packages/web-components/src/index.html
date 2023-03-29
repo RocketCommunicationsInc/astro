@@ -30,6 +30,9 @@
                 <rux-datepicker></rux-datepicker>
             </div>
             <div>
+                <input type="date" />
+            </div>
+            <div>
                 <h3>Calendar</h3>
                 <p style="width: 500px">
                     This calendar uses the 'date-in' prop, which allows the user
@@ -37,7 +40,7 @@
                     change this prop, and you can see the days and month change
                     on the calendar.
                 </p>
-                <rux-calendar id="cal" date-in="2023-01-01T00:00:00.000Z">
+                <rux-calendar id="cal" date-in="2020-09-01T00:00:00.000Z">
                 </rux-calendar>
                 <div
                     style="
@@ -68,6 +71,16 @@
           <rux-button secondary>Cancel</rux-button>
           <rux-button>Submit</rux-button>
         </rux-button-group> -->
+                </rux-calendar>
+            </div>
+            <div>
+                <h3>Min and Max</h3>
+                <p>This uses min and max props</p>
+                <p>
+                    This makes the year only go as far back or forward as
+                    specified
+                </p>
+                <rux-calendar id="cal" min="2021-12-01" max="2024-02-01">
                 </rux-calendar>
             </div>
         </div>
@@ -150,6 +163,9 @@
             })
             document.addEventListener('ruxdayselected', (e) => {
                 console.log(e.detail)
+            })
+            document.addEventListener('ruxchange', (e) => {
+                console.log('rux change')
             })
         </script>
     </body>

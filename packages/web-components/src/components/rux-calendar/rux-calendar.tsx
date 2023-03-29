@@ -28,6 +28,17 @@ const monthMap: MonthMap = {
 })
 export class RuxCalendar {
     @Element() el!: HTMLRuxCalendarElement
+
+    /**
+     * Max date that the calendar will go to. Needs to be a valid date string.
+     */
+    @Prop() max?: string
+
+    /**
+     * Min date that the calendar will go to. Needs to be a valid date string.
+     */
+    @Prop() min?: string
+
     /**
      * Option to give the calendar a specfic month/year
      */
@@ -52,15 +63,29 @@ export class RuxCalendar {
         : utcToZonedTime(new Date(Date.now()), 'UTC')
 
     @State() _month: number = this._date.getMonth() + 1 //getMonth returns a 0 indexed num, so we add 1
+    @State() _year: number = this._date.getFullYear()
 
     @Watch('_month')
-    handleMonthChange() {
+    handleMonthWatch() {
         console.log('heard month change')
         this._updateDate(this._year, this._month)
     }
 
+    @Watch('_year')
+    handleYearWatch() {
+        console.log('heard year change in WATCH')
+        this._updateDate(this._year, this._month)
+    }
+
+    //? Might need later when/if we tackle dynamic min/max changes
+    // @Watch('min')
+    // @Watch('max')
+    // handleMinMaxChange() {
+    //     console.log('heard min or max change')
+    // }
+
     private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
-    private _year: number = this._date.getFullYear()
+    // private _year: number = this._date.getFullYear()
     private _currentDay: number = this._currentDate.getDate()
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
@@ -68,14 +93,23 @@ export class RuxCalendar {
     private _prevDaysToShow: { [key: string]: any } = {}
     private _nextDaysToShow: Array<Number> = this._findNextDaysToShow()
 
+    //Default the max/min Dates to be 10 years in either direciton.
+    private _maxDate: Date = this.max
+        ? new Date(this.max)
+        : new Date(`${this._date.getFullYear() + 11}-01-01`)
+    private _minDate: Date = this.min
+        ? new Date(this.min)
+        : new Date(`${this._date.getFullYear() - 9}-01-01`)
+    private _maxYearArr: Array<Number> = []
+    private _minYearArr: Array<Number> = []
+
     connectedCallback() {
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
-        this._handleSelectChange = this._handleSelectChange.bind(this)
+        this._handleMonthChange = this._handleMonthChange.bind(this)
+        this._handleYearChange = this._handleYearChange.bind(this)
 
-        console.log(this._year, 'year in CC')
-        console.log(this._prevDaysToShow, 'prevDays in CC')
-        console.log(this._nextDaysToShow, 'next days in CC')
+        this._handleYears(this._maxDate, this._minDate)
     }
 
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
@@ -87,6 +121,25 @@ export class RuxCalendar {
         days.forEach((day) => {
             day.removeAttribute('selected')
         })
+    }
+
+    private _handleYears(maxDate: Date | undefined, minDate: Date | undefined) {
+        //if min or max date's aren't given, then use the default. Need to code that still
+        if (!maxDate || !minDate) return
+
+        //maxDiff is the difference in years from the current/date-in date, to the max date.
+        const maxDiff = maxDate.getFullYear() - this._date.getFullYear()
+        const minDiff = this._date.getFullYear() - minDate.getFullYear()
+
+        //fill in arrays
+        for (let i = 1; i <= maxDiff; i++) {
+            this._maxYearArr.push(this._date.getFullYear() + i)
+        }
+        for (let i = 1; i <= minDiff; i++) {
+            this._minYearArr.push(this._date.getFullYear() - i)
+        }
+        //Need to reverse this array so that it shows up in the correct order inside the select.
+        this._minYearArr.reverse()
     }
 
     /**
@@ -229,7 +282,7 @@ export class RuxCalendar {
         //! update: yeah it's way too complex for no good reason, afaict. If you remove the
         //! inline grid styles from where this function is being called, everything still works.
 
-        //* If the current month is 01, then the prev month is 12, and the year is this._year -1.
+        //* If the current month is 01, then the prev month is 12, and the year is this._year-1.
         let newDate: Date
         if (monthNum === 12) {
             newDate = utcToZonedTime(
@@ -237,7 +290,6 @@ export class RuxCalendar {
                 'UTC'
             )
         } else {
-            console.log('in else, prev month is not 12, its: ', monthNum)
             newDate = utcToZonedTime(
                 new Date(`${this._year}-${this._padMonth(monthNum)}-01`),
                 'UTC'
@@ -269,11 +321,15 @@ export class RuxCalendar {
      * Updates this._month when the month picker value changes.
      * @param e The select change event.
      */
-    private _handleSelectChange(e: Event) {
+    private _handleMonthChange(e: Event) {
         const tar = e.target as HTMLSelectElement
         this._month = parseInt(tar.value)
     }
 
+    private _handleYearChange(e: Event) {
+        const tar = e.target as HTMLSelectElement
+        this._year = parseInt(tar.value)
+    }
     render() {
         return (
             <Host>
@@ -288,7 +344,7 @@ export class RuxCalendar {
                             <div class="month-picker">
                                 <rux-select
                                     id="month-picker"
-                                    onRuxchange={this._handleSelectChange}
+                                    onRuxchange={this._handleMonthChange}
                                     size="small"
                                     value={this._month.toString()}
                                 >
@@ -303,13 +359,31 @@ export class RuxCalendar {
                                 </rux-select>
                             </div>
                             <div class="year-picker">
-                                <rux-select size="small">
+                                <rux-select
+                                    size="small"
+                                    value={this._year.toString()}
+                                    onRuxchange={this._handleYearChange}
+                                >
+                                    {this._minYearArr.map((year) => {
+                                        return (
+                                            <rux-option
+                                                label={year.toString()}
+                                                value={year.toString()}
+                                            ></rux-option>
+                                        )
+                                    })}
                                     <rux-option
                                         label={this._year.toString()}
                                         value={this._year.toString()}
-                                    >
-                                        {this._year}
-                                    </rux-option>
+                                    ></rux-option>
+                                    {this._maxYearArr.map((year) => {
+                                        return (
+                                            <rux-option
+                                                label={year.toString()}
+                                                value={year.toString()}
+                                            ></rux-option>
+                                        )
+                                    })}
                                 </rux-select>
                             </div>
                             <rux-icon

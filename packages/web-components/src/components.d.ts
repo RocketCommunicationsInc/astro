@@ -79,6 +79,14 @@ export namespace Components {
           * Option to give the calendar a specfic month/year
          */
         "dateIn"?: string | number;
+        /**
+          * Max date that the calendar will go to. Needs to be a valid date string.
+         */
+        "max"?: string;
+        /**
+          * Min date that the calendar will go to. Needs to be a valid date string.
+         */
+        "min"?: string;
     }
     interface RuxCard {
     }
@@ -20697,6 +20705,14 @@ declare namespace LocalJSX {
           * Option to give the calendar a specfic month/year
          */
         "dateIn"?: string | number;
+        /**
+          * Max date that the calendar will go to. Needs to be a valid date string.
+         */
+        "max"?: string;
+        /**
+          * Min date that the calendar will go to. Needs to be a valid date string.
+         */
+        "min"?: string;
     }
     interface RuxCard {
     }
