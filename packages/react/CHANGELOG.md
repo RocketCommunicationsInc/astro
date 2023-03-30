@@ -1,5 +1,13 @@
 # @astrouxds/react
 
+## 7.9.2
+
+### Patch Changes
+
+#### Timeline
+
+- Fixed an issue where data labels would repeat when crossing day light savings time thresholds
+
 ## 7.9.1
 
 ### Patch Changes
