@@ -1,12 +1,20 @@
 # @astrouxds/angular
 
+## 7.9.2
+
+### Patch Changes
+
+#### Timeline
+
+- Fixed an issue where data labels would repeat when crossing day light savings time thresholds
+
 ## 7.9.1
 
 ### Patch Changes
 
 #### React
 
--  Revert treeshaking for react in order to fix rux-icon not working in create-react-apps.
+- Revert treeshaking for react in order to fix rux-icon not working in create-react-apps.
 
 ## 7.9.0
 
