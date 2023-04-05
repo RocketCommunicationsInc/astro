@@ -58,6 +58,7 @@ export class RuxCalendar {
 
     //* This _date state controls the date that each compuatation uses. If the month updates, it'll update
     //* this._date with that new month. Same for year.
+    //? Could we add a watch to this._date that will run the updateDate/State funcs?
     @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
         : utcToZonedTime(new Date(Date.now()), 'UTC')
@@ -90,6 +91,7 @@ export class RuxCalendar {
     private _daysInMonth: number = getDaysInMonth(this._date)
     private _daysInMonthArr: Array<number> = []
     private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
+    private _nextMonth: number = this._month + 1 >= 13 ? 1 : this._month + 1
     private _prevDaysToShow: { [key: string]: any } = {}
     private _nextDaysToShow: Array<Number> = this._findNextDaysToShow()
 
@@ -111,7 +113,19 @@ export class RuxCalendar {
 
         this._handleYears(this._maxDate, this._minDate)
     }
-
+    componentDidLoad() {
+        // attach event listeners to back and forward month arrows
+        this.el
+            .shadowRoot!.querySelector('#backward-month')
+            ?.addEventListener('click', () => {
+                this._handleBackwardArrow()
+            })
+        this.el
+            .shadowRoot!.querySelector('#forward-month')
+            ?.addEventListener('click', () => {
+                this._handleForwardArrow()
+            })
+    }
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
     //? what kind of side effects can this have? What other times will componentWillUpdate fire?
     //? Might become an issue when we use the month/year picker to change month/year?
@@ -179,6 +193,7 @@ export class RuxCalendar {
         this._daysInMonth = getDaysInMonth(this._date)
         this._daysInMonthArr = []
         this._prevMonth = this._month - 1 < 1 ? 12 : this._month - 1
+        this._nextMonth = this._month + 1 >= 13 ? 1 : this._month + 1
         this._nextDaysToShow = this._findNextDaysToShow()
         this._month = this._date.getMonth() + 1
         this._fillDaysInMonthArr()
@@ -330,6 +345,19 @@ export class RuxCalendar {
         const tar = e.target as HTMLSelectElement
         this._year = parseInt(tar.value)
     }
+
+    private _handleBackwardArrow() {
+        // if it's 12, go to one,ect.
+        // increase date by 1 month, set state
+        if (this._prevMonth === 12) {
+            this._year = this._year - 1
+        }
+        this._updateDate(this._year, this._prevMonth)
+    }
+    private _handleForwardArrow() {
+        if (this._nextMonth === 1) this._year = this._year + 1
+        this._updateDate(this._year, this._nextMonth)
+    }
     render() {
         return (
             <Host>
@@ -340,6 +368,7 @@ export class RuxCalendar {
                                 icon="keyboard-arrow-left"
                                 class="arrow-left-icon"
                                 size="34px"
+                                id="backward-month"
                             ></rux-icon>
                             <div class="month-picker">
                                 <rux-select
@@ -390,6 +419,7 @@ export class RuxCalendar {
                                 icon="keyboard-arrow-right"
                                 class="arrow-right-icon"
                                 size="34px"
+                                id="forward-month"
                             ></rux-icon>
                         </slot>
                     </div>
