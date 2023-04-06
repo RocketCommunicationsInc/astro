@@ -16,19 +16,14 @@ test.describe('Calendar', () => {
                 .then((len) => expect(len).toEqual(31))
         })
         test('Shows January as month', async ({ page }) => {
-            await page.locator('rux-calendar').locator('#month-picker')
-                .textContent
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('1')
         })
-        // Need to test that the days are put under the correct heading. ie, if the first is a Monday (1), it's under Monday not Tuesday (2)
         test('Days are in correct spot', async ({ page }) => {
-            //because we're always filling out the 7x6 grid, we can't assert just the first rux-day.
-            // It needs to be the first rux-day that doesn't have the 'past-future-day' class.
-            //grid-column: 1 / auto === SUN
-            //First of Jan is a Sun
             const cal = page.locator('rux-calendar')
-            //Select all current month's days
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-future-day)').first()
             const first = days.first()
+            //First day of 2023-01 is a Sunday
             await expect(first).toHaveCSS('grid-column', '1 / auto')
         })
     })
@@ -39,23 +34,23 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for February', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            let relevantDays: any = []
-            await days.evaluateAll((days) => {
-                return days.filter(
-                    (day) => !day.classList.contains('past-present-day')
-                )
-            })
-            console.log(days, 'days after eval')
-            await expect(relevantDays.length).toEqual(28)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(28))
         })
         test('Shows February as month', async ({ page }) => {
-            await expect(page.getByText('February')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('2')
         })
         test('Days are in correct spot', async ({ page }) => {
             // First of Feb 2023 is a Wed
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '4 / auto')
         })
         test('Shows correct days for February during a leap year', async ({
@@ -64,9 +59,12 @@ test.describe('Calendar', () => {
             const leapTemp = `<rux-calendar id="leap" date-in="2024-02-01T00:00:00.000Z"></rux-calendar>`
             await page.setContent(leapTemp)
             const cal = page.locator('#leap')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(29)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(29))
         })
     })
     test.describe('March', () => {
@@ -76,16 +74,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for March', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(31)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(31))
         })
         test('Shows March as month', async ({ page }) => {
-            await expect(page.getByText('March')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('3')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '4 / auto')
         })
     })
@@ -96,16 +100,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for April', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(30)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(30))
         })
         test('Shows April as month', async ({ page }) => {
-            await expect(page.getByText('April')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('4')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '7 / auto')
         })
     })
@@ -116,16 +126,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for May', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(31)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(31))
         })
         test('Shows May as month', async ({ page }) => {
-            await expect(page.getByText('May')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('5')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '2 / auto')
         })
     })
@@ -136,16 +152,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for June', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(30)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(30))
         })
         test('Shows June as month', async ({ page }) => {
-            await expect(page.getByText('June')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('6')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '5 / auto')
         })
     })
@@ -156,16 +178,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for July', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(31)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(31))
         })
         test('Shows July as month', async ({ page }) => {
-            await expect(page.getByText('July')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('7')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '7 / auto')
         })
     })
@@ -176,16 +204,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for August', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(31)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(31))
         })
         test('Shows August as month', async ({ page }) => {
-            await expect(page.getByText('August')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('8')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '3 / auto')
         })
     })
@@ -196,16 +230,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for September', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(30)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(30))
         })
         test('Shows September as month', async ({ page }) => {
-            await expect(page.getByText('September')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('9')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '6 / auto')
         })
     })
@@ -216,16 +256,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for October', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(31)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(31))
         })
         test('Shows October as month', async ({ page }) => {
-            await expect(page.getByText('October')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('10')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '1 / auto')
         })
     })
@@ -236,16 +282,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for November', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(30)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(30))
         })
         test('Shows November as month', async ({ page }) => {
-            await expect(page.getByText('November')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('11')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '4 / auto')
         })
     })
@@ -256,16 +308,22 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for December', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day')
-            const totalDays = await days.evaluateAll((days) => days.length)
-            expect(totalDays).toEqual(31)
+            const days = cal.locator('rux-day:not(.past-future-day)')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(31))
         })
         test('Shows December as month', async ({ page }) => {
-            await expect(page.getByText('December')).toBeVisible()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await expect(monthPicker).toHaveValue('12')
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const firstDay = cal.locator('rux-day').first()
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
             await expect(firstDay).toHaveCSS('grid-column', '6 / auto')
         })
     })
@@ -283,6 +341,120 @@ test.describe('Calendar', () => {
             //assert that month picker displays the current month. compare vals
             expect(selectValue).toEqual(currentMonth.toString())
         })
+        test('Month picker can change the month correctly', async ({
+            page,
+        }) => {
+            // Choose december, test if days are in correct spot for december.
+            //? This is kind of weird - when we reach 2024 this will fail because december will have it's days in different spots.
+            const monthPicker = page.locator('#month-picker').locator('select')
+            await monthPicker.selectOption('12')
+            const selectValue = await monthPicker.inputValue()
+            expect(selectValue).toEqual('12')
+            const cal = page.locator('rux-calendar')
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
+            await expect(firstDay).toHaveCSS('grid-column', '6 / auto')
+        })
+    })
+    test.describe('Year picker', () => {
+        test.beforeEach(async ({ page }) => {
+            const template = `<rux-calendar></rux-calendar>`
+            await page.setContent(template)
+        })
+        test('Year picker shows correct year by default', async ({ page }) => {
+            const yearPicker = page.locator('#year-picker').locator('select')
+            const currentYear = new Date(Date.now()).getFullYear()
+            const yearValue = await yearPicker.inputValue()
+            expect(yearValue).toEqual(currentYear.toString())
+        })
+        test('Year picker can correctly switch the calendar year', async ({
+            page,
+        }) => {
+            const yearPicker = page.locator('#year-picker').locator('select')
+            await yearPicker.selectOption('2030')
+            const yearValue = await yearPicker.inputValue()
+            expect(yearValue).toEqual('2030')
+            const month = new Date(Date.now()).getMonth() + 1
+            const newDate = new Date(`2030-${month}-01`)
+            const dayOfWeek = newDate.getDay() + 1
+
+            const cal = page.locator('rux-calendar')
+            const firstDay = cal
+                .locator('rux-day:not(.past-future-day)')
+                .first()
+            await expect(firstDay).toHaveCSS(
+                'grid-column',
+                `${dayOfWeek} / auto`
+            )
+        })
+    })
+    test.describe('Month Arrows', () => {
+        test.beforeEach(async ({ page }) => {
+            const template = `<rux-calendar></rux-calendar>`
+            await page.setContent(template)
+        })
+        test('Forward arrow moves month forward 1', async ({ page }) => {
+            const cal = page.locator('rux-calendar')
+            const forwardArrow = cal.locator('#forward-month')
+            const monthPicker = page.locator('#month-picker').locator('select')
+            const currDate = new Date(Date.now())
+            const currMonth = currDate.getMonth() + 1
+            let monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe(currMonth.toString())
+            await forwardArrow.click()
+            await page.waitForChanges()
+            monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe((currMonth + 1).toString())
+        })
+        test('Backward arrow moves month backward 1', async ({ page }) => {
+            const cal = page.locator('rux-calendar')
+            const backwardArrow = cal.locator('#backward-month')
+            const monthPicker = page.locator('#month-picker').locator('select')
+            const currDate = new Date(Date.now())
+            const currMonth = currDate.getMonth() + 1
+            let monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe(currMonth.toString())
+            await backwardArrow.click()
+            await page.waitForChanges()
+            monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe((currMonth - 1).toString())
+        })
+    })
+    test.describe('Date in prop', () => {
+        test('Date in sets calendar date', async ({ page }) => {
+            const template = `<rux-calendar date-in="2023-01-01"></rux-calendar>`
+            page.setContent(template)
+            const monthPicker = page.locator('#month-picker').locator('select')
+            const yearPicker = page.locator('#year-picker').locator('select')
+            const monthVal = await monthPicker.inputValue()
+            const yearVal = await yearPicker.inputValue()
+            expect(monthVal).toBe('1')
+            expect(yearVal).toBe('2023')
+        })
+        test('Date in prop can be dynamically changed', async ({ page }) => {
+            const template = `<rux-calendar></rux-calendar>`
+            page.setContent(template)
+
+            const newDate = new Date(Date.now())
+            const month = newDate.getMonth() + 1
+            const year = newDate.getFullYear()
+            const monthPicker = page.locator('#month-picker').locator('select')
+            const yearPicker = page.locator('#year-picker').locator('select')
+            let monthVal = await monthPicker.inputValue()
+            let yearVal = await yearPicker.inputValue()
+            expect(monthVal).toBe(month.toString())
+            expect(yearVal).toBe(year.toString())
+            const cal = page.locator('rux-calendar')
+            await cal.evaluate((cal) =>
+                cal.setAttribute('date-in', '2023-01-01')
+            )
+            await page.waitForChanges()
+            monthVal = await monthPicker.inputValue()
+            yearVal = await yearPicker.inputValue()
+            expect(monthVal).toBe('1')
+            expect(yearVal).toBe('2023')
+        })
     })
 })
 
@@ -292,9 +464,6 @@ test.describe('Calendar', () => {
   * Date in prop can dynamically change and year/month/days will update correclty
   * date-in can recieve an epoch num date or a date string
   * the rux-day that is today IRL gets the today class. That class does not exisit on other months/years
-  * Leap years are accounted for
-  *   * Days in right spot, correct amount of days in Feb
-  * Each month has correct amount of days
   * Each month has the previous days, current month days, and next month days in the correct location
   *   * as well as correct amount of prev, curr and next days.
 

@@ -392,6 +392,7 @@ export class RuxCalendar {
                                     size="small"
                                     value={this._year.toString()}
                                     onRuxchange={this._handleYearChange}
+                                    id="year-picker"
                                 >
                                     {this._minYearArr.map((year) => {
                                         return (
