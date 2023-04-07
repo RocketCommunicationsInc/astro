@@ -420,6 +420,68 @@ test.describe('Calendar', () => {
             monthPickerValue = await monthPicker.inputValue()
             expect(monthPickerValue).toBe((currMonth - 1).toString())
         })
+        test('Year changes when backward arrow click and month is Jan', async ({
+            page,
+        }) => {
+            //If going back a month when month is currently Jan, the year should change as well.
+            const template = `<rux-calendar id="jan" date-in="01-01-2023"></rux-calendar>`
+            await page.setContent(template)
+            const cal = page.locator('#jan')
+            const backwardArrow = cal.locator('#backward-month')
+            let yearVal = await cal
+                .locator('#year-picker')
+                .locator('select')
+                .inputValue()
+            let monthVal = await cal
+                .locator('#month-picker')
+                .locator('select')
+                .inputValue()
+            expect(yearVal).toBe('2023')
+            expect(monthVal).toBe('1')
+            await backwardArrow.click()
+            await page.waitForChanges()
+            yearVal = await cal
+                .locator('#year-picker')
+                .locator('select')
+                .inputValue()
+            monthVal = await cal
+                .locator('#month-picker')
+                .locator('select')
+                .inputValue()
+            expect(yearVal).toBe('2022')
+            expect(monthVal).toBe('12')
+        })
+        test('Year changes when forward arrow is clicked and month is Dec', async ({
+            page,
+        }) => {
+            //If going forward a month when month is currently Dec, the year should change as well.
+            const template = `<rux-calendar id="dec" date-in="12-01-2022"></rux-calendar>`
+            await page.setContent(template)
+            const cal = page.locator('#dec')
+            const forwardArrow = cal.locator('#forward-month')
+            let yearVal = await cal
+                .locator('#year-picker')
+                .locator('select')
+                .inputValue()
+            let monthVal = await cal
+                .locator('#month-picker')
+                .locator('select')
+                .inputValue()
+            expect(yearVal).toBe('2022')
+            expect(monthVal).toBe('12')
+            await forwardArrow.click()
+            await page.waitForChanges()
+            yearVal = await cal
+                .locator('#year-picker')
+                .locator('select')
+                .inputValue()
+            monthVal = await cal
+                .locator('#month-picker')
+                .locator('select')
+                .inputValue()
+            expect(yearVal).toBe('2023')
+            expect(monthVal).toBe('1')
+        })
     })
     test.describe('Date in prop', () => {
         test('Date in sets calendar date', async ({ page }) => {
