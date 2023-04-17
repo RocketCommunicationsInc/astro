@@ -486,7 +486,7 @@ test.describe('Calendar', () => {
     test.describe('Date in prop', () => {
         test('Date in sets calendar date', async ({ page }) => {
             const template = `<rux-calendar date-in="2023-01-01"></rux-calendar>`
-            page.setContent(template)
+            await page.setContent(template)
             const monthPicker = page.locator('#month-picker').locator('select')
             const yearPicker = page.locator('#year-picker').locator('select')
             const monthVal = await monthPicker.inputValue()
@@ -496,7 +496,7 @@ test.describe('Calendar', () => {
         })
         test('Date in prop can be dynamically changed', async ({ page }) => {
             const template = `<rux-calendar></rux-calendar>`
-            page.setContent(template)
+            await page.setContent(template)
 
             const newDate = new Date(Date.now())
             const month = newDate.getMonth() + 1
@@ -517,14 +517,111 @@ test.describe('Calendar', () => {
             expect(monthVal).toBe('1')
             expect(yearVal).toBe('2023')
         })
+        test('Date in prop can be an epoch/unix time', async ({ page }) => {
+            //01-01-2023
+            const template = `<rux-calendar date-in="1672531200000"></rux-calendar>`
+            await page.setContent(template)
+            const monthPicker = page.locator('#month-picker').locator('select')
+            const yearPicker = page.locator('#year-picker').locator('select')
+            let monthVal = await monthPicker.inputValue()
+            let yearVal = await yearPicker.inputValue()
+            expect(monthVal).toBe('1')
+            expect(yearVal).toBe('2023')
+        })
+    })
+    test.describe('Past/Future days', () => {
+        test('Calendar always has the correct number of days', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar></rux-calendar>`
+            await page.setContent(template)
+            // Calendar should always have 42 days (7 days, 6 rows)
+            const cal = page.locator('rux-calendar')
+            const days = cal.locator('rux-day')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(42))
+        })
+        test('Calendar fills in grid when switching years', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar></rux-calendar>`
+            await page.setContent(template)
+            // Calendar should always have 42 days (7 days, 6 rows)
+            const cal = page.locator('rux-calendar')
+            const days = cal.locator('rux-day')
+            const yearPicker = page.locator('#year-picker').locator('select')
+            await yearPicker.selectOption('2030')
+            let yearVal = await yearPicker.inputValue()
+            expect(yearVal).toBe('2030')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(42))
+        })
+        test('Calendar fills in grid when switching months', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar date-in="12-01-2023></rux-calendar>`
+            await page.setContent(template)
+            // Calendar should always have 42 days (7 days, 6 rows)
+            const cal = page.locator('rux-calendar')
+            const days = cal.locator('rux-day')
+            const monthPicker = page.locator('#month-picker').locator('select')
+            //Select a diff month then current month
+            let monthPickerDefault:
+                | number
+                | string = await monthPicker.inputValue()
+            monthPickerDefault = Number(monthPickerDefault)
+            let setMonth = monthPickerDefault + 1
+            if (new Date(Date.now()).getMonth() + 1 === monthPickerDefault) {
+                if (monthPickerDefault === 12) setMonth = 1
+            }
+
+            await monthPicker.selectOption(setMonth.toString())
+            let monthVal = await monthPicker.inputValue()
+            expect(monthVal).toBe(setMonth.toString())
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(42))
+        })
+        //? Don't know how extensive we want to get - tests would need to be pretty specific for monht/year combos
+        test('Month has correct number of past and future days', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar date-in="03-01-2023"></rux-calendar>`
+            await page.setContent(template)
+            const cal = page.locator('rux-calendar')
+            const days = cal.locator('rux-day.past-future-day')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(11))
+        })
+        test('Leap year has correct number of past/future days', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar date-in="02-01-2024"></rux-calendar>`
+            await page.setContent(template)
+            const cal = page.locator('rux-calendar')
+            const days = cal.locator('rux-day.past-future-day')
+            await days
+                .evaluateAll((days) => {
+                    return days.length
+                })
+                .then((len) => expect(len).toEqual(13))
+        })
     })
 })
 
 //* Need to test:
 /*
-  * Date changes successfully with date-in prop
-  * Date in prop can dynamically change and year/month/days will update correclty
-  * date-in can recieve an epoch num date or a date string
   * the rux-day that is today IRL gets the today class. That class does not exisit on other months/years
   * Each month has the previous days, current month days, and next month days in the correct location
   *   * as well as correct amount of prev, curr and next days.

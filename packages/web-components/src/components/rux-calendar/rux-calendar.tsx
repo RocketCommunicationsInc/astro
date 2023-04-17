@@ -72,11 +72,10 @@ export class RuxCalendar {
     }
 
     @Watch('_year')
-    handleYearWatch(oldVal: number, newVal: number) {
+    handleYearWatch() {
         console.log('heard year change in WATCH')
         // this._handleYears(this._maxDate, this._minDate)
-        console.log(oldVal, ': oldVal', newVal, 'new Val')
-        // this._updateDate(this._year, this._month)
+        this._updateDate(this._year, this._month)
     }
 
     //? Might need later when/if we tackle dynamic min/max changes
@@ -368,6 +367,7 @@ export class RuxCalendar {
     }
 
     private _handleYearChange(e: Event) {
+        console.log('_handleyearChange()')
         const tar = e.target as HTMLSelectElement
         this._year = parseInt(tar.value)
     }

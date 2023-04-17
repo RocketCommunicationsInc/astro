@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Calendar</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <style>
+            section {
+                display: flex;
+                margin: auto;
+                align-items: center;
+                justify-content: space-around;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            .contain {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .more {
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 4rem;
+            }
+
+            code {
+                padding-bottom: 1rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section>
+            <div class="contain">
+                <h2>Default</h2>
+                <label>Markup</label>
+                <code>&lt;rux-calendar&gt;&lt;/rux-calendar&gt;</code>
+                <rux-calendar></rux-calendar>
+            </div>
+        </section>
+        <section>
+            <div class="contain">
+                <h2>With Date In</h2>
+                <code
+                    >&lt;rux-calendar
+                    date-in="01-01-2023"&gt;&lt;/rux-calendar&gt;</code
+                >
+                <rux-calendar date-in="01-01-2023"></rux-calendar>
+            </div>
+            <div class="contain">
+                <h2>With Date In as unix epoch</h2>
+                <code
+                    >&lt;rux-calendar
+                    date-in="1680566400000"&gt;&lt;/rux-calendar&gt;</code
+                >
+                <rux-calendar date-in="1680566400000"></rux-calendar>
+            </div>
+        </section>
+        <section>
+            <div class="contain">
+                <h2>With Min and Max</h2>
+                <code
+                    >&lt;rux-calendar min="01-01-2020"
+                    max="01-01-2025"&gt;&lt;/rux-calendar&gt;</code
+                >
+                <rux-calendar min="01-01-2020" max="01-01-2025"></rux-calendar>
+            </div>
+            <div class="contain" style="align-self: baseline">
+                <h2>Datepicker</h2>
+                <code>&lt;rux-datepicker&gt;&lt;/rux-datepicker&gt;</code>
+                <rux-datepicker></rux-datepicker>
+            </div>
+        </section>
+        <section>
+            <div class="more">
+                <h2>More To Come</h2>
+                <ul
+                    style="
+                        text-align: left;
+                        font-size: 1.25rem;
+                        text-decoration: none;
+                        list-style: none;
+                    "
+                >
+                    <li>
+                        Option to display Ordinal (Julian) dates with or without
+                        Gregorian dates
+                    </li>
+                    <li>Select multiple ranges</li>
+                    <li>Ability to disable specific dates/ranges</li>
+                </ul>
+                <div>
+                    <h2>Thoughts? Concerns? Suggestions?</h2>
+                    <p style="font-size: 1.25rem">
+                        We'd love to hear your feedback and ideas! Our github
+                        discussions are open at
+                        <a
+                            href="https://github.com/RocketCommunicationsInc/astro/discussions"
+                            >https://github.com/RocketCommunicationsInc/astro/discussions</a
+                        >
+                    </p>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
