@@ -565,7 +565,7 @@ test.describe('Calendar', () => {
         test('Calendar fills in grid when switching months', async ({
             page,
         }) => {
-            const template = `<rux-calendar date-in="12-01-2023></rux-calendar>`
+            const template = `<rux-calendar></rux-calendar>`
             await page.setContent(template)
             // Calendar should always have 42 days (7 days, 6 rows)
             const cal = page.locator('rux-calendar')
@@ -573,8 +573,8 @@ test.describe('Calendar', () => {
             const monthPicker = page.locator('#month-picker').locator('select')
             //Select a diff month then current month
             let monthPickerDefault:
-                | number
-                | string = await monthPicker.inputValue()
+                | string
+                | number = await monthPicker.inputValue()
             monthPickerDefault = Number(monthPickerDefault)
             let setMonth = monthPickerDefault + 1
             if (new Date(Date.now()).getMonth() + 1 === monthPickerDefault) {
