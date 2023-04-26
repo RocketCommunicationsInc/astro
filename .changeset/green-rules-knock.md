@@ -5,4 +5,4 @@
 "angular-workspace": patch
 ---
 
-Added Vite and similar bundler support.
+Added Vite and similar bundler support. Fixes an issue that prevented users from using lazy-loaded components in Vue when using Vite
