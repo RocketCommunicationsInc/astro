@@ -65,6 +65,7 @@ export const config: Config = {
     enableCache: true,
     extras: {
         appendChildSlotFix: true,
+        experimentalImportInjection: true,
     },
     testing: { modulePathIgnorePatterns: ['tests/'] },
 }
