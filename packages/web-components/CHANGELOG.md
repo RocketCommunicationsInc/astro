@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.9.3
+
+### Patch Changes
+
+-   4a9233aa: Added Vite and similar bundler support. Fixes an issue that prevented users from using lazy-loaded components in Vue when using Vite
+
 ## 7.9.2
 
 ### Patch Changes
