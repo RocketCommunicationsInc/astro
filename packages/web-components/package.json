@@ -20,7 +20,7 @@
     "loader/"
   ],
   "scripts": {
-    "build.stencil": "stencil build --docs",
+    "build.stencil": "stencil build --docs && node src/utils/add-angular-ignore.js",
     "build.storybook": "build-storybook",
     "build": "npm run build.stencil",
     "icons.fetch": "export-icons",

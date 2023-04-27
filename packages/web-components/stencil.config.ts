@@ -29,10 +29,10 @@ export const config: Config = {
                 '../angular-workspace/projects/angular/src/directives/proxies-list.ts',
             valueAccessorConfigs: angularValueAccessorBindings,
         }),
-        angularProxiesListIgnore({
-            proxiesListFile:
-                '../../angular-workspace/projects/angular/src/directives/proxies-list.ts',
-        }),
+        // angularProxiesListIgnore({
+        //     proxiesListFile:
+        //         '../../angular-workspace/projects/angular/src/directives/proxies-list.ts',
+        // }),
         {
             type: 'dist',
             esmLoaderPath: '../loader',

@@ -83,6 +83,6 @@ export const angularOutputTargetFix = (
 
         await runAngularOutputTargetFix(outputTarget)
 
-        timespan.finish('generate angular proxy utiils fix finished')
+        timespan.finish('generate angular proxy utils fix finished')
     },
 })

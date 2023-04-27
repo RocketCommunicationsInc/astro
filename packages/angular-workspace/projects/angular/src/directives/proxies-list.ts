@@ -1,23 +1,12 @@
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-//@ts-nocheck
-
+// @ts-nocheck
 
 import * as d from './proxies';
 
-//@ts-ignore
 export const DIRECTIVES = [
   d.RuxAccordion,
   d.RuxAccordionItem,
+  d.RuxBreadcrumb,
+  d.RuxBreadcrumbItem,
   d.RuxButton,
   d.RuxButtonGroup,
   d.RuxCard,
@@ -467,6 +456,7 @@ export const DIRECTIVES = [
   d.RuxIconGroup,
   d.RuxIconGroupAdd,
   d.RuxIconGroupWork,
+  d.RuxIconHardware,
   d.RuxIconHd,
   d.RuxIconHdrOff,
   d.RuxIconHdrOn,
@@ -782,6 +772,7 @@ export const DIRECTIVES = [
   d.RuxIconRedeem,
   d.RuxIconRedo,
   d.RuxIconRefresh,
+  d.RuxIconRelease,
   d.RuxIconRemove,
   d.RuxIconRemoveCircle,
   d.RuxIconRemoveCircleOutline,
@@ -844,6 +835,7 @@ export const DIRECTIVES = [
   d.RuxIconSentimentSatisfiedAlt,
   d.RuxIconSentimentVeryDissatisfied,
   d.RuxIconSentimentVerySatisfied,
+  d.RuxIconSetPower,
   d.RuxIconSettings,
   d.RuxIconSettingsApplications,
   d.RuxIconSettingsBackupRestore,
@@ -1122,7 +1114,8 @@ export const DIRECTIVES = [
   d.RuxTextarea,
   d.RuxTimeRegion,
   d.RuxTimeline,
+  d.RuxTooltip,
   d.RuxTrack,
   d.RuxTree,
-  d.RuxTreeNode,
+  d.RuxTreeNode
 ];
