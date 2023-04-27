@@ -12753,6 +12753,10 @@ export interface RuxSwitchCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxSwitchElement;
 }
+export interface RuxTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTabElement;
+}
 export interface RuxTabPanelsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTabPanelsElement;
@@ -33143,6 +33147,7 @@ declare namespace LocalJSX {
           * If present, sets a disabled state on this tab item, indicating it cannot be selected by user action.
          */
         "disabled"?: boolean;
+        "onRuxtabselected"?: (event: RuxTabCustomEvent<any>) => void;
         /**
           * If present, overrides which tab is selected on load / mount. By default, the first <rux-tab> item is selected.
          */

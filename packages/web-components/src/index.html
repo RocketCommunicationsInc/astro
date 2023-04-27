@@ -19,5 +19,35 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-tabs id="tab-set-id-1">
+            <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+            <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+        </rux-tabs>
+
+        <rux-tab-panels aria-labelledby="tab-set-id-1">
+            <rux-tab-panel aria-labelledby="tab-id-1"
+                >Tab 1 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-2"
+                >Tab 2 HTML content</rux-tab-panel
+            >
+        </rux-tab-panels>
+        <rux-button>Swap Selected</rux-button>
+
+        <script>
+            const btn = document.querySelector('rux-button')
+            const tab1 = document.getElementById('tab-id-1')
+            const tab2 = document.getElementById('tab-id-2')
+            btn.addEventListener('click', () => {
+                if (tab1.selected) {
+                    tab1.selected = false
+                    tab2.selected = true
+                } else {
+                    tab2.selected = false
+                    tab1.selected = true
+                }
+            })
+        </script>
+    </body>
 </html>

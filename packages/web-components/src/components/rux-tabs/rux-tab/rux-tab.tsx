@@ -1,4 +1,13 @@
-import { Component, Host, h, Prop, Element } from '@stencil/core'
+import {
+    Component,
+    Host,
+    h,
+    Prop,
+    Element,
+    Event,
+    EventEmitter,
+    Watch,
+} from '@stencil/core'
 
 /**
  *
@@ -28,11 +37,20 @@ export class RuxTab {
 
     @Element() el!: HTMLRuxTabElement
 
+    @Event({ eventName: 'ruxtabselected' }) ruxTabSelected!: EventEmitter
+
     connectedCallback() {
         //handle small on init
         if (this.el?.parentElement?.getAttributeNode('small')) {
             this.el.setAttribute('small', '')
         }
+    }
+
+    @Watch('selected')
+    handleSelected() {
+        // console.log('heard selected change. emit event')
+        console.log('Selected changed on rux-tab')
+        this.ruxTabSelected.emit(this.el)
     }
 
     private _clickHandler(e: MouseEvent) {
@@ -43,7 +61,7 @@ export class RuxTab {
 
     render() {
         return (
-            <Host onClick={this._clickHandler}>
+            <Host onClick={this._clickHandler} selected={this.selected}>
                 <div
                     part="container"
                     class={{
