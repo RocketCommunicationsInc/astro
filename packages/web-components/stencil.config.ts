@@ -3,7 +3,6 @@ import { sass } from '@stencil/sass'
 import { svgOptimizerPlugin } from './src/utils/rollup-svg'
 import { angularOutputTarget } from '@stencil/angular-output-target'
 import { angularValueAccessorBindings } from './wrapper-bindings/angular.bindings'
-import { angularProxiesListIgnore } from './wrapper-bindings/angular-proxies-list-ignore'
 import { reactOutputTarget } from '@stencil/react-output-target'
 import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
 
@@ -28,10 +27,6 @@ export const config: Config = {
             directivesArrayFile:
                 '../angular-workspace/projects/angular/src/directives/proxies-list.ts',
             valueAccessorConfigs: angularValueAccessorBindings,
-        }),
-        angularProxiesListIgnore({
-            proxiesListFile:
-                '../../angular-workspace/projects/angular/src/directives/proxies-list.ts',
         }),
         {
             type: 'dist',
@@ -65,6 +60,7 @@ export const config: Config = {
     enableCache: true,
     extras: {
         appendChildSlotFix: true,
+        experimentalImportInjection: true,
     },
     testing: { modulePathIgnorePatterns: ['tests/'] },
 }

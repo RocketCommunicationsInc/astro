@@ -1,5 +1,14 @@
 # @astrouxds/react
 
+## 7.9.3
+
+### Patch Changes
+
+#### General
+
+- Added Vite and similar bundler support
+- Fixed an issue that prevented users from using lazy-loaded components in Vue when using Vite
+
 ## 7.9.2
 
 ### Patch Changes
