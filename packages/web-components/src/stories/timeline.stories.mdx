@@ -473,15 +473,12 @@ If a Time Region's start and end date falls outside of the range of the Timeline
 
 export const SubTracks= () => {
     return html`
-        <div style="padding: 2rem;">
-            <iframe src="https://codesandbox.io/embed/timeline-demo-collapse-js-rqf39e?fontsize=14&hidenavigation=1&theme=dark"
-                style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-                title="timeline-demo-collapse-js"
-                allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-                sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-            ></iframe>
-        </div>
-    `
+    <iframe src="https://codesandbox.io/embed/timeline-demo-collapse-js-rqf39e"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="timeline-demo-collapse-js"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>`
 }
 
 Timeline supports the ability to add SubTracks. These can then be collapsed/expanded with a minimal amount of additional script. Here is an example using basic HTML/JS.
@@ -490,6 +487,13 @@ Timeline supports the ability to add SubTracks. These can then be collapsed/expa
     <Story name="SubTracks">{SubTracks.bind()}</Story>
 </Canvas>
 
-[Vue Example](https://codesandbox.io/s/timeline-demo-collapse-vue-lomiki)
-[React Example](https://codesandbox.io/s/timeline-demo-collapse-react-z5cq3m?file=/src/App.js)
-Angular Example
+**In these examples we:**
+
+1. Include all of the `rux-time-region` in the main track when the subtracks are collapsed.
+2. Break the `rux-time-region` out into the appropriate sub-tracks when they are expanded, and remove them from the main track.
+
+## Other Examples
+
+- [Vue Example](https://codesandbox.io/s/timeline-demo-collapse-vue-lomiki)
+- [React Example](https://codesandbox.io/s/timeline-demo-collapse-react-z5cq3m?file=/src/App.js)
+- [Angular Example](https://codesandbox.io/s/timeline-demo-collapse-angular-vic3fn?file=/src/app/app.component.html)
