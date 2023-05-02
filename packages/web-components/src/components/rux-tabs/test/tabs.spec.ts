@@ -223,9 +223,13 @@ test.describe('Tabs', () => {
         const ruxBtn = page.locator('rux-button')
         const tabs = page.locator('rux-tab')
         await expect(tabs.first()).toHaveAttribute('selected', '')
+        const tab1Content = page.getByText('Tab 1 HTML content')
+        await expect(tab1Content).toBeTruthy()
         await ruxBtn.click()
         await expect(tabs.first()).not.toHaveAttribute('selected', '')
         await expect(tabs.last()).toHaveAttribute('selected', '')
+        const tab2Content = page.getByText('Tab 2 HTML content')
+        await expect(tab2Content).toBeTruthy()
     })
 })
 test.describe('Multiple tabs on same page', () => {
