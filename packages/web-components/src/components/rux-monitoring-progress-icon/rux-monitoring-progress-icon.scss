@@ -140,6 +140,7 @@ svg.rux-status--critical {
     color: var(--color-text-primary);
     font-family: var(--font-monospace-1-font-family);
     font-size: var(--font-body-3-font-size);
+    font-variant-numeric: tabular-nums;
     font-weight: var(--font-monospace-1-font-weight);
     letter-spacing: var(--font-monospace-1-letter-spacing);
     margin-top: -0.125rem;
