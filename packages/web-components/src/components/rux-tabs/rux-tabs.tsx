@@ -36,15 +36,13 @@ export class RuxTabs {
      */
     @Prop() small?: boolean
 
-    //! This allows us to hear the selected prop change on tab.
-    //! Once we hear it, we need to update the related panels visibilty.
-    //! _setTab() does this but also sets tab.selected, which triggers an infinite loop
+    // This allows us to hear the selected prop change on tab.
+    // Once we hear it, we need to update the related panels visibilty accordingly.
     @Listen('ruxtabselected', { target: 'window' })
     handleTabselected(e: CustomEvent) {
         console.log('heard ruxtabselected event')
         const target = e.target as HTMLRuxTabElement
         if (target.selected) {
-            // this._setTab(target)
             //filter through tabs and set the corresponding panel to not be hidden
             const selectedPanel = this._panels.find(
                 (panel) =>
@@ -178,8 +176,6 @@ export class RuxTabs {
         })
     }
 
-    //! This controls the visiblity of the panel depending on the selected prop of the associated tab.
-    //! How can we use this to show the panel when the selected attr changes on a rux tab?
     private _setTab(selectedTab: HTMLRuxTabElement) {
         this._reset()
         // find the panel whose aria-labeldby attribute matches the tab’s id

@@ -21,6 +21,7 @@ test.describe('Tabs', () => {
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
+            <rux-button>Select Tab</rux-button>
         `
 
         await page.setContent(template)
@@ -186,6 +187,46 @@ test.describe('Tabs', () => {
         await tab.click()
         expect(selectedEvent).toHaveReceivedEventTimes(1)
     })
+    test('Individual tab can be programatically selected', async ({ page }) => {
+        await page.setContent(`
+      <rux-tabs id="tab-set-id-1">
+      <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+      <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+  </rux-tabs>
+
+  <rux-tab-panels aria-labelledby="tab-set-id-1">
+      <rux-tab-panel aria-labelledby="tab-id-1"
+          >Tab 1 HTML content</rux-tab-panel
+      >
+      <rux-tab-panel aria-labelledby="tab-id-2"
+          >Tab 2 HTML content</rux-tab-panel
+      >
+  </rux-tab-panels>
+  <rux-button>Swap Selected</rux-button>
+      `)
+        await page.addScriptTag({
+            content: `
+            const btn = document.querySelector('rux-button')
+            const tab1 = document.getElementById('tab-id-1')
+            const tab2 = document.getElementById('tab-id-2')
+            btn.addEventListener('click', () => {
+                if (tab1.selected) {
+                    tab1.selected = false
+                    tab2.selected = true
+                } else {
+                    tab2.selected = false
+                    tab1.selected = true
+                }
+            })
+          `,
+        })
+        const ruxBtn = page.locator('rux-button')
+        const tabs = page.locator('rux-tab')
+        await expect(tabs.first()).toHaveAttribute('selected', '')
+        await ruxBtn.click()
+        await expect(tabs.first()).not.toHaveAttribute('selected', '')
+        await expect(tabs.last()).toHaveAttribute('selected', '')
+    })
 })
 test.describe('Multiple tabs on same page', () => {
     test.beforeEach(async ({ page }) => {
@@ -297,7 +338,6 @@ test.describe('Multiple tabs on same page', () => {
         await expect(topContent2).toBeVisible()
         await expect(bottomContent).toBeVisible()
     })
-    //TODO: Replace instances of e.evaulate here with the .hasAttribute
     test('it can dynamically add tabs that behave correctly', async ({
         page,
     }) => {

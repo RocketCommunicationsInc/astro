@@ -48,8 +48,6 @@ export class RuxTab {
 
     @Watch('selected')
     handleSelected() {
-        // console.log('heard selected change. emit event')
-        console.log('Selected changed on rux-tab')
         this.ruxTabSelected.emit(this.el)
     }
 
