@@ -11,13 +11,13 @@ test.describe('Tabs', () => {
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
-                    Content 1 
+                    Content 1
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-2">
-                    Content 2 
+                    Content 2
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-3">
-                    Content 3 
+                    Content 3
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
@@ -342,40 +342,16 @@ test.describe('Multiple tabs on same page', () => {
         const btn = await page.locator('#add')
         await btn.click()
         const newTab = await page.locator('#tab-id-4')
-        await newTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(newTab).not.toHaveAttribute('selected', '')
         await newTab.click()
         await page.waitForTimeout(100)
-        await newTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeTruthy()
-            })
+        await expect(newTab).toHaveAttribute('selected', '')
         // click again on first tab, make sure newTab becomes un-selected
         const firstTab = await page.locator('#tab-id-1')
         await firstTab.click()
         await page.waitForTimeout(100)
-        await firstTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeTruthy
-            })
-        await newTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(firstTab).toHaveAttribute('selected', '')
+        await expect(newTab).not.toHaveAttribute('selected', '')
     })
 })
 
@@ -390,13 +366,13 @@ test.describe('Tab Keyboard Navigation', () => {
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
-                    Content 1 
+                    Content 1
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-2">
-                    Content 2 
+                    Content 2
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-3">
-                    Content 3 
+                    Content 3
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
@@ -488,13 +464,13 @@ test.describe('Tab Keyboard Disabled Navigation', () => {
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
-                    Content 1 
+                    Content 1
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-2">
-                    Content 2 
+                    Content 2
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-3">
-                    Content 3 
+                    Content 3
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
@@ -530,6 +506,6 @@ test.describe('Tab Keyboard Disabled Navigation', () => {
     })
 })
 /*
-    Need to test: 
-    
+    Need to test:
+
 */
