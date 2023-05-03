@@ -3,6 +3,7 @@ import { hasSlot } from '../../utils/utils'
 /**
  * @slot (default) - The card's content
  * @slot header - The card's header
+ * @part container - The card's outtermost container
  * @part header - The card's outside header element
  * @part body - The card's outside body element
  * @part footer - The card's outside footer element
@@ -34,7 +35,7 @@ export class RuxCard {
     render() {
         return (
             <Host>
-                <div class="rux-card">
+                <div class="rux-card" part="container">
                     <div
                         class={{
                             'rux-card__header': true,
