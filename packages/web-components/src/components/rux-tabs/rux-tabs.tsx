@@ -41,7 +41,9 @@ export class RuxTabs {
     @Listen('ruxtabselected', { target: 'window' })
     handleTabselected(e: CustomEvent) {
         const target = e.target as HTMLRuxTabElement
-        if (target.selected) {
+        //* only change the classlist of panels assoiciated with this rux-tabs component
+        const children = Array.from(this.el.children)
+        if (target.selected && children.includes(target)) {
             //filter through tabs and set the corresponding panel to not be hidden
             const selectedPanel = this._panels.find(
                 (panel) =>
