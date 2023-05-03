@@ -33147,6 +33147,9 @@ declare namespace LocalJSX {
           * If present, sets a disabled state on this tab item, indicating it cannot be selected by user action.
          */
         "disabled"?: boolean;
+        /**
+          * Fires when a tab is selected
+         */
         "onRuxtabselected"?: (event: RuxTabCustomEvent<any>) => void;
         /**
           * If present, overrides which tab is selected on load / mount. By default, the first <rux-tab> item is selected.

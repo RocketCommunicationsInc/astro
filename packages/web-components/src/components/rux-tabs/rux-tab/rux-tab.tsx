@@ -37,6 +37,9 @@ export class RuxTab {
 
     @Element() el!: HTMLRuxTabElement
 
+    /**
+     * Fires when a tab is selected
+     */
     @Event({ eventName: 'ruxtabselected' }) ruxTabSelected!: EventEmitter
 
     connectedCallback() {
@@ -48,7 +51,7 @@ export class RuxTab {
 
     @Watch('selected')
     handleSelected() {
-        this.ruxTabSelected.emit(this.el)
+        if (this.selected) this.ruxTabSelected.emit(this.el)
     }
 
     private _clickHandler(e: MouseEvent) {

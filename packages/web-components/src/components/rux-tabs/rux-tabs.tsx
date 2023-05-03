@@ -40,7 +40,6 @@ export class RuxTabs {
     // Once we hear it, we need to update the related panels visibilty accordingly.
     @Listen('ruxtabselected', { target: 'window' })
     handleTabselected(e: CustomEvent) {
-        console.log('heard ruxtabselected event')
         const target = e.target as HTMLRuxTabElement
         if (target.selected) {
             //filter through tabs and set the corresponding panel to not be hidden
