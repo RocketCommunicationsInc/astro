@@ -78,43 +78,29 @@ test.describe('Select', () => {
         page,
     }) => {
         const template = `
-          <rux-select value="flash">
-          <rux-option value="" label="Select"></rux-option>
-          <rux-option-group label="Group">
-              <rux-option value="flash" label="Flash"></rux-option>
-          </rux-option-group>
-        </rux-select>
-        <rux-button>Add to options</rux-button>
+            <rux-select value="flash">
+                <rux-option value="" label="Select"></rux-option>
+                <rux-option-group label="Group">
+                    <rux-option value="flash" label="Flash"></rux-option>
+                </rux-option-group>
+            </rux-select> 
         `
         await page.setContent(template)
-        await page.addScriptTag({
-            content: `
-              const sel = document.querySelector('rux-select')
-              const optGroup = document.querySelector('rux-option-group')
-              const init = [
-                  { value: 'aquaman', name: 'Aquaman' },
-                  { value: 'batman', name: 'Batman' },
-              ]
-              const btn = document.querySelector('rux-button')
-              btn.addEventListener('click', () => {
-                  init.map((hero) => {
-                      let newOption = document.createElement('rux-option')
-                      newOption.label = hero.name
-                      newOption.value = hero.value
-                      optGroup.appendChild(newOption)
-                  })
+
+        const select = await page.locator('rux-select select')
+        await expect(select).toHaveValue('flash')
+
+        // Add Batman to Option Group
+        const optionGroupEl = await page.locator('rux-option-group')
+        await optionGroupEl.evaluate((el) => {
+            const newOption = document.createElement('rux-option')
+            newOption.label = 'batman'
+            newOption.value = 'batman'
+            el.appendChild(newOption)
         })
-        `,
-        })
-        //selected value should be flash
-        const sel = page.locator('rux-select').locator('select')
-        await expect(sel).toHaveValue('flash')
-        const btn = page.locator('rux-button')
-        //click btn to add more options inside opt group
-        await btn.click()
+
         await page.waitForChanges()
-        //selected value should still be flash
-        await expect(sel).toHaveValue('flash')
+        await expect(select).toHaveValue('flash')
     })
     test('Options that are dynamically removed can be synced to select', async ({
         page,
