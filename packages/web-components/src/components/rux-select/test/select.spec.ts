@@ -129,7 +129,7 @@ test.describe('Select', () => {
       `,
         })
         //selected value should be flash
-        const sel = page.locator('rux-select').locator('select')
+        const sel = page.locator('rux-select select')
         await expect(sel).toHaveValue('flash')
         const btn = page.locator('rux-button')
         //click btn to add more options inside opt group
