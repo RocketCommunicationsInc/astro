@@ -125,6 +125,7 @@ export class RuxSelect implements FormFieldInterface {
     @Listen('rux-option-group-changed')
     handleGroupChange() {
         this._syncOptionsToNativeSelect()
+        this._syncOptionsFromValue()
     }
 
     @Listen('rux-option-changed')

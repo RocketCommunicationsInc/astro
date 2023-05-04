@@ -19,5 +19,31 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-select value="flash">
+            <rux-option value="" label="Select"></rux-option>
+            <rux-option-group label="Group">
+                <rux-option value="flash" label="Flash"></rux-option>
+            </rux-option-group>
+        </rux-select>
+
+        <rux-button>Add to options</rux-button>
+        <script>
+            const sel = document.querySelector('rux-select')
+            const optGroup = document.querySelector('rux-option-group')
+            const init = [
+                { value: 'aquaman', name: 'Aquaman' },
+                { value: 'batman', name: 'Batman' },
+            ]
+            const btn = document.querySelector('rux-button')
+            btn.addEventListener('click', () => {
+                init.map((hero) => {
+                    let newOption = document.createElement('rux-option')
+                    newOption.label = hero.name
+                    newOption.value = hero.value
+                    optGroup.appendChild(newOption)
+                })
+            })
+        </script>
+    </body>
 </html>
