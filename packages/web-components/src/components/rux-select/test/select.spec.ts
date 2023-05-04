@@ -74,7 +74,52 @@ test.describe('Select', () => {
         isFocused = await el.evaluate((el) => el === document.activeElement)
         expect(isFocused).toBeTruthy()
     })
+    test('Options that are dynamically added can be synced to select', async ({
+        page,
+    }) => {
+        const template = `
+          <rux-select value="flash">
+          <rux-option value="" label="Select"></rux-option>
+          <rux-option-group label="Group">
+              <rux-option value="flash" label="Flash"></rux-option>
+          </rux-option-group>
+        </rux-select>
+        <rux-button>Add to options</rux-button>
+        `
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+              const sel = document.querySelector('rux-select')
+              const optGroup = document.querySelector('rux-option-group')
+              const init = [
+                  { value: 'aquaman', name: 'Aquaman' },
+                  { value: 'batman', name: 'Batman' },
+              ]
+              const btn = document.querySelector('rux-button')
+              btn.addEventListener('click', () => {
+                  init.map((hero) => {
+                      let newOption = document.createElement('rux-option')
+                      newOption.label = hero.name
+                      newOption.value = hero.value
+                      optGroup.appendChild(newOption)
+                  })
+        })
+        `,
+        })
+        //selected value should be flash
+        const sel = page.locator('rux-select').locator('select')
+        await expect(sel).toHaveValue('flash')
+        const btn = page.locator('rux-button')
+        //click btn to add more options inside opt group
+        await btn.click()
+        await page.waitForChanges()
+        //selected value should still be flash
+        await expect(sel).toHaveValue('flash')
+    })
 })
+/**
+ * Select in a form
+ */
 test.describe('Select in a form', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
@@ -155,7 +200,9 @@ test.describe('Select in a form', () => {
         await submit.click()
         await expect(log).toContainText('bestThing:blue')
     })
-    // Multi Select
+    /**
+     * Multi Select
+     */
     test('it syncs multiple values from select element', async ({ page }) => {
         const multi = await page.locator('#ruxMultiSelect')
         await multi.locator('select').selectOption(['red', 'green'])
