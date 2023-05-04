@@ -116,6 +116,42 @@ test.describe('Select', () => {
         //selected value should still be flash
         await expect(sel).toHaveValue('flash')
     })
+    test('Options that are dynamically removed can be synced to select', async ({
+        page,
+    }) => {
+        const template = `
+        <rux-select value="flash">
+        <rux-option value="" label="Select"></rux-option>
+        <rux-option-group label="Group">
+            <rux-option value="flash" label="Flash"></rux-option>
+            <rux-option value="batman" label="Batman"></rux-option>
+            <rux-option value="wonder woman" label="Wonder Woman"></rux-option>
+        </rux-option-group>
+      </rux-select>
+      <rux-button>Remove from options</rux-button>
+      `
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+            const sel = document.querySelector('rux-select')
+            const optGroup = document.querySelector('rux-option-group')
+            const btn = document.querySelector('rux-button')
+            btn.addEventListener('click', () => {
+              let options = optGroup.querySelectorAll('rux-option')
+              options[options.length - 1].remove()
+            })
+      `,
+        })
+        //selected value should be flash
+        const sel = page.locator('rux-select').locator('select')
+        await expect(sel).toHaveValue('flash')
+        const btn = page.locator('rux-button')
+        //click btn to add more options inside opt group
+        await btn.click()
+        await page.waitForChanges()
+        //selected value should still be flash
+        await expect(sel).toHaveValue('flash')
+    })
 })
 /**
  * Select in a form
