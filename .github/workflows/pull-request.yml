@@ -3,6 +3,7 @@ on:
   push:
     branches: [main, next]
   pull_request:
+    types: [ready_for_review, opened, synchronize]
     branches: [main, next]
   workflow_dispatch:
     permissions:
@@ -10,27 +11,74 @@ on:
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
-  e2e-tests:
+  setup:
+    if: "! github.event.pull_request.draft"
     runs-on: ubuntu-latest
+    timeout-minutes: 8
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Node
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
         with:
-          node-version: 16
-      - name: Install
-        run: npm ci
-        working-directory: ./packages/web-components
-      # - name: Install Playwright Dependencies
-      #   run: npx playwright install && npx playwright install-deps
-      #   shell: bash
-      #   working-directory: ./packages/web-components
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
+      - name: Cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v3
+        with:
+          path: |
+            ./packages/web-components/node_modules
+            ./packages/web-components/dist
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json')}}-${{ steps.branch-name.outputs.current_branch }}
+      - name: Install Dependencies
+        run: npm ci && cd ./packages/web-components && npx playwright install --with-deps
       - name: Build
-        run: npm run build.stencil
+        run: npm run build
+  e2e:
+    needs: setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
+      - name: Get Cache
+        uses: actions/cache@v3
+        id: get-cache
+        with:
+          path: |
+            ./packages/web-components/node_modules
+            ./packages/web-components/dist
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json')}}-${{ steps.branch-name.outputs.current_branch }}
+      - name: e2e Tests
+        run: npm run test.e2e.ci
         working-directory: ./packages/web-components
-      - name: Run Tests
-        run: npm run test.ci
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: playwright-report
+          path: packages/web-components/playwright-report/
+          retention-days: 30
+  VRTs:
+    needs: setup
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@v2
+      - name: Get branch name
+        id: branch-name
+        uses: tj-actions/branch-names@v6
+      - name: Get Cache
+        uses: actions/cache@v3
+        id: get-cache
+        with:
+          path: |
+            ./packages/web-components/node_modules
+            ./packages/web-components/dist
+          key: ${{ runner.os }}-setup-${{ hashFiles('./packages/web-components/package-lock.json')}}-${{ steps.branch-name.outputs.current_branch }}
+      - name: Run VRTs
+        run: npm run test.vrt
         working-directory: ./packages/web-components
       - uses: actions/upload-artifact@v3
         if: always()

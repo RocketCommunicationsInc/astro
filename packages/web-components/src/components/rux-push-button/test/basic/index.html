@@ -30,12 +30,21 @@
     <body>
         <section>
             <h2>Default</h2>
-            <rux-push-button label="Push Button"></rux-push-button>
+            <rux-push-button
+                label="Push Button"
+                data-test-id="default"
+                style="width: fit-content"
+            ></rux-push-button>
         </section>
         <section>
             <h2>Types</h2>
             <rux-push-button label="Disabled" disabled></rux-push-button>
-            <rux-push-button label="Checked" checked></rux-push-button>
+            <rux-push-button
+                label="Checked"
+                checked
+                data-test-id="checked"
+                style="width: fit-content"
+            ></rux-push-button>
             <rux-push-button label="With icon" icon="apps"></rux-push-button>
             <rux-push-button
                 label="Checked w/ icon"

@@ -197,4 +197,12 @@ test.describe('Checkbox events', () => {
 
         expect(blurEvent).toHaveReceivedEventTimes(1)
     })
+    test('Should emit ruxfocus event once when focused', async ({ page }) => {
+        const focusEvent = await page.spyOnEvent('ruxfocus')
+
+        await page.click('#blur-trigger')
+        await page.click('#checkbox')
+
+        expect(focusEvent).toHaveReceivedEventTimes(1)
+    })
 })

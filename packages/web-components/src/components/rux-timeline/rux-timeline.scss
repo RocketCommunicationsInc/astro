@@ -34,11 +34,6 @@
 
     ::-webkit-scrollbar-track,
     ::-webkit-scrollbar-corner {
-        // background: linear-gradient(
-        //     to right,
-        //     var(--color-background-base-default) 200px,
-        //     var(--color-background-surface-default) 200px 100%
-        // );
         background: var(--color-background-surface-default);
     }
 
@@ -62,43 +57,13 @@
     display: none;
 }
 
-.cell {
-    // border: 1px solid blue;
-    border-right: 0;
-    border-top: 0;
-    // grid-column: span 60;
-    z-index: 9999;
-    grid-column: span 1;
-}
-.cell:nth-child(10n) {
-    // background: blue;
-}
-
-.cell:nth-child(odd) {
-    // background: var(--color-background-base-default);
-    background: red;
-}
-
-.cell:nth-child(even) {
-    background: blue;
-    // opacity: 10%;
-}
-
-.marker {
-    background: blue;
-}
-
 .rux-playhead {
     width: 2px;
-    //   grid-row: 1 / 5;
-    //   grid-column: time-0000 / time-2359;
-
     background: var(--color-background-interactive-default);
     z-index: 1;
     position: absolute;
     height: 100%;
     top: 0;
-    // left: 200px;
     pointer-events: none; // allows scrolling when mouse cursor is positioned over the playhead
     &:after {
         width: 0;

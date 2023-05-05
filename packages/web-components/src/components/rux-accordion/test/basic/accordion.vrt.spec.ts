@@ -1,16 +1,22 @@
 import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Accordion', () => {
-    test('has no visual regression @vrt @dark', async ({ page }) => {
-        await page.goto(`/src/components/rux-accordion/test/basic/index.html`)
-        await expect(page).toHaveScreenshot()
-    })
+    test.use({ component: 'rux-accordion' })
 
-    test('has no visual regression @vrt @light', async ({ page }) => {
-        await page.goto(`/src/components/rux-accordion/test/basic/index.html`)
-        await page.evaluate(() => {
-            document.body.classList.add('light-theme')
-        })
-        await expect(page).toHaveScreenshot()
+    test('has no visual regression @vrt', async ({ astroVRTPage }) => {
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('hover has no visual regression @vrt', async ({ astroVRTPage }) => {
+        const el = astroVRTPage.locator(
+            'rux-accordion-item[data-test-id="default"]'
+        )
+        await el.hover()
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('focus state has no visual regression @vrt', async ({
+        astroVRTPage,
+    }) => {
+        await astroVRTPage.keyboard.press('Tab')
+        await expect(astroVRTPage).toHaveScreenshot()
     })
 })

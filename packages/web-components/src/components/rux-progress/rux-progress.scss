@@ -13,19 +13,21 @@
 .rux-progress[value] {
     appearance: none;
     background-color: var(--color-background-surface-default);
-    border: 1px solid var(--color-background-interactive-default);
+    border: 1px solid var(--color-background-surface-default);
     border-radius: var(--progress-radius-outer);
-    height: calc(var(--spacing-4) + var(--spacing-1)); //20px;
+    box-shadow: 0 0 0 1px var(--color-background-interactive-default);
+    height: calc(var(--spacing-4) + var(--spacing-050)); //20px;
     width: 100%;
     box-sizing: border-box;
+    overflow: hidden;
+
     &::-webkit-progress-bar {
         background-color: transparent;
     }
     &::-webkit-progress-value {
-        border-radius: var(--progress-radius-outer);
+        border-radius: 0 var(--spacing-4) var(--spacing-4) 0;
         height: var(--spacing-4); //16
-        margin: var(--spacing-025) 0 0 var(--spacing-025);
-        max-width: calc(100% - var(--spacing-050)); //respect margin spacing
+        max-width: 100%;
         background: var(--color-background-interactive-default);
         transition: width 0.3s ease;
         -moz-transition: width 0.3s ease;
@@ -33,17 +35,16 @@
         -o-transition: width 0.3s ease;
     }
     &::-ms-fill {
-        border-radius: var(--progress-radius-outer);
+        border-radius: 0 var(--spacing-4) var(--spacing-4) 0;
         border: none;
         height: var(--spacing-4); //16
-        margin: var(--spacing-025);
-        max-width: calc(100% - var(--spacing-050));
+        max-width: 100%;
         background-color: var(--color-background-interactive-default);
     }
     &::-moz-progress-bar {
-        border-radius: var(--progress-radius-outer);
-        margin: var(--spacing-025); //1
+        border-radius: 0 var(--spacing-4) var(--spacing-4) 0;
         height: var(--spacing-4); //16
+        max-width: 100%;
         background: var(--color-background-interactive-default);
     }
 }

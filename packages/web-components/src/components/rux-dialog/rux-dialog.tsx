@@ -134,10 +134,14 @@ export class RuxDialog {
                 }
             }, 0)
         }
-        this.open
-            ? this.ruxDialogOpened.emit()
-            : this.ruxDialogClosed.emit(this._userInput)
-        //reset userInput after it's emitted
+        if (this.open) {
+            setTimeout(() => {
+                this.ruxDialogOpened.emit()
+            }, 20)
+        } else {
+            this.ruxDialogClosed.emit(this._userInput)
+        }
+
         this._userInput = null
     }
 

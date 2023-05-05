@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Breadcrumb</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+
+        <!-- <script
+            type="module"
+            src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script> -->
+    </head>
+
+    <body>
+        <section style="display: block">
+            <h2>Default</h2>
+            <div>
+                <rux-breadcrumb>
+                    <rux-breadcrumb-item href="https://google.com"
+                        >First</rux-breadcrumb-item
+                    >
+                    <rux-breadcrumb-item href="#">Second</rux-breadcrumb-item>
+                    <rux-breadcrumb-item href="#"
+                        ><rux-icon size="20px" icon="border-clear"></rux-icon
+                        >Third</rux-breadcrumb-item
+                    >
+                    <rux-breadcrumb-item href="#"
+                        ><rux-icon icon="border-clear"></rux-icon>Forth<rux-icon
+                            icon="border-clear"
+                        ></rux-icon
+                    ></rux-breadcrumb-item>
+                    <rux-breadcrumb-item
+                        ><rux-icon icon="border-clear"></rux-icon> Last, No
+                        HREF</rux-breadcrumb-item
+                    >
+                </rux-breadcrumb>
+            </div>
+            <br />
+
+            <rux-breadcrumb>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
+                <rux-breadcrumb-item href="#"
+                    ><rux-icon icon="border-clear"></rux-icon
+                ></rux-breadcrumb-item>
+            </rux-breadcrumb>
+        </section>
+    </body>
+</html>

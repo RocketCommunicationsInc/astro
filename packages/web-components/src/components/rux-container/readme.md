@@ -18,13 +18,14 @@
 
 ## Shadow Parts
 
-| Part        | Description                             |
-| ----------- | --------------------------------------- |
-| `"body"`    | The container's outside body element    |
-| `"footer"`  | The container's outside footer element  |
-| `"header"`  | The container's outside header element  |
-| `"tab-bar"` | The container's outside tab bar element |
-| `"toolbar"` | The container's outside toolbar element |
+| Part          | Description                             |
+| ------------- | --------------------------------------- |
+| `"body"`      | The container's outside body element    |
+| `"container"` | The container's outermost element       |
+| `"footer"`    | The container's outside footer element  |
+| `"header"`    | The container's outside header element  |
+| `"tab-bar"`   | The container's outside tab bar element |
+| `"toolbar"`   | The container's outside toolbar element |
 
 
 ## CSS Custom Properties

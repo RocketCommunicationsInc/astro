@@ -138,6 +138,7 @@ test.describe('Dialog', () => {
         const closeEvent = await page.spyOnEvent('ruxdialogclosed')
 
         await page.keyboard.press('Enter')
+        await page.waitForChanges()
         expect(closeEvent).toHaveReceivedEventDetail(true)
     })
     test('it should trigger deny button when escape is pressed and emit false', async ({
@@ -150,6 +151,8 @@ test.describe('Dialog', () => {
         const closeEvent = await page.spyOnEvent('ruxdialogclosed')
 
         await page.keyboard.press('Escape')
+        await page.waitForChanges()
+
         expect(closeEvent).toHaveReceivedEventDetail(false)
     })
 })

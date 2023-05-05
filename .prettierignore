@@ -12,4 +12,9 @@ src/globals.d.ts
 *proxies.ts
 *attachProps.ts
 
+# Ignore wrappers
+packages/angular-workspace/
+packages/react
+
+#Ignore WC Tests
 packages/web-components/tests

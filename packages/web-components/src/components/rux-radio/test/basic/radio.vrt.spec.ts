@@ -1,16 +1,14 @@
 import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Radio', () => {
-    test('has no visual regression @vrt @dar2', async ({ page }) => {
-        await page.goto(`/src/components/rux-radio/test/basic/index.html`)
-        await expect(page).toHaveScreenshot()
-    })
+    test.use({ component: 'rux-radio' })
 
-    test('has no visual regression @vrt @light', async ({ page }) => {
-        await page.goto(`/src/components/rux-radio/test/basic/index.html`)
-        await page.evaluate(() => {
-            document.body.classList.add('light-theme')
-        })
-        await expect(page).toHaveScreenshot()
+    test('has no visual regression @vrt', async ({ astroVRTPage }) => {
+        await expect(astroVRTPage).toHaveScreenshot()
+    })
+    test('hover has no visual regression @vrt', async ({ astroVRTPage }) => {
+        const el = astroVRTPage.locator('rux-radio[data-test-id="default"]')
+        await el.hover()
+        await expect(astroVRTPage).toHaveScreenshot()
     })
 })

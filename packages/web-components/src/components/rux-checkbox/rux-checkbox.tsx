@@ -35,6 +35,7 @@ export class RuxCheckbox implements FormFieldInterface {
 
     @State() hasLabelSlot = false
     @State() hasHelpSlot = false
+    @State() isFocused = false
 
     /**
      * The help or explanation text
@@ -95,6 +96,11 @@ export class RuxCheckbox implements FormFieldInterface {
     @Event({ eventName: 'ruxinput' }) ruxInput!: EventEmitter
 
     /**
+     * Fired when an element has gained focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+     */
+    @Event({ eventName: 'ruxfocus' }) ruxFocus!: EventEmitter
+
+    /**
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
@@ -141,13 +147,20 @@ export class RuxCheckbox implements FormFieldInterface {
     }
 
     private _onBlur = () => {
+        this.isFocused = false
         this.ruxBlur.emit()
+    }
+
+    private _onFocus = () => {
+        this.isFocused = this._inputEl?.matches(':focus-visible') ? true : false
+        this.ruxFocus.emit()
     }
 
     render() {
         const {
             _handleSlotChange,
             _onBlur,
+            _onFocus,
             _onClick,
             _onInput,
             checkboxId,
@@ -160,6 +173,7 @@ export class RuxCheckbox implements FormFieldInterface {
             value,
             indeterminate,
             label,
+            isFocused,
             hasLabel,
             hasLabelSlot,
         } = this
@@ -175,6 +189,7 @@ export class RuxCheckbox implements FormFieldInterface {
                         class={{
                             'rux-checkbox': true,
                             'rux-checkbox--disabled': disabled,
+                            'rux-checkbox--focused': isFocused,
                         }}
                         htmlFor={checkboxId}
                     >
@@ -194,6 +209,7 @@ export class RuxCheckbox implements FormFieldInterface {
                             onChange={_onClick}
                             onInput={_onInput}
                             onBlur={_onBlur}
+                            onFocus={_onFocus}
                             ref={(el) => (this._inputEl = el)}
                         />
                         <div class="rux-checkbox__control">

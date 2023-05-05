@@ -10,6 +10,57 @@
     --body-padding: var(--spacing-4);
     display: block;
 }
+//scrollbar colors
+* {
+    scrollbar-color: var(--color-border-interactive-muted, rgb(43, 101, 155))
+        var(--color-background-surface-default, rgb(27, 45, 62));
+    &::-webkit-scrollbar {
+        width: var(--spacing-4);
+        height: var(--spacing-4);
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(
+            --color-border-interactive-muted,
+            rgb(43, 101, 155)
+        );
+        border-radius: 8px;
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    &::-webkit-scrollbar-thumb:vertical {
+        border-left-width: var(--border-width-lg); //4px
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: var(--border-width-lg); //4px
+    }
+
+    &::-webkit-scrollbar-thumb:active,
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(
+            --color-background-interactive-default,
+            rgb(58, 129, 191)
+        );
+    }
+
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-corner {
+        background-color: var(--color-background-surface-default);
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    &::-webkit-scrollbar-track:vertical {
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    &::-webkit-scrollbar-track:horizontal {
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+}
 
 .hidden,
 :host([hidden]) {

@@ -1,5 +1,151 @@
 # @astrouxds/astro-web-components
 
+## 7.10.0
+
+### Minor Changes
+
+#### Card
+
+-   Added `container` CSS Shadow Part
+
+### Patch Changes
+
+#### Angular
+
+-   Fixed an issue in angular where breadcrumb and tooltip were missing from the module
+
+#### Clock
+
+-   Added tabular-nums for better support when using system fonts
+
+#### Monitoring Progress Icon
+
+-   Added tabular-nums for better support when using system fonts
+
+#### Select
+
+-   Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
+
+#### Tabs
+
+-   Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
+
+## 7.9.3
+
+### Patch Changes
+
+#### General
+
+-   Added Vite and similar bundler support
+-   Fixed an issue that prevented users from using lazy-loaded components in Vue when using Vite
+
+## 7.9.2
+
+### Patch Changes
+
+#### Timeline
+
+-   Fixed an issue where data labels would repeat when crossing day light savings time thresholds
+
+## 7.9.1
+
+### Patch Changes
+
+#### React
+
+-   Revert treeshaking for react in order to fix rux-icon not working in create-react-apps.
+
+## 7.9.0
+
+### Minor Changes
+
+#### Breadcrumb Item
+
+-   Added focus state
+
+#### Checkbox
+
+-   Added `ruxfocus` event on focus
+
+#### Input
+
+-   added `setFocus` method to programmatically set focus
+
+#### Select
+
+-   added `setFocus` method to programmatically set focus
+
+#### Textarea
+
+-   added `setFocus` method to programmatically set focus
+
+### Patch Changes
+
+#### Dialog
+
+-   `ruxDialogOpened` will now fire after everything has finished loading on open
+
+## 7.8.0
+
+### Minor Changes
+
+#### Accordion
+
+-   Added new `ruxcollapsed` event that emits when accordion-item closes
+
+#### Core
+
+-   Design tokens
+    -   Added `color-background-interactive-muted`
+    -   Added light theme token for `color-background-interactive-muted`
+    -   Added light theme tokens for `color-status-off`, `color-status-standby`, `color-status-normal`, `color-status-serious`, `color-status-critical`
+
+#### Pop Up
+
+-   Adds `enableAnimationFrame` prop to watch when the trigger moves in order to more accurately place the pop-up.
+
+### Patch Changes
+
+#### React
+
+-   Added vite support and tree-shaking capability to `@astrouxds/react`.
+
+#### Select
+
+-   Fixed an issue where rux-option couldn't have it's props dynamically changed
+
+## 7.7.0
+
+### Minor Changes
+
+#### Breadcrumb
+
+-   Added new `rux-breadcrumb` component
+
+#### Breadcrumb Item
+
+-   Added new `rux-breadcrumb-item` component
+
+#### Container
+
+-   Added a container CSS shadow part
+
+#### Progress
+
+-   Fixed a visual issue on lower percentages. This change alters the way border visuals are configured
+    -   What: Changed internal progress part to use box-shadow instead of border for border effect.
+    -   Migration: If you are using the progress css shadow part to override border color, you'll need to use box shadow to override border color instead
+
+### Patch Changes
+
+#### Core
+
+-   Updated design tokens@1.4.1
+    -   Added light theme value for `container.color.border`
+    -   Fixed incorrect value on `color-status-standby`. changed `#64d9ff` to `#2dccff`
+    -   Improve contrast in light theme values for `container-color-border`, `log-color-border`
+    -   Added `timeline-header-color-background` and `timeline-cell-color-background` tokens
+
 ## 7.6.0
 
 ### Minor Changes

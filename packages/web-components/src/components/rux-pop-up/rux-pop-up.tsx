@@ -41,6 +41,7 @@ export class RuxPopUp {
     private content!: HTMLElement
     private arrowEl!: HTMLElement
     private _positionerCleanup: ReturnType<typeof autoUpdate> | undefined
+    private _assignedOutsideClickEvent: boolean = false
 
     @Element() el!: HTMLRuxPopUpElement
 
@@ -58,6 +59,11 @@ export class RuxPopUp {
      * Turns autoUpdate on or off which makes the pop-up move to stay in view based on scroll. Defaults to false.
      */
     @Prop({ reflect: true }) disableAutoUpdate: boolean = false
+
+    /**
+     * watches for trigger movements and replace the popup if movement is detected.
+     */
+    @Prop({ reflect: true }) enableAnimationFrame: boolean = false
 
     /**
      * The position strategy of the popup, either absolute or fixed.
@@ -88,16 +94,21 @@ export class RuxPopUp {
             this.content.style.display = 'block'
             this._startPositioner()
             this.ruxPopUpOpened.emit()
-            window.addEventListener('mousedown', (e: MouseEvent) =>
-                this._handleOutsideClick(e)
-            )
+            if (!this._assignedOutsideClickEvent) {
+                window.addEventListener('mousedown', this._handleOutsideClick)
+                this._assignedOutsideClickEvent = true
+            }
         } else {
             this.content.style.display = ''
             this._stopPositioner()
             this.ruxPopUpClosed.emit()
-            window.removeEventListener('mousedown', (e: MouseEvent) =>
-                this._handleOutsideClick(e)
-            )
+            if (this._assignedOutsideClickEvent) {
+                window.removeEventListener(
+                    'mousedown',
+                    this._handleOutsideClick
+                )
+                this._assignedOutsideClickEvent = false
+            }
         }
     }
 
@@ -128,6 +139,10 @@ export class RuxPopUp {
         this._handleTriggerKeyPress = this._handleTriggerKeyPress.bind(this)
         this._handleOutsideClick = this._handleOutsideClick.bind(this)
         this._setTriggerTabIndex = this._setTriggerTabIndex.bind(this)
+        if (this.open && !this._assignedOutsideClickEvent) {
+            window.addEventListener('mousedown', this._handleOutsideClick)
+            this._assignedOutsideClickEvent = true
+        }
     }
 
     componentWillLoad() {
@@ -159,6 +174,7 @@ export class RuxPopUp {
             return
         }
         const placementCheck = () => {
+            // disable auto update = false, placement is anything
             if (!this.disableAutoUpdate) {
                 return [
                     offset(12),
@@ -167,12 +183,14 @@ export class RuxPopUp {
                         : flip(),
                     arrow({ element: this.arrowEl }),
                 ]
-            } else if (this.placement === 'auto') {
-                return [
-                    offset(12),
-                    autoPlacement({ alignment: 'start' }),
-                    arrow({ element: this.arrowEl }),
-                ]
+            }
+            // disableAutoUpdate = true, placement=auto
+            else if (this.placement === 'auto') {
+                /* we need to set a starting placement for the user because 'auto' is only understood by floating-ui as something means,
+            'pick whatever side fits best', and in this case we don't want any automatic setting of placements */
+                this.placement = 'top'
+                return [offset(12), arrow({ element: this.arrowEl })]
+                // disableAutoUpdate = true, placement != auto
             } else {
                 return [offset(12), arrow({ element: this.arrowEl })]
             }
@@ -224,13 +242,12 @@ export class RuxPopUp {
         this._stopPositioner()
         if (this.open) {
             this._position()
-            if (!this.disableAutoUpdate) {
-                this._positionerCleanup = autoUpdate(
-                    this.triggerSlot,
-                    this.content,
-                    this._position.bind(this)
-                )
-            }
+            this._positionerCleanup = autoUpdate(
+                this.triggerSlot,
+                this.content,
+                this._position.bind(this),
+                { animationFrame: this.enableAnimationFrame }
+            )
         }
     }
 
