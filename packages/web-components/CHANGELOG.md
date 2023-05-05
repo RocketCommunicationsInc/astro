@@ -1,5 +1,18 @@
 # @astrouxds/astro-web-components
 
+## 7.10.0
+
+### Minor Changes
+
+-   62fd5416: Card - Added `container` CSS Shadow Part
+
+### Patch Changes
+
+-   31fdd97c: Clock, Monitoring Progress Icon - added tabular-nums for better support when using system fonts
+-   8aa9b42e: Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
+-   2917aa1d: Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
+-   b0d5cb0e: Fixed an issue in angular where breadcrumb and tooltip were missing from the module
+
 ## 7.9.3
 
 ### Patch Changes
