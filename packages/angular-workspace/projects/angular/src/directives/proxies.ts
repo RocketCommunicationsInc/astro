@@ -23171,7 +23171,13 @@ export class RuxSwitch {
 }
 
 
-export declare interface RuxTab extends Components.RuxTab {}
+export declare interface RuxTab extends Components.RuxTab {
+  /**
+   * Fires when a tab is selected 
+   */
+  ruxtabselected: EventEmitter<CustomEvent<any>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -23188,6 +23194,7 @@ export class RuxTab {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxtabselected']);
   }
 }
 
