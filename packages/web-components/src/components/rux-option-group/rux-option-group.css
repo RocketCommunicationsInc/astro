@@ -1,3 +1,6 @@
 :host {
     display: block;
+
+    /* Added this background to test post css plugin */
+    background: var(--color-background-base-default);
 }
