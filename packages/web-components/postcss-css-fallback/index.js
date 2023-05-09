@@ -26,17 +26,20 @@ module.exports = postcss.plugin('add-fallbacks', (options) => {
                     customProps[decl.prop] = decl.value
                 }
             }
+
             //trim decl.value so that it can get correct key in customProps
             let trimmedValue = trimString(decl.value)
             //If it's a custom prop, add the fallback value
             if (customProps[trimmedValue]) {
                 let valueWithFallback = `var(${trimmedValue}, ${customProps[trimmedValue]})`
-
-                decl.replaceWith({
-                    prop: decl.prop,
-                    value: valueWithFallback,
-                })
+                decl.value = valueWithFallback
             }
         })
     }
 })
+
+/**
+ * indeterminate progerss, anything w/ internal props
+ * Need things that use multiple props to work, ie: margin: var(--spacing-2) var(--spacing-3)
+ *
+ */
