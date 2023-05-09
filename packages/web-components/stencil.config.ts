@@ -5,7 +5,13 @@ import { angularOutputTarget } from '@stencil/angular-output-target'
 import { angularValueAccessorBindings } from './wrapper-bindings/angular.bindings'
 import { reactOutputTarget } from '@stencil/react-output-target'
 import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
-
+import { postcss } from '@stencil/postcss'
+// import fallback from './postcss-css-fallback'
+import addFallbacks from './postcss-css-fallback'
+import reference from '@astrouxds/tokens/dist/json/base.reference.json'
+import system from '@astrouxds/tokens/dist/json/base.system.json'
+import component from '@astrouxds/tokens/dist/json/base.component.json'
+const tokens = Object.assign({}, reference, system, component)
 export const config: Config = {
     namespace: 'astro-web-components',
     globalStyle: 'src/global/global.scss',
@@ -56,7 +62,13 @@ export const config: Config = {
             ],
         },
     ],
-    plugins: [sass(), svgOptimizerPlugin()],
+    plugins: [
+        sass(),
+        svgOptimizerPlugin(),
+        postcss({
+            plugins: [addFallbacks({ index: tokens })],
+        }),
+    ],
     enableCache: true,
     extras: {
         appendChildSlotFix: true,
