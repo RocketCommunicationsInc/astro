@@ -11,6 +11,7 @@
     padding: 0.25rem 0.625rem;
     text-align: center;
     color: var(--color-palette-neutral-000);
+    box-sizing: border-box;
 }
 :host(.is-undefined) {
     height: 1.5rem;
