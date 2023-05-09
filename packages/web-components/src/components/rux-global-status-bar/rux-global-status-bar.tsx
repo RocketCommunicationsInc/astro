@@ -75,12 +75,6 @@ export class RuxGlobalStatusBar {
     menuIcon: string = 'apps'
 
     render() {
-        const TagColor = {
-            tag1: 'var(--color-palette-teal-600)',
-            tag2: 'var(--color-palette-purple-600)',
-            tag3: 'var(--color-palette-pink-600)',
-            tag4: 'var(--color-palette-hotorange-600)',
-        }
         return (
             <Host>
                 <header part="container">
@@ -110,15 +104,8 @@ export class RuxGlobalStatusBar {
                                 <div class="app-state-wrapper">
                                     {this.appState && (
                                         <div
-                                            class="app-state"
+                                            class={`app-state ${this.appStateColor}`}
                                             part="app-state"
-                                            style={{
-                                                backgroundColor: `${
-                                                    TagColor[
-                                                        this.appStateColor!
-                                                    ]
-                                                }`,
-                                            }}
                                         >
                                             {this.appState}
                                         </div>
