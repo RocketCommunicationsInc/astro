@@ -164,3 +164,19 @@ slot[name='right-side'] > rux-monitoring-icon,
         --#{$name}: #{$value};
     }
 }
+
+.app-state.tag1 {
+    background: var(--color-palette-teal-600);
+}
+
+.app-state.tag2 {
+    background: var(--color-palette-purple-600);
+}
+
+.app-state.tag3 {
+    background: var(--color-palette-pink-600);
+}
+
+.app-state.tag4 {
+    background: var(--color-palette-hotorange-600);
+}
