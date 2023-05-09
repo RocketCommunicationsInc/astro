@@ -1,16 +1,6 @@
 :host {
-    // display: inline-flex;
+    display: inline-flex;
     color: var(--color-background-interactive-default);
-    display: inline-block;
-
-    width: 1em;
-    height: 1em;
-
-    contain: strict;
-
-    fill: currentColor;
-
-    box-sizing: content-box !important;
 }
 
 :host([hidden]) {
@@ -19,10 +9,8 @@
 
 svg,
 svg > svg {
-    // height: 100%;
-    // width: auto;
-    width: 100%;
     height: 100%;
+    width: auto;
 }
 .icon {
     display: inline-flex;
