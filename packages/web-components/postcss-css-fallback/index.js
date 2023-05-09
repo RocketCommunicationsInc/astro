@@ -12,10 +12,12 @@ module.exports = postcss.plugin('add-fallbacks', (options) => {
                     .split(', ')
                 const value =
                     fallbackValue || index[propertyName.replace('--', '')] || ''
-                decl.value = decl.value.replace(
-                    property,
-                    `var(${propertyName}, ${value})`
-                )
+                if (value) {
+                    decl.value = decl.value.replace(
+                        property,
+                        `var(${propertyName}, ${value})`
+                    )
+                }
             })
         })
     }

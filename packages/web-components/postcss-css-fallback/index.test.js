@@ -37,3 +37,8 @@ it('Adds fallback value correctly to calc values', async () => {
         }
     )
 })
+it('Does not modify CSS if the property is not in the provided index', async () => {
+    await run('color: var(--not-here)', 'color: var(--not-here)', {
+        index: dummy,
+    })
+})
