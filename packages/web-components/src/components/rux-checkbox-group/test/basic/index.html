@@ -18,10 +18,6 @@
             src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
         ></script>
         <script nomodule src="/build/astro-web-components.esm.js"></script>
-        <link
-            rel="stylesheet"
-            href="../../../../../src/global/test-reset.css"
-        />
 
         <link rel="stylesheet" href="../../../../../src/global/test.css" />
 
@@ -29,12 +25,14 @@
             body {
                 padding: 1rem;
             }
+
             .grid,
             section {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
                 display: grid;
                 gap: 2rem;
             }
+
             .grid h2,
             section h2 {
                 grid-column: 1 / 4;
