@@ -6,7 +6,7 @@ import { angularValueAccessorBindings } from './wrapper-bindings/angular.binding
 import { reactOutputTarget } from '@stencil/react-output-target'
 import { reactBooleanFix } from './wrapper-bindings/react-boolean-fix'
 import { postcss } from '@stencil/postcss'
-import addFallbacks from './postcss-css-fallback'
+import addFallbacks from '@astrouxds/postcss-custom-property-token-fallback'
 import reference from '@astrouxds/tokens/dist/json/base.reference.json'
 import system from '@astrouxds/tokens/dist/json/base.system.json'
 import component from '@astrouxds/tokens/dist/json/base.component.json'

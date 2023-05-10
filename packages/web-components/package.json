@@ -53,6 +53,7 @@
   "devDependencies": {
     "@astrouxds/astro-figma-export": "~1.0.1",
     "@astrouxds/stencil-playwright": "~0.0.1",
+    "@astrouxds/postcss-custom-property-token-fallback": "~0.0.2",
     "@astrouxds/storybook-addon-docs-stencil": "~1.0.10",
     "@astrouxds/tokens": "~1.5.0",
     "@babel/core": "~7.13.16",
@@ -81,6 +82,7 @@
     "lit": "~2.0.2",
     "netlify-cli": "~8.4.3",
     "playwright": "~1.28.1",
+    "postcss": "~8.4.23",
     "prettier": "~2.2.1",
     "pretty-quick": "~3.1.3",
     "serve": "~14.1.1",
