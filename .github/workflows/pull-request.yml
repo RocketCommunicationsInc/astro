@@ -12,9 +12,9 @@ env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 jobs:
   setup:
-    if: "! github.event.pull_request.draft"
+    if: "!github.event.pull_request.draft"
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    # timeout-minutes: 8
     steps:
       - uses: actions/checkout@v2
         with:
