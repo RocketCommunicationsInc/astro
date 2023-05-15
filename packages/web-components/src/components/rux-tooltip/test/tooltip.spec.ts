@@ -234,7 +234,7 @@ test.describe('Tooltip', async () => {
 
         //assert
         await expect(ruxTooltip).toHaveAttribute('delay', '2000')
-        await expect(ruxTooltip).toHaveAttribute('style', '--delay:2000ms;')
+        await expect(ruxTooltip).toHaveAttribute('style', '--delay: 2000ms;')
     })
     test('it responds to a change in delay after render', async ({ page }) => {
         const template = `
@@ -254,7 +254,7 @@ test.describe('Tooltip', async () => {
 
         //assert
         await expect(ruxTooltip).toHaveAttribute('delay', '5000')
-        await expect(ruxTooltip).toHaveAttribute('style', '--delay:5000ms;')
+        await expect(ruxTooltip).toHaveAttribute('style', '--delay: 5000ms;')
     })
     test('it has a placement attribute', async ({ page }) => {
         const template = `
