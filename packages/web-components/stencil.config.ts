@@ -86,7 +86,7 @@ export const config: Config = {
         sass(),
         svgOptimizerPlugin(),
         postcss({
-            plugins: [addFallbacks({ index: tokens })],
+            plugins: process.env.PROD ? [addFallbacks({ index: tokens })] : [],
         }),
     ],
     enableCache: true,
