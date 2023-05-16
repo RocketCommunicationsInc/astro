@@ -138,6 +138,13 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 | `small`    | `small`    | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.               | `boolean` | `false` |
 
 
+## Events
+
+| Event            | Description                  | Type               |
+| ---------------- | ---------------------------- | ------------------ |
+| `ruxtabselected` | Fires when a tab is selected | `CustomEvent<any>` |
+
+
 ## Shadow Parts
 
 | Part          | Description     |

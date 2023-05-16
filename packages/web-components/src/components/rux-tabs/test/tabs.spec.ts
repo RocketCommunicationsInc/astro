@@ -11,16 +11,17 @@ test.describe('Tabs', () => {
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
-                    Content 1 
+                    Content 1
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-2">
-                    Content 2 
+                    Content 2
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-3">
-                    Content 3 
+                    Content 3
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
+            <rux-button>Select Tab</rux-button>
         `
 
         await page.setContent(template)
@@ -186,6 +187,50 @@ test.describe('Tabs', () => {
         await tab.click()
         expect(selectedEvent).toHaveReceivedEventTimes(1)
     })
+    test('Individual tab can be programatically selected', async ({ page }) => {
+        await page.setContent(`
+      <rux-tabs id="tab-set-id-1">
+      <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+      <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+  </rux-tabs>
+
+  <rux-tab-panels aria-labelledby="tab-set-id-1">
+      <rux-tab-panel aria-labelledby="tab-id-1"
+          >Tab 1 HTML content</rux-tab-panel
+      >
+      <rux-tab-panel aria-labelledby="tab-id-2"
+          >Tab 2 HTML content</rux-tab-panel
+      >
+  </rux-tab-panels>
+  <rux-button>Swap Selected</rux-button>
+      `)
+        await page.addScriptTag({
+            content: `
+            const btn = document.querySelector('rux-button')
+            const tab1 = document.getElementById('tab-id-1')
+            const tab2 = document.getElementById('tab-id-2')
+            btn.addEventListener('click', () => {
+                if (tab1.selected) {
+                    tab1.selected = false
+                    tab2.selected = true
+                } else {
+                    tab2.selected = false
+                    tab1.selected = true
+                }
+            })
+          `,
+        })
+        const ruxBtn = page.locator('rux-button')
+        const tabs = page.locator('rux-tab')
+        await expect(tabs.first()).toHaveAttribute('selected', '')
+        const tab1Content = page.getByText('Tab 1 HTML content')
+        await expect(tab1Content).toBeTruthy()
+        await ruxBtn.click()
+        await expect(tabs.first()).not.toHaveAttribute('selected', '')
+        await expect(tabs.last()).toHaveAttribute('selected', '')
+        const tab2Content = page.getByText('Tab 2 HTML content')
+        await expect(tab2Content).toBeTruthy()
+    })
 })
 test.describe('Multiple tabs on same page', () => {
     test.beforeEach(async ({ page }) => {
@@ -297,7 +342,6 @@ test.describe('Multiple tabs on same page', () => {
         await expect(topContent2).toBeVisible()
         await expect(bottomContent).toBeVisible()
     })
-    //TODO: Replace instances of e.evaulate here with the .hasAttribute
     test('it can dynamically add tabs that behave correctly', async ({
         page,
     }) => {
@@ -342,40 +386,18 @@ test.describe('Multiple tabs on same page', () => {
         const btn = await page.locator('#add')
         await btn.click()
         const newTab = await page.locator('#tab-id-4')
-        await newTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        await expect(newTab).not.toHaveAttribute('selected', '')
         await newTab.click()
-        await page.waitForTimeout(100)
-        await newTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeTruthy()
-            })
+        // await page.waitForTimeout(100)
+        await page.waitForChanges()
+        await expect(newTab).toHaveAttribute('selected', '')
         // click again on first tab, make sure newTab becomes un-selected
         const firstTab = await page.locator('#tab-id-1')
         await firstTab.click()
-        await page.waitForTimeout(100)
-        await firstTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeTruthy
-            })
-        await newTab
-            .evaluate((e) => {
-                return e.hasAttribute('selected')
-            })
-            .then((e) => {
-                expect(e).toBeFalsy()
-            })
+        // await page.waitForTimeout(100)
+        await page.waitForChanges()
+        await expect(firstTab).toHaveAttribute('selected', '')
+        await expect(newTab).not.toHaveAttribute('selected', '')
     })
 })
 
@@ -390,13 +412,13 @@ test.describe('Tab Keyboard Navigation', () => {
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
-                    Content 1 
+                    Content 1
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-2">
-                    Content 2 
+                    Content 2
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-3">
-                    Content 3 
+                    Content 3
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
@@ -488,13 +510,13 @@ test.describe('Tab Keyboard Disabled Navigation', () => {
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
-                    Content 1 
+                    Content 1
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-2">
-                    Content 2 
+                    Content 2
                     </rux-tab-panel>
                     <rux-tab-panel aria-labelledby="tab-id-3">
-                    Content 3 
+                    Content 3
                     </rux-tab-panel>
                 </rux-tab-panels>
             </div>
@@ -530,6 +552,6 @@ test.describe('Tab Keyboard Disabled Navigation', () => {
     })
 })
 /*
-    Need to test: 
-    
+    Need to test:
+
 */

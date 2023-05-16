@@ -1,5 +1,53 @@
 # @astrouxds/angular
 
+## 7.10.0
+
+### Minor Changes
+
+#### Card
+
+-   Added `container` CSS Shadow Part
+
+### Patch Changes
+
+#### Angular
+
+-   Fixed an issue in angular where breadcrumb and tooltip were missing from the module
+
+#### Clock
+
+-   Added tabular-nums for better support when using system fonts
+
+#### Monitoring Progress Icon
+
+-   Added tabular-nums for better support when using system fonts
+
+#### Select
+
+-   Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
+
+#### Tabs
+
+-   Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
+
+
+## 7.9.3
+
+### Patch Changes
+
+#### General
+
+- Added Vite and similar bundler support
+- Fixed an issue that prevented users from using lazy-loaded components in Vue when using Vite
+
+## 7.9.2
+
+### Patch Changes
+
+#### Timeline
+
+- Fixed an issue where data labels would repeat when crossing day light savings time thresholds
+
 ## 7.9.1
 
 ### Patch Changes

@@ -15,11 +15,12 @@
 
 ## Shadow Parts
 
-| Part       | Description                       |
-| ---------- | --------------------------------- |
-| `"body"`   | The card's outside body element   |
-| `"footer"` | The card's outside footer element |
-| `"header"` | The card's outside header element |
+| Part          | Description                       |
+| ------------- | --------------------------------- |
+| `"body"`      | The card's outside body element   |
+| `"container"` | The card's outtermost container   |
+| `"footer"`    | The card's outside footer element |
+| `"header"`    | The card's outside header element |
 
 
 ## CSS Custom Properties

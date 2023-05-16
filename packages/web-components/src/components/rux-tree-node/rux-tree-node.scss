@@ -73,9 +73,10 @@
     }
 
     &:focus-visible {
-        border-radius: var(--focus-radius);
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
     }
 }
 
