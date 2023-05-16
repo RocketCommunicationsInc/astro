@@ -10,6 +10,14 @@ module.exports = {
         '@storybook/addon-a11y',
         'storybook-addon-themes',
         '@astrouxds/storybook-addon-docs-stencil',
+        '@storybook/addon-mdx-gfm',
     ],
     staticDirs: ['../dist'],
+    framework: {
+        name: '@storybook/web-components-webpack5',
+        options: {},
+    },
+    docs: {
+        autodocs: true,
+    },
 }

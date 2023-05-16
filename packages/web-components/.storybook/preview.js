@@ -1,5 +1,5 @@
 import themes from './theme'
-import { addDecorator } from '@storybook/web-components'
+// import { addDecorator } from '@storybook/web-components'
 import {
     extractArgTypes,
     extractComponentDescription,
