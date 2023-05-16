@@ -117,6 +117,7 @@ test.describe('Segmented-button', () => {
         const template = `
         <div style="padding: 2.5% 5%">
             <rux-segmented-button></rux-segmented-button>
+            <button id="button1">Hi!</button><button id="button2">bye</button>
         </div>
         `
         await page.setContent(template)
@@ -130,23 +131,40 @@ test.describe('Segmented-button', () => {
                 { label: 'Third segment' },
             ]
             segmented.data = data
+
+            const button1 = document.querySelector('#button1')
+            const button2 = document.querySelector('#button2')
+
+            button1.addEventListener('click', (e) => {
+                segmented.selected = 'First segment'
+            })
+            button2.addEventListener('click', (e) => {
+                segmented.selected = 'Second segment'
+            })
         `,
         })
         const segmentedButton = page.locator('rux-segmented-button')
-        const segButton1Segment = segmentedButton.locator('li').nth(1)
-        const segButton2Segment = segmentedButton.locator('li').nth(2)
+        const segButton1Segment = segmentedButton.locator('li').nth(0)
+        const segButton2Segment = segmentedButton.locator('li').nth(1)
         const segButton1Input = segButton1Segment.locator('input')
+        const segButton2Input = segButton2Segment.locator('input')
+        const button1 = page.locator('#button1')
+        const button2 = page.locator('#button2')
         //click second button
-        await segButton2Segment.click()
+        await button2.click()
         //make sure it changed
-        await expect(segButton2Segment.locator('input')).toBeChecked
+        const secondChecked = await segButton2Input.evaluate(
+            (e) => (e as HTMLInputElement).checked === true
+        )
+        expect(secondChecked).toBe(true)
 
         //then programatically go back to first
-        await segmentedButton.evaluate((e) =>
-            e.setAttribute('selected', 'First segment')
-        )
+        await button1.click()
         //and make sure it gets checked
-        await expect(segButton1Input).toBeChecked
+        const firstChecked = await segButton1Input.evaluate(
+            (e) => (e as HTMLInputElement).checked === true
+        )
+        expect(firstChecked).toBe(true)
     })
 })
 /*
