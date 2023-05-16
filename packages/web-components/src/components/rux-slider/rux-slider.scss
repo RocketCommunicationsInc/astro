@@ -274,8 +274,9 @@ input[type='range']:focus {
 }
 
 .rux-range:focus-visible::-webkit-slider-thumb {
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-offset);
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
 }
 
 .rux-range:disabled::-webkit-slider-thumb {
@@ -319,8 +320,9 @@ input[type='range']:focus {
 }
 
 .rux-range:focus-visible::-moz-range-thumb {
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-offset);
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
 }
 
 .rux-range:disabled::-moz-range-thumb {
@@ -345,6 +347,7 @@ input[type='range']:focus {
     cursor: not-allowed;
 }
 .rux-range:focus-visible::-ms-thumb {
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-offset);
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
 }

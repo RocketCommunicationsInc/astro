@@ -9,7 +9,7 @@
     line-height: var(
         --line-height-base
     ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
-    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+    text-align: left; // Solves the ivsue of a parent element with a different text-align overriding.
     scrollbar-color: var(--color-border-interactive-muted)
         var(--color-background-surface-default);
     ::-webkit-scrollbar {
@@ -181,8 +181,9 @@ label {
     }
 
     &:focus-visible {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
         border: 1px solid var(--color-background-interactive-default);
     }
 
