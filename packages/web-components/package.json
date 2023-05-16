@@ -35,6 +35,7 @@
     "test": "docker run -i --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:v1.33.0-focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test'",
     "test.server": "serve -p 3334",
     "test.e2e": "npx playwright test --project=chromium-e2e",
+    "test.e2e.ui": "npx playwright test --project=chromium-e2e --ui",
     "test.e2e.ci": "docker run -i --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:v1.33.0-focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --project=chromium-e2e'",
     "test.vrt": "docker run -i --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:v1.33.0-focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --project=chromium-vrt-dark --project=chromium-vrt-light'",
     "test.vrt.dark": "docker run -i --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:v1.33.0-focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --project=chromium-vrt-dark'",
