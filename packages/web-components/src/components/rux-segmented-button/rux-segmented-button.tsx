@@ -46,6 +46,12 @@ export class RuxSegmentedButton {
     @Event({ eventName: 'ruxchange' })
     ruxChange!: EventEmitter
 
+    @Watch('selected')
+    onSelectedChange(newValue: string) {
+        //if 'selected' is changed programatically rather than on click, set new selected value
+        this._setSelected(newValue)
+    }
+
     @Watch('data')
     onDataChange(newValue: string) {
         if (newValue) {
