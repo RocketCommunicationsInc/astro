@@ -117,7 +117,6 @@ test.describe('Segmented-button', () => {
         const template = `
         <div style="padding: 2.5% 5%">
             <rux-segmented-button></rux-segmented-button>
-            <button id="button1">Hi!</button><button id="button2">bye</button>
         </div>
         `
         await page.setContent(template)
@@ -131,16 +130,6 @@ test.describe('Segmented-button', () => {
                 { label: 'Third segment' },
             ]
             segmented.data = data
-
-            const button1 = document.querySelector('#button1')
-            const button2 = document.querySelector('#button2')
-
-            button1.addEventListener('click', (e) => {
-                segmented.selected = 'First segment'
-            })
-            button2.addEventListener('click', (e) => {
-                segmented.selected = 'Second segment'
-            })
         `,
         })
         const segmentedButton = page.locator('rux-segmented-button')
@@ -148,18 +137,22 @@ test.describe('Segmented-button', () => {
         const segButton2Segment = segmentedButton.locator('li').nth(1)
         const segButton1Input = segButton1Segment.locator('input')
         const segButton2Input = segButton2Segment.locator('input')
-        const button1 = page.locator('#button1')
-        const button2 = page.locator('#button2')
-        //click second button
-        await button2.click()
+        
+        // Imperatively set second segment as selected
+        await segmentedButton.evaluate((e) => {
+            (e as HTMLRuxSegmentedButtonElement).selected = 'Second segment'
+        })
+
         //make sure it changed
         const secondChecked = await segButton2Input.evaluate(
             (e) => (e as HTMLInputElement).checked === true
         )
         expect(secondChecked).toBe(true)
-
-        //then programatically go back to first
-        await button1.click()
+                
+        // Imperatively set first segment as selected
+        await segmentedButton.evaluate((e) => {
+            (e as HTMLRuxSegmentedButtonElement).selected = 'First segment'
+        })
         //and make sure it gets checked
         const firstChecked = await segButton1Input.evaluate(
             (e) => (e as HTMLInputElement).checked === true
