@@ -233,7 +233,9 @@ export class RuxInput implements FormFieldInterface {
     }
 
     private _setTogglePassword() {
-        this.type === 'password' ? (this.togglePassword = true) : false
+        this.type === 'password'
+            ? (this.togglePassword = true)
+            : (this.togglePassword = false)
     }
 
     private _handleTogglePassword() {

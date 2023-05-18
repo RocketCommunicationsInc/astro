@@ -34,7 +34,7 @@
         <rux-input>
             <div slot="error-text">ERROR SLOT</div>
         </rux-input>
-        <section>
+        <section style="padding-inline: 2rem">
             <h2>Prop/Slot Testing</h2>
             <rux-input id="test-this" label="this the input label"></rux-input>
             <div
@@ -53,6 +53,12 @@
                 <rux-button id="addErrorProp">Add Error Prop</rux-button>
                 <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
             </div>
+            <select id="changeType">
+                <option>text</option>
+                <option>password</option>
+                <option>date</option>
+                <option>time</option>
+            </select>
         </section>
         <script>
             const helpSlotButton = document.getElementById('addHelpSlot')
@@ -71,7 +77,14 @@
             const removeErrorPropButton = document.getElementById(
                 'removeErrorProp'
             )
+            const select = document.getElementById('changeType')
             const input = document.getElementById('test-this')
+
+            /**Change input type**/
+            window.addEventListener('change', (e) => {
+                if (e.target !== select) return
+                input.setAttribute('type', e.target.value)
+            })
 
             /**add/remove slots**/
 
