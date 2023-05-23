@@ -251,6 +251,19 @@ test.describe('Input with form', () => {
         //Assert
         await expect(ruxInputIcon).toBeVisible()
     })
+    test('removes rux-icon if type is no longer password', async ({ page }) => {
+        //Arrange
+        const ruxInputComponent = page.locator('#ruxInput4').first()
+        const ruxInputIcon = ruxInputComponent.locator('rux-icon')
+
+        //Assert
+        await expect(ruxInputIcon).toBeVisible()
+
+        await ruxInputComponent.evaluate(
+            (e) => ((e as HTMLRuxInputElement).type = 'text')
+        )
+        await expect(ruxInputIcon).not.toBeVisible()
+    })
     test('changes icon when icon is clicked', async ({ page }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput4').first()
