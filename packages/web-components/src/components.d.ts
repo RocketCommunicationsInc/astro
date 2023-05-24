@@ -12335,6 +12335,10 @@ export namespace Components {
     }
     interface RuxSelect {
         /**
+          * Styles the select menu as a borderless, inline variant.
+         */
+        "borderless"?: boolean;
+        /**
           * Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled": boolean;
@@ -32987,6 +32991,10 @@ declare namespace LocalJSX {
         "size"?: 'small' | 'medium' | 'large';
     }
     interface RuxSelect {
+        /**
+          * Styles the select menu as a borderless, inline variant.
+         */
+        "borderless"?: boolean;
         /**
           * Disables the select menu via HTML disabled attribute. Select menu takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
