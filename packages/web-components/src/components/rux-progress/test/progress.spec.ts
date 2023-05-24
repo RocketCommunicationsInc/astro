@@ -29,7 +29,7 @@ test.describe('Progress', () => {
 
         await expect(progressString).toContainText('0%')
     })
-    test('it changes max to equal value if given value is greater than given max', async ({
+    test('it changes value to equal max if given value is greater than given max', async ({
         page,
     }) => {
         const template = `
@@ -42,7 +42,8 @@ test.describe('Progress', () => {
         await page.setContent(template)
         const progress = await page.locator('.rux-progress').first()
 
-        await expect(progress).toHaveAttribute('max', '150')
+        await expect(progress).toHaveAttribute('max', '100')
+        await expect(progress).toHaveAttribute('value', '100')
     })
     test('it does not modify max if max is greater than given value', async ({
         page,
@@ -107,6 +108,6 @@ test.describe('Progress', () => {
     })
 })
 /*
-    Need to test: 
+    Need to test:
     -has props value, hide-label
 */
