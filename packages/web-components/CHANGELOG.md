@@ -1,5 +1,27 @@
 # @astrouxds/astro-web-components
 
+## 7.11.0
+
+### Minor Changes
+
+#### Core
+
+-   Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
+
+### Patch Changes
+
+#### Input
+
+-   Password show/hide button is no longer visible when type does not equal password
+
+#### Progress
+
+-   Fixed an issue where max would change to equal value if value increased passed max
+
+#### Segmented Button
+
+-   Fixed an issue with programatically selecting segments
+
 ## 7.10.0
 
 ### Minor Changes
