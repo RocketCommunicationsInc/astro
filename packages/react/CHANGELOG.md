@@ -1,35 +1,49 @@
 # @astrouxds/react
 
+## 7.11.0
+
+### Minor Changes
+
+- af2a8fbc: Core - Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
+
+### Patch Changes
+
+- 9f12ca24: fix(rux-input) password show/hide button is no longer visible when type != password
+- d14ff6c5: fix(rux-segmented-button) fix a programatic selection bug
+- Updated dependencies [9f12ca24]
+- Updated dependencies [d14ff6c5]
+- Updated dependencies [af2a8fbc]
+  - @astrouxds/astro-web-components@7.11.0
+
 ## 7.10.0
 
 ### Minor Changes
 
 #### Card
 
--   Added `container` CSS Shadow Part
+- Added `container` CSS Shadow Part
 
 ### Patch Changes
 
 #### Angular
 
--   Fixed an issue in angular where breadcrumb and tooltip were missing from the module
+- Fixed an issue in angular where breadcrumb and tooltip were missing from the module
 
 #### Clock
 
--   Added tabular-nums for better support when using system fonts
+- Added tabular-nums for better support when using system fonts
 
 #### Monitoring Progress Icon
 
--   Added tabular-nums for better support when using system fonts
+- Added tabular-nums for better support when using system fonts
 
 #### Select
 
--   Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
+- Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
 
 #### Tabs
 
--   Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
-
+- Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
 
 ## 7.9.3
 

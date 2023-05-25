@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 7.11.0
+
+### Minor Changes
+
+-   af2a8fbc: Core - Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
+
+### Patch Changes
+
+-   9f12ca24: fix(rux-input) password show/hide button is no longer visible when type != password
+-   d14ff6c5: fix(rux-segmented-button) fix a programatic selection bug
+
 ## 7.10.0
 
 ### Minor Changes
