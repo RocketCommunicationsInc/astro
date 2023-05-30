@@ -95,6 +95,16 @@ export class RuxSlider implements FormFieldInterface {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
+     * Enables a dual-range slider
+     */
+    @Prop() range?: boolean = false
+
+    /**
+     * The value of the second thumb if using a dual-range slider
+     */
+    @Prop({ attribute: 'dual-value', mutable: true }) dualValue?: number
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxinput' }) ruxInput!: EventEmitter
@@ -109,12 +119,14 @@ export class RuxSlider implements FormFieldInterface {
 
     componentWillLoad() {
         this._updateValue()
+        this._updateDualValue()
         this._getBrowser(navigator.userAgent.toLowerCase())
         this._handleSlotChange()
     }
 
     connectedCallback() {
         this._onInput = this._onInput.bind(this)
+        this._onDualInput = this._onDualInput.bind(this)
         this._onBlur = this._onBlur.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._onChange = this._onChange.bind(this)
@@ -139,6 +151,11 @@ export class RuxSlider implements FormFieldInterface {
         this._updateValue()
     }
 
+    @Watch('dualValue')
+    handleDualValue() {
+        this._updateDualValue()
+    }
+
     @Watch('step')
     handleStep() {
         // Value needs to be a multiple of step, otherwise slider begins to look wrong
@@ -157,6 +174,8 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _updateValue() {
+        console.log('update value run')
+
         // If min is not a number, change it to 0
         if (!this.min && this.min != 0) {
             this.min = 0
@@ -188,16 +207,64 @@ export class RuxSlider implements FormFieldInterface {
 
         this._setValuePercent()
     }
+    private _updateDualValue() {
+        console.log('update dual value run')
+        // If min is not a number, change it to 0
+        if (!this.min && this.min != 0) {
+            this.min = 0
+        }
+        //If max is not a number, change it to 100
+        if (!this.max && this.max != 0) {
+            this.max = 100
+        }
+        // If value is not a number, change it to default.
+        if (!this.dualValue && this.dualValue != 0) {
+            this.dualValue = (this.max - this.min) / 2 + this.min
+        }
+        //If step is not a number, change it to 1
+        if (!this.step) {
+            this.step = 1
+        }
+        //Min can't be >= max
+        if (this.min >= this.max) {
+            this.min = this.max - this.step
+        }
+        // If min is given and is greater than value, then set value to the min.
+        if (this.dualValue < this.min) {
+            this.dualValue = this.min
+        }
+        //If max is given and is less than value, set value to max
+        if (this.max < this.dualValue) {
+            this.dualValue = this.max
+        }
+
+        this._setDualValuePercent()
+    }
     //Sets the --slider-value-percent CSS var
     private _setValuePercent() {
         const dif = ((this.value! - this.min!) / (this.max! - this.min!)) * 100
+
         this.el.style.setProperty('--_slider-value-percent', `${dif}%`)
+    }
+    //Sets the --slider-value-percent CSS var
+    private _setDualValuePercent() {
+        const dif2 =
+            ((this.dualValue! - this.min!) / (this.max! - this.min!)) * 100
+
+        this.el.style.setProperty('--_dual-value-percent', `${dif2}%`)
     }
 
     private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
         this.value = parseFloat(target.value)
         this._setValuePercent()
+        this.ruxInput.emit()
+    }
+
+    private _onDualInput(e: Event) {
+        const target = e.target as HTMLInputElement
+        this.dualValue = parseFloat(target.value)
+        this._setDualValuePercent()
         this.ruxInput.emit()
     }
 
@@ -278,15 +345,18 @@ export class RuxSlider implements FormFieldInterface {
                     <div
                         class={{
                             'rux-slider': true,
+                            'rux-slider--range': this.range ? true : false,
                             'with-axis-labels': this.axisLabels.length > 0,
                         }}
                     >
                         <input
                             id={sliderId}
                             onInput={_onInput}
-                            onChange={_onChange}
                             type="range"
-                            class="rux-range"
+                            class={{
+                                'rux-range': true,
+                                'rux-range--dual': this.range ? true : false,
+                            }}
                             min={min}
                             max={max}
                             step={step}
@@ -298,6 +368,21 @@ export class RuxSlider implements FormFieldInterface {
                             part="input"
                             list="steplist"
                         ></input>
+                        {this.range ? (
+                            <input
+                                type="range"
+                                class="rux-range rux-range--dual"
+                                onInput={this._onDualInput}
+                                disabled={disabled}
+                                min={min}
+                                max={max}
+                                value={this.dualValue}
+                                aria-disabled={disabled ? 'true' : 'false'}
+                            ></input>
+                        ) : null}
+                        {this.range ? (
+                            <div class="rux-range-overlay"></div>
+                        ) : null}
                         {this.axisLabels.length > 0 ? (
                             <datalist
                                 id="steplist"
