@@ -10,7 +10,7 @@
     --_slider-value-percent: 50%;
     --_slider-top: calc(var(--_slider-thumb-size) / -2.4);
     //idk?
-    --_dual-value-percent: 20%;
+    --_start-value-percent: 20%;
 
     position: relative;
     display: flex;
@@ -132,9 +132,7 @@
     color: transparent;
     position: relative;
 }
-.rux-range--dual {
-    pointer-events: none;
-}
+
 input[type='range']:focus {
     outline: none;
 }
@@ -192,8 +190,8 @@ input[type='range']:focus {
     position: absolute;
     height: var(--spacing-1);
     background-color: var(--color-background-interactive-default);
-    left: var(--_dual-value-percent);
-    width: calc(var(--_slider-value-percent) - var(--_dual-value-percent));
+    left: var(--_start-value-percent);
+    width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
     // top: var(--spacing-2);
     //   range.current.style.left = `${minPercent}%`;
     // range.current.style.width = `${maxPercent - minPercent}%`;
