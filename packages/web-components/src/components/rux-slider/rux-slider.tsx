@@ -175,7 +175,7 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _updateValue() {
-        if (this.startVal && this.endVal) {
+        if (this.startVal !== undefined && this.endVal !== undefined) {
             this._setValuePercent()
             //? Should we just make reg value equal endVal? That way there's not confusion when
             //? getting slider.value and that being the default of 50 all the time? idk idk idk
@@ -361,7 +361,10 @@ export class RuxSlider implements FormFieldInterface {
                         class={{
                             'rux-slider': true,
                             'rux-slider--range':
-                                this.startVal && this.endVal ? true : false,
+                                this.startVal !== undefined &&
+                                this.endVal !== undefined
+                                    ? true
+                                    : false,
                             'with-axis-labels': this.axisLabels.length > 0,
                         }}
                     >
@@ -373,7 +376,10 @@ export class RuxSlider implements FormFieldInterface {
                             class={{
                                 'rux-range': true,
                                 'rux-range--dual':
-                                    this.startVal && this.endVal ? true : false,
+                                    this.startVal !== undefined &&
+                                    this.endVal !== undefined
+                                        ? true
+                                        : false,
                             }}
                             min={min}
                             max={max}
@@ -386,7 +392,8 @@ export class RuxSlider implements FormFieldInterface {
                             part="input"
                             list="steplist"
                         ></input>
-                        {this.startVal && this.endVal ? (
+                        {this.startVal !== undefined &&
+                        this.endVal !== undefined ? (
                             <input
                                 type="range"
                                 class="rux-range rux-range--dual"
@@ -399,7 +406,8 @@ export class RuxSlider implements FormFieldInterface {
                                 aria-disabled={disabled ? 'true' : 'false'}
                             ></input>
                         ) : null}
-                        {this.startVal && this.endVal ? (
+                        {this.startVal !== undefined &&
+                        this.endVal !== undefined ? (
                             <div class="rux-range-overlay"></div>
                         ) : null}
                         {this.axisLabels.length > 0 ? (
