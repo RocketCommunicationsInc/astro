@@ -19,5 +19,25 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <div
+            style="
+                width: 400px;
+                display: flex;
+                flex-direction: column;
+                margin: 3rem;
+            "
+        >
+            <rux-slider start-val="10" end-val="50"></rux-slider>
+        </div>
+        <div style="margin-top: 3rem; width: 400px">
+            <rux-slider></rux-slider>
+        </div>
+        <script>
+            document.addEventListener('ruxchange', (e) => {
+                console.log(e.target.startVal, 'startValue')
+                console.log(e.target.endVal, 'endVal')
+            })
+        </script>
+    </body>
 </html>
