@@ -35,6 +35,7 @@ const tokens = Object.assign({}, reference, system, component, oneOffs)
 export const config: Config = {
     namespace: 'astro-web-components',
     globalStyle: 'src/global/global.scss',
+    sourceMap: false,
     outputTargets: [
         reactOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
