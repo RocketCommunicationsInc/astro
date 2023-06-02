@@ -1,5 +1,5 @@
 :host {
-    display: block;
+    display: inline-block;
 }
 
 :host([hidden]) {
@@ -20,4 +20,5 @@
     line-height: var(
         --line-height-base
     ); //fixes issue where parent element with larger line-height causes layout shift.
+    margin-inline: auto; //centers the icon in its container so that it centers by default when made wider
 }
