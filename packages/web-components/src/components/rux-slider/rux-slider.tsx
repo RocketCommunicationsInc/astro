@@ -291,9 +291,15 @@ export class RuxSlider implements FormFieldInterface {
             _onInput,
             _onBlur,
             _onChange,
+            axisLabels,
+            _onStartValInput,
+            startVal,
+            endVal,
+            _getTickWidths,
+            ticksOnly,
         } = this
         //TODO: Update this to render (2?) hidden inputs when in dual range
-        renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
+        renderHiddenInput(true, el, name, JSON.stringify(value), disabled)
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
@@ -301,9 +307,9 @@ export class RuxSlider implements FormFieldInterface {
                         <label
                             class={{
                                 'rux-input-label': true,
-                                hidden: !this.hasLabel,
+                                hidden: !hasLabel,
                             }}
-                            aria-hidden={this.hasLabel ? 'false' : 'true'}
+                            aria-hidden={hasLabel ? 'false' : 'true'}
                             htmlFor={sliderId}
                             part="label"
                         >
@@ -315,11 +321,10 @@ export class RuxSlider implements FormFieldInterface {
                         class={{
                             'rux-slider': true,
                             'rux-slider--range':
-                                this.startVal !== undefined &&
-                                this.endVal !== undefined
+                                startVal !== undefined && endVal !== undefined
                                     ? true
                                     : false,
-                            'with-axis-labels': this.axisLabels.length > 0,
+                            'with-axis-labels': axisLabels.length > 0,
                         }}
                     >
                         <input
@@ -330,8 +335,8 @@ export class RuxSlider implements FormFieldInterface {
                             class={{
                                 'rux-range': true,
                                 'rux-range--dual':
-                                    this.startVal !== undefined &&
-                                    this.endVal !== undefined
+                                    startVal !== undefined &&
+                                    endVal !== undefined
                                         ? true
                                         : false,
                             }}
@@ -346,41 +351,39 @@ export class RuxSlider implements FormFieldInterface {
                             part="input"
                             list="steplist"
                         ></input>
-                        {this.startVal !== undefined &&
-                        this.endVal !== undefined ? (
+                        {startVal !== undefined && endVal !== undefined ? (
                             <input
                                 type="range"
                                 class="rux-range rux-range--dual"
-                                onInput={this._onStartValInput}
+                                onInput={_onStartValInput}
                                 onChange={_onChange}
                                 disabled={disabled}
                                 min={min}
                                 max={max}
-                                value={this.startVal}
+                                value={startVal}
                                 aria-disabled={disabled ? 'true' : 'false'}
                             ></input>
                         ) : null}
-                        {this.startVal !== undefined &&
-                        this.endVal !== undefined ? (
+                        {startVal !== undefined && endVal !== undefined ? (
                             <div class="rux-range-overlay"></div>
                         ) : null}
-                        {this.axisLabels.length > 0 ? (
+                        {axisLabels.length > 0 ? (
                             <datalist
                                 id="steplist"
                                 style={{
                                     gridTemplateColumns: `[tick] repeat(${
-                                        this.axisLabels.length - 1
-                                    }, ${this._getTickWidths()}%)`,
+                                        axisLabels.length - 1
+                                    }, ${_getTickWidths()}%)`,
                                 }}
                             >
-                                {this.axisLabels.map((label) => {
+                                {axisLabels.map((label) => {
                                     return (
                                         <div
                                             class="tick-label"
                                             part="tick-container"
                                         >
                                             <div class="tick" part="tick"></div>
-                                            {this.ticksOnly ? null : (
+                                            {ticksOnly ? null : (
                                                 <div
                                                     class="axis-label"
                                                     part="axis-label"

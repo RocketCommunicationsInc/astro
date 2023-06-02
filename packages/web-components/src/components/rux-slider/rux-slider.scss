@@ -9,7 +9,6 @@
     --_slider-thumb-size: calc(var(--spacing-4) + var(--spacing-1)); //20
     --_slider-value-percent: 50%;
     --_slider-top: calc(var(--_slider-thumb-size) / -2.4);
-    //idk?
     --_start-value-percent: 20%;
 
     position: relative;
@@ -178,13 +177,6 @@ input[type='range']:focus {
 .rux-range--dual::-webkit-slider-runnable-track {
     background-image: none;
     z-index: 1;
-    //     // In dual/range mode, the track needs to be inbetween the two thumbs.
-    //     background-size: calc(
-    //                 var(--_slider-value-percent) - var(--_dual-value-percent)
-    //             )
-    //             var(--slider-track-before-thumb-height),
-    //         calc(100% - var(--_slider-thumb-size)) 1px,
-    //         var(--spacing-1) var(--spacing-1);
 }
 .rux-range-overlay {
     position: absolute;
