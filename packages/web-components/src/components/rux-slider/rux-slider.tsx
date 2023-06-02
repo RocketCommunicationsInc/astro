@@ -38,25 +38,25 @@ export class RuxSlider implements FormFieldInterface {
     @State() hasLabelSlot = false
     @State() hasHelpSlot = false
     @State() hasErrorSlot = false
+
     /**
      * Min value of the slider.
      */
-
     @Prop() min: number = 0
+
     /**
      * Max value of slider.
      */
-
     @Prop() max: number = 100
     /**
      * Step amount of slider value.
      */
 
     @Prop() step: number = 1
+
     /**
      * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
-
     @Prop({ mutable: true }) value: number = this.endVal
         ? this.endVal
         : (this.max! - this.min!) / 2 + this.min!
@@ -75,6 +75,7 @@ export class RuxSlider implements FormFieldInterface {
      * Determines if the slider is disabled.
      */
     @Prop({ reflect: true }) disabled: boolean = false
+
     /**
      * Name of the Input Field for Form Submission
      */
@@ -104,14 +105,17 @@ export class RuxSlider implements FormFieldInterface {
      * The value of the second thumb if using a dual-range slider
      */
     @Prop({ attribute: 'end-val', mutable: true }) endVal?: number
+
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxinput' }) ruxInput!: EventEmitter
+
     /**
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
+
     /**
      * Fired when the element's value is altered by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
      */
@@ -119,7 +123,6 @@ export class RuxSlider implements FormFieldInterface {
 
     componentWillLoad() {
         this._updateValue()
-        this._updateStartVal()
         this._getBrowser(navigator.userAgent.toLowerCase())
         this._handleSlotChange()
     }
@@ -148,15 +151,12 @@ export class RuxSlider implements FormFieldInterface {
     @Watch('min')
     @Watch('max')
     @Watch('endVal')
+    @Watch('startVal')
     handleChange() {
         this._updateValue()
     }
 
-    @Watch('startVal')
-    handleDualValue() {
-        this._updateStartVal()
-    }
-
+    //TODO: update this to work with dual range
     @Watch('step')
     handleStep() {
         // Value needs to be a multiple of step, otherwise slider begins to look wrong
@@ -166,7 +166,10 @@ export class RuxSlider implements FormFieldInterface {
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
     }
-    //Returns the closest multiple of two given numbers.
+
+    /**
+     * Returns the closest multiple of two given numbers.
+     */
     private _closestMultiple(n: number, x: number) {
         if (x > n) return x
         n = n + x / 2
@@ -175,99 +178,49 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _updateValue() {
-        if (this.startVal !== undefined && this.endVal !== undefined) {
-            this._setValuePercent()
-            //? Should we just make reg value equal endVal? That way there's not confusion when
-            //? getting slider.value and that being the default of 50 all the time? idk idk idk
-            this.value = this.endVal
-        } else {
-            // If min is not a number, change it to 0
-            if (!this.min && this.min != 0) {
-                this.min = 0
-            }
-            //If max is not a number, change it to 100
-            if (!this.max && this.max != 0) {
-                this.max = 100
-            }
-            // If value is not a number, change it to default.
-            if (!this.value && this.value != 0) {
-                this.value = (this.max - this.min) / 2 + this.min
-            }
-            //If step is not a number, change it to 1
-            if (!this.step) {
-                this.step = 1
-            }
-            //Min can't be >= max
-            if (this.min >= this.max) {
-                this.min = this.max - this.step
-            }
-            // If min is given and is greater than value, then set value to the min.
-            if (this.value < this.min) {
-                this.value = this.min
-            }
-            //If max is given and is less than value, set value to max
-            if (this.max < this.value) {
-                this.value = this.max
-            }
-            this._setValuePercent()
-        }
+        this._setValuePercent()
+        // this._setStartValuePercent()
+        //? Should we just make reg value equal endVal? That way there's not confusion when
+        //? getting slider.value and that being the default of 50 all the time? idk idk idk
+        // this.value = this.endVal
     }
-    private _updateStartVal() {
-        console.log('update dual value run')
-        // If min is not a number, change it to 0
-        if (!this.min && this.min != 0) {
-            this.min = 0
-        }
-        //If max is not a number, change it to 100
-        if (!this.max && this.max != 0) {
-            this.max = 100
-        }
-        // If value is not a number, change it to default.
-        if (!this.startVal && this.startVal != 0) {
-            this.startVal = (this.max - this.min) / 2 + this.min
-        }
-        //If step is not a number, change it to 1
-        if (!this.step) {
-            this.step = 1
-        }
-        //Min can't be >= max
-        if (this.min >= this.max) {
-            this.min = this.max - this.step
-        }
-        // If min is given and is greater than value, then set value to the min.
-        if (this.startVal < this.min) {
-            this.startVal = this.min
-        }
-        //If max is given and is less than value, set value to max
-        if (this.max < this.startVal) {
-            this.startVal = this.max
-        }
 
-        this._setStartValuePercent()
-    }
-    //Sets the --slider-value-percent CSS var
+    //Sets the --slider-value-percent CSS var. Also contor
     private _setValuePercent() {
-        if (this.endVal) {
-            const dif =
-                ((this.endVal! - this.min!) / (this.max! - this.min!)) * 100
-            this.el.style.setProperty('--_slider-value-percent', `${dif}%`)
+        //if endVal is being used, we're in dual range mode. Use that instead of value.
+        if (this.endVal !== undefined && this.startVal !== undefined) {
+            // swap CSS custom prop values
+            if (this.startVal > this.endVal) {
+                this.el.style.setProperty(
+                    '--_slider-value-percent',
+                    `${this.startVal}%`
+                )
+                this.el.style.setProperty(
+                    '--_start-value-percent',
+                    `${this.endVal}%`
+                )
+                //If end < start, no need to swap
+            } else {
+                this.el.style.setProperty(
+                    '--_start-value-percent',
+                    `${this.startVal}%`
+                )
+                this.el.style.setProperty(
+                    '--_slider-value-percent',
+                    `${this.endVal}%`
+                )
+            }
+            //if not in dual slider
         } else {
             const dif =
                 ((this.value! - this.min!) / (this.max! - this.min!)) * 100
             this.el.style.setProperty('--_slider-value-percent', `${dif}%`)
         }
     }
-    //Sets the --slider-value-percent CSS var
-    private _setStartValuePercent() {
-        const dif2 =
-            ((this.startVal! - this.min!) / (this.max! - this.min!)) * 100
-
-        this.el.style.setProperty('--_start-value-percent', `${dif2}%`)
-    }
 
     private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
-        if (this.endVal) {
+        if (this.endVal !== undefined) {
             this.endVal = parseFloat(target.value)
         } else {
             this.value = parseFloat(target.value)
@@ -279,7 +232,8 @@ export class RuxSlider implements FormFieldInterface {
     private _onStartValInput(e: Event) {
         const target = e.target as HTMLInputElement
         this.startVal = parseFloat(target.value)
-        this._setStartValuePercent()
+        // this._setStartValuePercent()
+        this._setValuePercent()
         this.ruxInput.emit()
     }
 

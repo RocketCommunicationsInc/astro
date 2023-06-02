@@ -192,9 +192,8 @@ input[type='range']:focus {
     background-color: var(--color-background-interactive-default);
     left: var(--_start-value-percent);
     width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
-    // top: var(--spacing-2);
-    //   range.current.style.left = `${minPercent}%`;
-    // range.current.style.width = `${maxPercent - minPercent}%`;
+    //! centers the bar between the thumbs. Is there a better way?
+    top: -1px;
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
     opacity: var(--opacity-disabled);
