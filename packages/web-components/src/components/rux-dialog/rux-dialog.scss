@@ -18,10 +18,12 @@
     display: none;
 }
 
-rux-button-group {
-    margin-top: auto;
+.rux-button-group {
     margin-left: auto;
-    align-self: flex-end;
+}
+
+.rux-button-group rux-button:first-of-type {
+    margin-right: var(--spacing-2);
 }
 
 .rux-dialog {
