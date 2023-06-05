@@ -46,6 +46,12 @@ export class RuxSegmentedButton {
     @Event({ eventName: 'ruxchange' })
     ruxChange!: EventEmitter
 
+    @Watch('selected')
+    onSelectedChange(newValue: string) {
+        //if 'selected' is changed programatically rather than on click, set new selected value
+        this._setSelected(newValue)
+    }
+
     @Watch('data')
     onDataChange(newValue: string) {
         if (newValue) {
@@ -109,6 +115,18 @@ export class RuxSegmentedButton {
         return false
     }
 
+    private _handleFocus(e: Event) {
+        const target = e.currentTarget as HTMLInputElement
+        target.matches(':focus-visible')
+            ? target.closest('li')?.classList.add('--focused')
+            : null
+    }
+
+    private _handleBlur(e: Event) {
+        const target = e.currentTarget as HTMLInputElement
+        target.closest('li')?.classList.remove('--focused')
+    }
+
     render() {
         return (
             <ul
@@ -129,6 +147,8 @@ export class RuxSegmentedButton {
                             data-label={item.label}
                             onChange={this._handleChange}
                             disabled={this.disabled}
+                            onFocus={this._handleFocus}
+                            onBlur={this._handleBlur}
                         />
                         <label
                             htmlFor={this._slugify(item.label)}

@@ -1,5 +1,142 @@
 # @astrouxds/angular
 
+## 7.11.0
+
+### Minor Changes
+
+#### Core
+
+-   Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
+
+### Patch Changes
+
+#### Input
+
+-   Password show/hide button is no longer visible when type does not equal password
+
+#### Progress
+
+-   Fixed an issue where max would change to equal value if value increased passed max
+
+#### Segmented Button
+
+-   Fixed an issue with programatically selecting segments
+
+
+## 7.10.0
+
+### Minor Changes
+
+#### Card
+
+- Added `container` CSS Shadow Part
+
+### Patch Changes
+
+#### Angular
+
+- Fixed an issue in angular where breadcrumb and tooltip were missing from the module
+
+#### Clock
+
+- Added tabular-nums for better support when using system fonts
+
+#### Monitoring Progress Icon
+
+- Added tabular-nums for better support when using system fonts
+
+#### Select
+
+- Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
+
+#### Tabs
+
+- Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
+
+## 7.9.3
+
+### Patch Changes
+
+#### General
+
+- Added Vite and similar bundler support
+- Fixed an issue that prevented users from using lazy-loaded components in Vue when using Vite
+
+## 7.9.2
+
+### Patch Changes
+
+#### Timeline
+
+- Fixed an issue where data labels would repeat when crossing day light savings time thresholds
+
+## 7.9.1
+
+### Patch Changes
+
+#### React
+
+- Revert treeshaking for react in order to fix rux-icon not working in create-react-apps.
+
+## 7.9.0
+
+### Minor Changes
+
+#### Breadcrumb Item
+
+- Added focus state
+
+#### Checkbox
+
+- Added `ruxfocus` event on focus
+
+#### Input
+
+- added `setFocus` method to programmatically set focus
+
+#### Select
+
+- added `setFocus` method to programmatically set focus
+
+#### Textarea
+
+- added `setFocus` method to programmatically set focus
+
+### Patch Changes
+
+#### Dialog
+
+- `ruxDialogOpened` will now fire after everything has finished loading on open
+
+## 7.8.0
+
+### Minor Changes
+
+#### Accordion
+
+- Added new `ruxcollapsed` event that emits when accordion-item closes
+
+#### Core
+
+- Design tokens
+  - Added `color-background-interactive-muted`
+  - Added light theme token for `color-background-interactive-muted`
+  - Added light theme tokens for `color-status-off`, `color-status-standby`, `color-status-normal`, `color-status-serious`, `color-status-critical`
+
+#### Pop Up
+
+- Adds `enableAnimationFrame` prop to watch when the trigger moves in order to more accurately place the pop-up.
+
+### Patch Changes
+
+#### React
+
+- Added vite support and tree-shaking capability to `@astrouxds/react`.
+
+#### Select
+
+- Fixed an issue where rux-option couldn't have it's props dynamically changed
+
 ## 7.7.0
 
 ### Minor Changes

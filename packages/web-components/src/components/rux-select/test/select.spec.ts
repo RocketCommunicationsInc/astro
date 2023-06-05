@@ -53,7 +53,95 @@ test.describe('Select', () => {
         await el.locator('select').selectOption('green')
         await expect(el.locator('select')).toHaveValue('green')
     })
+    test('it can be focused programatically', async ({ page }) => {
+        const template = `
+            <rux-select label="Best Thing?" name="bestThing">
+                <rux-option label="Select an option" value=""></rux-option>
+                <rux-option label="Red" value="red"></rux-option>
+                <rux-option value="blue" label="Blue"></rux-option>
+            </rux-select>
+        `
+        await page.setContent(template)
+        const el = await page.locator('rux-select')
+
+        let isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeFalsy()
+
+        await el.evaluate(async (e) => {
+            await (e as HTMLRuxSelectElement).setFocus()
+        })
+
+        isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeTruthy()
+    })
+    test('Options that are dynamically added can be synced to select', async ({
+        page,
+    }) => {
+        const template = `
+            <rux-select value="flash">
+                <rux-option value="" label="Select"></rux-option>
+                <rux-option-group label="Group">
+                    <rux-option value="flash" label="Flash"></rux-option>
+                </rux-option-group>
+            </rux-select> 
+        `
+        await page.setContent(template)
+
+        const select = await page.locator('rux-select select')
+        await expect(select).toHaveValue('flash')
+
+        // Add Batman to Option Group
+        const optionGroupEl = await page.locator('rux-option-group')
+        await optionGroupEl.evaluate((el) => {
+            const newOption = document.createElement('rux-option')
+            newOption.label = 'batman'
+            newOption.value = 'batman'
+            el.appendChild(newOption)
+        })
+
+        await page.waitForChanges()
+        await expect(select).toHaveValue('flash')
+    })
+    test('Options that are dynamically removed can be synced to select', async ({
+        page,
+    }) => {
+        const template = `
+        <rux-select value="flash">
+        <rux-option value="" label="Select"></rux-option>
+        <rux-option-group label="Group">
+            <rux-option value="flash" label="Flash"></rux-option>
+            <rux-option value="batman" label="Batman"></rux-option>
+            <rux-option value="wonder woman" label="Wonder Woman"></rux-option>
+        </rux-option-group>
+      </rux-select>
+      <rux-button>Remove from options</rux-button>
+      `
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+            const sel = document.querySelector('rux-select')
+            const optGroup = document.querySelector('rux-option-group')
+            const btn = document.querySelector('rux-button')
+            btn.addEventListener('click', () => {
+              let options = optGroup.querySelectorAll('rux-option')
+              options[options.length - 1].remove()
+            })
+      `,
+        })
+        //selected value should be flash
+        const sel = page.locator('rux-select select')
+        await expect(sel).toHaveValue('flash')
+        const btn = page.locator('rux-button')
+        //click btn to add more options inside opt group
+        await btn.click()
+        await page.waitForChanges()
+        //selected value should still be flash
+        await expect(sel).toHaveValue('flash')
+    })
 })
+/**
+ * Select in a form
+ */
 test.describe('Select in a form', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
@@ -70,7 +158,7 @@ test.describe('Select in a form', () => {
                 <rux-option value="blue" label="Blue"></rux-option>
                 <rux-option value="green" label="Green"></rux-option>
             </rux-select>
-            <!--- Multi Select ---> 
+            <!--- Multi Select --->
             <rux-select
                 id="ruxMultiSelect"
                 label="Best Thing?"
@@ -134,7 +222,9 @@ test.describe('Select in a form', () => {
         await submit.click()
         await expect(log).toContainText('bestThing:blue')
     })
-    // Multi Select
+    /**
+     * Multi Select
+     */
     test('it syncs multiple values from select element', async ({ page }) => {
         const multi = await page.locator('#ruxMultiSelect')
         await multi.locator('select').selectOption(['red', 'green'])
@@ -157,25 +247,95 @@ test.describe('Select in a form', () => {
         await expect(log).toContainText('multBestThing:redmultBestThing:blue')
     })
 })
-test.describe('Emits events', () => {
+test.describe('Options can dynamically add/remove props', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
         <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
             <rux-option label="Select an option" value=""></rux-option>
-            <rux-option label="Red" value="red"></rux-option>
-            <rux-option value="blue" label="Blue"></rux-option>
-            <rux-option value="green" label="Green"></rux-option>
+            <rux-option label="Red" value="red" id="red"></rux-option>
+            <rux-option value="blue" label="Blue" id="blue"></rux-option>
+            <rux-option value="green" label="Green" id="green"></rux-option>
         </rux-select>
-        `
+        <rux-button id="dis-green">Disabled Green Option</rux-button>
+        <rux-button id="change-label">Change Label</rux-button>
+        <rux-button id="change-value">Change Value</rux-button>
+        <script>
+          const green = document.getElementById('green')
+          const blue = document.getElementById('blue')
+          const red = document.getElementById('red')
+
+          const disGreen = document.getElementById('dis-green')
+          const changeLabel = document.getElementById('change-label')
+          const changeValue = document.getElementById('change-value')
+
+          disGreen.addEventListener('click', () => {
+              green.disabled = !green.disabled
+          })
+          changeLabel.addEventListener('click', () => {
+            blue.label = "new label"
+          })
+          changeValue.addEventListener('click', () => {
+            red.value = "new value"
+          })
+        </script>
+      `
         await page.setContent(template)
     })
-    //TODO: Get this working
-    // test('it emits change event', async ({ page }) => {
-    //     const select = page.locator('rux-select')
-    //     const option = select.locator('rux-option').nth(1)
-    //     const changeEvent = await page.spyOnEvent('ruxchange')
-    //     await select.click()
-    //     await option.click({ force: true })
-    //     await expect(changeEvent).toHaveReceivedEventTimes(1)
-    // })
+    test('it should be abel to dynamically disable an option', async ({
+        page,
+    }) => {
+        const disGreen = page.locator('#dis-green')
+        const shadowSelect = page.locator('#ruxSelect').locator('select')
+        const greenOption = shadowSelect.locator('option').last()
+
+        await page.click('#ruxSelect')
+        await shadowSelect.selectOption('green')
+        await expect(shadowSelect).toHaveValue('green')
+        await disGreen.click()
+        await expect(greenOption).toBeDisabled()
+    })
+    test('it should be able to dynamically change option label', async ({
+        page,
+    }) => {
+        const changeLabel = page.locator('#change-label')
+        const shadowSelect = page.locator('#ruxSelect').locator('select')
+        const blueOption = shadowSelect.locator('option').nth(2)
+
+        await expect(blueOption).toHaveText('Blue')
+        await changeLabel.click()
+        await expect(blueOption).toHaveText('new label')
+    })
+    test('it should be able to dynamically change option value', async ({
+        page,
+    }) => {
+        const changeValue = page.locator('#change-value')
+        const shadowSelect = page.locator('#ruxSelect').locator('select')
+        const redOption = shadowSelect.locator('option').nth(1)
+
+        await expect(redOption).toHaveAttribute('value', 'red')
+        await changeValue.click()
+        await expect(redOption).toHaveAttribute('value', 'new value')
+    })
 })
+// test.describe('Emits events', () => {
+//     test.beforeEach(async ({ page }) => {
+//         const template = `
+//         <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
+//             <rux-option label="Select an option" value=""></rux-option>
+//             <rux-option label="Red" value="red"></rux-option>
+//             <rux-option value="blue" label="Blue"></rux-option>
+//             <rux-option value="green" label="Green"></rux-option>
+//         </rux-select>
+//         `
+//         await page.setContent(template)
+//     })
+//TODO: Get this working
+// test('it emits change event', async ({ page }) => {
+//     const select = page.locator('rux-select')
+//     const option = select.locator('rux-option').nth(1)
+//     const changeEvent = await page.spyOnEvent('ruxchange')
+//     await select.click()
+//     await option.click({ force: true })
+//     await expect(changeEvent).toHaveReceivedEventTimes(1)
+// })
+// })

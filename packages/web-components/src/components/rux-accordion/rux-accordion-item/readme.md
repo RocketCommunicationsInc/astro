@@ -15,9 +15,10 @@
 
 ## Events
 
-| Event         | Description                        | Type               |
-| ------------- | ---------------------------------- | ------------------ |
-| `ruxexpanded` | Fired when an element has expanded | `CustomEvent<any>` |
+| Event          | Description                                | Type               |
+| -------------- | ------------------------------------------ | ------------------ |
+| `ruxcollapsed` | Fired when an accordion-item has collapsed | `CustomEvent<any>` |
+| `ruxexpanded`  | Fired when an accordion-item has expanded  | `CustomEvent<any>` |
 
 
 ## Slots

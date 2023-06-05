@@ -45,8 +45,9 @@
     }
 
     &:focus-visible {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
     }
 
     &:hover:not([disabled]) {

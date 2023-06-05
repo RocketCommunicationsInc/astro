@@ -28,11 +28,22 @@
 
     <body>
         <div style="padding: 2.5% 5%">
-            <rux-segmented-button></rux-segmented-button>
+            <rux-segmented-button id="changeTest"></rux-segmented-button>
         </div>
+        <section>
+            <select
+                id="segSelect"
+                style="width: 200px; margin: 20px 80px; padding: 8px 12px"
+            >
+                <option value="First segment">1</option>
+                <option value="Second segment" selected>2</option>
+                <option value="Third segment">3</option>
+            </select>
+        </section>
         <div style="padding: 2.5% 5%">
             <rux-segmented-button size="small"></rux-segmented-button>
         </div>
+
         <div style="padding: 2.5% 5%">
             <rux-segmented-button size="medium"></rux-segmented-button>
         </div>
@@ -67,6 +78,13 @@
             })
             disabled.addEventListener('ruxchange', () => {
                 console.log('disabled --- heard change')
+            })
+
+            const testSeg = document.getElementById('changeTest')
+            const select = document.getElementById('segSelect')
+
+            select.addEventListener('change', (e) => {
+                testSeg.selected = e.target.value
             })
         </script>
 

@@ -35,23 +35,27 @@ export class RuxAccordionItem {
     /**
      * If present, sets the initial state on this accordion item to open, displaying the accordion content.
      */
-
     @Prop({ mutable: true, reflect: true }) expanded: boolean = false
+
     @Watch('expanded')
     updateExpanded() {
-        this.ruxExpanded.emit()
+        this.expanded ? this.ruxExpanded.emit() : this.ruxCollapsed.emit()
     }
 
     /**
      * If present, sets a disabled state on this accordion item, indicating it cannot be selected by user action.
      */
-
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
-     * Fired when an element has expanded
+     * Fired when an accordion-item has expanded
      */
     @Event({ eventName: 'ruxexpanded' }) ruxExpanded!: EventEmitter
+
+    /**
+     * Fired when an accordion-item has collapsed
+     */
+    @Event({ eventName: 'ruxcollapsed' }) ruxCollapsed!: EventEmitter
 
     private _clickHandler(e: MouseEvent) {
         //if the rux-accordion-item has the disabled attribute, it cannot be manipulated

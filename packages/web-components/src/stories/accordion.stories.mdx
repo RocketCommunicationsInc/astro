@@ -7,6 +7,14 @@ import { html, render } from 'lit-html'
     component="rux-accordion"
     subcomponents={{ RuxAccordionItem: 'rux-accordion-item' }}
     argTypes={extractArgTypes('rux-accordion')}
+    parameters={{
+      actions: {
+          handles: [
+              'ruxexpanded rux-accordion-item',
+              'ruxcollapsed rux-accordion-item',
+          ],
+      },
+    }}
 />
 
 # Accordion
@@ -70,7 +78,7 @@ export const Disabled = (args) => {
 <Canvas>
     <Story
         name="Disabled"
-        args={{  
+        args={{
             disabled: true,
             disallowMultiple: false,
         }}
@@ -100,7 +108,7 @@ export const DisallowMultiple = (args) => {
 <Canvas>
     <Story
         name="DisallowMultiple"
-        args={{  
+        args={{
             disabled: false,
             disallowMultiple: true,
         }}

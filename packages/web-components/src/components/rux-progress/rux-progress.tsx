@@ -13,11 +13,11 @@ export class RuxProgress {
     /**
      * Current progress value between 0 and 100 (or the max, if defined below).
      */
-    @Prop() value?: number = 0
+    @Prop({ mutable: true }) value?: number = 0
     /**
      * For progress bars where progress bars have a maximum value greater or less than 100
      */
-    @Prop({ mutable: true }) max: number = 100
+    @Prop() max: number = 100
     /**
      * Hides the progress label
      */
@@ -51,11 +51,8 @@ export class RuxProgress {
     }
     private _checkValueNotOverMax(max: number, value: number) {
         if (max && max < value) {
-            max = value
-            this.max = max
-            console.warn(
-                'The given max for <rux-progress> was less than the given value. Max has been changed to equal value in the meantime. Please be sure max and value are correct on the <rux-progress> component.'
-            )
+            value = max
+            this.value = max
         }
     }
 

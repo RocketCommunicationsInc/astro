@@ -10,6 +10,7 @@ import {
     Watch,
     Listen,
     State,
+    Method,
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenSelect } from '../../utils/utils'
@@ -124,11 +125,20 @@ export class RuxSelect implements FormFieldInterface {
     @Listen('rux-option-group-changed')
     handleGroupChange() {
         this._syncOptionsToNativeSelect()
+        this._syncOptionsFromValue()
     }
 
     @Listen('rux-option-changed')
     handleOptionChange() {
         this._syncOptionsToNativeSelect()
+    }
+
+    /**
+     * Sets element as focused
+     */
+    @Method()
+    async setFocus(options?: FocusOptions) {
+        this.selectEl.focus(options)
     }
 
     connectedCallback() {

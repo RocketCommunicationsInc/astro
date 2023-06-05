@@ -8,6 +8,7 @@ import {
     Element,
     State,
     Watch,
+    Method,
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
@@ -39,6 +40,7 @@ let id = 0
 })
 export class RuxInput implements FormFieldInterface {
     private inputId = `rux-input-${++id}`
+    private inputEl!: HTMLInputElement
 
     @Element() el!: HTMLRuxInputElement
 
@@ -161,6 +163,14 @@ export class RuxInput implements FormFieldInterface {
      */
     @Event({ eventName: 'ruxfocus' }) ruxFocus!: EventEmitter
 
+    /**
+     * Sets element as focused
+     */
+    @Method()
+    async setFocus(options?: FocusOptions) {
+        this.inputEl.focus(options)
+    }
+
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
@@ -223,7 +233,9 @@ export class RuxInput implements FormFieldInterface {
     }
 
     private _setTogglePassword() {
-        this.type === 'password' ? (this.togglePassword = true) : false
+        this.type === 'password'
+            ? (this.togglePassword = true)
+            : (this.togglePassword = false)
     }
 
     private _handleTogglePassword() {
@@ -318,6 +330,7 @@ export class RuxInput implements FormFieldInterface {
                         <input
                             name={name}
                             disabled={disabled}
+                            ref={(el) => (this.inputEl = el!)}
                             type={
                                 type === 'password' && this.isPasswordVisible
                                     ? 'text'

@@ -2,6 +2,8 @@ import {
     addHours,
     differenceInHours,
     addDays,
+    addMinutes,
+    subMinutes,
     differenceInDays,
 } from 'date-fns'
 import { formatInTimeZone } from 'date-fns-tz'
@@ -16,6 +18,22 @@ export async function validateTimezone(timezone: string) {
         }
     })
 }
+
+// Fixes bug in date-fn's subDays() function when crossing a DST transition:
+// https://github.com/date-fns/date-fns/issues/571
+
+function agnosticAddDays(date: Date, amount: number) {
+    const originalTZO = date.getTimezoneOffset()
+    const endDate = addDays(date, amount)
+    const endTZO = endDate.getTimezoneOffset()
+
+    const dstDiff = originalTZO - endTZO
+
+    return dstDiff >= 0
+        ? addMinutes(endDate, dstDiff)
+        : subMinutes(endDate, Math.abs(dstDiff))
+}
+
 export function dateRange(
     start: any,
     end: any,
@@ -35,7 +53,8 @@ export function dateRange(
         const days = differenceInDays(endDate, startDate)
 
         const output = [...Array(days).keys()].map((i) => {
-            const time = addDays(startDate, i)
+            const time = agnosticAddDays(startDate, i)
+
             const formattedTime = formatInTimeZone(time, timezone, 'MM/dd')
 
             return formattedTime

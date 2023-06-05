@@ -251,6 +251,19 @@ test.describe('Input with form', () => {
         //Assert
         await expect(ruxInputIcon).toBeVisible()
     })
+    test('removes rux-icon if type is no longer password', async ({ page }) => {
+        //Arrange
+        const ruxInputComponent = page.locator('#ruxInput4').first()
+        const ruxInputIcon = ruxInputComponent.locator('rux-icon')
+
+        //Assert
+        await expect(ruxInputIcon).toBeVisible()
+
+        await ruxInputComponent.evaluate(
+            (e) => ((e as HTMLRuxInputElement).type = 'text')
+        )
+        await expect(ruxInputIcon).not.toBeVisible()
+    })
     test('changes icon when icon is clicked', async ({ page }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput4').first()
@@ -385,5 +398,24 @@ test.describe('Input emits correct events', () => {
         await page.locator('rux-input').locator('input').nth(1).type('Tonjiro')
         await page.locator('#blur-me').click()
         expect(changeEvent).toHaveReceivedEventTimes(1)
+    })
+})
+
+test.describe('Input', () => {
+    test('it can be focused programatically', async ({ page }) => {
+        const template = `<rux-input type="text"></rux-input>`
+        await page.setContent(template)
+
+        const el = await page.locator('rux-input')
+
+        let isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeFalsy()
+
+        await el.evaluate(async (e) => {
+            await (e as HTMLRuxInputElement).setFocus()
+        })
+
+        isFocused = await el.evaluate((el) => el === document.activeElement)
+        expect(isFocused).toBeTruthy()
     })
 })
