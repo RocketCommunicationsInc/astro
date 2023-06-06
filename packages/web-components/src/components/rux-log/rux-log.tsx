@@ -1,5 +1,5 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
-import { Prop, Component, Host, h } from '@stencil/core'
+import { Prop, Component, Host, h, Watch, Element } from '@stencil/core'
 import { LogRow } from './rux-log.model'
 
 /**
@@ -17,6 +17,8 @@ import { LogRow } from './rux-log.model'
     shadow: true,
 })
 export class RuxLog {
+    @Element() el!: HTMLRuxLogElement
+    private inputEl!: HTMLRuxInputElement
     /**
      * An array of objects to display as log
      */
@@ -30,6 +32,13 @@ export class RuxLog {
      * A string to filter the array to return only the children whose `message` property contains a case-insensitive substring match.
      */
     @Prop({ mutable: true, reflect: true }) filter?: string
+
+    @Watch('filter')
+    syncFilter() {
+        if (this.inputEl.value !== this.filter) {
+            this.inputEl.value = this.filter || ''
+        }
+    }
 
     private _setFilter(e: Event) {
         this.filter = (e.target as HTMLInputElement).value
@@ -66,6 +75,9 @@ export class RuxLog {
                                                         class="rux-log__filter"
                                                         type="search"
                                                         placeholder="Search..."
+                                                        ref={(el) =>
+                                                            (this.inputEl = el!)
+                                                        }
                                                         onRuxinput={(event) =>
                                                             this._setFilter(
                                                                 event
