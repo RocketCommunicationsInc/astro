@@ -12620,6 +12620,32 @@ export namespace Components {
          */
         "zoom": number;
     }
+    interface RuxToast {
+        /**
+          * Enables closing animation
+         */
+        "animateOut": boolean;
+        /**
+          * If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
+         */
+        "closeAfter"?: number;
+        /**
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
+         */
+        "hideClose": boolean;
+        /**
+          * Message for the toast.
+         */
+        "message": string;
+        /**
+          * Set to true to display the toast
+         */
+        "open": boolean;
+        /**
+          * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
+         */
+        "status"?: Status;
+    }
     interface RuxTooltip {
         /**
           * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
@@ -12772,6 +12798,10 @@ export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
+}
+export interface RuxToastCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxToastElement;
 }
 export interface RuxTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -19448,6 +19478,12 @@ declare global {
         prototype: HTMLRuxTimelineElement;
         new (): HTMLRuxTimelineElement;
     };
+    interface HTMLRuxToastElement extends Components.RuxToast, HTMLStencilElement {
+    }
+    var HTMLRuxToastElement: {
+        prototype: HTMLRuxToastElement;
+        new (): HTMLRuxToastElement;
+    };
     interface HTMLRuxTooltipElement extends Components.RuxTooltip, HTMLStencilElement {
     }
     var HTMLRuxTooltipElement: {
@@ -20584,6 +20620,7 @@ declare global {
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
+        "rux-toast": HTMLRuxToastElement;
         "rux-tooltip": HTMLRuxTooltipElement;
         "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
@@ -33322,6 +33359,36 @@ declare namespace LocalJSX {
          */
         "zoom"?: number;
     }
+    interface RuxToast {
+        /**
+          * Enables closing animation
+         */
+        "animateOut"?: boolean;
+        /**
+          * If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
+         */
+        "closeAfter"?: number;
+        /**
+          * Prevents the user from dismissing the notification. Hides the `actions` slot.
+         */
+        "hideClose"?: boolean;
+        /**
+          * Message for the toast.
+         */
+        "message"?: string;
+        /**
+          * Fires when the toast is closed
+         */
+        "onRuxclosed"?: (event: RuxToastCustomEvent<boolean>) => void;
+        /**
+          * Set to true to display the toast
+         */
+        "open"?: boolean;
+        /**
+          * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
+         */
+        "status"?: Status;
+    }
     interface RuxTooltip {
         /**
           * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
@@ -34504,6 +34571,7 @@ declare namespace LocalJSX {
         "rux-textarea": RuxTextarea;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
+        "rux-toast": RuxToast;
         "rux-tooltip": RuxTooltip;
         "rux-track": RuxTrack;
         "rux-tree": RuxTree;
@@ -35625,6 +35693,7 @@ declare module "@stencil/core" {
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
+            "rux-toast": LocalJSX.RuxToast & JSXBase.HTMLAttributes<HTMLRuxToastElement>;
             "rux-tooltip": LocalJSX.RuxTooltip & JSXBase.HTMLAttributes<HTMLRuxTooltipElement>;
             "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;

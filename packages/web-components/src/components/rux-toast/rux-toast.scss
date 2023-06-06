@@ -1,0 +1,180 @@
+:host {
+    --notification-banner-color-border: var(--color-border-interactive-default);
+    --notification-banner-color-background: var(
+        --color-background-base-default
+    );
+    //spacing-3 - 1px to account for new border system
+    --notification-banner-border-width-left: calc(
+        var(--spacing-3) - var(--spacing-025)
+    );
+
+    --notification-banner-radius-outer: var(--radius-base);
+    --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
+    --notification-banner-border-width-large: var(--spacing-1); //4
+    --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
+    --notification-banner-border-width-small: var(--spacing-050); //2
+
+    //for the 1px outer border on light theme
+    --notification-banner-border-outer-width: 1px;
+    //defaults to large
+    --notifcation-banner-border-inner-width: 3px;
+
+    /**
+  * @prop --height: the Notification's height
+  */
+    --height: var(--spacing-20); // 80px;
+}
+
+:host([open]) {
+    display: contents;
+}
+:host(:not([open])) {
+    display: none;
+}
+
+:host([animating]) .rux-toast__inner {
+    height: 0;
+    opacity: 0;
+    transition: all 200ms ease-in-out;
+}
+
+// .rux-toast {
+//   display: flex;
+//   align-items: stretch;
+//   align-content: center;
+//   border-radius: var(--notification-banner-radius-outer);
+//   background: var(--notification-banner-color-border);
+//   width: 100%;
+//   box-sizing: border-box;
+//   min-height: var(--height);
+//   font-family: var(--font-body-1-font-family);
+//   font-size: var(--font-body-1-font-size);
+//   font-weight: var(--font-body-1-font-weight);
+//   letter-spacing: var(--font-body-1-letter-spacing);
+//   line-height: var(
+//       --line-height-base
+//   ); //fixes issue where parent element with larger line-height causes layout shift.
+//   transition: all 200ms ease-in-out;
+// }
+
+.rux-toast {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    width: 280px;
+    border-radius: 3px;
+    background: var(--color-background-base-default);
+    padding: var(--notification-banner-padding);
+    margin: var(--spacing-3);
+    min-height: 60px;
+    border: 1px solid var(--notification-banner-color-border-inner-default);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--line-height-base);
+}
+
+.rux-toast__prefix:not(.hidden) {
+    display: flex;
+    align-items: center;
+    margin-right: var(--spacing-4); //16px
+}
+
+.rux-toast__status.rux-toast--hasPrefixLabel {
+    margin-left: var(--spacing-4); //16px
+}
+.rux-toast__status {
+    margin-right: var(--spacing-4); //16px
+}
+.rux-toast__status rux-status {
+    margin: var(--spacing-0);
+} //remove 2px margin around rux-status
+
+.rux-toast__actions {
+    margin-left: auto;
+    display: flex;
+}
+.rux-toast__close {
+    &:focus-visible {
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+}
+
+.rux-toast__close {
+    cursor: pointer;
+}
+
+/* ----- Large ----- */
+.rux-toast--large {
+    border: 1px solid var(--notification-banner-color-border-outer-default);
+    .rux-toast__inner {
+        border-color: var(--notification-banner-color-border);
+    }
+}
+
+.rux-toast__content {
+    padding: 2px 3px 2px 0px;
+}
+.rux-toast--large .rux-toast__content {
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight);
+    letter-spacing: var(--font-heading-5-letter-spacing);
+    line-height: var(--font-heading-5-line-height);
+}
+
+/* ----- Small ----- */
+.rux-toast--small {
+    min-height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
+    border: 1px solid var(--notification-banner-color-border-outer-default);
+    --notifcation-banner-border-inner-width: 1px;
+    .rux-toast__inner {
+        border-color: var(--notification-banner-color-border);
+    }
+}
+
+.rux-toast--small .rux-toast__content {
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--font-body-1-line-height);
+}
+
+/* ---- truncated/wrapped --- */
+.rux-toast__content {
+    overflow-x: hidden; //because of this focus doesn't show. need refactor.
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* ----- Status Variants ----- */
+
+.rux-toast--critical {
+    border-color: var(--notification-banner-color-border-outer-critical);
+}
+
+.rux-toast--caution {
+    border-color: var(--notification-banner-color-border-outer-caution);
+}
+
+.rux-toast--serious {
+    border-color: var(--notification-banner-color-border-outer-serious);
+}
+
+.rux-toast--normal {
+    border-color: var(--notification-banner-color-border-outer-normal);
+}
+
+.rux-toast--standby {
+    border-color: var(--notification-banner-color-border-outer-standby);
+}
+
+.rux-toast--off {
+    border-color: var(--notification-banner-color-border-outer-off);
+}

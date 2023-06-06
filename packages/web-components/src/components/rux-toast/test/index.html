@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <style>
+            .rux-toast-stack {
+                position: fixed;
+                top: 100px;
+                inset-inline-end: 0;
+                z-index: 100;
+                max-width: 100%;
+                max-height: 100%;
+            }
+
+            .toast-overflow {
+                height: 300px;
+                overflow: hidden;
+            }
+
+            .toast-overflow::after {
+                content: '+ More Toasts';
+                display: block;
+                width: 30px;
+                height: 30px;
+            }
+
+            rux-card {
+                margin-inline: 0.5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <rux-global-status-bar
+            include-icon="true"
+            app-domain="Astro"
+            app-name="Dashboard"
+            app-version="4.0 Alpha"
+            menu-icon="apps"
+            username=""
+            app-state-color=""
+            app-state=""
+        >
+        </rux-global-status-bar>
+        <rux-container>
+            <div slot="header">A sample container</div>
+            <div style="display: flex">
+                <rux-card>
+                    <div slot="header">Cardsicle</div>
+                    Much space, very wow!
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Cardsicle</div>
+                    Omg space!
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Cardsicle</div>
+                    Satellite Snuts.
+                </rux-card>
+            </div>
+            <div slot="footer">
+                <rux-button secondary id="remove">Remove All Toasts</rux-button>
+                <rux-button id="add">Add Toast</rux-button>
+            </div>
+        </rux-container>
+        <rux-toast open animate-out> toasty toast </rux-toast>
+
+        <rux-toast open animate-out> toaster-oo </rux-toast>
+
+        <script>
+            const body = document.querySelector('body')
+            const remove = document.getElementById('remove')
+            const add = document.getElementById('add')
+            const statuses = [
+                'off',
+                'normal',
+                'standby',
+                'caution',
+                'serious',
+                'critical',
+            ]
+            let randomStatus = 'normal'
+
+            function getRandomInt(max) {
+                return Math.floor(Math.random() * max)
+            }
+
+            remove.addEventListener('click', () => {
+                const toasts = document.querySelectorAll('rux-toast')
+                for (const toast of toasts) {
+                    toast.remove()
+                }
+            })
+
+            add.addEventListener('click', () => {
+                randomStatus = statuses[getRandomInt(6)]
+                const newToast = document.createElement('RUX-TOAST')
+
+                newToast.setAttribute('message', 'New toast!')
+                newToast.setAttribute('open', '')
+                newToast.setAttribute('animate-out', '')
+                newToast.setAttribute('status', `${randomStatus}`)
+
+                body.appendChild(newToast)
+            })
+        </script>
+    </body>
+</html>
