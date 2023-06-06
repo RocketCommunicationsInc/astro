@@ -138,6 +138,7 @@ export class RuxToast {
 
         const body = document.querySelector('body')!
         body.appendChild(toastStack)
+        this._addToastStackStyles()
     }
 
     private _addToastToStack() {
@@ -161,6 +162,7 @@ export class RuxToast {
             toast.hasAttribute('open') ? toastAmount++ : null
         }
 
+        // if more than 4 open toasts, add class to hide others, else remove it.
         if (toastAmount > 4) {
             toastStack?.classList.add('toast-overflow')
         } else {
@@ -174,9 +176,44 @@ export class RuxToast {
 
         const toasts = document.querySelectorAll('rux-toast')
         const toastStack = document.querySelector('.rux-toast-stack')
+        const toastStyles = document.getElementById('toast-styles')
 
         // if all toasts are gone, remove stack
-        if (toasts.length === 0) toastStack?.remove()
+        if (toasts.length === 0) {
+            toastStack?.remove()
+            toastStyles?.remove()
+        }
+    }
+
+    private _addToastStackStyles() {
+        const body = document.querySelector('body')
+        const styleEl = document.createElement('style')
+        styleEl.id = 'toast-styles'
+        const styles = `
+      .rux-toast-stack {
+        position: fixed;
+        top: 100px;
+        inset-inline-end: 0;
+        z-index: 100;
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      .toast-overflow {
+          height: 300px;
+          overflow: hidden;
+      }
+
+      .toast-overflow::after {
+          content: '+ More Toasts';
+          display: block;
+          width: 30px;
+          height: 30px;
+      }
+      `
+
+        styleEl.innerHTML = styles
+        body?.appendChild(styleEl)
     }
 
     get _closeAfter() {
