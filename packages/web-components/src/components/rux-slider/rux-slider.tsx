@@ -57,8 +57,8 @@ export class RuxSlider implements FormFieldInterface {
     /**
      * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
-    @Prop({ mutable: true }) value: number = this.endVal
-        ? this.endVal
+    @Prop({ mutable: true, reflect: true }) value: number = this.maxVal
+        ? this.maxVal
         : (this.max! - this.min!) / 2 + this.min!
 
     /**
@@ -99,12 +99,19 @@ export class RuxSlider implements FormFieldInterface {
     /**
      * The value of the first thumb if using a dual-range slider
      */
-    @Prop({ attribute: 'start-val', mutable: true }) startVal?: number
+    @Prop({ attribute: 'min-val', mutable: true, reflect: true })
+    minVal?: number
 
     /**
      * The value of the second thumb if using a dual-range slider
      */
-    @Prop({ attribute: 'end-val', mutable: true }) endVal?: number
+    @Prop({ attribute: 'max-val', mutable: true, reflect: true })
+    maxVal?: number
+
+    /**
+     * Disables thumb swapping
+     */
+    @Prop() strict: boolean = false
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -129,7 +136,7 @@ export class RuxSlider implements FormFieldInterface {
 
     connectedCallback() {
         this._onInput = this._onInput.bind(this)
-        this._onStartValInput = this._onStartValInput.bind(this)
+        this._onMinValInput = this._onMinValInput.bind(this)
         this._onBlur = this._onBlur.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._onChange = this._onChange.bind(this)
@@ -150,8 +157,8 @@ export class RuxSlider implements FormFieldInterface {
     @Watch('value')
     @Watch('min')
     @Watch('max')
-    @Watch('endVal')
-    @Watch('startVal')
+    @Watch('maxVal')
+    @Watch('minVal')
     handleChange() {
         this._updateValue()
     }
@@ -179,35 +186,31 @@ export class RuxSlider implements FormFieldInterface {
 
     private _updateValue() {
         this._setValuePercent()
-        // this._setStartValuePercent()
-        //? Should we just make reg value equal endVal? That way there's not confusion when
-        //? getting slider.value and that being the default of 50 all the time? idk idk idk
-        // this.value = this.endVal
     }
 
     //Sets the --slider-value-percent CSS var. Also contor
     private _setValuePercent() {
-        //if endVal is being used, we're in dual range mode. Use that instead of value.
-        if (this.endVal !== undefined && this.startVal !== undefined) {
+        //if maxVal is being used, we're in dual range mode. Use that instead of value.
+        if (this.maxVal !== undefined && this.minVal !== undefined) {
             // swap CSS custom prop values
-            if (this.startVal > this.endVal) {
+            if (this.minVal > this.maxVal) {
                 this.el.style.setProperty(
                     '--_slider-value-percent',
-                    `${this.startVal}%`
+                    `${this.minVal}%`
                 )
                 this.el.style.setProperty(
                     '--_start-value-percent',
-                    `${this.endVal}%`
+                    `${this.maxVal}%`
                 )
                 //If end < start, no need to swap
             } else {
                 this.el.style.setProperty(
                     '--_start-value-percent',
-                    `${this.startVal}%`
+                    `${this.minVal}%`
                 )
                 this.el.style.setProperty(
                     '--_slider-value-percent',
-                    `${this.endVal}%`
+                    `${this.maxVal}%`
                 )
             }
             //if not in dual slider
@@ -219,20 +222,36 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _onInput(e: Event) {
+        console.log('running on input. Value is: ', this.value)
         const target = e.target as HTMLInputElement
-        if (this.endVal !== undefined) {
-            this.endVal = parseFloat(target.value)
+        if (this.maxVal !== undefined && this.strict) {
+            this.maxVal = parseFloat(target.value)
+            if (this.maxVal <= this.minVal!) {
+                this.maxVal = this.minVal
+                let internalShadowInput = this.el.shadowRoot?.querySelector(
+                    'input'
+                )
+                //? Why is the necessary? Why doesn't value map correctly to the inputs in here?
+                internalShadowInput!.value = this.maxVal!.toString()
+            }
         } else {
             this.value = parseFloat(target.value)
         }
         this._setValuePercent()
         this.ruxInput.emit()
+        console.log('value at end of input: ', this.value)
     }
 
-    private _onStartValInput(e: Event) {
+    private _onMinValInput(e: Event) {
         const target = e.target as HTMLInputElement
-        this.startVal = parseFloat(target.value)
-        // this._setStartValuePercent()
+        this.minVal = parseFloat(target.value)
+        if (this.minVal >= this.maxVal!) {
+            this.minVal = this.maxVal
+            let internalShadowInputs = this.el.shadowRoot?.querySelectorAll(
+                'input'
+            )
+            internalShadowInputs![1].value = this.minVal!.toString()
+        }
         this._setValuePercent()
         this.ruxInput.emit()
     }
@@ -292,9 +311,9 @@ export class RuxSlider implements FormFieldInterface {
             _onBlur,
             _onChange,
             axisLabels,
-            _onStartValInput,
-            startVal,
-            endVal,
+            _onMinValInput,
+            minVal,
+            maxVal,
             _getTickWidths,
             ticksOnly,
         } = this
@@ -316,12 +335,11 @@ export class RuxSlider implements FormFieldInterface {
                             <slot name="label">{label}</slot>
                         </label>
                     ) : null}
-
                     <div
                         class={{
                             'rux-slider': true,
                             'rux-slider--range':
-                                startVal !== undefined && endVal !== undefined
+                                minVal !== undefined && maxVal !== undefined
                                     ? true
                                     : false,
                             'with-axis-labels': axisLabels.length > 0,
@@ -335,15 +353,16 @@ export class RuxSlider implements FormFieldInterface {
                             class={{
                                 'rux-range': true,
                                 'rux-range--dual':
-                                    startVal !== undefined &&
-                                    endVal !== undefined
+                                    minVal !== undefined && maxVal !== undefined
                                         ? true
                                         : false,
                             }}
                             min={min}
                             max={max}
                             step={step}
-                            value={value}
+                            value={
+                                this.maxVal !== undefined ? this.maxVal : value
+                            }
                             disabled={disabled}
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
@@ -351,20 +370,20 @@ export class RuxSlider implements FormFieldInterface {
                             part="input"
                             list="steplist"
                         ></input>
-                        {startVal !== undefined && endVal !== undefined ? (
+                        {minVal !== undefined && maxVal !== undefined ? (
                             <input
                                 type="range"
                                 class="rux-range rux-range--dual"
-                                onInput={_onStartValInput}
+                                onInput={_onMinValInput}
                                 onChange={_onChange}
                                 disabled={disabled}
                                 min={min}
                                 max={max}
-                                value={startVal}
+                                value={minVal}
                                 aria-disabled={disabled ? 'true' : 'false'}
                             ></input>
                         ) : null}
-                        {startVal !== undefined && endVal !== undefined ? (
+                        {minVal !== undefined && maxVal !== undefined ? (
                             <div class="rux-range-overlay"></div>
                         ) : null}
                         {axisLabels.length > 0 ? (
@@ -443,13 +462,3 @@ export class RuxSlider implements FormFieldInterface {
         )
     }
 }
-
-/*
-                                return (
-                                    <div class="tick-label">
-                                        <div class="tick"></div>
-                                        <option>{label}</option>
-                                    </div>
-                                )
-
-*/

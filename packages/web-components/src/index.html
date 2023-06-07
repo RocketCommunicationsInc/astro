@@ -20,6 +20,26 @@
     </head>
 
     <body>
+        <style>
+            input[type='range'] {
+                -webkit-appearance: none;
+                appearance: none;
+            }
+
+            input[type='range']::-webkit-slider-runnable-track {
+                background: blue;
+                width: 100%;
+                height: 4px;
+            }
+
+            input[type='range']::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                background: green;
+                height: 8px;
+                width: 8px;
+            }
+        </style>
         <div
             style="
                 width: 400px;
@@ -28,15 +48,46 @@
                 margin: 3rem;
             "
         >
-            <rux-slider start-val="10" end-val="50"></rux-slider>
+            <rux-slider min-val="10" max-val="50" strict></rux-slider>
+        </div>
+        <span></span>
+        <div style="margin-top: 3rem; width: 400px">
+            <span>Why does this stop at 60, but our thumb doesn't???</span>
+            <input type="range" max="100" min="0" value="50" />
+            <span id="native"></span>
         </div>
         <div style="margin-top: 3rem; width: 400px">
-            <rux-slider></rux-slider>
+            <rux-slider min="0" max="100" value="50" id="basic"></rux-slider>
+            <span id="basic-disp"></span>
         </div>
         <script>
-            document.addEventListener('ruxchange', (e) => {
-                console.log(e.target.startVal, 'startValue')
-                console.log(e.target.endVal, 'endVal')
+            const disp = document.querySelector('span')
+            const nativeDisp = document.getElementById('native')
+            let slider = document.querySelector('rux-slider')
+            let native = document.querySelector('input')
+            let basic = document.getElementById('basic')
+            let basicDisp = document.getElementById('basic-disp')
+            let shadowInput
+            setTimeout(() => {
+                shadowInput = basic.shadowRoot.querySelector('input')
+            }, 1000)
+
+            slider.addEventListener('ruxinput', (e) => {
+                disp.innerHTML = `${slider.minVal}, ${slider.maxVal}`
+            })
+            document.addEventListener('input', (e) => {
+                if (native.value >= 60) {
+                    native.value = 60
+                }
+                nativeDisp.innerHTML = `${native.value}`
+            })
+            basic.addEventListener('ruxinput', () => {
+                // console.log(shadowInput, 'shadowInput in event')
+                if (basic.value >= 60) {
+                    basic.value = 60
+                    // shadowInput.value = 60
+                }
+                basicDisp.innerHTML = `${basic.value}: slider value; ${shadowInput.value}: shadowInput value`
             })
         </script>
     </body>

@@ -12413,9 +12413,17 @@ export namespace Components {
          */
         "max": number;
         /**
+          * The value of the second thumb if using a dual-range slider
+         */
+        "maxVal"?: number;
+        /**
           * Min value of the slider.
          */
         "min": number;
+        /**
+          * The value of the first thumb if using a dual-range slider
+         */
+        "minVal"?: number;
         /**
           * Name of the Input Field for Form Submission
          */
@@ -12424,6 +12432,10 @@ export namespace Components {
           * Step amount of slider value.
          */
         "step": number;
+        /**
+          * Disables thumb swapping
+         */
+        "strict": boolean;
         /**
           * Hides labels and only shows tick marks if axis-labels is provided.
          */
@@ -33070,9 +33082,17 @@ declare namespace LocalJSX {
          */
         "max"?: number;
         /**
+          * The value of the second thumb if using a dual-range slider
+         */
+        "maxVal"?: number;
+        /**
           * Min value of the slider.
          */
         "min"?: number;
+        /**
+          * The value of the first thumb if using a dual-range slider
+         */
+        "minVal"?: number;
         /**
           * Name of the Input Field for Form Submission
          */
@@ -33093,6 +33113,10 @@ declare namespace LocalJSX {
           * Step amount of slider value.
          */
         "step"?: number;
+        /**
+          * Disables thumb swapping
+         */
+        "strict"?: boolean;
         /**
           * Hides labels and only shows tick marks if axis-labels is provided.
          */
