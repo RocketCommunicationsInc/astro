@@ -20,43 +20,17 @@
     </head>
 
     <body>
-        <style>
-            input[type='range'] {
-                -webkit-appearance: none;
-                appearance: none;
-            }
-
-            input[type='range']::-webkit-slider-runnable-track {
-                background: blue;
-                width: 100%;
-                height: 4px;
-            }
-
-            input[type='range']::-webkit-slider-thumb {
-                -webkit-appearance: none;
-                appearance: none;
-                background: green;
-                height: 8px;
-                width: 8px;
-            }
-        </style>
-        <div
-            style="
-                width: 400px;
-                display: flex;
-                flex-direction: column;
-                margin: 3rem;
-            "
-        >
+        <div style="width: 400px; margin: 3rem">
+            <p>Dual with Strict</p>
             <rux-slider min-val="10" max-val="50" strict></rux-slider>
+            <span></span>
         </div>
-        <span></span>
-        <div style="margin-top: 3rem; width: 400px">
-            <span>Why does this stop at 60, but our thumb doesn't???</span>
-            <input type="range" max="100" min="0" value="50" />
-            <span id="native"></span>
+        <div style="margin: 3rem; width: 400px">
+            <p>Dual without Strict</p>
+            <rux-slider id="no-strict" min-val="10" max-val="50"></rux-slider>
+            <span id="no-strict-disp"></span>
         </div>
-        <div style="margin-top: 3rem; width: 400px">
+        <div style="margin: 3rem; width: 400px">
             <rux-slider min="0" max="100" value="50" id="basic"></rux-slider>
             <span id="basic-disp"></span>
         </div>
@@ -64,6 +38,8 @@
             const disp = document.querySelector('span')
             const nativeDisp = document.getElementById('native')
             let slider = document.querySelector('rux-slider')
+            let noStrict = document.getElementById('no-strict')
+            let noStrictDisp = document.getElementById('no-strict-disp')
             let native = document.querySelector('input')
             let basic = document.getElementById('basic')
             let basicDisp = document.getElementById('basic-disp')
@@ -74,6 +50,9 @@
 
             slider.addEventListener('ruxinput', (e) => {
                 disp.innerHTML = `${slider.minVal}, ${slider.maxVal}`
+            })
+            noStrict.addEventListener('ruxinput', (e) => {
+                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.maxVal}`
             })
             document.addEventListener('input', (e) => {
                 if (native.value >= 60) {

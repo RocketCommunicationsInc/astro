@@ -224,9 +224,9 @@ export class RuxSlider implements FormFieldInterface {
     private _onInput(e: Event) {
         console.log('running on input. Value is: ', this.value)
         const target = e.target as HTMLInputElement
-        if (this.maxVal !== undefined && this.strict) {
+        if (this.maxVal !== undefined) {
             this.maxVal = parseFloat(target.value)
-            if (this.maxVal <= this.minVal!) {
+            if (this.maxVal <= this.minVal! && this.strict) {
                 this.maxVal = this.minVal
                 let internalShadowInput = this.el.shadowRoot?.querySelector(
                     'input'
@@ -245,7 +245,7 @@ export class RuxSlider implements FormFieldInterface {
     private _onMinValInput(e: Event) {
         const target = e.target as HTMLInputElement
         this.minVal = parseFloat(target.value)
-        if (this.minVal >= this.maxVal!) {
+        if (this.minVal >= this.maxVal! && this.strict) {
             this.minVal = this.maxVal
             let internalShadowInputs = this.el.shadowRoot?.querySelectorAll(
                 'input'
