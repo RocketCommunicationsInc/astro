@@ -68,9 +68,9 @@
                 <rux-button id="add">Add Toast</rux-button>
             </div>
         </rux-container>
-        <rux-toast open animate-out> toasty toast </rux-toast>
+        <!-- <rux-toast open animate-out> toasty toast </rux-toast>
 
-        <rux-toast open animate-out> toaster-oo </rux-toast>
+        <rux-toast open animate-out> toaster-oo dksjfhdsjf sdkjhdfh djfgh kdjfgdjkfg dkjgdkjfgf gkjdfgdfkg dfkjg dfkjg dfkjg dfkjg dfjkgh </rux-toast> -->
 
         <script>
             const body = document.querySelector('body')
@@ -96,12 +96,13 @@
                     toast.remove()
                 }
             })
-
+            let toastNumber = 1
             add.addEventListener('click', () => {
                 randomStatus = statuses[getRandomInt(6)]
                 const newToast = document.createElement('RUX-TOAST')
 
-                newToast.setAttribute('message', 'New toast!')
+                newToast.setAttribute('message', `New toast ${toastNumber}!`)
+                toastNumber = toastNumber + 1
                 newToast.setAttribute('open', '')
                 newToast.setAttribute('animate-out', '')
                 newToast.setAttribute('status', `${randomStatus}`)

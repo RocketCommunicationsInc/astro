@@ -33,6 +33,7 @@ export class RuxToast {
 
     @State() hasPrefixSlot = false
     @State() hasMessageSlot = false
+    @State() toastArray = [...document.querySelectorAll('rux-toast')] || []
     /**
      *  Set to true to display the toast
      */
@@ -75,9 +76,12 @@ export class RuxToast {
 
     private _timeoutRef: number | null = null
 
+    // private _currentToasts
+
     @Watch('open')
     @Watch('closeAfter')
     watchHandler() {
+        this._hideToastsOverFour()
         this._updated()
         if (!this.open) {
             this.ruxClosed.emit()
@@ -93,6 +97,10 @@ export class RuxToast {
         this._addToastToStack()
     }
 
+    componentDidLoad() {
+        this._hideToastsOverFour()
+    }
+
     disconnectedCallback() {
         this._destroyToastStack()
     }
@@ -101,8 +109,10 @@ export class RuxToast {
         if (this._closeAfter && this.open) {
             this._timeoutRef = window.setTimeout(() => {
                 this.open = false
+                this._hideToastsOverFour()
             }, this._closeAfter)
         }
+        this._hideToastsOverFour()
     }
 
     private _onClick() {
@@ -115,10 +125,8 @@ export class RuxToast {
                 this.open = false
                 this.el.removeAttribute('animating')
             }, 200)
-            this._checkToastAmountInStack()
         } else {
             this.open = false
-            this._checkToastAmountInStack()
         }
     }
 
@@ -146,12 +154,80 @@ export class RuxToast {
 
         // if toast already in stack, return, else add to stack
         if (this.el.parentElement === toastStack) return
-        toastStack?.appendChild(this.el)
-        this._checkToastAmountInStack()
+        toastStack?.insertBefore(this.el, toastStack.firstChild) // add as first child
     }
 
-    private _checkToastAmountInStack() {
-        const toastStack = document.querySelector('.rux-toast-stack')
+    // private _calcHeightOfToasts() {
+    //   const toastStack = document.querySelector('.rux-toast-stack') as HTMLElement
+
+    //   if(!toastStack) return
+
+    //   let heightOfToastsInStack: number = 0
+    //   let visibleToastAmount: number = 0
+
+    //   const toasts = toastStack?.querySelectorAll('rux-toast')
+    //   let openToasts = []
+
+    //   for (const toast of toasts) {
+    //        if (toast.hasAttribute('open')) {
+    //         visibleToastAmount++
+
+    //         openToasts.push(toast)
+
+    //         const toastInner = toast.shadowRoot?.querySelector('.rux-toast')! as HTMLElement
+    //         const toastInnerHeight = toastInner.offsetHeight
+    //         const toastStyle = window.getComputedStyle(toastInner)
+    //         const toastMarginBlockStart = parseInt(toastStyle.marginBlockStart)
+
+    //         const toastMargins = toastMarginBlockStart
+    //         const toastTotalHeight = toastInnerHeight + toastMargins
+
+    //         heightOfToastsInStack = heightOfToastsInStack + toastTotalHeight
+    //        }
+    //   }
+
+    //   console.log('visible toast amount', visibleToastAmount)
+
+    //   const lastToastStyle = openToasts.length < 4 ? window.getComputedStyle(openToasts[openToasts.length-1].shadowRoot?.querySelector('.rux-toast') as HTMLElement) : window.getComputedStyle(openToasts[3].shadowRoot?.querySelector('.rux-toast') as HTMLElement)
+    //   const lastToastMarginBlockEnd = parseInt(lastToastStyle.marginBlockEnd)
+    //   console.log(lastToastMarginBlockEnd)
+    //   heightOfToastsInStack = heightOfToastsInStack + lastToastMarginBlockEnd
+
+    //   // if (visibleToastAmount <= 4) {
+    //   //   console.log('I am updating')
+    //   //   toastStack.style.height = `${heightOfToastsInStack}px`
+    //   // }
+    // }
+
+    private _hideToastsOverFour() {
+        const toastStack = document.querySelector(
+            '.rux-toast-stack'
+        ) as HTMLElement
+
+        if (!toastStack) return
+
+        let visibleToastAmount: number = 0
+
+        const toasts = this.toastArray
+        console.log('toasts', toasts)
+
+        for (const toast of toasts) {
+            if (toast.hasAttribute('open')) {
+                visibleToastAmount++
+            }
+
+            if (visibleToastAmount <= 4) {
+                toast.style.display = ''
+            } else {
+                toast.style.display = 'none'
+            }
+        }
+    }
+
+    private _getOpenToastAmountInStack() {
+        const toastStack = document.querySelector(
+            '.rux-toast-stack'
+        ) as HTMLElement
         let toastAmount: number = 0
 
         if (!toastStack) return
@@ -162,13 +238,22 @@ export class RuxToast {
             toast.hasAttribute('open') ? toastAmount++ : null
         }
 
-        // if more than 4 open toasts, add class to hide others, else remove it.
-        if (toastAmount > 4) {
-            toastStack?.classList.add('toast-overflow')
-        } else {
-            toastStack?.classList.remove('toast-overflow')
-        }
+        return toastAmount
     }
+
+    // private _handleToastOverflow() {
+    //     const toastAmount: number = this._getOpenToastAmountInStack()!
+
+    //     console.log('is the toast amount working', toastAmount)
+
+    //     // if more than 4 open toasts, add class to hide others, else remove it.
+    //     const toastStack = document.querySelector('.rux-toast-stack') as HTMLElement
+    //     if (toastAmount >= 4) {
+    //         toastStack?.classList.add('toast-overflow')
+    //     } else {
+    //         toastStack?.classList.remove('toast-overflow')
+    //     }
+    // }
 
     private _destroyToastStack() {
         // if toast stack does not exist, return
@@ -200,15 +285,7 @@ export class RuxToast {
       }
 
       .toast-overflow {
-          height: 300px;
-          overflow: hidden;
-      }
-
-      .toast-overflow::after {
-          content: '+ More Toasts';
-          display: block;
-          width: 30px;
-          height: 30px;
+         // overflow: hidden;
       }
       `
 

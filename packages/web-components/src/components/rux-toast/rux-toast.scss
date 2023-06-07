@@ -147,11 +147,11 @@
 }
 
 /* ---- truncated/wrapped --- */
-.rux-toast__content {
-    overflow-x: hidden; //because of this focus doesn't show. need refactor.
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
+// .rux-toast__content {
+//     overflow-x: hidden; //because of this focus doesn't show. need refactor.
+//     white-space: nowrap;
+//     text-overflow: ellipsis;
+// }
 
 /* ----- Status Variants ----- */
 
