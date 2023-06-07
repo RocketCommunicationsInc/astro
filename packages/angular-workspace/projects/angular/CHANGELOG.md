@@ -1,27 +1,42 @@
 # @astrouxds/angular
 
+## 7.12.0
+
+### Minor Changes
+
+- f5a3dd88: Button Group is now deprecated. Instead, create your own group using `display: flex` and our `--spacing-2` design token.
+
+### Patch Changes
+
+- 09e5a7f6: fix(rux-log) search input updates when filter is updated programatically
+- 5f9e091b: dialog - removed rux-button-group internally. You may remove importing RuxButtonGroup
+- Updated dependencies [09e5a7f6]
+- Updated dependencies [5f9e091b]
+- Updated dependencies [28a09760]
+- Updated dependencies [f5a3dd88]
+  - @astrouxds/astro-web-components@7.12.0
+
 ## 7.11.0
 
 ### Minor Changes
 
 #### Core
 
--   Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
+- Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
 
 ### Patch Changes
 
 #### Input
 
--   Password show/hide button is no longer visible when type does not equal password
+- Password show/hide button is no longer visible when type does not equal password
 
 #### Progress
 
--   Fixed an issue where max would change to equal value if value increased passed max
+- Fixed an issue where max would change to equal value if value increased passed max
 
 #### Segmented Button
 
--   Fixed an issue with programatically selecting segments
-
+- Fixed an issue with programatically selecting segments
 
 ## 7.10.0
 
