@@ -12651,6 +12651,10 @@ export namespace Components {
           * Enables animation on all toasts
          */
         "animateToasts": boolean;
+        /**
+          * sets max number of toasts to be displayed in stack
+         */
+        "maxToasts": number;
     }
     interface RuxTooltip {
         /**
@@ -33407,6 +33411,10 @@ declare namespace LocalJSX {
           * Enables animation on all toasts
          */
         "animateToasts"?: boolean;
+        /**
+          * sets max number of toasts to be displayed in stack
+         */
+        "maxToasts"?: number;
     }
     interface RuxTooltip {
         /**

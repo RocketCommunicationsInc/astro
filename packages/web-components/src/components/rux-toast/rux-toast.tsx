@@ -101,6 +101,10 @@ export class RuxToast {
         this._destroyToastStack()
     }
 
+    componentDidLoad() {
+        this._addAnimation()
+    }
+
     private _updated() {
         if (this._closeAfter && this.open) {
             this._timeoutRef = window.setTimeout(() => {
@@ -128,6 +132,12 @@ export class RuxToast {
         if (e.key === 'Enter') {
             this._onClick()
         }
+    }
+
+    private _addAnimation() {
+        const toastInner = this.el.shadowRoot?.querySelector('.rux-toast')
+        console.log(toastInner)
+        toastInner?.classList.add('animate__animated', 'animate__fadeInDown')
     }
 
     private _createToastToStack() {

@@ -21,22 +21,28 @@ export class RuxToastStack {
      */
     @Prop() animateToasts: boolean = false
 
+    /**
+     * sets max number of toasts to be displayed in stack
+     */
+    @Prop() maxToasts: number = 4
+
     @Listen('ruxtoastclosed')
     handleToastClosed() {
-        this._hideToastsOverFour()
+        this._hideToastsOverAmount(this.maxToasts)
     }
 
     connectedCallback() {
-        //this._handleSlotChange = this._handleSlotChange.bind(this)
-        this.el.shadowRoot?.addEventListener('slotchange', () => {
-            this._hideToastsOverFour()
-            this._setAnimateOnToasts()
-        })
+        this._handleSlotChange = this._handleSlotChange.bind(this)
+        // this.el.shadowRoot?.addEventListener('slotchange', () => {
+        //     this._hideToastsOverAmount(this.maxToasts)
+        //     this._setAnimateOnToasts()
+        // })
     }
 
-    // private _handleSlotChange() {
-    //   console.log('open toasts', this._openToastAmountInStack)
-    // }
+    private _handleSlotChange() {
+        this._hideToastsOverAmount(this.maxToasts)
+        this._setAnimateOnToasts()
+    }
 
     private _setAnimateOnToasts() {
         if (this.animateToasts) {
@@ -48,17 +54,17 @@ export class RuxToastStack {
         }
     }
 
-    private _checkAndSetToastAmount() {
+    private _checkAndSetToastAmount(amount: number) {
         let openToastAmount = this._openToastAmountInStack
         let openToasts = this._openToasts
 
-        if (openToastAmount <= 4) {
+        if (openToastAmount <= amount) {
             for (const toast of openToasts) {
                 toast.style.display = ''
             }
         } else {
             for (const [index, value] of openToasts.entries()) {
-                if (index <= 3) {
+                if (index <= amount - 1) {
                     value.style.display = ''
                 } else {
                     value.style.display = 'none'
@@ -70,19 +76,21 @@ export class RuxToastStack {
         }
     }
 
-    private _hideToastsOverFour() {
+    private _hideToastsOverAmount(amount: number) {
         if (this.animateToasts) {
             window.setTimeout(() => {
-                this._checkAndSetToastAmount()
+                this._checkAndSetToastAmount(amount)
             }, 200)
         } else {
-            this._checkAndSetToastAmount()
+            this._checkAndSetToastAmount(amount)
         }
     }
 
     get _openToastAmountInStack() {
         this.openToastAmount = 0
-        const toasts = this.el.querySelectorAll('rux-toast')
+        const toasts: NodeListOf<HTMLRuxToastElement> = this.el.querySelectorAll(
+            'rux-toast'
+        )
 
         if (!toasts) return this.openToastAmount
 
@@ -94,8 +102,10 @@ export class RuxToastStack {
     }
 
     get _openToasts() {
-        const toasts = this.el.querySelectorAll('rux-toast')
-        let openToasts = []
+        const toasts: NodeListOf<HTMLRuxToastElement> = this.el.querySelectorAll(
+            'rux-toast'
+        )
+        let openToasts: Array<HTMLRuxToastElement> = []
 
         for (const toast of toasts) {
             if (toast.open) openToasts.push(toast)
@@ -108,7 +118,7 @@ export class RuxToastStack {
         return (
             <Host>
                 <div class="rux-toast-stack">
-                    <slot></slot>
+                    <slot onSlotchange={this._handleSlotChange}></slot>
                 </div>
             </Host>
         )
