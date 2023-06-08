@@ -57,9 +57,8 @@ export class RuxSlider implements FormFieldInterface {
     /**
      * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
      */
-    @Prop({ mutable: true, reflect: true }) value: number = this.maxVal
-        ? this.maxVal
-        : (this.max! - this.min!) / 2 + this.min!
+    @Prop({ mutable: true, reflect: true }) value: number =
+        (this.max! - this.min!) / 2 + this.min!
 
     /**
      *  Shows tick marks and labels in the order provided and aligns evenly based on the length.
@@ -193,6 +192,8 @@ export class RuxSlider implements FormFieldInterface {
         //if maxVal is being used, we're in dual range mode. Use that instead of value.
         if (this.maxVal !== undefined && this.minVal !== undefined) {
             // swap CSS custom prop values
+            //! Instead of just swapping custom prop values, we should probably swap actual values too
+            //! based on convo with Mark today
             if (this.minVal > this.maxVal) {
                 this.el.style.setProperty(
                     '--_slider-value-percent',
@@ -222,24 +223,20 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _onInput(e: Event) {
-        console.log('running on input. Value is: ', this.value)
         const target = e.target as HTMLInputElement
         if (this.maxVal !== undefined) {
             this.maxVal = parseFloat(target.value)
             if (this.maxVal <= this.minVal! && this.strict) {
                 this.maxVal = this.minVal
-                let internalShadowInput = this.el.shadowRoot?.querySelector(
-                    'input'
-                )
-                //? Why is the necessary? Why doesn't value map correctly to the inputs in here?
-                internalShadowInput!.value = this.maxVal!.toString()
+                this.value = this.maxVal!
+                //? Still not entirely sure why we have to do this.
+                target.value = this.value.toString()
             }
         } else {
             this.value = parseFloat(target.value)
         }
         this._setValuePercent()
         this.ruxInput.emit()
-        console.log('value at end of input: ', this.value)
     }
 
     private _onMinValInput(e: Event) {
@@ -247,10 +244,8 @@ export class RuxSlider implements FormFieldInterface {
         this.minVal = parseFloat(target.value)
         if (this.minVal >= this.maxVal! && this.strict) {
             this.minVal = this.maxVal
-            let internalShadowInputs = this.el.shadowRoot?.querySelectorAll(
-                'input'
-            )
-            internalShadowInputs![1].value = this.minVal!.toString()
+            //? Still not entirely sure why we have to do this.
+            target.value = this.minVal!.toString()
         }
         this._setValuePercent()
         this.ruxInput.emit()
@@ -360,9 +355,7 @@ export class RuxSlider implements FormFieldInterface {
                             min={min}
                             max={max}
                             step={step}
-                            value={
-                                this.maxVal !== undefined ? this.maxVal : value
-                            }
+                            value={this.maxVal}
                             disabled={disabled}
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
