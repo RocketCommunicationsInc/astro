@@ -68,16 +68,9 @@
                 <rux-button id="add">Add Toast</rux-button>
             </div>
         </rux-container>
-        <rux-toast open> toasty toast </rux-toast>
+        <!-- <rux-toast open animate-out> toasty toast </rux-toast>
 
-        <rux-toast open>
-            toaster-oo dksjfhdsjf sdkjhdfh djfgh kdjfgdjkfg dkjgdkjfgf
-            gkjdfgdfkg dfkjg dfkjg dfkjg dfkjg dfjkgh
-        </rux-toast>
-
-        <rux-toast-stack>
-            <rux-toast open>I am a toast that lives in the stack</rux-toast>
-        </rux-toast-stack>
+        <rux-toast open animate-out> toaster-oo dksjfhdsjf sdkjhdfh djfgh kdjfgdjkfg dkjgdkjfgf gkjdfgdfkg dfkjg dfkjg dfkjg dfkjg dfjkgh </rux-toast> -->
 
         <script>
             const body = document.querySelector('body')
@@ -111,7 +104,7 @@
                 newToast.setAttribute('message', `New toast ${toastNumber}!`)
                 toastNumber = toastNumber + 1
                 newToast.setAttribute('open', '')
-                //newToast.setAttribute('animate-out', '')
+                newToast.setAttribute('animate-out', '')
                 newToast.setAttribute('status', `${randomStatus}`)
 
                 body.appendChild(newToast)

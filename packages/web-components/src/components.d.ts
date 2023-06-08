@@ -12646,6 +12646,12 @@ export namespace Components {
          */
         "status"?: Status;
     }
+    interface RuxToastStack {
+        /**
+          * Enables animation on all toasts
+         */
+        "animateToasts": boolean;
+    }
     interface RuxTooltip {
         /**
           * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
@@ -19484,6 +19490,12 @@ declare global {
         prototype: HTMLRuxToastElement;
         new (): HTMLRuxToastElement;
     };
+    interface HTMLRuxToastStackElement extends Components.RuxToastStack, HTMLStencilElement {
+    }
+    var HTMLRuxToastStackElement: {
+        prototype: HTMLRuxToastStackElement;
+        new (): HTMLRuxToastStackElement;
+    };
     interface HTMLRuxTooltipElement extends Components.RuxTooltip, HTMLStencilElement {
     }
     var HTMLRuxTooltipElement: {
@@ -20621,6 +20633,7 @@ declare global {
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
         "rux-toast": HTMLRuxToastElement;
+        "rux-toast-stack": HTMLRuxToastStackElement;
         "rux-tooltip": HTMLRuxTooltipElement;
         "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
@@ -33379,7 +33392,7 @@ declare namespace LocalJSX {
         /**
           * Fires when the toast is closed
          */
-        "onRuxclosed"?: (event: RuxToastCustomEvent<boolean>) => void;
+        "onRuxtoastclosed"?: (event: RuxToastCustomEvent<boolean>) => void;
         /**
           * Set to true to display the toast
          */
@@ -33388,6 +33401,12 @@ declare namespace LocalJSX {
           * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status"?: Status;
+    }
+    interface RuxToastStack {
+        /**
+          * Enables animation on all toasts
+         */
+        "animateToasts"?: boolean;
     }
     interface RuxTooltip {
         /**
@@ -34572,6 +34591,7 @@ declare namespace LocalJSX {
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
         "rux-toast": RuxToast;
+        "rux-toast-stack": RuxToastStack;
         "rux-tooltip": RuxTooltip;
         "rux-track": RuxTrack;
         "rux-tree": RuxTree;
@@ -35694,6 +35714,7 @@ declare module "@stencil/core" {
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
             "rux-toast": LocalJSX.RuxToast & JSXBase.HTMLAttributes<HTMLRuxToastElement>;
+            "rux-toast-stack": LocalJSX.RuxToastStack & JSXBase.HTMLAttributes<HTMLRuxToastStackElement>;
             "rux-tooltip": LocalJSX.RuxTooltip & JSXBase.HTMLAttributes<HTMLRuxTooltipElement>;
             "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;
