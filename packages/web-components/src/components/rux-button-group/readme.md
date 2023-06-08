@@ -29,6 +29,9 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 <!-- Auto Generated Below -->
 
 
+> **[DEPRECATED]** Button Group is deprecated and will be removed in a next major release.
+Instead, you should use `flex` or `grid` in combination with our spacing design tokens.
+
 ## Properties
 
 | Property | Attribute | Description                                          | Type                            | Default  |
@@ -36,32 +39,12 @@ By default button group aligns buttons to the left. Alternatively an `h-align` p
 | `hAlign` | `h-align` | The horizontal alignment of buttons within the group | `"center" \| "left" \| "right"` | `'left'` |
 
 
-## Slots
-
-| Slot          | Description                                             |
-| ------------- | ------------------------------------------------------- |
-| `"(default)"` | Two or more RuxButton components to render in the group |
-
-
 ## Shadow Parts
 
-| Part          | Description              |
-| ------------- | ------------------------ |
-| `"container"` | the components container |
+| Part          | Description |
+| ------------- | ----------- |
+| `"container"` |             |
 
-
-## Dependencies
-
-### Used by
-
- - [rux-dialog](../rux-dialog)
-
-### Graph
-```mermaid
-graph TD;
-  rux-dialog --> rux-button-group
-  style rux-button-group fill:#f9f,stroke:#333,stroke-width:4px
-```
 
 ----------------------------------------------
 
