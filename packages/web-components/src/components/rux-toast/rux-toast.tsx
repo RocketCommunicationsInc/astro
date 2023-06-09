@@ -1,15 +1,5 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
-import {
-    Component,
-    Event,
-    EventEmitter,
-    Host,
-    h,
-    Prop,
-    Element,
-    Watch,
-    State,
-} from '@stencil/core'
+import { Component, Host, h, Prop, Element, State } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 import { Status, StatusSymbol } from '../../common/commonTypes.module'
 
@@ -34,11 +24,11 @@ export class RuxToast {
     @State() hasPrefixSlot = false
     @State() hasMessageSlot = false
     @State() toastArray = [...document.querySelectorAll('rux-toast')] || []
-    /**
-     *  Set to true to display the toast
-     */
-    @Prop({ attribute: 'open', reflect: true, mutable: true })
-    open: boolean = false
+    // /**
+    //  *  Set to true to display the toast
+    //  */
+    // @Prop({ attribute: 'open', reflect: true, mutable: true })
+    // open: boolean = false
 
     /**
      *  Message for the toast.
@@ -70,23 +60,23 @@ export class RuxToast {
     /**
      * Fires when the toast is closed
      */
-    @Event({
-        eventName: 'ruxtoastclosed',
-    })
-    ruxToastClosed!: EventEmitter<boolean>
+    // @Event({
+    //     eventName: 'ruxtoastclosed',
+    // })
+    // ruxToastClosed!: EventEmitter<boolean>
 
     private _timeoutRef: number | null = null
 
     // private _currentToasts
 
-    @Watch('open')
-    @Watch('closeAfter')
-    watchHandler() {
-        this._updated()
-        if (!this.open) {
-            this.ruxToastClosed.emit()
-        }
-    }
+    // @Watch('open')
+    // @Watch('closeAfter')
+    // watchHandler() {
+    //     this._updated()
+    //     if (!this.open) {
+    //         this.ruxToastClosed.emit()
+    //     }
+    // }
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
@@ -106,9 +96,10 @@ export class RuxToast {
     }
 
     private _updated() {
-        if (this._closeAfter && this.open) {
+        if (this._closeAfter) {
             this._timeoutRef = window.setTimeout(() => {
-                this.open = false
+                //this.open = false
+                this.el.remove()
             }, this._closeAfter)
         }
     }
@@ -120,11 +111,13 @@ export class RuxToast {
         if (this.animateOut) {
             this.el.setAttribute('animating', '')
             window.setTimeout(() => {
-                this.open = false
+                //this.open = false
                 this.el.removeAttribute('animating')
+                this.el.remove()
             }, 200)
         } else {
-            this.open = false
+            //this.open = false
+            this.el.remove()
         }
     }
 
@@ -197,31 +190,9 @@ export class RuxToast {
     render() {
         return (
             <Host>
-                {/* <div
-                  class={{
-                      'rux-notification-banner': true,
-                      'rux-notification-banner--open': this.open,
-                      'rux-notification-banner--caution':
-                          this.status === StatusSymbol.CAUTION,
-                      'rux-notification-banner--critical':
-                          this.status === StatusSymbol.CRITICAL,
-                      'rux-notification-banner--serious':
-                          this.status === StatusSymbol.SERIOUS,
-                      'rux-notification-banner--standby':
-                          this.status === StatusSymbol.STANDBY,
-                      'rux-notification-banner--off':
-                          this.status === StatusSymbol.OFF,
-                      'rux-notification-banner--normal':
-                          this.status === StatusSymbol.NORMAL,
-                      'rux-notification-banner--hasPrefixSlot': this
-                          .hasPrefixSlot,
-                  }}
-              > */}
                 <div
-                    // class={{ 'rux-toast__inner': true }}
                     class={{
                         'rux-toast': true,
-                        'rux-toast--open': this.open,
                         'rux-toast--caution':
                             this.status === StatusSymbol.CAUTION,
                         'rux-toast--critical':

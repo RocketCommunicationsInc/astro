@@ -1,5 +1,5 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
-import { Component, Host, h, Prop, Element, State, Listen } from '@stencil/core'
+import { Component, Host, h, Prop, Element, State } from '@stencil/core'
 
 /**
  * @part container - the notification's container element
@@ -26,92 +26,69 @@ export class RuxToastStack {
      */
     @Prop() maxToasts: number = 4
 
-    @Listen('ruxtoastclosed')
-    handleToastClosed() {
-        this._hideToastsOverAmount(this.maxToasts)
-    }
+    /**
+     * position of toast stack in viewport
+     */
+    @Prop({ attribute: 'position', reflect: true }) position: string =
+        'top-right'
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        // this.el.shadowRoot?.addEventListener('slotchange', () => {
-        //     this._hideToastsOverAmount(this.maxToasts)
-        //     this._setAnimateOnToasts()
-        // })
     }
 
     private _handleSlotChange() {
-        this._hideToastsOverAmount(this.maxToasts)
-        this._setAnimateOnToasts()
+        this._runHideToasts(this.maxToasts)
+        // this._setAnimateOnToasts()
     }
 
-    private _setAnimateOnToasts() {
-        if (this.animateToasts) {
-            const toasts = this.el.querySelectorAll('rux-toast')
+    // private _setAnimateOnToasts() {
+    //     if (this.animateToasts) {
+    //         const toasts = this.el.querySelectorAll('rux-toast')
 
-            for (const toast of toasts) {
-                toast.setAttribute('animate-out', '')
-            }
-        }
-    }
+    //         for (const toast of toasts) {
+    //             toast.setAttribute('animate-out', '')
+    //         }
+    //     }
+    // }
 
-    private _checkAndSetToastAmount(amount: number) {
-        let openToastAmount = this._openToastAmountInStack
-        let openToasts = this._openToasts
-
-        if (openToastAmount <= amount) {
-            for (const toast of openToasts) {
+    // hides any toasts in stack over the default, or user set amount
+    private _checkAndHideToastsOverAmount(amount: number) {
+        if (this._toastAmountInStack <= amount) {
+            for (const toast of this._toastsArray) {
                 toast.style.display = ''
             }
         } else {
-            for (const [index, value] of openToasts.entries()) {
+            for (const [index, value] of this._toastsArray.entries()) {
                 if (index <= amount - 1) {
                     value.style.display = ''
                 } else {
                     value.style.display = 'none'
                 }
             }
-
-            console.log('open toasts', openToasts)
-            console.log('open toasts amount', openToastAmount)
         }
     }
 
-    private _hideToastsOverAmount(amount: number) {
+    // runs toast hiding function based on animation prop
+    private _runHideToasts(amount: number) {
         if (this.animateToasts) {
             window.setTimeout(() => {
-                this._checkAndSetToastAmount(amount)
+                this._checkAndHideToastsOverAmount(amount)
             }, 200)
         } else {
-            this._checkAndSetToastAmount(amount)
+            this._checkAndHideToastsOverAmount(amount)
         }
     }
 
-    get _openToastAmountInStack() {
-        this.openToastAmount = 0
-        const toasts: NodeListOf<HTMLRuxToastElement> = this.el.querySelectorAll(
-            'rux-toast'
-        )
-
-        if (!toasts) return this.openToastAmount
-
-        for (const toast of toasts) {
-            toast.open ? this.openToastAmount++ : null
-        }
-
+    get _toastAmountInStack() {
+        this.openToastAmount = this._toastsArray.length
         return this.openToastAmount
     }
 
-    get _openToasts() {
-        const toasts: NodeListOf<HTMLRuxToastElement> = this.el.querySelectorAll(
-            'rux-toast'
+    get _toastsArray() {
+        const toasts: Array<HTMLRuxToastElement> = Array.from(
+            this.el.querySelectorAll('rux-toast')
         )
-        let openToasts: Array<HTMLRuxToastElement> = []
-
-        for (const toast of toasts) {
-            if (toast.open) openToasts.push(toast)
-        }
-
-        return openToasts
+        return toasts
     }
 
     render() {

@@ -12638,10 +12638,6 @@ export namespace Components {
          */
         "message": string;
         /**
-          * Set to true to display the toast
-         */
-        "open": boolean;
-        /**
           * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status"?: Status;
@@ -12655,6 +12651,10 @@ export namespace Components {
           * sets max number of toasts to be displayed in stack
          */
         "maxToasts": number;
+        /**
+          * position of toast stack in viewport
+         */
+        "position": string;
     }
     interface RuxTooltip {
         /**
@@ -12808,10 +12808,6 @@ export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
-}
-export interface RuxToastCustomEvent<T> extends CustomEvent<T> {
-    detail: T;
-    target: HTMLRuxToastElement;
 }
 export interface RuxTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -33394,14 +33390,6 @@ declare namespace LocalJSX {
          */
         "message"?: string;
         /**
-          * Fires when the toast is closed
-         */
-        "onRuxtoastclosed"?: (event: RuxToastCustomEvent<boolean>) => void;
-        /**
-          * Set to true to display the toast
-         */
-        "open"?: boolean;
-        /**
           * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
         "status"?: Status;
@@ -33415,6 +33403,10 @@ declare namespace LocalJSX {
           * sets max number of toasts to be displayed in stack
          */
         "maxToasts"?: number;
+        /**
+          * position of toast stack in viewport
+         */
+        "position"?: string;
     }
     interface RuxTooltip {
         /**

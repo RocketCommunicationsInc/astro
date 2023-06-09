@@ -23,14 +23,15 @@
   * @prop --height: the Notification's height
   */
     --height: var(--spacing-20); // 80px;
-}
-
-:host([open]) {
     display: contents;
 }
-:host(:not([open])) {
-    display: none;
-}
+
+// :host([open]) {
+//     display: contents;
+// }
+// :host(:not([open])) {
+//     display: none;
+// }
 
 :host([animating]) .rux-toast {
     height: 0;
