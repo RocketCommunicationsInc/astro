@@ -21,6 +21,7 @@ import { hasSlot } from '../../../utils/utils'
  * @part label - The label
  * @part prefix - The wrapper for the prefix slot
  * @part indicator - The opened/closed indicator
+ * @part content - The element wrapping the expanded content
  */
 
 @Component({
@@ -128,7 +129,7 @@ export class RuxAccordionItem {
                             </svg>
                         </span>
                     </summary>
-                    <span class="rux-accordion-item--content">
+                    <span part="content" class="rux-accordion-item--content">
                         <slot></slot>
                     </span>
                 </details>
