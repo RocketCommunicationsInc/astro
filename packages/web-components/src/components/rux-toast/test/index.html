@@ -71,9 +71,6 @@
                 <rux-button secondary id="remove">Remove All Toasts</rux-button>
                 <rux-button id="add">Add Toast</rux-button>
             </div>
-            <button class="animate__animated animate__fadeInDown">
-                is animate
-            </button>
         </rux-container>
         <rux-toast open> toasty toast </rux-toast>
 
@@ -118,7 +115,7 @@
                 newToast.setAttribute('message', `New toast ${toastNumber}!`)
                 toastNumber = toastNumber + 1
                 newToast.setAttribute('open', '')
-                //newToast.setAttribute('animate-out', '')
+                //newToast.setAttribute('animate-toast', '')
                 newToast.setAttribute('status', `${randomStatus}`)
 
                 body.appendChild(newToast)

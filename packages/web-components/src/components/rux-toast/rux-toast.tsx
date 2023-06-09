@@ -4,13 +4,13 @@ import { hasSlot } from '../../utils/utils'
 import { Status, StatusSymbol } from '../../common/commonTypes.module'
 
 /**
- * @part icon - the notification's close icon
- * @part message - the notification's message
- * @part status - the notification's status symbol
- * @part container - the notification's container element
+ * @part icon - the toast's close icon
+ * @part message - the toast's message
+ * @part status - the toast's status symbol
+ * @part container - the toast's container element
  *
  * @slot prefix - an optional left side content area
- * @slot (default) - the notification's message
+ * @slot (default) - the toast's message
  * @slot actions - used for display actions like close icons or buttons
  */
 @Component({
@@ -23,13 +23,6 @@ export class RuxToast {
 
     @State() hasPrefixSlot = false
     @State() hasMessageSlot = false
-    @State() toastArray = [...document.querySelectorAll('rux-toast')] || []
-    // /**
-    //  *  Set to true to display the toast
-    //  */
-    // @Prop({ attribute: 'open', reflect: true, mutable: true })
-    // open: boolean = false
-
     /**
      *  Message for the toast.
      */
@@ -39,18 +32,18 @@ export class RuxToast {
      */
     @Prop({ reflect: true }) status?: Status
     /**
-     *  If provided, the banner will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the banner will stay open until the user closes it.
+     *  If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
      */
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
     /**
-     * Changes the size of the banner to a small variant.
+     * Changes the size of the toast to a small variant.
      */
     // @Prop() small: boolean = false
 
     /**
      * Enables closing animation
      */
-    @Prop() animateOut: boolean = false
+    @Prop() animateToast?: boolean = false
 
     /**
      * Prevents the user from dismissing the notification. Hides the `actions` slot.
@@ -108,7 +101,7 @@ export class RuxToast {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
-        if (this.animateOut) {
+        if (this.animateToast) {
             this.el.setAttribute('animating', '')
             window.setTimeout(() => {
                 //this.open = false

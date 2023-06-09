@@ -16,16 +16,9 @@
 
 ## Slots
 
-| Slot          | Description                |
-| ------------- | -------------------------- |
-| `"(default)"` | the notification's message |
-
-
-## Shadow Parts
-
-| Part          | Description                          |
-| ------------- | ------------------------------------ |
-| `"container"` | the notification's container element |
+| Slot          | Description         |
+| ------------- | ------------------- |
+| `"(default)"` | where all toasts go |
 
 
 ## Dependencies

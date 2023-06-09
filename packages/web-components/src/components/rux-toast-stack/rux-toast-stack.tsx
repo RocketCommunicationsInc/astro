@@ -2,9 +2,7 @@
 import { Component, Host, h, Prop, Element, State } from '@stencil/core'
 
 /**
- * @part container - the notification's container element
- *
- * @slot (default) - the notification's message
+ * @slot (default) - where all toasts go
  */
 @Component({
     tag: 'rux-toast-stack',
