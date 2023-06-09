@@ -19,5 +19,51 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <style>
+            rux-textarea {
+                height: 300px;
+                min-width: 50%;
+                margin: 2rem auto;
+            }
+        </style>
+
+        <form id="form">
+            <rux-textarea
+                id="textarea1"
+                name="test1"
+                value="TextArea Test 1"
+            ></rux-textarea>
+            <br />
+            <rux-textarea
+                id="textarea1"
+                name="test1"
+                value="TextArea Test 1"
+                size="small"
+            ></rux-textarea>
+            <br />
+            <rux-textarea
+                id="textarea1"
+                name="test1"
+                value="TextArea Test 1"
+                size="large"
+            ></rux-textarea>
+            <br />
+            <rux-textarea
+                id="textarea1"
+                name="test1"
+                value="TextArea Test 1"
+                label="This is the label"
+                error-text="this is error!"
+                rows="10"
+            ></rux-textarea>
+            <br />
+            <rux-textarea
+                id="disTextArea"
+                name="disTextArea"
+                value="Disabled"
+                disabled
+            ></rux-textarea>
+        </form>
+    </body>
 </html>
