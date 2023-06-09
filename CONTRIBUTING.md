@@ -152,7 +152,7 @@ In the Astro repo make sure to run
 `npx lerna link`
 `npm run build`
 
-Create a fresh CRA in a separate directory and [setup Astro](https://astro-components.netlify.app/?path=/docs/astro-uxds-welcome-react--page).
+Create a fresh CRA in a separate directory outside of the Astro repo and [setup Astro](https://astro-components.netlify.app/?path=/docs/astro-uxds-welcome-react--page).
 
 > NOTE: Make sure that you are importing astro-web-components.css from index.js and not index.css if you are getting an error about importing stuff from outside /src.
 
