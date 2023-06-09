@@ -20,7 +20,8 @@ Otherwise, use:
 
 Astro Web Components make use of Stencil's automatic lazy loader which only loads components that are actually used on the page.
 
-Our dark theme component styles come out of the box, but if you need light theme or theme switching capabilities then include the following CSS import into your `index.js` or `app.js`:
+Our dark theme component styles come out of the box, but if you need light theme or theme switching capabilities then you'll need to import the Astro UXDS CSS stylesheet as shown below. This stylesheet also provides some
+global styles for things like body background color, link and scrollbar styles, among others. If you need to add these styles yourself, you can reference them in our [global CSS file](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_reset.scss).
 
 `import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'`
 
