@@ -7,11 +7,11 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                                        | Type      | Default       |
-| --------------- | ---------------- | -------------------------------------------------- | --------- | ------------- |
-| `animateToasts` | `animate-toasts` | Enables animation on all toasts                    | `boolean` | `false`       |
-| `maxToasts`     | `max-toasts`     | sets max number of toasts to be displayed in stack | `number`  | `4`           |
-| `position`      | `position`       | position of toast stack in viewport                | `string`  | `'top-right'` |
+| Property        | Attribute        | Description                                        | Type                   | Default       |
+| --------------- | ---------------- | -------------------------------------------------- | ---------------------- | ------------- |
+| `animateToasts` | `animate-toasts` | Enables animation on all toasts                    | `boolean \| undefined` | `false`       |
+| `maxToasts`     | `max-toasts`     | sets max number of toasts to be displayed in stack | `number`               | `4`           |
+| `position`      | `position`       | position of toast stack in viewport                | `string`               | `'top-right'` |
 
 
 ## Slots

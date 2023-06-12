@@ -3,21 +3,12 @@
     --notification-banner-color-background: var(
         --color-background-base-default
     );
-    //spacing-3 - 1px to account for new border system
-    --notification-banner-border-width-left: calc(
-        var(--spacing-3) - var(--spacing-025)
-    );
 
     --notification-banner-radius-outer: var(--radius-base);
     --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
     --notification-banner-border-width-large: var(--spacing-1); //4
     --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
     --notification-banner-border-width-small: var(--spacing-050); //2
-
-    //for the 1px outer border on light theme
-    --notification-banner-border-outer-width: 1px;
-    //defaults to large
-    --notifcation-banner-border-inner-width: 3px;
 
     /**
   * @prop --height: the Notification's height
@@ -33,30 +24,20 @@
 //     display: none;
 // }
 
-:host([animating]) .rux-toast {
-    height: 0;
-    opacity: 0;
-    transition: all 200ms ease-in-out;
+:host([animated]) .rux-toast {
+    animation: fadeInAnimation ease-in 200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
 }
 
-// .rux-toast {
-//   display: flex;
-//   align-items: stretch;
-//   align-content: center;
-//   border-radius: var(--notification-banner-radius-outer);
-//   background: var(--notification-banner-color-border);
-//   width: 100%;
-//   box-sizing: border-box;
-//   min-height: var(--height);
-//   font-family: var(--font-body-1-font-family);
-//   font-size: var(--font-body-1-font-size);
-//   font-weight: var(--font-body-1-font-weight);
-//   letter-spacing: var(--font-body-1-letter-spacing);
-//   line-height: var(
-//       --line-height-base
-//   ); //fixes issue where parent element with larger line-height causes layout shift.
-//   transition: all 200ms ease-in-out;
-// }
+:host([animating]) .rux-toast {
+    animation: fadeOutAnimation ease-out 200ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    // height: 0;
+    // opacity: 0;
+    // transition: all 200ms ease-in-out;
+}
 
 .rux-toast {
     display: flex;
@@ -68,13 +49,40 @@
     background: var(--color-background-base-default);
     padding: var(--notification-banner-padding);
     margin: var(--spacing-3);
-    min-height: 60px;
+    // min-height: 60px;
+    height: 60px;
     border: 1px solid var(--notification-banner-color-border-inner-default);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
     line-height: var(--line-height-base);
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        transform: scale(0);
+        height: 0;
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        height: 60px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        transform: scale(1);
+        height: 60px;
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0);
+        height: 0;
+        opacity: 0;
+    }
 }
 
 .rux-toast__prefix:not(.hidden) {

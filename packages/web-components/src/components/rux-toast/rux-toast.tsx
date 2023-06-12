@@ -43,7 +43,7 @@ export class RuxToast {
     /**
      * Enables closing animation
      */
-    @Prop() animateToast?: boolean = false
+    @Prop({ mutable: true, reflect: true }) animated?: boolean = false
 
     /**
      * Prevents the user from dismissing the notification. Hides the `actions` slot.
@@ -85,14 +85,21 @@ export class RuxToast {
     }
 
     componentDidLoad() {
-        this._addAnimation()
+        this._handleAnimation()
     }
 
     private _updated() {
         if (this._closeAfter) {
             this._timeoutRef = window.setTimeout(() => {
-                //this.open = false
-                this.el.remove()
+                if (this.animated) {
+                    this.el.setAttribute('animating', '')
+                    window.setTimeout(() => {
+                        this.el.removeAttribute('animating')
+                        this.el.remove()
+                    }, 200)
+                } else {
+                    this.el.remove()
+                }
             }, this._closeAfter)
         }
     }
@@ -101,15 +108,13 @@ export class RuxToast {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
-        if (this.animateToast) {
+        if (this.animated) {
             this.el.setAttribute('animating', '')
             window.setTimeout(() => {
-                //this.open = false
                 this.el.removeAttribute('animating')
                 this.el.remove()
             }, 200)
         } else {
-            //this.open = false
             this.el.remove()
         }
     }
@@ -120,10 +125,9 @@ export class RuxToast {
         }
     }
 
-    private _addAnimation() {
-        const toastInner = this.el.shadowRoot?.querySelector('.rux-toast')
-        console.log(toastInner)
-        toastInner?.classList.add('animate__animated', 'animate__fadeInDown')
+    private _handleAnimation() {
+        const toastStack = this.el.parentElement
+        if (toastStack?.hasAttribute('animate-toasts')) this.animated = true
     }
 
     private _createToastToStack() {
