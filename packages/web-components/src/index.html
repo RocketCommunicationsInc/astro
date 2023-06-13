@@ -20,54 +20,10 @@
     </head>
 
     <body>
-        <div style="width: 400px; margin: 3rem">
-            <p>Dual with Strict</p>
-            <rux-slider min-val="10" max-val="50" strict></rux-slider>
-            <span></span>
-        </div>
-        <div style="margin: 3rem; width: 400px">
-            <p>Dual without Strict</p>
-            <rux-slider id="no-strict" min-val="10" max-val="50"></rux-slider>
-            <span id="no-strict-disp"></span>
-        </div>
-        <div style="margin: 3rem; width: 400px">
-            <rux-slider min="0" max="100" value="50" id="basic"></rux-slider>
-            <span id="basic-disp"></span>
-        </div>
+        <rux-slider min="0" max="100" value="50"></rux-slider>
         <script>
-            const disp = document.querySelector('span')
-            const nativeDisp = document.getElementById('native')
             let slider = document.querySelector('rux-slider')
-            let noStrict = document.getElementById('no-strict')
-            let noStrictDisp = document.getElementById('no-strict-disp')
-            let native = document.querySelector('input')
-            let basic = document.getElementById('basic')
-            let basicDisp = document.getElementById('basic-disp')
-            let shadowInput
-            setTimeout(() => {
-                shadowInput = basic.shadowRoot.querySelector('input')
-            }, 1000)
-
-            slider.addEventListener('ruxinput', (e) => {
-                disp.innerHTML = `${slider.minVal}, ${slider.maxVal}`
-            })
-            noStrict.addEventListener('ruxinput', (e) => {
-                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.maxVal}`
-            })
-            document.addEventListener('input', (e) => {
-                if (native.value >= 60) {
-                    native.value = 60
-                }
-                nativeDisp.innerHTML = `${native.value}`
-            })
-            basic.addEventListener('ruxinput', () => {
-                // console.log(shadowInput, 'shadowInput in event')
-                if (basic.value >= 60) {
-                    basic.value = 60
-                    // shadowInput.value = 60
-                }
-                basicDisp.innerHTML = `${basic.value}: slider value; ${shadowInput.value}: shadowInput value`
-            })
+            slider.axisLabels = ['0', '50', '100']
         </script>
     </body>
 </html>
