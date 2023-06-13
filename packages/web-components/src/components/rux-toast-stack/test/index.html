@@ -33,6 +33,10 @@
                 margin-inline: 0.5rem;
             }
         </style>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
     </head>
 
     <body>
@@ -68,9 +72,6 @@
                 <rux-button id="add">Add Toast</rux-button>
             </div>
         </rux-container>
-        <!-- <rux-toast open animate-out> toasty toast </rux-toast>
-
-        <rux-toast open animate-out> toaster-oo dksjfhdsjf sdkjhdfh djfgh kdjfgdjkfg dkjgdkjfgf gkjdfgdfkg dfkjg dfkjg dfkjg dfkjg dfjkgh </rux-toast> -->
 
         <script>
             const body = document.querySelector('body')
@@ -86,6 +87,22 @@
             ]
             let randomStatus = 'normal'
 
+            function addToastFromMethod(message, status) {
+                const body = document.body
+                let stack = document.querySelector('rux-toast-stack')
+
+                if (!stack) {
+                    stack = document.createElement('rux-toast-stack')
+                    stack.animateToasts = true
+                    body.appendChild(stack)
+                }
+
+                stack.addToast({
+                    message: message,
+                    hideClose: false,
+                })
+            }
+
             function getRandomInt(max) {
                 return Math.floor(Math.random() * max)
             }
@@ -98,16 +115,17 @@
             })
             let toastNumber = 1
             add.addEventListener('click', () => {
-                randomStatus = statuses[getRandomInt(6)]
-                const newToast = document.createElement('RUX-TOAST')
+                addToastFromMethod('Hello toast', 'normal')
+                // randomStatus = statuses[getRandomInt(6)]
+                // const newToast = document.createElement('RUX-TOAST')
 
-                newToast.setAttribute('message', `New toast ${toastNumber}!`)
-                toastNumber = toastNumber + 1
-                newToast.setAttribute('open', '')
-                newToast.setAttribute('animate-out', '')
-                newToast.setAttribute('status', `${randomStatus}`)
+                // newToast.setAttribute('message', `New toast ${toastNumber}!`)
+                // toastNumber = toastNumber + 1
+                // newToast.setAttribute('open', '')
+                // //newToast.setAttribute('animate-toast', '')
+                // newToast.setAttribute('status', `${randomStatus}`)
 
-                body.appendChild(newToast)
+                // body.appendChild(newToast)
             })
         </script>
     </body>
