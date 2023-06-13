@@ -16,6 +16,13 @@
 | `status`     | `status`      | Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).                                                                                                                                                                                                                                                                                                | `"caution" \| "critical" \| "normal" \| "off" \| "serious" \| "standby" \| undefined` | `undefined` |
 
 
+## Events
+
+| Event              | Description                    | Type                   |
+| ------------------ | ------------------------------ | ---------------------- |
+| `ruxToastHydrated` | Fires when the toast is closed | `CustomEvent<boolean>` |
+
+
 ## Slots
 
 | Slot          | Description                                          |
@@ -35,7 +42,18 @@
 | `"status"`    | the toast's status symbol     |
 
 
+## CSS Custom Properties
+
+| Name       | Description               |
+| ---------- | ------------------------- |
+| `--height` | the Notification's height |
+
+
 ## Dependencies
+
+### Used by
+
+ - [rux-toast-stack](../rux-toast-stack)
 
 ### Depends on
 
@@ -49,6 +67,7 @@ graph TD;
   rux-toast --> rux-toast-stack
   rux-toast --> rux-status
   rux-toast --> rux-icon
+  rux-toast-stack --> rux-toast
   style rux-toast fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

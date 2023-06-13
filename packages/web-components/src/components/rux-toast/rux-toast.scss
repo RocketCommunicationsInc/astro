@@ -39,6 +39,10 @@
     // transition: all 200ms ease-in-out;
 }
 
+:host([first-toast]) .rux-toast {
+    margin-block-start: var(--spacing-0);
+}
+
 .rux-toast {
     display: flex;
     align-items: center;
@@ -48,7 +52,7 @@
     border-radius: 3px;
     background: var(--color-background-base-default);
     padding: var(--notification-banner-padding);
-    margin: var(--spacing-3);
+    margin-block-start: var(--spacing-3);
     // min-height: 60px;
     height: 60px;
     border: 1px solid var(--notification-banner-color-border-inner-default);
@@ -62,12 +66,12 @@
 @keyframes fadeInAnimation {
     0% {
         transform: scale(0);
-        height: 0;
+        //height: 0;
         opacity: 0;
     }
     100% {
         transform: scale(1);
-        height: 60px;
+        //height: 60px;
         opacity: 1;
     }
 }

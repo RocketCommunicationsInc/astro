@@ -1,5 +1,5 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
-import { Component, Host, h, Prop, Element, State } from '@stencil/core'
+import { Component, Host, h, Prop, Element, State, Method } from '@stencil/core'
 
 /**
  * @slot (default) - where all toasts go
@@ -31,11 +31,43 @@ export class RuxToastStack {
     @Prop({ attribute: 'position', reflect: true }) position: string =
         'top-right'
 
+    @Method()
+    async addToast(props: {
+        [x: string]: any
+        hasOwnProperty: (arg0: string) => any
+    }) {
+        const toast = document.createElement('rux-toast')
+
+        for (const key in props) {
+            if (props.hasOwnProperty(key)) {
+                switch (key) {
+                    case 'message':
+                        toast.message = props[key]
+                        break
+                    case 'status':
+                        toast.status = props[key]
+                        break
+                    case 'hideClose':
+                        toast.hideClose = props[key]
+                        break
+                    case 'closeAfter':
+                        toast.closeAfter = props[key]
+                        break
+                }
+            }
+        }
+
+        this.animateToasts ? (toast.animated = true) : null
+
+        this.el?.insertBefore(toast, this.el.firstChild) // add as first child
+    }
+
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
     private _handleSlotChange() {
+        this._tagFirstToast()
         this._runHideToasts(this.maxToasts)
         // this._setAnimateOnToasts()
     }
@@ -47,13 +79,13 @@ export class RuxToastStack {
         let stackRestrictionHeight: number = 0
 
         // if toast amount is under the max set, keep styling off stack
-        if (this._toastAmountInStack <= amount) {
-            this.el.style.height = ''
-            this.el.style.overflow = ''
+        if (this._toastAmountInStack <= amount - 1) {
+            if (this.el.style.height !== '') this.el.style.height = ''
+            if (this.el.style.overflow !== '') this.el.style.overflow = ''
         } else {
             // if toast amount is equal to or greater than max, loop through toasts
             for (const [index, value] of this._toastsArray.entries()) {
-                // calculate height needed to restrict stack to max amount
+                // calculate height needed to restrict stack to max amount on toasts in stack up to max amount
                 if (index <= amount - 1) {
                     const toastInner = value.shadowRoot?.querySelector(
                         '.rux-toast'
@@ -68,17 +100,6 @@ export class RuxToastStack {
                         stackRestrictionHeight +
                         toastInnerHeight +
                         toastInnerMarginTop
-
-                    if (index === amount - 1) {
-                        // on toast that equals the max number (last visible toast) get margin bottom and add to stack height restriction var
-                        const toastInnerMarginBottom = parseInt(
-                            window
-                                .getComputedStyle(toastInner)
-                                .getPropertyValue('margin-block-end')
-                        )
-                        stackRestrictionHeight =
-                            stackRestrictionHeight + toastInnerMarginBottom
-                    }
                 }
             }
 
@@ -96,6 +117,18 @@ export class RuxToastStack {
             }, 200)
         } else {
             this._checkAndHideToastsOverAmount(amount)
+        }
+    }
+
+    private _tagFirstToast() {
+        const toasts = this._toastsArray
+
+        if (toasts) {
+            for (const [index, value] of toasts?.entries()) {
+                index === 0
+                    ? value.setAttribute('first-toast', '')
+                    : value.removeAttribute('first-toast')
+            }
         }
     }
 

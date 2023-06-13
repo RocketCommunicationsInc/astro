@@ -12643,6 +12643,7 @@ export namespace Components {
         "status"?: Status;
     }
     interface RuxToastStack {
+        "addToast": (props: { [x: string]: any; hasOwnProperty: (arg0: string) => any; }) => Promise<void>;
         /**
           * Enables animation on all toasts
          */
@@ -12808,6 +12809,10 @@ export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
+}
+export interface RuxToastCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxToastElement;
 }
 export interface RuxTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -33389,6 +33394,10 @@ declare namespace LocalJSX {
           * Message for the toast.
          */
         "message"?: string;
+        /**
+          * Fires when the toast is closed
+         */
+        "onRuxToastHydrated"?: (event: RuxToastCustomEvent<boolean>) => void;
         /**
           * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */

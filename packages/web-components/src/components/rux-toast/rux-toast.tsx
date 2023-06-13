@@ -1,5 +1,14 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
-import { Component, Host, h, Prop, Element, State } from '@stencil/core'
+import {
+    Component,
+    Host,
+    h,
+    Prop,
+    Element,
+    State,
+    Event,
+    EventEmitter,
+} from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 import { Status, StatusSymbol } from '../../common/commonTypes.module'
 
@@ -58,6 +67,13 @@ export class RuxToast {
     // })
     // ruxToastClosed!: EventEmitter<boolean>
 
+    @Event({
+        eventName: 'ruxToastHydrated',
+        composed: true,
+        bubbles: true,
+    })
+    ruxToastHydrated!: EventEmitter<boolean>
+
     private _timeoutRef: number | null = null
 
     // private _currentToasts
@@ -86,6 +102,7 @@ export class RuxToast {
 
     componentDidLoad() {
         this._handleAnimation()
+        this.ruxToastHydrated.emit()
     }
 
     private _updated() {
@@ -145,6 +162,7 @@ export class RuxToast {
 
         // if toast already in stack, return, else add to stack
         if (this.el.parentElement === toastStack) return
+
         toastStack?.insertBefore(this.el, toastStack.firstChild) // add as first child
     }
 
