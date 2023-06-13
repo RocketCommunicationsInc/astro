@@ -281,8 +281,10 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _getTickWidths() {
-        const width = 100 / (this.axisLabels.length - 1)
-        return width
+        if (this.axisLabels) {
+            const width = 100 / (this.axisLabels.length - 1)
+            return width
+        }
     }
 
     render() {
@@ -309,7 +311,6 @@ export class RuxSlider implements FormFieldInterface {
             _onMinValInput,
             minVal,
             maxVal,
-            _getTickWidths,
             ticksOnly,
         } = this
         //TODO: Update this to render (2?) hidden inputs when in dual range
@@ -361,7 +362,7 @@ export class RuxSlider implements FormFieldInterface {
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
                             part="input"
-                            list="steplist"
+                            // list="steplist"
                         ></input>
                         {minVal !== undefined && maxVal !== undefined ? (
                             <input
@@ -372,8 +373,10 @@ export class RuxSlider implements FormFieldInterface {
                                 disabled={disabled}
                                 min={min}
                                 max={max}
+                                step={step}
                                 value={minVal}
-                                aria-disabled={disabled ? 'true' : 'false'}
+                                onBlur={_onBlur}
+                                // list="steplist"
                             ></input>
                         ) : null}
                         {minVal !== undefined && maxVal !== undefined ? (
@@ -385,7 +388,7 @@ export class RuxSlider implements FormFieldInterface {
                                 style={{
                                     gridTemplateColumns: `[tick] repeat(${
                                         axisLabels.length - 1
-                                    }, ${_getTickWidths()}%)`,
+                                    }, ${this._getTickWidths()}%)`,
                                 }}
                             >
                                 {axisLabels.map((label) => {

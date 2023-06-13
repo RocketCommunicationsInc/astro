@@ -68,6 +68,7 @@
         background-color: var(--color-background-interactive-default);
         pointer-events: none;
     }
+
     .rux-range:disabled + #steplist {
         opacity: var(--opacity-disabled);
         cursor: not-allowed;
@@ -118,7 +119,9 @@
         }
     }
 }
-
+.rux-slider.rux-slider--range #steplist {
+    padding: 1rem calc(var(--_slider-thumb-size) / 2);
+}
 .rux-range {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -130,6 +133,9 @@
     margin: var(--spacing-0);
     color: transparent;
     position: relative;
+    + div {
+        min-block-size: auto;
+    }
 }
 
 input[type='range']:focus {
@@ -177,6 +183,7 @@ input[type='range']:focus {
 .rux-range--dual::-webkit-slider-runnable-track {
     background-image: none;
     z-index: 1;
+    min-block-size: auto;
 }
 .rux-range-overlay {
     position: absolute;
