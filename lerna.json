@@ -1,4 +1,9 @@
 {
-  "packages": ["packages/*", "packages/angular-workspace/projects/angular"],
+  "packages": [
+    "packages/*",
+    "packages/angular-workspace/projects/angular",
+    "packages/starter-kits/astro-vue",
+    "packages/starter-kits/astro-react"
+  ],
   "version": "6.1.0"
 }
