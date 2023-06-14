@@ -172,6 +172,10 @@ export declare interface RuxCheckbox extends Components.RuxCheckbox {
    */
   ruxinput: EventEmitter<CustomEvent<any>>;
   /**
+   * Fired when an element has gained focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event) 
+   */
+  ruxfocus: EventEmitter<CustomEvent<any>>;
+  /**
    * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event) 
    */
   ruxblur: EventEmitter<CustomEvent<any>>;
@@ -193,7 +197,7 @@ export class RuxCheckbox {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxchange', 'ruxinput', 'ruxblur']);
+    proxyOutputs(this, this.el, ['ruxchange', 'ruxinput', 'ruxfocus', 'ruxblur']);
   }
 }
 
@@ -22634,7 +22638,8 @@ export declare interface RuxInput extends Components.RuxInput {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
+  methods: ['setFocus']
 })
 @Component({
   selector: 'rux-input',
@@ -23054,7 +23059,8 @@ export declare interface RuxSelect extends Components.RuxSelect {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value'],
+  methods: ['setFocus']
 })
 @Component({
   selector: 'rux-select',
@@ -23165,7 +23171,13 @@ export class RuxSwitch {
 }
 
 
-export declare interface RuxTab extends Components.RuxTab {}
+export declare interface RuxTab extends Components.RuxTab {
+  /**
+   * Fires when a tab is selected 
+   */
+  ruxtabselected: EventEmitter<CustomEvent<any>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
@@ -23182,6 +23194,7 @@ export class RuxTab {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxtabselected']);
   }
 }
 
@@ -23433,7 +23446,8 @@ export declare interface RuxTextarea extends Components.RuxTextarea {
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value'],
+  methods: ['setFocus']
 })
 @Component({
   selector: 'rux-textarea',

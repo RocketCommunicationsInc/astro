@@ -9,7 +9,7 @@
     font-weight: var(--font-control-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
     line-height: var(--font-control-body-1-line-height);
-    padding-top: var(--spacing-050);
+    padding-block: var(--spacing-050);
 }
 
 :host([hidden]) {
@@ -73,9 +73,10 @@
     }
 
     &:focus-visible {
-        border-radius: var(--focus-radius);
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
     }
 }
 

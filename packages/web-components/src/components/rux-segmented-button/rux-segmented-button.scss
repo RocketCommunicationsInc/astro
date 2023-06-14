@@ -69,9 +69,10 @@
         }
     }
     //apply focus state when input within in selected and raise so that full outline is visible
-    &:has(input:focus-visible) {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
+    &.--focused {
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
         z-index: 1;
     }
 
@@ -152,13 +153,5 @@
         &:hover {
             border-right-color: var(--color-background-interactive-hover);
         }
-    }
-}
-//firefox does not support :has selector so :focus-within instead
-@supports (-moz-appearance: none) {
-    .rux-segmented-button__segment:focus-within {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
-        z-index: 1;
     }
 }

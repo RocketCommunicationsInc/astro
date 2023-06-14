@@ -1,0 +1,144 @@
+import { Meta } from '@storybook/addon-docs'
+
+<Meta title="Astro UXDS/Core Concepts" />
+
+# Core Concepts
+
+## Shadow DOM
+
+If you're new to using Web Components, you'll quickly notice that the traditional way of styling elements with CSS doesn't work with Astro components.
+
+For example, this won't work:
+
+```html
+<rux-button style="background:red;">button</rux-button>
+```
+
+This is a feature of the Shadow DOM--outside styles cannot be applied to content inside the Shadow DOM. Shadow DOM gives us a clean, native way
+of encapsulating styles and protects your applications from breaking changes. The Shadow DOM API provides two solutions
+for customization: CSS Custom Properties and CSS Shadow Parts.
+
+## Our Public API
+
+All of our Astro Web Components expose a public API, similar to native HTML elements. When using our web components,
+you should only interface with our public APIs or else your applications may unexpectedly break when upgrading. For example,
+avoid directly manipulating anything inside of the Shadow Root.
+
+Our public API includes the following: 
+
+* Properties/Attributes
+* Slots
+* Methods
+* Events
+* CSS Custom Properties (Styling)
+* CSS Shadow Parts (Styling)
+
+### Properties/Attributes 
+
+Properties and attributes define a component's appearance or behavior.
+
+### Slots
+
+Slots are placeholder sections within the Shadow DOM, allowing you full control over both the markup and styling of the content inside of it. 
+Each component will have all of its available slots documented under the API section. To make use of slots, use the `slot` attribute.
+
+For example: 
+
+```html
+<rux-container>
+    <header slot="header">My Header</header>
+    ... body content ...
+</rux-container>
+```
+
+```css
+header {
+    background: red;
+}
+```
+
+
+#### Default Slots
+
+Components may also have one unnamed default slot. These do not require the use of the `slot` attribute in your markup. 
+
+For example: 
+
+```html
+<rux-container>
+    <div id="this-is-default-slotted-content">
+        Hello World
+    </div>
+</rux-container>
+```
+
+```css
+#this-is-default-slotted-content {
+    background: red;
+}
+```
+
+#### When To Use
+
+Because slotted content is outside of the Shadow DOM, it can be styled just like any other element. You should slots 
+whenever you need full control over the content inside. For example, you may want to use the `label` slot on `rux-input`
+to append an icon to the label.
+
+On the other hand, if you only need a basic text label, you might want to just use the `label` attribute instead. 
+Some of our components offer both attributes and slots. In these scenarios, the attributes are less verbose and easier
+to write. 
+
+**With attribute:**
+```html
+<rux-input type="text" label="First Name"></rux-input>
+```
+
+**With slot:**
+```html
+<rux-input type="text">
+    <span slot="label">First name</span>
+</rux-input>
+```
+
+These two examples render the same output, but the first is significantly less work.
+
+### Methods 
+
+Methods are public functions of a component. They are commonly used to execute tasks or operations, for example, programatically setting a tree node to expand. All of our public methods are asynchronous and return a promise, which can be useful in scenarios where you need to perform additional actions after execution. 
+
+### Events 
+
+Like normal [Events](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events), Astro custom events are fired when a user interacts with an element. 
+
+### CSS Custom Properties
+
+Some components may have CSS Custom Properties defined as part of their styling API. These are variables that you can set externally that will reflect inside the Shadow DOM.
+CSS Custom Properties are a lot like SASS variables, with one significant difference--they can be swapped at run time and do not require any build process.
+These CSS Custom Properties will usually be mapped to some CSS property (color, font-size, border-radius, etc). 
+
+For example, Card has a `--body-padding` CSS Custom Property for controlling the body padding. 
+
+### CSS Shadow Parts
+
+> CAUTION: In most cases, overriding Astro's default styling will eject your application from the design system. If a component isn't flexible enough for your needs, consider submitting a feature request instead. 
+
+Because defining CSS Custom Properties for every possible CSS property is incredibly verbose and cumbersome, the recommended way for styling components is
+to make use of [CSS Shadow Parts](https://css-tricks.com/styling-in-the-shadow-dom-with-css-shadow-parts/). CSS Shadow Parts give you full control over
+the styling of a component's underlying Shadow DOM parts.
+
+If a component has any available Shadow Parts, they will be documented under their API section.
+
+> NOTE: We may change the internal CSS properties of elements that are exposed as Shadow Parts in minor releases. 
+
+To style a Shadow Part, use the [::part` pseudo-element](https://developer.mozilla.org/en-US/docs/Web/CSS/::part).
+For example, if you wanted a horizontal label, you could style the `form-field` and `label` Shadow Parts:
+
+```css
+rux-input::part(form-field) {
+    flex-direction: row;
+    align-items: center;
+}
+rux-input::part(label) {
+    margin-right: 1rem;
+}
+```

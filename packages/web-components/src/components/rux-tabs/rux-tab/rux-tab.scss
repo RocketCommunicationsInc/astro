@@ -16,9 +16,10 @@
     }
     cursor: pointer;
     &:focus-visible {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
-        border-radius: var(--focus-radius);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+        border-radius: var(--radius-base);
     }
 }
 

@@ -134,10 +134,14 @@ export class RuxDialog {
                 }
             }, 0)
         }
-        this.open
-            ? this.ruxDialogOpened.emit()
-            : this.ruxDialogClosed.emit(this._userInput)
-        //reset userInput after it's emitted
+        if (this.open) {
+            setTimeout(() => {
+                this.ruxDialogOpened.emit()
+            }, 20)
+        } else {
+            this.ruxDialogClosed.emit(this._userInput)
+        }
+
         this._userInput = null
     }
 
@@ -258,7 +262,7 @@ export class RuxDialog {
                                     ></slot>
                                 ) : (
                                     <Fragment>
-                                        <rux-button-group h-align="right">
+                                        <div class="rux-button-group">
                                             <rux-button
                                                 secondary={
                                                     confirmText.length > 0
@@ -281,7 +285,7 @@ export class RuxDialog {
                                             >
                                                 {confirmText}
                                             </rux-button>
-                                        </rux-button-group>
+                                        </div>
                                         <slot
                                             name="footer"
                                             onSlotchange={

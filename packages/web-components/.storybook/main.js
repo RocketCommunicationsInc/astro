@@ -1,6 +1,6 @@
 module.exports = {
     stories: [
-        '../src/stories/astro-uxds/welcome/StartHere.stories.mdx',
+        '../src/stories/astro-uxds/StartHere.stories.mdx',
         '../src/stories/**/*.stories.mdx',
         '../src/stories/*.stories.@(js|jsx|ts|tsx)',
     ],

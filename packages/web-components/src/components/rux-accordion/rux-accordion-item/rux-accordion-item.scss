@@ -30,8 +30,9 @@ summary {
     box-shadow: 0 -1px 0 0 var(--color-background-base-default) inset;
     cursor: pointer;
     &:focus-visible {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
     }
 }
 

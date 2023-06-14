@@ -10,6 +10,20 @@ import docJson from '../docs.json'
 if (docJson) setStencilDocJson(docJson)
 
 export const parameters = {
+    options: {
+        storySort: {
+            order: [
+                'Astro UXDS',
+                'Frameworks',
+                'Components',
+                'Beta',
+                'Forms',
+                'Utilities',
+                'Patterns',
+                'Themes',
+            ],
+        },
+    },
     viewport: {
         disable: true,
     },

@@ -73,6 +73,19 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 | `ruxchange` | Event Emitted when the Value of the Select is Changed                                                                                | `CustomEvent<void>` |
 
 
+## Methods
+
+### `setFocus(options?: FocusOptions) => Promise<void>`
+
+Sets element as focused
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Slots
 
 | Slot           | Description        |

@@ -112,8 +112,9 @@
             background-size: 1.05rem;
         }
         &--focused {
-            outline: var(--focus-outline);
-            outline-offset: var(--focus-offset);
+            outline: var(--border-width-focus-default) solid
+                var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
         }
         &:hover {
             box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
@@ -179,8 +180,9 @@
 }
 
 .pw-button:focus-visible {
-    outline: var(--focus-outline);
-    outline-offset: var(--focus-offset);
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
 }
 
 .hidden,

@@ -6,7 +6,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
         />
-        <title>Test - Checkbox</title>
+        <title>Test - Dialog</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -17,15 +17,8 @@
             type="module"
             src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
         ></script>
-        <script nomodule src="/build/astro-web-components.esm.js"></script>
 
-        <link
-            rel="stylesheet"
-            href="../../../../../dist/astro-web-components/astro-web-components.css"
-        />
         <link rel="stylesheet" href="../../../../../src/global/test.css" />
-
-        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
     </head>
 
     <body>
@@ -81,6 +74,14 @@
                 top: 900px;
                 left: 1000px;
             }
+            .rux-button-group {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            .rux-button-group rux-button:first-of-type {
+                margin-right: var(--spacing-2);
+            }
         </style>
         <section>
             <rux-dialog
@@ -94,10 +95,10 @@
                     <rux-input placeholder="input time"></rux-input>
                 </div>
                 <div slot="footer">
-                    <rux-button-group h-align="right">
+                    <div class="rux-button-group">
                         <rux-button secondary>Slot Cancel</rux-button>
                         <rux-button id="slotconfirm">Slot Confirm</rux-button>
-                    </rux-button-group>
+                    </div>
                 </div>
             </rux-dialog>
         </section>
@@ -192,10 +193,10 @@
                 message="Prop Message"
             >
                 <div slot="footer">
-                    <rux-button-group h-align="right">
+                    <div class="rux-button-group">
                         <rux-button secondary>Slotted Deny</rux-button>
                         <rux-button>Slotted Confirm</rux-button>
-                    </rux-button-group>
+                    </div>
                 </div>
             </rux-dialog>
         </section>
@@ -209,20 +210,20 @@
             <rux-dialog id="slot-footer-header" message="Prop Message" open>
                 <span slot="header">Slot Header</span>
                 <div slot="footer">
-                    <rux-button-group h-align="right">
+                    <div class="rux-button-group">
                         <rux-button secondary>Slotted Deny</rux-button>
                         <rux-button>Slotted Confirm</rux-button>
-                    </rux-button-group>
+                    </div>
                 </div>
             </rux-dialog>
             <!-- slotted message and footer -->
             <rux-dialog id="slot-msg-footer" header="Prop Header" open>
                 <div>Slot Message</div>
                 <div slot="footer">
-                    <rux-button-group h-align="right">
+                    <div class="rux-button-group">
                         <rux-button secondary>Slotted Deny</rux-button>
                         <rux-button>Slotted Confirm</rux-button>
-                    </rux-button-group>
+                    </div>
                 </div>
             </rux-dialog>
         </section>

@@ -24,8 +24,9 @@
         -webkit-appearance: none;
         position: absolute; //remove spacing while not affecting screenreaders
         &:focus-visible + .rux-push-button__button {
-            outline: var(--focus-outline);
-            outline-offset: var(--focus-offset);
+            outline: var(--border-width-focus-default) solid
+                var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
         }
     }
 

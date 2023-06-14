@@ -23,13 +23,23 @@
             rel="stylesheet"
             href="../../../../../dist/astro-web-components/astro-web-components.css"
         />
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        /> -->
         <!-- <script
             type="module"
             src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
         ></script> -->
+        <style>
+            #filterInput {
+                margin: 2rem;
+            }
+        </style>
     </head>
     <body>
         <rux-log id="testing"></rux-log>
+        <rux-input id="filterInput" placeholder="Filter Test" />
         <script>
             const log = document.getElementById('testing')
             const data = [
@@ -92,6 +102,11 @@
             ]
 
             log.data = data
+
+            const filterInput = document.querySelector('#filterInput')
+            filterInput.addEventListener('input', (e) => {
+                log.setAttribute('filter', e.target.value)
+            })
         </script>
 
         <!-- <section>

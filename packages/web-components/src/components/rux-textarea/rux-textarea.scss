@@ -80,7 +80,7 @@ textarea {
     line-height: var(--font-control-body-1-line-height);
     color: var(--color-text-primary);
     background-color: var(--color-background-base-default);
-    height: var(--spacing-16); //64
+    min-height: var(--spacing-16); //64
     width: 100%;
     padding: var(--spacing-2);
     margin: var(--spacing-0);
@@ -97,16 +97,17 @@ textarea {
     }
     &--small {
         padding: var(--spacing-1) var(--spacing-2); //4px 8px
-        height: var(--spacing-14); //56px
+        min-height: var(--spacing-14); //56px
     }
     &--large {
-        height: calc(var(--spacing-16) + var(--spacing-2)); //72px
+        min-height: calc(var(--spacing-16) + var(--spacing-2)); //72px
         padding: var(--spacing-3) var(--spacing-2); //12px 8px
     }
 
     &:focus-visible {
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
     }
     &:hover {
         border-color: var(--color-background-interactive-hover);

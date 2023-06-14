@@ -12018,6 +12018,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
+        /**
           * Control the padding around the input field
          */
         "size": 'small' | 'medium' | 'large';
@@ -12395,6 +12399,10 @@ export namespace Components {
          */
         "required": boolean;
         /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
+        /**
           * The size of rux-select
          */
         "size"?: 'small' | 'medium' | 'large';
@@ -12570,6 +12578,10 @@ export namespace Components {
           * The input rows attribute
          */
         "rows"?: number;
+        /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
         /**
           * Styles the input element size between small, medium and large. The default styling is medium.
          */
@@ -12772,6 +12784,10 @@ export interface RuxSliderCustomEvent<T> extends CustomEvent<T> {
 export interface RuxSwitchCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxSwitchElement;
+}
+export interface RuxTabCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTabElement;
 }
 export interface RuxTabPanelsCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -20749,6 +20765,10 @@ declare namespace LocalJSX {
           * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
          */
         "onRuxchange"?: (event: RuxCheckboxCustomEvent<any>) => void;
+        /**
+          * Fired when an element has gained focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+         */
+        "onRuxfocus"?: (event: RuxCheckboxCustomEvent<any>) => void;
         /**
           * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
          */
@@ -33207,6 +33227,10 @@ declare namespace LocalJSX {
           * If present, sets a disabled state on this tab item, indicating it cannot be selected by user action.
          */
         "disabled"?: boolean;
+        /**
+          * Fires when a tab is selected
+         */
+        "onRuxtabselected"?: (event: RuxTabCustomEvent<any>) => void;
         /**
           * If present, overrides which tab is selected on load / mount. By default, the first <rux-tab> item is selected.
          */

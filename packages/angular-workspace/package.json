@@ -1,9 +1,10 @@
 {
   "name": "angular-workspace",
-  "version": "7.8.0",
+  "version": "7.12.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "prebuild": "node projects/angular/src/directives/angular-component-lib/add-angular-ignore.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -23,13 +24,13 @@
     "@angular/platform-browser": "~13.2.7",
     "@angular/platform-browser-dynamic": "~13.2.7",
     "@angular/router": "~13.2.7",
-    "@astrouxds/astro-web-components": "^7.8.0",
+    "@astrouxds/astro-web-components": "^7.12.0",
     "rxjs": "~7.5.7",
     "tslib": "^2.4.1",
     "zone.js": "~0.11.8"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~13.3.10",
+    "@angular-devkit/build-angular": "~13.3.11",
     "@angular/cli": "~13.2.6",
     "@angular/compiler-cli": "~13.2.7",
     "@types/jasmine": "~3.10.6",

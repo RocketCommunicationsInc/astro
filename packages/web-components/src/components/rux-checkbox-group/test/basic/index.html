@@ -6,7 +6,7 @@
             name="viewport"
             content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
         />
-        <title>Test - Checkbox</title>
+        <title>Test - Checkbox Group</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
@@ -17,28 +17,8 @@
             type="module"
             src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
         ></script>
-        <script nomodule src="/build/astro-web-components.esm.js"></script>
 
-        <link
-            rel="stylesheet"
-            href="../../../../../dist/astro-web-components/astro-web-components.css"
-        />
-        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
-        <style>
-            body {
-                padding: 1rem;
-            }
-            .grid,
-            section {
-                grid-template-columns: repeat(3, minmax(0, 1fr));
-                display: grid;
-                gap: 2rem;
-            }
-            .grid h2,
-            section h2 {
-                grid-column: 1 / 4;
-            }
-        </style>
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
     </head>
 
     <body>

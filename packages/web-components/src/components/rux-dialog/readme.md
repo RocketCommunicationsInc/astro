@@ -104,13 +104,11 @@ Or use slots to render the header, content and footer.
 
 ### Depends on
 
-- [rux-button-group](../rux-button-group)
 - [rux-button](../rux-button)
 
 ### Graph
 ```mermaid
 graph TD;
-  rux-dialog --> rux-button-group
   rux-dialog --> rux-button
   rux-button --> rux-icon
   style rux-dialog fill:#f9f,stroke:#333,stroke-width:4px

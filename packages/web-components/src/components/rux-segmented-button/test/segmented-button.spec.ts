@@ -113,6 +113,52 @@ test.describe('Segmented-button', () => {
         await expect(changeEvent).toHaveReceivedEventTimes(1)
         await expect(changeEvent).toHaveReceivedEventDetail('Second segment')
     })
+    test('it properly reselects a pre-selected segment', async ({ page }) => {
+        const template = `
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button></rux-segmented-button>
+        </div>
+        `
+        await page.setContent(template)
+        await page.addScriptTag({
+            //first is selected by default
+            content: `
+            const segmented = document.querySelector('rux-segmented-button')
+            const data = [
+                { label: 'First segment' },
+                { label: 'Second segment' },
+                { label: 'Third segment' },
+            ]
+            segmented.data = data
+        `,
+        })
+        const segmentedButton = page.locator('rux-segmented-button')
+        const segButton1Segment = segmentedButton.locator('li').nth(0)
+        const segButton2Segment = segmentedButton.locator('li').nth(1)
+        const segButton1Input = segButton1Segment.locator('input')
+        const segButton2Input = segButton2Segment.locator('input')
+
+        // Imperatively set second segment as selected
+        await segmentedButton.evaluate((e) => {
+            ;(e as HTMLRuxSegmentedButtonElement).selected = 'Second segment'
+        })
+
+        //make sure it changed
+        const secondChecked = await segButton2Input.evaluate(
+            (e) => (e as HTMLInputElement).checked === true
+        )
+        expect(secondChecked).toBe(true)
+
+        // Imperatively set first segment as selected
+        await segmentedButton.evaluate((e) => {
+            ;(e as HTMLRuxSegmentedButtonElement).selected = 'First segment'
+        })
+        //and make sure it gets checked
+        const firstChecked = await segButton1Input.evaluate(
+            (e) => (e as HTMLInputElement).checked === true
+        )
+        expect(firstChecked).toBe(true)
+    })
 })
 /*
     Need to test: 

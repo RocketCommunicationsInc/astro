@@ -49,19 +49,13 @@ label {
             margin-right: var(--spacing-0);
         }
     }
-    &:has(input:focus-visible) {
-        border-radius: var(--focus-radius);
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
-    }
 }
-//firefox does not support :has selector so :focus-within instead
-@supports (-moz-appearance: none) {
-    .rux-checkbox:focus-within {
-        border-radius: var(--focus-radius);
-        outline: var(--focus-outline);
-        outline-offset: var(--focus-offset);
-    }
+
+.rux-checkbox--focused {
+    border-radius: var(--radius-base);
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
 }
 
 .rux-checkbox__control {

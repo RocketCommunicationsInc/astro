@@ -45,9 +45,7 @@ rux-table-header-cell {
 }
 
 rux-table-cell {
-    height: calc(
-        var(--spacing-8) - var(--spacing-050) - 1px
-    ); //30 size - border
+    height: calc(var(--spacing-8) - 1px); //32 size - border
 }
 
 .rux-log__notification {

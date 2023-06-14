@@ -29,4 +29,11 @@ a {
     &:not([href]) {
         color: inherit;
     }
+
+    &:focus-visible {
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
 }
