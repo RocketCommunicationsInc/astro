@@ -18,9 +18,10 @@
 
 ## Events
 
-| Event              | Description                    | Type                   |
-| ------------------ | ------------------------------ | ---------------------- |
-| `ruxToastHydrated` | Fires when the toast is closed | `CustomEvent<boolean>` |
+| Event                | Description                    | Type                   |
+| -------------------- | ------------------------------ | ---------------------- |
+| `ruxToastAnimateIn`  | Fires when the toast is closed | `CustomEvent<boolean>` |
+| `ruxToastAnimateOut` |                                | `CustomEvent<boolean>` |
 
 
 ## Slots

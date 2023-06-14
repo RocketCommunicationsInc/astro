@@ -21,6 +21,11 @@ export class RuxToastStack {
     animateToasts?: boolean = false
 
     /**
+     * sets whether the number of toasts in the stack is restricted or not
+     */
+    @Prop({ mutable: true }) toastOverflow: boolean = false
+
+    /**
      * sets max number of toasts to be displayed in stack
      */
     @Prop({ mutable: true }) maxToasts: number = 4
@@ -66,31 +71,70 @@ export class RuxToastStack {
         this._handleSlotChange = this._handleSlotChange.bind(this)
     }
 
+    disconnectedCallback() {
+        removeEventListener('ruxToastAnimateIn', (event) => {
+            if (event.target !== this.el.firstElementChild) return
+            this._runHideToasts(this.maxToasts)
+        })
+        removeEventListener('ruxToastAnimateOut', () => {
+            this._runHideToasts(this.maxToasts)
+        })
+    }
+
+    componentDidLoad() {
+        if (this.toastOverflow) {
+            addEventListener('ruxToastAnimateIn', (event) => {
+                if (event.target !== this.el.firstElementChild) return
+                this._runHideToasts(this.maxToasts)
+            })
+
+            addEventListener('ruxToastAnimateOut', () => {
+                this._runHideToasts(this.maxToasts)
+            })
+        } else {
+            removeEventListener('ruxToastAnimateIn', (event) => {
+                if (event.target !== this.el.firstElementChild) return
+                this._runHideToasts(this.maxToasts)
+            })
+
+            removeEventListener('ruxToastAnimateOut', () => {
+                this._runHideToasts(this.maxToasts)
+            })
+        }
+    }
+
     private _handleSlotChange() {
         this._tagFirstToast()
-        this._runHideToasts(this.maxToasts)
-        // this._setAnimateOnToasts()
     }
 
     // hides any toasts in stack over the default, or user set amount
     //* OF NOTE: Restricting the height on the stack is a better method to only show the max number of toasts than setting display: none on any additional toasts over max. Doing it this way works better when animations are set on toasts.
     private _checkAndHideToastsOverAmount(amount: number) {
         // height to restrict stack to
+        // set to amount times the min toast height plus amount minus 1 of the margin height.
+        const stackMinHeight = amount * 60 + (amount - 1) * 12
         let stackRestrictionHeight: number = 0
 
         // if toast amount is under the max set, keep styling off stack
         if (this._toastAmountInStack <= amount - 1) {
             if (this.el.style.height !== '') this.el.style.height = ''
-            if (this.el.style.overflow !== '') this.el.style.overflow = ''
         } else {
+            // set the height on the stack to the minimum height it could be with 4 toasts if 4 or more toasts in stack
+            this.el.style.height = `${stackMinHeight}px`
             // if toast amount is equal to or greater than max, loop through toasts
             for (const [index, value] of this._toastsArray.entries()) {
                 // calculate height needed to restrict stack to max amount on toasts in stack up to max amount
                 if (index <= amount - 1) {
-                    const toastInner = value.shadowRoot?.querySelector(
+                    let toastInner = value.shadowRoot?.querySelector(
                         '.rux-toast'
                     )! as HTMLElement
+
+                    // if it can't find the toast inner, give up. The function will run again.
+                    if (!toastInner) {
+                        return
+                    }
                     const toastInnerHeight: number = toastInner.offsetHeight // height of toast
+                    console.log('inner', toastInnerHeight)
                     const toastInnerMarginTop: number = parseInt(
                         window
                             .getComputedStyle(toastInner)
@@ -103,9 +147,12 @@ export class RuxToastStack {
                 }
             }
 
-            // set toast stack height to restrict and overflow to hidden so toasts disappear
-            this.el.style.height = `${stackRestrictionHeight}px`
-            this.el.style.overflow = 'hidden'
+            if (stackRestrictionHeight > stackMinHeight) {
+                // if toasts total height plus margin is greater than the min, set it
+                if (this.el.style.height === `${stackRestrictionHeight}px`)
+                    return
+                this.el.style.height = `${stackRestrictionHeight}px`
+            }
         }
     }
 

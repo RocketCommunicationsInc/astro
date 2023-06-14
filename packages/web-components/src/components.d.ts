@@ -12656,6 +12656,10 @@ export namespace Components {
           * position of toast stack in viewport
          */
         "position": string;
+        /**
+          * sets whether the number of toasts in the stack is restricted or not
+         */
+        "toastOverflow": boolean;
     }
     interface RuxTooltip {
         /**
@@ -33397,7 +33401,8 @@ declare namespace LocalJSX {
         /**
           * Fires when the toast is closed
          */
-        "onRuxToastHydrated"?: (event: RuxToastCustomEvent<boolean>) => void;
+        "onRuxToastAnimateIn"?: (event: RuxToastCustomEvent<boolean>) => void;
+        "onRuxToastAnimateOut"?: (event: RuxToastCustomEvent<boolean>) => void;
         /**
           * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
          */
@@ -33416,6 +33421,10 @@ declare namespace LocalJSX {
           * position of toast stack in viewport
          */
         "position"?: string;
+        /**
+          * sets whether the number of toasts in the stack is restricted or not
+         */
+        "toastOverflow"?: boolean;
     }
     interface RuxTooltip {
         /**

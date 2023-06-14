@@ -68,13 +68,21 @@ export class RuxToast {
     // ruxToastClosed!: EventEmitter<boolean>
 
     @Event({
-        eventName: 'ruxToastHydrated',
+        eventName: 'ruxToastAnimateIn',
         composed: true,
         bubbles: true,
     })
-    ruxToastHydrated!: EventEmitter<boolean>
+    ruxToastAnimateIn!: EventEmitter<boolean>
+
+    @Event({
+        eventName: 'ruxToastAnimateOut',
+        composed: true,
+        bubbles: true,
+    })
+    ruxToastAnimateOut!: EventEmitter<boolean>
 
     private _timeoutRef: number | null = null
+    private _animationTimeoutRef: number | null = null
 
     // private _currentToasts
 
@@ -101,22 +109,40 @@ export class RuxToast {
     }
 
     componentDidLoad() {
-        this._handleAnimation()
-        this.ruxToastHydrated.emit()
+        this._setAnimateProp()
+        this._handleAnimateIn()
+    }
+
+    private _handleAnimateIn() {
+        if (this._animationTimeoutRef) {
+            clearTimeout(this._animationTimeoutRef)
+        }
+        if (this.animated) {
+            this.el.setAttribute('animate-in', '')
+            this._animationTimeoutRef = window.setTimeout(() => {
+                this.el.removeAttribute('animate-in')
+                this.ruxToastAnimateIn.emit()
+            }, 200)
+        }
+    }
+
+    private _handleAnimateOut() {
+        if (this.animated) {
+            this.el.setAttribute('animate-out', '')
+            window.setTimeout(() => {
+                this.el.removeAttribute('animate-out')
+                this.ruxToastAnimateOut.emit()
+                this.el.remove()
+            }, 200)
+        } else {
+            this.el.remove()
+        }
     }
 
     private _updated() {
         if (this._closeAfter) {
             this._timeoutRef = window.setTimeout(() => {
-                if (this.animated) {
-                    this.el.setAttribute('animating', '')
-                    window.setTimeout(() => {
-                        this.el.removeAttribute('animating')
-                        this.el.remove()
-                    }, 200)
-                } else {
-                    this.el.remove()
-                }
+                this._handleAnimateOut()
             }, this._closeAfter)
         }
     }
@@ -125,15 +151,7 @@ export class RuxToast {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
-        if (this.animated) {
-            this.el.setAttribute('animating', '')
-            window.setTimeout(() => {
-                this.el.removeAttribute('animating')
-                this.el.remove()
-            }, 200)
-        } else {
-            this.el.remove()
-        }
+        this._handleAnimateOut()
     }
 
     private _onKeyPress(e: KeyboardEvent) {
@@ -142,7 +160,7 @@ export class RuxToast {
         }
     }
 
-    private _handleAnimation() {
+    private _setAnimateProp() {
         const toastStack = this.el.parentElement
         if (toastStack?.hasAttribute('animate-toasts')) this.animated = true
     }

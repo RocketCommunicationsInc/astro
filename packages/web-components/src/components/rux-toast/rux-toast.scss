@@ -24,13 +24,13 @@
 //     display: none;
 // }
 
-:host([animated]) .rux-toast {
+:host([animate-in]) .rux-toast {
     animation: fadeInAnimation ease-in 200ms;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
-:host([animating]) .rux-toast {
+:host([animate-out]) .rux-toast {
     animation: fadeOutAnimation ease-out 200ms;
     animation-iteration-count: 1;
     animation-fill-mode: both;
@@ -53,7 +53,7 @@
     background: var(--color-background-base-default);
     padding: var(--notification-banner-padding);
     margin-block-start: var(--spacing-3);
-    // min-height: 60px;
+    //min-height: 60px;
     height: 60px;
     border: 1px solid var(--notification-banner-color-border-inner-default);
     font-family: var(--font-body-1-font-family);
@@ -66,12 +66,12 @@
 @keyframes fadeInAnimation {
     0% {
         transform: scale(0);
-        //height: 0;
+        height: 0;
         opacity: 0;
     }
     100% {
         transform: scale(1);
-        //height: 60px;
+        height: 60px;
         opacity: 1;
     }
 }
@@ -131,7 +131,7 @@
 }
 
 .rux-toast__content {
-    padding: 2px 3px 2px 0px;
+    padding: 12px 12px 12px 0px;
 }
 .rux-toast--large .rux-toast__content {
     font-family: var(--font-heading-5-font-family);
