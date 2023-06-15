@@ -1,2 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
 @import "@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

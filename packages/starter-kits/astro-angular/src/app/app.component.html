@@ -1,12 +1,9 @@
-<div>
-  <rux-global-status-bar appName="Astro"></rux-global-status-bar>
-  <main>yo</main>
-</div>
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<rux-global-status-bar app-name="Astro"></rux-global-status-bar>
+<main class="grid gap-4 p-4 grid-cols-1 lg:grid-cols-12">
+  <rux-container class="lg:col-span-2">
+    <header slot="header">Header</header>
+  </rux-container>
+  <rux-container class="lg:col-span-10">
+    <header slot="header">Header</header>
+  </rux-container>
+</main>
