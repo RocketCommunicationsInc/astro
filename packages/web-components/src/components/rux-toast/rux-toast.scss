@@ -13,16 +13,9 @@
     /**
   * @prop --height: the Notification's height
   */
-    --height: var(--spacing-20); // 80px;
+    --height: auto;
     display: contents;
 }
-
-// :host([open]) {
-//     display: contents;
-// }
-// :host(:not([open])) {
-//     display: none;
-// }
 
 :host([animate-in]) .rux-toast {
     animation: fadeInAnimation ease-in 200ms;
@@ -34,9 +27,6 @@
     animation: fadeOutAnimation ease-out 200ms;
     animation-iteration-count: 1;
     animation-fill-mode: both;
-    // height: 0;
-    // opacity: 0;
-    // transition: all 200ms ease-in-out;
 }
 
 :host([first-toast]) .rux-toast {
@@ -51,10 +41,10 @@
     width: 280px;
     border-radius: 3px;
     background: var(--color-background-base-default);
-    padding: var(--notification-banner-padding);
+    padding: var(--spacing-4);
     margin-block-start: var(--spacing-3);
     //min-height: 60px;
-    height: 60px;
+    height: var(--height);
     border: 1px solid var(--notification-banner-color-border-inner-default);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
@@ -71,7 +61,7 @@
     }
     100% {
         transform: scale(1);
-        height: 60px;
+        height: var(--height);
         opacity: 1;
     }
 }
@@ -79,7 +69,7 @@
 @keyframes fadeOutAnimation {
     0% {
         transform: scale(1);
-        height: 60px;
+        height: var(--height);
         opacity: 1;
     }
     100% {
@@ -89,26 +79,12 @@
     }
 }
 
-.rux-toast__prefix:not(.hidden) {
-    display: flex;
-    align-items: center;
-    margin-right: var(--spacing-4); //16px
-}
-
-.rux-toast__status.rux-toast--hasPrefixLabel {
-    margin-left: var(--spacing-4); //16px
-}
-.rux-toast__status {
-    margin-right: var(--spacing-4); //16px
-}
-.rux-toast__status rux-status {
-    margin: var(--spacing-0);
-} //remove 2px margin around rux-status
-
 .rux-toast__actions {
     margin-left: auto;
+    margin-bottom: auto;
     display: flex;
 }
+
 .rux-toast__close {
     &:focus-visible {
         border-radius: var(--radius-base);
@@ -120,43 +96,6 @@
 
 .rux-toast__close {
     cursor: pointer;
-}
-
-/* ----- Large ----- */
-.rux-toast--large {
-    border: 1px solid var(--notification-banner-color-border-outer-default);
-    .rux-toast__inner {
-        border-color: var(--notification-banner-color-border);
-    }
-}
-
-.rux-toast__content {
-    padding: 12px 12px 12px 0px;
-}
-.rux-toast--large .rux-toast__content {
-    font-family: var(--font-heading-5-font-family);
-    font-size: var(--font-heading-5-font-size);
-    font-weight: var(--font-heading-5-font-weight);
-    letter-spacing: var(--font-heading-5-letter-spacing);
-    line-height: var(--font-heading-5-line-height);
-}
-
-/* ----- Small ----- */
-.rux-toast--small {
-    min-height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
-    border: 1px solid var(--notification-banner-color-border-outer-default);
-    --notifcation-banner-border-inner-width: 1px;
-    .rux-toast__inner {
-        border-color: var(--notification-banner-color-border);
-    }
-}
-
-.rux-toast--small .rux-toast__content {
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    line-height: var(--font-body-1-line-height);
 }
 
 /* ---- truncated/wrapped --- */

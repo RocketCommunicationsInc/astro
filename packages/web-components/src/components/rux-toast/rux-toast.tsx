@@ -18,9 +18,7 @@ import { Status, StatusSymbol } from '../../common/commonTypes.module'
  * @part status - the toast's status symbol
  * @part container - the toast's container element
  *
- * @slot prefix - an optional left side content area
  * @slot (default) - the toast's message
- * @slot actions - used for display actions like close icons or buttons
  */
 @Component({
     tag: 'rux-toast',
@@ -30,7 +28,6 @@ import { Status, StatusSymbol } from '../../common/commonTypes.module'
 export class RuxToast {
     @Element() el!: HTMLRuxToastElement
 
-    @State() hasPrefixSlot = false
     @State() hasMessageSlot = false
     /**
      *  Message for the toast.
@@ -40,14 +37,11 @@ export class RuxToast {
      *  Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
      */
     @Prop({ reflect: true }) status?: Status
+
     /**
      *  If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
      */
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
-    /**
-     * Changes the size of the toast to a small variant.
-     */
-    // @Prop() small: boolean = false
 
     /**
      * Enables closing animation
@@ -59,32 +53,36 @@ export class RuxToast {
      */
     @Prop({ attribute: 'hide-close' }) hideClose: boolean = false
 
-    /**
-     * Fires when the toast is closed
-     */
-    // @Event({
-    //     eventName: 'ruxtoastclosed',
-    // })
-    // ruxToastClosed!: EventEmitter<boolean>
-
     @Event({
-        eventName: 'ruxToastAnimateIn',
+        eventName: 'ruxToastWillOpen',
         composed: true,
         bubbles: true,
     })
-    ruxToastAnimateIn!: EventEmitter<boolean>
+    ruxToastWillOpen!: EventEmitter<boolean>
 
     @Event({
-        eventName: 'ruxToastAnimateOut',
+        eventName: 'ruxToastOpen',
         composed: true,
         bubbles: true,
     })
-    ruxToastAnimateOut!: EventEmitter<boolean>
+    ruxToastOpen!: EventEmitter<boolean>
+
+    @Event({
+        eventName: 'ruxToastWillClose',
+        composed: true,
+        bubbles: true,
+    })
+    ruxToastWillClose!: EventEmitter<boolean>
+
+    @Event({
+        eventName: 'ruxToastClosed',
+        composed: true,
+        bubbles: true,
+    })
+    ruxToastClosed!: EventEmitter<boolean>
 
     private _timeoutRef: number | null = null
     private _animationTimeoutRef: number | null = null
-
-    // private _currentToasts
 
     // @Watch('open')
     // @Watch('closeAfter')
@@ -111,6 +109,9 @@ export class RuxToast {
     componentDidLoad() {
         this._setAnimateProp()
         this._handleAnimateIn()
+        window.setTimeout(() => {
+            this._setCustomHeightProperty()
+        }, 200)
     }
 
     private _handleAnimateIn() {
@@ -121,8 +122,10 @@ export class RuxToast {
             this.el.setAttribute('animate-in', '')
             this._animationTimeoutRef = window.setTimeout(() => {
                 this.el.removeAttribute('animate-in')
-                this.ruxToastAnimateIn.emit()
+                this.ruxToastOpen.emit()
             }, 200)
+        } else {
+            this.ruxToastOpen.emit()
         }
     }
 
@@ -131,10 +134,11 @@ export class RuxToast {
             this.el.setAttribute('animate-out', '')
             window.setTimeout(() => {
                 this.el.removeAttribute('animate-out')
-                this.ruxToastAnimateOut.emit()
+                this.ruxToastClosed.emit()
                 this.el.remove()
             }, 200)
         } else {
+            this.ruxToastClosed.emit()
             this.el.remove()
         }
     }
@@ -197,6 +201,15 @@ export class RuxToast {
         }
     }
 
+    private _setCustomHeightProperty() {
+        this.el.style.setProperty(
+            '--height',
+            this.el.shadowRoot
+                ?.querySelector('.rux-toast')!
+                .getBoundingClientRect().height + 'px'
+        )
+    }
+
     get _closeAfter() {
         //* as long as it's less than 1000, they put in seconds. Convert that here.
         if (this.closeAfter && this.closeAfter <= 999) {
@@ -216,7 +229,6 @@ export class RuxToast {
     }
 
     private _handleSlotChange() {
-        this.hasPrefixSlot = hasSlot(this.el, 'prefix')
         this.hasMessageSlot = hasSlot(this.el)
     }
 
@@ -237,28 +249,9 @@ export class RuxToast {
                         'rux-toast--off': this.status === StatusSymbol.OFF,
                         'rux-toast--normal':
                             this.status === StatusSymbol.NORMAL,
-                        'rux-toast--hasPrefixSlot': this.hasPrefixSlot,
                     }}
                     part="container"
                 >
-                    <div
-                        class={{
-                            'rux-toast__prefix': true,
-                            hidden: !this.hasPrefixSlot,
-                        }}
-                    >
-                        <slot
-                            name="prefix"
-                            onSlotchange={this._handleSlotChange}
-                        ></slot>
-                    </div>
-
-                    {this.status ? (
-                        <div class="rux-toast__status" part="status">
-                            <rux-status status={this.status}></rux-status>
-                        </div>
-                    ) : null}
-
                     <div
                         class={{
                             'rux-toast__content': true,
@@ -273,22 +266,19 @@ export class RuxToast {
 
                     {!this.hideClose ? (
                         <div class="rux-toast__actions">
-                            <slot name="actions">
-                                <rux-icon
-                                    role="button"
-                                    tabindex="1"
-                                    class="rux-toast__close"
-                                    onClick={() => this._onClick()}
-                                    onKeyDown={(e) => this._onKeyPress(e)}
-                                    icon="clear"
-                                    exportparts="icon"
-                                    size="20px"
-                                ></rux-icon>
-                            </slot>
+                            <rux-icon
+                                role="button"
+                                tabindex="1"
+                                class="rux-toast__close"
+                                onClick={() => this._onClick()}
+                                onKeyDown={(e) => this._onKeyPress(e)}
+                                icon="clear"
+                                exportparts="icon"
+                                size="20px"
+                            ></rux-icon>
                         </div>
                     ) : null}
                 </div>
-                {/* </div> */}
             </Host>
         )
     }

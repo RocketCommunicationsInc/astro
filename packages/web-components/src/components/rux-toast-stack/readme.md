@@ -7,12 +7,10 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                                                         | Type                   | Default       |
-| --------------- | ---------------- | ------------------------------------------------------------------- | ---------------------- | ------------- |
-| `animateToasts` | `animate-toasts` | Enables animation on all toasts                                     | `boolean \| undefined` | `false`       |
-| `maxToasts`     | `max-toasts`     | sets max number of toasts to be displayed in stack                  | `number`               | `4`           |
-| `position`      | `position`       | position of toast stack in viewport                                 | `string`               | `'top-right'` |
-| `toastOverflow` | `toast-overflow` | sets whether the number of toasts in the stack is restricted or not | `boolean`              | `false`       |
+| Property        | Attribute        | Description                         | Type                   | Default       |
+| --------------- | ---------------- | ----------------------------------- | ---------------------- | ------------- |
+| `animateToasts` | `animate-toasts` | Enables animation on all toasts     | `boolean \| undefined` | `false`       |
+| `position`      | `position`       | position of toast stack in viewport | `string`               | `'top-right'` |
 
 
 ## Methods

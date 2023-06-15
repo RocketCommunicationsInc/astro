@@ -18,19 +18,19 @@
 
 ## Events
 
-| Event                | Description                    | Type                   |
-| -------------------- | ------------------------------ | ---------------------- |
-| `ruxToastAnimateIn`  | Fires when the toast is closed | `CustomEvent<boolean>` |
-| `ruxToastAnimateOut` |                                | `CustomEvent<boolean>` |
+| Event               | Description | Type                   |
+| ------------------- | ----------- | ---------------------- |
+| `ruxToastClosed`    |             | `CustomEvent<boolean>` |
+| `ruxToastOpen`      |             | `CustomEvent<boolean>` |
+| `ruxToastWillClose` |             | `CustomEvent<boolean>` |
+| `ruxToastWillOpen`  |             | `CustomEvent<boolean>` |
 
 
 ## Slots
 
-| Slot          | Description                                          |
-| ------------- | ---------------------------------------------------- |
-| `"(default)"` | the toast's message                                  |
-| `"actions"`   | used for display actions like close icons or buttons |
-| `"prefix"`    | an optional left side content area                   |
+| Slot          | Description         |
+| ------------- | ------------------- |
+| `"(default)"` | the toast's message |
 
 
 ## Shadow Parts
@@ -52,14 +52,12 @@
 ### Depends on
 
 - [rux-toast-stack](../rux-toast-stack)
-- [rux-status](../rux-status)
 - [rux-icon](../rux-icon)
 
 ### Graph
 ```mermaid
 graph TD;
   rux-toast --> rux-toast-stack
-  rux-toast --> rux-status
   rux-toast --> rux-icon
   rux-toast-stack --> rux-toast
   style rux-toast fill:#f9f,stroke:#333,stroke-width:4px
