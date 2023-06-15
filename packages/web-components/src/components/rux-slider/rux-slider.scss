@@ -28,9 +28,13 @@
 :host([hidden]) {
     display: none;
 }
+:host([max-val]) .rux-form-field .rux-input-label {
+    display: inline-block;
+    margin-bottom: var(--spacing-3);
+}
 
 .rux-form-field {
-    flex-direction: column;
+    // flex-direction: column;
     label {
         margin-bottom: var(--spacing-2);
     }
