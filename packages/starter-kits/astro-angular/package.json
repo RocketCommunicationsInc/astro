@@ -27,7 +27,6 @@
     "@angular/cli": "~16.0.0",
     "@angular/compiler-cli": "^16.0.0",
     "@astrouxds/angular": "^7.12.0",
-    "@astrouxds/astro-web-components": "^7.12.0",
     "@astrouxds/tailwind": "^1.0.0-beta.1",
     "@types/jasmine": "~4.3.0",
     "autoprefixer": "^10.4.14",
