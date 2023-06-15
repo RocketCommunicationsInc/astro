@@ -2,7 +2,7 @@
   "name": "astro-angular",
   "version": "0.0.0",
   "scripts": {
-    "postinstall": "npm run link @astrouxds/astro-web-component @astrouxds/angular",
+    "postinstall": "npm link @astrouxds/astro-web-components @astrouxds/angular",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
