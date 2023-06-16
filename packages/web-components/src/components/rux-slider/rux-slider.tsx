@@ -289,25 +289,51 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _handleTrackClick(e: MouseEvent) {
-        console.log('click, ', e.target)
-        console.log(e.clientX, e.clientY)
-        const rect = this.el.getBoundingClientRect()
-        console.log(
-            `left: ${rect.left} - right: ${rect.right} - top: ${rect.top} - bottom: ${rect.bottom}`
+        const target = e.target as HTMLInputElement
+        // if the clicked target is one of the thumbs or the overlay, do nothing
+        //* to achieve this we do pointer-events:none on the input RANGE but
+        //* leave the thumbs to have pointer-events:ALL
+        //* that way, if the target is an input we know its a thumb
+        if (
+            target.nodeName === 'INPUT' ||
+            target.classList.contains('rux-range-overlay')
         )
-        //determine somehow if the click was on a thumb. if it was, don't execute this func
-        /*
-        const thumbClick = how do i tell if a thumb is clicked? the e.target is the whole input. Thumb is shadow'd by user style
-        if(thumbClick) return
-        */
+            return
+
+        // otherwise, get the size of the wrapper and find out where the click was.
+        //* to do this we're going to get the size of the element I set the onClick on
+        //* and get the offsetWidth and the boundingClientRect
+        const currentTarget = e.currentTarget as HTMLElement
+        const sliderWidth = currentTarget.offsetWidth
+        const sliderBounds = currentTarget.getBoundingClientRect()
+
+        //* we know the click will be in bounds because the bounds are the elemnt that the click event is on
+        //* so what we need to do is find where the click was left->right wise
+        //* so we can tell which input value is closer
+        //* this will give us the click's distance from the left side
+        const clickPosition = e.clientX - sliderBounds.left
+
+        //* now we can get two values based on that clickPosition
+        const percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
+        const percentFromRight = Math.round(
+            ((sliderWidth - clickPosition) / sliderWidth) * 100
+        )
+        console.log('clickPercent', percentFromLeft, percentFromRight)
+
+        //* so lets get the percent of the min and max value for comparison
+        //!it was harassing me about possible null val for min and max so I put || 0 in there to shut it up a sec
+        const minValPercent = Math.round(this.el.minVal || 0 / this.el.max)
+        const maxValPercent = Math.round(this.el.maxVal || 0 / this.el.max)
+        console.log('val percent', minValPercent, maxValPercent)
+
         //If x is between left and right and y between bottom and top, the point is in the box.
         //? This is (probably) necessary because the click event is only fired on the first input, which controls the leftmost thumb. This way we can grab the
         //? cordinates of the click and see if the right thumb should actually move instead.
         if (
-            e.clientX > rect.left &&
-            e.clientX < rect.right &&
-            e.clientY > rect.top &&
-            e.clientY < rect.bottom
+            e.clientX > sliderBounds.left &&
+            e.clientX < sliderBounds.right &&
+            e.clientY > sliderBounds.top &&
+            e.clientY < sliderBounds.bottom
         ) {
             console.log('click was inside the bounds')
             //? ok great. now how do i tell which thumb is closer? First I need to be able to find the thumbs. The thumb is set along the track based on the slider's value, which is relative to the min and max of the slider.
@@ -369,6 +395,7 @@ export class RuxSlider implements FormFieldInterface {
                                     : false,
                             'with-axis-labels': axisLabels.length > 0,
                         }}
+                        onClick={_handleTrackClick}
                     >
                         {minVal !== undefined && maxVal !== undefined ? (
                             <input
@@ -382,7 +409,6 @@ export class RuxSlider implements FormFieldInterface {
                                 step={step}
                                 value={minVal}
                                 onBlur={_onBlur}
-                                onClick={_handleTrackClick}
                                 // list="steplist"
                             ></input>
                         ) : null}
@@ -408,7 +434,6 @@ export class RuxSlider implements FormFieldInterface {
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
-                            onClick={_handleTrackClick}
                             part="input"
                             // list="steplist"
                         ></input>
