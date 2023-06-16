@@ -312,6 +312,7 @@ export class RuxSlider implements FormFieldInterface {
         //* so we can tell which input value is closer
         //* this will give us the click's distance from the left side
         const clickPosition = e.clientX - sliderBounds.left
+        console.log(clickPosition)
 
         //* now we can get two values based on that clickPosition
         const percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
