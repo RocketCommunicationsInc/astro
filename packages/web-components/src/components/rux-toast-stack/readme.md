@@ -7,10 +7,9 @@
 
 ## Properties
 
-| Property        | Attribute        | Description                         | Type                   | Default       |
-| --------------- | ---------------- | ----------------------------------- | ---------------------- | ------------- |
-| `animateToasts` | `animate-toasts` | Enables animation on all toasts     | `boolean \| undefined` | `false`       |
-| `position`      | `position`       | position of toast stack in viewport | `string`               | `'top-right'` |
+| Property   | Attribute  | Description                         | Type     | Default       |
+| ---------- | ---------- | ----------------------------------- | -------- | ------------- |
+| `position` | `position` | position of toast stack in viewport | `string` | `'top-right'` |
 
 
 ## Methods

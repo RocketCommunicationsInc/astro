@@ -13,12 +13,6 @@ export class RuxToastStack {
     @Element() el!: HTMLRuxToastStackElement
 
     /**
-     * Enables animation on all toasts
-     */
-    @Prop({ attribute: 'animate-toasts', reflect: true })
-    animateToasts?: boolean = false
-
-    /**
      * position of toast stack in viewport
      */
     @Prop({ attribute: 'position', reflect: true }) position: string =
@@ -49,8 +43,6 @@ export class RuxToastStack {
                 }
             }
         }
-
-        this.animateToasts ? (toast.animated = true) : null
 
         this.el?.insertBefore(toast, this.el.firstChild) // add as first child
     }

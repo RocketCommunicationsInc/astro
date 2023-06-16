@@ -9,7 +9,6 @@
 
 | Property     | Attribute     | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | Type                                                                                  | Default     |
 | ------------ | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------- |
-| `animated`   | `animated`    | Enables closing animation                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | `boolean \| undefined`                                                                | `false`     |
 | `closeAfter` | `close-after` | If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it. | `number \| undefined`                                                                 | `undefined` |
 | `hideClose`  | `hide-close`  | Prevents the user from dismissing the notification. Hides the `actions` slot.                                                                                                                                                                                                                                                                                                                                                                                                                  | `boolean`                                                                             | `false`     |
 | `message`    | `message`     | Message for the toast.                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `string`                                                                              | `''`        |
@@ -41,13 +40,6 @@
 | `"icon"`      | the toast's close icon        |
 | `"message"`   | the toast's message           |
 | `"status"`    | the toast's status symbol     |
-
-
-## CSS Custom Properties
-
-| Name       | Description               |
-| ---------- | ------------------------- |
-| `--height` | the Notification's height |
 
 
 ## Dependencies

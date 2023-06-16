@@ -44,11 +44,6 @@ export class RuxToast {
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
 
     /**
-     * Enables closing animation
-     */
-    @Prop({ mutable: true, reflect: true }) animated?: boolean = false
-
-    /**
      * Prevents the user from dismissing the notification. Hides the `actions` slot.
      */
     @Prop({ attribute: 'hide-close' }) hideClose: boolean = false
@@ -82,8 +77,6 @@ export class RuxToast {
     ruxToastClosed!: EventEmitter<boolean>
 
     private _timeoutRef: number | null = null
-    private _animationTimeoutRef: number | null = null
-    private _toastHeight: number | undefined = 0
 
     // @Watch('open')
     // @Watch('closeAfter')
@@ -107,52 +100,23 @@ export class RuxToast {
         this._destroyToastStack()
     }
 
-    componentDidRender() {
-        this._toastHeight = this.el.shadowRoot
-            ?.querySelector('.rux-toast')
-            ?.getBoundingClientRect().height
-        console.log('height before render', this._toastHeight)
-        this._setCustomHeightProperty()
-    }
-
     componentDidLoad() {
-        this._setAnimateProp()
-        this._handleAnimateIn()
+        this._handeleOpen()
     }
 
-    private _handleAnimateIn() {
-        if (this._animationTimeoutRef) {
-            clearTimeout(this._animationTimeoutRef)
-        }
-        if (this.animated) {
-            this.el.setAttribute('animate-in', '')
-            this._animationTimeoutRef = window.setTimeout(() => {
-                this.el.removeAttribute('animate-in')
-                this.ruxToastOpen.emit()
-            }, 2000)
-        } else {
-            this.ruxToastOpen.emit()
-        }
+    private _handeleOpen() {
+        this.ruxToastOpen.emit()
     }
 
-    private _handleAnimateOut() {
-        if (this.animated) {
-            this.el.setAttribute('animate-out', '')
-            window.setTimeout(() => {
-                this.el.removeAttribute('animate-out')
-                this.ruxToastClosed.emit()
-                this.el.remove()
-            }, 2000)
-        } else {
-            this.ruxToastClosed.emit()
-            this.el.remove()
-        }
+    private _handleClose() {
+        this.ruxToastClosed.emit()
+        this.el.remove()
     }
 
     private _updated() {
         if (this._closeAfter) {
             this._timeoutRef = window.setTimeout(() => {
-                this._handleAnimateOut()
+                this._handleClose()
             }, this._closeAfter)
         }
     }
@@ -161,18 +125,13 @@ export class RuxToast {
         if (this._timeoutRef) {
             clearTimeout(this._timeoutRef)
         }
-        this._handleAnimateOut()
+        this._handleClose()
     }
 
     private _onKeyPress(e: KeyboardEvent) {
         if (e.key === 'Enter') {
             this._onClick()
         }
-    }
-
-    private _setAnimateProp() {
-        const toastStack = this.el.parentElement
-        if (toastStack?.hasAttribute('animate-toasts')) this.animated = true
     }
 
     private _createToastToStack() {
@@ -205,10 +164,6 @@ export class RuxToast {
         if (toasts.length === 0) {
             toastStack?.remove()
         }
-    }
-
-    private _setCustomHeightProperty() {
-        this.el.style.setProperty('--height', this._toastHeight + 'px')
     }
 
     get _closeAfter() {

@@ -12622,10 +12622,6 @@ export namespace Components {
     }
     interface RuxToast {
         /**
-          * Enables closing animation
-         */
-        "animated"?: boolean;
-        /**
           * If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
          */
         "closeAfter"?: number;
@@ -12644,10 +12640,6 @@ export namespace Components {
     }
     interface RuxToastStack {
         "addToast": (props: { [x: string]: any; hasOwnProperty: (arg0: string) => any; }) => Promise<void>;
-        /**
-          * Enables animation on all toasts
-         */
-        "animateToasts"?: boolean;
         /**
           * position of toast stack in viewport
          */
@@ -33375,10 +33367,6 @@ declare namespace LocalJSX {
     }
     interface RuxToast {
         /**
-          * Enables closing animation
-         */
-        "animated"?: boolean;
-        /**
           * If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
          */
         "closeAfter"?: number;
@@ -33400,10 +33388,6 @@ declare namespace LocalJSX {
         "status"?: Status;
     }
     interface RuxToastStack {
-        /**
-          * Enables animation on all toasts
-         */
-        "animateToasts"?: boolean;
         /**
           * position of toast stack in viewport
          */
