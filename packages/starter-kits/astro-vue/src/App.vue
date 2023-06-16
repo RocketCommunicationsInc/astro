@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <rux-global-status-bar app-name="Astro"></rux-global-status-bar>
+  <rux-global-status-bar
+    app-name="Astro"
+    app-version="Vue"
+  ></rux-global-status-bar>
   <main class="grid gap-4 p-4 grid-cols-1 lg:grid-cols-12">
     <rux-container class="lg:col-span-2">
       <header slot="header">Header</header>
