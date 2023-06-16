@@ -18,13 +18,13 @@
 }
 
 :host([animate-in]) .rux-toast {
-    animation: fadeInAnimation ease-in 200ms;
+    animation: fadeInAnimation ease-in 2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
 
 :host([animate-out]) .rux-toast {
-    animation: fadeOutAnimation ease-out 200ms;
+    animation: fadeOutAnimation ease-out 2s;
     animation-iteration-count: 1;
     animation-fill-mode: both;
 }

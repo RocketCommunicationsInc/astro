@@ -83,6 +83,7 @@ export class RuxToast {
 
     private _timeoutRef: number | null = null
     private _animationTimeoutRef: number | null = null
+    private _toastHeight: number | undefined = 0
 
     // @Watch('open')
     // @Watch('closeAfter')
@@ -106,12 +107,17 @@ export class RuxToast {
         this._destroyToastStack()
     }
 
+    componentDidRender() {
+        this._toastHeight = this.el.shadowRoot
+            ?.querySelector('.rux-toast')
+            ?.getBoundingClientRect().height
+        console.log('height before render', this._toastHeight)
+        this._setCustomHeightProperty()
+    }
+
     componentDidLoad() {
         this._setAnimateProp()
         this._handleAnimateIn()
-        window.setTimeout(() => {
-            this._setCustomHeightProperty()
-        }, 200)
     }
 
     private _handleAnimateIn() {
@@ -123,7 +129,7 @@ export class RuxToast {
             this._animationTimeoutRef = window.setTimeout(() => {
                 this.el.removeAttribute('animate-in')
                 this.ruxToastOpen.emit()
-            }, 200)
+            }, 2000)
         } else {
             this.ruxToastOpen.emit()
         }
@@ -136,7 +142,7 @@ export class RuxToast {
                 this.el.removeAttribute('animate-out')
                 this.ruxToastClosed.emit()
                 this.el.remove()
-            }, 200)
+            }, 2000)
         } else {
             this.ruxToastClosed.emit()
             this.el.remove()
@@ -202,12 +208,7 @@ export class RuxToast {
     }
 
     private _setCustomHeightProperty() {
-        this.el.style.setProperty(
-            '--height',
-            this.el.shadowRoot
-                ?.querySelector('.rux-toast')!
-                .getBoundingClientRect().height + 'px'
-        )
+        this.el.style.setProperty('--height', this._toastHeight + 'px')
     }
 
     get _closeAfter() {
