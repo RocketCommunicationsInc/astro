@@ -139,6 +139,7 @@ export class RuxSlider implements FormFieldInterface {
         this._onBlur = this._onBlur.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._onChange = this._onChange.bind(this)
+        this._handleTrackClick = this._handleTrackClick.bind(this)
     }
 
     disconnectedCallback() {
@@ -287,6 +288,33 @@ export class RuxSlider implements FormFieldInterface {
         }
     }
 
+    private _handleTrackClick(e: MouseEvent) {
+        console.log('click, ', e.target)
+        console.log(e.clientX, e.clientY)
+        const rect = this.el.getBoundingClientRect()
+        console.log(
+            `left: ${rect.left} - right: ${rect.right} - top: ${rect.top} - bottom: ${rect.bottom}`
+        )
+        //determine somehow if the click was on a thumb. if it was, don't execute this func
+        /*
+        const thumbClick = how do i tell if a thumb is clicked? the e.target is the whole input. Thumb is shadow'd by user style
+        if(thumbClick) return
+        */
+        //If x is between left and right and y between bottom and top, the point is in the box.
+        //? This is (probably) necessary because the click event is only fired on the first input, which controls the leftmost thumb. This way we can grab the
+        //? cordinates of the click and see if the right thumb should actually move instead.
+        if (
+            e.clientX > rect.left &&
+            e.clientX < rect.right &&
+            e.clientY > rect.top &&
+            e.clientY < rect.bottom
+        ) {
+            console.log('click was inside the bounds')
+            //? ok great. now how do i tell which thumb is closer? First I need to be able to find the thumbs. The thumb is set along the track based on the slider's value, which is relative to the min and max of the slider.
+            //? is that helpful?
+        }
+    }
+
     render() {
         const {
             el,
@@ -307,6 +335,7 @@ export class RuxSlider implements FormFieldInterface {
             _onInput,
             _onBlur,
             _onChange,
+            _handleTrackClick,
             axisLabels,
             _onMinValInput,
             minVal,
@@ -341,6 +370,22 @@ export class RuxSlider implements FormFieldInterface {
                             'with-axis-labels': axisLabels.length > 0,
                         }}
                     >
+                        {minVal !== undefined && maxVal !== undefined ? (
+                            <input
+                                type="range"
+                                class="rux-range rux-range--dual"
+                                onInput={_onMinValInput}
+                                onChange={_onChange}
+                                disabled={disabled}
+                                min={min}
+                                max={max}
+                                step={step}
+                                value={minVal}
+                                onBlur={_onBlur}
+                                onClick={_handleTrackClick}
+                                // list="steplist"
+                            ></input>
+                        ) : null}
                         <input
                             id={sliderId}
                             onInput={_onInput}
@@ -356,29 +401,17 @@ export class RuxSlider implements FormFieldInterface {
                             min={min}
                             max={max}
                             step={step}
-                            value={this.maxVal}
+                            value={
+                                this.maxVal !== undefined ? this.maxVal : value
+                            }
                             disabled={disabled}
                             aria-label="slider"
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
+                            onClick={_handleTrackClick}
                             part="input"
                             // list="steplist"
                         ></input>
-                        {minVal !== undefined && maxVal !== undefined ? (
-                            <input
-                                type="range"
-                                class="rux-range rux-range--dual"
-                                onInput={_onMinValInput}
-                                onChange={_onChange}
-                                disabled={disabled}
-                                min={min}
-                                max={max}
-                                step={step}
-                                value={minVal}
-                                onBlur={_onBlur}
-                                // list="steplist"
-                            ></input>
-                        ) : null}
                         {minVal !== undefined && maxVal !== undefined ? (
                             <div class="rux-range-overlay"></div>
                         ) : null}
