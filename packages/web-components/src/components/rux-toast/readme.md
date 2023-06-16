@@ -42,6 +42,13 @@
 | `"status"`    | the toast's status symbol     |
 
 
+## CSS Custom Properties
+
+| Name       | Description        |
+| ---------- | ------------------ |
+| `--height` | the Toast's height |
+
+
 ## Dependencies
 
 ### Used by

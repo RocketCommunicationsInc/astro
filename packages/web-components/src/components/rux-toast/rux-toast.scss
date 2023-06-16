@@ -1,32 +1,9 @@
 :host {
-    --notification-banner-color-border: var(--color-border-interactive-default);
-    --notification-banner-color-background: var(
-        --color-background-base-default
-    );
-
-    --notification-banner-radius-outer: var(--radius-base);
-    --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
-    --notification-banner-border-width-large: var(--spacing-1); //4
-    --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
-    --notification-banner-border-width-small: var(--spacing-050); //2
-
+    display: contents;
     /**
-  * @prop --height: the Notification's height
+  * @prop --height: the Toast's height
   */
     --height: auto;
-    display: contents;
-}
-
-:host([animate-in]) .rux-toast {
-    animation: fadeInAnimation ease-in 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-:host([animate-out]) .rux-toast {
-    animation: fadeOutAnimation ease-out 2s;
-    animation-iteration-count: 1;
-    animation-fill-mode: both;
 }
 
 :host([first-toast]) .rux-toast {
@@ -38,45 +15,20 @@
     align-items: center;
     align-content: center;
     box-sizing: border-box;
-    width: 280px;
-    border-radius: 3px;
+    width: calc((var(--spacing-20) * 3) + (var(--spacing-10))); //280px;
+    border-radius: var(--radius-base);
     background: var(--color-background-base-default);
-    padding: var(--spacing-4);
+    padding: calc(var(--spacing-4) + var(--spacing-050)) var(--spacing-2)
+        calc(var(--spacing-4) + var(--spacing-050)) var(--spacing-4); // 18px 8px 18px 16px
     margin-block-start: var(--spacing-3);
-    //min-height: 60px;
+    min-height: calc(var(--spacing-14) + var(--spacing-1)); //60px;
     height: var(--height);
-    border: 1px solid var(--notification-banner-color-border-inner-default);
+    border: var(--border-width-xs) solid var(--color-border-interactive-default);
     font-family: var(--font-body-1-font-family);
     font-size: var(--font-body-1-font-size);
     font-weight: var(--font-body-1-font-weight);
     letter-spacing: var(--font-body-1-letter-spacing);
     line-height: var(--line-height-base);
-}
-
-@keyframes fadeInAnimation {
-    0% {
-        transform: scale(0);
-        height: 0;
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        height: var(--height);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOutAnimation {
-    0% {
-        transform: scale(1);
-        height: var(--height);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(0);
-        height: 0;
-        opacity: 0;
-    }
 }
 
 .rux-toast__actions {
@@ -97,13 +49,6 @@
 .rux-toast__close {
     cursor: pointer;
 }
-
-/* ---- truncated/wrapped --- */
-// .rux-toast__content {
-//     overflow-x: hidden; //because of this focus doesn't show. need refactor.
-//     white-space: nowrap;
-//     text-overflow: ellipsis;
-// }
 
 /* ----- Status Variants ----- */
 

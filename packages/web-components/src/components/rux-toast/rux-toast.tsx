@@ -230,7 +230,7 @@ export class RuxToast {
                                 onKeyDown={(e) => this._onKeyPress(e)}
                                 icon="clear"
                                 exportparts="icon"
-                                size="20px"
+                                size="16px"
                             ></rux-icon>
                         </div>
                     ) : null}
