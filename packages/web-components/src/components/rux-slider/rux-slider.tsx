@@ -288,53 +288,45 @@ export class RuxSlider implements FormFieldInterface {
         }
     }
 
+    /**
+     * Given the position of the click on a dual range slider, move the appropiate thumb to that
+     * postion.
+     * @param e The click event. This is attatched to the .rux-slider div.
+     * @returns Depnding on values and the click location, this will update either
+     * minVal or maxVal.
+     */
     private _handleTrackClick(e: MouseEvent) {
+        // if the minVal and maxVal aren't being used, we're not in dual mode, so do nothing.
+        if (this.minVal === undefined || this.maxVal === undefined) return
+
         const target = e.target as HTMLInputElement
         // if the clicked target is one of the thumbs or the overlay, do nothing
-        //* to achieve this we do pointer-events:none on the input RANGE but
-        //* leave the thumbs to have pointer-events:ALL
-        //* that way, if the target is an input we know its a thumb
+        // inputs have pointer-events: none, thumbs do not. If the nodeName is an input, then
+        // the thumb was clicked.
+        //* For now, the overlay bar is non-clickable as well.
         if (
             target.nodeName === 'INPUT' ||
             target.classList.contains('rux-range-overlay')
         )
             return
 
-        // if the minVal and maxVal aren't being used, do nothing
-        if (this.minVal === undefined || this.maxVal === undefined) return
-
-        // otherwise, get the size of the wrapper and find out where the click was.
-        //* to do this we're going to get the size of the element I set the onClick on
-        //* and get the offsetWidth and the boundingClientRect
+        // Find the size of the element
         const currentTarget = e.currentTarget as HTMLElement
         const sliderWidth = currentTarget.offsetWidth
         const sliderBounds = currentTarget.getBoundingClientRect()
 
-        //* we know the click will be in bounds because the bounds are the elemnt that the click event is on
-        //* so what we need to do is find where the click was left->right wise
-        //* so we can tell which input value is closer
-        //* this will give us the click's distance from the left side
+        // get the click's distance from the left side
         const clickPosition = e.clientX - sliderBounds.left
 
-        //* now we can get two values based on that clickPosition
+        // format clickPosition
         const percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
-        const percentFromRight = Math.round(
-            ((sliderWidth - clickPosition) / sliderWidth) * 100
-        )
-        console.log(
-            'clickPercent: ',
-            'percent from left - ',
-            percentFromLeft,
-            'percent from right ',
-            percentFromRight
-        )
 
-        //* so lets get the percent of the min and max value for comparison
+        // get the percent of the min and max value for comparison
         const minValPercent = Math.round(this.minVal)
         const maxValPercent = Math.round(this.maxVal)
 
+        // compares minValPercent and maxValPercent to percentFromLeft, and returns which one is the closest.
         let counts = [minValPercent, maxValPercent]
-        //* compares minValPercent and maxValPercent to percentFromLeft, and returns which one is the closest.
         var closest = counts.reduce(function (prev, curr) {
             return Math.abs(curr - percentFromLeft) <
                 Math.abs(prev - percentFromLeft)
@@ -342,6 +334,7 @@ export class RuxSlider implements FormFieldInterface {
                 : prev
         })
 
+        //handle case where thumbs overlap
         if (this.maxVal === this.minVal) {
             //then we need to just move the left thumb if clicked to the left, right thumb if clicked to right
             if (percentFromLeft > closest) {
