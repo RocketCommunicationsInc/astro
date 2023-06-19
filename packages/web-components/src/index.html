@@ -20,16 +20,18 @@
     </head>
 
     <body>
-        <div style="width: 400px; margin: 3rem">
+        <div style="width: 400px; margin: 2rem auto">
             <rux-slider
                 label="Dual with Strict"
+                min="0"
+                max="100"
                 min-val="10"
                 max-val="50"
                 strict
             ></rux-slider>
             <span></span>
         </div>
-        <div style="margin: 3rem; width: 400px">
+        <div style="margin: 2rem auto; width: 400px">
             <rux-slider
                 id="no-strict"
                 label="Dual without Strict"
@@ -38,7 +40,7 @@
             ></rux-slider>
             <span id="no-strict-disp"></span>
         </div>
-        <div style="margin: 3rem; width: 400px">
+        <div style="margin: 2rem auto; width: 400px">
             <rux-slider
                 min="0"
                 max="100"
@@ -48,6 +50,7 @@
             ></rux-slider>
             <span id="basic-disp"></span>
         </div>
+
         <script>
             const disp = document.querySelector('span')
             const nativeDisp = document.getElementById('native')
@@ -55,7 +58,7 @@
             slider.axisLabels = ['0', '50', '100']
 
             let noStrict = document.getElementById('no-strict')
-            noStrict.axisLabels = ['0', '50', '100']
+            // noStrict.axisLabels = ['0', '50', '100']
             let noStrictDisp = document.getElementById('no-strict-disp')
             let basic = document.getElementById('basic')
             basic.axisLabels = ['0', '50', '100']
@@ -67,6 +70,12 @@
             })
             noStrict.addEventListener('ruxinput', (e) => {
                 noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.maxVal}`
+            })
+            noStrict.addEventListener('click', (e) => {
+                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.maxVal}`
+            })
+            slider.addEventListener('click', (e) => {
+                disp.innerHTML = `${slider.minVal}, ${slider.maxVal}`
             })
 
             basic.addEventListener('ruxinput', () => {

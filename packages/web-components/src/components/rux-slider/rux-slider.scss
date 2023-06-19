@@ -72,7 +72,6 @@
         background-color: var(--color-background-interactive-default);
         pointer-events: none;
     }
-
     .rux-range:disabled + #steplist {
         opacity: var(--opacity-disabled);
         cursor: not-allowed;

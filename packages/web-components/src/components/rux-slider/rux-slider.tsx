@@ -300,6 +300,9 @@ export class RuxSlider implements FormFieldInterface {
         )
             return
 
+        // if the minVal and maxVal aren't being used, do nothing
+        if (this.minVal === undefined || this.maxVal === undefined) return
+
         // otherwise, get the size of the wrapper and find out where the click was.
         //* to do this we're going to get the size of the element I set the onClick on
         //* and get the offsetWidth and the boundingClientRect
@@ -312,33 +315,49 @@ export class RuxSlider implements FormFieldInterface {
         //* so we can tell which input value is closer
         //* this will give us the click's distance from the left side
         const clickPosition = e.clientX - sliderBounds.left
-        console.log(clickPosition)
 
         //* now we can get two values based on that clickPosition
         const percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
         const percentFromRight = Math.round(
             ((sliderWidth - clickPosition) / sliderWidth) * 100
         )
-        console.log('clickPercent', percentFromLeft, percentFromRight)
+        console.log(
+            'clickPercent: ',
+            'percent from left - ',
+            percentFromLeft,
+            'percent from right ',
+            percentFromRight
+        )
 
         //* so lets get the percent of the min and max value for comparison
-        //!it was harassing me about possible null val for min and max so I put || 0 in there to shut it up a sec
-        const minValPercent = Math.round(this.el.minVal || 0 / this.el.max)
-        const maxValPercent = Math.round(this.el.maxVal || 0 / this.el.max)
-        console.log('val percent', minValPercent, maxValPercent)
+        const minValPercent = Math.round(this.minVal)
+        const maxValPercent = Math.round(this.maxVal)
 
-        //If x is between left and right and y between bottom and top, the point is in the box.
-        //? This is (probably) necessary because the click event is only fired on the first input, which controls the leftmost thumb. This way we can grab the
-        //? cordinates of the click and see if the right thumb should actually move instead.
-        if (
-            e.clientX > sliderBounds.left &&
-            e.clientX < sliderBounds.right &&
-            e.clientY > sliderBounds.top &&
-            e.clientY < sliderBounds.bottom
-        ) {
-            console.log('click was inside the bounds')
-            //? ok great. now how do i tell which thumb is closer? First I need to be able to find the thumbs. The thumb is set along the track based on the slider's value, which is relative to the min and max of the slider.
-            //? is that helpful?
+        let counts = [minValPercent, maxValPercent]
+        //* compares minValPercent and maxValPercent to percentFromLeft, and returns which one is the closest.
+        var closest = counts.reduce(function (prev, curr) {
+            return Math.abs(curr - percentFromLeft) <
+                Math.abs(prev - percentFromLeft)
+                ? curr
+                : prev
+        })
+
+        if (this.maxVal === this.minVal) {
+            //then we need to just move the left thumb if clicked to the left, right thumb if clicked to right
+            if (percentFromLeft > closest) {
+                //move right thumb
+                this.maxVal = percentFromLeft
+            } else if (percentFromLeft < closest) {
+                this.minVal = percentFromLeft
+            } else {
+                console.log('something else?')
+            }
+        } else {
+            if (closest === maxValPercent) {
+                this.maxVal = percentFromLeft
+            } else {
+                this.minVal = percentFromLeft
+            }
         }
     }
 
