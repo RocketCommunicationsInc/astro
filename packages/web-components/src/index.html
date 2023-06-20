@@ -50,12 +50,32 @@
             ></rux-slider>
             <span id="basic-disp"></span>
         </div>
+        <h2 style="margin: auto">Disableds</h2>
+        <div style="margin: 2rem auto; width: 400px">
+            <rux-slider
+                disabled
+                min="0"
+                max="100"
+                value="50"
+                label="Non-Dual"
+                id="test"
+            ></rux-slider>
+        </div>
+        <div style="margin: 2rem auto; width: 400px">
+            <rux-slider
+                disabled
+                label="Dual without Strict"
+                min-val="10"
+                max-val="50"
+            ></rux-slider>
+        </div>
 
         <script>
             const disp = document.querySelector('span')
             const nativeDisp = document.getElementById('native')
             let slider = document.querySelector('rux-slider')
             slider.axisLabels = ['0', '50', '100']
+            document.getElementById('test').axisLabels = ['0', '50', '100']
 
             let noStrict = document.getElementById('no-strict')
             // noStrict.axisLabels = ['0', '50', '100']
