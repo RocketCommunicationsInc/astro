@@ -1,6 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
-test.describe('Toast', () => {
+test.describe('Toast-Stack', () => {
     test('it renders', async ({ page }) => {
         const template = `
           <rux-toast-stack></rux-toast-stack>
@@ -18,7 +18,7 @@ test.describe('Toast', () => {
 
         const el = page.locator('rux-toast-stack')
 
-        expect(el).toHaveAttribute('position', 'top-right')
+        await expect(el).toHaveAttribute('position', 'top-right')
     })
 
     test('it can create toasts', async ({ page }) => {
@@ -30,7 +30,7 @@ test.describe('Toast', () => {
 
         const el = page.locator('rux-toast-stack')
 
-        el.evaluate((el) => {
+        el.evaluate((el: HTMLRuxToastStackElement) => {
             el.addToast({
                 message: 'message',
                 status: 'normal',

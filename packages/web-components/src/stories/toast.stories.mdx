@@ -1,0 +1,232 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { html, render } from 'lit-html'
+const args = extractArgTypes('rux-toast')
+args.message.defaultValue =
+    'This is a toast.'
+args.status.defaultValue = 'standby'
+
+<Meta
+    title="Components/Toast"
+    component="rux-toast"
+    argTypes={args}
+    parameters={{
+        actions: {
+            handles: ['ruxToastClosed rux-toast'],
+        },
+    }}
+/>
+
+# Toast
+
+Alerts that confirm user actions, and typically don’t require a response, may be displayed in a toast. The toast displays within the user’s field-of-view, overlaying ui content, but doesn’t block higher level alerts.
+
+A toast should not contain critical information or require user action.
+
+Toasts array down in a toast stack, with the most recent toast appearing and slotting in at the top.
+
+export const Default = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-toast
+        .closeAfter="${args.closeAfter}"
+        .hideClose="${args.hideClose}"
+        status="${args.status}"
+        message="${args.message}"
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Default"
+        height="100px"
+        args={{
+            closeAfter: null,
+            message: "This is a toast",
+            status: "standby"
+        }}
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## Usage
+
+### Multiple Toasts
+
+To show multiple toasts, you'll need to create and manage a notification stack within your application code.
+Instead of using multiple `rux-notification` elements, you can listen on `ruxclosed` and update a single `rux-notification`
+element as the user dismisses the current visible notification.
+
+A very basic pattern would look like:
+
+```html
+<rux-notification open id="notification" status="caution">Something caution has happened!</rux-notification>
+<script>
+    const eventSequence = [
+        {
+            status: 'critical',
+            message: '1 - something critical'
+        },
+        {
+            status: 'normal',
+            message: '2 - something normal'
+        },
+            {
+            status: 'normal',
+            message: '3 - something normal again'
+        }
+    ]
+    notification.addEventListener('ruxclosed', () => {
+        if (eventSequence.length > 0) {
+            // Grab the first notification data
+            notification.message = eventSequence[0].message
+            notification.status = eventSequence[0].status
+            // Remove the notification from the stack
+            eventSequence.shift()
+            // Reopen the notification
+            notification.open = true
+        }
+    })
+</script>
+```
+
+## API
+
+<ArgsTable of="rux-toast" />
+
+## Variants
+
+### Auto Close
+
+export const ToastAutoClose = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-toast
+        .closeAfter="${args.closeAfter}"
+        .status="${args.status}"
+        message="This is a toast. It will disappear in 2000 ms."
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            closeAfter: 2000,
+        }}
+        name="Auto Close"
+        height="100px"
+    >
+        {NotificationAutoClose.bind()}
+    </Story>
+</Canvas>
+
+### Hide Close
+
+In cases like auto close where you don't want to allow the user to be able to manually close the toast,
+you may use the `hide-close` attribute.
+
+export const HideClose = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-toast
+        .closeAfter="${args.closeAfter}"
+        .status="${args.status}"
+        .hideClose="${args.hideClose}"
+        message="This is a toast. It will disappear in 2000 ms."
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            hideClose: true
+        }}
+        name="Hide Close"
+        height="100px"
+    >
+        {HideClose.bind()}
+    </Story>
+</Canvas>
+
+### Default Slot
+
+Use the default slot for more control over the content inside your toast, for example, adding a link
+within your message.
+
+> NOTE: Content placed inside the default slot will override the `message` attribute.
+
+export const DefaultSlot = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center;">
+    <rux-toast
+        .closeAfter="${args.closeAfter}"
+        status="${args.status}"
+        message="${args.message}"
+        .hideClose="${args.hideClose}"
+    >
+    Toast
+    <a href="#" style="margin-left: 8px">Link</a>
+    </rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+    <Story name="Default Slot" height="100px">
+        {DefaultSlot.bind()}
+    </Story>
+</Canvas>
+
+### All Variants
+
+export const AllVariants = () => html`
+    <style>
+        .wrapper {
+            margin-bottom: 1rem;
+        }
+    </style>
+    <section>
+     <div class="wrapper">
+            <rux-toast open status="normal">
+                Notification banner
+                <a href="#" style="margin-left: 8px">Link</a>
+            </rux-toast>
+        </div>
+    </section>
+`
+
+<Canvas>
+    <Story
+        name="All Variants"
+        argTypes={{
+            closeAfter: { table: { disable: true } },
+            message: { table: { disable: true } },
+            open: { table: { disable: true } },
+            status: { table: { disable: true } }
+        }}
+    >
+        {AllVariants.bind()}
+    </Story>
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxToast } from '@astrouxds/astro-web-components/dist/components/rux-toast'
+import { RuxToastStack } from '@astrouxds/astro-web-components/dist/components/rux-toast-stack'
+import { RuxIcon } from '@astrouxds/astro-web-components/dist/components/rux-icon'
+import { RuxIconClear } from '@astrouxds/astro-web-components/dist/components/rux-icon-clear'
+customElements.define('rux-toast', RuxToast)
+customElements.define('rux-toast-stack', RuxToastStack)
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-icon-clear', RuxIconClear)
+```

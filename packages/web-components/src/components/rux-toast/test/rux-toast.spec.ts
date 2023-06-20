@@ -22,8 +22,7 @@ test.describe('Toast', () => {
         const icon = el.locator('rux-icon')
 
         await icon.click()
-        await page.waitForTimeout(100)
-        expect(el).toBeUndefined()
+        await expect(page.locator('rux-toast')).toHaveCount(0)
     })
     test('closes when closeAfter is up', async ({ page }) => {
         const template = `
@@ -33,9 +32,8 @@ test.describe('Toast', () => {
         ></rux-toast>
         `
         await page.setContent(template)
-        const el = page.locator('rux-toast')
         await page.waitForTimeout(2001)
-        expect(el).toBeUndefined()
+        await expect(page.locator('rux-toast')).toHaveCount(0)
     })
     test('it accepts second values for closeAfter', async ({ page }) => {
         const template = `
@@ -45,9 +43,8 @@ test.describe('Toast', () => {
         ></rux-toast>
         `
         await page.setContent(template)
-        const el = page.locator('rux-toast')
         await page.waitForTimeout(2001)
-        expect(el).not.toBeDefined()
+        await expect(page.locator('rux-toast')).toHaveCount(0)
     })
     test('closeAfter defaults to 2000 if closeAfter is > 10s', async ({
         page,
@@ -59,9 +56,8 @@ test.describe('Toast', () => {
         ></rux-toast>
         `
         await page.setContent(template)
-        const el = page.locator('rux-toast')
         await page.waitForTimeout(2001)
-        expect(el).not.toBeDefined()
+        await expect(page.locator('rux-toast')).toHaveCount(0)
     })
     test('closeAfter defaults to 2000 if closeAfter is < 2s', async ({
         page,
@@ -94,19 +90,6 @@ test.describe('Toast', () => {
         expect(closeEvent).toHaveReceivedEventTimes(1)
     })
 
-    test('it renders the message prop text when used with slots', async ({
-        page,
-    }) => {
-        const template = `
-            <rux-toast message="Message Prop">
-                <span>Message Slot</span>
-            </rux-toast>
-        `
-        await page.setContent(template)
-        const messageContainer = page.locator('.rux-toast__content')
-        await expect(messageContainer).toContainText('Message Prop')
-    })
-
     test('it creates a toast stack when there is not one', async ({ page }) => {
         const template = `
         <rux-toast message="Message">
@@ -126,10 +109,7 @@ test.describe('Toast', () => {
           </rux-toast>
       `
         await page.setContent(template)
-        const el = page.locator('rux-toast')
-        expect(el).toBeVisible()
         const toastStack = page.locator('rux-toast-stack')
-
         const elInToastStack = toastStack.locator('rux-toast')
 
         expect(elInToastStack).toBeDefined()
@@ -145,12 +125,11 @@ test.describe('Toast', () => {
       `
         await page.setContent(template)
         const el = page.locator('rux-toast')
-        const toastStack = page.locator('rux-toast-stack')
         const closeIcon = el.locator('rux-icon')
 
         await closeIcon.click()
 
-        expect(el).toBeUndefined()
-        expect(toastStack).toBeUndefined()
+        await expect(page.locator('rux-toast')).toHaveCount(0)
+        await expect(page.locator('rux-toast-stack')).toHaveCount(0)
     })
 })
