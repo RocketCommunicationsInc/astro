@@ -26,7 +26,7 @@
                 min="0"
                 max="100"
                 min-val="10"
-                max-val="50"
+                value="50"
                 strict
             ></rux-slider>
             <span></span>
@@ -36,7 +36,7 @@
                 id="no-strict"
                 label="Dual without Strict"
                 min-val="10"
-                max-val="50"
+                value="50"
             ></rux-slider>
             <span id="no-strict-disp"></span>
         </div>
@@ -66,7 +66,7 @@
                 disabled
                 label="Dual without Strict"
                 min-val="10"
-                max-val="50"
+                value="50"
             ></rux-slider>
         </div>
 
@@ -86,16 +86,16 @@
             let basicDisp = document.getElementById('basic-disp')
 
             slider.addEventListener('ruxinput', (e) => {
-                disp.innerHTML = `${slider.minVal}, ${slider.maxVal}`
+                disp.innerHTML = `${slider.minVal}, ${slider.value}`
             })
             noStrict.addEventListener('ruxinput', (e) => {
-                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.maxVal}`
+                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.value}`
             })
             noStrict.addEventListener('click', (e) => {
-                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.maxVal}`
+                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.value}`
             })
             slider.addEventListener('click', (e) => {
-                disp.innerHTML = `${slider.minVal}, ${slider.maxVal}`
+                disp.innerHTML = `${slider.minVal}, ${slider.value}`
             })
 
             basic.addEventListener('ruxinput', () => {
