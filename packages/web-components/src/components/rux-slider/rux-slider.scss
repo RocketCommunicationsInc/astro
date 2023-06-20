@@ -32,6 +32,10 @@
     display: inline-block;
     margin-bottom: var(--spacing-3);
 }
+:host([disabled]) > .rux-form-field > .rux-slider {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+}
 
 .rux-form-field {
     // flex-direction: column;
@@ -65,6 +69,7 @@
     :disabled {
         cursor: not-allowed;
     }
+
     &--range input[type='range'] {
         position: absolute;
         width: 100%;
@@ -73,7 +78,6 @@
         pointer-events: none;
     }
     .rux-range:disabled + #steplist {
-        opacity: var(--opacity-disabled);
         cursor: not-allowed;
         .tick {
             cursor: not-allowed;
@@ -82,6 +86,17 @@
             .axis-label {
                 cursor: not-allowed;
             }
+        }
+    }
+    .rux-range--dual:disabled {
+        // &::-webkit-slider-thumb {
+        //     border: 1px solid
+        //         rgba(
+        //             var(--dual-range-slider-thumb-border),
+        //             var(--opacity-disabled)
+        //         );
+        // }
+        + .rux-range-overlay {
         }
     }
 
@@ -118,7 +133,6 @@
             padding: 0;
         }
         :disabled {
-            opacity: var(--opacity-disabled);
         }
     }
 }
@@ -198,7 +212,6 @@ input[type='range']:focus {
     top: -1px;
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -240,12 +253,10 @@ input[type='range']:focus {
 }
 .rux-range:disabled::-moz-range-track,
 .rux-range:disabled::-moz-range-progress {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
 .rux-input:disabled {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -359,7 +370,6 @@ input[type='range']:focus {
 }
 
 .rux-range:disabled::-moz-range-thumb {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
