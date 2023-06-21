@@ -50,8 +50,8 @@
             ></rux-slider>
             <span id="basic-disp"></span>
         </div>
-        <h2 style="margin: auto">Disableds</h2>
         <div style="margin: 2rem auto; width: 400px">
+            <h2>Disabled</h2>
             <rux-slider
                 disabled
                 min="0"
@@ -65,6 +65,33 @@
             <rux-slider
                 disabled
                 label="Dual without Strict"
+                min-val="10"
+                value="50"
+            ></rux-slider>
+        </div>
+        <div style="margin: 2rem auto; width: 400px">
+            <h2>Error/help text</h2>
+            <rux-slider
+                min="0"
+                max="100"
+                min-val="20"
+                value="50"
+                label="Dual W/ Help Text"
+                help-text="Help text here"
+                id="test"
+            ></rux-slider>
+        </div>
+        <div style="margin: 2rem auto; width: 400px">
+            <rux-slider
+                label="Single W/ Erorr Text"
+                error-text="Error Text Here"
+                value="50"
+            ></rux-slider>
+        </div>
+        <div style="margin: 2rem auto; width: 400px">
+            <rux-slider
+                label="Dual W/ Erorr Text"
+                error-text="Error Text Here"
                 min-val="10"
                 value="50"
             ></rux-slider>

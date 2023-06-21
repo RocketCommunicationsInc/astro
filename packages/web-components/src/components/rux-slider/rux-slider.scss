@@ -28,13 +28,25 @@
 :host([hidden]) {
     display: none;
 }
-:host([min-val]) .rux-form-field .rux-input-label {
-    display: inline-block;
-    margin-bottom: var(--spacing-3);
+:host([min-val]) {
+    .rux-form-field .rux-input-label {
+        display: inline-block;
+        margin-bottom: var(--spacing-3);
+    }
+    .rux-error-text {
+        margin-top: 0;
+    }
+    .rux-help-text {
+        margin-top: 0;
+    }
 }
+
 :host([disabled]) > .rux-form-field > .rux-slider {
     opacity: var(--opacity-disabled);
     cursor: not-allowed;
+    .rux-range-overlay {
+        cursor: not-allowed;
+    }
 }
 
 .rux-form-field {
@@ -85,17 +97,6 @@
             .axis-label {
                 cursor: not-allowed;
             }
-        }
-    }
-    .rux-range--dual:disabled {
-        // &::-webkit-slider-thumb {
-        //     border: 1px solid
-        //         rgba(
-        //             var(--dual-range-slider-thumb-border),
-        //             var(--opacity-disabled)
-        //         );
-        // }
-        + .rux-range-overlay {
         }
     }
 
@@ -149,9 +150,6 @@
     margin: var(--spacing-0);
     color: transparent;
     position: relative;
-    + div {
-        min-block-size: auto;
-    }
 }
 
 input[type='range']:focus {
@@ -209,6 +207,7 @@ input[type='range']:focus {
     width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
     //! centers the bar between the thumbs. Is there a better way?
     top: -1px;
+    cursor: default;
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
     cursor: not-allowed;
