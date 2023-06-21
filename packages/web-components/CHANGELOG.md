@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 7.13.0
+
+### Minor Changes
+
+-   b0a84a8d: Accordion Item - Added `content` CSS Shadow Part
+
+### Patch Changes
+
+-   f36e9173: bumps tokens@1.8. view https://github.com/RocketCommunicationsInc/astro-design-tokens/releases/tag/v1.8.0 for release notes
+-   7435d3b8: fix(rux-textarea) fixs the rows prop to get it working
+
 ## 7.12.0
 
 ### Minor Changes

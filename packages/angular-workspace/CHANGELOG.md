@@ -1,5 +1,19 @@
 # @astrouxds/angular
 
+## 7.13.0
+
+### Minor Changes
+
+- b0a84a8d: Accordion Item - Added `content` CSS Shadow Part
+
+### Patch Changes
+
+- f36e9173: bumps tokens@1.8. view https://github.com/RocketCommunicationsInc/astro-design-tokens/releases/tag/v1.8.0 for release notes
+- Updated dependencies [b0a84a8d]
+- Updated dependencies [f36e9173]
+- Updated dependencies [7435d3b8]
+  - @astrouxds/astro-web-components@7.13.0
+
 ## 7.12.0
 
 ### Minor Changes
@@ -25,7 +39,6 @@
 #### Log
 
 - Search input now updates when filter is updated programatically
-
 
 ## 7.11.0
 
