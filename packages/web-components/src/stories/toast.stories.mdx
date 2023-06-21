@@ -4,7 +4,6 @@ import { html, render } from 'lit-html'
 const args = extractArgTypes('rux-toast')
 args.message.defaultValue =
     'This is a toast.'
-args.status.defaultValue = 'standby'
 
 <Meta
     title="Components/Toast"
@@ -25,19 +24,20 @@ args.status.defaultValue = 'standby'
 
 # Toast
 
-Alerts that confirm user actions, and typically don’t require a response, may be displayed in a toast. The toast displays within the user’s field-of-view, overlaying ui content, but doesn’t block higher level alerts.
+Alerts that confirm user actions, and typically don’t require a response, may be displayed in a toast. Toasts should display within the toast-stack component, in the user’s field-of-view. A toast will overlay ui content, but shouldn't block higher level alerts, such as those in a monitoring icon in the Global Status Bar.
 
 A toast should not contain critical information or require user action.
 
-Toasts array down in a toast stack, with the most recent toast appearing and slotting in at the top.
+Toasts should array down in a toast stack, with the most recent toast appearing and slotting in at the top.
+
+Toasts can be created imperatively via method using the toast-stack component. A toast on its own will need to be added into the appropriate toast stack.
 
 export const Default = (args) => {
     return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
         .closeAfter="${args.closeAfter}"
         .hideClose="${args.hideClose}"
-        status="${args.status}"
         message="${args.message}"
     ></rux-toast>
 </div>
@@ -50,8 +50,8 @@ export const Default = (args) => {
         height="100px"
         args={{
             closeAfter: null,
+            hideCLose: null,
             message: "This is a toast",
-            status: "standby"
         }}
     >
         {Default.bind()}
@@ -62,42 +62,7 @@ export const Default = (args) => {
 
 ### Multiple Toasts
 
-To show multiple toasts, you'll need to create and manage a notification stack within your application code.
-Instead of using multiple `rux-notification` elements, you can listen on `ruxclosed` and update a single `rux-notification`
-element as the user dismisses the current visible notification.
-
-A very basic pattern would look like:
-
-```html
-<rux-notification open id="notification" status="caution">Something caution has happened!</rux-notification>
-<script>
-    const eventSequence = [
-        {
-            status: 'critical',
-            message: '1 - something critical'
-        },
-        {
-            status: 'normal',
-            message: '2 - something normal'
-        },
-            {
-            status: 'normal',
-            message: '3 - something normal again'
-        }
-    ]
-    notification.addEventListener('ruxclosed', () => {
-        if (eventSequence.length > 0) {
-            // Grab the first notification data
-            notification.message = eventSequence[0].message
-            notification.status = eventSequence[0].status
-            // Remove the notification from the stack
-            eventSequence.shift()
-            // Reopen the notification
-            notification.open = true
-        }
-    })
-</script>
-```
+When a toast is created, it automatically will create a toast-stack component to manage its position in the viewport and all incoming toasts. Best practice is to limit the amount of toasts shown in an app at a time to 4.
 
 ## API
 
@@ -107,13 +72,14 @@ A very basic pattern would look like:
 
 ### Auto Close
 
+Sets a value in seconds or milliseconds to close the toast.
+
 export const ToastAutoClose = (args) => {
     return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
         .closeAfter="${args.closeAfter}"
-        .status="${args.status}"
-        message="This is a toast. It will disappear in 2000 ms."
+        message="This toast will disappear in 2000 ms."
     ></rux-toast>
 </div>
     `
@@ -127,7 +93,7 @@ export const ToastAutoClose = (args) => {
         name="Auto Close"
         height="100px"
     >
-        {NotificationAutoClose.bind()}
+        {ToastAutoClose.bind()}
     </Story>
 </Canvas>
 
@@ -138,12 +104,10 @@ you may use the `hide-close` attribute.
 
 export const HideClose = (args) => {
     return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
-        .closeAfter="${args.closeAfter}"
-        .status="${args.status}"
         .hideClose="${args.hideClose}"
-        message="This is a toast. It will disappear in 2000 ms."
+        message="Toast without the close icon."
     ></rux-toast>
 </div>
     `
@@ -152,6 +116,7 @@ export const HideClose = (args) => {
 <Canvas>
     <Story
         args={{
+            closeAfter: null,
             hideClose: true
         }}
         name="Hide Close"
@@ -170,11 +135,10 @@ within your message.
 
 export const DefaultSlot = (args) => {
     return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
         .closeAfter="${args.closeAfter}"
-        status="${args.status}"
-        message="${args.message}"
+        .message="${args.message}"
         .hideClose="${args.hideClose}"
     >
     Toast
@@ -193,19 +157,23 @@ export const DefaultSlot = (args) => {
 ### All Variants
 
 export const AllVariants = () => html`
-    <style>
-        .wrapper {
-            margin-bottom: 1rem;
-        }
-    </style>
-    <section>
-     <div class="wrapper">
-            <rux-toast open status="normal">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-toast>
-        </div>
-    </section>
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+      <rux-toast message="Toast with message set via prop.">
+      </rux-toast>
+      <rux-toast>
+          Toast with content set via default slot
+          <a href="#" style="margin-left: 8px">Link</a>
+      </rux-toast>
+      <rux-toast
+        hide-close="true"
+        message="Toast with close icon hidden."
+    ></rux-toast>
+    <rux-toast
+        close-after="2000"
+        hide-close="true"
+        message="Toast will close after 2000ms"
+    ></rux-toast>
+    </div>
 `
 
 <Canvas>

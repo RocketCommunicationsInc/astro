@@ -17,12 +17,10 @@
 
 ## Events
 
-| Event               | Description | Type                   |
-| ------------------- | ----------- | ---------------------- |
-| `ruxToastClosed`    |             | `CustomEvent<boolean>` |
-| `ruxToastOpen`      |             | `CustomEvent<boolean>` |
-| `ruxToastWillClose` |             | `CustomEvent<boolean>` |
-| `ruxToastWillOpen`  |             | `CustomEvent<boolean>` |
+| Event            | Description                  | Type                   |
+| ---------------- | ---------------------------- | ---------------------- |
+| `ruxtoastclosed` | Fires when a toast is closed | `CustomEvent<boolean>` |
+| `ruxtoastopen`   | Fires when a toast is opened | `CustomEvent<boolean>` |
 
 
 ## Slots
@@ -57,13 +55,11 @@
 
 ### Depends on
 
-- [rux-toast-stack](../rux-toast-stack)
 - [rux-icon](../rux-icon)
 
 ### Graph
 ```mermaid
 graph TD;
-  rux-toast --> rux-toast-stack
   rux-toast --> rux-icon
   rux-toast-stack --> rux-toast
   style rux-toast fill:#f9f,stroke:#333,stroke-width:4px

@@ -16,7 +16,7 @@
 
 ### `addToast(props: { [x: string]: any; hasOwnProperty: (arg0: string) => any; }) => Promise<void>`
 
-
+adds an individual toast to the stack with the set props passed in as an object
 
 #### Returns
 
@@ -34,10 +34,6 @@ Type: `Promise<void>`
 
 ## Dependencies
 
-### Used by
-
- - [rux-toast](../rux-toast)
-
 ### Depends on
 
 - [rux-toast](../rux-toast)
@@ -46,7 +42,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   rux-toast-stack --> rux-toast
-  rux-toast --> rux-toast-stack
+  rux-toast --> rux-icon
   style rux-toast-stack fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

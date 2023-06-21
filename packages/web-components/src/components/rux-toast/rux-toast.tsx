@@ -10,12 +10,10 @@ import {
     EventEmitter,
 } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
-import { Status, StatusSymbol } from '../../common/commonTypes.module'
 
 /**
  * @part icon - the toast's close icon
  * @part message - the toast's message
- * @part status - the toast's status symbol
  * @part container - the toast's container element
  *
  * @slot (default) - the toast's message
@@ -29,14 +27,11 @@ export class RuxToast {
     @Element() el!: HTMLRuxToastElement
 
     @State() hasMessageSlot = false
+
     /**
      *  Message for the toast.
      */
     @Prop() message: string = ''
-    /**
-     *  Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
-     */
-    @Prop({ reflect: true }) status?: Status
 
     /**
      *  If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
@@ -44,7 +39,7 @@ export class RuxToast {
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
 
     /**
-     * Prevents the user from dismissing the notification. Hides the `actions` slot.
+     * Prevents the user from dismissing the notification. Hides the close icon.
      */
     @Prop({ attribute: 'hide-close' }) hideClose: boolean = false
 
@@ -74,13 +69,6 @@ export class RuxToast {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._updated()
         this.hasMessageSlot = hasSlot(this.el)
-
-        this._createToastToStack()
-        this._addToastToStack()
-    }
-
-    disconnectedCallback() {
-        this._destroyToastStack()
     }
 
     componentDidLoad() {
@@ -117,38 +105,6 @@ export class RuxToast {
         }
     }
 
-    private _createToastToStack() {
-        // if toast stack already exists, return
-        if (document.querySelector('rux-toast-stack')) return
-
-        const toastStack = document.createElement('rux-toast-stack')
-        const body = document.body
-
-        body.appendChild(toastStack)
-    }
-
-    private _addToastToStack() {
-        const toastStack = document.querySelector('rux-toast-stack')
-
-        // if toast already in stack, return, else add to stack
-        if (this.el.parentElement === toastStack) return
-
-        toastStack?.insertBefore(this.el, toastStack.firstChild) // add as first child
-    }
-
-    private _destroyToastStack() {
-        // if toast stack does not exist, return
-        if (!document.querySelector('rux-toast-stack')) return
-
-        const toasts = document.querySelectorAll('rux-toast')
-        const toastStack = document.querySelector('rux-toast-stack')
-
-        // if all toasts are gone, remove stack
-        if (toasts.length === 0) {
-            toastStack?.remove()
-        }
-    }
-
     get _closeAfter() {
         //* as long as it's less than 1000, they put in seconds. Convert that here.
         if (this.closeAfter && this.closeAfter <= 999) {
@@ -177,17 +133,6 @@ export class RuxToast {
                 <div
                     class={{
                         'rux-toast': true,
-                        'rux-toast--caution':
-                            this.status === StatusSymbol.CAUTION,
-                        'rux-toast--critical':
-                            this.status === StatusSymbol.CRITICAL,
-                        'rux-toast--serious':
-                            this.status === StatusSymbol.SERIOUS,
-                        'rux-toast--standby':
-                            this.status === StatusSymbol.STANDBY,
-                        'rux-toast--off': this.status === StatusSymbol.OFF,
-                        'rux-toast--normal':
-                            this.status === StatusSymbol.NORMAL,
                     }}
                     part="container"
                 >

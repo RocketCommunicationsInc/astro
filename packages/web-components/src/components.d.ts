@@ -12626,19 +12626,18 @@ export namespace Components {
          */
         "closeAfter"?: number;
         /**
-          * Prevents the user from dismissing the notification. Hides the `actions` slot.
+          * Prevents the user from dismissing the notification. Hides the close icon.
          */
         "hideClose": boolean;
         /**
           * Message for the toast.
          */
         "message": string;
-        /**
-          * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
-         */
-        "status"?: Status;
     }
     interface RuxToastStack {
+        /**
+          * adds an individual toast to the stack with the set props passed in as an object
+         */
         "addToast": (props: { [x: string]: any; hasOwnProperty: (arg0: string) => any; }) => Promise<void>;
         /**
           * position of toast stack in viewport
@@ -33371,21 +33370,21 @@ declare namespace LocalJSX {
          */
         "closeAfter"?: number;
         /**
-          * Prevents the user from dismissing the notification. Hides the `actions` slot.
+          * Prevents the user from dismissing the notification. Hides the close icon.
          */
         "hideClose"?: boolean;
         /**
           * Message for the toast.
          */
         "message"?: string;
-        "onRuxToastClosed"?: (event: RuxToastCustomEvent<boolean>) => void;
-        "onRuxToastOpen"?: (event: RuxToastCustomEvent<boolean>) => void;
-        "onRuxToastWillClose"?: (event: RuxToastCustomEvent<boolean>) => void;
-        "onRuxToastWillOpen"?: (event: RuxToastCustomEvent<boolean>) => void;
         /**
-          * Displays status symbol. Possible values include 'off', 'standby', 'normal', 'caution', 'serious' and 'critical'. See [Astro UXDS Status System](https://astrouxds.com/patterns/status-system/).
+          * Fires when a toast is closed
          */
-        "status"?: Status;
+        "onRuxtoastclosed"?: (event: RuxToastCustomEvent<boolean>) => void;
+        /**
+          * Fires when a toast is opened
+         */
+        "onRuxtoastopen"?: (event: RuxToastCustomEvent<boolean>) => void;
     }
     interface RuxToastStack {
         /**

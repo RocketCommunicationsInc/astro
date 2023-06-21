@@ -34,9 +34,6 @@ export class RuxToastStack {
                     case 'message':
                         toast.message = props[key]
                         break
-                    case 'status':
-                        toast.status = props[key]
-                        break
                     case 'hideClose':
                         toast.hideClose = props[key]
                         break
