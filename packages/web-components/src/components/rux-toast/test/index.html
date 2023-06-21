@@ -56,69 +56,81 @@
             <div style="display: flex">
                 <rux-card>
                     <div slot="header">Card</div>
-                    Much space, very wow!
+                    Sample.
                 </rux-card>
                 <rux-card>
                     <div slot="header">Card</div>
-                    Omg space!
+                    Sample.
                 </rux-card>
                 <rux-card>
                     <div slot="header">Card</div>
-                    Satellite Snuts.
+                    Sample.
                 </rux-card>
             </div>
             <div slot="footer">
-                <rux-button secondary id="remove">Remove All Toasts</rux-button>
-                <rux-button id="add">Add Toast</rux-button>
+                <rux-button id="new-stack-button"
+                    >Create New Stack and Add Toast</rux-button
+                >
+                <rux-button id="existing-stack-button"
+                    >Add Toast To Existing Stack</rux-button
+                >
             </div>
         </rux-container>
-        <rux-toast open> toasty toast </rux-toast>
 
-        <rux-toast open>
-            toaster-oo dksjfhdsjf sdkjhdfh djfgh kdjfgdjkfg dkjgdkjfgf
-            gkjdfgdfkg dfkjg dfkjg dfkjg dfkjg dfjkgh
-        </rux-toast>
-
-        <rux-toast-stack>
-            <rux-toast open>I am a toast that lives in the stack</rux-toast>
+        <rux-toast-stack id="existing-stack">
+            <rux-toast>I am a toast that lives in the stack</rux-toast>
         </rux-toast-stack>
 
         <script>
             const body = document.querySelector('body')
             const remove = document.getElementById('remove')
-            const add = document.getElementById('add')
-            const statuses = [
-                'off',
-                'normal',
-                'standby',
-                'caution',
-                'serious',
-                'critical',
-            ]
-            let randomStatus = 'normal'
+            const newStackButton = document.getElementById('new-stack-button')
+            const existingStackButton = document.getElementById(
+                'existing-stack-button'
+            )
+            let toastNumber = 1
 
-            function getRandomInt(max) {
-                return Math.floor(Math.random() * max)
+            function addToastToNewStack(message, closeAfter, hideClose) {
+                const body = document.body
+                let stack = document.getElementById('new-stack')
+
+                if (!closeAfter) closeAfter = null
+                if (!hideClose) hideClose = false
+
+                if (!stack) {
+                    stack = document.createElement('rux-toast-stack')
+                    stack.position = 'top-left'
+                    stack.id = 'new-stack'
+                    body.appendChild(stack)
+                }
+
+                stack.addToast({
+                    message: message,
+                    hideClose: hideClose,
+                    closeAfter: closeAfter,
+                })
             }
 
-            remove.addEventListener('click', () => {
-                const toasts = document.querySelectorAll('rux-toast')
-                for (const toast of toasts) {
-                    toast.remove()
-                }
+            function addToastToExistingStack(message, closeAfter, hideClose) {
+                let stack = document.getElementById('existing-stack')
+
+                if (!closeAfter) closeAfter = null
+                if (!hideClose) hideClose = false
+
+                if (!stack) return
+
+                stack.addToast({
+                    message: message,
+                    hideClose: hideClose,
+                    closeAfter: closeAfter,
+                })
+            }
+
+            newStackButton.addEventListener('click', () => {
+                addToastToNewStack('new toast, new stack')
             })
-            let toastNumber = 1
-            add.addEventListener('click', () => {
-                randomStatus = statuses[getRandomInt(6)]
-                const newToast = document.createElement('RUX-TOAST')
-
-                newToast.setAttribute('message', `New toast ${toastNumber}!`)
-                toastNumber = toastNumber + 1
-                newToast.setAttribute('open', '')
-                //newToast.setAttribute('animate-toast', '')
-                newToast.setAttribute('status', `${randomStatus}`)
-
-                body.appendChild(newToast)
+            existingStackButton.addEventListener('click', () => {
+                addToastToExistingStack('new toast, existing stack')
             })
         </script>
     </body>

@@ -38,7 +38,7 @@ export const Default = (args) => {
     <rux-toast
         .closeAfter="${args.closeAfter}"
         .hideClose="${args.hideClose}"
-        message="${args.message}"
+        .message="${args.message}"
     ></rux-toast>
 </div>
     `
@@ -79,7 +79,8 @@ export const ToastAutoClose = (args) => {
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
         .closeAfter="${args.closeAfter}"
-        message="This toast will disappear in 2000 ms."
+        .hideClose="${args.hideClose}"
+        .message="${args.message}"
     ></rux-toast>
 </div>
     `
@@ -89,6 +90,8 @@ export const ToastAutoClose = (args) => {
     <Story
         args={{
             closeAfter: 2000,
+            hideCLose: null,
+            message: "This toast will disappear in 2000 ms."",
         }}
         name="Auto Close"
         height="100px"
@@ -106,8 +109,9 @@ export const HideClose = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
+         .closeAfter="${args.closeAfter}"
         .hideClose="${args.hideClose}"
-        message="Toast without the close icon."
+        .message="${args.message}"
     ></rux-toast>
 </div>
     `
@@ -117,7 +121,8 @@ export const HideClose = (args) => {
     <Story
         args={{
             closeAfter: null,
-            hideClose: true
+            hideClose: true,
+            message: "Toast without the close icon."
         }}
         name="Hide Close"
         height="100px"
