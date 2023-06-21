@@ -30,6 +30,7 @@
     "prettier": "prettier --write --loglevel warn .",
     "start": "stencil build --dev --watch --serve",
     "start.stencil": "stencil build --dev --watch --serve",
+    "start.watch": "stencil build --watch --serve -p 3333",
     "start.prod": "PROD=true stencil build --watch --serve",
     "start.storybook": "start-storybook -p 6006",
     "test": "docker run -i --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:v1.33.0-focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test'",
