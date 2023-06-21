@@ -76,15 +76,6 @@
                     </div>
                 </rux-card>
                 <rux-card>
-                    <div slot="header">Status Toast</div>
-                    Status toast, count up.
-                    <div slot="footer">
-                        <rux-button id="status-toast"
-                            >Add Status Toast</rux-button
-                        >
-                    </div>
-                </rux-card>
-                <rux-card>
                     <div slot="header">Auto Close Toast</div>
                     Auto close toast.
                     <div slot="footer">
@@ -127,59 +118,34 @@
                 </rux-card>
                 <rux-toast-stack></rux-toast-stack>
             </div>
-            <div slot="footer">
-                <rux-button secondary id="remove">Remove All Toasts</rux-button>
-            </div>
         </rux-container>
 
         <script>
             const body = document.body
             const remove = document.getElementById('remove')
             const simpleButton = document.getElementById('simple-toast')
-            const statusButton = document.getElementById('status-toast')
             const autoCloseButton = document.getElementById('close-toast')
             const topRightButton = document.getElementById('top-right')
             const topLeftButton = document.getElementById('top-left')
             const bottomLeftButton = document.getElementById('bottom-left')
             const bottomRightButton = document.getElementById('bottom-right')
-            const statuses = [
-                'off',
-                'normal',
-                'standby',
-                'caution',
-                'serious',
-                'critical',
-            ]
-            let randomStatus = 'normal'
             let toastCount = 0
 
-            function addToastFromMethod(
-                message,
-                status,
-                closeAfter,
-                hideClose
-            ) {
+            function addToastFromMethod(message, closeAfter, hideClose) {
                 let stack = document.querySelector('rux-toast-stack')
 
                 if (!stack) {
                     stack = document.createElement('rux-toast-stack')
-                    //stack.animateToasts = true
                     body.appendChild(stack)
                 }
 
-                randomStatus = statuses[getRandomInt(6)]
                 toastCount = toastCount + 1
 
                 stack.addToast({
                     message: `${message} ${toastCount}!`,
-                    status: status,
                     hideClose: hideClose,
                     closeAfter: closeAfter,
                 })
-            }
-
-            function getRandomInt(max) {
-                return Math.floor(Math.random() * max)
             }
 
             function changeStackPosition(position) {
@@ -187,28 +153,12 @@
                 stack.position = position
             }
 
-            remove.addEventListener('click', () => {
-                const toasts = document.querySelectorAll('rux-toast')
-                for (const toast of toasts) {
-                    toast.remove()
-                }
-            })
             let toastNumber = 1
             simpleButton.addEventListener('click', () => {
                 addToastFromMethod('Simple toast')
             })
-            statusButton.addEventListener('click', () => {
-                addToastFromMethod(
-                    'Toast with Status border Toast with Status border Toast with Status border Toast with Status border Toast with Status border Toast with Status border',
-                    statuses[getRandomInt(6)]
-                )
-            })
             autoCloseButton.addEventListener('click', () => {
-                addToastFromMethod(
-                    'This toast will auto close',
-                    'standby',
-                    8000
-                )
+                addToastFromMethod('This toast will auto close', 3000)
             })
             topRightButton.addEventListener('click', () => {
                 changeStackPosition('top-right')
