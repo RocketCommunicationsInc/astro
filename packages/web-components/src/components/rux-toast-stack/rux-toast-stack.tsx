@@ -18,6 +18,9 @@ export class RuxToastStack {
     @Prop({ attribute: 'position', reflect: true }) position: string =
         'top-right'
 
+    /**
+     * adds an individual toast to the stack with the set props passed in as an object
+     */
     @Method()
     async addToast(props: {
         [x: string]: any

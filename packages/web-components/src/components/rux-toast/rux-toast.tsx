@@ -48,44 +48,27 @@ export class RuxToast {
      */
     @Prop({ attribute: 'hide-close' }) hideClose: boolean = false
 
+    /**
+     * Fires when a toast is opened
+     */
     @Event({
-        eventName: 'ruxToastWillOpen',
-        composed: true,
-        bubbles: true,
-    })
-    ruxToastWillOpen!: EventEmitter<boolean>
-
-    @Event({
-        eventName: 'ruxToastOpen',
+        eventName: 'ruxtoastopen',
         composed: true,
         bubbles: true,
     })
     ruxToastOpen!: EventEmitter<boolean>
 
+    /**
+     * Fires when a toast is closed
+     */
     @Event({
-        eventName: 'ruxToastWillClose',
-        composed: true,
-        bubbles: true,
-    })
-    ruxToastWillClose!: EventEmitter<boolean>
-
-    @Event({
-        eventName: 'ruxToastClosed',
+        eventName: 'ruxtoastclosed',
         composed: true,
         bubbles: true,
     })
     ruxToastClosed!: EventEmitter<boolean>
 
     private _timeoutRef: number | null = null
-
-    // @Watch('open')
-    // @Watch('closeAfter')
-    // watchHandler() {
-    //     this._updated()
-    //     if (!this.open) {
-    //         this.ruxToastClosed.emit()
-    //     }
-    // }
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)

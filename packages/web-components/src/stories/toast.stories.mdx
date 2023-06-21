@@ -9,10 +9,16 @@ args.status.defaultValue = 'standby'
 <Meta
     title="Components/Toast"
     component="rux-toast"
+    subcomponents={{
+        RuxToastStack: 'rux-toast-stack'
+    }}
     argTypes={args}
     parameters={{
         actions: {
-            handles: ['ruxToastClosed rux-toast'],
+            handles: [
+              'ruxtoastopen rux-toast',
+              'ruxtoastclosed rux-toast'
+              ],
         },
     }}
 />
