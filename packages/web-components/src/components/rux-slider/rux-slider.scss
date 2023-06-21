@@ -132,8 +132,6 @@
         .tick-label:not(:first-child):not(:last-child) {
             padding: 0;
         }
-        :disabled {
-        }
     }
 }
 .rux-slider.rux-slider--range #steplist {
@@ -384,7 +382,6 @@ input[type='range']:focus {
     z-index: 6;
 }
 .rux-range:disabled::-ms-thumb {
-    opacity: 0.4;
     cursor: not-allowed;
 }
 .rux-range:focus-visible::-ms-thumb {
