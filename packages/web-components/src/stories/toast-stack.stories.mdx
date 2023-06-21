@@ -5,7 +5,7 @@ const args = extractArgTypes('rux-toast-stack')
 args.position.defaultValue = 'top-right'
 
 <Meta
-    title="Components/Toast-Stack"
+    title="Components/Toast Stack"
     component="rux-toast-stack"
     subcomponents={{
         RuxToast: 'rux-toast'
@@ -23,13 +23,9 @@ export const Default = (args) => {
         .position="${args.position}"
     >
       <rux-toast
-          .closeAfter="${args.closeAfter}"
-          .hideClose="${args.hideClose}"
-          .message="${args.message}"
+          message="Toast 2"
       ></rux-toast>
       <rux-toast
-          .closeAfter="${args.closeAfter}"
-          .hideClose="${args.hideClose}"
           message="Toast 2"
       ></rux-toast>
     </rux-toast-stack>
@@ -42,9 +38,6 @@ export const Default = (args) => {
         height="300px"
         args={{
             position: 'top-right',
-            closeAfter: null,
-            hideClose: null,
-            message: "Toast inside a stack"
         }}
     >
         {Default.bind()}
@@ -71,13 +64,9 @@ export const HideClose = (args) => {
         .position="${args.position}"
     >
       <rux-toast
-          .closeAfter="${args.closeAfter}"
-          .hideClose="${args.hideClose}"
-          .message="${args.message}"
+          message="Toast 2"
       ></rux-toast>
       <rux-toast
-          .closeAfter="${args.closeAfter}"
-          .hideClose="${args.hideClose}"
           message="Toast 2"
       ></rux-toast>
   </rux-toast-stack>
@@ -88,9 +77,6 @@ export const HideClose = (args) => {
     <Story
         args={{
             position: 'top-right',
-            closeAfter: null,
-            hideClose: null,
-            message: "Toast inside a stack"
         }}
         name="Position"
         height="300px"
@@ -158,6 +144,7 @@ export const AllVariants = () => html`
 <Canvas>
     <Story
         name="All Variants"
+        height="500px"
         argTypes={{
             position: { table: { disable: true } },
         }}

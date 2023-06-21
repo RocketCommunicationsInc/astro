@@ -6,7 +6,7 @@ args.message.defaultValue =
     'This is a toast.'
 
 <Meta
-    title="Components/Toast"
+    title="Components/Toast Stack/Toast"
     component="rux-toast"
     subcomponents={{
         RuxToastStack: 'rux-toast-stack'
@@ -38,7 +38,7 @@ export const Default = (args) => {
     <rux-toast
         .closeAfter="${args.closeAfter}"
         .hideClose="${args.hideClose}"
-        .message="${args.message}"
+        message="${args.message}"
     ></rux-toast>
 </div>
     `
@@ -80,7 +80,7 @@ export const ToastAutoClose = (args) => {
     <rux-toast
         .closeAfter="${args.closeAfter}"
         .hideClose="${args.hideClose}"
-        .message="${args.message}"
+        message="${args.message}"
     ></rux-toast>
 </div>
     `
@@ -91,7 +91,7 @@ export const ToastAutoClose = (args) => {
         args={{
             closeAfter: 2000,
             hideCLose: null,
-            message: "This toast will disappear in 2000 ms."",
+            message: "This toast will disappear in 2000 ms.",
         }}
         name="Auto Close"
         height="100px"
@@ -111,7 +111,7 @@ export const HideClose = (args) => {
     <rux-toast
          .closeAfter="${args.closeAfter}"
         .hideClose="${args.hideClose}"
-        .message="${args.message}"
+        message="${args.message}"
     ></rux-toast>
 </div>
     `
@@ -122,7 +122,7 @@ export const HideClose = (args) => {
         args={{
             closeAfter: null,
             hideClose: true,
-            message: "Toast without the close icon."
+            message: "Toast without the close icon.",
         }}
         name="Hide Close"
         height="100px"
@@ -143,8 +143,8 @@ export const DefaultSlot = (args) => {
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
         .closeAfter="${args.closeAfter}"
-        .message="${args.message}"
         .hideClose="${args.hideClose}"
+         message="Toast message"
     >
     Toast
     <a href="#" style="margin-left: 8px">Link</a>
