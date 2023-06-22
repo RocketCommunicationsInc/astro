@@ -196,6 +196,8 @@ input[type='range']:focus {
     background-image: none;
     z-index: 1;
     min-block-size: auto;
+    //! Can't get the cursor to be pointer here because of pointer-events: none
+    cursor: pointer;
 }
 .rux-range-overlay {
     position: absolute;
@@ -205,7 +207,9 @@ input[type='range']:focus {
     width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
     //! centers the bar between the thumbs. Is there a better way?
     top: -1px;
-    cursor: default;
+    &:hover {
+        cursor: default;
+    }
 }
 .rux-range:disabled::-webkit-slider-runnable-track {
     cursor: not-allowed;

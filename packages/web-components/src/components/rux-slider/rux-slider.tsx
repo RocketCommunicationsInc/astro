@@ -185,9 +185,6 @@ export class RuxSlider implements FormFieldInterface {
     private _setValuePercent() {
         //if minVal is being used, we're in dual range mode.
         if (this.minVal !== undefined) {
-            // swap CSS custom prop values
-            //! Instead of just swapping custom prop values, we should probably swap actual values too
-            //! based on convo with Mark today
             if (this.minVal > this.value) {
                 this.el.style.setProperty(
                     '--_slider-value-percent',
@@ -318,6 +315,13 @@ export class RuxSlider implements FormFieldInterface {
         const minValPercent = Math.round(this.minVal)
         const maxValPercent = Math.round(this.value)
 
+        //if click happens between the thumbs, ignore it. //* Might be changed in future
+        if (
+            percentFromLeft > minValPercent &&
+            percentFromLeft < maxValPercent
+        ) {
+            return
+        }
         // compares minValPercent and maxValPercent to percentFromLeft, and returns which one is the closest.
         let counts = [minValPercent, maxValPercent]
         var closest = counts.reduce(function (prev, curr) {
@@ -333,10 +337,8 @@ export class RuxSlider implements FormFieldInterface {
             if (percentFromLeft > closest) {
                 //move right thumb
                 this.value = percentFromLeft
-            } else if (percentFromLeft < closest) {
-                this.minVal = percentFromLeft
             } else {
-                console.log('something else?')
+                this.minVal = percentFromLeft
             }
         } else {
             if (closest === maxValPercent) {
