@@ -1,5 +1,19 @@
 # @astrouxds/react
 
+## 7.13.0
+
+### Minor Changes
+
+#### Accordion Item
+
+-   Added `content` CSS Shadow Part
+
+### Patch Changes
+
+#### Textarea
+
+-   Fixes `rows` prop not working correctly
+
 ## 7.12.0
 
 ### Minor Changes
@@ -25,7 +39,6 @@
 #### Log
 
 - Search input now updates when filter is updated programatically
-
 
 ## 7.11.0
 
