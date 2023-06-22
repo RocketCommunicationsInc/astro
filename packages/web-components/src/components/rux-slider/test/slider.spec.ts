@@ -139,7 +139,9 @@ test.describe('Dual Range Slider', () => {
         <rux-slider id="dual-disabled" disabled value="80" min-val="20" min="0" max="100"></rux-slider>
         <rux-slider id="dual-axis-labels-disabled" disabled value="80" min-val="20" min="0" max="100"
           label="Dual, Disabled, Axis Labels"></rux-slider>
+        <rux-slider id="strict" value=
         </div>
+
         `
         await page.setContent(template)
     })
@@ -187,12 +189,23 @@ test.describe('Dual Range Slider', () => {
         const equalDual = page.locator('#dual-2')
         await expect(equalDual).toHaveAttribute('value', '50')
         await expect(equalDual).toHaveAttribute('min-val', '50')
-        await equalDual.click({ position: { x: 20, y: 22 } })
+        //click doesnt' work
+        await equalDual.click({ position: { x: 0, y: 25 } })
         await expect(equalDual).toHaveAttribute('min-val', '50')
         await expect(equalDual).toHaveAttribute('value', '70')
     })
+    test('Clicks not accepted when disabled', async ({ page }) => {
+        const disabled = page.locator('#dual-disabled')
+        await expect(disabled).toHaveAttribute('min-val', '20')
+        await expect(disabled).toHaveAttribute('value', '80')
+        await disabled.click({ position: { x: 10, y: 10 } })
+        await expect(disabled).toHaveAttribute('min-val', '20')
+        await expect(disabled).toHaveAttribute('value', '80')
+    })
+    // test('Thumbs do not swap in strict mode', async ({ page }) => {
+    //   const strict =
+    // })
     //track click moves correct thumb when thumbs overlap (values are equal)
-    //no clicks when disabled
     //can render axis labels?
     //strict mode
     // thumbs don't swap
