@@ -12413,15 +12413,11 @@ export namespace Components {
          */
         "max": number;
         /**
-          * The value of the second thumb if using a dual-range slider
-         */
-        "maxVal"?: number;
-        /**
           * Min value of the slider.
          */
         "min": number;
         /**
-          * The value of the first thumb if using a dual-range slider
+          * If present, creates a dual-range slider by adding a second thumb.
          */
         "minVal"?: number;
         /**
@@ -12433,7 +12429,7 @@ export namespace Components {
          */
         "step": number;
         /**
-          * Disables thumb swapping
+          * In a dual-range slider, disables thumb swapping.
          */
         "strict": boolean;
         /**
@@ -12441,7 +12437,7 @@ export namespace Components {
          */
         "ticksOnly": boolean;
         /**
-          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
          */
         "value": number;
     }
@@ -33082,15 +33078,11 @@ declare namespace LocalJSX {
          */
         "max"?: number;
         /**
-          * The value of the second thumb if using a dual-range slider
-         */
-        "maxVal"?: number;
-        /**
           * Min value of the slider.
          */
         "min"?: number;
         /**
-          * The value of the first thumb if using a dual-range slider
+          * If present, creates a dual-range slider by adding a second thumb.
          */
         "minVal"?: number;
         /**
@@ -33114,7 +33106,7 @@ declare namespace LocalJSX {
          */
         "step"?: number;
         /**
-          * Disables thumb swapping
+          * In a dual-range slider, disables thumb swapping.
          */
         "strict"?: boolean;
         /**
@@ -33122,7 +33114,7 @@ declare namespace LocalJSX {
          */
         "ticksOnly"?: boolean;
         /**
-          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
          */
         "value"?: number;
     }

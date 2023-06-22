@@ -55,7 +55,7 @@ export class RuxSlider implements FormFieldInterface {
     @Prop() step: number = 1
 
     /**
-     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
      */
     @Prop({ mutable: true, reflect: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
@@ -96,13 +96,13 @@ export class RuxSlider implements FormFieldInterface {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
-     * The value of the first thumb if using a dual-range slider
+     * If present, creates a dual-range slider by adding a second thumb.
      */
     @Prop({ attribute: 'min-val', mutable: true, reflect: true })
     minVal?: number
 
     /**
-     * Disables thumb swapping
+     * In a dual-range slider, disables thumb swapping.
      */
     @Prop() strict: boolean = false
 
