@@ -75,37 +75,17 @@ test.describe('Toast', () => {
     })
 
     test('should emit one event when loaded', async ({ page }) => {
-        const template = `
-          <rux-toast
-          message="testing time"
-          ></rux-toast>
-          <button id="click">click</button>
-          `
+        const template = ``
 
         await page.setContent(template)
-        await page.addScriptTag({
-            content: `
-        const button = document.getElementById('click')
-        button.addEventListener('click', () => {
-          const body = document.body
-          const toast = document.createElement('rux-toast')
-          toast.message = 'hi'
 
-          body.appendChild(toast)
-        })
-    `,
+        const openEvent = await page.spyOnEvent('ruxtoastopen')
+        await page.evaluate(() => {
+            const toast = document.createElement('rux-toast')
+            toast.message = 'hello'
+            document.body.appendChild(toast)
         })
         await page.waitForChanges()
-        //const el = page.locator('rux-toast') as any as HTMLRuxToastElement
-        const openEvent = await page.spyOnEvent('ruxtoastopen')
-        const button = page.locator('#click')
-
-        await button.click()
-
-        // await expect(el).toHaveClass('hydrated')
-        // await expect(el).toBeEnabled()
-
-        // //await page.waitForTimeout(2000)
         expect(openEvent).toHaveReceivedEventTimes(1)
     })
 

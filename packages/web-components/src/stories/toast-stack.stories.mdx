@@ -20,7 +20,7 @@ The container component that controls the creation and positioning of individual
 export const Default = (args) => {
     return html`
     <rux-toast-stack
-        .position="${args.position}"
+        position="${args.position}"
     >
       <rux-toast
           message="Toast 2"
@@ -61,7 +61,7 @@ The toast stack can be positioned around the four corners of the viewport by set
 export const HideClose = (args) => {
     return html`
   <rux-toast-stack
-        .position="${args.position}"
+        position="${args.position}"
     >
       <rux-toast
           message="Toast 2"
@@ -84,8 +84,6 @@ export const HideClose = (args) => {
         {HideClose.bind()}
     </Story>
 </Canvas>
-
-### Default Slot
 
 ### All Variants
 
