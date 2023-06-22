@@ -49,29 +49,3 @@
 .rux-toast__close {
     cursor: pointer;
 }
-
-/* ----- Status Variants ----- */
-
-.rux-toast--critical {
-    border-color: var(--notification-banner-color-border-outer-critical);
-}
-
-.rux-toast--caution {
-    border-color: var(--notification-banner-color-border-outer-caution);
-}
-
-.rux-toast--serious {
-    border-color: var(--notification-banner-color-border-outer-serious);
-}
-
-.rux-toast--normal {
-    border-color: var(--notification-banner-color-border-outer-normal);
-}
-
-.rux-toast--standby {
-    border-color: var(--notification-banner-color-border-outer-standby);
-}
-
-.rux-toast--off {
-    border-color: var(--notification-banner-color-border-outer-off);
-}

@@ -74,6 +74,41 @@ test.describe('Toast', () => {
         expect(el).toBeDefined()
     })
 
+    test('should emit one event when loaded', async ({ page }) => {
+        const template = `
+          <rux-toast
+          message="testing time"
+          ></rux-toast>
+          <button id="click">click</button>
+          `
+
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+        const button = document.getElementById('click')
+        button.addEventListener('click', () => {
+          const body = document.body
+          const toast = document.createElement('rux-toast')
+          toast.message = 'hi'
+
+          body.appendChild(toast)
+        })
+    `,
+        })
+        await page.waitForChanges()
+        //const el = page.locator('rux-toast') as any as HTMLRuxToastElement
+        const openEvent = await page.spyOnEvent('ruxtoastopen')
+        const button = page.locator('#click')
+
+        await button.click()
+
+        // await expect(el).toHaveClass('hydrated')
+        // await expect(el).toBeEnabled()
+
+        // //await page.waitForTimeout(2000)
+        expect(openEvent).toHaveReceivedEventTimes(1)
+    })
+
     test('should emit one event when closed', async ({ page }) => {
         const template = `
             <rux-toast
@@ -84,52 +119,37 @@ test.describe('Toast', () => {
 
         const el = page.locator('rux-toast')
         const closeBtn = el.locator('rux-icon')
-        const closeEvent = await page.spyOnEvent('ruxToastClosed')
+        const closeEvent = await page.spyOnEvent('ruxtoastclosed')
 
         await closeBtn.click()
         expect(closeEvent).toHaveReceivedEventTimes(1)
     })
 
-    test('it creates a toast stack when there is not one', async ({ page }) => {
+    test('hide-close works when set via attribute', async ({ page }) => {
         const template = `
-        <rux-toast message="Message">
-        </rux-toast>
-        `
+          <rux-toast
+          message="testing time"
+          hide-close="true"
+          ></rux-toast>
+          `
         await page.setContent(template)
-        const toastStack = page.locator('rux-toast-stack')
-        expect(toastStack).toBeDefined()
+
+        await expect(page.locator('.rux-toast__actions')).toHaveCount(0)
     })
 
-    test('it adds itself to an existing toast stack if not inside one already', async ({
-        page,
-    }) => {
+    test('hide-close works when set via prop', async ({ page }) => {
         const template = `
-          <rux-toast-stack></rux-toast-stack>
-          <rux-toast message="Message">
-          </rux-toast>
-      `
-        await page.setContent(template)
-        const toastStack = page.locator('rux-toast-stack')
-        const elInToastStack = toastStack.locator('rux-toast')
-
-        expect(elInToastStack).toBeDefined()
-    })
-
-    test('it destroys the toast stack if it is the last toast and gets closed', async ({
-        page,
-    }) => {
-        const template = `
-          <rux-toast-stack>
-            <rux-toast message="Message"></rux-toast>
-          </rux-toast-stack>
-      `
+          <rux-toast
+          message="testing time"
+          ></rux-toast>
+          `
         await page.setContent(template)
         const el = page.locator('rux-toast')
-        const closeIcon = el.locator('rux-icon')
+        el.evaluate((el) => {
+            const toast = el as HTMLRuxToastElement
+            toast.hideClose = true
+        })
 
-        await closeIcon.click()
-
-        await expect(page.locator('rux-toast')).toHaveCount(0)
-        await expect(page.locator('rux-toast-stack')).toHaveCount(0)
+        await expect(page.locator('.rux-toast__actions')).toHaveCount(0)
     })
 })
