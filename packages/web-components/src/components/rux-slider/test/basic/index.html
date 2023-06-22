@@ -77,6 +77,14 @@
                 max="100"
             ></rux-slider>
             <rux-slider
+                id="dual-with-label"
+                label="Dual With Label"
+                max-val="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
                 id="dual-help-text"
                 max-val="80"
                 min-val="20"
@@ -100,20 +108,21 @@
                 max="100"
             ></rux-slider>
             <rux-slider
-                id="dual-with-label"
-                label="Dual Range Label"
-                max-val="80"
-                min-val="20"
-                min="0"
-                max="100"
-            ></rux-slider>
-            <rux-slider
                 id="dual-disabled"
                 disabled
                 max-val="80"
                 min-val="20"
                 min="0"
                 max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-axis-labels-disabled"
+                disabled
+                max-val="80"
+                min-val="20"
+                min="0"
+                max="100"
+                label="Dual, Disabled, Axis Labels"
             ></rux-slider>
         </section>
         <script>
@@ -153,6 +162,13 @@
                 '100',
             ]
             document.getElementById('dual-axis-labels').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('dual-axis-labels-disabled-').axisLabels = [
                 '0',
                 '25',
                 '50',
