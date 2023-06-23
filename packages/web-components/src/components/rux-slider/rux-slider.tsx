@@ -398,7 +398,7 @@ export class RuxSlider implements FormFieldInterface {
                             'rux-slider': true,
                             'rux-slider--range':
                                 minVal !== undefined ? true : false,
-                            'with-axis-labels': axisLabels.length > 0,
+                            // 'with-axis-labels': axisLabels.length > 0,
                         }}
                         onClick={_handleTrackClick}
                     >
@@ -441,36 +441,36 @@ export class RuxSlider implements FormFieldInterface {
                         {minVal !== undefined ? (
                             <div class="rux-range-overlay"></div>
                         ) : null}
-                        {axisLabels.length > 0 ? (
-                            <datalist
-                                id="steplist"
-                                style={{
-                                    gridTemplateColumns: `[tick] repeat(${
-                                        axisLabels.length - 1
-                                    }, ${this._getTickWidths()}%)`,
-                                }}
-                            >
-                                {axisLabels.map((label) => {
-                                    return (
-                                        <div
-                                            class="tick-label"
-                                            part="tick-container"
-                                        >
-                                            <div class="tick" part="tick"></div>
-                                            {ticksOnly ? null : (
-                                                <div
-                                                    class="axis-label"
-                                                    part="axis-label"
-                                                >
-                                                    {label}
-                                                </div>
-                                            )}
-                                        </div>
-                                    )
-                                })}
-                            </datalist>
-                        ) : null}
                     </div>
+                    {axisLabels.length > 0 ? (
+                        <datalist
+                            id="steplist"
+                            style={{
+                                gridTemplateColumns: `[tick] repeat(${
+                                    axisLabels.length - 1
+                                }, ${this._getTickWidths()}%)`,
+                            }}
+                        >
+                            {axisLabels.map((label) => {
+                                return (
+                                    <div
+                                        class="tick-label"
+                                        part="tick-container"
+                                    >
+                                        <div class="tick" part="tick"></div>
+                                        {ticksOnly ? null : (
+                                            <div
+                                                class="axis-label"
+                                                part="axis-label"
+                                            >
+                                                {label}
+                                            </div>
+                                        )}
+                                    </div>
+                                )
+                            })}
+                        </datalist>
+                    ) : null}
                 </div>
                 <div
                     class={{

@@ -48,6 +48,10 @@
         cursor: not-allowed;
     }
 }
+:host([disabled]) > .rux-form-field > #steplist {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+}
 
 .rux-form-field {
     label {
@@ -68,6 +72,9 @@
 }
 
 .rux-slider {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     height: calc(var(--spacing-4) + var(--spacing-1)); //20
     position: relative;
     font-family: var(--font-body-1-font-family);
@@ -99,44 +106,45 @@
             }
         }
     }
+}
+#steplist {
+    display: grid;
+    padding: var(--spacing-0) calc(var(--_slider-thumb-size) / 2); //center first and last dot on thumb at start and end
+    cursor: default;
 
-    #steplist {
-        display: grid;
-        padding: var(--spacing-0) calc(var(--_slider-thumb-size) / 2); //center first and last dot on thumb at start and end
-        cursor: default;
+    .tick-label {
+        grid-row: 1;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-body-3-font-family);
+        font-size: var(--font-body-3-font-size);
+        line-height: var(--font-body-3-line-height);
+        letter-spacing: var(--font-body-3-letter-spacing);
+        font-weight: var(--font-body-3-font-weight);
 
-        .tick-label {
-            grid-row: 1;
-            width: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: var(--font-body-3-font-family);
-            font-size: var(--font-body-3-font-size);
-            line-height: var(--font-body-3-line-height);
-            letter-spacing: var(--font-body-3-letter-spacing);
-            font-weight: var(--font-body-3-font-weight);
-
-            .axis-label {
-                padding-top: var(--spacing-1); //4px
-                cursor: default;
-            }
-        }
-        .tick {
-            background: var(--color-background-interactive-default);
-            height: var(--spacing-1); //4px
-            width: var(--spacing-1);
-            border-radius: var(--radius-circle);
+        .axis-label {
+            padding-top: var(--spacing-1); //4px
             cursor: default;
         }
-        .tick-label:not(:first-child):not(:last-child) {
-            padding: 0;
-        }
+    }
+    .tick {
+        background: var(--color-background-interactive-default);
+        height: var(--spacing-1); //4px
+        width: var(--spacing-1);
+        border-radius: var(--radius-circle);
+        cursor: default;
+    }
+    .tick-label:not(:first-child):not(:last-child) {
+        padding: 0;
     }
 }
-.rux-slider.rux-slider--range #steplist {
-    padding: 1rem calc(var(--_slider-thumb-size) / 2);
+
+.rux-slider + #steplist {
+    padding: var(--spacing-1) calc(var(--_slider-thumb-size) / 2);
 }
+
 .rux-range {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -148,11 +156,6 @@
     margin: var(--spacing-0);
     color: transparent;
     position: relative;
-}
-.rux-slider--range {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
 }
 
 input[type='range']:focus {
@@ -208,8 +211,7 @@ input[type='range']:focus {
     background-color: var(--color-background-interactive-default);
     left: var(--_start-value-percent);
     width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
-    //! centers the bar between the thumbs. Is there a better way?
-    // top: -1px;
+
     &:hover {
         cursor: default;
     }
