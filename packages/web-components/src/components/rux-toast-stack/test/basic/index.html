@@ -40,143 +40,21 @@
     </head>
 
     <body>
-        <rux-global-status-bar
-            include-icon="true"
-            app-domain="Astro"
-            app-name="Dashboard"
-            app-version="4.0 Alpha"
-            menu-icon="apps"
-            username=""
-            app-state-color=""
-            app-state=""
-        >
-            <div slot="right-side">
-                <rux-monitoring-icon
-                    icon="antenna"
-                    status="caution"
-                    label="label"
-                    sublabel="sub-label"
-                    notifications="100"
-                ></rux-monitoring-icon>
-            </div>
-        </rux-global-status-bar>
-        <rux-container>
-            <div slot="header">A sample container</div>
-            <div style="display: flex; flex-wrap: wrap; width: 1000px">
-                <rux-card>
-                    <div slot="header">Simple Toast</div>
-                    Simple toast, count up.
-                    <div slot="footer">
-                        <rux-button id="simple-toast"
-                            >Add Simple Toast</rux-button
-                        >
-                    </div>
-                </rux-card>
-                <rux-card>
-                    <div slot="header">Auto Close Toast</div>
-                    Auto close toast.
-                    <div slot="footer">
-                        <rux-button id="close-toast"
-                            >Add Auto Close Toast</rux-button
-                        >
-                    </div>
-                </rux-card>
-                <rux-card>
-                    <div slot="header">Move Stack to Top Right</div>
-                    change toast-stack to top right.
-                    <div slot="footer">
-                        <rux-button id="top-right">Move Top Right</rux-button>
-                    </div>
-                </rux-card>
-                <rux-card>
-                    <div slot="header">Move Stack to Top Left</div>
-                    change toast-stack to top left.
-                    <div slot="footer">
-                        <rux-button id="top-left">Move Top Left</rux-button>
-                    </div>
-                </rux-card>
-                <rux-card>
-                    <div slot="header">Move Stack to Bottom Right</div>
-                    change toast-stack to bottom right.
-                    <div slot="footer">
-                        <rux-button id="bottom-right"
-                            >Move Bottom Right</rux-button
-                        >
-                    </div>
-                </rux-card>
-                <rux-card>
-                    <div slot="header">Move Stack to Bottom Left</div>
-                    change toast-stack to bottom left.
-                    <div slot="footer">
-                        <rux-button id="bottom-left"
-                            >Move Bottom Leftt</rux-button
-                        >
-                    </div>
-                </rux-card>
-                <rux-toast-stack>
-                    <rux-toast>Toast 1</rux-toast>
-                    <rux-toast>Toast 2</rux-toast>
-                    <rux-toast>Toast 3</rux-toast>
-                    <rux-toast>Toast 4</rux-toast>
-                    <rux-toast>Toast 5</rux-toast>
-                    <rux-toast>Toast 6</rux-toast>
-                    <rux-toast>Toast 7</rux-toast>
-                </rux-toast-stack>
-            </div>
-        </rux-container>
-
-        <script>
-            const body = document.body
-            const remove = document.getElementById('remove')
-            const simpleButton = document.getElementById('simple-toast')
-            const autoCloseButton = document.getElementById('close-toast')
-            const topRightButton = document.getElementById('top-right')
-            const topLeftButton = document.getElementById('top-left')
-            const bottomLeftButton = document.getElementById('bottom-left')
-            const bottomRightButton = document.getElementById('bottom-right')
-            let toastCount = 0
-
-            function addToastFromMethod(message, closeAfter, hideClose) {
-                let stack = document.querySelector('rux-toast-stack')
-
-                if (!stack) {
-                    stack = document.createElement('rux-toast-stack')
-                    body.appendChild(stack)
-                }
-
-                toastCount = toastCount + 1
-
-                stack.addToast({
-                    message: `${message} ${toastCount}!`,
-                    hideClose: hideClose,
-                    closeAfter: closeAfter,
-                })
-            }
-
-            function changeStackPosition(position) {
-                const stack = document.querySelector('rux-toast-stack')
-                stack.position = position
-            }
-
-            let toastNumber = 1
-            simpleButton.addEventListener('click', () => {
-                addToastFromMethod('Simple toast')
-            })
-            autoCloseButton.addEventListener('click', () => {
-                addToastFromMethod('This toast will auto close', 3000)
-            })
-            topRightButton.addEventListener('click', () => {
-                changeStackPosition('top-right')
-            })
-            topLeftButton.addEventListener('click', () => {
-                changeStackPosition('top-left')
-            })
-            bottomLeftButton.addEventListener('click', () => {
-                changeStackPosition('bottom-left')
-            })
-            bottomRightButton.addEventListener('click', () => {
-                changeStackPosition('bottom-right')
-            })
-        </script>
+        <rux-toast-stack position="top-right">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
+        <rux-toast-stack position="top-left">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
+        <rux-toast-stack position="bottom-right">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
+        <rux-toast-stack position="bottom-left">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
     </body>
 </html>

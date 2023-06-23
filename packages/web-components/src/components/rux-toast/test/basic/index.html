@@ -40,46 +40,7 @@
     </head>
 
     <body>
-        <rux-global-status-bar
-            include-icon="true"
-            app-domain="Astro"
-            app-name="Dashboard"
-            app-version="4.0 Alpha"
-            menu-icon="apps"
-            username=""
-            app-state-color=""
-            app-state=""
-        >
-        </rux-global-status-bar>
-        <rux-container>
-            <div slot="header">A sample container</div>
-            <div style="display: flex">
-                <rux-card>
-                    <div slot="header">Card</div>
-                    Sample.
-                </rux-card>
-                <rux-card>
-                    <div slot="header">Card</div>
-                    Sample.
-                </rux-card>
-                <rux-card>
-                    <div slot="header">Card</div>
-                    Sample.
-                </rux-card>
-                <rux-toast
-                    >I am a toast that lives outside of the stack</rux-toast
-                >
-            </div>
-            <div slot="footer">
-                <rux-button id="new-stack-button"
-                    >Create New Stack and Add Toast</rux-button
-                >
-                <rux-button id="existing-stack-button"
-                    >Add Toast To Existing Stack</rux-button
-                >
-            </div>
-        </rux-container>
-
+        <rux-toast>I am a toast that lives outside of the stack</rux-toast>
         <rux-toast-stack id="existing-stack">
             <rux-toast>I am a toast that lives in the stack</rux-toast>
             <rux-toast>I am a toast that lives in the stack</rux-toast>
@@ -87,58 +48,5 @@
             <rux-toast>I am a toast that lives in the stack</rux-toast>
             <rux-toast>I am a toast that lives in the stack</rux-toast>
         </rux-toast-stack>
-
-        <script>
-            const body = document.querySelector('body')
-            const remove = document.getElementById('remove')
-            const newStackButton = document.getElementById('new-stack-button')
-            const existingStackButton = document.getElementById(
-                'existing-stack-button'
-            )
-            let toastNumber = 1
-
-            function addToastToNewStack(message, closeAfter, hideClose) {
-                const body = document.body
-                let stack = document.getElementById('new-stack')
-
-                if (!closeAfter) closeAfter = null
-                if (!hideClose) hideClose = false
-
-                if (!stack) {
-                    stack = document.createElement('rux-toast-stack')
-                    stack.position = 'top-left'
-                    stack.id = 'new-stack'
-                    body.appendChild(stack)
-                }
-
-                stack.addToast({
-                    message: message,
-                    hideClose: hideClose,
-                    closeAfter: closeAfter,
-                })
-            }
-
-            function addToastToExistingStack(message, closeAfter, hideClose) {
-                let stack = document.getElementById('existing-stack')
-
-                if (!closeAfter) closeAfter = null
-                if (!hideClose) hideClose = false
-
-                if (!stack) return
-
-                stack.addToast({
-                    message: message,
-                    hideClose: hideClose,
-                    closeAfter: closeAfter,
-                })
-            }
-
-            newStackButton.addEventListener('click', () => {
-                addToastToNewStack('new toast, new stack')
-            })
-            existingStackButton.addEventListener('click', () => {
-                addToastToExistingStack('new toast, existing stack')
-            })
-        </script>
     </body>
 </html>
