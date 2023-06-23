@@ -78,10 +78,10 @@ export class RuxToast {
     }
 
     componentDidLoad() {
-        this._handeleOpen()
+        this._handleOpen()
     }
 
-    private _handeleOpen() {
+    private _handleOpen() {
         this.ruxToastOpen.emit()
     }
 
