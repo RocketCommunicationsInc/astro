@@ -398,7 +398,6 @@ export class RuxSlider implements FormFieldInterface {
                             'rux-slider': true,
                             'rux-slider--range':
                                 minVal !== undefined ? true : false,
-                            // 'with-axis-labels': axisLabels.length > 0,
                         }}
                         onClick={_handleTrackClick}
                     >
@@ -414,7 +413,6 @@ export class RuxSlider implements FormFieldInterface {
                                 step={step}
                                 value={minVal}
                                 onBlur={_onBlur}
-                                // list="steplist"
                             ></input>
                         ) : null}
                         <input
@@ -436,7 +434,6 @@ export class RuxSlider implements FormFieldInterface {
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
                             part="input"
-                            // list="steplist"
                         ></input>
                         {minVal !== undefined ? (
                             <div class="rux-range-overlay"></div>

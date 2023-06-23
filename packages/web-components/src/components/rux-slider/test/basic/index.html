@@ -101,7 +101,41 @@
                 error-text="Error text here"
             ></rux-slider>
             <rux-slider
+                id="dual-help-text-label"
+                max-val="80"
+                min-val="20"
+                min="0"
+                max="100"
+                help-text="Help Text Here"
+                label="Help Text with Label"
+            ></rux-slider>
+            <rux-slider
+                id="dual-error-text-label"
+                max-val="80"
+                min-val="20"
+                min="0"
+                max="100"
+                error-text="Error text here"
+                label="Error Text with Label"
+            ></rux-slider>
+            <rux-slider
                 id="dual-axis-labels"
+                max-val="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-axis-labels-label"
+                label="With axis labels"
+                max-val="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-axis-labels-ticks-only"
+                ticks-only
                 max-val="80"
                 min-val="20"
                 min="0"
@@ -168,7 +202,17 @@
                 '75',
                 '100',
             ]
-            document.getElementById('dual-axis-labels-disabled-').axisLabels = [
+            document.getElementById('dual-axis-labels-label').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById(
+                'dual-axis-labels-ticks-only'
+            ).axisLabels = ['0', '25', '50', '75', '100']
+            document.getElementById('dual-axis-labels-disabled').axisLabels = [
                 '0',
                 '25',
                 '50',

@@ -51,6 +51,11 @@
 :host([disabled]) > .rux-form-field > #steplist {
     opacity: var(--opacity-disabled);
     cursor: not-allowed;
+    .tick-label {
+        .axis-label {
+            cursor: not-allowed;
+        }
+    }
 }
 
 .rux-form-field {
@@ -94,17 +99,6 @@
         height: var(--spacing-025);
         background-color: var(--color-background-interactive-default);
         pointer-events: none;
-    }
-    .rux-range:disabled + #steplist {
-        cursor: not-allowed;
-        .tick {
-            cursor: not-allowed;
-        }
-        .tick-label {
-            .axis-label {
-                cursor: not-allowed;
-            }
-        }
     }
 }
 #steplist {
