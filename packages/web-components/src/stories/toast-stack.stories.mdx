@@ -15,7 +15,7 @@ args.position.defaultValue = 'top-right'
 
 # Toast Stack
 
-The container component that controls the creation and positioning of individual toast alerts. Each stack controls it's own toasts; there can be multiple stacks in an aplication, if necessary.
+A toast stack is a container component that controls the creation and positioning of individual toast alerts. Each stack controls it's own toasts; there can be multiple stacks in an application, if necessary.
 
 export const Default = (args) => {
     return html`
@@ -46,7 +46,7 @@ export const Default = (args) => {
 
 ## Usage
 
-The toast stack component can create toasts via internal method `addToast()`. Toasts created via this method can have their props set via an object passed into the method, and will be automatically added to the stack that they were created from.
+The toast stack component can create toasts via internal method `addToast()`. Toasts created via this method can have their props set via an object passed into the method, and will be automatically added to the stack that they were created from. This is the recommended way to create and manage toasts, however toasts can be created and added into a toast stack via external code if needed.
 
 ## API
 
