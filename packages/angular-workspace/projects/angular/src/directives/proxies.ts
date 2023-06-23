@@ -23507,6 +23507,60 @@ export class RuxTimeline {
 }
 
 
+export declare interface RuxToast extends Components.RuxToast {
+  /**
+   * Fires when a toast is opened 
+   */
+  ruxtoastopen: EventEmitter<CustomEvent<boolean>>;
+  /**
+   * Fires when a toast is closed 
+   */
+  ruxtoastclosed: EventEmitter<CustomEvent<boolean>>;
+
+}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['closeAfter', 'hideClose', 'message']
+})
+@Component({
+  selector: 'rux-toast',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['closeAfter', 'hideClose', 'message']
+})
+export class RuxToast {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxtoastopen', 'ruxtoastclosed']);
+  }
+}
+
+
+export declare interface RuxToastStack extends Components.RuxToastStack {}
+
+@ProxyCmp({
+  defineCustomElementFn: undefined,
+  inputs: ['position'],
+  methods: ['addToast']
+})
+@Component({
+  selector: 'rux-toast-stack',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  inputs: ['position']
+})
+export class RuxToastStack {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
 export declare interface RuxTooltip extends Components.RuxTooltip {
   /**
    * Emits when the tooltip has opened 
