@@ -117,7 +117,7 @@ test.describe('Toast', () => {
         await expect(page.locator('.rux-toast__actions')).toHaveCount(0)
     })
 
-    test('hide-close works when set via prop', async ({ page }) => {
+    test('hideClose works when set via prop', async ({ page }) => {
         const template = `
           <rux-toast
           message="testing time"
@@ -131,5 +131,64 @@ test.describe('Toast', () => {
         })
 
         await expect(page.locator('.rux-toast__actions')).toHaveCount(0)
+    })
+
+    test('close-after works when set via attribute', async ({ page }) => {
+        const template = `
+        <rux-toast
+        message="testing time"
+        close-after="2000"
+        ></rux-toast>
+        `
+        await page.setContent(template)
+        const el = page.locator('rux-toast')
+
+        await expect(el).toHaveAttribute('close-after', '2000')
+    })
+
+    test('closeAfter works when set via prop', async ({ page }) => {
+        const template = `
+        <rux-toast
+        message="testing time"
+        ></rux-toast>
+        `
+        await page.setContent(template)
+        const el = page.locator('rux-toast')
+        el.evaluate((el) => {
+            const toast = el as HTMLRuxToastElement
+            toast.closeAfter = 2000
+        })
+        await page.waitForTimeout(2001)
+        await expect(page.locator('rux-toast')).toHaveCount(0)
+    })
+
+    test('message works when set via attribute', async ({ page }) => {
+        const template = `
+        <rux-toast
+        message="testing time"
+        ></rux-toast>
+        `
+        await page.setContent(template)
+
+        await expect(page.locator('.rux-toast__content > span')).toContainText(
+            'testing time'
+        )
+    })
+
+    test('message works when set via prop', async ({ page }) => {
+        const template = `
+        <rux-toast
+        ></rux-toast>
+        `
+        await page.setContent(template)
+        const el = page.locator('rux-toast')
+        el.evaluate((el) => {
+            const toast = el as HTMLRuxToastElement
+            toast.message = 'testing time'
+        })
+
+        await expect(page.locator('.rux-toast__content > span')).toContainText(
+            'testing time'
+        )
     })
 })

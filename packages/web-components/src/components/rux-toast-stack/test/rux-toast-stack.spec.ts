@@ -9,7 +9,7 @@ test.describe('Toast-Stack', () => {
         const el = page.locator('rux-toast-stack').first()
         await expect(el).toHaveClass('hydrated')
     })
-    test('it has position attribute reflected', async ({ page }) => {
+    test('it has default position prop reflected', async ({ page }) => {
         const template = `
       <rux-toast-stack
       ></rux-toast-stack>
@@ -19,6 +19,34 @@ test.describe('Toast-Stack', () => {
         const el = page.locator('rux-toast-stack')
 
         await expect(el).toHaveAttribute('position', 'top-right')
+    })
+
+    test('position can be set via prop', async ({ page }) => {
+        const template = `
+        <rux-toast-stack
+        ></rux-toast-stack>
+        `
+        await page.setContent(template)
+        const el = page.locator('rux-toast-stack')
+        el.evaluate((el: HTMLRuxToastStackElement) => {
+            el.position = 'top-left'
+        })
+
+        await expect(el).toHaveAttribute('position', 'top-left')
+    })
+
+    test('position can be set via attribute', async ({ page }) => {
+        const template = `
+        <rux-toast-stack
+        ></rux-toast-stack>
+        `
+        await page.setContent(template)
+        const el = page.locator('rux-toast-stack')
+        el.evaluate((el: HTMLRuxToastStackElement) => {
+            el.position = 'top-left'
+        })
+
+        await expect(el).toHaveAttribute('position', 'top-left')
     })
 
     test('it can create toasts', async ({ page }) => {
@@ -33,8 +61,6 @@ test.describe('Toast-Stack', () => {
         el.evaluate((el: HTMLRuxToastStackElement) => {
             el.addToast({
                 message: 'message',
-                status: 'normal',
-                hideClose: false,
             })
         })
 

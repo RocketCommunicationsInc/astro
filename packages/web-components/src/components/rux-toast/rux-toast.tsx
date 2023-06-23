@@ -8,6 +8,7 @@ import {
     State,
     Event,
     EventEmitter,
+    Watch,
 } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 
@@ -64,6 +65,11 @@ export class RuxToast {
     ruxToastClosed!: EventEmitter<boolean>
 
     private _timeoutRef: number | null = null
+
+    @Watch('closeAfter')
+    watchHandler() {
+        this._updated()
+    }
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
