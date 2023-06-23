@@ -30,7 +30,7 @@ A toast should not contain critical information or require user action.
 
 Toasts should array down in a toast stack, with the most recent toast appearing and slotting in at the top.
 
-Toasts can be created imperatively via method using the toast-stack component. A toast on its own will need to be added into the appropriate toast stack.
+Toasts can be created imperatively via the `addToast()` method in the toast-stack component. A toast on its own will need to be added into the appropriate toast stack.
 
 export const Default = (args) => {
     return html`

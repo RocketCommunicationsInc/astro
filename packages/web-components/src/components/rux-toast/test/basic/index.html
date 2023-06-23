@@ -66,6 +66,9 @@
                     <div slot="header">Card</div>
                     Sample.
                 </rux-card>
+                <rux-toast
+                    >I am a toast that lives outside of the stack</rux-toast
+                >
             </div>
             <div slot="footer">
                 <rux-button id="new-stack-button"
@@ -78,6 +81,10 @@
         </rux-container>
 
         <rux-toast-stack id="existing-stack">
+            <rux-toast>I am a toast that lives in the stack</rux-toast>
+            <rux-toast>I am a toast that lives in the stack</rux-toast>
+            <rux-toast>I am a toast that lives in the stack</rux-toast>
+            <rux-toast>I am a toast that lives in the stack</rux-toast>
             <rux-toast>I am a toast that lives in the stack</rux-toast>
         </rux-toast-stack>
 
