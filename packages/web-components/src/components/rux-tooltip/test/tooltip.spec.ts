@@ -187,7 +187,7 @@ test.describe('Tooltip', async () => {
         await expect(ruxTooltip).not.toHaveAttribute('open', '')
 
         //act
-        await ruxTooltip.evaluate((el) => {
+        await ruxTooltip.evaluate((el: HTMLRuxTooltipElement) => {
             el.show()
         })
 
@@ -208,7 +208,7 @@ test.describe('Tooltip', async () => {
         await expect(ruxTooltip).toHaveAttribute('open', '')
 
         //act
-        await ruxTooltip.evaluate((el) => {
+        await ruxTooltip.evaluate((el: HTMLRuxTooltipElement) => {
             el.hide()
         })
 
