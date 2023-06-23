@@ -133,6 +133,22 @@ test.describe('Toast', () => {
         await expect(page.locator('.rux-toast__actions')).toHaveCount(0)
     })
 
+    test('hideClose is reflected', async ({ page }) => {
+        const template = `
+        <rux-toast
+        message="testing time"
+        ></rux-toast>
+        `
+        await page.setContent(template)
+        const el = page.locator('rux-toast')
+        el.evaluate((el) => {
+            const toast = el as HTMLRuxToastElement
+            toast.hideClose = true
+        })
+
+        await expect(el).toHaveAttribute('hide-close', '')
+    })
+
     test('close-after works when set via attribute', async ({ page }) => {
         const template = `
         <rux-toast
@@ -160,6 +176,21 @@ test.describe('Toast', () => {
         })
         await page.waitForTimeout(2001)
         await expect(page.locator('rux-toast')).toHaveCount(0)
+    })
+
+    test('closeAfter is reflected', async ({ page }) => {
+        const template = `
+      <rux-toast
+      message="testing time"
+      ></rux-toast>
+      `
+        await page.setContent(template)
+        const el = page.locator('rux-toast')
+        el.evaluate((el) => {
+            const toast = el as HTMLRuxToastElement
+            toast.closeAfter = 2000
+        })
+        await expect(el).toHaveAttribute('close-after', '2000')
     })
 
     test('message works when set via attribute', async ({ page }) => {
@@ -190,5 +221,20 @@ test.describe('Toast', () => {
         await expect(page.locator('.rux-toast__content > span')).toContainText(
             'testing time'
         )
+    })
+
+    test('message is reflected', async ({ page }) => {
+        const template = `
+      <rux-toast
+      ></rux-toast>
+      `
+        await page.setContent(template)
+        const el = page.locator('rux-toast')
+        el.evaluate((el) => {
+            const toast = el as HTMLRuxToastElement
+            toast.message = 'testing time'
+        })
+
+        await expect(el).toHaveAttribute('message', 'testing time')
     })
 })

@@ -32,17 +32,18 @@ export class RuxToast {
     /**
      *  Message for the toast.
      */
-    @Prop() message: string = ''
+    @Prop({ reflect: true }) message: string = ''
 
     /**
      *  If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
      */
-    @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
+    @Prop({ attribute: 'close-after', mutable: true, reflect: true })
+    closeAfter?: number
 
     /**
      * Prevents the user from dismissing the notification. Hides the close icon.
      */
-    @Prop({ attribute: 'hide-close' }) hideClose: boolean = false
+    @Prop({ attribute: 'hide-close', reflect: true }) hideClose: boolean = false
 
     /**
      * Fires when a toast is opened

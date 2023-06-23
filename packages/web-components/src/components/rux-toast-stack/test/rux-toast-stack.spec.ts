@@ -21,7 +21,7 @@ test.describe('Toast-Stack', () => {
         await expect(el).toHaveAttribute('position', 'top-right')
     })
 
-    test('position can be set via prop', async ({ page }) => {
+    test('position prop is reflected', async ({ page }) => {
         const template = `
         <rux-toast-stack
         ></rux-toast-stack>
