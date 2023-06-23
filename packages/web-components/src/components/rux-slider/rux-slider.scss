@@ -149,6 +149,11 @@
     color: transparent;
     position: relative;
 }
+.rux-slider--range {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
 
 input[type='range']:focus {
     outline: none;
@@ -196,8 +201,6 @@ input[type='range']:focus {
     background-image: none;
     z-index: 1;
     min-block-size: auto;
-    //! Can't get the cursor to be pointer here because of pointer-events: none
-    cursor: pointer;
 }
 .rux-range-overlay {
     position: absolute;
@@ -206,7 +209,7 @@ input[type='range']:focus {
     left: var(--_start-value-percent);
     width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
     //! centers the bar between the thumbs. Is there a better way?
-    top: -1px;
+    // top: -1px;
     &:hover {
         cursor: default;
     }

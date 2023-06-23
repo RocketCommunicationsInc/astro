@@ -20,7 +20,13 @@
     </head>
 
     <body>
-        <div style="width: 400px; margin: 2rem auto">
+        <style>
+            div {
+                width: 400px;
+                margin: 2rem auto;
+            }
+        </style>
+        <div>
             <rux-slider
                 label="Dual with Strict"
                 min="0"
@@ -31,7 +37,7 @@
             ></rux-slider>
             <span></span>
         </div>
-        <div style="margin: 2rem auto; width: 400px">
+        <div>
             <rux-slider
                 id="no-strict"
                 label="Dual without Strict"
@@ -40,7 +46,7 @@
             ></rux-slider>
             <span id="no-strict-disp"></span>
         </div>
-        <div style="margin: 2rem auto; width: 400px">
+        <div>
             <rux-slider
                 min="0"
                 max="100"
@@ -50,7 +56,7 @@
             ></rux-slider>
             <span id="basic-disp"></span>
         </div>
-        <div style="margin: 2rem auto; width: 400px">
+        <div>
             <h2>Disabled</h2>
             <rux-slider
                 disabled
@@ -61,7 +67,7 @@
                 id="test"
             ></rux-slider>
         </div>
-        <div style="margin: 2rem auto; width: 400px">
+        <div>
             <rux-slider
                 disabled
                 label="Dual without Strict"
@@ -69,7 +75,7 @@
                 value="50"
             ></rux-slider>
         </div>
-        <div style="margin: 2rem auto; width: 400px">
+        <div>
             <h2>Error/help text</h2>
             <rux-slider
                 min="0"
@@ -81,14 +87,14 @@
                 id="test"
             ></rux-slider>
         </div>
-        <div style="margin: 2rem auto; width: 400px">
+        <div>
             <rux-slider
                 label="Single W/ Erorr Text"
                 error-text="Error Text Here"
                 value="50"
             ></rux-slider>
         </div>
-        <div style="margin: 2rem auto; width: 400px">
+        <div>
             <rux-slider
                 label="Dual W/ Erorr Text"
                 error-text="Error Text Here"
