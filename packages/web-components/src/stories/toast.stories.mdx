@@ -36,8 +36,6 @@ export const Default = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
-        .closeAfter="${args.closeAfter}"
-        .hideClose="${args.hideClose}"
         message="${args.message}"
     ></rux-toast>
 </div>
@@ -78,8 +76,7 @@ export const ToastAutoClose = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
-        .closeAfter="${args.closeAfter}"
-        .hideClose="${args.hideClose}"
+        close-after="${args.closeAfter}"
         message="${args.message}"
     ></rux-toast>
 </div>
@@ -90,7 +87,7 @@ export const ToastAutoClose = (args) => {
     <Story
         args={{
             closeAfter: 2000,
-            hideCLose: null,
+            hideClose: null,
             message: "This toast will disappear in 2000 ms.",
         }}
         name="Auto Close"
@@ -109,8 +106,8 @@ export const HideClose = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
-        .closeAfter="${args.closeAfter}"
-        .hideClose="${args.hideClose}"
+        close-after="${args.closeAfter}"
+        hide-close="${args.hideClose}"
         message="${args.message}"
     ></rux-toast>
 </div>
@@ -142,8 +139,6 @@ export const DefaultSlot = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
-        .closeAfter="${args.closeAfter}"
-        .hideClose="${args.hideClose}"
          message="Toast message"
     >
     Toast
@@ -163,8 +158,7 @@ export const DefaultSlot = (args) => {
 
 export const AllVariants = () => html`
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-      <rux-toast message="Toast with message set via prop.">
-      </rux-toast>
+      <rux-toast message="Toast with message set via prop."></rux-toast>
       <rux-toast>
           Toast with content set via default slot
           <a href="#" style="margin-left: 8px">Link</a>
@@ -172,13 +166,13 @@ export const AllVariants = () => html`
       <rux-toast
         hide-close="true"
         message="Toast with close icon hidden."
-    ></rux-toast>
-    <rux-toast
+      ></rux-toast>
+      <rux-toast
         close-after="2000"
         hide-close="true"
         message="Toast will close after 2000ms"
-    ></rux-toast>
-    </div>
+      ></rux-toast>
+</div>
 `
 
 <Canvas>
