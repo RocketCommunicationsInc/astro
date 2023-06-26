@@ -7,9 +7,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description                         | Type     | Default       |
-| ---------- | ---------- | ----------------------------------- | -------- | ------------- |
-| `position` | `position` | position of toast stack in viewport | `string` | `'top-right'` |
+| Property   | Attribute  | Description                         | Type                                                           | Default       |
+| ---------- | ---------- | ----------------------------------- | -------------------------------------------------------------- | ------------- |
+| `position` | `position` | position of toast stack in viewport | `"bottom-left" \| "bottom-right" \| "top-left" \| "top-right"` | `'top-right'` |
 
 
 ## Methods

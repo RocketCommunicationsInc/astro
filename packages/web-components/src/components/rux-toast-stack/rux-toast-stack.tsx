@@ -1,5 +1,10 @@
-/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import { Component, Host, h, Prop, Element, Method } from '@stencil/core'
+
+export type ToastStackPosition =
+    | 'top-right'
+    | 'top-left'
+    | 'bottom-right'
+    | 'bottom-left'
 
 /**
  * @slot (default) - where all toasts go
@@ -15,8 +20,8 @@ export class RuxToastStack {
     /**
      * position of toast stack in viewport
      */
-    @Prop({ attribute: 'position', reflect: true }) position: string =
-        'top-right'
+    @Prop({ attribute: 'position', reflect: true })
+    position: ToastStackPosition = 'top-right'
 
     /**
      * adds an individual toast to the stack with the set props passed in as an object

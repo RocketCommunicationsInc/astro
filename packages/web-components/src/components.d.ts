@@ -9,6 +9,7 @@ import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
+import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
 export namespace Components {
     interface RuxAccordion {
         /**
@@ -12642,7 +12643,7 @@ export namespace Components {
         /**
           * position of toast stack in viewport
          */
-        "position": string;
+        "position": ToastStackPosition;
     }
     interface RuxTooltip {
         /**
@@ -33390,7 +33391,7 @@ declare namespace LocalJSX {
         /**
           * position of toast stack in viewport
          */
-        "position"?: string;
+        "position"?: ToastStackPosition;
     }
     interface RuxTooltip {
         /**

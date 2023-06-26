@@ -1,4 +1,3 @@
-/* eslint react/jsx-no-bind: 0 */ // --> OFF
 import {
     Component,
     Host,
@@ -76,6 +75,8 @@ export class RuxToast {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._updated()
         this.hasMessageSlot = hasSlot(this.el)
+        this._onClick = this._onClick.bind(this)
+        this._onKeyPress = this._onKeyPress.bind(this)
     }
 
     componentDidLoad() {
@@ -161,8 +162,8 @@ export class RuxToast {
                                 role="button"
                                 tabindex="1"
                                 class="rux-toast__close"
-                                onClick={() => this._onClick()}
-                                onKeyDown={(e) => this._onKeyPress(e)}
+                                onClick={this._onClick}
+                                onKeyDown={this._onKeyPress}
                                 icon="clear"
                                 exportparts="icon"
                                 size="16px"
