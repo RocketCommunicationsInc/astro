@@ -32,6 +32,7 @@ export class RuxToastStack {
         hasOwnProperty: (arg0: string) => any
     }) {
         const toast = document.createElement('rux-toast')
+        toast.style.transition = 'opacity 800ms ease-in 1s'
 
         for (const key in props) {
             if (props.hasOwnProperty(key)) {
@@ -52,26 +53,6 @@ export class RuxToastStack {
         this.el?.insertBefore(toast, this.el.firstChild) // add as first child
     }
 
-    connectedCallback() {
-        this._handleSlotChange = this._handleSlotChange.bind(this)
-    }
-
-    private _handleSlotChange() {
-        // this._tagFirstToast()
-    }
-
-    // private _tagFirstToast() {
-    //     const toasts = this._toastsArray
-
-    //     if (toasts) {
-    //         for (const [index, value] of toasts?.entries()) {
-    //             index === 0
-    //                 ? value.setAttribute('first-toast', '')
-    //                 : value.removeAttribute('first-toast')
-    //         }
-    //     }
-    // }
-
     get _toastsArray() {
         const toasts: Array<HTMLRuxToastElement> = Array.from(
             this.el.querySelectorAll('rux-toast')
@@ -83,7 +64,7 @@ export class RuxToastStack {
         return (
             <Host>
                 <div class="rux-toast-stack">
-                    <slot onSlotchange={this._handleSlotChange}></slot>
+                    <slot></slot>
                 </div>
             </Host>
         )
