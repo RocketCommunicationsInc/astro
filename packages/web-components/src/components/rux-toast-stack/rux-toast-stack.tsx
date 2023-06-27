@@ -57,20 +57,20 @@ export class RuxToastStack {
     }
 
     private _handleSlotChange() {
-        this._tagFirstToast()
+        // this._tagFirstToast()
     }
 
-    private _tagFirstToast() {
-        const toasts = this._toastsArray
+    // private _tagFirstToast() {
+    //     const toasts = this._toastsArray
 
-        if (toasts) {
-            for (const [index, value] of toasts?.entries()) {
-                index === 0
-                    ? value.setAttribute('first-toast', '')
-                    : value.removeAttribute('first-toast')
-            }
-        }
-    }
+    //     if (toasts) {
+    //         for (const [index, value] of toasts?.entries()) {
+    //             index === 0
+    //                 ? value.setAttribute('first-toast', '')
+    //                 : value.removeAttribute('first-toast')
+    //         }
+    //     }
+    // }
 
     get _toastsArray() {
         const toasts: Array<HTMLRuxToastElement> = Array.from(
