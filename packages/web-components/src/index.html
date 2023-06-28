@@ -21,121 +21,20 @@
 
     <body>
         <style>
-            div {
+            rux-slider {
                 width: 400px;
-                margin: 2rem auto;
             }
         </style>
-        <div>
-            <rux-slider
-                label="Dual with Strict"
-                min="0"
-                max="100"
-                min-val="10"
-                value="50"
-                strict
-            ></rux-slider>
-            <span></span>
-        </div>
-        <div>
-            <rux-slider
-                id="no-strict"
-                label="Dual without Strict"
-                min-val="10"
-                value="50"
-            ></rux-slider>
-            <span id="no-strict-disp"></span>
-        </div>
-        <div>
-            <rux-slider
-                min="0"
-                max="100"
-                value="50"
-                id="basic"
-                label="Non-Dual"
-            ></rux-slider>
-            <span id="basic-disp"></span>
-        </div>
-        <div>
-            <h2>Disabled</h2>
-            <rux-slider
-                disabled
-                min="0"
-                max="100"
-                value="50"
-                label="Non-Dual"
-                id="test"
-            ></rux-slider>
-        </div>
-        <div>
-            <rux-slider
-                disabled
-                label="Dual without Strict"
-                min-val="10"
-                value="50"
-            ></rux-slider>
-        </div>
-        <div>
-            <h2>Error/help text</h2>
-            <rux-slider
-                min="0"
-                max="100"
-                min-val="20"
-                value="50"
-                label="Dual W/ Help Text"
-                help-text="Help text here"
-                id="test"
-            ></rux-slider>
-        </div>
-        <div>
-            <rux-slider
-                label="Single W/ Erorr Text"
-                error-text="Error Text Here"
-                value="50"
-            ></rux-slider>
-        </div>
-        <div>
-            <rux-slider
-                label="Dual W/ Erorr Text"
-                error-text="Error Text Here"
-                min-val="10"
-                value="50"
-            ></rux-slider>
-        </div>
-
-        <script>
-            const disp = document.querySelector('span')
-            const nativeDisp = document.getElementById('native')
-            let slider = document.querySelector('rux-slider')
-            slider.axisLabels = ['0', '50', '100']
-            document.getElementById('test').axisLabels = ['0', '50', '100']
-
-            let noStrict = document.getElementById('no-strict')
-            // noStrict.axisLabels = ['0', '50', '100']
-            let noStrictDisp = document.getElementById('no-strict-disp')
-            let basic = document.getElementById('basic')
-            basic.axisLabels = ['0', '50', '100']
-
-            let basicDisp = document.getElementById('basic-disp')
-
-            slider.addEventListener('ruxinput', (e) => {
-                disp.innerHTML = `${slider.minVal}, ${slider.value}`
-            })
-            noStrict.addEventListener('ruxinput', (e) => {
-                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.value}`
-            })
-            noStrict.addEventListener('click', (e) => {
-                noStrictDisp.innerHTML = `${noStrict.minVal}, ${noStrict.value}`
-            })
-            slider.addEventListener('click', (e) => {
-                disp.innerHTML = `${slider.minVal}, ${slider.value}`
-            })
-
-            basic.addEventListener('ruxinput', () => {
-                // console.log(shadowInput, 'shadowInput in event')
-
-                basicDisp.innerHTML = `${basic.value}: slider value`
-            })
-        </script>
+        <rux-slider
+            label="Dual With Help"
+            min-val="10"
+            value="60"
+            help-text="Help Text Here"
+        ></rux-slider>
+        <rux-slider
+            label="Single with Help"
+            value="60"
+            help-text="Help Text Here"
+        ></rux-slider>
     </body>
 </html>

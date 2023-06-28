@@ -148,7 +148,6 @@ test.describe('Dual Range Slider', () => {
     test('Using min-val renders a dual range slider', async ({ page }) => {
         const dual = page.locator('#dual-1')
         const inputs = await dual.locator('.rux-range--dual').all()
-        console.log(inputs)
         expect(inputs).toHaveLength(2)
     })
     test('Min-val thumb is moveable in a dual range', async ({ page }) => {
@@ -202,11 +201,5 @@ test.describe('Dual Range Slider', () => {
         await expect(disabled).toHaveAttribute('min-val', '20')
         await expect(disabled).toHaveAttribute('value', '80')
     })
-    // test('Thumbs do not swap in strict mode', async ({ page }) => {
-    //   const strict =
-    // })
-    //track click moves correct thumb when thumbs overlap (values are equal)
-    //can render axis labels?
-    //strict mode
-    // thumbs don't swap
+    //TODO: Test that thumbs do not swap when strict = true
 })
