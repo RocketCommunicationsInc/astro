@@ -1,12 +1,41 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-palette-teal-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
 const args = extractArgTypes('rux-toast')
 args.message.defaultValue =
     'This is a toast.'
 
 <Meta
-    title="Components/Toast Stack/Toast"
+    title="Beta/Toast [BETA]"
     component="rux-toast"
     subcomponents={{
         RuxToastStack: 'rux-toast-stack'
@@ -22,7 +51,7 @@ args.message.defaultValue =
     }}
 />
 
-# Toast
+# Toast <BetaTag>BETA</BetaTag>
 
 Alerts that confirm user actions, and typically don’t require a response, may be displayed in a toast. Toasts should display within the toast-stack component, in the user’s field-of-view. A toast will overlay ui content, but shouldn't block higher level alerts, such as those in a monitoring icon in the Global Status Bar.
 
@@ -31,6 +60,16 @@ A toast should not contain critical information or require user action.
 Toasts should array down in a toast stack, with the most recent toast appearing and slotting in at the top.
 
 Toasts can be created imperatively via the `addToast()` method in the toast-stack component. A toast on its own will need to be added into the appropriate toast stack.
+
+<StyledDiv>
+    <div>Warning: This is an experimental component</div>
+    <p class="banner-text">
+        Toast is currently experimental which means that we may introduce breaking changes at any time.
+        These will not be reflected in our current semver versioning and release strategy.
+        If you are using this component, make sure to frequently check our release notes and update your
+        applications accordingly.
+    </p>
+</StyledDiv>
 
 export const Default = (args) => {
     return html`
