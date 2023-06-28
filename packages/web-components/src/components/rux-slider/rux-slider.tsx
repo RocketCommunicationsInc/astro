@@ -219,12 +219,8 @@ export class RuxSlider implements FormFieldInterface {
             this.value = parseFloat(target.value)
             if (this.value <= this.minVal! && this.strict) {
                 this.value = this.minVal!
-                // this.value = this.maxVal!
-                //? Still not entirely sure why we have to do this.
                 target.value = this.value.toString()
             }
-        } else {
-            this.value = parseFloat(target.value)
         }
         this._setValuePercent()
         this.ruxInput.emit()
@@ -235,7 +231,6 @@ export class RuxSlider implements FormFieldInterface {
         this.minVal = parseFloat(target.value)
         if (this.minVal >= this.value! && this.strict) {
             this.minVal = this.value
-            //? Still not entirely sure why we have to do this.
             target.value = this.minVal!.toString()
         }
         this._setValuePercent()
