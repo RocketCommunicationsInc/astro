@@ -70,10 +70,10 @@ export const WithSlots = (args) => {
     </div>
     <div slot="footer" style="display: flex; justify-content: space-between; align-items: center;">
         <a href="astrouxds.com">Link</a>
-        <rux-button-group h-align="right">
-            <rux-button secondary>Cancel</rux-button>
+        <div style="display: flex; align-items: center; margin-left: auto;">
+            <rux-button secondary style="margin-right: var(--spacing-2);">Cancel</rux-button>
             <rux-button>Confirm</rux-button>
-        </rux-button-group>
+        </div>
     </div>
 </rux-dialog>
 </div>
@@ -180,8 +180,6 @@ If you're already utilizing a build system that supports tree shaking and want t
 ```js
 import { RuxDialog } from '@astrouxds/astro-web-components/dist/components/rux-dialog.js'
 import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button.js'
-import { RuxButtonGroup } from '@astrouxds/astro-web-components/dist/components/rux-button-group.js'
 customElements.define('rux-dialog', RuxDialog)
 customElements.define('rux-button', RuxButton)
-customElements.define('rux-button-group', RuxButtonGroup)
 ```

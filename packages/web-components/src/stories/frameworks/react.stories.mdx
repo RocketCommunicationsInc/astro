@@ -8,19 +8,14 @@ import { Meta } from '@storybook/addon-docs'
 
 ### Via NPM
 
-To get started quickly with all boilerplate and dependencies included, run:
-
-`npx @astrouxds/react-starter my-app`
-
-Otherwise, use:
-
 `npm i @astrouxds/react`
 
 #### Lazy Loading
 
 Astro Web Components make use of Stencil's automatic lazy loader which only loads components that are actually used on the page.
 
-Import the `@astrouxds/astro-web-components` main CSS file into your `index.js` or `app.js` file.
+Our dark theme component styles come out of the box, but if you need light theme or theme switching capabilities then you'll need to import the Astro UXDS CSS stylesheet as shown below. This stylesheet also provides some
+global styles for things like body background color, link and scrollbar styles, among others. If you need to add these styles yourself, you can reference them in our [global CSS file](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_reset.scss).
 
 `import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'`
 
@@ -161,21 +156,57 @@ This will take the input from RuxInput and add to the dataArr, thus adding to Ru
 Slots give you full control over the contents of a component. Some components may have multiple slots.
 
 > Web Component Concept:
-> Slotted content lives outside of the shadow DOM and as a result, you are free to style them however you want.
+> [Slotted content](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) lives outside of the shadow DOM and as a result, you are free to style them however you want.
+
+Some slots are named slots, which means they are explicitly assigned. In the example below, the two named slots are `right-side` and `left-side`.
+A slot without a `name` is the component's default slot. Each component can only have one default slot, but that doesn't mean you can't put multiple elements inside of a default slot.
+In the below example, The `RuxClock` is being rendered in the default slot of the global status bar. This could also be easily changed to render a `<div>` with child elements, for example.
+
+Here's an example of customizing our global status bar using slots:
 
 ```jsx
-const GlobalStatusBar = () => {
-    return (
-        <div>
-            <RuxGlobalStatusBar>
-                <RuxIcon slot="left-side" icon="apps" />
-                <div slot="app-meta">
-                    <h1>Hello World</h1>
-                </div>
-            </RuxGlobalStatusBar>
-        </div>
-    )
+import {
+  RuxGlobalStatusBar,
+  RuxMonitoringIcon,
+  RuxClock,
+  RuxIcon
+} from "@astrouxds/react";
+
+function App() {
+  return (
+    <div className="App">
+      <RuxGlobalStatusBar
+        appDomain="Domain"
+        appState="State"
+        appVersion="7.0"
+        username="User Name"
+      >
+        <RuxIcon slot="left-side" icon="apps"></RuxIcon>
+        <RuxClock></RuxClock>
+        <RuxMonitoringIcon
+          slot="right-side"
+          notifications="10"
+          status="normal"
+        ></RuxMonitoringIcon>
+        <RuxMonitoringIcon
+          slot="right-side"
+          icon="antenna-receive"
+          notifications="15"
+          status="caution"
+        ></RuxMonitoringIcon>
+        <RuxMonitoringIcon
+          slot="right-side"
+          notifications="1"
+          status="off"
+          icon="antenna-off"
+        ></RuxMonitoringIcon>
+      </RuxGlobalStatusBar>
+    </div>
+  );
 }
+
+export default App;
+
 ```
 
 ## Listening To Events
@@ -216,7 +247,7 @@ const MyComp = () => {
 ```
 
 It is **highly** encouraged to listen to these custom events rather than default React events such as onChange. Because some
-React events are different from their native JS counterparts, some bugs can arise from using default React
+React events are different from their native JS counterparts, and although rare, some bugs can arise from using default React
 events.
 
 Because Astro components were built using [Stencil](https://stenciljs.com/), the custom events were named following the JavaScript convention. React handles onChange differently than JavaScript, therefore the `onRuxinput` event

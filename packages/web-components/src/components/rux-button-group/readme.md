@@ -46,19 +46,6 @@ Instead, you should use `flex` or `grid` in combination with our spacing design 
 | `"container"` |             |
 
 
-## Dependencies
-
-### Used by
-
- - [rux-dialog](../rux-dialog)
-
-### Graph
-```mermaid
-graph TD;
-  rux-dialog --> rux-button-group
-  style rux-button-group fill:#f9f,stroke:#333,stroke-width:4px
-```
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
