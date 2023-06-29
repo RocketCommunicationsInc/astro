@@ -110,6 +110,11 @@ export class RuxTooltip {
         }
     }
 
+    @Watch('placement')
+    handlePlacement() {
+        this._startPositioner()
+    }
+
     /**
      * Opens the tooltip and returns true.
      */
