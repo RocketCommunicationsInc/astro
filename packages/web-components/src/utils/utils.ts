@@ -58,14 +58,15 @@ export const renderHiddenInput = (
     name: string,
     value: string | undefined | null,
     disabled: boolean,
-    checked?: boolean
+    checked?: boolean,
+    secondInput?: boolean
 ) => {
     let input = container.querySelector(
         'input.aux-input'
     ) as HTMLInputElement | null
     if (always || hasShadowDom(container)) {
         if (checked || checked == undefined) {
-            if (!input) {
+            if (!input || (secondInput && input)) {
                 input = container.ownerDocument!.createElement('input')
                 input.type = 'hidden'
                 input.classList.add('aux-input')

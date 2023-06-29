@@ -370,8 +370,18 @@ export class RuxSlider implements FormFieldInterface {
             minVal,
             ticksOnly,
         } = this
-        //TODO: Update this to render (2?) hidden inputs when in dual range
         renderHiddenInput(true, el, name, JSON.stringify(value), disabled)
+        if (minVal !== undefined) {
+            renderHiddenInput(
+                true,
+                el,
+                'minVal',
+                JSON.stringify(minVal),
+                disabled,
+                undefined,
+                true
+            )
+        }
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
