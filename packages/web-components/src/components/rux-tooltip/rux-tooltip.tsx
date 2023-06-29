@@ -66,7 +66,7 @@ export class RuxTooltip {
     /**
      * The placement of the tooltip relative to it's slotted trigger element. Defaults to auto.
      */
-    @Prop() placement: ExtendedPlacement = 'auto'
+    @Prop({ reflect: true }) placement: ExtendedPlacement = 'auto'
 
     /**
      * Turns disableAutoUpdate on or off which makes the tooltip move to stay in view based on scroll. Defaults to false.
