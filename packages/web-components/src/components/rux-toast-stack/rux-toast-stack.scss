@@ -1,0 +1,29 @@
+:host {
+    position: fixed;
+    z-index: 100;
+    max-width: 100%;
+    max-height: 100%;
+    margin: var(--spacing-3);
+    margin-block-start: var(--spacing-0);
+    overflow: hidden;
+}
+
+:host([position='top-right']) {
+    top: 0;
+    right: 0;
+}
+
+:host([position='top-left']) {
+    top: 0;
+    left: 0;
+}
+
+:host([position='bottom-right']) {
+    bottom: 0;
+    right: 0;
+}
+
+:host([position='bottom-left']) {
+    bottom: 0;
+    left: 0;
+}

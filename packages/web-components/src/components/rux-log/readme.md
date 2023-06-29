@@ -76,10 +76,6 @@ For more advanced customization, RuxLog exposes the entire table element and eac
 <!-- Auto Generated Below -->
 
 
-## Overview
-
-A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the [Notification System](https://www.astrouxds.com/design-guidelines/notifications), Logs provide sorting and filtering function for examining events.
-
 ## Properties
 
 | Property   | Attribute  | Description                                                                                                                                                                                                                                                                                             | Type                  | Default     |
