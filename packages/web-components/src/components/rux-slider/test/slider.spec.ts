@@ -84,6 +84,7 @@ test.describe('Slider in a form', () => {
             <rux-slider name="disabled" id="slider-dis" disabled></rux-slider>
             <rux-slider name="ruxSliderTicks" id="ticks"></rux-slider>
             <rux-slider id="change-test" max="100" value="50"></rux-slider>
+            <rux-slider id="dual" max="100" value="80" min-val="40"></rux-slider>
             <button type="submit">submit</button>
         </form>
         <ul id="log"></ul>
@@ -121,6 +122,17 @@ test.describe('Slider in a form', () => {
         await expect(el.locator('input').first()).toHaveValue('50')
         await submit.click()
         await expect(log).not.toContainText('disabled:1')
+    })
+    test('it submits the correct default values for a dual range slider without interaction', async ({
+        page,
+    }) => {
+        const dual = page.locator('#dual')
+        const log = await page.locator('#log')
+        const submit = await page.locator('button')
+        await expect(dual.locator('input').first()).toHaveValue('40')
+        await expect(dual.locator('input').last()).toHaveValue('80')
+        await submit.click()
+        await expect(log).toContainText('dual')
     })
 })
 
