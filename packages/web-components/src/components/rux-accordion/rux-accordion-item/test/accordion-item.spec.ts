@@ -25,7 +25,7 @@ test.describe('Accordion Item reflection', () => {
     test('the expanded property reflects to an attribute', async ({ page }) => {
         const el = page.locator('rux-accordion-item')
         await el.evaluate((accordionItemEl) => {
-            ;(accordionItemEl as HTMLRuxAccordionElement).expanded = true
+            ;(accordionItemEl as HTMLRuxAccordionItemElement).expanded = true
         })
 
         await page.waitForChanges()
