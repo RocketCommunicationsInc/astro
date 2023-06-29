@@ -42,6 +42,21 @@ export const Default = (args) => {
 
 <ArgsTable of="rux-status" />
 
+## Types
+
+**Status**
+```
+ type Classification =
+    | 'cui'
+    | 'controlled'
+    | 'confidential'
+    | 'secret'
+    | 'top-secret'
+    | 'top-secret-sci'
+    | 'unclassified'
+```
+
+
 export const AllVariants = () => {
     return html`
 <style>
