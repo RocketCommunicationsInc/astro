@@ -107,6 +107,34 @@ A very basic pattern would look like:
 
 <ArgsTable of="rux-notification" />
 
+## Types
+
+**Status**
+```
+ type Classification =
+    | 'cui'
+    | 'controlled'
+    | 'confidential'
+    | 'secret'
+    | 'top-secret'
+    | 'top-secret-sci'
+    | 'unclassified'
+```
+
+**Status Symbol**
+
+```
+enum StatusSymbol {
+    CRITICAL = 'critical',
+    SERIOUS = 'serious',
+    CAUTION = 'caution',
+    NORMAL = 'normal',
+    STANDBY = 'standby',
+    OFF = 'off',
+}
+```
+
+
 ## Variants
 
 ### Auto Close
