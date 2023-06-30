@@ -32,7 +32,7 @@ A Pop Up provides users with a quick way to access common actions for a highligh
 export const Default = (args) => {
     return html`
 <div style="display: flex; width: 100%; justify-content: center; margin-top: 10%;">
-    <rux-pop-up open=${args.open}>
+    <rux-pop-up open=${args.open} placement=${args.placement} ?close-on-select=${args.closeOnSelect} ?disable-auto-update="${args.disableAutoUpdate} ?enable-animation-frame="${args.enableAnimationFrame}">
         <rux-icon icon="apps" slot="trigger"></rux-icon>
         <rux-menu>
             <rux-menu-item href="#">Menu Item 1</rux-menu-item>
@@ -49,7 +49,8 @@ export const Default = (args) => {
         args={{
             open: true,
             placement: 'auto',
-            closeOnSelect: false
+            closeOnSelect: false,
+            disableAutoUpdate: false
         }}
         name="Default"
     >
