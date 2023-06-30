@@ -12150,7 +12150,11 @@ export namespace Components {
          */
         "open": boolean;
         /**
-          * Changes the size of the banner to a small variant.
+          * Styles the input element size between small, and large. The default styling is large.
+         */
+        "size"?: 'small' | 'large';
+        /**
+          * Changes the size of the banner to a small variant. (Deprecated: use `size` prop instead)
          */
         "small": boolean;
         /**
@@ -32829,7 +32833,11 @@ declare namespace LocalJSX {
          */
         "open"?: boolean;
         /**
-          * Changes the size of the banner to a small variant.
+          * Styles the input element size between small, and large. The default styling is large.
+         */
+        "size"?: 'small' | 'large';
+        /**
+          * Changes the size of the banner to a small variant. (Deprecated: use `size` prop instead)
          */
         "small"?: boolean;
         /**

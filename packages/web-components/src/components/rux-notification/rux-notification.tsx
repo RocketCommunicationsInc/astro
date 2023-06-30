@@ -51,9 +51,14 @@ export class RuxNotification {
      */
     @Prop({ attribute: 'close-after', mutable: true }) closeAfter?: number
     /**
-     * Changes the size of the banner to a small variant.
+     * Changes the size of the banner to a small variant. (Deprecated: use `size` prop instead)
      */
     @Prop() small: boolean = false
+
+    /**
+     * Styles the input element size between small, and large. The default styling is large.
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'large'
 
     /**
      * Prevents the user from dismissing the notification. Hides the `actions` slot.
@@ -136,8 +141,10 @@ export class RuxNotification {
                     class={{
                         'rux-notification-banner': true,
                         'rux-notification-banner--open': this.open,
-                        'rux-notification-banner--small': this.small,
-                        'rux-notification-banner--large': !this.small,
+                        'rux-notification-banner--small':
+                            this.small || this.size === 'small',
+                        'rux-notification-banner--large':
+                            !this.small || this.size !== 'small',
                         'rux-notification-banner--caution':
                             this.status === StatusSymbol.CAUTION,
                         'rux-notification-banner--critical':
@@ -201,7 +208,11 @@ export class RuxNotification {
                                         onClick={() => this._onClick()}
                                         onKeyDown={(e) => this._onKeyPress(e)}
                                         icon="clear"
-                                        size={this.small ? '24px' : '32px'}
+                                        size={
+                                            this.small || this.size === 'small'
+                                                ? '24px'
+                                                : '32px'
+                                        }
                                         exportparts="icon"
                                     ></rux-icon>
                                 </slot>
