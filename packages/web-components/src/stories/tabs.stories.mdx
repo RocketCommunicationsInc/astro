@@ -1,6 +1,23 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
 
 <Meta
     title="Components/Tabs"
@@ -71,7 +88,7 @@ export const Default = (args) => {
     }
 </style>
 <div style="display: flex; flex-flow: column;">
-    <rux-tabs ?small="${args.small}" id="tab-set-id-1">
+    <rux-tabs size=${args.size} id="tab-set-id-1">
         <rux-tab id="tab-id-1">Tab 1</rux-tab>
         <rux-tab id="tab-id-2">Tab 2</rux-tab>
         <rux-tab ?disabled="${args.disabled}" id="tab-id-3"
@@ -109,7 +126,7 @@ export const Default = (args) => {
     <Story
         name="Default"
         args={{
-            small: false
+            
         }}
     >
         {Default.bind()}
@@ -124,7 +141,13 @@ export const Default = (args) => {
 
 ### Small
 
-The small property may be passed as a simple attribute on the Astro UXDS Tabs container element:
+<StyledDiv>
+    <div>Warning: The `small` prop is deprecated.</div>
+    <p class="banner-text">
+        Instead, use `size="small"`
+    </p>
+</StyledDiv>
+Tabs can be given a smaller size suitable for more limited-space uses by setting `size="small"`. 
 
 export const Small = (args) => {
     return html`
@@ -132,7 +155,7 @@ export const Small = (args) => {
     <div
         style="border: rgba(255,255,255, .25) dashed 1px; margin: 1vw 1vw 0; padding: 2px;"
     >
-        <rux-tabs ?small="${args.small}" id="tab-set-id-2">
+        <rux-tabs size=${args.size} id="tab-set-id-2">
             <rux-tab id="tab-id-2-1">Tab 1</rux-tab>
             <rux-tab id="tab-id-2-2">Tab 2</rux-tab>
             <rux-tab id="tab-id-2-3" disabled
@@ -165,7 +188,7 @@ export const Small = (args) => {
     <Story
         name="Small"
         args={{
-            small: true,
+            size: "small",
         }}
     >
         {Small.bind()}

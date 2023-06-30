@@ -31,9 +31,14 @@ export class RuxTab {
     @Prop({ reflect: true }) disabled: boolean = false
 
     /**
-     * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
+     * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.(Deprecated: use `size` prop instead)
      */
     @Prop() small: boolean = false
+
+    /**
+     * Sets the tab element size `small` or `large. The default styling is large. Use `small` when space is limited.
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'large'
 
     @Element() el!: HTMLRuxTabElement
 
@@ -68,8 +73,8 @@ export class RuxTab {
                     class={{
                         'rux-tab': true,
                         'rux-tab--selected': this.selected,
-                        'rux-tab--small': this.small,
-                        'rux-tab--large': !this.small,
+                        'rux-tab--small': this.small || this.size === 'small',
+                        'rux-tab--large': !this.small || this.size !== 'small',
                         'rux-tab--disabled': this.disabled,
                     }}
                     role="tab"

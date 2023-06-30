@@ -32,9 +32,14 @@ export class RuxTabs {
     @State() _tabs: Array<HTMLRuxTabElement> = []
 
     /**
-     * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
+     * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses. (Deprecated: use `size` prop instead)
      */
     @Prop() small?: boolean
+
+    /**
+     * Sets the tab element size `small` or `large. The default styling is large. Use `small` when space is limited.
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'large'
 
     // This allows us to hear the selected prop change on tab.
     // Once we hear it, we need to update the related panels visibilty accordingly.
@@ -82,6 +87,22 @@ export class RuxTabs {
             this._tabs.forEach((tab) => {
                 if (tab.hasAttribute('small')) {
                     tab.removeAttribute('small')
+                }
+            })
+        }
+    }
+
+    @Watch('size')
+    handleSizeChange() {
+        //determine whether or not to pass size attr to child tabs
+        if (this.size) {
+            this._tabs.forEach((tab) =>
+                tab.setAttribute('size', `${this.size}`)
+            )
+        } else {
+            this._tabs.forEach((tab) => {
+                if (tab.hasAttribute('size')) {
+                    tab.removeAttribute('size')
                 }
             })
         }
