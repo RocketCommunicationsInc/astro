@@ -37,7 +37,7 @@ export class RuxTabs {
     @Prop() small?: boolean
 
     /**
-     * Sets the tab element size `small` or `large. The default styling is large. Use `small` when space is limited.
+     * Sets the tab element size. The default styling is large. Use `small` when space is limited.
      */
     @Prop({ reflect: true }) size?: 'small' | 'large'
 
@@ -95,6 +95,7 @@ export class RuxTabs {
     @Watch('size')
     handleSizeChange() {
         //determine whether or not to pass size attr to child tabs
+        console.log(this.size)
         if (this.size) {
             this._tabs.forEach((tab) =>
                 tab.setAttribute('size', `${this.size}`)

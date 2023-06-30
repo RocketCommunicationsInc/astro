@@ -155,7 +155,7 @@ export const Small = (args) => {
     <div
         style="border: rgba(255,255,255, .25) dashed 1px; margin: 1vw 1vw 0; padding: 2px;"
     >
-        <rux-tabs size=${args.size} id="tab-set-id-2">
+        <rux-tabs ?size="${args.size}" ?small="${args.small}"id="tab-set-id-2">
             <rux-tab id="tab-id-2-1">Tab 1</rux-tab>
             <rux-tab id="tab-id-2-2">Tab 2</rux-tab>
             <rux-tab id="tab-id-2-3" disabled
@@ -189,6 +189,7 @@ export const Small = (args) => {
         name="Small"
         args={{
             size: "small",
+            small: true
         }}
     >
         {Small.bind()}
