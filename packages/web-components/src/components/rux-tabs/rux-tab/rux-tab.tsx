@@ -52,6 +52,12 @@ export class RuxTab {
         if (this.el?.parentElement?.getAttributeNode('small')) {
             this.el.setAttribute('small', '')
         }
+
+        //handle size on init
+        if (this.el?.parentElement?.getAttributeNode('size')) {
+            const size = this.el?.parentElement?.getAttribute('size')
+            this.el.setAttribute('size', `${size}`)
+        }
     }
 
     @Watch('selected')

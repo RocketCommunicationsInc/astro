@@ -95,7 +95,6 @@ export class RuxTabs {
     @Watch('size')
     handleSizeChange() {
         //determine whether or not to pass size attr to child tabs
-        console.log(this.size)
         if (this.size) {
             this._tabs.forEach((tab) =>
                 tab.setAttribute('size', `${this.size}`)
