@@ -1,4 +1,3 @@
-// @ts-nocheck
 
 import * as d from './proxies';
 
@@ -1114,6 +1113,8 @@ export const DIRECTIVES = [
   d.RuxTextarea,
   d.RuxTimeRegion,
   d.RuxTimeline,
+  d.RuxToast,
+  d.RuxToastStack,
   d.RuxTooltip,
   d.RuxTrack,
   d.RuxTree,

@@ -9,6 +9,7 @@ import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
+import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
 export namespace Components {
     interface RuxAccordion {
         /**
@@ -12113,6 +12114,10 @@ export namespace Components {
          */
         "notifications": number;
         /**
+          * The size of a chosen Astro icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size": string;
+        /**
           * Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby`, and `off`.
          */
         "status": Status;
@@ -12644,6 +12649,30 @@ export namespace Components {
          */
         "zoom": number;
     }
+    interface RuxToast {
+        /**
+          * If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
+         */
+        "closeAfter"?: number;
+        /**
+          * Prevents the user from dismissing the notification. Hides the close icon.
+         */
+        "hideClose": boolean;
+        /**
+          * Message for the toast.
+         */
+        "message": string;
+    }
+    interface RuxToastStack {
+        /**
+          * adds an individual toast to the stack with the set props passed in as an object
+         */
+        "addToast": (props: { [x: string]: any; hasOwnProperty: (arg0: string) => any; }) => Promise<void>;
+        /**
+          * position of toast stack in viewport
+         */
+        "position": ToastStackPosition;
+    }
     interface RuxTooltip {
         /**
           * How long it takes the tooltip to appear in milliseconds, default = 800, Overrides the css custom property --delay.
@@ -12804,6 +12833,10 @@ export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
+}
+export interface RuxToastCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxToastElement;
 }
 export interface RuxTooltipCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -19498,6 +19531,18 @@ declare global {
         prototype: HTMLRuxTimelineElement;
         new (): HTMLRuxTimelineElement;
     };
+    interface HTMLRuxToastElement extends Components.RuxToast, HTMLStencilElement {
+    }
+    var HTMLRuxToastElement: {
+        prototype: HTMLRuxToastElement;
+        new (): HTMLRuxToastElement;
+    };
+    interface HTMLRuxToastStackElement extends Components.RuxToastStack, HTMLStencilElement {
+    }
+    var HTMLRuxToastStackElement: {
+        prototype: HTMLRuxToastStackElement;
+        new (): HTMLRuxToastStackElement;
+    };
     interface HTMLRuxTooltipElement extends Components.RuxTooltip, HTMLStencilElement {
     }
     var HTMLRuxTooltipElement: {
@@ -20637,6 +20682,8 @@ declare global {
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
+        "rux-toast": HTMLRuxToastElement;
+        "rux-toast-stack": HTMLRuxToastStackElement;
         "rux-tooltip": HTMLRuxTooltipElement;
         "rux-track": HTMLRuxTrackElement;
         "rux-tree": HTMLRuxTreeElement;
@@ -32798,6 +32845,10 @@ declare namespace LocalJSX {
          */
         "notifications"?: number;
         /**
+          * The size of a chosen Astro icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+         */
+        "size"?: string;
+        /**
           * Styles the icon according to the Astro Status colors. Valid options are the Astro statuses `critical`, `serious`, `caution`, `normal`, `standby`, and `off`.
          */
         "status"?: Status;
@@ -33401,6 +33452,34 @@ declare namespace LocalJSX {
           * The timeline's zoom level.
          */
         "zoom"?: number;
+    }
+    interface RuxToast {
+        /**
+          * If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
+         */
+        "closeAfter"?: number;
+        /**
+          * Prevents the user from dismissing the notification. Hides the close icon.
+         */
+        "hideClose"?: boolean;
+        /**
+          * Message for the toast.
+         */
+        "message"?: string;
+        /**
+          * Fires when a toast is closed
+         */
+        "onRuxtoastclosed"?: (event: RuxToastCustomEvent<boolean>) => void;
+        /**
+          * Fires when a toast is opened
+         */
+        "onRuxtoastopen"?: (event: RuxToastCustomEvent<boolean>) => void;
+    }
+    interface RuxToastStack {
+        /**
+          * position of toast stack in viewport
+         */
+        "position"?: ToastStackPosition;
     }
     interface RuxTooltip {
         /**
@@ -34587,6 +34666,8 @@ declare namespace LocalJSX {
         "rux-textarea": RuxTextarea;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
+        "rux-toast": RuxToast;
+        "rux-toast-stack": RuxToastStack;
         "rux-tooltip": RuxTooltip;
         "rux-track": RuxTrack;
         "rux-tree": RuxTree;
@@ -35711,6 +35792,8 @@ declare module "@stencil/core" {
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
+            "rux-toast": LocalJSX.RuxToast & JSXBase.HTMLAttributes<HTMLRuxToastElement>;
+            "rux-toast-stack": LocalJSX.RuxToastStack & JSXBase.HTMLAttributes<HTMLRuxToastStackElement>;
             "rux-tooltip": LocalJSX.RuxTooltip & JSXBase.HTMLAttributes<HTMLRuxTooltipElement>;
             "rux-track": LocalJSX.RuxTrack & JSXBase.HTMLAttributes<HTMLRuxTrackElement>;
             "rux-tree": LocalJSX.RuxTree & JSXBase.HTMLAttributes<HTMLRuxTreeElement>;

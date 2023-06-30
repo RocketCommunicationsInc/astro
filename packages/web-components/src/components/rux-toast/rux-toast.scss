@@ -1,0 +1,48 @@
+:host {
+    display: contents;
+    /**
+  * @prop --height: the Toast's height
+  */
+    --height: auto;
+}
+
+.rux-toast {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    width: calc((var(--spacing-20) * 3) + (var(--spacing-10))); //280px;
+    border-radius: var(--radius-base);
+    background: var(--color-background-base-default);
+    padding: calc(var(--spacing-4) + var(--spacing-050)) var(--spacing-2)
+        calc(var(--spacing-4) + var(--spacing-050)) var(--spacing-4); // 18px 8px 18px 16px
+    margin-block-start: var(--spacing-3);
+    min-height: calc(var(--spacing-14) + var(--spacing-1)); //60px;
+    height: var(--height);
+    border: var(--border-width-xs) solid var(--color-border-interactive-default);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--line-height-base);
+    opacity: inherit;
+}
+
+.rux-toast__actions {
+    margin-left: auto;
+    margin-bottom: auto;
+    display: flex;
+}
+
+.rux-toast__close {
+    &:focus-visible {
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+}
+
+.rux-toast__close {
+    cursor: pointer;
+}

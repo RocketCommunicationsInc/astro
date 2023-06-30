@@ -141,6 +141,7 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
  - [rux-monitoring-icon](../rux-monitoring-icon)
  - [rux-notification](../rux-notification)
  - [rux-push-button](../rux-push-button)
+ - [rux-toast](../rux-toast)
 
 ### Graph
 ```mermaid
@@ -153,6 +154,7 @@ graph TD;
   rux-monitoring-icon --> rux-icon
   rux-notification --> rux-icon
   rux-push-button --> rux-icon
+  rux-toast --> rux-icon
   style rux-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
