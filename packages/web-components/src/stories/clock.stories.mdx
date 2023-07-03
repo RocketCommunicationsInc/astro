@@ -1,6 +1,23 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
 
 <Meta
     title="Components/Clock"
@@ -26,7 +43,7 @@ export const Default = (args) => {
         ?hide-timezone="${args.hideTimezone}"
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
+        size="${args.size}"
         date-in="${args.dateIn}"
         ?static="${args.static}"
     ></rux-clock>
@@ -43,7 +60,6 @@ export const Default = (args) => {
             hideDate: false,
             hideLabels: false,
             hideTimezone: false,
-            small: false,
             timezone: "UTC",
             dateIn: "",
             static: false
@@ -74,7 +90,7 @@ export const ClockWithAosLos = (args) => {
         ?hide-timezone="${args.hideTimezone}"
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
+        size="${args.size}"
         date-in="${args.dateIn}"
     ></rux-clock>
 </div>
@@ -89,7 +105,6 @@ export const ClockWithAosLos = (args) => {
             hideDate: false,
             hideLabels: false,
             hideTimezone: false,
-            small: false,
             timezone: "UTC",
             dateIn: ''
         }}
@@ -115,7 +130,7 @@ export const DateIn = (args) => {
         ?hide-timezone="${args.hideTimezone}"
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
+        size="${args.size}"
     ></rux-clock>
 </div>
     `
@@ -129,7 +144,6 @@ export const DateIn = (args) => {
             hideDate: false,
             hideLabels: false,
             hideTimezone: false,
-            small: false,
             timezone: "UTC",
             dateIn: "2022-04-22T23:59:55.000Z"
         }}
@@ -141,6 +155,13 @@ export const DateIn = (args) => {
 
 ### Small
 
+<StyledDiv>
+    <div>Warning: The `small` prop is deprecated.</div>
+    <p class="banner-text">
+        Instead, use size="small"
+    </p>
+</StyledDiv>
+
 export const Small = (args) => {
     return html`
 <div style="padding: 10%; display: flex; justify-content: center;">
@@ -151,7 +172,7 @@ export const Small = (args) => {
         ?hide-timezone="${args.hideTimezone}"
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
+        size="${args.size}"
     ></rux-clock>
 </div>
     `
@@ -165,7 +186,7 @@ export const Small = (args) => {
             hideDate: false,
             hideLabels: false,
             hideTimezone: false,
-            small: true,
+            size: "small",
             timezone: "UTC"
         }}
         name="Small"
@@ -189,7 +210,7 @@ export const Static = (args) => {
         ?hide-timezone="${args.hideTimezone}"
         ?hide-date="${args.hideDate}"
         ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
+        size="${args.size}"
         ?static="${args.static}"
     ></rux-clock>
 </div>
@@ -204,7 +225,6 @@ export const Static = (args) => {
             hideDate: false,
             hideLabels: false,
             hideTimezone: false,
-            small: false,
             static: true,
             timezone: "UTC", 
             dateIn: "2022-04-22T23:59:55.000Z"

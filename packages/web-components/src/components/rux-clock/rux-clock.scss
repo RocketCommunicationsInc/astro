@@ -46,7 +46,8 @@
     padding: var(--spacing-0) var(--spacing-3);
 }
 
-:host([small]) .rux-clock__segment__value {
+:host([small]) .rux-clock__segment__value,
+:host([size='small']) .rux-clock__segment__value {
     height: var(--spacing-10);
     padding: var(--spacing-1) var(--spacing-3);
     font-size: 1.15rem;

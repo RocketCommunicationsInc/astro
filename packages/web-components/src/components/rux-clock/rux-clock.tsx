@@ -91,9 +91,14 @@ export class RuxClock {
     }
 
     /**
-     * Applies a smaller clock style.
+     * Applies a smaller clock style. (Deprecated, use `size="small"` instead)
      */
     @Prop({ reflect: true }) small: boolean = false
+
+    /**
+     * Sets the clock element size `small` or `large. The default styling is large.
+     */
+    @Prop({ reflect: true }) size?: 'small' | 'large'
 
     @Watch('timezone')
     timezoneChanged() {
