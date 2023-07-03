@@ -1,18 +1,31 @@
 # @astrouxds/angular
 
+## 7.14.0
+
+### Minor Changes
+
+- 1398861b: Creation of new components, rux-toast and rux-toast-stack to manage the positioning of the toasts.
+
+### Patch Changes
+
+- Updated dependencies [964ac9dd]
+- Updated dependencies [1398861b]
+- Updated dependencies [97197e24]
+  - @astrouxds/astro-web-components@7.14.0
+
 ## 7.13.0
 
 ### Minor Changes
 
 #### Accordion Item
 
--   Added `content` CSS Shadow Part
+- Added `content` CSS Shadow Part
 
 ### Patch Changes
 
 #### Textarea
 
--   Fixes `rows` prop not working correctly
+- Fixes `rows` prop not working correctly
 
 ## 7.12.0
 

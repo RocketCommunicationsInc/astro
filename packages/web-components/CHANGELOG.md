@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 7.14.0
+
+### Minor Changes
+
+-   1398861b: Creation of new components, rux-toast and rux-toast-stack to manage the positioning of the toasts.
+-   97197e24: Adding a watcher to the placement prop so it updates.
+
+### Patch Changes
+
+-   964ac9dd: feat(rux-monitoring-icon) add size prop which allows users to change the icon size
+
 ## 7.13.0
 
 ### Minor Changes
