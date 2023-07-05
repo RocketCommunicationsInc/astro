@@ -10,7 +10,11 @@ import {
     State,
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
-import { hasSlot, renderHiddenInput } from '../../utils/utils'
+import {
+    hasSlot,
+    renderHiddenInput,
+    renderHiddenSliderInput,
+} from '../../utils/utils'
 
 let id = 0
 
@@ -372,14 +376,12 @@ export class RuxSlider implements FormFieldInterface {
         } = this
         renderHiddenInput(true, el, name, JSON.stringify(value), disabled)
         if (minVal !== undefined) {
-            renderHiddenInput(
+            renderHiddenSliderInput(
                 true,
                 el,
                 'minVal',
                 JSON.stringify(minVal),
-                disabled,
-                undefined,
-                true
+                disabled
             )
         }
         return (

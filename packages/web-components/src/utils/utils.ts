@@ -58,15 +58,14 @@ export const renderHiddenInput = (
     name: string,
     value: string | undefined | null,
     disabled: boolean,
-    checked?: boolean,
-    secondInput?: boolean
+    checked?: boolean
 ) => {
     let input = container.querySelector(
         'input.aux-input'
     ) as HTMLInputElement | null
     if (always || hasShadowDom(container)) {
         if (checked || checked == undefined) {
-            if (!input || (secondInput && input)) {
+            if (!input) {
                 input = container.ownerDocument!.createElement('input')
                 input.type = 'hidden'
                 input.classList.add('aux-input')
@@ -79,6 +78,36 @@ export const renderHiddenInput = (
             if (input) {
                 input.remove()
             }
+        }
+    }
+}
+
+export const renderHiddenSliderInput = (
+    always: boolean,
+    container: HTMLElement,
+    name: string,
+    value: string,
+    disabled: boolean
+) => {
+    let input = container.querySelector(
+        'input[name="minVal"]'
+    ) as HTMLInputElement | null
+    if (input) {
+        //&& input.parentElement === container
+        //update input values
+        input.value = value
+        input.disabled = disabled
+        input.name = name
+    } else {
+        if (always || hasShadowDom(container)) {
+            // doesn't exist, create it
+            input = container.ownerDocument!.createElement('input')
+            input.type = 'hidden'
+            input.classList.add('aux-input')
+            input.value = value || ''
+            input.disabled = disabled
+            input.name = name
+            container.appendChild(input)
         }
     }
 }
