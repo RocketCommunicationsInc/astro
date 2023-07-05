@@ -44,4 +44,8 @@
     .today-clear {
         margin-right: 3rem;
     }
+    .button-group {
+        display: flex;
+        margin: var(--spacing-2);
+    }
 }

@@ -7,9 +7,11 @@
 
 ## Properties
 
-| Property | Attribute | Description                                      | Type                  | Default     |
-| -------- | --------- | ------------------------------------------------ | --------------------- | ----------- |
-| `dateIn` | `date-in` | Option to give the calendar a specfic month/year | `string \| undefined` | `undefined` |
+| Property | Attribute | Description                                                             | Type                            | Default     |
+| -------- | --------- | ----------------------------------------------------------------------- | ------------------------------- | ----------- |
+| `dateIn` | `date-in` | Option to give the calendar a specfic month/year                        | `number \| string \| undefined` | `undefined` |
+| `max`    | `max`     | Max date that the calendar will go to. Needs to be a valid date string. | `string \| undefined`           | `undefined` |
+| `min`    | `min`     | Min date that the calendar will go to. Needs to be a valid date string. | `string \| undefined`           | `undefined` |
 
 
 ## Dependencies

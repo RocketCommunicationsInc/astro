@@ -31,7 +31,6 @@
 - [rux-pop-up](../rux-pop-up)
 - [rux-icon](../rux-icon)
 - [rux-calendar](../rux-calendar)
-- [rux-button-group](../rux-button-group)
 - [rux-button](../rux-button)
 
 ### Graph
@@ -40,7 +39,6 @@ graph TD;
   rux-datepicker --> rux-pop-up
   rux-datepicker --> rux-icon
   rux-datepicker --> rux-calendar
-  rux-datepicker --> rux-button-group
   rux-datepicker --> rux-button
   rux-calendar --> rux-icon
   rux-calendar --> rux-select

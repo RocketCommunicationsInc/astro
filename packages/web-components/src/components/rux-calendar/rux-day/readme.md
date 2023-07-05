@@ -5,6 +5,27 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property   | Attribute  | Description | Type      | Default |
+| ---------- | ---------- | ----------- | --------- | ------- |
+| `selected` | `selected` |             | `boolean` | `false` |
+
+
+## Events
+
+| Event            | Description | Type                             |
+| ---------------- | ----------- | -------------------------------- |
+| `ruxdayselected` |             | `CustomEvent<HTMLRuxDayElement>` |
+
+
+## Shadow Parts
+
+| Part       | Description |
+| ---------- | ----------- |
+| `"button"` |             |
+
+
 ## Dependencies
 
 ### Used by

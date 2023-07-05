@@ -77,12 +77,12 @@ export class RuxDatepicker {
                                             Clear
                                         </rux-button>
                                     </div>
-                                    <rux-button-group hAlign="right">
+                                    <div class="button-group">
                                         <rux-button secondary>
                                             Cancel
                                         </rux-button>
                                         <rux-button>Apply</rux-button>
-                                    </rux-button-group>
+                                    </div>
                                 </div>
                             </rux-calendar>
                         </rux-pop-up>

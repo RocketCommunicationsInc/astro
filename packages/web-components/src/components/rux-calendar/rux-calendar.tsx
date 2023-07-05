@@ -108,7 +108,10 @@ export class RuxCalendar {
 
     connectedCallback() {
         console.log('CC Fire')
-
+        this._date = this.dateIn
+            ? utcToZonedTime(new Date(this.dateIn), 'UTC')
+            : utcToZonedTime(new Date(Date.now()), 'UTC')
+        console.log(this._date, 'DATE')
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
         this._handleMonthChange = this._handleMonthChange.bind(this)
@@ -122,6 +125,11 @@ export class RuxCalendar {
         }
         this._handleYears(this._maxDate, this._minDate)
     }
+
+    componentWillRender() {
+        console.log('will render')
+        console.log(this._date, 'date in WR')
+    }
     componentDidLoad() {
         // attach event listeners to back and forward month arrows
         this.el
@@ -134,6 +142,7 @@ export class RuxCalendar {
             ?.addEventListener('click', () => {
                 this._handleForwardArrow()
             })
+        // console.log(this._date)
     }
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
     //? what kind of side effects can this have? What other times will componentWillUpdate fire?
