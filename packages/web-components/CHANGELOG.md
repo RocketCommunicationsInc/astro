@@ -1,5 +1,27 @@
 # @astrouxds/astro-web-components
 
+## 7.14.0
+
+### Minor Changes
+
+#### Monitoring Icon
+
+-   Added size prop to change icon size
+
+#### Toast
+
+-   Created new `rux-toast` component
+
+#### Toast Stack
+
+-   Created new `rux-toast-stack` component
+
+### Patch Changes
+
+#### Tooltip
+
+-   Fixed an issue where the placement prop wouldn't update correctly
+
 ## 7.13.0
 
 ### Minor Changes
