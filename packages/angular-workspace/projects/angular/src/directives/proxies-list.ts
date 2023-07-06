@@ -1,3 +1,4 @@
+// @ts-nocheck
 
 import * as d from './proxies';
 
