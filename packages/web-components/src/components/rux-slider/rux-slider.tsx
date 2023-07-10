@@ -318,7 +318,6 @@ export class RuxSlider implements FormFieldInterface {
         // get the percent of the min and max value for comparison
         const minValPercent = Math.round(this.minVal)
         const maxValPercent = Math.round(this.value)
-        console.log(minValPercent, maxValPercent)
 
         //if click happens between the thumbs, ignore it. //* Might be changed in future
         if (
