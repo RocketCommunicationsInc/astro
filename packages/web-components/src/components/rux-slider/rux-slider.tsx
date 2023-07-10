@@ -164,7 +164,8 @@ export class RuxSlider implements FormFieldInterface {
     @Watch('step')
     handleStep() {
         // Value needs to be a multiple of step, otherwise slider begins to look wrong
-        this.value = this._closestMultiple(this.value, this.step)
+        this.value = this._closestMultiple(this.value)
+        if (this.minVal) this.minVal = this._closestMultiple(this.minVal)
     }
 
     get hasLabel() {
@@ -174,18 +175,19 @@ export class RuxSlider implements FormFieldInterface {
     /**
      * Returns the closest multiple of two given numbers.
      */
-    private _closestMultiple(n: number, x: number) {
-        if (x > n) return x
-        n = n + x / 2
-        n = n - (n % x)
-        return n
+    private _closestMultiple(x: number) {
+        // if (x > n) return x
+        // n = n + x / 2
+        // n = n - (n % x)
+        // return n
+        return Math.round(x / this.step) * this.step
     }
 
     private _updateValue() {
         this._setValuePercent()
     }
 
-    //Sets the --slider-value-percent CSS var. Also contor
+    //Sets the --slider-value-percent CSS var.
     private _setValuePercent() {
         //if minVal is being used, we're in dual range mode.
         if (this.minVal !== undefined) {
@@ -308,11 +310,15 @@ export class RuxSlider implements FormFieldInterface {
         const clickPosition = e.clientX - sliderBounds.left
 
         // format clickPosition
-        const percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
+        let percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
+        percentFromLeft = this._closestMultiple(percentFromLeft)
 
+        //account for step
+        this.handleStep()
         // get the percent of the min and max value for comparison
         const minValPercent = Math.round(this.minVal)
         const maxValPercent = Math.round(this.value)
+        console.log(minValPercent, maxValPercent)
 
         //if click happens between the thumbs, ignore it. //* Might be changed in future
         if (
