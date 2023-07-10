@@ -1114,6 +1114,8 @@ export const DIRECTIVES = [
   d.RuxTextarea,
   d.RuxTimeRegion,
   d.RuxTimeline,
+  d.RuxToast,
+  d.RuxToastStack,
   d.RuxTooltip,
   d.RuxTrack,
   d.RuxTree,

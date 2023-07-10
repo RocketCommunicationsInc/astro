@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+        <!-- <script type="module" src="https://unpkg.com/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"></script> -->
+        <style>
+            rux-card {
+                margin-inline: 0.5rem;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    </head>
+
+    <body>
+        <rux-global-status-bar
+            include-icon="true"
+            app-domain="Astro"
+            app-name="Dashboard"
+            app-version="4.0 Alpha"
+            menu-icon="apps"
+            username=""
+            app-state-color=""
+            app-state=""
+        >
+        </rux-global-status-bar>
+        <rux-container>
+            <div slot="header">A sample container</div>
+            <div style="display: flex">
+                <rux-card>
+                    <div slot="header">Card</div>
+                    Sample.
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Card</div>
+                    Sample.
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Card</div>
+                    Sample.
+                </rux-card>
+            </div>
+            <div slot="footer">
+                <rux-button id="new-stack-button"
+                    >Create New Stack and Add Toast</rux-button
+                >
+                <rux-button id="existing-stack-button"
+                    >Add Toast To Existing Stack</rux-button
+                >
+            </div>
+        </rux-container>
+
+        <rux-toast-stack id="existing-stack">
+            <rux-toast>I am a toast that lives in the stack</rux-toast>
+        </rux-toast-stack>
+
+        <script>
+            const body = document.querySelector('body')
+            const remove = document.getElementById('remove')
+            const newStackButton = document.getElementById('new-stack-button')
+            const existingStackButton = document.getElementById(
+                'existing-stack-button'
+            )
+            let toastNumber = 1
+
+            function addToastToNewStack(message, closeAfter, hideClose) {
+                const body = document.body
+                let stack = document.getElementById('new-stack')
+
+                if (!closeAfter) closeAfter = null
+                if (!hideClose) hideClose = false
+
+                if (!stack) {
+                    stack = document.createElement('rux-toast-stack')
+                    stack.position = 'top-left'
+                    stack.id = 'new-stack'
+                    body.appendChild(stack)
+                }
+
+                stack.addToast({
+                    message: message,
+                    hideClose: hideClose,
+                    closeAfter: closeAfter,
+                })
+            }
+
+            function addToastToExistingStack(message, closeAfter, hideClose) {
+                let stack = document.getElementById('existing-stack')
+
+                if (!closeAfter) closeAfter = null
+                if (!hideClose) hideClose = false
+
+                if (!stack) return
+
+                stack.addToast({
+                    message: message,
+                    hideClose: hideClose,
+                    closeAfter: closeAfter,
+                })
+            }
+
+            newStackButton.addEventListener('click', () => {
+                addToastToNewStack('new toast, new stack')
+            })
+            existingStackButton.addEventListener('click', () => {
+                addToastToExistingStack('new toast, existing stack')
+            })
+        </script>
+    </body>
+</html>

@@ -1,4 +1,10 @@
 {
-  "packages": ["packages/*", "packages/angular-workspace/projects/angular"],
+  "packages": [
+    "packages/*",
+    "packages/angular-workspace/projects/angular",
+    "packages/framework-testing/astro-vue",
+    "packages/framework-testing/astro-angular",
+    "packages/framework-testing/astro-react"
+  ],
   "version": "6.1.0"
 }

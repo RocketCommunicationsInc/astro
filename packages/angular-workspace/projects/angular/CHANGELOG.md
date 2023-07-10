@@ -1,27 +1,88 @@
 # @astrouxds/angular
 
+## 7.14.0
+
+### Minor Changes
+
+#### Monitoring Icon
+
+-   Added size prop to change icon size
+
+#### Toast
+
+-   Created new `rux-toast` component
+
+#### Toast Stack
+
+-   Created new `rux-toast-stack` component
+
+### Patch Changes
+
+#### Tooltip
+
+-   Fixed an issue where the placement prop wouldn't update correctly
+
+## 7.13.0
+
+### Minor Changes
+
+#### Accordion Item
+
+- Added `content` CSS Shadow Part
+
+### Patch Changes
+
+#### Textarea
+
+- Fixes `rows` prop not working correctly
+
+## 7.12.0
+
+### Minor Changes
+
+#### Button Group
+
+- Button Group is now deprecated. Instead, create your own group using `display: flex` and our `--spacing-2` design token.
+
+#### Log
+
+- Adjusted the height of log's rows to be 32px
+
+#### Tree Node
+
+- Adjusted the height of the node to be 32px
+
+### Patch Changes
+
+#### Dialog
+
+- Removed rux-button-group internally. You may remove importing RuxButtonGroup
+
+#### Log
+
+- Search input now updates when filter is updated programatically
+
 ## 7.11.0
 
 ### Minor Changes
 
 #### Core
 
--   Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
+- Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
 
 ### Patch Changes
 
 #### Input
 
--   Password show/hide button is no longer visible when type does not equal password
+- Password show/hide button is no longer visible when type does not equal password
 
 #### Progress
 
--   Fixed an issue where max would change to equal value if value increased passed max
+- Fixed an issue where max would change to equal value if value increased passed max
 
 #### Segmented Button
 
--   Fixed an issue with programatically selecting segments
-
+- Fixed an issue with programatically selecting segments
 
 ## 7.10.0
 

@@ -187,7 +187,7 @@ test.describe('Tooltip', async () => {
         await expect(ruxTooltip).not.toHaveAttribute('open', '')
 
         //act
-        await ruxTooltip.evaluate((el) => {
+        await ruxTooltip.evaluate((el: HTMLRuxTooltipElement) => {
             el.show()
         })
 
@@ -208,7 +208,7 @@ test.describe('Tooltip', async () => {
         await expect(ruxTooltip).toHaveAttribute('open', '')
 
         //act
-        await ruxTooltip.evaluate((el) => {
+        await ruxTooltip.evaluate((el: HTMLRuxTooltipElement) => {
             el.hide()
         })
 
@@ -269,6 +269,21 @@ test.describe('Tooltip', async () => {
 
         //assert
         await expect(ruxTooltip).toHaveAttribute('placement', 'top')
+    })
+
+    test('placement attribute reflects', async ({ page }) => {
+        const template = `
+            <rux-tooltip message="This is the tooltip">
+              <rux-button id="trigger">Trigger</rux-button>
+            </rux-tooltip>
+            `
+        await page.setContent(template)
+
+        //arrange
+        const ruxTooltip = page.locator('rux-tooltip')
+
+        //assert
+        await expect(ruxTooltip).toHaveAttribute('placement', 'auto')
     })
 
     test('open attribute reflects', async ({ page }) => {
