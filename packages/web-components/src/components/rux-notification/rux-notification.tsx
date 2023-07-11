@@ -56,9 +56,9 @@ export class RuxNotification {
     @Prop() small: boolean = false
 
     /**
-     * Styles the input element size between small, and large. The default styling is large.
+     * Styles the input element size between small, and medium. The default styling is medium.
      */
-    @Prop({ reflect: true }) size?: 'small' | 'large'
+    @Prop({ reflect: true }) size?: 'small' | 'medium'
 
     /**
      * Prevents the user from dismissing the notification. Hides the `actions` slot.

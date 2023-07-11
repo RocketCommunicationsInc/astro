@@ -37,9 +37,9 @@ export class RuxTabs {
     @Prop() small?: boolean
 
     /**
-     * Sets the tab element size. The default styling is large. Use `small` when space is limited.
+     * Sets the tab element size. The default styling is medium. Use `small` when space is limited.
      */
-    @Prop({ reflect: true }) size?: 'small' | 'large'
+    @Prop({ reflect: true }) size?: 'small' | 'medium'
 
     // This allows us to hear the selected prop change on tab.
     // Once we hear it, we need to update the related panels visibilty accordingly.

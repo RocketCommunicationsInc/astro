@@ -36,9 +36,9 @@ export class RuxTab {
     @Prop() small: boolean = false
 
     /**
-     * Sets the tab element size `small` or `large. The default styling is large. Use `small` when space is limited.
+     * Sets the tab element size `small` or `medium`. The default styling is medium. Use `small` when space is limited.
      */
-    @Prop({ reflect: true }) size?: 'small' | 'large'
+    @Prop({ reflect: true }) size?: 'small' | 'medium'
 
     @Element() el!: HTMLRuxTabElement
 
