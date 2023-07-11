@@ -83,7 +83,7 @@ label {
     }
 }
 
-.rux-select:not(.rux-select--multiple):not(.rux-select--borderless) {
+.rux-select:not(.rux-select--multiple):not(.rux-select--inline) {
     background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6875 14.6375L14.925 17.875C15.4125 18.3625 16.2 18.3625 16.6875 17.875L19.925 14.6375C20.7125 13.85 20.15 12.5 19.0375 12.5H12.5625C11.45 12.5 10.9 13.85 11.6875 14.6375Z' fill='%234DACFF'/%3E%3C/svg%3E%0A"),
         linear-gradient(
             to left,
@@ -137,17 +137,15 @@ label {
         padding: var(--spacing-3) var(--spacing-2); //12px 8px
         padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
-    &--borderless {
+    &--inline:not(.rux-select--multiple) {
+        color: var(--color-text-primary);
+        background: transparent;
         border: 1px solid transparent;
-        background-image: url("data:image/svg+xml,%3Csvg width='31' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6875 14.6375L14.925 17.875C15.4125 18.3625 16.2 18.3625 16.6875 17.875L19.925 14.6375C20.7125 13.85 20.15 12.5 19.0375 12.5H12.5625C11.45 12.5 10.9 13.85 11.6875 14.6375Z' fill='%234DACFF'/%3E%3C/svg%3E%0A"),
-            linear-gradient(
-                to left,
-                var(--color-background-base-default) 4rem,
-                var(--color-background-base-default) 10rem
-            );
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 31 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.6875 14.6375L14.925 17.875C15.4125 18.3625 16.2 18.3625 16.6875 17.875L19.925 14.6375C20.7125 13.85 20.15 12.5 19.0375 12.5H12.5625C11.45 12.5 10.9 13.85 11.6875 14.6375Z' fill='%234DACFF'/%3E%3C/svg%3E%0A");
         background-position: center right var(--spacing-025),
             center left var(--spacing-0);
         background-repeat: no-repeat;
+        padding-right: 1.875rem;
         &:disabled {
             &:hover {
                 border: 1px solid transparent;
@@ -207,7 +205,7 @@ label {
     &:disabled {
         opacity: 0.4;
         cursor: not-allowed;
-        &:hover:not(.rux-select--borderless) {
+        &:hover:not(.rux-select--inline) {
             border: 1px solid var(--color-border-interactive-muted);
             option {
                 background: var(--color-background-base-default);

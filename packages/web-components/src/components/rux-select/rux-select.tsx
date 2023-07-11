@@ -102,9 +102,9 @@ export class RuxSelect implements FormFieldInterface {
     @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large' = 'medium'
 
     /**
-     * Styles the select menu as a borderless, inline variant.
+     * Styles the select menu as a inline, borderless variant.
      */
-    @Prop({ reflect: true }) borderless?: boolean = false
+    @Prop({ reflect: true }) inline?: boolean = false
 
     /**
      * Event Emitted when the Value of the Select is Changed
@@ -349,7 +349,7 @@ export class RuxSelect implements FormFieldInterface {
                         'rux-select--large': this.size === 'large',
                         'rux-select--invalid': invalid,
                         'rux-select--multiple': multiple,
-                        'rux-select--borderless': this.borderless === true,
+                        'rux-select--inline': this.inline === true,
                     }}
                     ref={(el) => (this.selectEl = el as HTMLSelectElement)}
                     id={inputId}
