@@ -130,7 +130,7 @@ test.describe('Slider in a form', () => {
         const submit = page.locator('button')
         await submit.click()
         await expect(log).toContainText('dual:50')
-        await expect(log).toContainText('minVal:40')
+        await expect(log).toContainText('dual-min-val:40')
     })
     test('it submits correct values for dual range slider after interaction', async ({
         page,
@@ -140,8 +140,7 @@ test.describe('Slider in a form', () => {
         const dual = page.locator('#dual')
         await dual.click({ position: { x: 50, y: 10 } }) // minVal = 3
         await submit.click()
-        await expect(log).toContainText('minVal:3')
-        //TODO: move the right thumb too.
+        await expect(log).toContainText('dual-min-val:3')
     })
 })
 
@@ -150,6 +149,7 @@ test.describe('Dual Range Slider', () => {
         const template = `
         <div style="display: flex; flex-direction: column; width: 400px; row-gap: 2rem;">
         <h2>Dual Range</h2>
+        <rux-slider id="strict" min-val="10" value="15" step="5" strict></rux-slider>
         <rux-slider id="dual-1" value="30" min-val="20" min="0" max="100"></rux-slider>
         <rux-slider id="dual-2" value="50" min-val="50" min="0" max="100"></rux-slider>
         <rux-slider id="dual-with-label" label="Dual With Label" value="80" min-val="20" min="0" max="100"></rux-slider>
@@ -160,7 +160,6 @@ test.describe('Dual Range Slider', () => {
         <rux-slider id="dual-disabled" disabled value="80" min-val="20" min="0" max="100"></rux-slider>
         <rux-slider id="dual-axis-labels-disabled" disabled value="80" min-val="20" min="0" max="100"
           label="Dual, Disabled, Axis Labels"></rux-slider>
-        <rux-slider id="strict" value=
         </div>
 
         `
@@ -177,12 +176,6 @@ test.describe('Dual Range Slider', () => {
         //need better way to simulate the mouse clicking and dragging the thumb.
         await dual.click({ position: { x: 10, y: 10 } })
         await expect(dual).toHaveAttribute('min-val', '3')
-
-        // await page.mouse.move(10, 10)
-        // await page.hover('#dual-1')
-        // await page.mouse.down()
-        // await page.mouse.move(10, 20)
-        // await page.mouse.up()
     })
     test('Value (rightmost) thumb is moveable in dual range', async ({
         page,
@@ -210,7 +203,11 @@ test.describe('Dual Range Slider', () => {
     //     await expect(equalDual).toHaveAttribute('value', '50')
     //     await expect(equalDual).toHaveAttribute('min-val', '50')
     //     //click doesnt' work
-    //     await equalDual.click({ position: { x: 0, y: 25 } })
+    //     console.log(await equalDual.boundingBox())
+    //     await equalDual.click({
+    //         position: { x: 20, y: 100 },
+    //         timeout: 5000,
+    //     })
     //     await expect(equalDual).toHaveAttribute('min-val', '50')
     //     await expect(equalDual).toHaveAttribute('value', '70')
     // })
@@ -222,5 +219,18 @@ test.describe('Dual Range Slider', () => {
         await expect(disabled).toHaveAttribute('min-val', '20')
         await expect(disabled).toHaveAttribute('value', '80')
     })
-    //TODO: Test that thumbs do not swap when strict = true
+    test('Thumbs do not swap when strict is true', async ({ page }) => {
+        const strict = page.locator('#strict')
+        await expect(strict).toHaveAttribute('min-val', '10')
+        await expect(strict).toHaveAttribute('value', '15')
+        const body = page.locator('body')
+        await body.click()
+        await body.press('Tab')
+        await body.press('Tab')
+        await strict.press('ArrowLeft', { delay: 1000 })
+        await strict.press('ArrowLeft')
+        await page.waitForChanges()
+        await expect(strict).toHaveAttribute('min-val', '10')
+        await expect(strict).toHaveAttribute('value', '10')
+    })
 })
