@@ -126,7 +126,7 @@ export class RuxSlider implements FormFieldInterface {
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
 
     componentWillLoad() {
-        this._updateValue()
+        this._setValuePercent()
         this._getBrowser(navigator.userAgent.toLowerCase())
         this._handleSlotChange()
     }
@@ -157,12 +157,12 @@ export class RuxSlider implements FormFieldInterface {
     @Watch('max')
     @Watch('minVal')
     handleChange() {
-        this._updateValue()
+        this._setValuePercent()
     }
 
-    //TODO: update this to work with dual range
     @Watch('step')
     handleStep() {
+        console.log('handle step call')
         // Value needs to be a multiple of step, otherwise slider begins to look wrong
         this.value = this._closestMultiple(this.value)
         if (this.minVal) this.minVal = this._closestMultiple(this.minVal)
@@ -176,15 +176,7 @@ export class RuxSlider implements FormFieldInterface {
      * Returns the closest multiple of two given numbers.
      */
     private _closestMultiple(x: number) {
-        // if (x > n) return x
-        // n = n + x / 2
-        // n = n - (n % x)
-        // return n
         return Math.round(x / this.step) * this.step
-    }
-
-    private _updateValue() {
-        this._setValuePercent()
     }
 
     //Sets the --slider-value-percent CSS var.
@@ -223,6 +215,7 @@ export class RuxSlider implements FormFieldInterface {
         const target = e.target as HTMLInputElement
         if (this.value !== undefined) {
             this.value = parseFloat(target.value)
+            console.log('value in _onInput:', this.value)
             if (this.value <= this.minVal! && this.strict) {
                 this.value = this.minVal!
                 target.value = this.value.toString()
@@ -313,11 +306,20 @@ export class RuxSlider implements FormFieldInterface {
         let percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
         percentFromLeft = this._closestMultiple(percentFromLeft)
 
+        console.log(percentFromLeft, ': percentFromLeft')
         //account for step
         this.handleStep()
         // get the percent of the min and max value for comparison
-        const minValPercent = Math.round(this.minVal)
-        const maxValPercent = Math.round(this.value)
+        let minValPercent = Math.round(this.minVal)
+        let maxValPercent = Math.round(this.value)
+        //When thumbs have swapped, we need to swap these as well.
+        if (this.minVal > this.value) {
+            minValPercent = Math.round(this.value)
+            maxValPercent = Math.round(this.minVal)
+        }
+
+        console.log(minValPercent, ': minValPercent')
+        console.log(maxValPercent, ': maxValPercent')
 
         //if click happens between the thumbs, ignore it. //* Might be changed in future
         if (
