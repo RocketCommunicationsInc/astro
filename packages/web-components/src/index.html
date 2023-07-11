@@ -1,65 +1,23 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet" />
-  <script type="module" src="/build/astro-web-components.esm.js"></script>
-  <script nomodule src="/build/astro-web-components.js"></script>
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+    </head>
 
-  <link rel="stylesheet" href="/build/astro-web-components.css" />
-</head>
-
-<body>
-
-  <body>
-    <form style="padding: 1rem" id="form" method="POST" action="/">
-      <div>
-        <rux-slider name="my-range" min-val="10" label="A Range"> </rux-slider>
-      </div>
-      <div>
-        <rux-slider name="my-range-2" min-val="10" label="A Range"> </rux-slider>
-      </div>
-      <div class="col-span-6 ml-auto">
-        <rux-button type="submit">Submit</rux-button>
-      </div>
-    </form>
-    <p id="log"></p>
-
-    <script>
-      const log = document.getElementById('log')
-      const forms = document.querySelectorAll('form')
-
-      for (const form of forms) {
-        form.addEventListener('submit', (e) => {
-          event.preventDefault()
-          // trigger formdata event
-          new FormData(form)
-        })
-
-        form.addEventListener('formdata', logFormData)
-      }
-
-      function logFormData(e) {
-        const status = document.getElementById('status')
-        log.innerHTML = ''
-        // Get the form data from the event object
-        let data = e.formData
-        const values = data.values()
-        for (var value of data.entries()) {
-          const item = document.createElement('li')
-          item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
-          log.appendChild(item)
-        }
-      }
-    </script>
-  </body>
-</body>
-
+    <body></body>
 </html>
