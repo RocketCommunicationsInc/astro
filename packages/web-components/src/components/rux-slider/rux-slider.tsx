@@ -162,7 +162,6 @@ export class RuxSlider implements FormFieldInterface {
 
     @Watch('step')
     handleStep() {
-        console.log('handle step call')
         // Value needs to be a multiple of step, otherwise slider begins to look wrong
         this.value = this._closestMultiple(this.value)
         if (this.minVal) this.minVal = this._closestMultiple(this.minVal)
@@ -215,7 +214,6 @@ export class RuxSlider implements FormFieldInterface {
         const target = e.target as HTMLInputElement
         if (this.value !== undefined) {
             this.value = parseFloat(target.value)
-            console.log('value in _onInput:', this.value)
             if (this.value <= this.minVal! && this.strict) {
                 this.value = this.minVal!
                 target.value = this.value.toString()
@@ -306,9 +304,9 @@ export class RuxSlider implements FormFieldInterface {
         let percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
         percentFromLeft = this._closestMultiple(percentFromLeft)
 
-        console.log(percentFromLeft, ': percentFromLeft')
-        //account for step
-        this.handleStep()
+        // Prevent stlying bug when clicking the upper end of the slider while the step is
+        // not a multiple of the max
+        if (percentFromLeft > this.max) percentFromLeft = this.max - this.step
         // get the percent of the min and max value for comparison
         let minValPercent = Math.round(this.minVal)
         let maxValPercent = Math.round(this.value)
@@ -317,9 +315,6 @@ export class RuxSlider implements FormFieldInterface {
             minValPercent = Math.round(this.value)
             maxValPercent = Math.round(this.minVal)
         }
-
-        console.log(minValPercent, ': minValPercent')
-        console.log(maxValPercent, ': maxValPercent')
 
         //if click happens between the thumbs, ignore it. //* Might be changed in future
         if (
