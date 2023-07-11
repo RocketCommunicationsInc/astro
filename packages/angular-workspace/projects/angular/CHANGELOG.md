@@ -1,35 +1,118 @@
 # @astrouxds/angular
 
+## 7.14.0
+
+### Minor Changes
+
+#### Monitoring Icon
+
+-   Added size prop to change icon size
+
+#### Toast
+
+-   Created new `rux-toast` component
+
+#### Toast Stack
+
+-   Created new `rux-toast-stack` component
+
+### Patch Changes
+
+#### Tooltip
+
+-   Fixed an issue where the placement prop wouldn't update correctly
+
+## 7.13.0
+
+### Minor Changes
+
+#### Accordion Item
+
+- Added `content` CSS Shadow Part
+
+### Patch Changes
+
+#### Textarea
+
+- Fixes `rows` prop not working correctly
+
+## 7.12.0
+
+### Minor Changes
+
+#### Button Group
+
+- Button Group is now deprecated. Instead, create your own group using `display: flex` and our `--spacing-2` design token.
+
+#### Log
+
+- Adjusted the height of log's rows to be 32px
+
+#### Tree Node
+
+- Adjusted the height of the node to be 32px
+
+### Patch Changes
+
+#### Dialog
+
+- Removed rux-button-group internally. You may remove importing RuxButtonGroup
+
+#### Log
+
+- Search input now updates when filter is updated programatically
+
+## 7.11.0
+
+### Minor Changes
+
+#### Core
+
+- Added fallback values for CSS Custom Properties. Importing astro-web-components.css is now optional if you don't need light theme or global styles
+
+### Patch Changes
+
+#### Input
+
+- Password show/hide button is no longer visible when type does not equal password
+
+#### Progress
+
+- Fixed an issue where max would change to equal value if value increased passed max
+
+#### Segmented Button
+
+- Fixed an issue with programatically selecting segments
+
 ## 7.10.0
 
 ### Minor Changes
 
 #### Card
 
--   Added `container` CSS Shadow Part
+- Added `container` CSS Shadow Part
 
 ### Patch Changes
 
 #### Angular
 
--   Fixed an issue in angular where breadcrumb and tooltip were missing from the module
+- Fixed an issue in angular where breadcrumb and tooltip were missing from the module
 
 #### Clock
 
--   Added tabular-nums for better support when using system fonts
+- Added tabular-nums for better support when using system fonts
 
 #### Monitoring Progress Icon
 
--   Added tabular-nums for better support when using system fonts
+- Added tabular-nums for better support when using system fonts
 
 #### Select
 
--   Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
+- Fixed an issue where adding or removing rux-options inside a rux-option group didn't allow for the select menu to show them selected by default
 
 #### Tabs
 
--   Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
-
+- Fixed an issue where the correct rux-tab-panel would not show when programmatically changing the selected prop on rux-tab
 
 ## 7.9.3
 

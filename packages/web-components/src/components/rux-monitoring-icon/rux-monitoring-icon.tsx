@@ -40,6 +40,11 @@ export class RuxMonitoringIcon {
     @Prop() icon: string = 'antenna-transmit'
 
     /**
+     * The size of a chosen Astro icon. Can be 'extra-small', 'small', 'normal', 'large', 'auto' or any custom value ('30px', '1rem', '3.321em')
+     */
+    @Prop() size: string = '2.5rem'
+
+    /**
      * If provided and greater than `0`, displays an outlined number badge at the bottom right of the icon.
      * Numbers above `9999` are abbreviated to `'10K'` or `'100K'` for numbers in the thousands,
      * `'1.5M'` for millions, `'1.5B'` for billions, and uses `'∞'` for one trillion or higher.
@@ -101,7 +106,7 @@ export class RuxMonitoringIcon {
                     <rux-icon
                         icon={this.icon}
                         class={`rux-status--${this.status}`}
-                        size="2.5rem"
+                        size={this.size}
                         exportparts="icon"
                     ></rux-icon>
                     <MonitoringBadge notifications={this.notifications} />

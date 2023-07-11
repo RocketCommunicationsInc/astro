@@ -20,7 +20,9 @@ Check out our [Migration Guide](https://www.astrouxds.com/migration/) to see how
 | **Astro Web Components** | [`@astrouxds/astro-web-components`](https://www.npmjs.com/package/@astrouxds/astro-web-components) - Astro Web Components built in Stencil |                                                                                    [`README.md`](packages/web-components/README.md), [`Storybook`](https://astro-stencil.netlify.app/)                                                                                    |
 | **React**                | [`@astrouxds/react`](https://www.npmjs.com/package/@astrouxds/react) - Astro Web Components wrapped for React use                          |                                                                                                                  [`README.md`](packages/react/README.md)                                                                                                                  |
 | **Angular**              | [`@astrouxds/angular`](https://www.npmjs.com/package/@astrouxds/angular) - Astro Web Components wrapped for Angular use                    |                                                                                                                 [`README.md`](packages/angular/README.md)                                                                                                                 |
-| **Starter Kits**         | Starter kits for getting Astro web-components running in React, Svelte, Vue, Angular and HTML/JS                                           | [React](packages/starter-kits/react-starter/README.md), [Svelte](packages/starter-kits/svelte-starter/README.md), [Vue](packages/starter-kits/vue3-starter), [Angular](packages/starter-kits/angular-starter/README.md), [HTML/JS](packages/starter-kits/html-js-starter) |
+
+
+**Starter Kits** have been moved to their own [repo](https://github.com/RocketCommunicationsInc/astro-starter-kits).
 
 ## Release Strategy
 

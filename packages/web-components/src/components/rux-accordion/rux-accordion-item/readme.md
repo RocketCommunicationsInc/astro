@@ -35,6 +35,7 @@
 | Part              | Description                                          |
 | ----------------- | ---------------------------------------------------- |
 | `"container"`     | The accordion item                                   |
+| `"content"`       | The element wrapping the expanded content            |
 | `"indicator"`     | The opened/closed indicator                          |
 | `"label"`         | The label                                            |
 | `"label-wrapper"` | The element wrapping prefix, indicator and the label |
