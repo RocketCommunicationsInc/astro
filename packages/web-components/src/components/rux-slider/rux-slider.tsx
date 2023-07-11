@@ -381,7 +381,7 @@ export class RuxSlider implements FormFieldInterface {
             renderHiddenSliderInput(
                 true,
                 el,
-                'minVal',
+                name ? `${name}-min-val` : '',
                 JSON.stringify(minVal),
                 disabled
             )
