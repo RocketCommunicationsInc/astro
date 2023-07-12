@@ -106,13 +106,6 @@ Pass properties via attributes similar to the native [HTML Input Range](https://
 | `"tick-container"` | The container of the tick mark and axis-label |
 
 
-## CSS Custom Properties
-
-| Name                                 | Description                              |
-| ------------------------------------ | ---------------------------------------- |
-| `--slider-track-before-thumb-height` | the height of the track before the thumb |
-
-
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

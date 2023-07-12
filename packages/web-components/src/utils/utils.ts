@@ -90,10 +90,9 @@ export const renderHiddenSliderInput = (
     disabled: boolean
 ) => {
     let input = container.querySelector(
-        'input[name="minVal"]'
+        `input[name="${name}"]`
     ) as HTMLInputElement | null
     if (input) {
-        //&& input.parentElement === container
         //update input values
         input.value = value
         input.disabled = disabled

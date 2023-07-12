@@ -348,6 +348,7 @@ export class RuxSlider implements FormFieldInterface {
                 this.minVal = percentFromLeft
             }
         }
+        this.ruxInput.emit()
     }
 
     render() {
