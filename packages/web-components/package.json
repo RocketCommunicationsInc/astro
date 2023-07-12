@@ -57,7 +57,7 @@
     "@astrouxds/postcss-custom-property-token-fallback": "~0.0.2",
     "@astrouxds/stencil-playwright": "~0.0.1",
     "@astrouxds/storybook-addon-docs-stencil": "~1.0.10",
-    "@astrouxds/tokens": "~1.8.0",
+    "@astrouxds/tokens": "~1.9.0",
     "@babel/core": "~7.13.16",
     "@playwright/test": "~1.33.0",
     "@stencil/angular-output-target": "~0.7.1",
