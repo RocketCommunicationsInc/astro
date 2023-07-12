@@ -19777,6 +19777,10 @@ export namespace Components {
          */
         "helpText"?: string;
         /**
+          * Styles the select menu as a inline, borderless variant.
+         */
+        "inline"?: boolean;
+        /**
           * Id for the Select Input
          */
         "inputId"?: string;
@@ -55315,6 +55319,10 @@ declare namespace LocalJSX {
           * The help or explanation text
          */
         "helpText"?: string;
+        /**
+          * Styles the select menu as a inline, borderless variant.
+         */
+        "inline"?: boolean;
         /**
           * Id for the Select Input
          */
