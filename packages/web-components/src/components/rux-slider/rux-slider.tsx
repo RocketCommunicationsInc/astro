@@ -108,7 +108,7 @@ export class RuxSlider implements FormFieldInterface {
     /**
      * In a dual-range slider, disables thumb swapping.
      */
-    @Prop() strict: boolean = false
+    @Prop({ reflect: true }) strict: boolean = false
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
