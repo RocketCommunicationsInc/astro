@@ -108,8 +108,6 @@ export class RuxCalendar {
     private _minYearArr: Array<number> = []
 
     connectedCallback() {
-        console.log('CC')
-        console.log(this._date, '_date?')
         this._updateState()
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
@@ -523,12 +521,3 @@ export class RuxCalendar {
         )
     }
 }
-
-//! Known Bugs
-/*
-  Worried about timezone issue coming up again. We're changing everything to be UTC in the logic, will that make
-  it so that at some point the day will be off in differnet timezones?
-
-
-
-*/
