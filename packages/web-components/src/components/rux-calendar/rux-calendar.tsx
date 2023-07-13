@@ -55,6 +55,7 @@ export class RuxCalendar {
       ? it's the first of a month, we'll have that timezone issue where it'll say it's the prev month still.
     */
 
+    @State() _test: Date = new Date(Date.now())
     //* This _date state controls the date that each compuatation uses. If the month updates, it'll update
     //* this._date with that new month. Same for year.
     //? Could we add a watch to this._date that will run the updateDate/State funcs?
@@ -67,13 +68,11 @@ export class RuxCalendar {
 
     @Watch('_month')
     handleMonthWatch() {
-        console.log('heard month change')
         this._updateDate(this._year, this._month)
     }
 
     @Watch('_year')
     handleYearWatch() {
-        console.log('heard year change in WATCH')
         // this._handleYears(this._maxDate, this._minDate)
         this._updateDate(this._year, this._month)
     }
@@ -85,51 +84,65 @@ export class RuxCalendar {
     //     console.log('heard min or max change')
     // }
 
-    private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
-    // private _year: number = this._date.getFullYear()
+    // private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
+    // // private _year: number = this._date.getFullYear()
+    // private _currentDay: number = this._currentDate.getDate()
+    // private _daysInMonth: number = getDaysInMonth(this._date)
+    // private _daysInMonthArr: Array<number> = []
+    // private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
+    // private _nextMonth: number = this._month + 1 >= 13 ? 1 : this._month + 1
+    // private _prevDaysToShow: { [key: string]: any } = {}
+    // private _nextDaysToShow: Array<Number> = this._date
+    //     ? this._findNextDaysToShow()
+    //     : []
+    // private _allYearsArr: Array<Number> = []
+
+    // //Default the max/min Dates to be 10 years in either direciton.
+    // private _maxDate: Date = this.max
+    //     ? new Date(this.max)
+    //     : new Date(`${this._date.getFullYear() + 11}-01-01`)
+    // private _minDate: Date = this.min
+    //     ? new Date(this.min)
+    //     : new Date(`${this._date.getFullYear() - 9}-01-01`)
+    // private _maxYearArr: Array<Number> = []
+    // private _minYearArr: Array<Number> = []
+
+    private _currentDate: Date = new Date(Date.now())
     private _currentDay: number = this._currentDate.getDate()
-    private _daysInMonth: number = getDaysInMonth(this._date)
+    private _prevMonth: number = this._currentDate.getMonth() - 2
+    private _nextMonth: number = this._currentDate.getMonth() + 2
+    private _daysInMonth: number = 28 | 29 | 30 | 31
     private _daysInMonthArr: Array<number> = []
-    private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
-    private _nextMonth: number = this._month + 1 >= 13 ? 1 : this._month + 1
     private _prevDaysToShow: { [key: string]: any } = {}
-    private _nextDaysToShow: Array<Number> = this._findNextDaysToShow()
+    private _nextDaysToShow: Array<Number> = []
     private _allYearsArr: Array<Number> = []
 
-    //Default the max/min Dates to be 10 years in either direciton.
+    //! might be a bug here. might need to make the else be 10 from .now()
     private _maxDate: Date = this.max
         ? new Date(this.max)
-        : new Date(`${this._date.getFullYear() + 11}-01-01`)
+        : new Date(Date.now())
     private _minDate: Date = this.min
         ? new Date(this.min)
-        : new Date(`${this._date.getFullYear() - 9}-01-01`)
-    private _maxYearArr: Array<Number> = []
-    private _minYearArr: Array<Number> = []
+        : new Date(Date.now())
+
+    private _maxYearArr: Array<number> = []
+    private _minYearArr: Array<number> = []
 
     connectedCallback() {
-        console.log('CC Fire')
-        this._date = this.dateIn
-            ? utcToZonedTime(new Date(this.dateIn), 'UTC')
-            : utcToZonedTime(new Date(Date.now()), 'UTC')
-        console.log(this._date, 'DATE')
+        console.log('CC')
+        console.log(this._date, '_date?')
+        this._updateState()
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
         this._handleMonthChange = this._handleMonthChange.bind(this)
         this._handleYearChange = this._handleYearChange.bind(this)
 
         if (this.dateIn) {
-            console.log('true')
-            console.log(this._maxDate, 'max date')
-            console.log(this._minDate, 'min date')
             this._setStateWithDateIn()
         }
         this._handleYears(this._maxDate, this._minDate)
     }
 
-    componentWillRender() {
-        console.log('will render')
-        console.log(this._date, 'date in WR')
-    }
     componentDidLoad() {
         // attach event listeners to back and forward month arrows
         this.el
@@ -142,7 +155,6 @@ export class RuxCalendar {
             ?.addEventListener('click', () => {
                 this._handleForwardArrow()
             })
-        // console.log(this._date)
     }
     //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
     //? what kind of side effects can this have? What other times will componentWillUpdate fire?
@@ -155,10 +167,6 @@ export class RuxCalendar {
     }
 
     private _handleYears(maxDate: Date, minDate: Date) {
-        console.log('handle years start')
-        console.log(minDate, 'min date in _handleYears')
-        console.log(maxDate, 'max date in _handleYears')
-
         //maxDiff is the difference in years from the current/date-in date, to the max date.
         const maxDiff = maxDate.getFullYear() - this._date.getFullYear()
         const minDiff = this._date.getFullYear() - minDate.getFullYear()
@@ -174,7 +182,6 @@ export class RuxCalendar {
         this._allYearsArr = this._minYearArr.concat(this._maxYearArr)
         this._allYearsArr.push(this._year)
         this._allYearsArr.sort()
-        console.log(this._allYearsArr, 'all years')
     }
 
     /**
@@ -198,17 +205,13 @@ export class RuxCalendar {
                 )
             }
         } else {
-            console.log('else in _updateDate')
             this._date = utcToZonedTime(new Date(this.dateIn!), 'UTC')
-            console.log('this._date now - ', this._date)
         }
 
         this._updateState()
     }
     /**
-     * This function updates all relevant private variables/state. This is called in _updateDate, and
-     * relies on the new Date to be set in that function.
-     * This function should not be called by itself, since it's called in _updateDate.
+     * This function updates all relevant private variables/state.
      */
     private _updateState() {
         this._year = this._date.getFullYear()
@@ -240,7 +243,6 @@ export class RuxCalendar {
         if (new Date(Number(this.dateIn)).getTime() > 0) {
             //unix time
             this.dateIn = Number(this.dateIn)
-            console.log(new Date(this.dateIn).getFullYear(), 'full year')
         }
         this._updateDate()
     }
@@ -376,7 +378,6 @@ export class RuxCalendar {
     }
 
     private _handleYearChange(e: Event) {
-        console.log('_handleyearChange()')
         const tar = e.target as HTMLSelectElement
         this._year = parseInt(tar.value)
     }
@@ -387,14 +388,11 @@ export class RuxCalendar {
         if (this._prevMonth === 12) {
             this._year = this._year - 1
         }
-        console.log(
-            '** Going to run _updateDate() from _handleBackwardArrow **'
-        )
+
         this._updateDate(this._year, this._prevMonth)
     }
     private _handleForwardArrow() {
         if (this._nextMonth === 1) this._year = this._year + 1
-        console.log('** Going to run _updateDate() from _handleForwardArrow **')
         this._updateDate(this._year, this._nextMonth)
     }
     render() {
