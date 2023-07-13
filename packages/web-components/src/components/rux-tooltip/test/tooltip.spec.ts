@@ -271,6 +271,21 @@ test.describe('Tooltip', async () => {
         await expect(ruxTooltip).toHaveAttribute('placement', 'top')
     })
 
+    test('placement attribute reflects', async ({ page }) => {
+        const template = `
+            <rux-tooltip message="This is the tooltip">
+              <rux-button id="trigger">Trigger</rux-button>
+            </rux-tooltip>
+            `
+        await page.setContent(template)
+
+        //arrange
+        const ruxTooltip = page.locator('rux-tooltip')
+
+        //assert
+        await expect(ruxTooltip).toHaveAttribute('placement', 'auto')
+    })
+
     test('open attribute reflects', async ({ page }) => {
         const template = `
         <rux-tooltip message="This is the tooltip">

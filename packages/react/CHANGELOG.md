@@ -1,18 +1,40 @@
 # @astrouxds/react
 
+## 7.14.0
+
+### Minor Changes
+
+#### Monitoring Icon
+
+-   Added size prop to change icon size
+
+#### Toast
+
+-   Created new `rux-toast` component
+
+#### Toast Stack
+
+-   Created new `rux-toast-stack` component
+
+### Patch Changes
+
+#### Tooltip
+
+-   Fixed an issue where the placement prop wouldn't update correctly
+
 ## 7.13.0
 
 ### Minor Changes
 
 #### Accordion Item
 
--   Added `content` CSS Shadow Part
+- Added `content` CSS Shadow Part
 
 ### Patch Changes
 
 #### Textarea
 
--   Fixes `rows` prop not working correctly
+- Fixes `rows` prop not working correctly
 
 ## 7.12.0
 

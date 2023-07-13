@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Inline Select</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-select inline data-test-id="default"></rux-select>
+        </section>
+        <section>
+            <h2>Sizes</h2>
+            <rux-select inline label="Small" size="small">
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Medium" size="medium">
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Large" size="large">
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-select inline label="Disabled" disabled>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Invalid" invalid>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Required" required>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Invalid, Disabled" disabled invalid>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Required, Disabled" required disabled>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With help text"
+                help-text="Help text here!"
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With error text"
+                error-text="Error text here!"
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With help text, disabled"
+                disabled
+                help-text="Help text here!"
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With error text, disabled"
+                disabled
+                error-text="Error text here!"
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+        </section>
+        <section>
+            <h2>Multiple</h2>
+            <rux-select inline label="Disabled" disabled multiple>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Invalid" invalid multiple>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select inline label="Required" required multiple>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="Invalid, Disabled"
+                disabled
+                invalid
+                multiple
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="Required, Disabled"
+                required
+                disabled
+                multiple
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With help text"
+                help-text="Help text here!"
+                multiple
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With error text"
+                error-text="Error text here!"
+                multiple
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With help text, disabled"
+                disabled
+                help-text="Help text here!"
+                multiple
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+            <rux-select
+                inline
+                label="With error text, disabled"
+                disabled
+                error-text="Error text here!"
+                multiple
+            >
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+        </section>
+        <section>
+            <h2>With option groups</h2>
+            <rux-select inline label="With Option groups">
+                <rux-option-group label="Group">
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                </rux-option-group>
+                <rux-option-group label="Group">
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                </rux-option-group>
+            </rux-select>
+            <rux-select inline label="Multi With Option groups" multiple>
+                <rux-option-group label="Group">
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                </rux-option-group>
+                <rux-option-group label="Group">
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                    <rux-option label="Option Option Option"></rux-option>
+                </rux-option-group>
+            </rux-select>
+        </section>
+        <section style="background: var(--color-background-surface-default)">
+            <h2>On Surface</h2>
+            <rux-select inline>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+                <rux-option label="Option Option Option"></rux-option>
+            </rux-select>
+        </section>
+    </body>
+</html>

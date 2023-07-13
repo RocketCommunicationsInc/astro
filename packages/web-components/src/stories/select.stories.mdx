@@ -607,6 +607,80 @@ export const MultipleWithOptionGroups = (args) => {
     </Story>
 </Canvas>
 
+### Inline
+
+export const Inline = (args) => {
+    return html`
+<div style="width: 200px; margin: 0 auto;">
+    <rux-select
+        ?inline="${args.inline}"
+    >
+        <rux-option value="" label="Select Option"></rux-option>
+            <rux-option value="2.1" label="Option 2.1"></rux-option>
+            <rux-option value="2.2" label="Option 2.2"></rux-option>
+            <rux-option value="2.3" label="Option 2.3"></rux-option>
+            <rux-option value="2.4" label="Option 2.4"></rux-option>
+            <rux-option value="2.5" disabled label="Option 2.5 (disabled)"></rux-option>
+    </rux-select>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            inline: true,
+        }}
+        argTypes={{
+            value: { table: {disable: true}}
+        }}
+        name="Inline"
+    >
+        {Inline.bind()}
+    </Story>
+</Canvas>
+
+### Adjusting the width
+
+By default, Select's width is set to 100%. If you'd prefer to have it automatic based on the longest option, you can make use of the `select` part. 
+
+```
+rux-select::part(select) {
+    width: inherit;
+}
+```
+
+> NOTE: This will become the default behavior in a future release.
+
+export const WidthExample = (args) => {
+    return html`
+    <style>
+        rux-select::part(select) {
+            width: inherit;
+        }
+    </style>
+    <rux-select>
+        <rux-option value="" label="Select Option"></rux-option>
+            <rux-option value="2.1" label="Option 2.1"></rux-option>
+            <rux-option value="2.2" label="Option 2.2.2.2.2"></rux-option>
+            <rux-option value="2.3" label="Option 2.3"></rux-option>
+            <rux-option value="2.4" label="Option 2.4"></rux-option>
+    </rux-select>
+    `
+}
+
+<Canvas>
+    <Story
+        argTypes={{
+            value: { table: {disable: true}}
+        }}
+        name="Width"
+    >
+        {WidthExample.bind()}
+    </Story>
+</Canvas>
+
+
 ## Cherry Picking
 
 If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
