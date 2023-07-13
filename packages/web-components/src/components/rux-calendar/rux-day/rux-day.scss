@@ -7,7 +7,7 @@
     padding: var(--spacing-4);
     border-radius: var(--radius-base);
     text-align: center;
-    background-color: var(--color-background-base-default);
+    background-color: var(--color-background-surface-default);
     color: var(--color-text-interactive-default);
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
@@ -23,5 +23,5 @@
 .day-selected {
     background-color: var(--color-background-surface-selected);
     // border: 1px solid var(--color-border-interactive-default);
-    outline: 1px solid var(--color-border-interactive-default);
+    outline: 1px solid var(--color-border-interactive-muted);
 }

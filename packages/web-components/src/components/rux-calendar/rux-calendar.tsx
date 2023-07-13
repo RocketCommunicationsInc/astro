@@ -1,6 +1,7 @@
 import { Component, Host, h, Prop, Watch, Element, State } from '@stencil/core'
 import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
+import { hasSlot } from '../../utils/utils'
 
 type MonthMap = {
     [key: number]: string
@@ -65,6 +66,7 @@ export class RuxCalendar {
 
     @State() _month: number = this._date.getMonth() + 1 //getMonth returns a 0 indexed num, so we add 1
     @State() _year: number = this._date.getFullYear()
+    @State() _hasFooter = hasSlot(this.el, 'footer')
 
     @Watch('_month')
     handleMonthWatch() {
@@ -83,29 +85,6 @@ export class RuxCalendar {
     // handleMinMaxChange() {
     //     console.log('heard min or max change')
     // }
-
-    // private _currentDate: Date = utcToZonedTime(new Date(Date.now()), 'UTC')
-    // // private _year: number = this._date.getFullYear()
-    // private _currentDay: number = this._currentDate.getDate()
-    // private _daysInMonth: number = getDaysInMonth(this._date)
-    // private _daysInMonthArr: Array<number> = []
-    // private _prevMonth: number = this._month - 1 < 1 ? 12 : this._month - 1
-    // private _nextMonth: number = this._month + 1 >= 13 ? 1 : this._month + 1
-    // private _prevDaysToShow: { [key: string]: any } = {}
-    // private _nextDaysToShow: Array<Number> = this._date
-    //     ? this._findNextDaysToShow()
-    //     : []
-    // private _allYearsArr: Array<Number> = []
-
-    // //Default the max/min Dates to be 10 years in either direciton.
-    // private _maxDate: Date = this.max
-    //     ? new Date(this.max)
-    //     : new Date(`${this._date.getFullYear() + 11}-01-01`)
-    // private _minDate: Date = this.min
-    //     ? new Date(this.min)
-    //     : new Date(`${this._date.getFullYear() - 9}-01-01`)
-    // private _maxYearArr: Array<Number> = []
-    // private _minYearArr: Array<Number> = []
 
     private _currentDate: Date = new Date(Date.now())
     private _currentDay: number = this._currentDate.getDate()
@@ -404,15 +383,15 @@ export class RuxCalendar {
                             <rux-icon
                                 icon="keyboard-arrow-left"
                                 class="arrow-left-icon"
-                                size="34px"
+                                size="1.25rem"
                                 id="backward-month"
                             ></rux-icon>
-                            <div class="month-picker">
+                            <div class="month-year-selects">
                                 <rux-select
-                                    id="month-picker"
                                     onRuxchange={this._handleMonthChange}
                                     size="small"
                                     value={this._month.toString()}
+                                    inline
                                 >
                                     {Object.keys(monthMap).map((key) => {
                                         return (
@@ -423,13 +402,12 @@ export class RuxCalendar {
                                         )
                                     })}
                                 </rux-select>
-                            </div>
-                            <div class="year-picker">
                                 <rux-select
                                     size="small"
                                     value={this._year.toString()}
                                     onRuxchange={this._handleYearChange}
                                     id="year-picker"
+                                    inline
                                 >
                                     {this._allYearsArr.map((year) => {
                                         return (
@@ -444,7 +422,7 @@ export class RuxCalendar {
                             <rux-icon
                                 icon="keyboard-arrow-right"
                                 class="arrow-right-icon"
-                                size="34px"
+                                size="1.25rem"
                                 id="forward-month"
                             ></rux-icon>
                         </slot>
@@ -535,9 +513,11 @@ export class RuxCalendar {
                             )
                         })}
                     </div>
-                    <div class="calendar-footer">
-                        <slot name="footer"></slot>
-                    </div>
+                    {this._hasFooter ? (
+                        <div class="calendar-footer">
+                            <slot name="footer"></slot>
+                        </div>
+                    ) : null}
                 </div>
             </Host>
         )
