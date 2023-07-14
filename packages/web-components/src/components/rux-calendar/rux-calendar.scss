@@ -13,6 +13,10 @@
         align-items: center;
         justify-content: space-between;
         .month-year-selects {
+            rux-select::part(select) {
+                //may change
+                text-align: center;
+            }
             display: flex;
             align-items: center;
         }
