@@ -43,23 +43,12 @@ export class RuxCalendar {
     /**
      * Option to give the calendar a specfic month/year
      */
-    @Prop({ attribute: 'date-in' }) dateIn?: string | number
+    @Prop({ attribute: 'date-in', reflect: true }) dateIn?: string | number
     @Watch('dateIn')
     handleDateInChange() {
-        //? Should we do some validation here to make sure the passed in date-in is a date string?
         this._setStateWithDateIn()
     }
 
-    /*
-      ? Using utcToZonedTime here so that we dont' need to edit it on connectedCallback if date-in is given.
-      ? Using utcToZonedTime on default state (date-in not provided) because I _think_ without it, when
-      ? it's the first of a month, we'll have that timezone issue where it'll say it's the prev month still.
-    */
-
-    @State() _test: Date = new Date(Date.now())
-    //* This _date state controls the date that each compuatation uses. If the month updates, it'll update
-    //* this._date with that new month. Same for year.
-    //? Could we add a watch to this._date that will run the updateDate/State funcs?
     @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
         : utcToZonedTime(new Date(Date.now()), 'UTC')
@@ -75,16 +64,16 @@ export class RuxCalendar {
 
     @Watch('_year')
     handleYearWatch() {
-        // this._handleYears(this._maxDate, this._minDate)
         this._updateDate(this._year, this._month)
     }
 
-    //? Might need later when/if we tackle dynamic min/max changes
-    // @Watch('min')
-    // @Watch('max')
-    // handleMinMaxChange() {
-    //     console.log('heard min or max change')
-    // }
+    @Watch('min')
+    @Watch('max')
+    handleMinMaxChange() {
+        if (this.max) this._maxDate = new Date(this.max)
+        if (this.min) this._minDate = new Date(this.min)
+        this._handleYears(this._maxDate, this._minDate)
+    }
 
     private _currentDate: Date = new Date(Date.now())
     private _currentDay: number = this._currentDate.getDate()
@@ -111,6 +100,8 @@ export class RuxCalendar {
         this._updateState()
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
+        this._handleBackwardArrow = this._handleBackwardArrow.bind(this)
+        this._handleForwardArrow = this._handleForwardArrow.bind(this)
         this._handleMonthChange = this._handleMonthChange.bind(this)
         this._handleYearChange = this._handleYearChange.bind(this)
 
@@ -120,30 +111,23 @@ export class RuxCalendar {
         this._handleYears(this._maxDate, this._minDate)
     }
 
-    componentDidLoad() {
-        // attach event listeners to back and forward month arrows
-        this.el
-            .shadowRoot!.querySelector('#backward-month')
-            ?.addEventListener('click', () => {
-                this._handleBackwardArrow()
-            })
-        this.el
-            .shadowRoot!.querySelector('#forward-month')
-            ?.addEventListener('click', () => {
-                this._handleForwardArrow()
-            })
-    }
-    //? Want to remove the selected prop from rux-day if changing month/year. Is this a good way to do it?
-    //? what kind of side effects can this have? What other times will componentWillUpdate fire?
-    //? Might become an issue when we use the month/year picker to change month/year?
     componentWillUpdate() {
+        //remove any selected attributes from days
         const days = this.el.shadowRoot!.querySelectorAll('rux-day')
         days.forEach((day) => {
-            day.removeAttribute('selected')
+            if (day.selected) day.removeAttribute('selected')
         })
     }
 
+    /**
+     * Fills in the year-picker according to the min and max dates provided.
+     * @param maxDate the maximun date that the calendar can go
+     * @param minDate the minimun date the calendar can go
+     */
     private _handleYears(maxDate: Date, minDate: Date) {
+        //clear arrs
+        this._minYearArr = []
+        this._maxYearArr = []
         //maxDiff is the difference in years from the current/date-in date, to the max date.
         const maxDiff = maxDate.getFullYear() - this._date.getFullYear()
         const minDiff = this._date.getFullYear() - minDate.getFullYear()
@@ -172,12 +156,12 @@ export class RuxCalendar {
         if (year && month) {
             if (day) {
                 this._date = utcToZonedTime(
-                    new Date(`${year}-${this._padMonth(month)}-${day}`),
+                    new Date(`${year}-${this._padNum(month)}-${day}`),
                     'UTC'
                 )
             } else {
                 this._date = utcToZonedTime(
-                    new Date(`${year}-${this._padMonth(month)}-01`),
+                    new Date(`${year}-${this._padNum(month)}-01`),
                     'UTC'
                 )
             }
@@ -210,13 +194,12 @@ export class RuxCalendar {
 
     /**
      * Handle date in - all the state needs to be based off of the same time (date-in, or date now)
-     * @returns returns early if this._dateIn is falsey.
+     * This function will determine the date for all other state to be based off of, and then call
+     * _updateDate().
+     * returns early if this._dateIn is falsey.
      */
     private _setStateWithDateIn() {
-        // set all private vars to use the new datein. Is there a better way?
         if (!this.dateIn) return
-        //* Convert the date to be UTC so that we don't get timezone issues.
-        // this._date = utcToZonedTime(new Date(this.dateIn), 'UTC')
         if (new Date(Number(this.dateIn)).getTime() > 0) {
             //unix time
             this.dateIn = Number(this.dateIn)
@@ -248,17 +231,8 @@ export class RuxCalendar {
         if (dayOfWeekOfLastDay === 6) {
             returnArr = [1, 2, 3, 4, 5, 6, 7]
         } else {
-            //dayOfWeekOfLastDay is 0-6
-            //if its 2, then you need to finish that week, plus the next week. so:
-            // 2 + 5 + 7
-            //need to account for months who's last day is in the 6th row, ie April. In these cases we only need to finish out the week.
-            // this only happens when the first day of the month is a Friday (for months with 31 days) or sat (for months with 30)
-            // get first day of month, and the number of days in the month.
-            // if first day of month is fri (5) and there are 31 days, that'll bleed into the 6th week.
-            // same with first day of month being a sat (6) and having 30 days in the month.
-
             let dateFromFirstDay = utcToZonedTime(
-                new Date(`${this._year}-${this._padMonth(this._month)}-01`),
+                new Date(`${this._year}-${this._padNum(this._month)}-01`),
                 'UTC'
             )
             let firstDayOfCurrMonth = dateFromFirstDay.getDay()
@@ -284,18 +258,6 @@ export class RuxCalendar {
         }
         return returnArr
     }
-    /**
-     * Util for creating new dates, where the month needs to be prefixed by a '0' if less than 10.
-     * @param monthNum the month number to pad
-     * @returns a string that concatenates a '0' to the month if the month is less than 9. Example: 9 -> 09
-     */
-    private _padMonth(monthNum: number) {
-        let paddedMonth = monthNum.toString()
-        if (monthNum <= 9) {
-            paddedMonth = '0' + monthNum.toString()
-        }
-        return paddedMonth
-    }
 
     /**
      * Determines the days from the previous month to show on the calendar, if any.
@@ -303,23 +265,16 @@ export class RuxCalendar {
      * @returns An array from the keys in the _prevDaysToShow variable. Used to map thru and render rux-days
      */
     private _findPrevDaysToShow(monthNum: number) {
-        //! I'm going to leave this in because it works, but as you can see from the _findNextDaysToShow
-        //! func, just returning a normal array works. Grid is slotting it correclty still, so idk if we need
-        //! to know the dayOfWeek.
-
-        //! update: yeah it's way too complex for no good reason, afaict. If you remove the
-        //! inline grid styles from where this function is being called, everything still works.
-
         //* If the current month is 01, then the prev month is 12, and the year is this._year-1.
         let newDate: Date
         if (monthNum === 12) {
             newDate = utcToZonedTime(
-                new Date(`${this._year - 1}-${this._padMonth(monthNum)}-01`),
+                new Date(`${this._year - 1}-${this._padNum(monthNum)}-01`),
                 'UTC'
             )
         } else {
             newDate = utcToZonedTime(
-                new Date(`${this._year}-${this._padMonth(monthNum)}-01`),
+                new Date(`${this._year}-${this._padNum(monthNum)}-01`),
                 'UTC'
             )
         }
@@ -339,10 +294,22 @@ export class RuxCalendar {
             // this lastDayOfWeek - i puts the day number in the correct day of week spot.
             this._prevDaysToShow[lastDayOfWeek - i] = dayToUse
         }
-        //? Only doing this because I couldn't get Object.keys(prevDaysToShow).forEach to
-        //? Actually render the rux-days in the JSX
+
         //return an array from the keys so that we can map thru it in the JSX
         return Array.from(Object.keys(this._prevDaysToShow))
+    }
+
+    /**
+     * Util for creating new dates, where the month needs to be prefixed by a '0' if less than 10.
+     * @param num the month number to pad
+     * @returns a string that concatenates a '0' to the month if the month is less than 10. Example: 9 -> 09
+     */
+    private _padNum(num: number) {
+        let paddedNum = num.toString()
+        if (num <= 9) {
+            paddedNum = '0' + num.toString()
+        }
+        return paddedNum
     }
 
     /**
@@ -350,15 +317,22 @@ export class RuxCalendar {
      * @param e The select change event.
      */
     private _handleMonthChange(e: Event) {
-        const tar = e.target as HTMLSelectElement
-        this._month = parseInt(tar.value)
+        const target = e.target as HTMLSelectElement
+        this._month = parseInt(target.value)
     }
 
+    /**
+     * Updates this._year when the year picker value changes.
+     * @param e The select change event
+     */
     private _handleYearChange(e: Event) {
-        const tar = e.target as HTMLSelectElement
-        this._year = parseInt(tar.value)
+        const target = e.target as HTMLSelectElement
+        this._year = parseInt(target.value)
     }
 
+    /**
+     * Handles changing the date when the backward arrow is used.
+     */
     private _handleBackwardArrow() {
         // if it's 12, go to one,ect.
         // increase date by 1 month, set state
@@ -368,10 +342,15 @@ export class RuxCalendar {
 
         this._updateDate(this._year, this._prevMonth)
     }
+
+    /**
+     * Handles changing the date when the forward arrow is used.
+     */
     private _handleForwardArrow() {
         if (this._nextMonth === 1) this._year = this._year + 1
         this._updateDate(this._year, this._nextMonth)
     }
+
     render() {
         return (
             <Host>
@@ -383,12 +362,14 @@ export class RuxCalendar {
                                 class="arrow-left-icon"
                                 size="1.25rem"
                                 id="backward-month"
+                                onClick={this._handleBackwardArrow}
                             ></rux-icon>
                             <div class="month-year-selects">
                                 <rux-select
                                     onRuxchange={this._handleMonthChange}
                                     size="small"
                                     value={this._month.toString()}
+                                    id="month-picker"
                                     inline
                                 >
                                     {Object.keys(monthMap).map((key) => {
@@ -422,6 +403,7 @@ export class RuxCalendar {
                                 class="arrow-right-icon"
                                 size="1.25rem"
                                 id="forward-month"
+                                onClick={this._handleForwardArrow}
                             ></rux-icon>
                         </slot>
                     </div>
@@ -450,17 +432,8 @@ export class RuxCalendar {
                             }
                         )}
                         {this._daysInMonthArr.map((day) => {
-                            //* Need to add a '0' to the day/month if it's >= 9, otherwise its invalid
-                            let dayStr = day.toString()
-                            if (day <= 9) {
-                                dayStr = '0' + dayStr
-                            }
-                            let monthStr = this._month.toString()
-                            if (this._month <= 9) {
-                                monthStr = '0' + monthStr
-                            }
-                            //? Could replace monthStr and dayStr with padMonth func. Might need to
-                            //? rename it ot padMonthDay if I'm gonna use it for day, tho
+                            const dayStr = this._padNum(day)
+                            const monthStr = this._padNum(this._month)
 
                             //Create a new Date from the day we're on
                             let tempDateStr = utcToZonedTime(

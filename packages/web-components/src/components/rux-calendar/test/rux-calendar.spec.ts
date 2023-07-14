@@ -618,13 +618,16 @@ test.describe('Calendar', () => {
                 .then((len) => expect(len).toEqual(13))
         })
     })
+    test.describe('Min and max dates', () => {
+        test('Year picker fills in only years between min and max dates', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar date-in="01-01-2023" max="03-01-2023" min="12-01-2022"></rux-calendar>`
+            await page.setContent(template)
+            //year picker should only have 2023 and 2022
+            const yearPicker = page.locator('#year-picker').locator('select')
+            const options = await yearPicker.locator('option').all()
+            expect(options.length).toBe(2)
+        })
+    })
 })
-
-//* Need to test:
-/*
-  * the rux-day that is today IRL gets the today class. That class does not exisit on other months/years
-  * Each month has the previous days, current month days, and next month days in the correct location
-  *   * as well as correct amount of prev, curr and next days.
-  * min/max
-
-*/
