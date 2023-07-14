@@ -625,5 +625,6 @@ test.describe('Calendar', () => {
   * the rux-day that is today IRL gets the today class. That class does not exisit on other months/years
   * Each month has the previous days, current month days, and next month days in the correct location
   *   * as well as correct amount of prev, curr and next days.
+  * min/max
 
 */

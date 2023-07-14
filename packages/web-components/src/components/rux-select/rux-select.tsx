@@ -85,7 +85,6 @@ export class RuxSelect implements FormFieldInterface {
      * The value of the selected option. If multiple is true, this is an array.
      */
     @Prop({ mutable: true, reflect: true }) value?: string | string[]
-    //! Micah changed the reflect here while doing some calendar stuff.
 
     /**
      * The help or explanation text
