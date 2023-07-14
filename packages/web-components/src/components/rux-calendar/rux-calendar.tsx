@@ -85,7 +85,6 @@ export class RuxCalendar {
     private _nextDaysToShow: Array<Number> = []
     private _allYearsArr: Array<Number> = []
 
-    //! might be a bug here. might need to make the else be 10 from .now()
     private _maxDate: Date = this.max
         ? new Date(this.max)
         : new Date(Date.now())
