@@ -9,7 +9,9 @@
     --_slider-thumb-size: calc(var(--spacing-4) + var(--spacing-1)); //20
     --_slider-value-percent: 50%;
     --_slider-top: calc(var(--_slider-thumb-size) / -2.4);
+    --_start-value-percent: 20%;
 
+    position: relative;
     display: flex;
     flex-grow: 1;
     flex-flow: column;
@@ -27,8 +29,24 @@
     display: none;
 }
 
+:host([disabled]) > .rux-form-field > .rux-slider {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+    .rux-range-overlay {
+        cursor: not-allowed;
+    }
+}
+:host([disabled]) > .rux-form-field > #steplist {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+    .tick-label {
+        .axis-label {
+            cursor: not-allowed;
+        }
+    }
+}
+
 .rux-form-field {
-    flex-direction: column;
     label {
         margin-bottom: var(--spacing-2);
     }
@@ -47,6 +65,9 @@
 }
 
 .rux-slider {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
     height: calc(var(--spacing-4) + var(--spacing-1)); //20
     position: relative;
     font-family: var(--font-body-1-font-family);
@@ -59,55 +80,51 @@
     :disabled {
         cursor: not-allowed;
     }
-    .rux-range:disabled + #steplist {
-        opacity: var(--opacity-disabled);
-        cursor: not-allowed;
-        .tick {
-            cursor: not-allowed;
-        }
-        .tick-label {
-            .axis-label {
-                cursor: not-allowed;
-            }
-        }
+
+    &--range input[type='range'] {
+        position: absolute;
+        width: 100%;
+        height: var(--spacing-025);
+        background-color: var(--color-background-interactive-default);
+        pointer-events: none;
     }
+}
+#steplist {
+    display: grid;
+    padding: var(--spacing-0) calc(var(--_slider-thumb-size) / 2); //center first and last dot on thumb at start and end
+    cursor: default;
 
-    #steplist {
-        display: grid;
-        padding: var(--spacing-0) calc(var(--_slider-thumb-size) / 2); //center first and last dot on thumb at start and end
-        cursor: default;
+    .tick-label {
+        grid-row: 1;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-body-3-font-family);
+        font-size: var(--font-body-3-font-size);
+        line-height: var(--font-body-3-line-height);
+        letter-spacing: var(--font-body-3-letter-spacing);
+        font-weight: var(--font-body-3-font-weight);
 
-        .tick-label {
-            grid-row: 1;
-            width: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-family: var(--font-body-3-font-family);
-            font-size: var(--font-body-3-font-size);
-            line-height: var(--font-body-3-line-height);
-            letter-spacing: var(--font-body-3-letter-spacing);
-            font-weight: var(--font-body-3-font-weight);
-
-            .axis-label {
-                padding-top: var(--spacing-1); //4px
-                cursor: default;
-            }
-        }
-        .tick {
-            background: var(--color-background-interactive-default);
-            height: var(--spacing-1); //4px
-            width: var(--spacing-1);
-            border-radius: var(--radius-circle);
+        .axis-label {
+            padding-top: var(--spacing-1); //4px
             cursor: default;
         }
-        .tick-label:not(:first-child):not(:last-child) {
-            padding: 0;
-        }
-        :disabled {
-            opacity: var(--opacity-disabled);
-        }
     }
+    .tick {
+        background: var(--color-background-interactive-default);
+        height: var(--spacing-1); //4px
+        width: var(--spacing-1);
+        border-radius: var(--radius-circle);
+        cursor: default;
+    }
+    .tick-label:not(:first-child):not(:last-child) {
+        padding: 0;
+    }
+}
+
+.rux-slider + #steplist {
+    padding: var(--spacing-1) calc(var(--_slider-thumb-size) / 2);
 }
 
 .rux-range {
@@ -121,8 +138,8 @@
     margin: var(--spacing-0);
     color: transparent;
     position: relative;
-    z-index: 1;
 }
+
 input[type='range']:focus {
     outline: none;
 }
@@ -165,8 +182,23 @@ input[type='range']:focus {
         calc(100% - (var(--_slider-thumb-size) / 2)),
         calc((var(--_slider-thumb-size) / 2) - var(--spacing-050));
 }
+.rux-range--dual::-webkit-slider-runnable-track {
+    background-image: none;
+    z-index: 1;
+    min-block-size: auto;
+}
+.rux-range-overlay {
+    position: absolute;
+    height: var(--spacing-1);
+    background-color: var(--color-background-interactive-default);
+    left: var(--_start-value-percent);
+    width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
+
+    &:hover {
+        cursor: default;
+    }
+}
 .rux-range:disabled::-webkit-slider-runnable-track {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -208,12 +240,10 @@ input[type='range']:focus {
 }
 .rux-range:disabled::-moz-range-track,
 .rux-range:disabled::-moz-range-progress {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
 .rux-input:disabled {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -266,6 +296,7 @@ input[type='range']:focus {
     background-color: var(--color-background-base-default);
     cursor: pointer;
     z-index: 6;
+    pointer-events: all;
 }
 
 .rux-range::-webkit-slider-thumb:hover {
@@ -326,7 +357,6 @@ input[type='range']:focus {
 }
 
 .rux-range:disabled::-moz-range-thumb {
-    opacity: var(--opacity-disabled);
     cursor: not-allowed;
 }
 
@@ -343,7 +373,6 @@ input[type='range']:focus {
     z-index: 6;
 }
 .rux-range:disabled::-ms-thumb {
-    opacity: 0.4;
     cursor: not-allowed;
 }
 .rux-range:focus-visible::-ms-thumb {
