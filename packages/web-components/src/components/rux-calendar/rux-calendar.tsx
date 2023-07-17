@@ -32,7 +32,7 @@ type SizeMap = {
 const sizeMap: SizeMap = {
     1: '112px',
     2: '112px',
-    3: '80px',
+    3: '86px',
     4: '76px',
     5: '70px',
     6: '76px',
