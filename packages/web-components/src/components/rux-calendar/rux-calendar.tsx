@@ -22,6 +22,24 @@ const monthMap: MonthMap = {
     12: 'December',
 }
 
+type SizeMap = {
+    [key: number]: string
+}
+const sizeMap: SizeMap = {
+    1: '112px',
+    2: '112px',
+    3: '80px',
+    4: '76px',
+    5: '70px',
+    6: '76px',
+    7: '76px',
+    8: '112px',
+    9: '124px',
+    10: '112px',
+    11: '112px',
+    12: '112px',
+}
+
 @Component({
     tag: 'rux-calendar',
     styleUrl: 'rux-calendar.scss',
@@ -370,6 +388,7 @@ export class RuxCalendar {
                                     value={this._month.toString()}
                                     id="month-picker"
                                     inline
+                                    style={{ width: sizeMap[this._month] }}
                                 >
                                     {Object.keys(monthMap).map((key) => {
                                         return (
