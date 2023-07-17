@@ -19875,6 +19875,10 @@ export namespace Components {
          */
         "min": number;
         /**
+          * If present, creates a dual-range slider by adding a second thumb.
+         */
+        "minVal"?: number;
+        /**
           * Name of the Input Field for Form Submission
          */
         "name": string;
@@ -19883,11 +19887,15 @@ export namespace Components {
          */
         "step": number;
         /**
+          * In a dual-range slider, disables thumb swapping.
+         */
+        "strict": boolean;
+        /**
           * Hides labels and only shows tick marks if axis-labels is provided.
          */
         "ticksOnly": boolean;
         /**
-          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
          */
         "value": number;
     }
@@ -55478,6 +55486,10 @@ declare namespace LocalJSX {
          */
         "min"?: number;
         /**
+          * If present, creates a dual-range slider by adding a second thumb.
+         */
+        "minVal"?: number;
+        /**
           * Name of the Input Field for Form Submission
          */
         "name"?: string;
@@ -55498,11 +55510,15 @@ declare namespace LocalJSX {
          */
         "step"?: number;
         /**
+          * In a dual-range slider, disables thumb swapping.
+         */
+        "strict"?: boolean;
+        /**
           * Hides labels and only shows tick marks if axis-labels is provided.
          */
         "ticksOnly"?: boolean;
         /**
-          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
+          * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
          */
         "value"?: number;
     }

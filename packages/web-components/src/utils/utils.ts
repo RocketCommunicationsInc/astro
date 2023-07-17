@@ -82,6 +82,35 @@ export const renderHiddenInput = (
     }
 }
 
+export const renderHiddenSliderInput = (
+    always: boolean,
+    container: HTMLElement,
+    name: string,
+    value: string,
+    disabled: boolean
+) => {
+    let input = container.querySelector(
+        `input[name="${name}"]`
+    ) as HTMLInputElement | null
+    if (input) {
+        //update input values
+        input.value = value
+        input.disabled = disabled
+        input.name = name
+    } else {
+        if (always || hasShadowDom(container)) {
+            // doesn't exist, create it
+            input = container.ownerDocument!.createElement('input')
+            input.type = 'hidden'
+            input.classList.add('aux-input')
+            input.value = value || ''
+            input.disabled = disabled
+            input.name = name
+            container.appendChild(input)
+        }
+    }
+}
+
 /**
  * Renders multiple hidden inputs from an array of values
  * Used in multiselect

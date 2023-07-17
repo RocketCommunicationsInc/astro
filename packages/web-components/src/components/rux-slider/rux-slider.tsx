@@ -10,7 +10,11 @@ import {
     State,
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
-import { hasSlot, renderHiddenInput } from '../../utils/utils'
+import {
+    hasSlot,
+    renderHiddenInput,
+    renderHiddenSliderInput,
+} from '../../utils/utils'
 
 let id = 0
 
@@ -38,26 +42,26 @@ export class RuxSlider implements FormFieldInterface {
     @State() hasLabelSlot = false
     @State() hasHelpSlot = false
     @State() hasErrorSlot = false
+
     /**
      * Min value of the slider.
      */
-
     @Prop() min: number = 0
+
     /**
      * Max value of slider.
      */
-
     @Prop() max: number = 100
     /**
      * Step amount of slider value.
      */
 
     @Prop() step: number = 1
-    /**
-     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range)
-     */
 
-    @Prop({ mutable: true }) value: number =
+    /**
+     * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
+     */
+    @Prop({ mutable: true, reflect: true }) value: number =
         (this.max! - this.min!) / 2 + this.min!
 
     /**
@@ -74,6 +78,7 @@ export class RuxSlider implements FormFieldInterface {
      * Determines if the slider is disabled.
      */
     @Prop({ reflect: true }) disabled: boolean = false
+
     /**
      * Name of the Input Field for Form Submission
      */
@@ -95,29 +100,44 @@ export class RuxSlider implements FormFieldInterface {
     @Prop({ attribute: 'error-text' }) errorText?: string
 
     /**
+     * If present, creates a dual-range slider by adding a second thumb.
+     */
+    @Prop({ attribute: 'min-val', mutable: true, reflect: true })
+    minVal?: number
+
+    /**
+     * In a dual-range slider, disables thumb swapping.
+     */
+    @Prop({ reflect: true }) strict: boolean = false
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxinput' }) ruxInput!: EventEmitter
+
     /**
      * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
      */
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
+
     /**
      * Fired when the element's value is altered by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
 
     componentWillLoad() {
-        this._updateValue()
+        this._setValuePercent()
         this._getBrowser(navigator.userAgent.toLowerCase())
         this._handleSlotChange()
     }
 
     connectedCallback() {
         this._onInput = this._onInput.bind(this)
+        this._onMinValInput = this._onMinValInput.bind(this)
         this._onBlur = this._onBlur.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._onChange = this._onChange.bind(this)
+        this._handleTrackClick = this._handleTrackClick.bind(this)
     }
 
     disconnectedCallback() {
@@ -135,68 +155,81 @@ export class RuxSlider implements FormFieldInterface {
     @Watch('value')
     @Watch('min')
     @Watch('max')
+    @Watch('minVal')
     handleChange() {
-        this._updateValue()
+        this._setValuePercent()
     }
 
     @Watch('step')
     handleStep() {
         // Value needs to be a multiple of step, otherwise slider begins to look wrong
-        this.value = this._closestMultiple(this.value, this.step)
+        this.value = this._closestMultiple(this.value)
+        if (this.minVal) this.minVal = this._closestMultiple(this.minVal)
     }
 
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
     }
-    //Returns the closest multiple of two given numbers.
-    private _closestMultiple(n: number, x: number) {
-        if (x > n) return x
-        n = n + x / 2
-        n = n - (n % x)
-        return n
+
+    /**
+     * Returns the closest multiple of two given numbers.
+     */
+    private _closestMultiple(x: number) {
+        return Math.round(x / this.step) * this.step
     }
 
-    private _updateValue() {
-        // If min is not a number, change it to 0
-        if (!this.min && this.min != 0) {
-            this.min = 0
-        }
-        //If max is not a number, change it to 100
-        if (!this.max && this.max != 0) {
-            this.max = 100
-        }
-        // If value is not a number, change it to default.
-        if (!this.value && this.value != 0) {
-            this.value = (this.max - this.min) / 2 + this.min
-        }
-        //If step is not a number, change it to 1
-        if (!this.step) {
-            this.step = 1
-        }
-        //Min can't be >= max
-        if (this.min >= this.max) {
-            this.min = this.max - this.step
-        }
-        // If min is given and is greater than value, then set value to the min.
-        if (this.value < this.min) {
-            this.value = this.min
-        }
-        //If max is given and is less than value, set value to max
-        if (this.max < this.value) {
-            this.value = this.max
-        }
-
-        this._setValuePercent()
-    }
-    //Sets the --slider-value-percent CSS var
+    //Sets the --slider-value-percent CSS var.
     private _setValuePercent() {
-        const dif = ((this.value! - this.min!) / (this.max! - this.min!)) * 100
-        this.el.style.setProperty('--_slider-value-percent', `${dif}%`)
+        //if minVal is being used, we're in dual range mode.
+        if (this.minVal !== undefined) {
+            if (this.minVal > this.value) {
+                this.el.style.setProperty(
+                    '--_slider-value-percent',
+                    `${this.minVal}%`
+                )
+                this.el.style.setProperty(
+                    '--_start-value-percent',
+                    `${this.value}%`
+                )
+                //If end < start, no need to swap
+            } else {
+                this.el.style.setProperty(
+                    '--_start-value-percent',
+                    `${this.minVal}%`
+                )
+                this.el.style.setProperty(
+                    '--_slider-value-percent',
+                    `${this.value}%`
+                )
+            }
+            //if not in dual slider
+        } else {
+            const dif =
+                ((this.value! - this.min!) / (this.max! - this.min!)) * 100
+            this.el.style.setProperty('--_slider-value-percent', `${dif}%`)
+        }
     }
 
     private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
-        this.value = parseFloat(target.value)
+        if (this.value !== undefined) {
+            this.value = parseFloat(target.value)
+            if (this.value <= this.minVal! && this.strict) {
+                this.value = this.minVal!
+                target.value = this.value.toString()
+            }
+        }
+        this._setValuePercent()
+        this.ruxInput.emit()
+    }
+
+    private _onMinValInput(e: Event) {
+        const target = e.target as HTMLInputElement
+        this.minVal = parseFloat(target.value)
+        if (this.minVal >= this.value! && this.strict) {
+            this.minVal = this.value
+            target.value = this.minVal!.toString()
+        }
         this._setValuePercent()
         this.ruxInput.emit()
     }
@@ -231,8 +264,91 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _getTickWidths() {
-        const width = 100 / (this.axisLabels.length - 1)
-        return width
+        if (this.axisLabels) {
+            const width = 100 / (this.axisLabels.length - 1)
+            return width
+        }
+    }
+
+    /**
+     * Given the position of the click on a dual range slider, move the appropiate thumb to that
+     * postion.
+     * @param e The click event. This is attatched to the .rux-slider div.
+     * @returns Depnding on values and the click location, this will update either
+     * minVal or value.
+     */
+    private _handleTrackClick(e: MouseEvent) {
+        // if the minVal isn't being used, we're not in dual mode, so do nothing. Do nothing if disabled.
+        if (this.minVal === undefined || this.disabled) return
+
+        const target = e.target as HTMLInputElement
+        // if the clicked target is one of the thumbs or the overlay, do nothing
+        // inputs have pointer-events: none, thumbs do not. If the nodeName is an input, then
+        // the thumb was clicked.
+        //* For now, the overlay bar is non-clickable as well.
+        if (
+            target.nodeName === 'INPUT' ||
+            target.classList.contains('rux-range-overlay')
+        )
+            return
+
+        // Find the size of the element
+        const currentTarget = e.currentTarget as HTMLElement
+        const sliderWidth = currentTarget.offsetWidth
+        const sliderBounds = currentTarget.getBoundingClientRect()
+
+        // get the click's distance from the left side
+        const clickPosition = e.clientX - sliderBounds.left
+
+        // format clickPosition
+        let percentFromLeft = Math.round((clickPosition / sliderWidth) * 100)
+        percentFromLeft = this._closestMultiple(percentFromLeft)
+
+        // Prevent stlying bug when clicking the upper end of the slider while the step is
+        // not a multiple of the max
+        if (percentFromLeft > this.max) percentFromLeft = this.max - this.step
+        // get the percent of the min and max value for comparison
+        let minValPercent = Math.round(this.minVal)
+        let maxValPercent = Math.round(this.value)
+        //When thumbs have swapped, we need to swap these as well.
+        if (this.minVal > this.value) {
+            minValPercent = Math.round(this.value)
+            maxValPercent = Math.round(this.minVal)
+        }
+
+        //if click happens between the thumbs, ignore it. //* Might be changed in future
+        if (
+            percentFromLeft > minValPercent &&
+            percentFromLeft < maxValPercent
+        ) {
+            return
+        }
+        // compares minValPercent and maxValPercent to percentFromLeft, and returns which one is the closest.
+        let counts = [minValPercent, maxValPercent]
+        var closest = counts.reduce(function (prev, curr) {
+            return Math.abs(curr - percentFromLeft) <
+                Math.abs(prev - percentFromLeft)
+                ? curr
+                : prev
+        })
+
+        //handle case where thumbs overlap
+        if (this.value === this.minVal) {
+            //then we need to just move the left thumb if clicked to the left, right thumb if clicked to right
+            if (percentFromLeft > closest) {
+                //move right thumb
+                this.value = percentFromLeft
+            } else {
+                this.minVal = percentFromLeft
+            }
+        } else {
+            if (closest === maxValPercent) {
+                this.value = percentFromLeft
+            } else {
+                this.minVal = percentFromLeft
+            }
+        }
+        this.ruxInput.emit()
     }
 
     render() {
@@ -255,9 +371,22 @@ export class RuxSlider implements FormFieldInterface {
             _onInput,
             _onBlur,
             _onChange,
+            _handleTrackClick,
+            axisLabels,
+            _onMinValInput,
+            minVal,
+            ticksOnly,
         } = this
-
-        renderHiddenInput(true, el, name, JSON.stringify(this.value), disabled)
+        renderHiddenInput(true, el, name, JSON.stringify(value), disabled)
+        if (minVal !== undefined) {
+            renderHiddenSliderInput(
+                true,
+                el,
+                name ? `${name}-min-val` : '',
+                JSON.stringify(minVal),
+                disabled
+            )
+        }
         return (
             <Host>
                 <div class="rux-form-field" part="form-field">
@@ -265,28 +394,47 @@ export class RuxSlider implements FormFieldInterface {
                         <label
                             class={{
                                 'rux-input-label': true,
-                                hidden: !this.hasLabel,
+                                hidden: !hasLabel,
                             }}
-                            aria-hidden={this.hasLabel ? 'false' : 'true'}
+                            aria-hidden={hasLabel ? 'false' : 'true'}
                             htmlFor={sliderId}
                             part="label"
                         >
                             <slot name="label">{label}</slot>
                         </label>
                     ) : null}
-
                     <div
                         class={{
                             'rux-slider': true,
-                            'with-axis-labels': this.axisLabels.length > 0,
+                            'rux-slider--range':
+                                minVal !== undefined ? true : false,
                         }}
+                        onClick={_handleTrackClick}
                     >
+                        {minVal !== undefined ? (
+                            <input
+                                type="range"
+                                class="rux-range rux-range--dual"
+                                onInput={_onMinValInput}
+                                onChange={_onChange}
+                                disabled={disabled}
+                                min={min}
+                                max={max}
+                                step={step}
+                                value={minVal}
+                                onBlur={_onBlur}
+                            ></input>
+                        ) : null}
                         <input
                             id={sliderId}
                             onInput={_onInput}
                             onChange={_onChange}
                             type="range"
-                            class="rux-range"
+                            class={{
+                                'rux-range': true,
+                                'rux-range--dual':
+                                    minVal !== undefined ? true : false,
+                            }}
                             min={min}
                             max={max}
                             step={step}
@@ -296,38 +444,40 @@ export class RuxSlider implements FormFieldInterface {
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
                             part="input"
-                            list="steplist"
                         ></input>
-                        {this.axisLabels.length > 0 ? (
-                            <datalist
-                                id="steplist"
-                                style={{
-                                    gridTemplateColumns: `[tick] repeat(${
-                                        this.axisLabels.length - 1
-                                    }, ${this._getTickWidths()}%)`,
-                                }}
-                            >
-                                {this.axisLabels.map((label) => {
-                                    return (
-                                        <div
-                                            class="tick-label"
-                                            part="tick-container"
-                                        >
-                                            <div class="tick" part="tick"></div>
-                                            {this.ticksOnly ? null : (
-                                                <div
-                                                    class="axis-label"
-                                                    part="axis-label"
-                                                >
-                                                    {label}
-                                                </div>
-                                            )}
-                                        </div>
-                                    )
-                                })}
-                            </datalist>
+                        {minVal !== undefined ? (
+                            <div class="rux-range-overlay"></div>
                         ) : null}
                     </div>
+                    {axisLabels.length > 0 ? (
+                        <datalist
+                            id="steplist"
+                            style={{
+                                gridTemplateColumns: `[tick] repeat(${
+                                    axisLabels.length - 1
+                                }, ${this._getTickWidths()}%)`,
+                            }}
+                        >
+                            {axisLabels.map((label) => {
+                                return (
+                                    <div
+                                        class="tick-label"
+                                        part="tick-container"
+                                    >
+                                        <div class="tick" part="tick"></div>
+                                        {ticksOnly ? null : (
+                                            <div
+                                                class="axis-label"
+                                                part="axis-label"
+                                            >
+                                                {label}
+                                            </div>
+                                        )}
+                                    </div>
+                                )
+                            })}
+                        </datalist>
+                    ) : null}
                 </div>
                 <div
                     class={{
@@ -374,13 +524,3 @@ export class RuxSlider implements FormFieldInterface {
         )
     }
 }
-
-/*
-                                return (
-                                    <div class="tick-label">
-                                        <div class="tick"></div>
-                                        <option>{label}</option>
-                                    </div>
-                                )
-
-*/

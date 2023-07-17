@@ -218,13 +218,68 @@ export const WithAxisLabels = (args, data) => {
     </Story>
 </Canvas>
 
-To display tick marks and labels, make use of the `axis-labels` property. This accepts an array of strings that will
-be evenly distributed across the progress bar. 
+To display tick marks and labels, make use of the `axis-labels` attribute. This accepts an array of strings that will
+be evenly distributed across the progress bar.
 
 #### Ticks Only
 
-If you only want to show tick marks without labels, make use of the `ticks-only` property. NOTE: you will still need to pass in the array of strings to determine how many
+If you only want to show tick marks without labels, make use of the `ticks-only` attribute. NOTE: you will still need to pass in the array of strings to determine how many
 ticks to show.
+
+### Dual Range
+
+Adding the `min-val` attribute to the slider will add a second thumb, creating a dual-range slider.
+
+export const DualRange = (args, data) => {
+    return html`
+<div style="padding: 5%">
+    <rux-slider
+        id="dual-range"
+        max="${args.max}"
+        min="${args.min}"
+        step="${args.step}"
+        value="${args.value}"
+        min-val="${args.minVal}"
+        ?disabled="${args.disabled}"
+        help-text="${args.helpText}"
+        error-text="${args.errorText}"
+        .axisLabels="${args.axisLabels}"
+        ?ticks-only="${args.ticksOnly}"
+        label="${args.label}"
+        ?strict="${args.strict}"
+        name="${args.name}"
+    ></rux-slider>
+</div>
+  `
+}
+
+<Canvas>
+    <Story
+        name="Dual Range"
+        args={{
+            max: 100,
+            min: 0,
+            value: 75,
+            minVal: 25,
+            label: "",
+            ticksOnly: false,
+            disabled: false,
+            strict: false,
+            errorText: "",
+            helpText: "",
+            name: "",
+            step: 1,
+            axisLabels: ["0", "25", "50", "75", "100"],
+        }}
+    >
+        {DualRange.bind()}
+    </Story>
+</Canvas>
+
+#### Strict
+
+By default, the dual-range slider can have it's thumbs go anywhere, including past each other. If you'd rather the thumbs not be able to swap,
+you can use the `strict` property to prevent it.
 
 ### Horizontal Labels
 
