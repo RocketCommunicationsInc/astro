@@ -22,6 +22,10 @@ const monthMap: MonthMap = {
     12: 'December',
 }
 
+/**
+ * Used to determine the size of the month-picker select menu.
+ * I like it as much as you do.
+ */
 type SizeMap = {
     [key: number]: string
 }
