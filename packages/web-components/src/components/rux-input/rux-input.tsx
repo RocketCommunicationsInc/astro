@@ -54,6 +54,8 @@ export class RuxInput implements FormFieldInterface {
 
     @State() hasFocus = false
 
+    private _isDatePicker = false
+
     /**
      * The input label text. For HTML content, use the `label` slot instead.
      */
@@ -198,10 +200,25 @@ export class RuxInput implements FormFieldInterface {
     componentWillLoad() {
         this._handleSlotChange()
         this._setTogglePassword()
+
+        const shadowRootNode = this.el.getRootNode() as ShadowRoot
+        this._isDatePicker = shadowRootNode.host ? true : false
     }
 
     get hasLabel() {
         return this.label ? true : this.hasLabelSlot
+    }
+
+    //@ts-ignore
+    private _closestElement(selector: string, el = this.el) {
+        console.log('running')
+        //@ts-ignore
+        console.log(el.getRootNode().host, 'host')
+        return (
+            (el && el.closest(selector)) ||
+            //@ts-ignore
+            this._closestElement(selector, el.getRootNode().host)
+        )
     }
 
     private _onChange(e: Event) {
@@ -343,7 +360,10 @@ export class RuxInput implements FormFieldInterface {
                             min={min}
                             max={max}
                             value={value}
-                            class="native-input"
+                            class={{
+                                'native-input': true,
+                                'hide-cal-icon': this._isDatePicker,
+                            }}
                             id={inputId}
                             spellcheck={spellcheck}
                             readonly={readonly}

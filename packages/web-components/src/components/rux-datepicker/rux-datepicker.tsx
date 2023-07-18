@@ -7,7 +7,10 @@ import {
     Component,
     h,
     Host,
+    Listen,
+    State,
 } from '@stencil/core'
+import { RuxCalendarCustomEvent } from '../../components'
 
 @Component({
     tag: 'rux-datepicker',
@@ -31,10 +34,32 @@ export class RuxDatepicker {
     @Event({ eventName: 'ruxexpanded' }) ruxExpanded!: EventEmitter
     @Event({ eventName: 'ruxcollapsed' }) ruxCollapsed!: EventEmitter
 
+    @Listen('ruxdateselected')
+    handleRuxDaySelected(e: RuxCalendarCustomEvent<Date>) {
+        const event = e.detail
+        console.log(event, 'event?')
+        const year = event.getUTCFullYear()
+        const month =
+            event.getUTCMonth() + 1 > 9
+                ? event.getUTCMonth() + 1
+                : `0${event.getUTCMonth() + 1}`
+        const day =
+            event.getUTCDate() > 9
+                ? event.getUTCDate()
+                : `0${event.getUTCDate()}`
+        this._inputVal = `${year}-${month}-${day}`
+    }
+    @Listen('ruxchange')
+    handleRuxChange() {
+        console.log('heard')
+    }
+
     @Watch('open')
     handleOpen() {
         this.open ? this.ruxExpanded.emit() : this.ruxCollapsed.emit()
     }
+
+    @State() _inputVal: string = ''
 
     // connectedCallback() {
     //     this._handleClick = this._handleClick.bind(this)
@@ -47,47 +72,20 @@ export class RuxDatepicker {
     render() {
         return (
             <Host>
-                <div class="rux-datepicker">
-                    <div class="input-wrapper">
-                        <div class="editable-input" contentEditable>
-                            YYYY / MM / DD
-                        </div>
-                        <rux-pop-up placement="bottom-end">
-                            <rux-icon
-                                icon="calendar-today"
-                                size="22px"
-                                slot="trigger"
-                            ></rux-icon>
-                            <rux-calendar>
-                                {/* We could do an includeFooter prop? should it be there by default? */}
-                                <div slot="footer" class="date-picker-footer">
-                                    <div class="today-clear">
-                                        <rux-button
-                                            borderless
-                                            icon="today"
-                                            size="small"
-                                        >
-                                            Today
-                                        </rux-button>
-                                        <rux-button
-                                            borderless
-                                            icon="autorenew"
-                                            size="small"
-                                        >
-                                            Clear
-                                        </rux-button>
-                                    </div>
-                                    <div class="button-group">
-                                        <rux-button secondary>
-                                            Cancel
-                                        </rux-button>
-                                        <rux-button>Apply</rux-button>
-                                    </div>
-                                </div>
-                            </rux-calendar>
-                        </rux-pop-up>
-                    </div>
-                </div>
+                <rux-input type="date" value={this._inputVal}>
+                    <rux-pop-up
+                        slot="suffix"
+                        placement="bottom-end"
+                        strategy="fixed"
+                    >
+                        <rux-icon
+                            icon="calendar-today"
+                            slot="trigger"
+                            size="22px"
+                        ></rux-icon>
+                        <rux-calendar></rux-calendar>
+                    </rux-pop-up>
+                </rux-input>
             </Host>
         )
     }

@@ -62,7 +62,10 @@
         flex-direction: column;
         align-items: center;
     }
-    rux-day.past-future-day::part(button) {
+    rux-day.past-day::part(button) {
+        color: var(--color-text-placeholder);
+    }
+    rux-day.future-day::part(button) {
         color: var(--color-text-placeholder);
     }
     rux-day {

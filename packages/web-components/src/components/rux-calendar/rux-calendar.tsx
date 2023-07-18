@@ -1,7 +1,19 @@
-import { Component, Host, h, Prop, Watch, Element, State } from '@stencil/core'
+import {
+    Component,
+    Host,
+    h,
+    Prop,
+    Watch,
+    Element,
+    State,
+    Event,
+    Listen,
+    EventEmitter,
+} from '@stencil/core'
 import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
 import { hasSlot } from '../../utils/utils'
+import { RuxDayCustomEvent } from '../../components'
 
 type MonthMap = {
     [key: number]: string
@@ -39,9 +51,9 @@ const sizeMap: SizeMap = {
     7: '76px',
     8: '112px',
     9: '124px',
-    10: '112px',
-    11: '112px',
-    12: '112px',
+    10: '116px',
+    11: '116px',
+    12: '116px',
 }
 
 @Component({
@@ -70,6 +82,42 @@ export class RuxCalendar {
     handleDateInChange() {
         this._setStateWithDateIn()
     }
+
+    /**
+     * Listens for a day to be selected and then emits the date made from that selected
+     * day.
+     * @param e ruxdayselected Custom event. Resovles to the <rux-day> element.
+     */
+    @Listen('ruxdayselected')
+    handleDaySelected(e: RuxDayCustomEvent<HTMLRuxDayElement>) {
+        const dayEl: HTMLRuxDayElement = e.detail
+        let monthToEmit = this._month
+        let yearToEmit = this._year
+        //if it has class past/future-day, then month needs to be adapted.
+        if (dayEl.classList.contains('past-day')) {
+            monthToEmit = this._month > 1 ? this._month - 1 : 12
+            if (this._month === 1) {
+                yearToEmit = this._year - 1
+            }
+        }
+        if (dayEl.classList.contains('future-day')) {
+            monthToEmit = this._month < 12 ? this._month + 1 : 1
+            if (this._month === 12) {
+                yearToEmit = this._year + 1
+            }
+        }
+        // console.log('Day to emit: ', dayEl.innerText)
+        // console.log('Month to emit: ', monthToEmit)
+        // console.log('year to emit: ', yearToEmit)
+        const selectedDate = utcToZonedTime(
+            new Date(`${yearToEmit}-${monthToEmit}-${dayEl.innerText}`),
+            'UTC'
+        )
+        this.ruxDateSelected.emit(selectedDate)
+    }
+
+    @Event({ eventName: 'ruxdateselected', composed: true })
+    ruxDateSelected!: EventEmitter<Date>
 
     @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
@@ -446,7 +494,7 @@ export class RuxCalendar {
                                                 parseInt(day) + 1
                                             ).toString(),
                                         }}
-                                        class="past-future-day"
+                                        class="past-day"
                                     >
                                         {this._prevDaysToShow[day]}
                                     </rux-day>
@@ -500,7 +548,7 @@ export class RuxCalendar {
                         })}
                         {this._nextDaysToShow.map((dayOfMonth) => {
                             return (
-                                <rux-day class="past-future-day">
+                                <rux-day class="future-day">
                                     {dayOfMonth}
                                 </rux-day>
                             )
