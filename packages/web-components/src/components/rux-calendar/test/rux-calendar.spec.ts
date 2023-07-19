@@ -8,7 +8,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for January', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -21,7 +21,9 @@ test.describe('Calendar', () => {
         })
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)').first()
+            const days = cal
+                .locator('rux-day:not(.past-day):not(.future-day)')
+                .first()
             const first = days.first()
             //First day of 2023-01 is a Sunday
             await expect(first).toHaveCSS('grid-column', '1 / auto')
@@ -34,7 +36,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for February', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -49,7 +51,7 @@ test.describe('Calendar', () => {
             // First of Feb 2023 is a Wed
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '4 / auto')
         })
@@ -59,7 +61,7 @@ test.describe('Calendar', () => {
             const leapTemp = `<rux-calendar id="leap" date-in="2024-02-01T00:00:00.000Z"></rux-calendar>`
             await page.setContent(leapTemp)
             const cal = page.locator('#leap')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -74,7 +76,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for March', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -88,7 +90,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '4 / auto')
         })
@@ -100,7 +102,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for April', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -114,7 +116,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '7 / auto')
         })
@@ -126,7 +128,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for May', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -140,7 +142,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '2 / auto')
         })
@@ -152,7 +154,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for June', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -166,7 +168,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '5 / auto')
         })
@@ -178,7 +180,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for July', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -192,7 +194,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '7 / auto')
         })
@@ -204,7 +206,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for August', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -218,7 +220,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '3 / auto')
         })
@@ -230,7 +232,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for September', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -244,7 +246,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '6 / auto')
         })
@@ -256,7 +258,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for October', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -270,7 +272,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '1 / auto')
         })
@@ -282,7 +284,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for November', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -296,7 +298,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '4 / auto')
         })
@@ -308,7 +310,7 @@ test.describe('Calendar', () => {
         })
         test('Shows correct days for December', async ({ page }) => {
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day:not(.past-future-day)')
+            const days = cal.locator('rux-day:not(.past-day):not(.future-day)')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -322,7 +324,7 @@ test.describe('Calendar', () => {
         test('Days are in correct spot', async ({ page }) => {
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '6 / auto')
         })
@@ -352,7 +354,7 @@ test.describe('Calendar', () => {
             expect(selectValue).toEqual('12')
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS('grid-column', '6 / auto')
         })
@@ -381,7 +383,7 @@ test.describe('Calendar', () => {
 
             const cal = page.locator('rux-calendar')
             const firstDay = cal
-                .locator('rux-day:not(.past-future-day)')
+                .locator('rux-day:not(.past-day):not(.future-day)')
                 .first()
             await expect(firstDay).toHaveCSS(
                 'grid-column',
@@ -597,7 +599,7 @@ test.describe('Calendar', () => {
             const template = `<rux-calendar date-in="03-01-2023"></rux-calendar>`
             await page.setContent(template)
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day.past-future-day')
+            const days = cal.locator('rux-day.future-day, rux-day.past-day')
             await days
                 .evaluateAll((days) => {
                     return days.length
@@ -610,7 +612,7 @@ test.describe('Calendar', () => {
             const template = `<rux-calendar date-in="02-01-2024"></rux-calendar>`
             await page.setContent(template)
             const cal = page.locator('rux-calendar')
-            const days = cal.locator('rux-day.past-future-day')
+            const days = cal.locator('rux-day.future-day, rux-day.past-day')
             await days
                 .evaluateAll((days) => {
                     return days.length
