@@ -14,6 +14,13 @@
 | `min`    | `min`     | Min date that the calendar will go to. Needs to be a valid date string. | `string \| undefined`           | `undefined` |
 
 
+## Events
+
+| Event             | Description | Type                |
+| ----------------- | ----------- | ------------------- |
+| `ruxdateselected` |             | `CustomEvent<Date>` |
+
+
 ## Dependencies
 
 ### Used by

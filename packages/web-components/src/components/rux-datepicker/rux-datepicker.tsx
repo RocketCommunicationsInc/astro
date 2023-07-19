@@ -20,18 +20,16 @@ import { RuxCalendarCustomEvent } from '../../components'
 export class RuxDatepicker {
     @Element() el!: HTMLRuxDatepickerElement
 
-    @Prop() max?: number
-
-    @Prop() min?: number
-
-    @Prop() julian: boolean = false
-
-    @Prop() standard: boolean = true
-
     @Prop({ reflect: true, mutable: true }) open: boolean = false
 
-    //ruxCalendarExanded? ruxDatepickerExpanded? opened? closed?
+    /**
+     * Emitted when the datepickers calendar is opened.
+     */
     @Event({ eventName: 'ruxexpanded' }) ruxExpanded!: EventEmitter
+
+    /**
+     * Emitted when the datepicker's calendar is closed.
+     */
     @Event({ eventName: 'ruxcollapsed' }) ruxCollapsed!: EventEmitter
 
     @Listen('ruxdateselected')
