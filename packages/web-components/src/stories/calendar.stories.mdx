@@ -1,6 +1,38 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
 import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: black;
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+    a {
+      color: var(--color-palette-darkblue-500) !important;
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-palette-teal-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
 
 <Meta
     title="Beta/Calendar [BETA]"
@@ -29,14 +61,27 @@ import { html, render } from 'lit-html'
     }}
 />
 
-# Calendar
+# Calendar <BetaTag>BETA</BetaTag>
 
 ## Guidelines
+
+<StyledDiv>
+    <div>Warning: This is an experimental component</div>
+    <p class="banner-text">
+        Calendar is currently experimental which means that we may introduce breaking changes at any time.
+        These will not be reflected in our current semver versioning and release strategy.
+        If you are using this component, make sure to frequently check our release notes and update your
+        applications accordingly.
+    </p>
+    <p class="banner-text">
+        For any feedback, please open a feature request or issue on our <a href='https://github.com/RocketCommunicationsInc/astro'>github repo</a>.
+    </p>
+</StyledDiv>
 
 export const Default = (args) => {
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-calendar date-in="${args.dateIn}"> </rux-calendar>
+            <rux-calendar date-in="${args.dateIn}" min="${args.min}" max="${args.max}"></rux-calendar>
         </div>
     `
 }
@@ -45,7 +90,9 @@ export const Default = (args) => {
     <Story
         name="Default"
         args={{
-            dateIn: '2021-02-02T00:00:00Z',
+            dateIn: '',
+            min: '',
+            max: ''
         }}
     >
         {Default.bind()}
@@ -55,6 +102,59 @@ export const Default = (args) => {
 ## API
 
 <ArgsTable of="rux-calendar" />
+
+## Variants
+
+### With date-in
+
+The `date-in` property controls the default date of the calendar. Use this when you want to render
+a calendar at a certain date.
+
+export const DateIn = (args) => {
+  return html`
+  <div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-calendar date-in="${args.dateIn}" min="${args.min}" max="${args.max}"></rux-calendar>
+  </div>
+  `
+}
+
+<Canvas>
+  <Story
+    args={{
+      dateIn: "1997-04-27T00:00:00.000",
+      min: '',
+      max: ''
+    }}
+    name="With Date In"
+  >
+  {DateIn.bind()}
+  </Story>
+</Canvas>
+
+### With min and max
+
+Setting the min and max controls how far back in time or forward in time the calendar can go.
+
+export const MinMax = (args) => {
+  return html`
+  <div style="padding: 10%; display: flex; justify-content: center;">
+    <rux-calendar date-in="${args.dateIn}" min="${args.min}" max="${args.max}"></rux-calendar>
+  </div>
+  `
+}
+
+<Canvas>
+  <Story
+    args={{
+      dateIn: "2023-07-01T00:00:00.000",
+      min: '2020-01-01T00:00:00.000',
+      max: '2024-12-01T00:00:00.000'
+    }}
+    name="With Min and Max"
+  >
+  {MinMax.bind()}
+  </Story>
+</Canvas>
 
 ## Cherry Picking
 

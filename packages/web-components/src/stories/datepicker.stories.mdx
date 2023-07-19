@@ -1,0 +1,87 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs'
+import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: black;
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+    a {
+      color: var(--color-palette-darkblue-500) !important;
+    }
+`
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-palette-teal-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+
+<Meta
+    title="Beta/Datepicker [BETA]"
+    component="rux-datepicker"
+/>
+
+# Datepicker <BetaTag>BETA</BetaTag>
+
+## Guidelines
+
+The datepicker component provides the common datepicker pattern; an input element that opens a calendar
+when the icon is clicked.
+
+<StyledDiv>
+    <div>Warning: This is an experimental component</div>
+    <p class="banner-text">
+        Datepicker is currently experimental which means that we may introduce breaking changes at any time.
+        These will not be reflected in our current semver versioning and release strategy.
+        If you are using this component, make sure to frequently check our release notes and update your
+        applications accordingly.
+    </p>
+    <p class="banner-text">
+        For any feedback, please open a feature request or issue on our <a href='https://github.com/RocketCommunicationsInc/astro'>github repo</a>.
+    </p>
+</StyledDiv>
+
+export const Default = (args) => {
+    return html`
+      <rux-datepicker></rux-datepicker>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Default"
+    >
+        {Default.bind()}
+    </Story>
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-datepicker" />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxDatepicker } from '@astrouxds/astro-web-components/dist/components/rux-datepicker'
+customElements.define('rux-datepicker', RuxDatepicker)
+```

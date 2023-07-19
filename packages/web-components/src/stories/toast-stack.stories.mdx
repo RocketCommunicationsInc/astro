@@ -7,7 +7,7 @@ export const StyledDiv = styled.div`
     margin: 1rem 0;
     border-left: 20px solid var(--color-status-serious);
     background: white;
-    color: var(--color-status-serious);
+    color: black;
     padding: 19px;
     font-family: var(--font-body-1-bold-font-family);
     font-size: var(--font-body-1-bold-font-size);
@@ -16,6 +16,9 @@ export const StyledDiv = styled.div`
     .banner-text {
         margin-top: 1rem;
         color: var(--color-text-inverse);
+    }
+    a {
+      color: var(--color-palette-darkblue-500) !important;
     }
 `
 
@@ -53,6 +56,9 @@ A toast stack is a container component that controls the creation and positionin
         These will not be reflected in our current semver versioning and release strategy.
         If you are using this component, make sure to frequently check our release notes and update your
         applications accordingly.
+    </p>
+    <p class="banner-text">
+        For any feedback, please open a feature request or issue on our <a href='https://github.com/RocketCommunicationsInc/astro'>github repo</a>.
     </p>
 </StyledDiv>
 

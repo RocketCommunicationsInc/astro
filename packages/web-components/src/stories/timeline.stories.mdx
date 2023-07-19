@@ -6,7 +6,7 @@ export const StyledDiv = styled.div`
     margin: 1rem 0;
     border-left: 20px solid var(--color-status-serious);
     background: white;
-    color: var(--color-status-serious);
+    color: black;
     padding: 19px;
     font-family: var(--font-body-1-bold-font-family);
     font-size: var(--font-body-1-bold-font-size);
@@ -15,6 +15,9 @@ export const StyledDiv = styled.div`
     .banner-text {
         margin-top: 1rem;
         color: var(--color-text-inverse);
+    }
+    a {
+      color: var(--color-palette-darkblue-500) !important;
     }
 `
 
@@ -181,10 +184,13 @@ Timeline displays a sequence of realtime events during a fixed time span. The Pl
 <StyledDiv>
     <div>Warning: This is an experimental component</div>
     <p class="banner-text">
-        Timeline is currently experimental which means that we may introduce breaking changes at any time. 
+        Timeline is currently experimental which means that we may introduce breaking changes at any time.
         These will not be reflected in our current semver versioning and release strategy.
         If you are using this component, make sure to frequently check our release notes and update your
         applications accordingly.
+    </p>
+    <p class="banner-text">
+        For any feedback, please open a feature request or issue on our <a href='https://github.com/RocketCommunicationsInc/astro'>github repo</a>.
     </p>
 </StyledDiv>
 
@@ -294,12 +300,12 @@ It is composed of the following subcomponents:
 
 ### Date Formats and Timezones
 
-When passing in a date to either the timeline, playhead, or time regions, you must specify a time and timezone in your date string, otherwise it will default to the local user's timezone. 
-For example: If you wanted to show "2021-01-01" in UTC, you would pass in `2021-01-01**T00:00:00Z**`. 
+When passing in a date to either the timeline, playhead, or time regions, you must specify a time and timezone in your date string, otherwise it will default to the local user's timezone.
+For example: If you wanted to show "2021-01-01" in UTC, you would pass in `2021-01-01**T00:00:00Z**`.
 
 ### Zoom
 
-The width between each time interval can be controlled by the `zoom` property. By default, it starts at 1 and can be incremented. 
+The width between each time interval can be controlled by the `zoom` property. By default, it starts at 1 and can be incremented.
 The column width is automatically calculated based off of the timeline's current interval (days/hours/etc).
 You should consider your timeline's range and set an appropriate default zoom level so that your time intervals can fill the entire viewport.
 
@@ -345,7 +351,7 @@ To enable the bottom ruler, make use of the `ruler` slot by passing in a `rux-ru
 If your Timeline contains too many rows to fit into your viewport, you can make use of the `time-region-container` CSS Shadow Part and set a height using CSS.
 This will enable the overflow: scroll.
 
-For example: 
+For example:
 
 ```
 rux-timeline::part(time-region-container) {
@@ -425,7 +431,7 @@ export const VerticalScroll = (args) => {
 ## Track
 
 Tracks are responsible for displaying content in horizontal lanes across the Timeline.
-They can include **Time Regions** or the **Ruler** component. 
+They can include **Time Regions** or the **Ruler** component.
 They are composed of a label section and a time region section.
 
 <ArgsTable of="rux-track" />
@@ -445,7 +451,7 @@ To set the label of a Region, you can use the `label` slot:
 ## Time Region
 
 Time Regions represent single events in time. A `start` time and an `end` time are required. If a `start` and `end` time aren't provided, or an invalid range is provided,
-the component will throw an error and not render. 
+the component will throw an error and not render.
 
 ```
 <rux-time-region

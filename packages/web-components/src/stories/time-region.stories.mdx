@@ -9,9 +9,9 @@ args.status.defaultValue = 'standby'
 export const StyledDiv = styled.div`
     position: relative;
     margin: 1rem 0;
-    border-left: 20px solid var(--status-symbol-color-fill-serious);
+    border-left: 20px solid var(--color-status-serious);
     background: white;
-    color: var(--status-symbol-color-fill-serious);
+    color: black;
     padding: 19px;
     font-family: var(--font-body-1-bold-font-family);
     font-size: var(--font-body-1-bold-font-size);
@@ -20,6 +20,9 @@ export const StyledDiv = styled.div`
     .banner-text {
         margin-top: 1rem;
         color: var(--color-text-inverse);
+    }
+    a {
+      color: var(--color-palette-darkblue-500) !important;
     }
 `
 
@@ -47,10 +50,13 @@ export const BetaTag = styled.div`
 <StyledDiv>
     <div>Warning: This is an experimental component</div>
     <p class="banner-text">
-        Time Region is currently experimental which means that we may introduce breaking changes at any time. 
+        Time Region is currently experimental which means that we may introduce breaking changes at any time.
         These will not be reflected in our current semver versioning and release strategy.
         If you are using this component, make sure to frequently check our release notes and update your
         applications accordingly.
+    </p>
+    <p class="banner-text">
+        For any feedback, please open a feature request or issue on our <a href='https://github.com/RocketCommunicationsInc/astro'>github repo</a>.
     </p>
 </StyledDiv>
 
@@ -114,7 +120,7 @@ export const Selected = (args) => {
 ## Partial Events
 
 When a Time Region start and end dates fall outside the range of the Timeline, they have a "partial" appearance.
-For example, if your timeline range is set to 2020-02-01 - 2020-02-10 and you have a Time Region that starts on 2020-01-10 and ends on 2020-02-05, 
+For example, if your timeline range is set to 2020-02-01 - 2020-02-10 and you have a Time Region that starts on 2020-01-10 and ends on 2020-02-05,
 the "partial" appearance indicates that the Time Region's start date falls outside the current Timeline range.
 
 export const Partial = (args) => {
