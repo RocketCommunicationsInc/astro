@@ -41,15 +41,6 @@
         border: 3px solid transparent;
         background-clip: padding-box;
     }
-    ::-webkit-scrollbar-thumb {
-        background-color: var(
-            --color-border-interactive-muted,
-            rgb(43, 101, 155)
-        );
-        border-radius: 8px;
-        border: 3px solid transparent;
-        background-clip: padding-box;
-    }
 
     /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
     ::-webkit-scrollbar-thumb:vertical {
@@ -58,14 +49,6 @@
 
     ::-webkit-scrollbar-thumb:horizontal {
         border-top-width: 4px;
-    }
-
-    ::-webkit-scrollbar-thumb:active,
-    ::-webkit-scrollbar-thumb:hover {
-        background-color: var(
-            --color-background-interactive-default,
-            rgb(58, 129, 191)
-        );
     }
 
     ::-webkit-scrollbar-track,
@@ -97,6 +80,13 @@ header {
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    &::-webkit-scrollbar-thumb:active,
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(
+            --color-background-interactive-default,
+            rgb(58, 129, 191)
+        );
+    }
 }
 
 slot[name='left-side'] > *,
