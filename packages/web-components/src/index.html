@@ -19,5 +19,19 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <style>
+            rux-global-status-bar::part(container) {
+                overflow: auto;
+            }
+        </style>
+        <rux-global-status-bar
+            app-name="App"
+            app-state="State"
+            username="User Name"
+        >
+            <rux-button slot="left-side">Button</rux-button>
+            <rux-clock></rux-clock>
+        </rux-global-status-bar>
+    </body>
 </html>
