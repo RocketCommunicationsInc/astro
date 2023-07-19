@@ -79,6 +79,7 @@ Type: `Promise<void>`
 
 ### Used by
 
+ - [rux-datepicker](../rux-datepicker)
  - [rux-log](../rux-log)
 
 ### Depends on
@@ -89,6 +90,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   rux-input --> rux-icon
+  rux-datepicker --> rux-input
   rux-log --> rux-input
   style rux-input fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -209,18 +209,6 @@ export class RuxInput implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    //@ts-ignore
-    private _closestElement(selector: string, el = this.el) {
-        console.log('running')
-        //@ts-ignore
-        console.log(el.getRootNode().host, 'host')
-        return (
-            (el && el.closest(selector)) ||
-            //@ts-ignore
-            this._closestElement(selector, el.getRootNode().host)
-        )
-    }
-
     private _onChange(e: Event) {
         const target = e.target as HTMLInputElement
         this.value = target.value
