@@ -6,6 +6,7 @@ import {
     Event,
     EventEmitter,
     Element,
+    // Watch,
 } from '@stencil/core'
 @Component({
     tag: 'rux-day',
@@ -15,7 +16,12 @@ import {
 export class RuxDay {
     @Prop({ reflect: true, mutable: true }) selected: boolean = false
 
-    //? Should we add a value prop?
+    // @Watch('selected')
+    // handleSelected(prev: boolean, next: boolean) {
+    //     console.log('heard selected change')
+    //     console.log(`Prev value: ${prev}, new value: ${next}`)
+    //     // this._toggleSelected()
+    // }
 
     @Element() el!: HTMLRuxDayElement
 
