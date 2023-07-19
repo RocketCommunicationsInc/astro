@@ -6,6 +6,9 @@
 rux-input::part(input) input[type='date' i]::-webkit-calendar-picker-indicator {
     display: none;
 }
+rux-pop-up::part(container) {
+    display: flex;
+}
 // :host {
 //     display: block;
 //     width: 100%;

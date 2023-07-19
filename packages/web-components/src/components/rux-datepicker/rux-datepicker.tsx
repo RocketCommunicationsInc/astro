@@ -49,10 +49,13 @@ export class RuxDatepicker {
                 : `0${event.getUTCDate()}`
         this._inputVal = `${year}-${month}-${day}`
     }
-    @Listen('ruxchange')
-    handleRuxChange() {
-        console.log('heard')
-    }
+    // @Listen('ruxchange')
+    // handleRuxChange() {
+    //? Possibly out of scope for current MVP
+    //TODO: when someone uses the input rather than interacting with the calendar,
+    //TODO: it should still select that day in the calendar if they open it.
+    //! rux change fires as soon as the user hits the years - so it fires kind of often.
+    // }
 
     @Watch('open')
     handleOpen() {
@@ -61,22 +64,15 @@ export class RuxDatepicker {
 
     @State() _inputVal: string = ''
 
-    // connectedCallback() {
-    //     this._handleClick = this._handleClick.bind(this)
-    // }
-
-    // private _handleClick() {
-    //     this.open = !this.open
-    // }
-
     render() {
         return (
             <Host>
                 <rux-input type="date" value={this._inputVal}>
+                    {/* <div slot="suffix"> */}
                     <rux-pop-up
-                        slot="suffix"
                         placement="bottom-end"
                         strategy="fixed"
+                        slot="suffix"
                     >
                         <rux-icon
                             icon="calendar-today"
@@ -85,6 +81,7 @@ export class RuxDatepicker {
                         ></rux-icon>
                         <rux-calendar></rux-calendar>
                     </rux-pop-up>
+                    {/* </div> */}
                 </rux-input>
             </Host>
         )
