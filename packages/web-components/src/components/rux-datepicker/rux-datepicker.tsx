@@ -68,7 +68,6 @@ export class RuxDatepicker {
         return (
             <Host>
                 <rux-input type="date" value={this._inputVal}>
-                    {/* <div slot="suffix"> */}
                     <rux-pop-up
                         placement="bottom-end"
                         strategy="fixed"
@@ -81,7 +80,6 @@ export class RuxDatepicker {
                         ></rux-icon>
                         <rux-calendar></rux-calendar>
                     </rux-pop-up>
-                    {/* </div> */}
                 </rux-input>
             </Host>
         )
