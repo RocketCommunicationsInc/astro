@@ -8,6 +8,7 @@ import { AppMeta } from './appMeta/appMeta'
  * @slot right-side - Used to append optional content
  *
  * @part app-state - The container for the applications state
+ * @part middle - The container for the middle of the global-status-bar
  * @part container - The container for global-status-bar
  * @part username - The container for the username
  * @part app-meta - The container for the Application's metadata

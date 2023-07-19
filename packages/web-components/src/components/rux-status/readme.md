@@ -12,9 +12,9 @@
 
 ## Shadow Parts
 
-| Part       | Description |
-| ---------- | ----------- |
-| `"status"` |             |
+| Part       | Description                            |
+| ---------- | -------------------------------------- |
+| `"status"` | the container of the rux-status symbol |
 
 
 ## Dependencies
