@@ -1,5 +1,23 @@
 # @astrouxds/astro-web-components
 
+## 7.15.0
+
+### Minor Changes
+
+#### Select
+
+-   Added new `inline` variant attribute
+
+#### Slider
+
+-   Added dual range functionality to slider
+
+### Patch Changes
+
+#### Global Status Bar
+
+-   Fixed scrollbar styles when overflow is present
+
 ## 7.14.0
 
 ### Minor Changes

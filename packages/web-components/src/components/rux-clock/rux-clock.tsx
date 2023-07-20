@@ -40,6 +40,9 @@ export class RuxClock {
         this.convertedAos = this._formatLosAosDateIn(newValue)
     }
 
+    /**
+     * Prevents clock from ticking. Use with `date-in` for full control over the displayed time
+     */
     @Prop() static = false
     /**
      * When supplied with a valid [date string or value](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date#syntax), displays a timestamp labeled "LOS" next to the standard clock.

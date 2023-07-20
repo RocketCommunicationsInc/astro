@@ -195,6 +195,9 @@ export namespace Components {
           * Applies a smaller clock style.
          */
         "small": boolean;
+        /**
+          * Prevents clock from ticking. Use with `date-in` for full control over the displayed time
+         */
         "static": boolean;
         /**
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.
@@ -35751,6 +35754,9 @@ declare namespace LocalJSX {
           * Applies a smaller clock style.
          */
         "small"?: boolean;
+        /**
+          * Prevents clock from ticking. Use with `date-in` for full control over the displayed time
+         */
         "static"?: boolean;
         /**
           * Accepts the [IANA timezone string format](https://www.iana.org/time-zones) such as `'America/Los_Angeles'` or any single-character designation for a [military timezones](https://en.wikipedia.org/wiki/List_of_military_time_zones) (`'A'` through `'Z'`, excluding `'J'`), both case-insensitive. If no value for timezone is provided, the clock will use `'UTC'`. See [`toLocaleString()` on MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString#Parameters) for more details.

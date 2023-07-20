@@ -1,13 +1,10 @@
 import { Prop, Component, h } from '@stencil/core'
 
 /**
- * @slot (default) - Two or more RuxButton components to render in the group
- * @part container - the components container
- */
-
-/**
  * @deprecated Button Group is deprecated and will be removed in a next major release.
  * Instead, you should use `flex` or `grid` in combination with our spacing design tokens.
+ * @slot (default) - Two or more RuxButton components to render in the group
+ * @part container - the components container
  */
 @Component({
     tag: 'rux-button-group',

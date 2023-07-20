@@ -39,11 +39,18 @@ Instead, you should use `flex` or `grid` in combination with our spacing design 
 | `hAlign` | `h-align` | The horizontal alignment of buttons within the group | `"center" \| "left" \| "right"` | `'left'` |
 
 
+## Slots
+
+| Slot          | Description                                             |
+| ------------- | ------------------------------------------------------- |
+| `"(default)"` | Two or more RuxButton components to render in the group |
+
+
 ## Shadow Parts
 
-| Part          | Description |
-| ------------- | ----------- |
-| `"container"` |             |
+| Part          | Description              |
+| ------------- | ------------------------ |
+| `"container"` | the components container |
 
 
 ----------------------------------------------

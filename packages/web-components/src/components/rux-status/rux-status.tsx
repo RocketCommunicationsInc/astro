@@ -2,16 +2,15 @@ import { Prop, Host, Component, h, Watch, Element } from '@stencil/core'
 import { Status, StatusTypes } from '../../common/commonTypes.module'
 // import DarkStatus from './statuses/dark-theme'
 import StatusSVG from './statuses/light-theme'
+/**
+ * @part status - the container of the rux-status symbol
+ */
 
 @Component({
     tag: 'rux-status',
     styleUrl: 'rux-status.scss',
     shadow: true,
 })
-
-/**
- * @part status - the container of the rux-status symbol
- */
 export class RuxStatus {
     /**
      * Sets the status symbol, valid options are critical, serious, caution, normal, standby and off

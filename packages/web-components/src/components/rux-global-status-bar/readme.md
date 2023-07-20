@@ -135,14 +135,14 @@ There is one unnamed slot in the Global Status Bar. This slot is intended for an
 
 ## Shadow Parts
 
-| Part          | Description                                  |
-| ------------- | -------------------------------------------- |
-| `"app-meta"`  | The container for the Application's metadata |
-| `"app-state"` | The container for the applications state     |
-| `"center"`    | The container for the default slot content   |
-| `"container"` | The container for global-status-bar          |
-| `"middle"`    |                                              |
-| `"username"`  | The container for the username               |
+| Part          | Description                                           |
+| ------------- | ----------------------------------------------------- |
+| `"app-meta"`  | The container for the Application's metadata          |
+| `"app-state"` | The container for the applications state              |
+| `"center"`    | The container for the default slot content            |
+| `"container"` | The container for global-status-bar                   |
+| `"middle"`    | The container for the middle of the global-status-bar |
+| `"username"`  | The container for the username                        |
 
 
 ## Dependencies

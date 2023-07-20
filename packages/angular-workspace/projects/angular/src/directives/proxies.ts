@@ -24133,7 +24133,7 @@ export declare interface RuxSegmentedButton extends Components.RuxSegmentedButto
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'inline', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value'],
   methods: ['setFocus']
 })
 @Component({
@@ -24141,7 +24141,7 @@ export declare interface RuxSegmentedButton extends Components.RuxSegmentedButto
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'errorText', 'helpText', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'inline', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value'],
 })
 export class RuxSelect {
   protected el: HTMLElement;
@@ -24166,14 +24166,14 @@ export declare interface RuxSelect extends Components.RuxSelect {
 
 
 @ProxyCmp({
-  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value']
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'minVal', 'name', 'step', 'strict', 'ticksOnly', 'value']
 })
 @Component({
   selector: 'rux-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'name', 'step', 'ticksOnly', 'value'],
+  inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'minVal', 'name', 'step', 'strict', 'ticksOnly', 'value'],
 })
 export class RuxSlider {
   protected el: HTMLElement;
