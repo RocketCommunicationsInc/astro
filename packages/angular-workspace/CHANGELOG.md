@@ -1,26 +1,41 @@
 # @astrouxds/angular
 
+## 7.15.0
+
+### Minor Changes
+
+- 8f23ad60: Select - adds new `inline` variant attribute
+- c07d5f5b: Added dual range functionality to slider
+
+### Patch Changes
+
+- b9615703: fix(gsb): scrollbar styling
+- Updated dependencies [b9615703]
+- Updated dependencies [8f23ad60]
+- Updated dependencies [c07d5f5b]
+  - @astrouxds/astro-web-components@7.15.0
+
 ## 7.14.0
 
 ### Minor Changes
 
 #### Monitoring Icon
 
--   Added size prop to change icon size
+- Added size prop to change icon size
 
 #### Toast
 
--   Created new `rux-toast` component
+- Created new `rux-toast` component
 
 #### Toast Stack
 
--   Created new `rux-toast-stack` component
+- Created new `rux-toast-stack` component
 
 ### Patch Changes
 
 #### Tooltip
 
--   Fixed an issue where the placement prop wouldn't update correctly
+- Fixed an issue where the placement prop wouldn't update correctly
 
 ## 7.13.0
 

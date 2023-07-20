@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 7.15.0
+
+### Minor Changes
+
+-   8f23ad60: Select - adds new `inline` variant attribute
+-   c07d5f5b: Added dual range functionality to slider
+
+### Patch Changes
+
+-   b9615703: fix(gsb): scrollbar styling
+
 ## 7.14.0
 
 ### Minor Changes
