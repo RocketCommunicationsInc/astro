@@ -52,7 +52,7 @@ export class RuxDatepicker {
     //? Possibly out of scope for current MVP
     //TODO: when someone uses the input rather than interacting with the calendar,
     //TODO: it should still select that day in the calendar if they open it.
-    //! rux change fires as soon as the user hits the years - so it fires kind of often.
+    //! rux change fires as soon as the user hits the years - so when you start typing 2023, it'll fire 4 times, one for each digit.
     // }
 
     @Watch('open')

@@ -106,9 +106,6 @@ export class RuxCalendar {
                 yearToEmit = this._year + 1
             }
         }
-        // console.log('Day to emit: ', dayEl.innerText)
-        // console.log('Month to emit: ', monthToEmit)
-        // console.log('year to emit: ', yearToEmit)
         const selectedDate = utcToZonedTime(
             new Date(`${yearToEmit}-${monthToEmit}-${dayEl.innerText}`),
             'UTC'
@@ -240,8 +237,9 @@ export class RuxCalendar {
 
         this._updateState()
     }
+
     /**
-     * This function updates all relevant private variables/state.
+     * Updates all relevant private variables/state.
      */
     private _updateState() {
         this._year = this._date.getFullYear()
@@ -369,9 +367,9 @@ export class RuxCalendar {
     }
 
     /**
-     * Util for creating new dates, where the month needs to be prefixed by a '0' if less than 10.
-     * @param num the month number to pad
-     * @returns a string that concatenates a '0' to the month if the month is less than 10. Example: 9 -> 09
+     * Util for creating new dates, where a number needs to be prefixed with a 0 if it's less than 10.
+     * @param num the number to pad
+     * @returns a string that concatenates a '0' to the num if the num is less than 10. Example: 9 -> 09
      */
     private _padNum(num: number) {
         let paddedNum = num.toString()
