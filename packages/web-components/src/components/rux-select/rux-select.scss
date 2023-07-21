@@ -114,7 +114,8 @@ label {
     -webkit-appearance: none;
     -moz-appearance: none;
     width: 100%;
-    border: 1px solid var(--color-border-interactive-muted);
+    border: 0;
+    box-shadow: var(--color-border-interactive-muted, #2b659b) 0 0 0 1px inset;
     border-radius: var(--radius-base);
     color: var(--color-background-interactive-default);
     font-family: var(--font-control-body-1-font-family);
