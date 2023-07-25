@@ -25,13 +25,6 @@ export class RuxDay {
      */
     @Prop({ reflect: true, mutable: true }) selected: boolean = false
 
-    // @Watch('selected')
-    // handleSelected(prev: boolean, next: boolean) {
-    //     console.log('heard selected change')
-    //     console.log(`Prev value: ${prev}, new value: ${next}`)
-    //     // this._toggleSelected()
-    // }
-
     @Element() el!: HTMLRuxDayElement
 
     /**
