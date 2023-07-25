@@ -5,7 +5,6 @@
    * @prop --delay: how long until the tooltip shows
    */
     --delay: 800ms;
-    display: inline-flex; // This is necessary so that the whitespace that exists between the trigger and the tooltip does not wrap to a new line
 }
 * {
     box-sizing: border-box;
