@@ -207,11 +207,10 @@ export namespace Components {
     interface RuxContainer {
     }
     interface RuxDatepicker {
-        "julian": boolean;
-        "max"?: number;
-        "min"?: number;
+        /**
+          * Determines wether or not the datepicker's calendar is open.
+         */
         "open": boolean;
-        "standard": boolean;
     }
     interface RuxDatetime {
         /**
@@ -268,6 +267,9 @@ export namespace Components {
         "year"?: 'numeric' | '2-digit';
     }
     interface RuxDay {
+        /**
+          * Determines if a day is selected or not.
+         */
         "selected": boolean;
     }
     interface RuxDialog {
@@ -20186,6 +20188,10 @@ export interface RuxAccordionItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxAccordionItemElement;
 }
+export interface RuxCalendarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxCalendarElement;
+}
 export interface RuxCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxCheckboxElement;
@@ -35640,6 +35646,10 @@ declare namespace LocalJSX {
           * Min date that the calendar will go to. Needs to be a valid date string.
          */
         "min"?: string;
+        /**
+          * Emitted when a date is selected using the calendar. Emits the selected date.
+         */
+        "onRuxdateselected"?: (event: RuxCalendarCustomEvent<Date>) => void;
     }
     interface RuxCard {
     }
@@ -35766,13 +35776,18 @@ declare namespace LocalJSX {
     interface RuxContainer {
     }
     interface RuxDatepicker {
-        "julian"?: boolean;
-        "max"?: number;
-        "min"?: number;
+        /**
+          * Emitted when the datepicker's calendar is closed.
+         */
         "onRuxcollapsed"?: (event: RuxDatepickerCustomEvent<any>) => void;
+        /**
+          * Emitted when the datepickers calendar is opened.
+         */
         "onRuxexpanded"?: (event: RuxDatepickerCustomEvent<any>) => void;
+        /**
+          * Determines wether or not the datepicker's calendar is open.
+         */
         "open"?: boolean;
-        "standard"?: boolean;
     }
     interface RuxDatetime {
         /**
@@ -35829,7 +35844,13 @@ declare namespace LocalJSX {
         "year"?: 'numeric' | '2-digit';
     }
     interface RuxDay {
+        /**
+          * Emitted when a rux-day becomes selected.
+         */
         "onRuxdayselected"?: (event: RuxDayCustomEvent<HTMLRuxDayElement>) => void;
+        /**
+          * Determines if a day is selected or not.
+         */
         "selected"?: boolean;
     }
     interface RuxDialog {

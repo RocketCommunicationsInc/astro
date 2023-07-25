@@ -149,6 +149,34 @@ export declare interface RuxButtonGroup extends Components.RuxButtonGroup {}
 
 
 @ProxyCmp({
+  inputs: ['dateIn', 'max', 'min']
+})
+@Component({
+  selector: 'rux-calendar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['dateIn', 'max', 'min'],
+})
+export class RuxCalendar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxdateselected']);
+  }
+}
+
+
+export declare interface RuxCalendar extends Components.RuxCalendar {
+  /**
+   * Emitted when a date is selected using the calendar. Emits the selected date.
+   */
+  ruxdateselected: EventEmitter<CustomEvent<Date>>;
+}
+
+
+@ProxyCmp({
 })
 @Component({
   selector: 'rux-card',
@@ -297,6 +325,38 @@ export declare interface RuxContainer extends Components.RuxContainer {}
 
 
 @ProxyCmp({
+  inputs: ['open']
+})
+@Component({
+  selector: 'rux-datepicker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['open'],
+})
+export class RuxDatepicker {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxexpanded', 'ruxcollapsed']);
+  }
+}
+
+
+export declare interface RuxDatepicker extends Components.RuxDatepicker {
+  /**
+   * Emitted when the datepickers calendar is opened.
+   */
+  ruxexpanded: EventEmitter<CustomEvent<any>>;
+  /**
+   * Emitted when the datepicker's calendar is closed.
+   */
+  ruxcollapsed: EventEmitter<CustomEvent<any>>;
+}
+
+
+@ProxyCmp({
   inputs: ['date', 'day', 'era', 'hour', 'hour12', 'locale', 'minute', 'month', 'second', 'timeZone', 'timeZoneName', 'weekday', 'year']
 })
 @Component({
@@ -316,6 +376,34 @@ export class RuxDatetime {
 
 
 export declare interface RuxDatetime extends Components.RuxDatetime {}
+
+
+@ProxyCmp({
+  inputs: ['selected']
+})
+@Component({
+  selector: 'rux-day',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['selected'],
+})
+export class RuxDay {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxdayselected']);
+  }
+}
+
+
+export declare interface RuxDay extends Components.RuxDay {
+  /**
+   * Emitted when a rux-day becomes selected.
+   */
+  ruxdayselected: EventEmitter<CustomEvent<HTMLRuxDayElement>>;
+}
 
 
 @ProxyCmp({

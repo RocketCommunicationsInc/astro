@@ -8,12 +8,21 @@ import {
     Element,
     // Watch,
 } from '@stencil/core'
+
+/**
+ * @part button - The encapsulating button on rux-day.
+ *
+ * @slot today-dot - the blue dot that denotes the current day
+ */
 @Component({
     tag: 'rux-day',
     styleUrl: 'rux-day.scss',
     shadow: true,
 })
 export class RuxDay {
+    /**
+     * Determines if a day is selected or not.
+     */
     @Prop({ reflect: true, mutable: true }) selected: boolean = false
 
     // @Watch('selected')
@@ -25,6 +34,9 @@ export class RuxDay {
 
     @Element() el!: HTMLRuxDayElement
 
+    /**
+     * Emitted when a rux-day becomes selected.
+     */
     @Event({ eventName: 'ruxdayselected' })
     ruxDaySelected!: EventEmitter<HTMLRuxDayElement>
 

@@ -16,9 +16,30 @@
 
 ## Events
 
-| Event             | Description | Type                |
-| ----------------- | ----------- | ------------------- |
-| `ruxdateselected` |             | `CustomEvent<Date>` |
+| Event             | Description                                                                  | Type                |
+| ----------------- | ---------------------------------------------------------------------------- | ------------------- |
+| `ruxdateselected` | Emitted when a date is selected using the calendar. Emits the selected date. | `CustomEvent<Date>` |
+
+
+## Slots
+
+| Slot       | Description     |
+| ---------- | --------------- |
+| `"footer"` | the footer slot |
+| `"header"` | the header slot |
+
+
+## Shadow Parts
+
+| Part                 | Description                                                                |
+| -------------------- | -------------------------------------------------------------------------- |
+| `"body"`             | the body of the rux-calendar which contains all days.                      |
+| `"footer"`           | the footer of the rux-calendar                                             |
+| `"header"`           | the header of rux-calendar which contains the select menus and arrow icons |
+| `"left-arrow-icon"`  | the left arrow rux-icon that moves months backward                         |
+| `"month-picker"`     | the rux-select that controls the month                                     |
+| `"right-arrow-icon"` | the right arrow rux-icon that moves months forward                         |
+| `"year-picker"`      | the rux-select that controls the year                                      |
 
 
 ## Dependencies

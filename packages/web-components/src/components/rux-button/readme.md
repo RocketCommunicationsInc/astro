@@ -147,7 +147,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ### Used by
 
- - [rux-datepicker](../rux-datepicker)
  - [rux-dialog](../rux-dialog)
 
 ### Depends on
@@ -158,7 +157,6 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ```mermaid
 graph TD;
   rux-button --> rux-icon
-  rux-datepicker --> rux-button
   rux-dialog --> rux-button
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```

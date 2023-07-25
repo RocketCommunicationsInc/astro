@@ -55,6 +55,18 @@ const sizeMap: SizeMap = {
     11: '116px',
     12: '116px',
 }
+/**
+ * @part right-arrow-icon - the right arrow rux-icon that moves months forward
+ * @part left-arrow-icon - the left arrow rux-icon that moves months backward
+ * @part month-picker - the rux-select that controls the month
+ * @part year-picker - the rux-select that controls the year
+ * @part header - the header of rux-calendar which contains the select menus and arrow icons
+ * @part body - the body of the rux-calendar which contains all days.
+ * @part footer - the footer of the rux-calendar
+ *
+ * @slot header - the header slot
+ * @slot footer - the footer slot
+ */
 
 @Component({
     tag: 'rux-calendar',
@@ -113,6 +125,9 @@ export class RuxCalendar {
         this.ruxDateSelected.emit(selectedDate)
     }
 
+    /**
+     * Emitted when a date is selected using the calendar. Emits the selected date.
+     */
     @Event({ eventName: 'ruxdateselected', composed: true })
     ruxDateSelected!: EventEmitter<Date>
 
@@ -422,7 +437,7 @@ export class RuxCalendar {
         return (
             <Host>
                 <div class="rux-calendar">
-                    <div class="calendar-header">
+                    <div class="calendar-header" part="header">
                         <slot name="header">
                             <rux-icon
                                 icon="keyboard-arrow-left"
@@ -430,6 +445,7 @@ export class RuxCalendar {
                                 size="1.25rem"
                                 id="backward-month"
                                 onClick={this._handleBackwardArrow}
+                                part="left-arrow-icon"
                             ></rux-icon>
                             <div class="month-year-selects">
                                 <rux-select
@@ -439,6 +455,7 @@ export class RuxCalendar {
                                     id="month-picker"
                                     inline
                                     style={{ width: sizeMap[this._month] }}
+                                    part="month-picker"
                                 >
                                     {Object.keys(monthMap).map((key) => {
                                         return (
@@ -455,6 +472,7 @@ export class RuxCalendar {
                                     onRuxchange={this._handleYearChange}
                                     id="year-picker"
                                     inline
+                                    part="year-picker"
                                 >
                                     {this._allYearsArr.map((year) => {
                                         return (
@@ -472,10 +490,11 @@ export class RuxCalendar {
                                 size="1.25rem"
                                 id="forward-month"
                                 onClick={this._handleForwardArrow}
+                                part="right-arrow-icon"
                             ></rux-icon>
                         </slot>
                     </div>
-                    <div class="calendar-body">
+                    <div class="calendar-body" part="body">
                         <span class="week-header">Sun</span>
                         <span class="week-header">Mon</span>
                         <span class="week-header">Tue</span>
@@ -511,9 +530,6 @@ export class RuxCalendar {
                             //using that date, get the day of the week
                             let dayOfWeek = getDay(tempDateStr)
                             let isCurrentDay = false
-
-                            //* day needs to match current day and be in the IRL month and year in order
-                            //* to get the 'today' class.
                             if (
                                 day === this._currentDay &&
                                 this._year ===
@@ -553,7 +569,7 @@ export class RuxCalendar {
                         })}
                     </div>
                     {this._hasFooter ? (
-                        <div class="calendar-footer">
+                        <div class="calendar-footer" part="footer">
                             <slot name="footer"></slot>
                         </div>
                     ) : null}

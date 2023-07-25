@@ -20,6 +20,9 @@ import { RuxCalendarCustomEvent } from '../../components'
 export class RuxDatepicker {
     @Element() el!: HTMLRuxDatepickerElement
 
+    /**
+     * Determines wether or not the datepicker's calendar is open.
+     */
     @Prop({ reflect: true, mutable: true }) open: boolean = false
 
     /**
