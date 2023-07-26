@@ -22,9 +22,134 @@
     </head>
 
     <body>
-        <section>
-            <h2>Default</h2>
-            <rux-datepicker></rux-datepicker>
-        </section>
+        <div style="display: flex; justify-content: space-around">
+            <div style="width: 300px">
+                <h3>Datepicker</h3>
+                <rux-datepicker></rux-datepicker>
+            </div>
+            <div>
+                <input type="date" />
+            </div>
+            <div>
+                <h3>Calendar</h3>
+                <rux-calendar id="cal" date-in="2020-09-01T00:00:00.000Z">
+                </rux-calendar>
+                <div
+                    style="
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    "
+                >
+                    <rux-button id="btn">Change datein</rux-button>
+                    <br />
+                    <rux-input
+                        label="set date as a string"
+                        type="date"
+                        id="rux-date"
+                    ></rux-input>
+                    <br />
+                    <label>Set date as epoch number</label>
+                    <input type="date" id="nat-date" />
+                </div>
+            </div>
+            <div>
+                <h3>Calendar, without date-in.</h3>
+                <rux-calendar> </rux-calendar>
+            </div>
+            <div>
+                <h3>Min and Max</h3>
+                <rux-calendar id="cal" min="2021-12-01" max="2024-02-01">
+                </rux-calendar>
+            </div>
+        </div>
+        <div
+            style="
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+                align-items: center;
+                text-align: center;
+            "
+        >
+            <div>
+                <h4>Jan</h4>
+                <rux-calendar date-in="2023-01-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Feb</h4>
+                <rux-calendar date-in="2023-02-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Mar</h4>
+                <rux-calendar date-in="2023-03-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Apr</h4>
+                <rux-calendar date-in="2023-04-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>May</h4>
+                <rux-calendar date-in="2023-05-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Jun</h4>
+                <rux-calendar date-in="2023-06-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Jul</h4>
+                <rux-calendar date-in="2023-07-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Aug</h4>
+                <rux-calendar date-in="2023-08-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Sep</h4>
+                <rux-calendar date-in="2023-09-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Oct</h4>
+                <rux-calendar date-in="2023-10-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Nov</h4>
+                <rux-calendar date-in="2023-11-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Dec</h4>
+                <rux-calendar date-in="2023-12-01T00:00:00.000Z"></rux-calendar>
+            </div>
+            <div>
+                <h4>Leap Year Feb</h4>
+                <rux-calendar date-in="2024-02-01T00:00:00.000Z"></rux-calendar>
+            </div>
+        </div>
+
+        <script>
+            const cal = document.getElementById('cal')
+            const btn = document.getElementById('btn')
+            btn.addEventListener('click', () => {
+                // cal.dateIn = '2023-05-01T23:59:55.000Z'
+                cal.dateIn = '2023-03-01'
+            })
+            const nativedateinputel = document.getElementById('nat-date')
+            nativedateinputel.addEventListener('change', (e) => {
+                // cal.dateIn = e.target.value
+                cal.dateIn = e.target.valueAsNumber
+                console.log(e.target.valueAsNumber, 'val as num')
+            })
+            const ruxInput = document.getElementById('rux-date')
+            ruxInput.addEventListener('ruxchange', (e) => {
+                cal.dateIn = e.target.value
+            })
+            document.addEventListener('ruxdayselected', (e) => {
+                console.log(e.detail)
+            })
+            document.addEventListener('ruxchange', (e) => {
+                console.log('rux change')
+            })
+        </script>
     </body>
 </html>
