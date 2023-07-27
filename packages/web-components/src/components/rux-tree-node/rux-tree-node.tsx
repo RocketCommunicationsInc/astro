@@ -16,11 +16,6 @@ import {
 import { hasSlot } from '../../utils/utils'
 
 let id = 0
-@Component({
-    tag: 'rux-tree-node',
-    styleUrl: 'rux-tree-node.scss',
-    shadow: true,
-})
 
 /**
  * @slot (default) - The parent node content
@@ -31,6 +26,11 @@ let id = 0
  * @part indicator - The opened/closed indicator
  * @part node - The individual tree node
  */
+@Component({
+    tag: 'rux-tree-node',
+    styleUrl: 'rux-tree-node.scss',
+    shadow: true,
+})
 export class RuxTreeNode {
     private componentId = `node-${++id}`
 
