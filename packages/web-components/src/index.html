@@ -20,5 +20,20 @@
     </head>
 
     <body>
+        <rux-tree>
+            <rux-tree-node>
+                <rux-button>Click me</rux-button>
+            </rux-tree-node>
+            <rux-tree-node>Default</rux-tree-node>
+        </rux-tree>
+        <script>
+            const btn = document.querySelector('rux-button')
+            btn.addEventListener('click', () => {
+                console.log('hey')
+            })
+            document.addEventListener('ruxtreenodeselected', () => {
+                console.log('selected')
+            })
+        </script>
     </body>
 </html>

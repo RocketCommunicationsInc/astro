@@ -43,23 +43,13 @@ Type: `Promise<void>`
 
 
 
-## Slots
-
-| Slot          | Description                                  |
-| ------------- | -------------------------------------------- |
-| `"(default)"` | The parent node content                      |
-| `"node"`      | Renders a child node within the current node |
-| `"prefix"`    | Renders content before the default slot      |
-| `"suffix"`    | Renders content after the default slot       |
-
-
 ## Shadow Parts
 
-| Part          | Description                                  |
-| ------------- | -------------------------------------------- |
-| `"indicator"` | The opened/closed indicator                  |
-| `"node"`      | The individual tree node                     |
-| `"text"`      | The area bewteen the prefix and suffix slots |
+| Part          | Description |
+| ------------- | ----------- |
+| `"indicator"` |             |
+| `"node"`      |             |
+| `"text"`      |             |
 
 
 ----------------------------------------------

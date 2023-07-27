@@ -98,4 +98,21 @@ test.describe('Tree Node', () => {
         await arrow.click()
         expect(eventSpy).toHaveReceivedEventTimes(1)
     })
+    test('does not select the tree node if tree node was not the target of a click', async ({
+        page,
+    }) => {
+        const template = `
+      <rux-tree>
+      <rux-tree-node>
+        <rux-button>Click me</rux-button>
+      </rux-tree-node>
+      <rux-tree-node>Default</rux-tree-node>
+    </rux-tree>
+      `
+        await page.setContent(template)
+        const btn = await page.locator('rux-button')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+        await btn.click()
+        expect(eventSpy).toHaveReceivedEventTimes(0)
+    })
 })
