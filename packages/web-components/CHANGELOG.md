@@ -1,5 +1,15 @@
 # @astrouxds/astro-web-components
 
+## 7.16.0
+
+### Minor Changes
+
+-   e2642a61: Fixed an issue where content wrapped by rux-tooltip would not inherit width. In order to prevent tooltip from wrapping to the next line if so desiered, use the placement prop
+
+### Patch Changes
+
+-   3d2e607e: Fixed an issue in tree node where click handlers on slotted content were not propogating correctly
+
 ## 7.15.0
 
 ### Minor Changes

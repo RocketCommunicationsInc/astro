@@ -1,5 +1,17 @@
 # @astrouxds/angular
 
+## 7.16.0
+
+### Minor Changes
+
+- e2642a61: Fixed an issue where content wrapped by rux-tooltip would not inherit width. In order to prevent tooltip from wrapping to the next line if so desiered, use the placement prop
+
+### Patch Changes
+
+- 3d2e607e: Fixed an issue in tree node where click handlers on slotted content were not propogating correctly
+- Updated dependencies [e2642a61]
+- Updated dependencies [3d2e607e]
+  - @astrouxds/astro-web-components@7.16.0
 
 ## 7.15.0
 
@@ -7,17 +19,17 @@
 
 #### Select
 
--   Added new `inline` variant attribute
+- Added new `inline` variant attribute
 
 #### Slider
 
--   Added dual range functionality to slider
+- Added dual range functionality to slider
 
 ### Patch Changes
 
 #### Global Status Bar
 
--   Fixed scrollbar styles when overflow is present
+- Fixed scrollbar styles when overflow is present
 
 ## 7.14.0
 
