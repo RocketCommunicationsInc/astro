@@ -1,17 +1,24 @@
 # @astrouxds/react
 
+## 7.15.2
+
+### Patch Changes
+
+- e5268057: fix(rux-select) dropdown arrow now changes color from light theme to dark theme
+- Updated dependencies [e5268057]
+  - @astrouxds/astro-web-components@7.15.2
+
 ## 7.15.1
 
 ### Patch Changes
 
 #### Tooltip
 
--   Fixed an issue where content wrapped by rux-tooltip would not inherit width. In order to prevent tooltip from wrapping to the next line if so desiered, use the placement prop
+- Fixed an issue where content wrapped by rux-tooltip would not inherit width. In order to prevent tooltip from wrapping to the next line if so desiered, use the placement prop
 
 #### Tree Node
 
--   Fixed an issue in tree node where click handlers on slotted content were not propogating correctly
-
+- Fixed an issue in tree node where click handlers on slotted content were not propogating correctly
 
 ## 7.15.0
 

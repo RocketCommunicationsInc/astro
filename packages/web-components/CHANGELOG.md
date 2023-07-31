@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.15.2
+
+### Patch Changes
+
+-   e5268057: fix(rux-select) dropdown arrow now changes color from light theme to dark theme
+
 ## 7.15.1
 
 ### Patch Changes
