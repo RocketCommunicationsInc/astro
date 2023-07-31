@@ -9,12 +9,11 @@
     color: var(--color-text-interactive-default);
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
-    font-weight: 700;
-    line-height: 20px;
+    font-weight: var(--font-control-body-1-bold-font-weight);
+    line-height: var(--font-control-body-1-line-height);
     display: flex;
     flex-direction: column;
     align-items: center;
-    // justify-content: center;
     &:hover {
         background-color: var(--color-background-surface-hover);
         cursor: pointer;
@@ -37,7 +36,6 @@
     }
 }
 ::slotted([slot='julian']) {
-    // align-self: flex-end;
     font-size: var(--font-body-3-font-size);
     line-height: var(--font-body-3-line-height);
 }

@@ -26,17 +26,24 @@ export class RuxDay {
     @Prop({ reflect: true, mutable: true }) selected: boolean = false
 
     /**
-     * @internal used to tell rux-day if it's in julian & gregorian mode
-     * so that we can align the today-dot if needed
+     * @internal used to tell rux-day if calendar has the julian prop.
      */
     @Prop() _julian: boolean = false
+
+    /**
+     * @internal used to tell rux-day if calendar has the gregorian prop.
+     */
     @Prop() _greg: boolean = false
+
+    /**
+     * @internal used to tell rux-day if calendar identies a day as the current day.
+     */
     @Prop() _currentDay: boolean = false
 
     @Element() el!: HTMLRuxDayElement
 
     /**
-     * Emitted when a rux-day becomes selected.
+     * Emitted when a rux-day becomes selected. Emits the rux-day element.
      */
     @Event({ eventName: 'ruxdayselected' })
     ruxDaySelected!: EventEmitter<HTMLRuxDayElement>

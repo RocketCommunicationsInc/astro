@@ -97,12 +97,14 @@ export class RuxCalendar {
     }
 
     /**
-     * When enabled, calendar days render in Julian (ordinal) date.
+     * When enabled, calendar days render in Julian (ordinal) date. When combined with the gregorian prop,
+     * calendar renders both Julian and Gregorian dates.
      */
     @Prop() julian: boolean = false
 
     /**
-     * Controls wether or not to show gregorian dates.
+     * Gregorian dates are shown by default. To use both gregorian and Julian dates, the Gregorian prop
+     * must be present.
      */
     @Prop() gregorian: boolean = false
 
@@ -448,11 +450,12 @@ export class RuxCalendar {
     }
 
     /**
-     *
+     * Takes in a day, month and year, creates a new date from that, and returns the
+     * day of the year (ordinal date). Also pads the ordinal date with 0's if needed.
      * @param day the day to use when creating the date
      * @param year the year to use when creating the date
      * @param month the month to use when creating the date
-     * @returns ordinalDate: number (ie, 245). The Ordinal day of the year
+     * @returns The Ordinal day of the year
      */
     private _convertGregorianToOrdinal(
         day: string,
