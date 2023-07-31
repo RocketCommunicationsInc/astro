@@ -463,7 +463,9 @@ export class RuxCalendar {
             new Date(`${year}-${month}-${day}`),
             'UTC'
         )
+        console.log(dateToUse, 'date to use')
         const ordinalDate = getDayOfYear(dateToUse)
+        console.log(ordinalDate, 'ordinal date')
         return ordinalDate
     }
 
@@ -616,7 +618,7 @@ export class RuxCalendar {
                                             <span slot="julian">
                                                 {this._convertGregorianToOrdinal(
                                                     day.toString(),
-                                                    this._prevMonth,
+                                                    this._month,
                                                     this._year
                                                 )}
                                             </span>
@@ -637,13 +639,26 @@ export class RuxCalendar {
                         {this._nextDaysToShow.map((dayOfMonth) => {
                             return (
                                 <rux-day class="future-day">
-                                    {this.julian
-                                        ? this._convertGregorianToOrdinal(
-                                              dayOfMonth.toString(),
-                                              this._nextMonth,
-                                              this._year
-                                          )
-                                        : dayOfMonth}
+                                    {this._julianOnly ? (
+                                        this._convertGregorianToOrdinal(
+                                            dayOfMonth.toString(),
+                                            this._nextMonth,
+                                            this._year
+                                        )
+                                    ) : this.julian && this.gregorian ? (
+                                        <Fragment>
+                                            <span slot="julian">
+                                                {this._convertGregorianToOrdinal(
+                                                    dayOfMonth.toString(),
+                                                    this._nextMonth,
+                                                    this._year
+                                                )}
+                                            </span>
+                                            {dayOfMonth}
+                                        </Fragment>
+                                    ) : (
+                                        dayOfMonth
+                                    )}
                                 </rux-day>
                             )
                         })}
