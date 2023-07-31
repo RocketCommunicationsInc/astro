@@ -463,9 +463,7 @@ export class RuxCalendar {
             new Date(`${year}-${month}-${day}`),
             'UTC'
         )
-        console.log(dateToUse, 'date to use')
         const ordinalDate = getDayOfYear(dateToUse)
-        console.log(ordinalDate, 'ordinal date')
         return ordinalDate
     }
 
@@ -606,6 +604,8 @@ export class RuxCalendar {
                                     class={{
                                         today: isCurrentDay,
                                     }}
+                                    _julian={this.julian}
+                                    _greg={this.gregorian}
                                 >
                                     {this._julianOnly ? (
                                         this._convertGregorianToOrdinal(

@@ -8,7 +8,6 @@ import {
     Element,
     // Watch,
 } from '@stencil/core'
-import { hasSlot } from '../../../utils/utils'
 
 /**
  * @part button - The encapsulating button on rux-day.
@@ -26,6 +25,13 @@ export class RuxDay {
      */
     @Prop({ reflect: true, mutable: true }) selected: boolean = false
 
+    /**
+     * @internal used to tell rux-day if it's in julian & gregorian mode
+     * so that we can align the today-dot if needed
+     */
+    @Prop() _julian: boolean = false
+    @Prop() _greg: boolean = false
+
     @Element() el!: HTMLRuxDayElement
 
     /**
@@ -33,8 +39,6 @@ export class RuxDay {
      */
     @Event({ eventName: 'ruxdayselected' })
     ruxDaySelected!: EventEmitter<HTMLRuxDayElement>
-
-    private _hasTodaySlot = hasSlot(this.el, 'today-dot')
 
     connectedCallback() {
         this._toggleSelected = this._toggleSelected.bind(this)
@@ -60,7 +64,7 @@ export class RuxDay {
                     <div
                         class={{
                             'julian-dot': true,
-                            'with-today': this._hasTodaySlot,
+                            'left-align-dot': this._julian && this._greg,
                         }}
                     >
                         <slot name="today-dot"></slot>

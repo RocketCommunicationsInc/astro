@@ -26,10 +26,10 @@
     .julian-dot {
         display: flex;
         align-items: center;
-        justify-content: end;
+        justify-content: center;
         width: 100%;
     }
-    .julian-dot.with-today {
+    .julian-dot.left-align-dot {
         justify-content: space-between;
     }
 }
