@@ -15,10 +15,44 @@
         />
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
-
-        <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
     <body>
+        <section style="margin: 2rem">
+            <rux-select>
+                <rux-option label="This is option one"></rux-option>
+                <rux-option label="This is option two"></rux-option>
+                <rux-option label="This is option three"></rux-option>
+            </rux-select>
+        </section>
+        <section style="margin: 2rem">
+            <rux-select>
+                <rux-option label="This is option one"></rux-option>
+                <rux-option label="This is option two"></rux-option>
+                <rux-option label="This is option three"></rux-option>
+            </rux-select>
+        </section>
+        <section style="margin: 2rem">
+            <rux-select size="small">
+                <rux-option label="This is option one"></rux-option>
+                <rux-option label="This is option two"></rux-option>
+                <rux-option label="This is option three"></rux-option>
+            </rux-select>
+        </section>
+        <section style="margin: 2rem">
+            <rux-select label="this is the title">
+                <rux-option label="This is option one"></rux-option>
+                <rux-option label="This is option two"></rux-option>
+                <rux-option label="This is option three"></rux-option>
+            </rux-select>
+        </section>
+
+        <rux-button onclick="toggletheme()">Toggle Theme</rux-button>
+        <script>
+            const body = document.querySelector('body')
+            const toggletheme = () => {
+                body.classList.toggle('light-theme')
+            }
+        </script>
     </body>
 </html>
