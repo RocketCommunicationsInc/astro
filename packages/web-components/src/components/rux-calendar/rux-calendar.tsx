@@ -459,7 +459,6 @@ export class RuxCalendar {
         month: number,
         year: number
     ) {
-        console.log(day, 'day')
         const dateToUse = utcToZonedTime(
             new Date(`${year}-${month}-${day}`),
             'UTC'
@@ -469,9 +468,7 @@ export class RuxCalendar {
         // under 100, we need to pad them with 0's.
         let paddedOrdinalDate = ''
         if (ordinalDate < 10) {
-            console.log('insdie first if')
             paddedOrdinalDate = `00${ordinalDate}`
-            console.log('gonna return: ', paddedOrdinalDate)
             return paddedOrdinalDate
         } else if (ordinalDate >= 10 && ordinalDate < 100) {
             paddedOrdinalDate = `0${ordinalDate}`
