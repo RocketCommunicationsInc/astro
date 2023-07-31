@@ -9,8 +9,9 @@ import {
     Event,
     Listen,
     EventEmitter,
+    Fragment,
 } from '@stencil/core'
-import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
+import { getDay, getDayOfYear, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
 import { hasSlot } from '../../utils/utils'
 import { RuxDayCustomEvent } from '../../components'
@@ -96,6 +97,16 @@ export class RuxCalendar {
     }
 
     /**
+     * When enabled, calendar days render in Julian (ordinal) date.
+     */
+    @Prop() julian: boolean = false
+
+    /**
+     * Controls wether or not to show gregorian dates.
+     */
+    @Prop() gregorian: boolean = false
+
+    /**
      * Listens for a day to be selected and then emits the date made from that selected
      * day.
      * @param e ruxdayselected Custom event. Resovles to the <rux-day> element.
@@ -176,6 +187,8 @@ export class RuxCalendar {
 
     private _maxYearArr: Array<number> = []
     private _minYearArr: Array<number> = []
+
+    private _julianOnly: boolean = false
 
     connectedCallback() {
         this._updateState()
@@ -272,6 +285,7 @@ export class RuxCalendar {
             ? new Date(this.min)
             : new Date(`${this._date.getFullYear() - 9}-01-01`)
         this._fillDaysInMonthArr()
+        this._julianOnly = this.julian && !this.gregorian
     }
 
     /**
@@ -433,6 +447,26 @@ export class RuxCalendar {
         this._updateDate(this._year, this._nextMonth)
     }
 
+    /**
+     *
+     * @param day the day to use when creating the date
+     * @param year the year to use when creating the date
+     * @param month the month to use when creating the date
+     * @returns ordinalDate: number (ie, 245). The Ordinal day of the year
+     */
+    private _convertGregorianToOrdinal(
+        day: string,
+        month: number,
+        year: number
+    ) {
+        const dateToUse = utcToZonedTime(
+            new Date(`${year}-${month}-${day}`),
+            'UTC'
+        )
+        const ordinalDate = getDayOfYear(dateToUse)
+        return ordinalDate
+    }
+
     render() {
         return (
             <Host>
@@ -513,7 +547,28 @@ export class RuxCalendar {
                                         }}
                                         class="past-day"
                                     >
-                                        {this._prevDaysToShow[day]}
+                                        {this._julianOnly ? (
+                                            this._convertGregorianToOrdinal(
+                                                this._prevDaysToShow[day],
+                                                this._prevMonth,
+                                                this._year
+                                            )
+                                        ) : this.julian && this.gregorian ? (
+                                            <Fragment>
+                                                <span slot="julian">
+                                                    {this._convertGregorianToOrdinal(
+                                                        this._prevDaysToShow[
+                                                            day
+                                                        ],
+                                                        this._prevMonth,
+                                                        this._year
+                                                    )}
+                                                </span>
+                                                {this._prevDaysToShow[day]}
+                                            </Fragment>
+                                        ) : (
+                                            this._prevDaysToShow[day]
+                                        )}
                                     </rux-day>
                                 )
                             }
@@ -550,12 +605,31 @@ export class RuxCalendar {
                                         today: isCurrentDay,
                                     }}
                                 >
-                                    {day}
+                                    {this._julianOnly ? (
+                                        this._convertGregorianToOrdinal(
+                                            day.toString(),
+                                            this._month,
+                                            this._year
+                                        )
+                                    ) : this.julian && this.gregorian ? (
+                                        <Fragment>
+                                            <span slot="julian">
+                                                {this._convertGregorianToOrdinal(
+                                                    day.toString(),
+                                                    this._prevMonth,
+                                                    this._year
+                                                )}
+                                            </span>
+                                            {day}
+                                        </Fragment>
+                                    ) : (
+                                        day
+                                    )}
                                     {isCurrentDay ? (
-                                        <div
+                                        <span
                                             slot="today-dot"
                                             class="today-dot"
-                                        ></div>
+                                        ></span>
                                     ) : null}
                                 </rux-day>
                             )
@@ -563,7 +637,13 @@ export class RuxCalendar {
                         {this._nextDaysToShow.map((dayOfMonth) => {
                             return (
                                 <rux-day class="future-day">
-                                    {dayOfMonth}
+                                    {this.julian
+                                        ? this._convertGregorianToOrdinal(
+                                              dayOfMonth.toString(),
+                                              this._nextMonth,
+                                              this._year
+                                          )
+                                        : dayOfMonth}
                                 </rux-day>
                             )
                         })}

@@ -8,6 +8,7 @@ import {
     Element,
     // Watch,
 } from '@stencil/core'
+import { hasSlot } from '../../../utils/utils'
 
 /**
  * @part button - The encapsulating button on rux-day.
@@ -33,6 +34,8 @@ export class RuxDay {
     @Event({ eventName: 'ruxdayselected' })
     ruxDaySelected!: EventEmitter<HTMLRuxDayElement>
 
+    private _hasTodaySlot = hasSlot(this.el, 'today-dot')
+
     connectedCallback() {
         this._toggleSelected = this._toggleSelected.bind(this)
     }
@@ -53,12 +56,16 @@ export class RuxDay {
                     part="button"
                     onClick={this._toggleSelected}
                 >
-                    <div class="oridnal">
-                        <slot name="ordinal"></slot>
-                    </div>
                     <slot></slot>
-
-                    <slot name="today-dot"></slot>
+                    <div
+                        class={{
+                            'julian-dot': true,
+                            'with-today': this._hasTodaySlot,
+                        }}
+                    >
+                        <slot name="today-dot"></slot>
+                        <slot name="julian"></slot>
+                    </div>
                 </button>
             </Host>
         )
