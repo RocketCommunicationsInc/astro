@@ -459,11 +459,24 @@ export class RuxCalendar {
         month: number,
         year: number
     ) {
+        console.log(day, 'day')
         const dateToUse = utcToZonedTime(
             new Date(`${year}-${month}-${day}`),
             'UTC'
         )
-        const ordinalDate = getDayOfYear(dateToUse)
+        let ordinalDate = getDayOfYear(dateToUse)
+        //We want julian/ordinal dates to always be 3 digits. So if they're
+        // under 100, we need to pad them with 0's.
+        let paddedOrdinalDate = ''
+        if (ordinalDate < 10) {
+            console.log('insdie first if')
+            paddedOrdinalDate = `00${ordinalDate}`
+            console.log('gonna return: ', paddedOrdinalDate)
+            return paddedOrdinalDate
+        } else if (ordinalDate >= 10 && ordinalDate < 100) {
+            paddedOrdinalDate = `0${ordinalDate}`
+            return paddedOrdinalDate
+        }
         return ordinalDate
     }
 
