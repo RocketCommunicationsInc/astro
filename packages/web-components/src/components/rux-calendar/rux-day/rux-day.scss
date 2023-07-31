@@ -29,20 +29,19 @@
         justify-content: center;
         width: 100%;
     }
-    .julian-dot.left-align-dot {
+    .julian-dot.julian-greg {
+        justify-content: end;
+    }
+    .julian-dot.julian-greg.current-day {
         justify-content: space-between;
     }
 }
 ::slotted([slot='julian']) {
-    align-self: flex-end;
+    // align-self: flex-end;
     font-size: var(--font-body-3-font-size);
     line-height: var(--font-body-3-line-height);
 }
-//need this but only when gregorian and julian are present at same time
-// ::slotted(.today-dot) {
-//     justify-self: center;
-//     align-self: flex-start;
-// }
+
 .day-selected {
     background-color: var(--color-background-surface-selected);
     outline: 1px solid var(--color-border-interactive-muted);

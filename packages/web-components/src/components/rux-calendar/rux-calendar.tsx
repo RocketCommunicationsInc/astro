@@ -546,6 +546,8 @@ export class RuxCalendar {
                                             ).toString(),
                                         }}
                                         class="past-day"
+                                        _julian={this.julian}
+                                        _greg={this.gregorian}
                                     >
                                         {this._julianOnly ? (
                                             this._convertGregorianToOrdinal(
@@ -604,6 +606,7 @@ export class RuxCalendar {
                                     class={{
                                         today: isCurrentDay,
                                     }}
+                                    _currentDay={isCurrentDay}
                                     _julian={this.julian}
                                     _greg={this.gregorian}
                                 >
@@ -638,7 +641,11 @@ export class RuxCalendar {
                         })}
                         {this._nextDaysToShow.map((dayOfMonth) => {
                             return (
-                                <rux-day class="future-day">
+                                <rux-day
+                                    class="future-day"
+                                    _julian={this.julian}
+                                    _greg={this.gregorian}
+                                >
                                     {this._julianOnly ? (
                                         this._convertGregorianToOrdinal(
                                             dayOfMonth.toString(),

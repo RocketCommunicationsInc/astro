@@ -6,12 +6,12 @@ import {
     Event,
     EventEmitter,
     Element,
-    // Watch,
 } from '@stencil/core'
 
 /**
  * @part button - The encapsulating button on rux-day.
  *
+ * @slot julian - displays the Julian (oridnal) day
  * @slot today-dot - the blue dot that denotes the current day
  */
 @Component({
@@ -31,6 +31,7 @@ export class RuxDay {
      */
     @Prop() _julian: boolean = false
     @Prop() _greg: boolean = false
+    @Prop() _currentDay: boolean = false
 
     @Element() el!: HTMLRuxDayElement
 
@@ -64,7 +65,8 @@ export class RuxDay {
                     <div
                         class={{
                             'julian-dot': true,
-                            'left-align-dot': this._julian && this._greg,
+                            'julian-greg': this._julian && this._greg,
+                            'current-day': this._currentDay,
                         }}
                     >
                         <slot name="today-dot"></slot>
