@@ -632,4 +632,13 @@ test.describe('Calendar', () => {
             expect(options.length).toBe(2)
         })
     })
+    test.describe('Julian dates', () => {
+        test('Calendar days render only Julian dates when julian is provided', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar julian date-in="08-01-2023"></rux-calendar>`
+            await page.setContent(template)
+            //first day of Aug
+        })
+    })
 })
