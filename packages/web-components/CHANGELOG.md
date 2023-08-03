@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.15.2
+
+### Patch Changes
+
+#### Select
+
+-   Dropdown arrow now correctly changes color from light theme to dark theme
+
 ## 7.15.1
 
 ### Patch Changes
