@@ -668,4 +668,19 @@ test.describe('Calendar', () => {
             await expect(firstDay).toHaveText('21130')
         })
     })
+    test.describe('Calendar events', () => {
+        test('It emits the ruxdateselected event when a day is selected', async ({
+            page,
+        }) => {
+            // Need to use date in because without it the test will fail with new months
+            const template = `<rux-calendar date-in="08-01-2023"></rux-calendar>`
+            await page.setContent(template)
+            const dateSelectedEvent = await page.spyOnEvent('ruxdateselected')
+            await page.locator('rux-day').first().click()
+            expect(dateSelectedEvent).toHaveReceivedEventTimes(1)
+            expect(dateSelectedEvent).toHaveReceivedEventDetail(
+                new Date('2023-07-30T12:00:00.000Z')
+            )
+        })
+    })
 })
