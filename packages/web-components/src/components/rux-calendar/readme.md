@@ -7,11 +7,13 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                             | Type                            | Default     |
-| -------- | --------- | ----------------------------------------------------------------------- | ------------------------------- | ----------- |
-| `dateIn` | `date-in` | Option to give the calendar a specfic month/year                        | `number \| string \| undefined` | `undefined` |
-| `max`    | `max`     | Max date that the calendar will go to. Needs to be a valid date string. | `string \| undefined`           | `undefined` |
-| `min`    | `min`     | Min date that the calendar will go to. Needs to be a valid date string. | `string \| undefined`           | `undefined` |
+| Property    | Attribute   | Description                                                                                                                                           | Type                            | Default     |
+| ----------- | ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- | ----------- |
+| `dateIn`    | `date-in`   | Option to give the calendar a specfic month/year                                                                                                      | `number \| string \| undefined` | `undefined` |
+| `gregorian` | `gregorian` | Gregorian dates are shown by default. To use both gregorian and Julian dates, the Gregorian prop must be present.                                     | `boolean`                       | `false`     |
+| `julian`    | `julian`    | When enabled, calendar days render in Julian (ordinal) date. When combined with the gregorian prop, calendar renders both Julian and Gregorian dates. | `boolean`                       | `false`     |
+| `max`       | `max`       | Max date that the calendar will go to. Needs to be a valid date string.                                                                               | `string \| undefined`           | `undefined` |
+| `min`       | `min`       | Min date that the calendar will go to. Needs to be a valid date string.                                                                               | `string \| undefined`           | `undefined` |
 
 
 ## Events

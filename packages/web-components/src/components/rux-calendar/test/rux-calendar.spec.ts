@@ -638,7 +638,34 @@ test.describe('Calendar', () => {
         }) => {
             const template = `<rux-calendar julian date-in="08-01-2023"></rux-calendar>`
             await page.setContent(template)
-            //first day of Aug
+            //first day of Aug 2023 is 213
+            const dayToFind = await page.getByText('213')
+            await expect(dayToFind).toBeVisible()
+        })
+        test('Days do not have gregorian dates when in julian-only mode', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar julian date-in="08-01-2023"></rux-calendar>`
+            await page.setContent(template)
+            //first day of Aug 2023 is 213
+            const day = await page.locator('rux-day').first().textContent()
+            let gregDay
+            if (day!.length <= 2) {
+                gregDay = day
+            }
+
+            expect(gregDay).toBeFalsy()
+        })
+    })
+    test.describe('Both Gregorian and Julian dates', () => {
+        test('Days should render both gregorian and julian dates', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar julian gregorian date-in="08-01-2023"></rux-calendar>`
+            await page.setContent(template)
+            //first day rendered in august is July 30. That is 211 in ordinal.
+            const firstDay = await page.locator('rux-day').first()
+            await expect(firstDay).toHaveText('21130')
         })
     })
 })

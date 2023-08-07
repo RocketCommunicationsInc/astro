@@ -14,15 +14,16 @@
 
 ## Events
 
-| Event            | Description                              | Type                             |
-| ---------------- | ---------------------------------------- | -------------------------------- |
-| `ruxdayselected` | Emitted when a rux-day becomes selected. | `CustomEvent<HTMLRuxDayElement>` |
+| Event            | Description                                                         | Type                             |
+| ---------------- | ------------------------------------------------------------------- | -------------------------------- |
+| `ruxdayselected` | Emitted when a rux-day becomes selected. Emits the rux-day element. | `CustomEvent<HTMLRuxDayElement>` |
 
 
 ## Slots
 
 | Slot          | Description                               |
 | ------------- | ----------------------------------------- |
+| `"julian"`    | displays the Julian (oridnal) day         |
 | `"today-dot"` | the blue dot that denotes the current day |
 
 
