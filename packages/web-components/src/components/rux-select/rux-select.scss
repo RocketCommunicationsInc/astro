@@ -126,15 +126,15 @@ label {
 
     //In the following, the right padding accounts for normal padding + size of drop down arrow
     &--small {
-        padding: var(--spacing-1) var(--spacing-2); //4px 8px
+        padding: calc(var(--spacing-1) - 1px) var(--spacing-2); //3px 8px (leaving 2px height for border)
         padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--medium {
-        padding: var(--spacing-2); //8px
+        padding: calc(var(--spacing-2) - 1px) var(--spacing-2); //7px 8px (leaving 2px height for border)
         padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--large {
-        padding: var(--spacing-3) var(--spacing-2); //12px 8px
+        padding: calc(var(--spacing-3) - 1px) var(--spacing-2); //11px 8px (leaving 2px height for border)
         padding-right: calc(var(--spacing-2) + var(--spacing-8));
     }
     &--inline:not(.rux-select--multiple) {
