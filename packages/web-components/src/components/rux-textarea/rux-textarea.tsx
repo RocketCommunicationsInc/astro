@@ -88,14 +88,19 @@ export class RuxTextarea implements FormFieldInterface {
     @Prop() rows?: number
 
     /**
-     * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+     * Sets the input as disabled
      */
     @Prop({ reflect: true }) disabled = false
 
     /**
-     * Sets the input as disabled
+     * Sets the input as required
      */
     @Prop() required: boolean = false
+
+    /**
+     * The textareas readonly attribute
+     */
+    @Prop() readonly = false
 
     /**
      * Styles the input element size between small, medium and large. The default styling is medium.
@@ -213,6 +218,7 @@ export class RuxTextarea implements FormFieldInterface {
                         aria-invalid={this.invalid ? 'true' : 'false'}
                         placeholder={this.placeholder}
                         required={this.required}
+                        readonly={this.readonly}
                         minlength={this.minLength}
                         maxlength={this.maxLength}
                         value={this.value}
