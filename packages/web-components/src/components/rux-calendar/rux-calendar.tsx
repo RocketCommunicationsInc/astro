@@ -86,6 +86,8 @@ export class RuxCalendar {
      */
     @Prop() min?: string
 
+    @Prop({ reflect: true, mutable: true }) value?: string
+
     /**
      * Option to give the calendar a specfic month/year
      */
@@ -122,6 +124,7 @@ export class RuxCalendar {
             new Date(`${yearToEmit}-${monthToEmit}-${dayEl.innerText}`),
             'UTC'
         )
+
         //* de-select previous selections. Will change when we do multi-select.
         const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
         allDays.forEach((day) => {
@@ -129,6 +132,7 @@ export class RuxCalendar {
                 day.selected = false
             }
         })
+        this.value = selectedDate.toISOString()
         this.ruxDateSelected.emit(selectedDate)
     }
 
@@ -197,14 +201,6 @@ export class RuxCalendar {
             this._setStateWithDateIn()
         }
         this._handleYears(this._maxDate, this._minDate)
-    }
-
-    componentWillUpdate() {
-        //remove any selected attributes from days
-        const days = this.el.shadowRoot!.querySelectorAll('rux-day')
-        days.forEach((day) => {
-            if (day.selected) day.removeAttribute('selected')
-        })
     }
 
     /**
