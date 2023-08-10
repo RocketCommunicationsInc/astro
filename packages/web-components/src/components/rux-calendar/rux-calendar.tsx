@@ -86,6 +86,9 @@ export class RuxCalendar {
      */
     @Prop() min?: string
 
+    /**
+     * Contains the currently selected date as an ISO string.
+     */
     @Prop({ reflect: true, mutable: true }) value?: string
 
     /**
