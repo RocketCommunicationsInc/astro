@@ -632,4 +632,16 @@ test.describe('Calendar', () => {
             expect(options.length).toBe(2)
         })
     })
+    test('Calendar value gets updated when a date is selected', async ({
+        page,
+    }) => {
+        const template = `<rux-calendar date-in="01-01-2023"></rux-calendar>`
+        await page.setContent(template)
+        const cal = page.locator('rux-calendar')
+        await expect(cal).not.toHaveAttribute('value', '')
+        const dayToSelect = page.getByText('1', { exact: true }).first()
+        await dayToSelect.click()
+        //? why is this 14
+        await expect(cal).toHaveAttribute('value', '2023-01-01T14:00:00.000Z')
+    })
 })

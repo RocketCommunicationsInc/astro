@@ -127,7 +127,6 @@ export class RuxCalendar {
             new Date(`${yearToEmit}-${monthToEmit}-${dayEl.innerText}`),
             'UTC'
         )
-
         //* de-select previous selections. Will change when we do multi-select.
         const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
         allDays.forEach((day) => {
