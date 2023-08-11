@@ -47,12 +47,13 @@ export class RuxLog {
     get filteredData(): LogRow[] {
         if (this.filter) {
             const filter = this.filter
-            return this.data.filter((row) => row.message.includes(filter))
+            return this.data.filter((row) =>
+                row.message.toLowerCase().includes(filter.toLowerCase())
+            )
         } else {
             return this.data
         }
     }
-
     render() {
         return (
             <Host>

@@ -327,40 +327,32 @@ export class RuxTimeline {
     render() {
         return (
             <Host>
-                <div style={{ position: 'relative' }}>
-                    <div
-                        class="rux-timeline"
-                        onMouseMove={(ev) => this._handleMouse(ev)}
-                        onScroll={() => this._handleScroll()}
-                        ref={(el) => (this.timelineContainer = el)}
-                        part="time-region-container"
-                    >
-                        {this.playhead && (
-                            <div
-                                class={{
-                                    'rux-playhead': true,
-                                    hidden: !this.showPlayhead,
-                                }}
-                                part="playhead"
-                                style={{
-                                    top: `${this.playheadHeight}px`,
-                                    left: `${this.playheadPositionInPixels}px`,
-                                }}
-                            ></div>
-                        )}
+                <div
+                    class="rux-timeline"
+                    onMouseMove={(ev) => this._handleMouse(ev)}
+                    onScroll={() => this._handleScroll()}
+                    ref={(el) => (this.timelineContainer = el)}
+                    part="time-region-container"
+                >
+                    {this.playhead && (
+                        <div
+                            class={{
+                                'rux-playhead': true,
+                                hidden: !this.showPlayhead,
+                            }}
+                            part="playhead"
+                            style={{
+                                top: `${this.playheadHeight}px`,
+                                left: `${this.playheadPositionInPixels}px`,
+                            }}
+                        ></div>
+                    )}
 
-                        <div
-                            class="events"
-                            ref={(el) => (this.slotContainer = el)}
-                        >
-                            <slot onSlotchange={this._handleSlotChange}></slot>
-                        </div>
-                        <div
-                            class="ruler"
-                            ref={(el) => (this.rulerContainer = el)}
-                        >
-                            <slot name="ruler"></slot>
-                        </div>
+                    <div class="events" ref={(el) => (this.slotContainer = el)}>
+                        <slot onSlotchange={this._handleSlotChange}></slot>
+                    </div>
+                    <div class="ruler" ref={(el) => (this.rulerContainer = el)}>
+                        <slot name="ruler"></slot>
                     </div>
                 </div>
             </Host>

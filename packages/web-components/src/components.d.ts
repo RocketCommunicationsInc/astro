@@ -19982,7 +19982,7 @@ export namespace Components {
     }
     interface RuxTextarea {
         /**
-          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+          * Sets the input as disabled
          */
         "disabled": boolean;
         /**
@@ -20018,7 +20018,11 @@ export namespace Components {
          */
         "placeholder"?: string;
         /**
-          * Sets the input as disabled
+          * The textareas readonly attribute
+         */
+        "readonly": boolean;
+        /**
+          * Sets the input as required
          */
         "required": boolean;
         /**
@@ -55651,7 +55655,7 @@ declare namespace LocalJSX {
     }
     interface RuxTextarea {
         /**
-          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+          * Sets the input as disabled
          */
         "disabled"?: boolean;
         /**
@@ -55699,7 +55703,11 @@ declare namespace LocalJSX {
          */
         "placeholder"?: string;
         /**
-          * Sets the input as disabled
+          * The textareas readonly attribute
+         */
+        "readonly"?: boolean;
+        /**
+          * Sets the input as required
          */
         "required"?: boolean;
         /**

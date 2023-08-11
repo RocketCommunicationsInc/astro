@@ -179,8 +179,11 @@ export class RuxTreeNode {
     }
 
     private _handleTreeNodeClick(e: MouseEvent) {
-        e.stopPropagation()
-        this.selected = !this.selected
+        const target = e.target as HTMLElement
+        if (target.tagName.toLowerCase() === 'rux-tree-node') {
+            e.stopPropagation()
+            this.selected = !this.selected
+        }
     }
 
     private _expandNextNode() {
