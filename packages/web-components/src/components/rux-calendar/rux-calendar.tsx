@@ -125,7 +125,9 @@ export class RuxCalendar {
         }
         const selectedDate = utcToZonedTime(
             new Date(
-                `${yearToEmit}-${this._padNum(monthToEmit)}-${dayEl.innerText}`
+                `${yearToEmit}-${this._padNum(monthToEmit)}-${this._padNum(
+                    Number(dayEl.innerText)
+                )}`
             ),
             'UTC'
         )
