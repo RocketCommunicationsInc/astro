@@ -36,53 +36,54 @@
                 text-align: center;
             "
         >
+            <!-- All date-in values are 2022 so that the changing of the day doesn't cause VRT's to fail. -->
             <div>
                 <h4>Jan</h4>
-                <rux-calendar date-in="2023-01-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-01-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Feb</h4>
-                <rux-calendar date-in="2023-02-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-02-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Mar</h4>
-                <rux-calendar date-in="2023-03-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-03-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Apr</h4>
-                <rux-calendar date-in="2023-04-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-04-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>May</h4>
-                <rux-calendar date-in="2023-05-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-05-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Jun</h4>
-                <rux-calendar date-in="2023-06-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-06-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Jul</h4>
-                <rux-calendar date-in="2023-07-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-07-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Aug</h4>
-                <rux-calendar date-in="2023-08-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-08-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Sep</h4>
-                <rux-calendar date-in="2023-09-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-09-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Oct</h4>
-                <rux-calendar date-in="2023-10-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-10-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Nov</h4>
-                <rux-calendar date-in="2023-11-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-11-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Dec</h4>
-                <rux-calendar date-in="2023-12-01T00:00:00.000Z"></rux-calendar>
+                <rux-calendar date-in="2022-12-01T00:00:00.000Z"></rux-calendar>
             </div>
             <div>
                 <h4>Leap Year Feb</h4>
@@ -93,8 +94,8 @@
             const cal = document.getElementById('cal')
             const btn = document.getElementById('btn')
             btn.addEventListener('click', () => {
-                // cal.dateIn = '2023-05-01T23:59:55.000Z'
-                cal.dateIn = '2023-03-01'
+                // cal.dateIn = '2022-05-01T23:59:55.000Z'
+                cal.dateIn = '2022-03-01'
             })
             const nativedateinputel = document.getElementById('nat-date')
             nativedateinputel.addEventListener('change', (e) => {
