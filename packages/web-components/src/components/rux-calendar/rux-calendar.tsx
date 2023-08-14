@@ -10,7 +10,7 @@ import {
     Listen,
     EventEmitter,
 } from '@stencil/core'
-import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
+import { format, getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
 import { hasSlot } from '../../utils/utils'
 import { RuxDayCustomEvent } from '../../components'
@@ -124,7 +124,9 @@ export class RuxCalendar {
             }
         }
         const selectedDate = utcToZonedTime(
-            new Date(`${yearToEmit}-${monthToEmit}-${dayEl.innerText}`),
+            new Date(
+                `${yearToEmit}-${this._padNum(monthToEmit)}-${dayEl.innerText}`
+            ),
             'UTC'
         )
         //* de-select previous selections. Will change when we do multi-select.
@@ -254,6 +256,8 @@ export class RuxCalendar {
         } else {
             this._date = utcToZonedTime(new Date(this.dateIn!), 'UTC')
         }
+        // let formatDate = format(this._date, 'yyyy MM dd')
+        // this._date = new Date(formatDate)
 
         this._updateState()
     }
