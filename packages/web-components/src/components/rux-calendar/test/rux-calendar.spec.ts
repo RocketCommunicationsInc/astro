@@ -1,5 +1,4 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import { utcToZonedTime } from 'date-fns-tz'
 
 test.describe('Calendar', () => {
     test.describe('January', () => {
@@ -639,12 +638,10 @@ test.describe('Calendar', () => {
         const template = `<rux-calendar date-in="01-01-2023"></rux-calendar>`
         await page.setContent(template)
         const cal = page.locator('rux-calendar')
-        //Since these tests could be run in different timezones, we're converting the
-        // time to be UTC so that it's consistent.
-        const utcTime = utcToZonedTime(new Date('01-01-2023'), 'UTC')
+        const time = new Date('01-01-2023')
         await expect(cal).not.toHaveAttribute('value', '')
         const dayToSelect = page.getByText('1', { exact: true }).first()
         await dayToSelect.click()
-        await expect(cal).toHaveAttribute('value', utcTime.toISOString())
+        await expect(cal).toHaveAttribute('value', time.toISOString())
     })
 })

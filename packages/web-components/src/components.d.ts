@@ -97,6 +97,10 @@ export namespace Components {
           * Min date that the calendar will go to. Needs to be a valid date string.
          */
         "min"?: string;
+        /**
+          * Contains the currently selected date as an ISO string.
+         */
+        "value"?: string;
     }
     interface RuxCard {
     }
@@ -35651,9 +35655,13 @@ declare namespace LocalJSX {
          */
         "min"?: string;
         /**
-          * Emitted when a date is selected using the calendar. Emits the selected date.
+          * Emitted when a date is selected using the calendar. Emits the selected date as an ISO string.
          */
-        "onRuxdateselected"?: (event: RuxCalendarCustomEvent<Date>) => void;
+        "onRuxdateselected"?: (event: RuxCalendarCustomEvent<string>) => void;
+        /**
+          * Contains the currently selected date as an ISO string.
+         */
+        "value"?: string;
     }
     interface RuxCard {
     }

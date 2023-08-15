@@ -12,13 +12,14 @@
 | `dateIn` | `date-in` | Option to give the calendar a specfic month/year                        | `number \| string \| undefined` | `undefined` |
 | `max`    | `max`     | Max date that the calendar will go to. Needs to be a valid date string. | `string \| undefined`           | `undefined` |
 | `min`    | `min`     | Min date that the calendar will go to. Needs to be a valid date string. | `string \| undefined`           | `undefined` |
+| `value`  | `value`   | Contains the currently selected date as an ISO string.                  | `string \| undefined`           | `undefined` |
 
 
 ## Events
 
-| Event             | Description                                                                  | Type                |
-| ----------------- | ---------------------------------------------------------------------------- | ------------------- |
-| `ruxdateselected` | Emitted when a date is selected using the calendar. Emits the selected date. | `CustomEvent<Date>` |
+| Event             | Description                                                                                   | Type                  |
+| ----------------- | --------------------------------------------------------------------------------------------- | --------------------- |
+| `ruxdateselected` | Emitted when a date is selected using the calendar. Emits the selected date as an ISO string. | `CustomEvent<string>` |
 
 
 ## Slots

@@ -10,7 +10,7 @@ import {
     Listen,
     EventEmitter,
 } from '@stencil/core'
-import { format, getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
+import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
 import { hasSlot } from '../../utils/utils'
 import { RuxDayCustomEvent } from '../../components'
@@ -138,15 +138,16 @@ export class RuxCalendar {
                 day.selected = false
             }
         })
+
         this.value = selectedDate.toISOString()
-        this.ruxDateSelected.emit(selectedDate)
+        this.ruxDateSelected.emit(this.value)
     }
 
     /**
-     * Emitted when a date is selected using the calendar. Emits the selected date.
+     * Emitted when a date is selected using the calendar. Emits the selected date as an ISO string.
      */
     @Event({ eventName: 'ruxdateselected', composed: true })
-    ruxDateSelected!: EventEmitter<Date>
+    ruxDateSelected!: EventEmitter<string>
 
     @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
