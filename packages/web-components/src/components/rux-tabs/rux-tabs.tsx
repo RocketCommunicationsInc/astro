@@ -155,9 +155,12 @@ export class RuxTabs {
         const target = e.target as HTMLElement
         //get the tab in case complex html is nested inside rux-tab
         const tab = target.closest('rux-tab') as HTMLRuxTabElement
-        this.ruxSelected.emit(tab)
-        if (tab.getAttribute('disabled') === null) {
-            this._setTab(tab)
+        //if user does not click on a tab but instead on rux-tabs, tab will be null
+        if (tab !== null) {
+            this.ruxSelected.emit(tab)
+            if (tab.getAttribute('disabled') === null) {
+                this._setTab(tab)
+            }
         }
     }
 
