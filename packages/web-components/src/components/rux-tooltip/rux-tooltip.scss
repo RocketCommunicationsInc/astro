@@ -29,6 +29,8 @@ span {
     transition: opacity 200ms ease-in;
     font-size: var(--font-body-2-font-size);
     line-height: var(--font-body-2-line-height);
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .rux-tooltip__trigger {
