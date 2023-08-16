@@ -9,7 +9,6 @@ import {
     Watch,
     Method,
     State,
-    Fragment,
 } from '@stencil/core'
 import {
     computePosition,
@@ -264,9 +263,8 @@ export class RuxTooltip {
                         ref={(el) => (this.trigger = el!)}
                         aria-describedby="tooltip"
                     >
-                        <slot onSlotchange={_handleSlotChange} />
+                        <slot onSlotchange={_handleSlotChange}></slot>
                     </span>
-                    <Fragment>&#8203;</Fragment>
                     <span
                         aria-hidden={this.open ? 'false' : 'true'}
                         class={{
