@@ -263,7 +263,7 @@ export class RuxTooltip {
                         ref={(el) => (this.trigger = el!)}
                         aria-describedby="tooltip"
                     >
-                        <slot onSlotchange={_handleSlotChange}></slot>
+                        <slot onSlotchange={_handleSlotChange} />
                     </span>
                     <span
                         aria-hidden={this.open ? 'false' : 'true'}
