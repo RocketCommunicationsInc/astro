@@ -18,58 +18,5 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body style="padding: 2rem">
-        <rux-table style="width: 50%">
-            <rux-table-row>
-                <rux-table-cell
-                    ><rux-tooltip message="tooltip"
-                        ><div>Cell</div></rux-tooltip
-                    >
-                </rux-table-cell>
-            </rux-table-row>
-            <rux-table-row>
-                <rux-table-cell>
-                    <rux-tooltip message="tooltip">Cell</rux-tooltip>
-                </rux-table-cell>
-            </rux-table-row>
-        </rux-table>
-        <div style="width: 400px; background: blue">
-            <rux-tooltip message="hey thing!" placement="left"
-                ><div>Cell</div></rux-tooltip
-            >
-        </div>
-        <div style="width: 400px; background: green">
-            <rux-tooltip message="hey thing!" placement="left">
-                <div>Cell</div>
-            </rux-tooltip>
-        </div>
-        <div style="width: 400px; background: hotpink">
-            <rux-tooltip message="hey thing!" placement="left"
-                >Cell</rux-tooltip
-            >
-        </div>
-        <p>then more words</p>
-        <rux-pop-up disable-auto-update placement="top-start" id="top">
-            <span slot="trigger">Top</span>
-            <rux-menu>
-                <rux-menu-item value="1" selected
-                    >Pop up menu option test</rux-menu-item
-                >
-                <rux-menu-item-divider></rux-menu-item-divider>
-                <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
-                <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
-            </rux-menu>
-        </rux-pop-up>
-        <rux-pop-up disable-auto-update placement="top-start" id="top">
-            <div slot="trigger">Top</div>
-            <rux-menu>
-                <rux-menu-item value="1" selected
-                    >Pop up menu option test</rux-menu-item
-                >
-                <rux-menu-item-divider></rux-menu-item-divider>
-                <rux-menu-item value="2">Pop up menu option test</rux-menu-item>
-                <rux-menu-item value="3">Pop up menu option test</rux-menu-item>
-            </rux-menu>
-        </rux-pop-up>
-    </body>
+    <body></body>
 </html>
