@@ -24534,7 +24534,7 @@ export declare interface RuxTag extends Components.RuxTag {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'readonly', 'required', 'rows', 'size', 'value'],
   methods: ['setFocus']
 })
 @Component({
@@ -24542,7 +24542,7 @@ export declare interface RuxTag extends Components.RuxTag {}
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'required', 'rows', 'size', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'readonly', 'required', 'rows', 'size', 'value'],
 })
 export class RuxTextarea {
   protected el: HTMLElement;
