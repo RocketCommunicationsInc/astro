@@ -1,16 +1,12 @@
 import { Maskito } from '@maskito/core'
 
-export function mask(hostEl: HTMLElement) {
-    console.log(hostEl, 'host el')
-    console.log(hostEl.shadowRoot!.querySelector('input'))
-    const el = hostEl.shadowRoot!.querySelector('input')
-    console.log(el, 'should be input')
-    if (el) {
-        new Maskito(el, {
+export function mask(inputElement: HTMLInputElement) {
+    if (inputElement) {
+        new Maskito(inputElement, {
             // 1234/123
             mask: [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/],
         })
-    } else return //wtf should I return if el isn't defined
+    } else return //? wtf should I return if el isn't defined
 }
 export const hasShadowDom = (el: HTMLElement) => {
     return !!el.shadowRoot && !!(el as any).attachShadow
