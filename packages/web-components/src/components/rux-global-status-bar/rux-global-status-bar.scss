@@ -11,7 +11,7 @@
     width: -webkit-fill-available;
     width: -moz-available;
     width: stretch;
-    padding: 0 var(--spacing-6);
+    padding: 0 calc(var(--spacing-6) - var(--spacing-1)); // to account for padding to child so that focus can show
     box-sizing: border-box;
     background-color: var(--gsb-color-background);
     -webkit-user-select: none;
@@ -73,8 +73,9 @@
 }
 
 header {
-    overflow: hidden;
     display: flex;
+    overflow: hidden;
+    padding: 0 var(--spacing-1); // so focus does not get cut off by overflow: hidden
     height: 100%;
     width: 100%;
     align-items: center;
