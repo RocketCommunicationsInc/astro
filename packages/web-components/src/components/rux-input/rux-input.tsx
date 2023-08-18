@@ -187,12 +187,6 @@ export class RuxInput implements FormFieldInterface {
         this._onInput = this._onInput.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTogglePassword = this._handleTogglePassword.bind(this)
-        // if (this.type === 'julian') {
-        //     //! race condition problem
-        //     setTimeout(() => {
-        //         mask(this.inputEl)
-        //     }, 200)
-        // }
     }
 
     disconnectedCallback() {
@@ -207,12 +201,7 @@ export class RuxInput implements FormFieldInterface {
         this._setTogglePassword()
     }
 
-    componentWillRender() {
-        //* Undefined on first load, but focusing the input
-        //* causes a re-render do the hasFocus state. which makes willRender run again.
-        //* At that point the input is defined and it all works. Is there a situation where
-        //* hasFocus wouldn't be changed, thus the comp doesn't re-render? That would break this.
-        //* maybe if it has focus by default?
+    componentDidLoad() {
         if (this.type === 'julian') mask(this.inputEl)
     }
 

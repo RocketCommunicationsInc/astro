@@ -1,6 +1,7 @@
 import { Maskito } from '@maskito/core'
 
 export function mask(inputElement: HTMLInputElement) {
+    console.log(inputElement, 'input el')
     if (inputElement) {
         new Maskito(inputElement, {
             // 1234/123

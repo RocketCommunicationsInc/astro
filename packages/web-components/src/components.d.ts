@@ -19440,13 +19440,12 @@ export namespace Components {
         | 'date'
         | 'datetime-local'
         | 'time'
-        | 'tel';
+        | 'tel'
+        | 'julian';
         /**
           * The input value
          */
         "value": string;
-    }
-    interface RuxJulianInput {
     }
     /**
      * A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the [Notification System](https://www.astrouxds.com/design-guidelines/notifications), Logs provide sorting and filtering function for examining events.
@@ -34127,12 +34126,6 @@ declare global {
         prototype: HTMLRuxInputElement;
         new (): HTMLRuxInputElement;
     };
-    interface HTMLRuxJulianInputElement extends Components.RuxJulianInput, HTMLStencilElement {
-    }
-    var HTMLRuxJulianInputElement: {
-        prototype: HTMLRuxJulianInputElement;
-        new (): HTMLRuxJulianInputElement;
-    };
     /**
      * A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the [Notification System](https://www.astrouxds.com/design-guidelines/notifications), Logs provide sorting and filtering function for examining events.
      */
@@ -35466,7 +35459,6 @@ declare global {
         "rux-icon-zoom-out-map": HTMLRuxIconZoomOutMapElement;
         "rux-indeterminate-progress": HTMLRuxIndeterminateProgressElement;
         "rux-input": HTMLRuxInputElement;
-        "rux-julian-input": HTMLRuxJulianInputElement;
         "rux-log": HTMLRuxLogElement;
         "rux-menu": HTMLRuxMenuElement;
         "rux-menu-item": HTMLRuxMenuItemElement;
@@ -54979,13 +54971,12 @@ declare namespace LocalJSX {
         | 'date'
         | 'datetime-local'
         | 'time'
-        | 'tel';
+        | 'tel'
+        | 'julian';
         /**
           * The input value
          */
         "value"?: string;
-    }
-    interface RuxJulianInput {
     }
     /**
      * A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the [Notification System](https://www.astrouxds.com/design-guidelines/notifications), Logs provide sorting and filtering function for examining events.
@@ -56862,7 +56853,6 @@ declare namespace LocalJSX {
         "rux-icon-zoom-out-map": RuxIconZoomOutMap;
         "rux-indeterminate-progress": RuxIndeterminateProgress;
         "rux-input": RuxInput;
-        "rux-julian-input": RuxJulianInput;
         "rux-log": RuxLog;
         "rux-menu": RuxMenu;
         "rux-menu-item": RuxMenuItem;
@@ -65396,7 +65386,6 @@ declare module "@stencil/core" {
             "rux-icon-zoom-out-map": LocalJSX.RuxIconZoomOutMap & JSXBase.HTMLAttributes<HTMLRuxIconZoomOutMapElement>;
             "rux-indeterminate-progress": LocalJSX.RuxIndeterminateProgress & JSXBase.HTMLAttributes<HTMLRuxIndeterminateProgressElement>;
             "rux-input": LocalJSX.RuxInput & JSXBase.HTMLAttributes<HTMLRuxInputElement>;
-            "rux-julian-input": LocalJSX.RuxJulianInput & JSXBase.HTMLAttributes<HTMLRuxJulianInputElement>;
             /**
              * A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the [Notification System](https://www.astrouxds.com/design-guidelines/notifications), Logs provide sorting and filtering function for examining events.
              */
