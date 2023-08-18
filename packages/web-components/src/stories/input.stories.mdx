@@ -180,6 +180,59 @@ export const Required = (args) => {
     </Story>
 </Canvas>
 
+### Julian/Ordinal
+
+Ordinal date (commonly refered to as Julian date) is a common date format used in the space domain.
+This input supports the Ordinal/Julian format of YYYY/DDD.
+
+export const Julian = (args) => {
+    return html`
+<rux-input
+    label="${args.label}"
+    ?disabled="${args.disabled}"
+    .error-text="${args.errorText}"
+    ?invalid="${args.invalid}"
+    .help-text="${args.helpText}"
+    .min="${args.min}"
+    .max="${args.max}"
+    .name="${args.name}"
+    .placeholder="${args.placeholder}"
+    ?required="${args.required}"
+    .value="${args.value}"
+    .step="${args.step}"
+    type=${args.type}
+    ?readonly="${args.readonly}"
+    ?autocomplete="${args.autocomplete}"
+    ?spellcheck="${args.spellcheck}"
+></rux-input>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Julian"
+        args={{
+            label: 'Julian/Ordinal Date',
+            type: 'julian',
+            required: false,
+            placeholder: 'YYYY/DDD',
+            invalid: false,
+            readonly: false,
+            disabled: false,
+            helpText: '',
+            errorText: '',
+            spellcheck: false,
+            max: '',
+            min: '',
+            name: '',
+            step: '',
+            value: ''
+        }}
+    >
+        {Julian.bind()}
+    </Story>
+</Canvas>
+
 ### With Icons
 
 Icons on either the left or right can be accomplished using the named slots `prefix` or `suffix`.
@@ -352,12 +405,12 @@ export const Sizes = (args) => {
             max: { table: { disable: true } },
             min: { table: { disable: true } },
             name: { table: { disable: true } },
-            placeholder: { table: { disable: true } },   
-            readonly: { table: { disable: true } },   
-            required: { table: { disable: true } },   
-            size: { table: { disable: true } },   
-            spellcheck: { table: { disable: true } },   
-            step: { table: { disable: true } },   
+            placeholder: { table: { disable: true } },
+            readonly: { table: { disable: true } },
+            required: { table: { disable: true } },
+            size: { table: { disable: true } },
+            spellcheck: { table: { disable: true } },
+            step: { table: { disable: true } },
             helpText: { table: { disable: true } },
             autocomplete: { table: { disable: true } },
             value: { table: { disable: true } }
@@ -548,6 +601,7 @@ export const Types = (args) => {
                 type="datetime-local"
             ></rux-input>
             <rux-input label="Time" type="time"></rux-input>
+            <rux-input label="Julian/Ordinal" type="julian" placeholder="YYYY/DDD"></rux-input>
         </div>
     `
 }
@@ -565,12 +619,12 @@ export const Types = (args) => {
             max: { table: { disable: true } },
             min: { table: { disable: true } },
             name: { table: { disable: true } },
-            placeholder: { table: { disable: true } },   
-            readonly: { table: { disable: true } },   
-            required: { table: { disable: true } },   
-            size: { table: { disable: true } },   
-            spellcheck: { table: { disable: true } },   
-            step: { table: { disable: true } },   
+            placeholder: { table: { disable: true } },
+            readonly: { table: { disable: true } },
+            required: { table: { disable: true } },
+            size: { table: { disable: true } },
+            spellcheck: { table: { disable: true } },
+            step: { table: { disable: true } },
             helpText: { table: { disable: true } },
             autocomplete: { table: { disable: true } },
             value: { table: { disable: true } }
