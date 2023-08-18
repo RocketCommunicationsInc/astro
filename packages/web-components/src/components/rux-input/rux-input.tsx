@@ -207,8 +207,12 @@ export class RuxInput implements FormFieldInterface {
         this._setTogglePassword()
     }
 
-    componentDidRender() {
-        //this fires whenver you click on or off the input?
+    componentWillRender() {
+        //* Undefined on first load, but focusing the input
+        //* causes a re-render do the hasFocus state. which makes willRender run again.
+        //* At that point the input is defined and it all works. Is there a situation where
+        //* hasFocus wouldn't be changed, thus the comp doesn't re-render? That would break this.
+        //* maybe if it has focus by default?
         if (this.type === 'julian') mask(this.inputEl)
     }
 
