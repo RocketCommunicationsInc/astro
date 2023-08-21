@@ -140,6 +140,15 @@ test.describe('Input with form', () => {
                             name="native-time"
                         />
                     </div>
+                    <div>
+                      <rux-input
+                        label="Julian"
+                        id="julian"
+                        name="julian"
+                        type="julian"
+                      >
+                      </rux-input>
+                    </div>
 
                     <button id="formSubmitBtn" type="submit">submit</button>
                 </form>
@@ -297,6 +306,16 @@ test.describe('Input with form', () => {
 
         //Assert
         await expect(spellCheckInput).toHaveAttribute('spellcheck', 'true')
+    })
+    test('submits correct value with julian type', async ({ page }) => {
+        const julian = page.locator('#julian')
+        const julianInput = julian.locator('input').nth(1)
+        const log = page.locator('#log')
+        const formSubmitButton = page.locator('#formSubmitBtn')
+
+        await julianInput.type('2023345')
+        await formSubmitButton.click()
+        await expect(log).toContainText('julian:2023/345')
     })
     //! Uncomment autocomplete tests when the attribute is added back in and working.
     // test('applies autocomplete prop to shadow input', async ({ page }) => {
