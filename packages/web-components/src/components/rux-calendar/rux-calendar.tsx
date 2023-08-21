@@ -92,7 +92,7 @@ export class RuxCalendar {
     @Prop({ reflect: true, mutable: true }) value?: string
 
     /**
-     * Option to give the calendar a specfic month/year
+     * Option to give the calendar a specfic month/year. Accepts any valid date string or unix timestamp.
      */
     @Prop({ attribute: 'date-in', reflect: true }) dateIn?: string | number
     @Watch('dateIn')
@@ -102,7 +102,7 @@ export class RuxCalendar {
 
     /**
      * Listens for a day to be selected and then emits the date made from that selected
-     * day.
+     * day in the events detail.
      * @param e ruxdayselected Custom event. Resovles to the <rux-day> element.
      */
     @Listen('ruxdayselected')

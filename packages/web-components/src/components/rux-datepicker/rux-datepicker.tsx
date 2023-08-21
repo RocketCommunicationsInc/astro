@@ -37,17 +37,17 @@ export class RuxDatepicker {
 
     @Listen('ruxdateselected')
     handleRuxDaySelected(e: RuxCalendarCustomEvent<Date>) {
-        const event = e.detail
-        console.log(event, 'event?')
-        const year = event.getUTCFullYear()
+        const eventDate = new Date(e.detail)
+        console.log(eventDate, 'event in rux-day')
+        const year = eventDate.getUTCFullYear()
         const month =
-            event.getUTCMonth() + 1 > 9
-                ? event.getUTCMonth() + 1
-                : `0${event.getUTCMonth() + 1}`
+            eventDate.getUTCMonth() + 1 > 9
+                ? eventDate.getUTCMonth() + 1
+                : `0${eventDate.getUTCMonth() + 1}`
         const day =
-            event.getUTCDate() > 9
-                ? event.getUTCDate()
-                : `0${event.getUTCDate()}`
+            eventDate.getUTCDate() > 9
+                ? eventDate.getUTCDate()
+                : `0${eventDate.getUTCDate()}`
         this._inputVal = `${year}-${month}-${day}`
     }
     // @Listen('ruxchange')

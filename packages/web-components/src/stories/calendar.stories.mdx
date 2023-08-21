@@ -37,6 +37,13 @@ export const BetaTag = styled.div`
 <Meta
     title="Beta/Calendar [BETA]"
     component="rux-calendar"
+    parameters={{
+        actions: {
+            handles: [
+                'ruxdateselected rux-calendar',
+            ],
+        },
+    }}
     argTypes={{
         dateIn: {
             name: 'dateIn',
