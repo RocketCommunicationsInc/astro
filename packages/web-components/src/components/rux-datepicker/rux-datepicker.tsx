@@ -58,17 +58,41 @@ export class RuxDatepicker {
     //! rux change fires as soon as the user hits the years - so when you start typing 2023, it'll fire 4 times, one for each digit.
     // }
 
+    @Listen('ruxblur')
+    handleBlur() {
+        if (this._inputEl) {
+            console.log('listen blur, in if')
+            this._inputVal = this._inputEl.value
+            console.log(this._inputVal)
+        }
+    }
+
     @Watch('open')
     handleOpen() {
         this.open ? this.ruxExpanded.emit() : this.ruxCollapsed.emit()
     }
 
     @State() _inputVal: string = ''
+    private _inputEl?: HTMLRuxInputElement
+
+    componentDidLoad() {
+        // this works, but calendar is breaking. date-in gets updated,
+        // the year value changes, but the calendar is stuck at august,
+        // and its year is 2013 (10 from 2023)
+        if (this._inputEl) {
+            this._inputVal = this._inputEl.value
+        }
+    }
+    // private _setDateIn: string | undefined = undefined
 
     render() {
         return (
             <Host>
-                <rux-input type="date" value={this._inputVal}>
+                <rux-input
+                    type="date"
+                    value={this._inputVal}
+                    ref={(el) => (this._inputEl = el)}
+                >
                     <rux-pop-up
                         placement="bottom-end"
                         strategy="fixed"
@@ -79,7 +103,9 @@ export class RuxDatepicker {
                             slot="trigger"
                             size="22px"
                         ></rux-icon>
-                        <rux-calendar></rux-calendar>
+                        <rux-calendar
+                            dateIn={this._inputVal ? this._inputVal : undefined}
+                        ></rux-calendar>
                     </rux-pop-up>
                 </rux-input>
             </Host>

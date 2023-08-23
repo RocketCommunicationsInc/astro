@@ -159,12 +159,38 @@ export class RuxCalendar {
 
     @Watch('_month')
     handleMonthWatch() {
+        console.log('month watch')
+        //!? Do we need this._year param???
         this._updateDate(this._year, this._month)
     }
 
     @Watch('_year')
     handleYearWatch() {
-        this._updateDate(this._year, this._month)
+        //! This breaks date-in being dynamically updated.
+        //! When date-in is updated, it triggers a this._updateDate call. That call triggers
+        //! an updateState call. That call updates this._year with the year from dateIn, which
+        //! then triggers this year watch. However, the year watch is calling updateDate with the month param, which is
+        //! the incorrect month at that point.
+        //! Do we need this._month as a param?????
+        if (this.dateIn) {
+            console.log(this.dateIn, 'date in')
+            let dateFromDateIn = utcToZonedTime(new Date(this.dateIn), 'UTC')
+            let minDateFromDateIn = new Date(
+                `${dateFromDateIn.getUTCFullYear() - 10}-${
+                    dateFromDateIn.getUTCMonth() + 1
+                }-${dateFromDateIn.getUTCDate()}`
+            )
+            let maxDateFromDateIn = new Date(
+                `${dateFromDateIn.getUTCFullYear() + 10}-${
+                    dateFromDateIn.getUTCMonth() + 1
+                }-${dateFromDateIn.getUTCDate()}`
+            )
+            console.log(dateFromDateIn, 'dateFromDateIn')
+            console.log(minDateFromDateIn, 'minDateFromDateIn')
+            console.log(maxDateFromDateIn, 'maxDateFromDateIn')
+            this._handleYears(maxDateFromDateIn, minDateFromDateIn)
+        }
+        this._updateDate(this._year)
     }
 
     @Watch('min')
@@ -216,6 +242,13 @@ export class RuxCalendar {
      * @param minDate the minimun date the calendar can go
      */
     private _handleYears(maxDate: Date, minDate: Date) {
+        console.log(
+            'Handle Years call using ',
+            maxDate,
+            ':maxDate ',
+            minDate,
+            ':minDate'
+        )
         //clear arrs
         this._minYearArr = []
         this._maxYearArr = []
@@ -234,6 +267,7 @@ export class RuxCalendar {
         this._allYearsArr = this._minYearArr.concat(this._maxYearArr)
         this._allYearsArr.push(this._year)
         this._allYearsArr.sort()
+        console.log(this._allYearsArr, 'all years ')
     }
 
     /**
@@ -244,6 +278,15 @@ export class RuxCalendar {
      * @param day optional: the day
      */
     private _updateDate(year?: number, month?: number, day?: number) {
+        console.log(
+            'updaetDate start using: ',
+            year,
+            ':year ',
+            month,
+            ':month ',
+            day,
+            ':day'
+        )
         if (year && month) {
             if (day) {
                 this._date = utcToZonedTime(
@@ -261,7 +304,6 @@ export class RuxCalendar {
         }
         // let formatDate = format(this._date, 'yyyy MM dd')
         // this._date = new Date(formatDate)
-
         this._updateState()
     }
 
@@ -298,7 +340,10 @@ export class RuxCalendar {
             //unix time
             this.dateIn = Number(this.dateIn)
         }
-        this._updateDate()
+        let dateInMonth = new Date(this.dateIn).getUTCMonth() + 1
+        let dateInYear = new Date(this.dateIn).getUTCFullYear()
+        let dateInDay = new Date(this.dateIn).getUTCDate()
+        this._updateDate(dateInYear, dateInMonth, dateInDay)
     }
 
     /**
