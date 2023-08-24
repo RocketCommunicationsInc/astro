@@ -181,6 +181,8 @@ export class RuxCalendar {
     private _minDate: Date = this.min
         ? new Date(this.min)
         : new Date(Date.now())
+    private _forwardArrowDisabled: boolean = false
+    private _backwardArrowDisabled: boolean = false
 
     private _maxYearArr: Array<number> = []
     private _minYearArr: Array<number> = []
@@ -247,8 +249,7 @@ export class RuxCalendar {
                 )
             }
         }
-        // let formatDate = format(this._date, 'yyyy MM dd')
-        // this._date = new Date(formatDate)
+
         this._updateState()
     }
 
@@ -270,6 +271,30 @@ export class RuxCalendar {
         this._minDate = this.min
             ? new Date(this.min)
             : new Date(`${this._date.getFullYear() - 9}-01-01`)
+        if (this._maxDate) {
+            //Disable the forward arrow if it would go beyond the given max date.
+            //if a new date from this._next month and this._year is > this._maxDate, dont go forward.
+            const nextMonthDate = utcToZonedTime(
+                new Date(`${this._year}-${this._nextMonth}-01`),
+                'UTC'
+            )
+            if (nextMonthDate > this._maxDate) {
+                this._forwardArrowDisabled = true
+                console.log('disable forward arrow')
+            } else {
+                this._forwardArrowDisabled = false
+            }
+        }
+        if (this._minDate) {
+            const prevMonthDate = utcToZonedTime(
+                new Date(`${this._year}-${this._prevMonth}-01`),
+                'UTC'
+            )
+            if (prevMonthDate < this._minDate) {
+                console.log('disable back arrow')
+                this._backwardArrowDisabled = true
+            } else this._backwardArrowDisabled = false
+        }
         this._fillDaysInMonthArr()
 
         // If min and max are _not_ being used, then we should always show +10 and -10 years by default.
@@ -437,6 +462,8 @@ export class RuxCalendar {
      * Handles changing the date when the backward arrow is used.
      */
     private _handleBackwardArrow() {
+        if (this._backwardArrowDisabled) return
+
         // if it's 12, go to one,ect.
         // increase date by 1 month, set state
         if (this._prevMonth === 12) {
@@ -450,6 +477,7 @@ export class RuxCalendar {
      * Handles changing the date when the forward arrow is used.
      */
     private _handleForwardArrow() {
+        if (this._forwardArrowDisabled) return
         if (this._nextMonth === 1) this._year = this._year + 1
         this._updateDate(this._year, this._nextMonth)
     }
@@ -462,7 +490,10 @@ export class RuxCalendar {
                         <slot name="header">
                             <rux-icon
                                 icon="keyboard-arrow-left"
-                                class="arrow-left-icon"
+                                class={{
+                                    'arrow-left-icon': true,
+                                    disabled: this._backwardArrowDisabled,
+                                }}
                                 size="1.25rem"
                                 id="backward-month"
                                 onClick={this._handleBackwardArrow}
@@ -507,7 +538,10 @@ export class RuxCalendar {
                             </div>
                             <rux-icon
                                 icon="keyboard-arrow-right"
-                                class="arrow-right-icon"
+                                class={{
+                                    'arrow-right-icon': true,
+                                    disabled: this._forwardArrowDisabled,
+                                }}
                                 size="1.25rem"
                                 id="forward-month"
                                 onClick={this._handleForwardArrow}

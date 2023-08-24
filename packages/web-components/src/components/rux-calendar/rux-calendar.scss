@@ -25,6 +25,11 @@
             justify-content: center;
             align-items: center;
         }
+        #forward-month.disabled,
+        #backward-month.disabled {
+            opacity: var(--opacity-disabled);
+            cursor: not-allowed;
+        }
     }
     .calendar-footer {
         display: flex;
