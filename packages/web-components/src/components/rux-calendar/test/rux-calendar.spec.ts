@@ -511,13 +511,13 @@ test.describe('Calendar', () => {
             expect(yearVal).toBe(year.toString())
             const cal = page.locator('rux-calendar')
             await cal.evaluate((cal) =>
-                cal.setAttribute('date-in', '2023-01-01')
+                cal.setAttribute('date-in', '1997-04-27')
             )
             await page.waitForChanges()
             monthVal = await monthPicker.inputValue()
             yearVal = await yearPicker.inputValue()
-            expect(monthVal).toBe('1')
-            expect(yearVal).toBe('2023')
+            expect(monthVal).toBe('4')
+            expect(yearVal).toBe('1997')
         })
         test('Date in prop can be an epoch/unix time', async ({ page }) => {
             //01-01-2023
