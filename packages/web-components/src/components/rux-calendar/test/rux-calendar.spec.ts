@@ -422,6 +422,65 @@ test.describe('Calendar', () => {
             monthPickerValue = await monthPicker.inputValue()
             expect(monthPickerValue).toBe((currMonth - 1).toString())
         })
+        test('Forward arrow becomes disabled when moving forward a month would be past max date', async ({
+            page,
+        }) => {
+            //if max is given, the forward arrow should function normally until the date of the next month is greater
+            //than the max date.
+            const template = `<rux-calendar min="2023-01-31" max="2024-01-31" date-in="2023-12-01"></rux-calendar>`
+            await page.setContent(template)
+            const cal = page.locator('rux-calendar')
+            const forwardArrow = cal.locator('#forward-month')
+            console.log(forwardArrow, 'Here')
+            const monthPicker = await page
+                .locator('#month-picker')
+                .locator('select')
+            let monthPickerValue = await monthPicker.inputValue()
+            //date-in is Oct, click forward arrow twice to get to Dec. After that it should be disabled
+            expect(monthPickerValue).toBe('12')
+            await forwardArrow.click()
+            await page.waitForChanges()
+            monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe('1')
+            //class list is 'hydrated disabled arrow-icon' ect, so we're using a regex matcher here
+            await expect(forwardArrow).toHaveClass(/^.*disabled.*$/gm)
+
+            monthPickerValue = await monthPicker.inputValue()
+            await expect(monthPickerValue).toBe('1')
+            await forwardArrow.click()
+            await page.waitForChanges()
+        })
+        test('Backward arrow becomes disabled when moving backward a month would be past max date', async ({
+            page,
+        }) => {
+            //if max is given, the backward arrow should function normally until the date of the next month is greater
+            //than the max date.
+            const template = `<rux-calendar min="2022-12-01" max="2024-12-01" date-in="2023-02-01"></rux-calendar>`
+            await page.setContent(template)
+            const cal = page.locator('rux-calendar')
+            const backwardArrow = cal.locator('#backward-month')
+            const monthPicker = page.locator('#month-picker').locator('select')
+            let monthPickerValue = await monthPicker.inputValue()
+
+            //date-in is Oct, click backward arrow twice to get to Dec. After that it should be disabled
+            expect(monthPickerValue).toBe('2')
+            await backwardArrow.click()
+            await page.waitForChanges()
+
+            monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe('1')
+            await backwardArrow.click()
+            await page.waitForChanges()
+
+            monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe('12')
+            await expect(backwardArrow).toHaveClass(/^.*disabled.*$/gm)
+
+            await backwardArrow.click()
+            await page.waitForChanges()
+            monthPickerValue = await monthPicker.inputValue()
+            expect(monthPickerValue).toBe('12')
+        })
         test('Year changes when backward arrow click and month is Jan', async ({
             page,
         }) => {
