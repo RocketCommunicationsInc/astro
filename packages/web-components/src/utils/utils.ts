@@ -1,14 +1,3 @@
-import { Maskito } from '@maskito/core'
-
-export function mask(inputElement: HTMLInputElement) {
-    console.log(inputElement, 'input el')
-    if (inputElement) {
-        new Maskito(inputElement, {
-            // 1234/123
-            mask: [/\d/, /\d/, /\d/, /\d/, '/', /\d/, /\d/, /\d/],
-        })
-    } else return //? wtf should I return if el isn't defined
-}
 export const hasShadowDom = (el: HTMLElement) => {
     return !!el.shadowRoot && !!(el as any).attachShadow
 }

@@ -37,6 +37,16 @@
 
 ## Methods
 
+### `getInput() => Promise<HTMLInputElement>`
+
+Returns the native input element used in the shadow dom.
+
+#### Returns
+
+Type: `Promise<HTMLInputElement>`
+
+
+
 ### `setFocus(options?: FocusOptions) => Promise<void>`
 
 Sets element as focused

@@ -5,21 +5,22 @@
 
 ## Properties
 
-| Property      | Attribute     | Description                                                                                                                                                                             | Type                                          | Default     |
-| ------------- | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------- |
-| `disabled`    | `disabled`    | Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored. | `boolean`                                     | `false`     |
-| `errorText`   | `error-text`  | The validation error text                                                                                                                                                               | `string \| undefined`                         | `undefined` |
-| `helpText`    | `help-text`   | The  or explanation text                                                                                                                                                                | `string \| undefined`                         | `undefined` |
-| `invalid`     | `invalid`     | Presentational only. Renders the Textarea as invalid.                                                                                                                                   | `boolean`                                     | `false`     |
-| `label`       | `label`       | The textarea label text. For HTML content, use the `label` slot instead.                                                                                                                | `string \| undefined`                         | `undefined` |
-| `maxLength`   | `max-length`  | The input maxLength attribute                                                                                                                                                           | `string \| undefined`                         | `undefined` |
-| `minLength`   | `min-length`  | The input minLength attribute                                                                                                                                                           | `string \| undefined`                         | `undefined` |
-| `name`        | `name`        | The input name                                                                                                                                                                          | `string`                                      | `''`        |
-| `placeholder` | `placeholder` | The textarea placeholder text                                                                                                                                                           | `string \| undefined`                         | `undefined` |
-| `required`    | `required`    | Sets the input as disabled                                                                                                                                                              | `boolean`                                     | `false`     |
-| `rows`        | `rows`        | The input rows attribute                                                                                                                                                                | `number \| undefined`                         | `undefined` |
-| `size`        | `size`        | Styles the input element size between small, medium and large. The default styling is medium.                                                                                           | `"large" \| "medium" \| "small" \| undefined` | `undefined` |
-| `value`       | `value`       | The input value                                                                                                                                                                         | `string`                                      | `''`        |
+| Property      | Attribute     | Description                                                                                   | Type                                          | Default     |
+| ------------- | ------------- | --------------------------------------------------------------------------------------------- | --------------------------------------------- | ----------- |
+| `disabled`    | `disabled`    | Sets the input as disabled                                                                    | `boolean`                                     | `false`     |
+| `errorText`   | `error-text`  | The validation error text                                                                     | `string \| undefined`                         | `undefined` |
+| `helpText`    | `help-text`   | The  or explanation text                                                                      | `string \| undefined`                         | `undefined` |
+| `invalid`     | `invalid`     | Presentational only. Renders the Textarea as invalid.                                         | `boolean`                                     | `false`     |
+| `label`       | `label`       | The textarea label text. For HTML content, use the `label` slot instead.                      | `string \| undefined`                         | `undefined` |
+| `maxLength`   | `max-length`  | The input maxLength attribute                                                                 | `string \| undefined`                         | `undefined` |
+| `minLength`   | `min-length`  | The input minLength attribute                                                                 | `string \| undefined`                         | `undefined` |
+| `name`        | `name`        | The input name                                                                                | `string`                                      | `''`        |
+| `placeholder` | `placeholder` | The textarea placeholder text                                                                 | `string \| undefined`                         | `undefined` |
+| `readonly`    | `readonly`    | The textareas readonly attribute                                                              | `boolean`                                     | `false`     |
+| `required`    | `required`    | Sets the input as required                                                                    | `boolean`                                     | `false`     |
+| `rows`        | `rows`        | The input rows attribute                                                                      | `number \| undefined`                         | `undefined` |
+| `size`        | `size`        | Styles the input element size between small, medium and large. The default styling is medium. | `"large" \| "medium" \| "small" \| undefined` | `undefined` |
+| `value`       | `value`       | The input value                                                                               | `string`                                      | `''`        |
 
 
 ## Events
