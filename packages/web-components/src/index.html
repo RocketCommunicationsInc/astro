@@ -18,45 +18,5 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body>
-        <form style="width: 200px; margin: 1rem auto">
-            <rux-input
-                name="julian"
-                type="julian"
-                help-text="Julian/Ordinal Date"
-                placeholder="YYYY/DDD"
-                label="Julian"
-            ></rux-input>
-            <br />
-            <rux-input type="text" name="text" placeholder="Text"></rux-input>
-            <br />
-            <rux-input type="date" name="date"></rux-input>
-            <rux-button type="submit">Submit</rux-button>
-        </form>
-        <ul></ul>
-
-        <script>
-            const form = document.querySelector('form')
-            const log = document.querySelector('ul')
-            form.addEventListener('submit', (e) => {
-                e.preventDefault()
-                console.log('submit ev')
-
-                new FormData(form)
-            })
-            form.addEventListener('formdata', (e) => {
-                console.log('form data ev')
-                log.innerHTML = ''
-                // Get the form data from the event object
-                let data = e.formData
-                const values = data.values()
-                console.log(data, 'data')
-                for (var value of data.entries()) {
-                    const item = document.createElement('li')
-                    item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
-                    log.appendChild(item)
-                }
-            })
-        </script>
-    </body>
+    <body></body>
 </html>

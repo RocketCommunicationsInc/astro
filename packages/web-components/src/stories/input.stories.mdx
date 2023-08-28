@@ -180,59 +180,6 @@ export const Required = (args) => {
     </Story>
 </Canvas>
 
-### Julian/Ordinal
-
-Ordinal date (commonly refered to as Julian date) is a common date format used in the space domain.
-This input supports the Ordinal/Julian format of YYYY/DDD.
-
-export const Julian = (args) => {
-    return html`
-<rux-input
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    .error-text="${args.errorText}"
-    ?invalid="${args.invalid}"
-    .help-text="${args.helpText}"
-    .min="${args.min}"
-    .max="${args.max}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    .value="${args.value}"
-    .step="${args.step}"
-    type=${args.type}
-    ?readonly="${args.readonly}"
-    ?autocomplete="${args.autocomplete}"
-    ?spellcheck="${args.spellcheck}"
-></rux-input>
-    `
-}
-
-<Canvas>
-    <Story
-        name="Julian"
-        args={{
-            label: 'Julian/Ordinal Date',
-            type: 'julian',
-            required: false,
-            placeholder: 'YYYY/DDD',
-            invalid: false,
-            readonly: false,
-            disabled: false,
-            helpText: '',
-            errorText: '',
-            spellcheck: false,
-            max: '',
-            min: '',
-            name: '',
-            step: '',
-            value: ''
-        }}
-    >
-        {Julian.bind()}
-    </Story>
-</Canvas>
-
 ### With Icons
 
 Icons on either the left or right can be accomplished using the named slots `prefix` or `suffix`.
@@ -635,6 +582,26 @@ export const Types = (args) => {
 </Canvas>
 
 ## Customization
+
+### Custom Input Mask
+
+If you need a custom input type for your rux-input, we recommend using [Maskito](https://maskito.dev/getting-started/what-is-maskito) to create your own input mask.
+Below is an example of the common use case of a Julian/Ordianl date input.
+
+export const VanillaMask = () => {
+    return html`
+<iframe src="https://codesandbox.io/embed/rux-julian-input-mask-6gt7g8?fontsize=14&hidenavigation=1&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="rux-julian-input-mask"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>`
+}
+
+<Canvas>
+    <Story name="Julian Mask">{VanillaMask.bind()}</Story>
+</Canvas>
+
 
 ### Horizontal Labels
 
