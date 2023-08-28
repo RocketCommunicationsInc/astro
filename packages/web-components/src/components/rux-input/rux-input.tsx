@@ -11,7 +11,7 @@ import {
     Method,
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
-import { hasSlot, mask, renderHiddenInput } from '../../utils/utils'
+import { hasSlot, renderHiddenInput } from '../../utils/utils'
 
 let id = 0
 
@@ -101,8 +101,7 @@ export class RuxInput implements FormFieldInterface {
         | 'date'
         | 'datetime-local'
         | 'time'
-        | 'tel'
-        | 'julian' = 'text'
+        | 'tel' = 'text'
 
     /**
      * The input min attribute
@@ -172,6 +171,14 @@ export class RuxInput implements FormFieldInterface {
         this.inputEl.focus(options)
     }
 
+    /**
+     * Returns the native input element used in the shadow dom.
+     */
+    @Method()
+    async getInput() {
+        return this.inputEl
+    }
+
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
@@ -199,10 +206,6 @@ export class RuxInput implements FormFieldInterface {
     componentWillLoad() {
         this._handleSlotChange()
         this._setTogglePassword()
-    }
-
-    componentDidLoad() {
-        if (this.type === 'julian') mask(this.inputEl)
     }
 
     get hasLabel() {
