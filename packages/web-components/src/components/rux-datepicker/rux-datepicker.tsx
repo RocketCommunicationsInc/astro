@@ -44,7 +44,6 @@ export class RuxDatepicker {
     @Listen('ruxdateselected')
     handleRuxDaySelected(e: RuxCalendarCustomEvent<Date>) {
         const eventDate = new Date(e.detail)
-        console.log(eventDate, 'event in rux-day')
         const year = eventDate.getUTCFullYear()
         const month =
             eventDate.getUTCMonth() + 1 > 9
@@ -68,12 +67,23 @@ export class RuxDatepicker {
     handleBlur() {
         if (this._inputEl) {
             this._inputVal = this._inputEl.value
+        }
+    }
+
+    @Listen('ruxpopupopened')
+    handlePopUpOpen() {
+        this.open = true
+        if (this._inputVal) {
             this._preSelectedDay = utcToZonedTime(
                 new Date(this._inputVal),
                 'UTC'
             )
         }
-        console.log(this._preSelectedDay, 'pre selected day in DP')
+    }
+
+    @Listen('ruxpopupclosed')
+    handlePopUpClose() {
+        this.open = false
     }
 
     @Watch('open')
@@ -84,7 +94,6 @@ export class RuxDatepicker {
     @State() _inputVal: string = ''
     @Watch('_inputVal')
     handleInputValueChange() {
-        console.log('heard input val change')
         this.value = this._inputVal
     }
 

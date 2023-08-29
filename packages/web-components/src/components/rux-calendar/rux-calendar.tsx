@@ -96,11 +96,6 @@ export class RuxCalendar {
      * Helper prop to select the day on calendar when datepicker input is used.
      */
     @Prop() preSelectedDay?: Date
-    // @Watch('preSelectedDay')
-    // watchPreSelectedDay() {
-    //     console.log(this.preSelectedDay, 'in watch')
-    //     setTimeout(() => this._handlePreSelectedDay(), 100)
-    // }
 
     /**
      * Option to give the calendar a specfic month/year. Accepts any valid date string or unix timestamp.
@@ -108,7 +103,6 @@ export class RuxCalendar {
     @Prop({ attribute: 'date-in', reflect: true }) dateIn?: string | number
     @Watch('dateIn')
     handleDateInChange() {
-        console.log('heard date in change')
         this._setStateWithDateIn()
     }
 
@@ -119,7 +113,9 @@ export class RuxCalendar {
      */
     @Listen('ruxdayselected')
     handleDaySelected(e: RuxDayCustomEvent<HTMLRuxDayElement>) {
+        this._unselectDays()
         const dayEl: HTMLRuxDayElement = e.detail
+        dayEl.selected = true
         let monthToEmit = this._month
         let yearToEmit = this._year
         //if it has class past/future-day, then month needs to be adapted.
@@ -143,13 +139,6 @@ export class RuxCalendar {
             ),
             'UTC'
         )
-        //* de-select previous selections. Will change when we do multi-select.
-        const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
-        allDays.forEach((day) => {
-            if (dayEl !== day) {
-                day.selected = false
-            }
-        })
 
         this.value = selectedDate.toISOString()
         this.ruxDateSelected.emit(this.value)
@@ -175,6 +164,13 @@ export class RuxCalendar {
         if (this.max) this._maxDate = new Date(this.max)
         if (this.min) this._minDate = new Date(this.min)
         this._handleYears(this._maxDate, this._minDate)
+    }
+
+    @Watch('preSelectedDay')
+    handlePreSelectedDayWatch(newValue: string, oldValue: string) {
+        if (oldValue === newValue) return
+        console.log('running _handlePreSelDay from watch')
+        this._handlePreSelectedDay()
     }
 
     private _currentDate: Date = new Date(Date.now())
@@ -212,12 +208,17 @@ export class RuxCalendar {
             this._setStateWithDateIn()
         }
         this._handleYears(this._maxDate, this._minDate)
-        if (this.preSelectedDay) this._handlePreSelectedDay()
     }
 
-    componentDidUpdate() {
-        if (this.preSelectedDay) this._handlePreSelectedDay()
-    }
+    // componentDidUpdate() {
+    //     //? Instead of running this function and having prop drilling, should
+    //     //? I just listen to the rux-change event associeated with datepicker and then
+    //     //? run handlePreSelectedDay func? Probs
+    //     if (this.preSelectedDay) {
+    //         console.log('going to run preSelectedDay Func')
+    //         this._handlePreSelectedDay()
+    //     }
+    // }
 
     /**
      * Fills in the year-picker according to the min and max dates provided.
@@ -243,6 +244,13 @@ export class RuxCalendar {
         this._allYearsArr = this._minYearArr.concat(this._maxYearArr)
         this._allYearsArr.push(this._year)
         this._allYearsArr.sort()
+    }
+
+    private _unselectDays() {
+        const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
+        allDays.forEach((day) => {
+            day.selected = false
+        })
     }
 
     /**
@@ -297,7 +305,6 @@ export class RuxCalendar {
             )
             if (nextMonthDate > this._maxDate) {
                 this._forwardArrowDisabled = true
-                console.log('disable forward arrow')
             } else {
                 this._forwardArrowDisabled = false
             }
@@ -308,7 +315,6 @@ export class RuxCalendar {
                 'UTC'
             )
             if (prevMonthDate < this._minDate) {
-                console.log('disable back arrow')
                 this._backwardArrowDisabled = true
             } else this._backwardArrowDisabled = false
         }
@@ -504,12 +510,13 @@ export class RuxCalendar {
      *
      */
     private _handlePreSelectedDay() {
-        const allDays = this.el.shadowRoot!.querySelectorAll(
+        this._unselectDays()
+        const allDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
             'rux-day:not(.past-day):not(.future-day)'
         )
         let dayToSelect: HTMLRuxDayElement
-        console.log(allDays)
-        allDays.forEach((day) => {
+        console.log(this.preSelectedDay, 'preSelectedDay prop')
+        allDays.forEach((day: HTMLRuxDayElement) => {
             const dayInDateForm = utcToZonedTime(
                 new Date(
                     `${this._year}-${this._padNum(this._month)}-${this._padNum(
@@ -520,11 +527,13 @@ export class RuxCalendar {
             )
             if (
                 dayInDateForm.toDateString() ===
-                this.preSelectedDay?.toDateString()
+                this.preSelectedDay!.toDateString()
             ) {
-                // console.log('YES')
-                //@ts-ignore
+                console.log(dayInDateForm, 'day in date form')
+                console.log('going to select this day', day)
                 dayToSelect = day
+                //this selects it too often. If we click another day, it should deselect the preseelcted day.
+                // but this runs after that does, so it stays selected
                 dayToSelect.selected = true
             }
         })
