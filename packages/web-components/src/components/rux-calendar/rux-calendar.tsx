@@ -92,11 +92,23 @@ export class RuxCalendar {
     @Prop({ reflect: true, mutable: true }) value?: string
 
     /**
+     * @internal
+     * Helper prop to select the day on calendar when datepicker input is used.
+     */
+    @Prop() preSelectedDay?: Date
+    // @Watch('preSelectedDay')
+    // watchPreSelectedDay() {
+    //     console.log(this.preSelectedDay, 'in watch')
+    //     setTimeout(() => this._handlePreSelectedDay(), 100)
+    // }
+
+    /**
      * Option to give the calendar a specfic month/year. Accepts any valid date string or unix timestamp.
      */
     @Prop({ attribute: 'date-in', reflect: true }) dateIn?: string | number
     @Watch('dateIn')
     handleDateInChange() {
+        console.log('heard date in change')
         this._setStateWithDateIn()
     }
 
@@ -200,6 +212,11 @@ export class RuxCalendar {
             this._setStateWithDateIn()
         }
         this._handleYears(this._maxDate, this._minDate)
+        if (this.preSelectedDay) this._handlePreSelectedDay()
+    }
+
+    componentDidUpdate() {
+        if (this.preSelectedDay) this._handlePreSelectedDay()
     }
 
     /**
@@ -480,6 +497,37 @@ export class RuxCalendar {
         if (this._forwardArrowDisabled) return
         if (this._nextMonth === 1) this._year = this._year + 1
         this._updateDate(this._year, this._nextMonth)
+    }
+
+    /**
+     * Helper function to select the date based on the input value of datepicker, if applicable.
+     *
+     */
+    private _handlePreSelectedDay() {
+        const allDays = this.el.shadowRoot!.querySelectorAll(
+            'rux-day:not(.past-day):not(.future-day)'
+        )
+        let dayToSelect: HTMLRuxDayElement
+        console.log(allDays)
+        allDays.forEach((day) => {
+            const dayInDateForm = utcToZonedTime(
+                new Date(
+                    `${this._year}-${this._padNum(this._month)}-${this._padNum(
+                        Number(day.textContent)
+                    )}`
+                ),
+                'UTC'
+            )
+            if (
+                dayInDateForm.toDateString() ===
+                this.preSelectedDay?.toDateString()
+            ) {
+                // console.log('YES')
+                //@ts-ignore
+                dayToSelect = day
+                dayToSelect.selected = true
+            }
+        })
     }
 
     render() {

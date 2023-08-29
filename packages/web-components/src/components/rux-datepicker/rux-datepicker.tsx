@@ -11,6 +11,7 @@ import {
     State,
 } from '@stencil/core'
 import { RuxCalendarCustomEvent } from '../../components'
+import { utcToZonedTime } from 'date-fns-tz'
 
 @Component({
     tag: 'rux-datepicker',
@@ -24,6 +25,11 @@ export class RuxDatepicker {
      * Determines wether or not the datepicker's calendar is open.
      */
     @Prop({ reflect: true, mutable: true }) open: boolean = false
+
+    /**
+     * Holds the value of rux-datepicker's input.
+     */
+    @Prop({ reflect: true, mutable: true }) value?: string = ''
 
     /**
      * Emitted when the datepickers calendar is opened.
@@ -61,10 +67,13 @@ export class RuxDatepicker {
     @Listen('ruxblur')
     handleBlur() {
         if (this._inputEl) {
-            console.log('listen blur, in if')
             this._inputVal = this._inputEl.value
-            console.log(this._inputVal)
+            this._preSelectedDay = utcToZonedTime(
+                new Date(this._inputVal),
+                'UTC'
+            )
         }
+        console.log(this._preSelectedDay, 'pre selected day in DP')
     }
 
     @Watch('open')
@@ -73,17 +82,20 @@ export class RuxDatepicker {
     }
 
     @State() _inputVal: string = ''
+    @Watch('_inputVal')
+    handleInputValueChange() {
+        console.log('heard input val change')
+        this.value = this._inputVal
+    }
+
     private _inputEl?: HTMLRuxInputElement
+    private _preSelectedDay?: Date
 
     componentDidLoad() {
-        // this works, but calendar is breaking. date-in gets updated,
-        // the year value changes, but the calendar is stuck at august,
-        // and its year is 2013 (10 from 2023)
         if (this._inputEl) {
             this._inputVal = this._inputEl.value
         }
     }
-    // private _setDateIn: string | undefined = undefined
 
     render() {
         return (
@@ -105,6 +117,7 @@ export class RuxDatepicker {
                         ></rux-icon>
                         <rux-calendar
                             dateIn={this._inputVal ? this._inputVal : undefined}
+                            preSelectedDay={this._preSelectedDay}
                         ></rux-calendar>
                     </rux-pop-up>
                 </rux-input>

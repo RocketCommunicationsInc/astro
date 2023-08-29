@@ -86,7 +86,7 @@ export namespace Components {
     }
     interface RuxCalendar {
         /**
-          * Option to give the calendar a specfic month/year
+          * Option to give the calendar a specfic month/year. Accepts any valid date string or unix timestamp.
          */
         "dateIn"?: string | number;
         /**
@@ -97,6 +97,7 @@ export namespace Components {
           * Min date that the calendar will go to. Needs to be a valid date string.
          */
         "min"?: string;
+        "preSelectedDay"?: Date;
         /**
           * Contains the currently selected date as an ISO string.
          */
@@ -215,6 +216,10 @@ export namespace Components {
           * Determines wether or not the datepicker's calendar is open.
          */
         "open": boolean;
+        /**
+          * Holds the value of rux-datepicker's input.
+         */
+        "value"?: string;
     }
     interface RuxDatetime {
         /**
@@ -35643,7 +35648,7 @@ declare namespace LocalJSX {
     }
     interface RuxCalendar {
         /**
-          * Option to give the calendar a specfic month/year
+          * Option to give the calendar a specfic month/year. Accepts any valid date string or unix timestamp.
          */
         "dateIn"?: string | number;
         /**
@@ -35658,6 +35663,7 @@ declare namespace LocalJSX {
           * Emitted when a date is selected using the calendar. Emits the selected date as an ISO string.
          */
         "onRuxdateselected"?: (event: RuxCalendarCustomEvent<string>) => void;
+        "preSelectedDay"?: Date;
         /**
           * Contains the currently selected date as an ISO string.
          */
@@ -35800,6 +35806,10 @@ declare namespace LocalJSX {
           * Determines wether or not the datepicker's calendar is open.
          */
         "open"?: boolean;
+        /**
+          * Holds the value of rux-datepicker's input.
+         */
+        "value"?: string;
     }
     interface RuxDatetime {
         /**
