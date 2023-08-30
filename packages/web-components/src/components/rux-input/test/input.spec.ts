@@ -1,5 +1,4 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
-import { test as PTest, expect as PExpect } from '@playwright/test'
 
 test.describe('Input with form', () => {
     const testString = 'Hello World'
