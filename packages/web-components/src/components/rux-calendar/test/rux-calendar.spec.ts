@@ -693,6 +693,23 @@ test.describe('Calendar', () => {
             const dayNum = await firstDayAfterChange.innerHTML()
             expect(dayNum).toBe('1')
         })
+        test('Selecting a past day will select the correct day in the previous month', async ({
+            page,
+        }) => {
+            const template = `<rux-calendar date-in="2024/08/01"></rux-calendar>`
+            await page.setContent(template)
+            const cal = page.locator('rux-calendar')
+            const monthPicker = page.locator('#month-picker')
+            const firstPastDay = cal.locator('rux-day.past-day').last()
+            await firstPastDay.click()
+            await expect(monthPicker).toHaveAttribute('value', '7')
+            //last day will be July 31'st
+            const lastDayAfterChange = await cal
+                .locator('rux-day:not(.past-day):not(.future-day)')
+                .last()
+            const dayNum = await lastDayAfterChange.innerHTML()
+            expect(dayNum).toBe('31')
+        })
     })
     test.describe('Min and max dates', () => {
         test('Year picker fills in only years between min and max dates', async ({
