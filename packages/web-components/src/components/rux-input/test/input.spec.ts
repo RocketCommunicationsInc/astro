@@ -1,4 +1,5 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { test as PTest, expect as PExpect } from '@playwright/test'
 
 test.describe('Input with form', () => {
     const testString = 'Hello World'
@@ -400,7 +401,15 @@ test.describe('Input emits correct events', () => {
         expect(changeEvent).toHaveReceivedEventTimes(1)
     })
 })
-
+test('getInput method returns the internal input', async ({ page }) => {
+    const template = `<rux-input></rux-input>`
+    await page.setContent(template)
+    const ruxInput = page.locator('rux-input')
+    let test = await ruxInput.evaluate(
+        async (el: HTMLRuxInputElement) => (await el.getInput()).classList
+    )
+    expect(test).toHaveProperty('0', 'native-input')
+})
 test.describe('Input', () => {
     test('it can be focused programatically', async ({ page }) => {
         const template = `<rux-input type="text"></rux-input>`
