@@ -113,12 +113,18 @@ export class RuxCalendar {
      */
     @Listen('ruxdayselected')
     handleDaySelected(e: RuxDayCustomEvent<HTMLRuxDayElement>) {
-        this._unselectDays()
+        this._deselectDays()
         const dayEl: HTMLRuxDayElement = e.detail
-        dayEl.selected = true
         let monthToEmit = this._month
         let yearToEmit = this._year
         //if it has class past/future-day, then month needs to be adapted.
+        if (
+            !dayEl.classList.contains('past-day') &&
+            !dayEl.classList.contains('future-day')
+        ) {
+            //if it's a current month day, we can quicly apply the selected class
+            dayEl.selected = true
+        }
         if (dayEl.classList.contains('past-day')) {
             monthToEmit = this._month > 1 ? this._month - 1 : 12
             if (this._month === 1) {
@@ -139,8 +145,8 @@ export class RuxCalendar {
             ),
             'UTC'
         )
-
         this.value = selectedDate.toISOString()
+        this._updateDate(yearToEmit, monthToEmit)
         this.ruxDateSelected.emit(this.value)
     }
 
@@ -169,7 +175,6 @@ export class RuxCalendar {
     @Watch('preSelectedDay')
     handlePreSelectedDayWatch(newValue: string, oldValue: string) {
         if (oldValue === newValue) return
-        console.log('running _handlePreSelDay from watch')
         this._handlePreSelectedDay()
     }
 
@@ -196,6 +201,7 @@ export class RuxCalendar {
     private _minYearArr: Array<number> = []
 
     connectedCallback() {
+        console.log('CC')
         this._updateState()
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
@@ -210,15 +216,24 @@ export class RuxCalendar {
         this._handleYears(this._maxDate, this._minDate)
     }
 
-    // componentDidUpdate() {
-    //     //? Instead of running this function and having prop drilling, should
-    //     //? I just listen to the rux-change event associeated with datepicker and then
-    //     //? run handlePreSelectedDay func? Probs
-    //     if (this.preSelectedDay) {
-    //         console.log('going to run preSelectedDay Func')
-    //         this._handlePreSelectedDay()
-    //     }
-    // }
+    componentDidUpdate() {
+        console.log('DID UPDATE')
+        this._deselectDays()
+        if (this.value) {
+            const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
+            const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
+                'rux-day:not(.past-day):not(.future-day)'
+            )
+            currDays.forEach((day) => {
+                if (day.innerHTML === tempDate.getDate().toString()) {
+                    console.log(day.innerHTML, 'day innerHTML')
+                    console.log(tempDate.getDate().toString(), 'get date')
+                    console.log('select this day: ', day)
+                    day.selected = true
+                }
+            })
+        }
+    }
 
     /**
      * Fills in the year-picker according to the min and max dates provided.
@@ -246,7 +261,7 @@ export class RuxCalendar {
         this._allYearsArr.sort()
     }
 
-    private _unselectDays() {
+    private _deselectDays() {
         const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
         allDays.forEach((day) => {
             day.selected = false
@@ -510,7 +525,7 @@ export class RuxCalendar {
      *
      */
     private _handlePreSelectedDay() {
-        this._unselectDays()
+        this._deselectDays()
         const allDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
             'rux-day:not(.past-day):not(.future-day)'
         )
