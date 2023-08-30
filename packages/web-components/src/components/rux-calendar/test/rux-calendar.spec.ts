@@ -681,19 +681,17 @@ test.describe('Calendar', () => {
         test('Selecting a future day will select the correct day in the next month', async ({
             page,
         }) => {
-            const template = `<rux-calendar date-in="08-01-2024"></rux-calendar>`
+            const template = `<rux-calendar date-in="2024/08/01"></rux-calendar>`
             await page.setContent(template)
             const cal = page.locator('rux-calendar')
-            const monthPicker = page.locator('#month-picker').locator('select')
+            const monthPicker = page.locator('#month-picker')
+            //this will be the first of Sep
             const firstFutureDay = cal.locator('rux-day.future-day').first()
             await firstFutureDay.click()
-            await expect(monthPicker.inputValue()).toBe('9')
-            const selectedDay = (await cal.locator('rux-day').all()).forEach(
-                (day) => {
-                    return day.evaluate((e: HTMLRuxDayElement) => e.selected)
-                }
-            )
-            console.log(selectedDay)
+            await expect(monthPicker).toHaveAttribute('value', '9')
+            const firstDayAfterChange = await cal.locator('rux-day').first()
+            const dayNum = await firstDayAfterChange.innerHTML()
+            expect(dayNum).toBe('1')
         })
     })
     test.describe('Min and max dates', () => {
