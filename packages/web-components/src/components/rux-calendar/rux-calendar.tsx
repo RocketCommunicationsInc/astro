@@ -234,6 +234,7 @@ export class RuxCalendar {
     }
 
     componentDidUpdate() {
+        this._deselectDays()
         if (this.value) {
             const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
             const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
