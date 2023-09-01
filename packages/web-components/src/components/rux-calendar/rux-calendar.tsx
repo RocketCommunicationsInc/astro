@@ -222,18 +222,19 @@ export class RuxCalendar {
     }
 
     componentDidUpdate() {
-        console.log('DID UPDATE')
-        // this._deselectDays()
+        console.log(this.value, 'value')
+        console.log(this.preSelectedDay, 'preselected day')
+        if (this.value && this.preSelectedDay) {
+            this._deselectDays()
+        }
         if (this.value) {
+            // this._deselectDays()
             const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
             const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
                 'rux-day:not(.past-day):not(.future-day)'
             )
             currDays.forEach((day) => {
                 if (day.innerHTML === tempDate.getDate().toString()) {
-                    console.log(day.innerHTML, 'day innerHTML')
-                    console.log(tempDate.getDate().toString(), 'get date')
-                    console.log('select this day: ', day)
                     day.selected = true
                 }
             })
@@ -531,7 +532,6 @@ export class RuxCalendar {
      *
      */
     private _handlePreSelectedDay() {
-        // this._deselectDays()
         const allDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
             'rux-day:not(.past-day):not(.future-day)'
         )
@@ -550,12 +550,9 @@ export class RuxCalendar {
                 dayInDateForm.toDateString() ===
                 this.preSelectedDay!.toDateString()
             ) {
-                console.log(dayInDateForm, 'day in date form')
-                console.log('going to select this day', day)
                 dayToSelect = day
-                //this selects it too often. If we click another day, it should deselect the preseelcted day.
-                // but this runs after that does, so it stays selected
                 dayToSelect.selected = true
+                this.value = dayInDateForm.toDateString()
             }
         })
     }
