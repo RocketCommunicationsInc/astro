@@ -414,7 +414,7 @@ test.describe('Input', () => {
         const template = `<rux-input type="text"></rux-input>`
         await page.setContent(template)
 
-        const el = await page.locator('rux-input')
+        const el = page.locator('rux-input')
 
         let isFocused = await el.evaluate((el) => el === document.activeElement)
         expect(isFocused).toBeFalsy()
