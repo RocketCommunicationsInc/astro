@@ -185,25 +185,37 @@ export class RuxCalendar {
     }
 
     private _currentDate: Date = new Date(Date.now())
+
     private _currentDay: number = this._currentDate.getDate()
+
     private _prevMonth: number = this._currentDate.getMonth() - 2
+
     private _nextMonth: number = this._currentDate.getMonth() + 2
+
     private _daysInMonth: number = 28 | 29 | 30 | 31
+
     private _daysInMonthArr: Array<number> = []
+
     private _prevDaysToShow: { [key: string]: any } = {}
+
     private _nextDaysToShow: Array<Number> = []
+
     private _allYearsArr: Array<Number> = []
 
     private _maxDate: Date = this.max
         ? new Date(this.max)
         : new Date(Date.now())
+
     private _minDate: Date = this.min
         ? new Date(this.min)
         : new Date(Date.now())
+
     private _forwardArrowDisabled: boolean = false
+
     private _backwardArrowDisabled: boolean = false
 
     private _maxYearArr: Array<number> = []
+
     private _minYearArr: Array<number> = []
 
     connectedCallback() {
@@ -222,13 +234,7 @@ export class RuxCalendar {
     }
 
     componentDidUpdate() {
-        console.log(this.value, 'value')
-        console.log(this.preSelectedDay, 'preselected day')
-        if (this.value && this.preSelectedDay) {
-            this._deselectDays()
-        }
         if (this.value) {
-            // this._deselectDays()
             const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
             const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
                 'rux-day:not(.past-day):not(.future-day)'
@@ -267,8 +273,10 @@ export class RuxCalendar {
         this._allYearsArr.sort()
     }
 
+    /**
+     * Deselects all days that are children of the calendar.
+     */
     private _deselectDays() {
-        console.log('running deselct')
         const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
         allDays.forEach((day) => {
             day.selected = false
@@ -529,14 +537,12 @@ export class RuxCalendar {
 
     /**
      * Helper function to select the date based on the input value of datepicker, if applicable.
-     *
      */
     private _handlePreSelectedDay() {
         const allDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
             'rux-day:not(.past-day):not(.future-day)'
         )
         let dayToSelect: HTMLRuxDayElement
-        console.log(this.preSelectedDay, 'preSelectedDay prop')
         allDays.forEach((day: HTMLRuxDayElement) => {
             const dayInDateForm = utcToZonedTime(
                 new Date(
