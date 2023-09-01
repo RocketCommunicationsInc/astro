@@ -19377,6 +19377,10 @@ export namespace Components {
          */
         "errorText"?: string;
         /**
+          * Returns the native input element used in the shadow dom.
+         */
+        "getInput": () => Promise<HTMLInputElement>;
+        /**
           * The help or explanation text
          */
         "helpText"?: string;

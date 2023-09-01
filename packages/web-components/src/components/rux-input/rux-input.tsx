@@ -171,6 +171,14 @@ export class RuxInput implements FormFieldInterface {
         this.inputEl.focus(options)
     }
 
+    /**
+     * Returns the native input element used in the shadow dom.
+     */
+    @Method()
+    async getInput() {
+        return this.inputEl
+    }
+
     @Watch('label')
     handleLabelChange() {
         this._handleSlotChange()
