@@ -173,8 +173,14 @@ export class RuxCalendar {
     }
 
     @Watch('preSelectedDay')
-    handlePreSelectedDayWatch(newValue: string, oldValue: string) {
-        if (oldValue === newValue) return
+    handlePreSelectedDayWatch(newValue: Date, oldValue: Date) {
+        if (
+            oldValue !== undefined &&
+            oldValue.toISOString() === newValue.toISOString()
+        ) {
+            return
+        }
+        this._deselectDays()
         this._handlePreSelectedDay()
     }
 
@@ -201,7 +207,6 @@ export class RuxCalendar {
     private _minYearArr: Array<number> = []
 
     connectedCallback() {
-        console.log('CC')
         this._updateState()
         this._fillDaysInMonthArr()
         this._nextDaysToShow = this._findNextDaysToShow()
@@ -218,7 +223,7 @@ export class RuxCalendar {
 
     componentDidUpdate() {
         console.log('DID UPDATE')
-        this._deselectDays()
+        // this._deselectDays()
         if (this.value) {
             const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
             const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
@@ -262,6 +267,7 @@ export class RuxCalendar {
     }
 
     private _deselectDays() {
+        console.log('running deselct')
         const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
         allDays.forEach((day) => {
             day.selected = false
@@ -525,7 +531,7 @@ export class RuxCalendar {
      *
      */
     private _handlePreSelectedDay() {
-        this._deselectDays()
+        // this._deselectDays()
         const allDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
             'rux-day:not(.past-day):not(.future-day)'
         )
