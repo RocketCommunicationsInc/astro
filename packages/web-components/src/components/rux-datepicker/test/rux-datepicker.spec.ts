@@ -14,35 +14,20 @@ test.describe('Datepicker', () => {
         await expect(popUp).toHaveAttribute('open', '')
     })
     test('Calendar date selection is reflected in input', async ({ page }) => {
-        let currentMonth: string | number =
-            new Date(Date.now()).getUTCMonth() + 1 > 12
-                ? 1
-                : new Date(Date.now()).getUTCMonth() + 1
-        const currentYear = new Date(Date.now()).getUTCFullYear()
-        let todayNum: string | number = new Date(Date.now()).getUTCDate()
-        if (todayNum < 9) {
-            todayNum = '0' + todayNum
-        }
-        if (currentMonth < 10) {
-            currentMonth = '0' + currentMonth
-        }
-
+        const datepicker = page.locator('rux-datepicker')
+        const input = datepicker.locator('.aux-input')
         const icon = page.locator('rux-icon').first()
-        const input = page.locator('rux-input').locator('#rux-input-1')
-        const days = await page.locator('rux-day').all()
-        let dayToClick: any
-        days.forEach(async (day) => {
-            let inner = await day.innerText()
-            if (Number(inner) === todayNum) {
-                dayToClick = day
-            }
-        })
-        await expect(input).toHaveValue('')
         await icon.click()
-        expect(dayToClick).toBeTruthy()
-        await dayToClick!.click()
-        await expect(input).toHaveValue(
-            `${currentYear}-${currentMonth}-${todayNum}`
-        )
+        const cal = datepicker.locator('rux-calendar')
+        const day = await cal
+            .locator('rux-day:not(.future-day):not(.past-day)')
+            .first()
+        await day.click()
+        const currentDay = new Date(Date.now())
+        //month might need off by 1 support
+        const currDayString = `${currentDay.getFullYear()}/01/${currentDay.getMonth()}`
+        //! Need to decide what format we want the date values to be. YYYY-MM-DD? YYY/MM/DD? YYY/DD/MM ?
+        //! prob whatever safari supports, I think that is YYYY/DD/MM
+        await expect(input).toHaveAttribute('value', `${currDayString}`)
     })
 })

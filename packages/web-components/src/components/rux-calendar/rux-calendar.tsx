@@ -172,6 +172,11 @@ export class RuxCalendar {
         this._handleYears(this._maxDate, this._minDate)
     }
 
+    @Watch('_month')
+    handleMonthChange() {
+        this._deselectDays()
+    }
+
     @Watch('preSelectedDay')
     handlePreSelectedDayWatch(newValue: Date, oldValue: Date) {
         if (
@@ -234,8 +239,10 @@ export class RuxCalendar {
     }
 
     componentDidUpdate() {
-        this._deselectDays()
+        console.log('DU')
+        // this._deselectDays()
         if (this.value) {
+            console.log('value is defined, it is: ', this.value)
             const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
             const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
                 'rux-day:not(.past-day):not(.future-day)'
@@ -278,6 +285,7 @@ export class RuxCalendar {
      * Deselects all days that are children of the calendar.
      */
     private _deselectDays() {
+        console.log('Running Deselect')
         const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
         allDays.forEach((day) => {
             day.selected = false
