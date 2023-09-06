@@ -555,3 +555,39 @@ test.describe('Tab Keyboard Disabled Navigation', () => {
     Need to test:
 
 */
+
+test.describe('Tabs only Tab Keyboard Navigation', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+          <button id="button">Hi!</button>
+              <rux-tabs id="tab-set-id-1">
+                  <rux-tab id="tab-id-1">Tab 1</rux-tab>
+                  <rux-tab id="tab-id-2">Tab 2</rux-tab>
+                  <rux-tab id="tab-id-3">Tab 3</rux-tab>
+              </rux-tabs>
+      `
+        await page.setContent(template)
+    })
+
+    test('it tabs into the first tab when none are selected', async ({
+        page,
+    }) => {
+        //Arrange
+        const button = await page.locator('#button')
+        const tab1 = await page.locator('#tab-id-1')
+        const tab1Child = tab1.locator('.rux-tab')
+
+        //Act
+        await button.focus()
+        await page.keyboard.press('Tab')
+
+        //Assert
+        await expect(tab1Child).toBeFocused()
+
+        //Act
+        await page.keyboard.press('Enter')
+
+        //Assert
+        await expect(tab1).toHaveAttribute('selected', '')
+    })
+})
