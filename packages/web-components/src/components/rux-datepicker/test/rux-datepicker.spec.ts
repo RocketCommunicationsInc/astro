@@ -24,10 +24,33 @@ test.describe('Datepicker', () => {
             .first()
         await day.click()
         const currentDay = new Date(Date.now())
-        //month might need off by 1 support
-        const currDayString = `${currentDay.getFullYear()}/01/${currentDay.getMonth()}`
-        //! Need to decide what format we want the date values to be. YYYY-MM-DD? YYY/MM/DD? YYY/DD/MM ?
-        //! prob whatever safari supports, I think that is YYYY/DD/MM
+        const currDayString = `${currentDay.getFullYear()}-${
+            currentDay.getMonth() + 1 < 10
+                ? '0' + (currentDay.getMonth() + 1)
+                : currentDay.getMonth() + 1
+        }-01`
+
         await expect(input).toHaveAttribute('value', `${currDayString}`)
+    })
+    test('Input date selection is reflected in calendar', async ({ page }) => {
+        const datepicker = page.locator('rux-datepicker')
+        const input = datepicker.locator('.native-input')
+        const icon = page.locator('rux-icon').first()
+        //type date into input
+        const inputDate = new Date(Date.now())
+
+        await input.type(
+            `${
+                inputDate.getMonth() + 1
+            }${inputDate.getDate()}${inputDate.getFullYear()}`
+        )
+        //open calendar
+        await icon.click()
+        //check if correct calendar day is selected
+        const cal = datepicker.locator('rux-calendar')
+        const selectedDay = cal.locator('[selected]')
+        //selectedDay should have the text content of the day from inputDate
+        const dayText = await selectedDay.innerText()
+        expect(dayText).toBe(inputDate.getDate().toString())
     })
 })
