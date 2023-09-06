@@ -139,7 +139,7 @@ export class RuxCalendar {
         }
         const selectedDate = utcToZonedTime(
             new Date(
-                `${yearToEmit}-${this._padNum(monthToEmit)}-${this._padNum(
+                `${yearToEmit}/${this._padNum(monthToEmit)}/${this._padNum(
                     Number(dayEl.innerText)
                 )}`
             ),
@@ -240,10 +240,8 @@ export class RuxCalendar {
     }
 
     componentDidUpdate() {
-        console.log('DU')
         // this._deselectDays()
         if (this.value) {
-            console.log('value is defined, it is: ', this.value)
             const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
             const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
                 'rux-day:not(.past-day):not(.future-day)'
@@ -286,7 +284,6 @@ export class RuxCalendar {
      * Deselects all days that are children of the calendar.
      */
     private _deselectDays() {
-        console.log('Running Deselect')
         const allDays = this.el.shadowRoot!.querySelectorAll('rux-day')
         allDays.forEach((day) => {
             day.selected = false
@@ -304,12 +301,12 @@ export class RuxCalendar {
         if (year && month) {
             if (day) {
                 this._date = utcToZonedTime(
-                    new Date(`${year}-${this._padNum(month)}-${day}`),
+                    new Date(`${year}/${this._padNum(month)}/${day}`),
                     'UTC'
                 )
             } else {
                 this._date = utcToZonedTime(
-                    new Date(`${year}-${this._padNum(month)}-01`),
+                    new Date(`${year}/${this._padNum(month)}/01`),
                     'UTC'
                 )
             }
@@ -332,15 +329,16 @@ export class RuxCalendar {
         this._nextDaysToShow = this._findNextDaysToShow()
         this._maxDate = this.max
             ? new Date(this.max)
-            : new Date(`${this._date.getFullYear() + 11}-01-01`)
+            : new Date(`${this._date.getFullYear() + 10}/01/01`)
+
         this._minDate = this.min
             ? new Date(this.min)
-            : new Date(`${this._date.getFullYear() - 9}-01-01`)
+            : new Date(`${this._date.getFullYear() - 10}/01/01`)
         if (this._maxDate) {
             //Disable the forward arrow if it would go beyond the given max date.
             //if a new date from this._next month and this._year is > this._maxDate, dont go forward.
             const nextMonthDate = utcToZonedTime(
-                new Date(`${this._year}-${this._nextMonth}-01`),
+                new Date(`${this._year}/${this._nextMonth}/01`),
                 'UTC'
             )
             if (nextMonthDate > this._maxDate) {
@@ -351,7 +349,7 @@ export class RuxCalendar {
         }
         if (this._minDate) {
             const prevMonthDate = utcToZonedTime(
-                new Date(`${this._year}-${this._prevMonth}-01`),
+                new Date(`${this._year}/${this._prevMonth}/01`),
                 'UTC'
             )
             if (prevMonthDate < this._minDate) {
@@ -365,14 +363,14 @@ export class RuxCalendar {
         // as that year changes, the years in the picker should as well.
         if (!this.min && !this.max) {
             const minDateFromDateIn = new Date(
-                `${this._date.getUTCFullYear() - 10}-${
+                `${this._date.getUTCFullYear() - 10}/${
                     this._date.getUTCMonth() + 1
-                }-${this._date.getUTCDate()}`
+                }/${this._date.getUTCDate()}`
             )
             const maxDateFromDateIn = new Date(
-                `${this._date.getUTCFullYear() + 10}-${
+                `${this._date.getUTCFullYear() + 10}/${
                     this._date.getUTCMonth() + 1
-                }-${this._date.getUTCDate()}`
+                }/${this._date.getUTCDate()}`
             )
             this._handleYears(maxDateFromDateIn, minDateFromDateIn)
         }
@@ -421,7 +419,7 @@ export class RuxCalendar {
             returnArr = [1, 2, 3, 4, 5, 6, 7]
         } else {
             let dateFromFirstDay = utcToZonedTime(
-                new Date(`${this._year}-${this._padNum(this._month)}-01`),
+                new Date(`${this._year}/${this._padNum(this._month)}/01`),
                 'UTC'
             )
             let firstDayOfCurrMonth = dateFromFirstDay.getDay()
@@ -458,12 +456,12 @@ export class RuxCalendar {
         let newDate: Date
         if (monthNum === 12) {
             newDate = utcToZonedTime(
-                new Date(`${this._year - 1}-${this._padNum(monthNum)}-01`),
+                new Date(`${this._year - 1}/${this._padNum(monthNum)}/01`),
                 'UTC'
             )
         } else {
             newDate = utcToZonedTime(
-                new Date(`${this._year}-${this._padNum(monthNum)}-01`),
+                new Date(`${this._year}/${this._padNum(monthNum)}/01`),
                 'UTC'
             )
         }
@@ -556,7 +554,7 @@ export class RuxCalendar {
         allDays.forEach((day: HTMLRuxDayElement) => {
             const dayInDateForm = utcToZonedTime(
                 new Date(
-                    `${this._year}-${this._padNum(this._month)}-${this._padNum(
+                    `${this._year}/${this._padNum(this._month)}/${this._padNum(
                         Number(day.textContent)
                     )}`
                 ),
@@ -670,7 +668,7 @@ export class RuxCalendar {
 
                             //Create a new Date from the day we're on
                             let tempDateStr = utcToZonedTime(
-                                new Date(`${this._year}-${monthStr}-${dayStr}`),
+                                new Date(`${this._year}/${monthStr}/${dayStr}`),
                                 'UTC'
                             )
                             //using that date, get the day of the week

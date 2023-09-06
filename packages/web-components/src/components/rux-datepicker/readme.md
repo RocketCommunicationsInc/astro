@@ -7,9 +7,10 @@
 
 ## Properties
 
-| Property | Attribute | Description                                                 | Type      | Default |
-| -------- | --------- | ----------------------------------------------------------- | --------- | ------- |
-| `open`   | `open`    | Determines wether or not the datepicker's calendar is open. | `boolean` | `false` |
+| Property | Attribute | Description                                                 | Type                  | Default |
+| -------- | --------- | ----------------------------------------------------------- | --------------------- | ------- |
+| `open`   | `open`    | Determines wether or not the datepicker's calendar is open. | `boolean`             | `false` |
+| `value`  | `value`   | Holds the value of rux-datepicker's input.                  | `string \| undefined` | `''`    |
 
 
 ## Events

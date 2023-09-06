@@ -39,7 +39,6 @@ export class RuxDay {
 
     private _toggleSelected() {
         this.selected = !this.selected
-        console.log('ruxDaySelected emit')
         this.ruxDaySelected.emit(this.el)
     }
 
