@@ -172,6 +172,7 @@ export class RuxCalendar {
         this._handleYears(this._maxDate, this._minDate)
     }
 
+    @Watch('_year')
     @Watch('_month')
     handleMonthChange() {
         this._deselectDays()
