@@ -12,6 +12,7 @@ import {
 } from '@stencil/core'
 import { RuxCalendarCustomEvent } from '../../components'
 import { utcToZonedTime } from 'date-fns-tz'
+import { renderHiddenInput } from '../../utils/utils'
 
 @Component({
     tag: 'rux-datepicker',
@@ -32,6 +33,16 @@ export class RuxDatepicker {
     @Prop({ reflect: true, mutable: true }) value?: string = ''
 
     /**
+     * The datepickers name, used for form submissions.
+     */
+    @Prop({ reflect: true }) name: string = ''
+
+    /**
+     * Controls wether or not the datepicker's input is disabled.
+     */
+    @Prop({ reflect: true }) disabled: boolean = false
+
+    /**
      * Emitted when the datepickers calendar is opened.
      */
     @Event({ eventName: 'ruxexpanded' }) ruxExpanded!: EventEmitter
@@ -42,7 +53,7 @@ export class RuxDatepicker {
     @Event({ eventName: 'ruxcollapsed' }) ruxCollapsed!: EventEmitter
 
     @Listen('ruxdateselected')
-    handleRuxDaySelected(e: RuxCalendarCustomEvent<Date>) {
+    handleRuxDateSelected(e: RuxCalendarCustomEvent<Date>) {
         const eventDate = new Date(e.detail)
         const year = eventDate.getUTCFullYear()
         const month =
@@ -54,6 +65,7 @@ export class RuxDatepicker {
                 ? eventDate.getUTCDate()
                 : `0${eventDate.getUTCDate()}`
         this._inputVal = `${year}-${month}-${day}`
+        this.open = false
     }
 
     @Listen('ruxblur')
@@ -100,6 +112,7 @@ export class RuxDatepicker {
     }
 
     render() {
+        renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
         return (
             <Host>
                 <rux-input
@@ -111,6 +124,7 @@ export class RuxDatepicker {
                         placement="bottom-end"
                         strategy="fixed"
                         slot="suffix"
+                        open={this.open}
                     >
                         <rux-icon
                             icon="calendar-today"
