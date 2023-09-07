@@ -3,6 +3,11 @@
         overflow: inherit;
     }
 }
+rux-input[disabled] {
+    rux-pop-up {
+        pointer-events: none;
+    }
+}
 rux-pop-up::part(container) {
     display: flex;
 }

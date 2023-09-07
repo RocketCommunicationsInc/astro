@@ -119,6 +119,7 @@ export class RuxDatepicker {
                     type="date"
                     value={this._inputVal}
                     ref={(el) => (this._inputEl = el)}
+                    disabled={this.disabled}
                 >
                     <rux-pop-up
                         placement="bottom-end"
@@ -130,6 +131,7 @@ export class RuxDatepicker {
                             icon="calendar-today"
                             slot="trigger"
                             size="22px"
+                            tabIndex={this.disabled ? -1 : 0}
                         ></rux-icon>
                         <rux-calendar
                             dateIn={this._inputVal ? this._inputVal : undefined}

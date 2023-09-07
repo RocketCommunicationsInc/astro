@@ -217,6 +217,14 @@ export namespace Components {
     }
     interface RuxDatepicker {
         /**
+          * Controls wether or not the datepicker's input is disabled.
+         */
+        "disabled": boolean;
+        /**
+          * The datepickers name, used for form submissions.
+         */
+        "name": string;
+        /**
           * Determines wether or not the datepicker's calendar is open.
          */
         "open": boolean;
@@ -35798,6 +35806,14 @@ declare namespace LocalJSX {
     interface RuxContainer {
     }
     interface RuxDatepicker {
+        /**
+          * Controls wether or not the datepicker's input is disabled.
+         */
+        "disabled"?: boolean;
+        /**
+          * The datepickers name, used for form submissions.
+         */
+        "name"?: string;
         /**
           * Emitted when the datepicker's calendar is closed.
          */
