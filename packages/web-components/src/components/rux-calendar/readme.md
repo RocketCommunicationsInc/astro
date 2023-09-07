@@ -22,6 +22,19 @@
 | `ruxdateselected` | Emitted when a date is selected using the calendar. Emits the selected date as an ISO string. | `CustomEvent<string>` |
 
 
+## Methods
+
+### `clearSelections() => Promise<void>`
+
+Deselcts all rux-days
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Slots
 
 | Slot       | Description     |

@@ -86,6 +86,10 @@ export namespace Components {
     }
     interface RuxCalendar {
         /**
+          * Deselcts all rux-days
+         */
+        "clearSelections": () => Promise<void>;
+        /**
           * Option to give the calendar a specfic month/year. Accepts any valid date string or unix timestamp.
          */
         "dateIn"?: string | number;

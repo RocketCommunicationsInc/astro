@@ -9,6 +9,7 @@ import {
     Event,
     Listen,
     EventEmitter,
+    Method,
 } from '@stencil/core'
 import { getDay, getDaysInMonth, lastDayOfMonth } from 'date-fns'
 import { utcToZonedTime } from 'date-fns-tz'
@@ -188,6 +189,14 @@ export class RuxCalendar {
         }
         this._deselectDays()
         this._handlePreSelectedDay()
+    }
+
+    /**
+     * Deselcts all rux-days
+     */
+    @Method()
+    async clearSelections() {
+        this._deselectDays()
     }
 
     private _currentDate: Date = new Date(Date.now())

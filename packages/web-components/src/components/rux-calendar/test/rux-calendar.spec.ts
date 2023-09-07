@@ -735,4 +735,30 @@ test.describe('Calendar', () => {
         await dayToSelect.click()
         await expect(cal).toHaveAttribute('value', time.toISOString())
     })
+    test('Calendar public method clearSelections deselcts any selected days', async ({
+        page,
+    }) => {
+        const template = `<rux-calendar><div slot="footer"><rux-button>Clear</rux-button></div></rux-calendar>`
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+        const clearBtn = document.querySelector('rux-button')
+        const calendar = document.querySelector('rux-calendar')
+        clearBtn.addEventListener('click', async () => {
+          await calendar.clearSelections()
+        })
+        `,
+        })
+        const cal = page.locator('rux-calendar')
+        const btn = page.locator('rux-button')
+        //select a day
+        const firstDay = cal
+            .locator('rux-day:not(.past-day):not(.future-day)')
+            .first()
+        await firstDay.click()
+        await expect(firstDay).toHaveAttribute('selected', '')
+        //click clearSelecitons() method btn
+        await btn.click()
+        await expect(firstDay).not.toHaveAttribute('selected', '')
+    })
 })
