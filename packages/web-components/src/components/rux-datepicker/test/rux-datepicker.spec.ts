@@ -34,7 +34,7 @@ test.describe('Datepicker', () => {
     })
     test('Input date selection is reflected in calendar', async ({ page }) => {
         const datepicker = page.locator('rux-datepicker')
-        const input = datepicker.locator('.native-input')
+        const input = datepicker.locator('.native-input').first()
         const icon = page.locator('rux-icon').first()
         //type date into input
         const inputDate = new Date(Date.now())
