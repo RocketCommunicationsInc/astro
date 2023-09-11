@@ -24,6 +24,7 @@ export const Default = (args) => {
         ?disabled="${args.disabled}"
         ?icon-only="${args.iconOnly}"
         ?secondary="${args.secondary}"
+        ?borderless="${args.borderless}"
         .size="${args.size}"
         .icon="${args.icon}"
     >
@@ -40,6 +41,7 @@ export const Default = (args) => {
             disabled: false,
             iconOnly: false,
             secondary: false,
+            borderless: false,
             size: 'medium',
             icon: '',
             type: 'button'
@@ -125,6 +127,7 @@ export const Secondary = (args) => {
     <Story
         args={{ 
             secondary: true, 
+            borderless: false,
             disabled: false,
             iconOnly: false,
             size: 'medium',
