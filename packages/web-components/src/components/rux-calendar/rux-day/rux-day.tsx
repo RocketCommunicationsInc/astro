@@ -6,7 +6,6 @@ import {
     Event,
     EventEmitter,
     Element,
-    // Watch,
 } from '@stencil/core'
 
 /**

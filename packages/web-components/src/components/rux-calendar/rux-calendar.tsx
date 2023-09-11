@@ -108,6 +108,12 @@ export class RuxCalendar {
     }
 
     /**
+     * Emitted when a date is selected using the calendar. Emits the selected date as an ISO string.
+     */
+    @Event({ eventName: 'ruxdateselected', composed: true })
+    ruxDateSelected!: EventEmitter<string>
+
+    /**
      * Listens for a day to be selected and then emits the date made from that selected
      * day in the events detail.
      * @param e ruxdayselected Custom event. Resovles to the <rux-day> element.
@@ -150,12 +156,6 @@ export class RuxCalendar {
         this._updateDate(yearToEmit, monthToEmit)
         this.ruxDateSelected.emit(this.value)
     }
-
-    /**
-     * Emitted when a date is selected using the calendar. Emits the selected date as an ISO string.
-     */
-    @Event({ eventName: 'ruxdateselected', composed: true })
-    ruxDateSelected!: EventEmitter<string>
 
     @State() _date: Date = this.dateIn
         ? utcToZonedTime(new Date(this.dateIn), 'UTC')
@@ -249,7 +249,6 @@ export class RuxCalendar {
     }
 
     componentDidUpdate() {
-        // this._deselectDays()
         if (this.value) {
             const tempDate = utcToZonedTime(new Date(this.value!), 'UTC')
             const currDays: NodeListOf<HTMLRuxDayElement> = this.el.shadowRoot!.querySelectorAll(
