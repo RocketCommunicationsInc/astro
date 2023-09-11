@@ -53,6 +53,7 @@ export class RuxTabs {
             this._panels.forEach((panel) => panel.classList.add('hidden'))
             selectedPanel?.classList.remove('hidden')
         }
+        this._checkSelected()
     }
 
     @Listen('ruxregisterpanels', { target: 'window' })
@@ -129,8 +130,23 @@ export class RuxTabs {
         this._addTabs()
     }
 
+    componentWillUpdate() {
+        this._checkSelected()
+    }
+
     private _addTabs() {
-        this._tabs = Array.from(this.el.querySelectorAll('rux-tab'))
+        this._tabs = Array.from(this.el?.querySelectorAll('rux-tab'))
+    }
+
+    private _checkSelected() {
+        // If no selected tab exists, we need to set an item to tabindex = 0
+        // so that we can still tab into the tabs list
+        const firstTab: HTMLDivElement | null = this._tabs[0].shadowRoot!.querySelector(
+            '[part="container"]'
+        )
+        if (firstTab) {
+            firstTab.tabIndex = !this._tabs.find((tab) => tab.selected) ? 0 : -1
+        }
     }
 
     private _registerPanels(e: CustomEvent) {
@@ -200,7 +216,7 @@ export class RuxTabs {
                 onKeyPress={(e: KeyboardEvent) => this._onPress(e)}
                 role="tablist"
             >
-                <slot></slot>
+                <slot onSlotchange={this._addTabs.bind(this)}></slot>
             </Host>
         )
     }
