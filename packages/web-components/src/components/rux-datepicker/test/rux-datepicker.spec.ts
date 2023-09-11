@@ -15,7 +15,7 @@ test.describe('Datepicker', () => {
     })
     test('Calendar date selection is reflected in input', async ({ page }) => {
         const datepicker = page.locator('rux-datepicker')
-        const input = datepicker.locator('.aux-input')
+        const input = datepicker.locator('.aux-input').first()
         const icon = page.locator('rux-icon').first()
         await icon.click()
         const cal = datepicker.locator('rux-calendar')
