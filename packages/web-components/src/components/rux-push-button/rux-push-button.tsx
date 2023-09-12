@@ -50,7 +50,7 @@ export class RuxPushButton {
     /**
      * The label of the push button.
      */
-    @Prop() label: string = 'Push Button'
+    @Prop() label: string = ''
     /**
      * The name of the push button.
      */
