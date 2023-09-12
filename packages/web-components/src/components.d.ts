@@ -271,6 +271,7 @@ export namespace Components {
           * Shows and hides dialog
          */
         "open": boolean;
+        "toggleOpen": () => Promise<void>;
     }
     interface RuxGlobalStatusBar {
         /**
