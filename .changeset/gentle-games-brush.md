@@ -5,4 +5,4 @@
 "@astrouxds/react": minor
 ---
 
-Added `toggleOpen`, `openDialog` and `closeDialog` methods
+Added `toggle`, `show` and `hide` methods
