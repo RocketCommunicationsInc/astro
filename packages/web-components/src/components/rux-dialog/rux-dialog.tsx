@@ -82,7 +82,7 @@ export class RuxDialog {
      * Toggles the dialog's open prop.
      */
     @Method()
-    async toggleOpen() {
+    async toggle() {
         this.open = !this.open
     }
 
@@ -90,7 +90,7 @@ export class RuxDialog {
      * Opens the dialog
      */
     @Method()
-    async openDialog() {
+    async show() {
         this.open = true
     }
 
@@ -98,7 +98,7 @@ export class RuxDialog {
      * Closes the dialog
      */
     @Method()
-    async closeDialog() {
+    async hide() {
         this.open = false
     }
 

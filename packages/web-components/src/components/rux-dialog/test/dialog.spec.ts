@@ -239,7 +239,7 @@ test.describe(
     }
 )
 test.describe('Methods', () => {
-    test('toggleOpen method opens a closed dialog', async ({ page }) => {
+    test('toggle method opens a closed dialog', async ({ page }) => {
         const template = `
           <rux-button>Toggle Open</rux-button>
           <rux-dialog>
@@ -253,7 +253,7 @@ test.describe('Methods', () => {
             const dialog = document.querySelector('rux-dialog')
             const btn = document.querySelector('rux-button')
             btn.addEventListener('click', () => {
-              dialog.toggleOpen()
+              dialog.toggle()
             })
             `,
         })
@@ -263,7 +263,7 @@ test.describe('Methods', () => {
         await btn.click()
         await expect(dialog).toHaveAttribute('open', '')
     })
-    test('toggleOpen method closes an open dialog', async ({ page }) => {
+    test('toggle method closes an open dialog', async ({ page }) => {
         const template = `
           <rux-dialog open>
             <div slot="header">Header</div>
@@ -278,7 +278,7 @@ test.describe('Methods', () => {
             const dialog = document.querySelector('rux-dialog')
             const btn = document.querySelector('rux-button')
             btn.addEventListener('click', () => {
-              dialog.toggleOpen()
+              dialog.toggle()
             })
             `,
         })
@@ -288,7 +288,7 @@ test.describe('Methods', () => {
         await btn.click()
         await expect(dialog).not.toHaveAttribute('open', '')
     })
-    test('closeDialog method closes an open dialog', async ({ page }) => {
+    test('hide method closes an open dialog', async ({ page }) => {
         const template = `
       <rux-dialog open>
         <div slot="header">Header</div>
@@ -303,7 +303,7 @@ test.describe('Methods', () => {
         const dialog = document.querySelector('rux-dialog')
         const btn = document.querySelector('rux-button')
         btn.addEventListener('click', () => {
-          dialog.closeDialog()
+          dialog.hide()
         })
         `,
         })
@@ -313,7 +313,7 @@ test.describe('Methods', () => {
         await btn.click()
         await expect(dialog).not.toHaveAttribute('open', '')
     })
-    test('openDialog method opens a closed dialog', async ({ page }) => {
+    test('show method opens a closed dialog', async ({ page }) => {
         const template = `
     <rux-dialog>
       <div slot="header">Header</div>
@@ -327,7 +327,7 @@ test.describe('Methods', () => {
       const dialog = document.querySelector('rux-dialog')
       const btn = document.querySelector('rux-button')
       btn.addEventListener('click', () => {
-        dialog.openDialog()
+        dialog.show()
       })
       `,
         })
