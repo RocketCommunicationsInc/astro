@@ -252,6 +252,10 @@ export namespace Components {
          */
         "clickToClose": boolean;
         /**
+          * Closes the dialog
+         */
+        "closeDialog": () => Promise<void>;
+        /**
           * Text for confirmation button
          */
         "confirmText": string;
@@ -271,6 +275,13 @@ export namespace Components {
           * Shows and hides dialog
          */
         "open": boolean;
+        /**
+          * Opens the dialog
+         */
+        "openDialog": () => Promise<void>;
+        /**
+          * Toggles the dialog's open prop.
+         */
         "toggleOpen": () => Promise<void>;
     }
     interface RuxGlobalStatusBar {

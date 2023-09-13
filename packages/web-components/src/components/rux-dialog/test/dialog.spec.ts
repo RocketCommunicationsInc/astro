@@ -238,7 +238,7 @@ test.describe(
         })
     }
 )
-test.describe('toggleOpen method', () => {
+test.describe('Methods', () => {
     test('toggleOpen method opens a closed dialog', async ({ page }) => {
         const template = `
           <rux-button>Toggle Open</rux-button>
@@ -287,5 +287,54 @@ test.describe('toggleOpen method', () => {
         await expect(dialog).toHaveAttribute('open', '')
         await btn.click()
         await expect(dialog).not.toHaveAttribute('open', '')
+    })
+    test('closeDialog method closes an open dialog', async ({ page }) => {
+        const template = `
+      <rux-dialog open>
+        <div slot="header">Header</div>
+        Body Content
+        <div slot="footer">
+          <rux-button>Close</rux-button>
+        </div>
+      </rux-dialog>`
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+        const dialog = document.querySelector('rux-dialog')
+        const btn = document.querySelector('rux-button')
+        btn.addEventListener('click', () => {
+          dialog.closeDialog()
+        })
+        `,
+        })
+        const dialog = page.locator('rux-dialog')
+        const btn = page.locator('rux-button')
+        await expect(dialog).toHaveAttribute('open', '')
+        await btn.click()
+        await expect(dialog).not.toHaveAttribute('open', '')
+    })
+    test('openDialog method opens a closed dialog', async ({ page }) => {
+        const template = `
+    <rux-dialog>
+      <div slot="header">Header</div>
+      Body Content
+    </rux-dialog>
+    <rux-button>Open</rux-button>
+    `
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+      const dialog = document.querySelector('rux-dialog')
+      const btn = document.querySelector('rux-button')
+      btn.addEventListener('click', () => {
+        dialog.openDialog()
+      })
+      `,
+        })
+        const dialog = page.locator('rux-dialog')
+        const btn = page.locator('rux-button')
+        await expect(dialog).not.toHaveAttribute('open', '')
+        await btn.click()
+        await expect(dialog).toHaveAttribute('open', '')
     })
 })

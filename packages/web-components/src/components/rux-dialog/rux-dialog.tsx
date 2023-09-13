@@ -78,9 +78,28 @@ export class RuxDialog {
     })
     ruxDialogClosed!: EventEmitter<boolean | null>
 
+    /**
+     * Toggles the dialog's open prop.
+     */
     @Method()
     async toggleOpen() {
         this.open = !this.open
+    }
+
+    /**
+     * Opens the dialog
+     */
+    @Method()
+    async openDialog() {
+        this.open = true
+    }
+
+    /**
+     * Closes the dialog
+     */
+    @Method()
+    async closeDialog() {
+        this.open = false
     }
 
     @Element() element!: HTMLRuxDialogElement
