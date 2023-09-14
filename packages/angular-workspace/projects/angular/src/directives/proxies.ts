@@ -319,7 +319,8 @@ export declare interface RuxDatetime extends Components.RuxDatetime {}
 
 
 @ProxyCmp({
-  inputs: ['clickToClose', 'confirmText', 'denyText', 'header', 'message', 'open']
+  inputs: ['clickToClose', 'confirmText', 'denyText', 'header', 'message', 'open'],
+  methods: ['toggle', 'show', 'hide']
 })
 @Component({
   selector: 'rux-dialog',
@@ -23693,7 +23694,7 @@ export declare interface RuxIndeterminateProgress extends Components.RuxIndeterm
 
 @ProxyCmp({
   inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
-  methods: ['setFocus']
+  methods: ['setFocus', 'getInput']
 })
 @Component({
   selector: 'rux-input',
