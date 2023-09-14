@@ -1,5 +1,17 @@
 # @astrouxds/astro-web-components
 
+## 7.17.0
+
+### Minor Changes
+
+-   c63800db: Added a new `getInput` method to rux-input
+-   5b984e96: Added `toggle`, `show` and `hide` methods
+
+### Patch Changes
+
+-   2dc538f1: fix(rux-tabs) enhanced keyboard functionality with or without tab panels
+-   d0b0e38c: Fix (push button) - The label prop no longer defaults to 'Push Button'
+
 ## 7.16.0
 
 ### Minor Changes
