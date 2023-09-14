@@ -78,6 +78,39 @@ Or use slots to render the header, content and footer.
 | `ruxdialogopened` | Event that is fired when dialog opens                                                                                                                                                                                  | `CustomEvent<void>`            |
 
 
+## Methods
+
+### `hide() => Promise<void>`
+
+Closes the dialog
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `show() => Promise<void>`
+
+Opens the dialog
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+### `toggle() => Promise<void>`
+
+Toggles the dialog's open prop.
+
+#### Returns
+
+Type: `Promise<void>`
+
+
+
+
 ## Slots
 
 | Slot          | Description                     |
