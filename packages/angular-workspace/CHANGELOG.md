@@ -1,47 +1,68 @@
 # @astrouxds/angular
 
+## 7.17.0
+
+### Minor Changes
+
+#### Dialog
+
+-   Added new `toggle`, `show` and `hide` public methods
+
+#### Input
+
+-   Added a new `getInput` public method
+
+### Patch Changes
+
+#### Tabs
+
+-   Enhanced keyboard functionality with or without tab panels
+
+#### Push Button
+
+-   The label prop no longer defaults to 'Push Button'
+
 ## 7.16.0
 
 ### Minor Changes
 
 #### General
 
--   Bumps design tokens to version 1.11 https://github.com/RocketCommunicationsInc/astro-design-tokens/releases/tag/v1.11.0
+- Bumps design tokens to version 1.11 https://github.com/RocketCommunicationsInc/astro-design-tokens/releases/tag/v1.11.0
 
 #### Select
 
--   Dropdown arrow now correctly changes color from light theme to dark theme
+- Dropdown arrow now correctly changes color from light theme to dark theme
 
 #### Textarea
 
--   Add readonly attribute
+- Add readonly attribute
 
 ### Patch Changes
 
 #### Global Status Bar
 
--   Slots on the right and left side of Global Status Bar now correctly display focus states
+- Slots on the right and left side of Global Status Bar now correctly display focus states
 
 #### Log
 
--   Log's filtering is no longer case sensitive
+- Log's filtering is no longer case sensitive
 
 #### Select
 
--   Change height to match rux-input height for better alignment
+- Change height to match rux-input height for better alignment
 
 #### Status
 
--   Update status image sizes
+- Update status image sizes
 
 #### Tabs
 
--   Fixed an issue where the `ruxtabselected` event would sometimes not fire correctly
+- Fixed an issue where the `ruxtabselected` event would sometimes not fire correctly
 
 #### Timeline
 
--   Removed an extraneious div on timeline that was preventing attribute inheritance
-
+- Removed an extraneious div on timeline that was preventing attribute inheritance
 
 ## 7.15.2
 

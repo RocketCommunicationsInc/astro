@@ -1,5 +1,27 @@
 # @astrouxds/astro-web-components
 
+## 7.17.0
+
+### Minor Changes
+
+#### Dialog
+
+-   Added new `toggle`, `show` and `hide` public methods
+
+#### Input
+
+-   Added a new `getInput` public method
+
+### Patch Changes
+
+#### Tabs
+
+-   Enhanced keyboard functionality with or without tab panels
+
+#### Push Button
+
+-   The label prop no longer defaults to 'Push Button'
+
 ## 7.16.0
 
 ### Minor Changes
