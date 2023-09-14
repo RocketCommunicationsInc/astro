@@ -264,6 +264,10 @@ export namespace Components {
          */
         "header"?: string;
         /**
+          * Closes the dialog
+         */
+        "hide": () => Promise<void>;
+        /**
           * Dialog body message
          */
         "message"?: string;
@@ -271,6 +275,14 @@ export namespace Components {
           * Shows and hides dialog
          */
         "open": boolean;
+        /**
+          * Opens the dialog
+         */
+        "show": () => Promise<void>;
+        /**
+          * Toggles the dialog's open prop.
+         */
+        "toggle": () => Promise<void>;
     }
     interface RuxGlobalStatusBar {
         /**

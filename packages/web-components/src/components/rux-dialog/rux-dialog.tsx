@@ -10,6 +10,7 @@ import {
     Host,
     State,
     Fragment,
+    Method,
 } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 
@@ -76,6 +77,30 @@ export class RuxDialog {
         bubbles: true,
     })
     ruxDialogClosed!: EventEmitter<boolean | null>
+
+    /**
+     * Toggles the dialog's open prop.
+     */
+    @Method()
+    async toggle() {
+        this.open = !this.open
+    }
+
+    /**
+     * Opens the dialog
+     */
+    @Method()
+    async show() {
+        this.open = true
+    }
+
+    /**
+     * Closes the dialog
+     */
+    @Method()
+    async hide() {
+        this.open = false
+    }
 
     @Element() element!: HTMLRuxDialogElement
 
