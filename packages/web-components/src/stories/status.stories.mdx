@@ -42,19 +42,23 @@ export const Default = (args) => {
 
 <ArgsTable of="rux-status" />
 
-## Types
-
+## Typescript Types
 **Status**
 ```
- type Classification =
-    | 'cui'
-    | 'controlled'
-    | 'confidential'
-    | 'secret'
-    | 'top-secret'
-    | 'top-secret-sci'
-    | 'unclassified'
+import { Status } from '@astrouxds/astro-web-components'
 ```
+
+```
+export type Status =
+    | 'off'
+    | 'standby'
+    | 'normal'
+    | 'caution'
+    | 'serious'
+    | 'critical'
+```
+
+
 
 
 export const AllVariants = () => {
