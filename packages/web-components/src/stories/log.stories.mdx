@@ -98,6 +98,21 @@ export const Log = (args) => {
 
 <ArgsTable of="rux-log" />
 
+## Typescript Types
+**LogRow**
+```
+import { LogRow } from '@astrouxds/astro-web-components'
+```
+
+```
+export interface LogRow {
+  timestamp: Date;
+  status: Status;
+  message: string;
+}
+```
+
+
 ### Example LogRow[] Data
 
 ```
@@ -108,6 +123,20 @@ export const Log = (args) => {
     message: 'Antenna DGS 1 went offline.',
   }
 ]
+```
+**Status**
+```
+import { Status } from '@astrouxds/astro-web-components'
+```
+
+```
+export type Status =
+    | 'off'
+    | 'standby'
+    | 'normal'
+    | 'caution'
+    | 'serious'
+    | 'critical'
 ```
 
 ## Cherry Picking
