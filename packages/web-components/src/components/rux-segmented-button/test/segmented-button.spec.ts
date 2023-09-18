@@ -137,10 +137,10 @@ test.describe('Segmented-button', () => {
         const segButton2Segment = segmentedButton.locator('li').nth(1)
         const segButton1Input = segButton1Segment.locator('input')
         const segButton2Input = segButton2Segment.locator('input')
-        
+
         // Imperatively set second segment as selected
         await segmentedButton.evaluate((e) => {
-            (e as HTMLRuxSegmentedButtonElement).selected = 'Second segment'
+            ;(e as HTMLRuxSegmentedButtonElement).selected = 'Second segment'
         })
 
         //make sure it changed
@@ -148,10 +148,10 @@ test.describe('Segmented-button', () => {
             (e) => (e as HTMLInputElement).checked === true
         )
         expect(secondChecked).toBe(true)
-                
+
         // Imperatively set first segment as selected
         await segmentedButton.evaluate((e) => {
-            (e as HTMLRuxSegmentedButtonElement).selected = 'First segment'
+            ;(e as HTMLRuxSegmentedButtonElement).selected = 'First segment'
         })
         //and make sure it gets checked
         const firstChecked = await segButton1Input.evaluate(
@@ -159,9 +159,47 @@ test.describe('Segmented-button', () => {
         )
         expect(firstChecked).toBe(true)
     })
+    test('adjacent segmented buttons can be tabbed between', async ({
+        page,
+    }) => {
+        const template = `
+      <div style="padding: 2.5% 5%">
+      <button></button>
+          <rux-segmented-button id="one"></rux-segmented-button>
+          <rux-segmented-button id="two"></rux-segmented-button>
+      </div>
+      `
+        await page.setContent(template)
+        await page.addScriptTag({
+            content: `
+          const segmented1 = document.querySelector('#one')
+          const segmented2 = document.querySelector('#two')
+          const data = [
+              { label: 'First segment' },
+              { label: 'Second segment' },
+              { label: 'Third segment' },
+          ]
+          segmented1.data = data
+          segmented2.data = data
+
+      `,
+        })
+        const button = await page.locator('button')
+        const el1 = await page.locator('#one')
+        const el2 = await page.locator('#two')
+        await button.focus()
+        await page.keyboard.press('Tab')
+        await expect(el1.locator('li').first()).toHaveClass(
+            'rux-segmented-button__segment --focused'
+        )
+        await page.keyboard.press('Tab')
+        await expect(el2.locator('li').first()).toHaveClass(
+            'rux-segmented-button__segment --focused'
+        )
+    })
 })
 /*
-    Need to test: 
+    Need to test:
     -has props data, size, disabled
     - change event
 */

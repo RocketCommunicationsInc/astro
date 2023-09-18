@@ -127,6 +127,10 @@ export class RuxSegmentedButton {
         target.closest('li')?.classList.remove('--focused')
     }
 
+    //this random number is appended to <input name="" in order to give each segmented button group a unique name
+    //this allows users to tab between button groups that are adjacent to each other
+    private random = Math.floor(Math.random() * 100000)
+
     render() {
         return (
             <ul
@@ -140,7 +144,7 @@ export class RuxSegmentedButton {
                     <li class="rux-segmented-button__segment">
                         <input
                             type="radio"
-                            name="rux-group"
+                            name={'rux-group' + this.random.toString()}
                             id={this._slugify(item.label)}
                             value={item.label}
                             checked={this._isSelected(item.label)}
