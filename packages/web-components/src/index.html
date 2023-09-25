@@ -18,5 +18,69 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <rux-button>Add Tab to 4</rux-button>
+        <br />
+
+        <rux-tabs id="tab-set-id-1">
+            <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+            <rux-tab id="tab-id-2" selected>Tab 2 title</rux-tab>
+            <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+        </rux-tabs>
+
+        <rux-tab-panels aria-labelledby="tab-set-id-1">
+            <rux-tab-panel aria-labelledby="tab-id-1"
+                >Tab 1 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-2"
+                >Tab 2 HTML content</rux-tab-panel
+            >
+            <rux-tab-panel aria-labelledby="tab-id-3"
+                >Tab 3 HTML content</rux-tab-panel
+            >
+        </rux-tab-panels>
+
+        <rux-tabs id="tab-set-id-2">
+            <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+        </rux-tabs>
+
+        <rux-tabs id="tab-set-id-3">
+            <rux-tab id="tab-id-1" selected>Tab 1 title</rux-tab>
+        </rux-tabs>
+
+        <rux-tabs id="tab-set-id-4">
+            <rux-tab id="tab-id-1" selected>Tab 1 title</rux-tab>
+        </rux-tabs>
+
+        <script>
+            const add = document.querySelector('rux-button')
+            const tabs = document.querySelector('#tab-set-id-4')
+            let tabNum = 1
+
+            tabs.addEventListener('click', (e) => {
+                if (e.target.classList.contains('delete')) {
+                    e.stopImmediatePropagation()
+                    const tab = e.target.closest('rux-tab')
+                    if (tab.hasAttribute('selected')) {
+                        const tabList = Array.from(
+                            tab.closest('rux-tabs').querySelectorAll('rux-tab')
+                        )
+                        tabList[0].setAttribute('selected', '')
+                    }
+                    tab.remove()
+                }
+            })
+
+            add.addEventListener('click', () => {
+                const newTab = document.createElement('rux-tab')
+                tabNum = tabNum + 1
+                const deleteMe = document.createElement('button')
+                deleteMe.textContent = 'X'
+                deleteMe.className = 'delete'
+                newTab.textContent = `Tab ${tabNum} `
+                newTab.appendChild(deleteMe)
+                tabs.appendChild(newTab)
+            })
+        </script>
+    </body>
 </html>
