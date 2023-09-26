@@ -41,7 +41,7 @@ export class RuxTabs {
     @Listen('ruxtabselected', { target: 'window' })
     handleTabselected(e: CustomEvent) {
         const target = e.target as HTMLRuxTabElement
-        //* only change the classlist of panels assoiciated with this rux-tabs component
+        //* only change the classlist of panels associated with this rux-tabs component
         const children = Array.from(this.el.children)
         if (target.selected && children.includes(target)) {
             //filter through tabs and set the corresponding panel to not be hidden
@@ -141,11 +141,17 @@ export class RuxTabs {
     private _checkSelected() {
         // If no selected tab exists, we need to set an item to tabindex = 0
         // so that we can still tab into the tabs list
+        //** note: we also have to account for if the first tab IS selected
+        //** otherwise it is possible to have tab 1 selected but also be tabIndex = -1
         const firstTab: HTMLDivElement | null = this._tabs[0].shadowRoot!.querySelector(
             '[part="container"]'
         )
         if (firstTab) {
-            firstTab.tabIndex = !this._tabs.find((tab) => tab.selected) ? 0 : -1
+            firstTab.tabIndex =
+                !this._tabs.find((tab) => tab.selected) ||
+                this._tabs[0].hasAttribute('selected')
+                    ? 0
+                    : -1
         }
     }
 
