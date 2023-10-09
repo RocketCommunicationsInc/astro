@@ -96,3 +96,25 @@
 #rulerTrack::part(container) {
     margin-bottom: 0;
 }
+
+.cell {
+    // border: 1px solid blue;
+    border-right: 0;
+    border-top: 0;
+    // grid-column: span 60;
+    z-index: 9999;
+    grid-column: span 1;
+}
+.cell:nth-child(10n) {
+    // background: blue;
+}
+
+.cell:nth-child(odd) {
+    // background: var(--color-background);
+    background: red;
+}
+
+.cell:nth-child(even) {
+    background: blue;
+    // opacity: 10%;
+}

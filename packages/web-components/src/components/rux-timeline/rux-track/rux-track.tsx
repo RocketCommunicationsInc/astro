@@ -194,6 +194,25 @@ export class RuxTrack {
         this.initializeRows()
     }
 
+    renderDebug() {
+        return (
+            <div style={{ display: 'contents' }}>
+                {[...Array(this.columns)].map((_: any, i: any) => (
+                    <div
+                        style={{
+                            gridRow: '1',
+                            gridColumn: `${i + 2} / ${++i + 2}`,
+                        }}
+                        class={{
+                            cell: true,
+                            marker: i % 60 === 0,
+                        }}
+                    ></div>
+                ))}
+            </div>
+        )
+    }
+
     render() {
         return (
             <Host>
@@ -215,6 +234,8 @@ export class RuxTrack {
                     </div>
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
+
+                    {this.renderDebug()}
                 </div>
             </Host>
         )

@@ -20262,6 +20262,10 @@ export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
 }
+export interface RuxTimelineCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTimelineElement;
+}
 export interface RuxToastCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxToastElement;
@@ -55675,6 +55679,10 @@ declare namespace LocalJSX {
           * The timeline's date time interval
          */
         "interval"?: 'hour' | 'day';
+        /**
+          * Debug Event NOT FOR PRODUCTION
+         */
+        "onPlayheadchanged"?: (event: RuxTimelineCustomEvent<void>) => void;
         /**
           * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */

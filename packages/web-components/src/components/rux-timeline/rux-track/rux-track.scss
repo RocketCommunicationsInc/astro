@@ -31,3 +31,27 @@
     grid-template-rows: auto;
     background: var(--color-background-surface-default);
 }
+
+.cell {
+    // border: 1px solid blue;
+    border-right: 0;
+    border-top: 0;
+    // grid-column: span 60;
+    z-index: 9999;
+    grid-column: span 1;
+}
+.cell:nth-child(10n) {
+    // background: blue;
+}
+
+.cell:nth-child(odd) {
+    // background: var(--color-background);
+    background: red;
+    opacity: 0.3;
+}
+
+.cell:nth-child(even) {
+    background: blue;
+    opacity: 0.3;
+    // opacity: 10%;
+}
