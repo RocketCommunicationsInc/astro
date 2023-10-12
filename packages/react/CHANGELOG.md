@@ -1,26 +1,42 @@
 # @astrouxds/react
 
+## 7.17.1
+
+### Patch Changes
+
+#### Classification Marking
+
+-   Added some default left/right padding
+
+#### General
+
+-   Upgrade design token package to 1.12.0
+
+#### Tabs
+
+-   Fixed tabbing issue when tab1 is selected by default
+
 ## 7.17.0
 
 ### Minor Changes
 
 #### Dialog
 
--   Added new `toggle`, `show` and `hide` public methods
+- Added new `toggle`, `show` and `hide` public methods
 
 #### Input
 
--   Added a new `getInput` public method
+- Added a new `getInput` public method
 
 ### Patch Changes
 
 #### Tabs
 
--   Enhanced keyboard functionality with or without tab panels
+- Enhanced keyboard functionality with or without tab panels
 
 #### Push Button
 
--   The label prop no longer defaults to 'Push Button'
+- The label prop no longer defaults to 'Push Button'
 
 ## 7.16.0
 

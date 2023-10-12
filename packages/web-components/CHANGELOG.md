@@ -1,5 +1,21 @@
 # @astrouxds/astro-web-components
 
+## 7.17.1
+
+### Patch Changes
+
+#### Classification Marking
+
+-   Added some default left/right padding
+
+#### General
+
+-   Upgrade design token package to 1.12.0
+
+#### Tabs
+
+-   Fixed tabbing issue when tab1 is selected by default
+
 ## 7.17.0
 
 ### Minor Changes
