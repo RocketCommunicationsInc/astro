@@ -93,6 +93,7 @@ export class RuxTimeline {
     handleChange() {
         this.syncPlayhead()
         this._updateRegions()
+        this.syncPlayhead()
     }
 
     connectedCallback() {
