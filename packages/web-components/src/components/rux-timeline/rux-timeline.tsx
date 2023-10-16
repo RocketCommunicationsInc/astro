@@ -84,6 +84,7 @@ export class RuxTimeline {
     @Watch('timezone')
     handleChange() {
         this._updateRegions()
+        this.syncPlayhead()
     }
 
     connectedCallback() {
