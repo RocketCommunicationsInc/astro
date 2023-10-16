@@ -20065,6 +20065,10 @@ export namespace Components {
          */
         "end": string;
         /**
+          * Visually marks past time as played in each track
+         */
+        "hasPlayedIndicator": boolean;
+        /**
           * The timeline's date time interval
          */
         "interval": 'hour' | 'day';
@@ -20151,6 +20155,7 @@ export namespace Components {
         "columns": number;
         "end": string;
         "interval": any;
+        "playhead": any;
         "start": string;
         "timezone": string;
         "width": number;
@@ -55672,6 +55677,10 @@ declare namespace LocalJSX {
          */
         "end"?: string;
         /**
+          * Visually marks past time as played in each track
+         */
+        "hasPlayedIndicator"?: boolean;
+        /**
           * The timeline's date time interval
          */
         "interval"?: 'hour' | 'day';
@@ -55762,6 +55771,7 @@ declare namespace LocalJSX {
         "columns"?: number;
         "end"?: string;
         "interval"?: any;
+        "playhead"?: any;
         "start"?: string;
         "timezone"?: string;
         "width"?: number;

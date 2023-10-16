@@ -1,4 +1,13 @@
-import { Element, Listen, Component, Prop, Host, h, Watch } from '@stencil/core'
+import {
+    Element,
+    Listen,
+    Component,
+    Prop,
+    Host,
+    h,
+    Watch,
+    State,
+} from '@stencil/core'
 import { differenceInMinutes, differenceInHours } from 'date-fns'
 
 interface DateValidation {
@@ -16,7 +25,13 @@ interface DateValidation {
     shadow: true,
 })
 export class RuxTrack {
+    playedIndicator!: HTMLElement
+
+    @State() hasRuler: boolean = false
+
     @Element() el!: HTMLRuxTrackElement
+
+    @Prop({ reflect: true }) playhead: any
 
     /**
      * @internal - The grid's width. Set automatically from the parent Timeline component.
@@ -54,6 +69,10 @@ export class RuxTrack {
         }
     }
 
+    @Watch('playhead')
+    handlePlayheadChange() {
+        this.initializeRows()
+    }
     @Watch('timezone')
     handleTimezoneUpdate() {
         this.initializeRows()
@@ -145,6 +164,12 @@ export class RuxTrack {
      * The Track is responsible for lining up the Time Regions with the grid.
      */
     private initializeRows() {
+        if (this.playhead) {
+            this.playedIndicator.style.gridColumnEnd = this._calculateGridColumnFromTime(
+                this.playhead
+            ).toString()
+        }
+
         const children = [...this.el.children].filter(
             (el) => el.tagName.toLowerCase() === 'rux-time-region'
         ) as HTMLRuxTimeRegionElement[]
@@ -192,6 +217,11 @@ export class RuxTrack {
 
     private _handleSlotChange() {
         this.initializeRows()
+        const hasRuler = [...this.el.children].find(
+            (el) => el.tagName.toLowerCase() === 'rux-ruler'
+        )
+
+        this.hasRuler = !!hasRuler
     }
 
     render() {
@@ -215,6 +245,15 @@ export class RuxTrack {
                     </div>
 
                     <slot onSlotchange={this._handleSlotChange}></slot>
+                    <div
+                        class={{
+                            'rux-track__played': this.playhead,
+                            hidden: this.hasRuler,
+                        }}
+                        ref={(el) =>
+                            (this.playedIndicator = el as HTMLInputElement)
+                        }
+                    ></div>
                 </div>
             </Host>
         )

@@ -52,6 +52,12 @@ export class RuxTimeline {
     @Prop({ reflect: true, mutable: true }) playhead?: string
 
     /**
+     * Visually marks past time as played in each track
+     */
+    @Prop({ reflect: true, attribute: 'has-played-indicator' })
+    hasPlayedIndicator = false
+
+    /**
      * The timeline's date time interval
      */
     @Prop() interval: 'hour' | 'day' = 'hour'
@@ -61,6 +67,7 @@ export class RuxTimeline {
      */
     @Prop() timezone = 'UTC'
 
+    @Watch('hasPlayedIndicator')
     @Watch('playhead')
     syncPlayhead() {
         if (this.playhead) {
@@ -68,6 +75,7 @@ export class RuxTimeline {
             if (time) {
                 this.playheadPositionInPixels = time
             }
+            this._updateRegions()
         }
     }
 
@@ -83,6 +91,7 @@ export class RuxTimeline {
     @Watch('interval')
     @Watch('timezone')
     handleChange() {
+        this.syncPlayhead()
         this._updateRegions()
     }
 
@@ -153,6 +162,11 @@ export class RuxTimeline {
         tracks.map((el) => {
             el.width = this.width
             el.columns = this.columns
+            if (this.hasPlayedIndicator) {
+                el.playhead = this.playhead
+            } else {
+                el.playhead = null
+            }
 
             el.interval = this.interval
             el.start = this.start
@@ -249,23 +263,31 @@ export class RuxTimeline {
             'slot'
         )[0] as HTMLSlotElement
 
-        const tracks = [
-            ...(slot
-                ?.assignedElements({ flatten: true })
-                .filter(
-                    (node: any) => node.tagName.toLowerCase() === 'rux-track'
-                ) as [HTMLRuxTrackElement]),
-        ]
+        if (slot) {
+            const tracks = [
+                ...(slot
+                    ?.assignedElements({ flatten: true })
+                    .filter(
+                        (node: any) =>
+                            node.tagName.toLowerCase() === 'rux-track'
+                    ) as [HTMLRuxTrackElement]),
+            ]
 
-        tracks.map((el: HTMLRuxTrackElement) => {
-            el.width = this.width
-            el.columns = this.columns
+            tracks.map((el: HTMLRuxTrackElement) => {
+                el.width = this.width
+                el.columns = this.columns
 
-            el.interval = this.interval
-            el.start = this.start
-            el.end = this.end
-            el.timezone = this.timezone
-        })
+                if (this.hasPlayedIndicator) {
+                    el.playhead = this.playhead
+                } else {
+                    el.playhead = null
+                }
+                el.interval = this.interval
+                el.start = this.start
+                el.end = this.end
+                el.timezone = this.timezone
+            })
+        }
 
         const rulerSlot = this.rulerContainer?.querySelector(
             'slot'

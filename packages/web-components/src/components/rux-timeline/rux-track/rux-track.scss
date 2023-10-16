@@ -31,3 +31,14 @@
     grid-template-rows: auto;
     background: var(--color-background-surface-default);
 }
+
+.rux-track__played {
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: auto;
+    background: var(--color-background-surface-selected);
+}
+
+.hidden {
+    display: none;
+}
