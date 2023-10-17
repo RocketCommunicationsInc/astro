@@ -10,12 +10,14 @@ import {
     RuxSlider,
     RuxButton,
     RuxOption,
+    RuxOptionGroup,
 } from '@astrouxds/react'
 export default function App() {
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [countryRegion, setCountryRegion] = useState('United States')
+    const [multiSelect, setMultiSelect] = useState([])
     const [options, setOptions] = useState('')
     const [range, setRange] = useState(50)
     const [things, setThings] = useState([])
@@ -27,6 +29,7 @@ export default function App() {
      Last Name: ${lastName} \n
      Email: ${email} \n
      Country/Region: ${countryRegion} \n
+     MultiSelect: ${multiSelect} \n
      Options: ${options} \n
      Things: ${things} \n
      Range: ${range} \n
@@ -41,6 +44,9 @@ export default function App() {
         } else {
             setThings(arr.filter((item) => item !== e.target.value))
         }
+    }
+    const handleMultiple = (e) => {
+        setMultiSelect((multiSelect) => [...multiSelect, e.target.value])
     }
     return (
         <div className="container">
@@ -76,6 +82,42 @@ export default function App() {
                             value="United States"
                             label="United States"
                         ></RuxOption>
+                    </RuxSelect>
+                </div>
+                <div>
+                    <RuxSelect
+                        multiple
+                        label="Multi-Select"
+                        onRuxchange={(e) => handleMultiple(e)}
+                    >
+                        <RuxOptionGroup label="Group 1">
+                            <RuxOption
+                                label="Option 1"
+                                value="Option 1"
+                            ></RuxOption>
+                            <RuxOption
+                                label="Option 2"
+                                value="Option 2"
+                            ></RuxOption>
+                            <RuxOption
+                                label="Option 3"
+                                value="Option 3"
+                            ></RuxOption>
+                        </RuxOptionGroup>
+                        <RuxOptionGroup label="Group 2">
+                            <RuxOption
+                                label="Option 2.1"
+                                value="Option 2.1"
+                            ></RuxOption>
+                            <RuxOption
+                                label="Option 2.2"
+                                value="Option 2.2"
+                            ></RuxOption>
+                            <RuxOption
+                                label="Option 2.3"
+                                value="Option 2.3"
+                            ></RuxOption>
+                        </RuxOptionGroup>
                     </RuxSelect>
                 </div>
                 <div>
