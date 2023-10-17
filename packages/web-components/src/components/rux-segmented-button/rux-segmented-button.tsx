@@ -9,6 +9,9 @@ import {
 } from '@stencil/core'
 import { SegmentedButton } from './rux-segmented-button.model'
 
+// Used to give each segmented button element a unique name, which allows for proper tabbing.
+let name = 0
+
 /**
  * @part label - the label of rux-segmented-button
  */
@@ -18,6 +21,7 @@ import { SegmentedButton } from './rux-segmented-button.model'
     shadow: true,
 })
 export class RuxSegmentedButton {
+    private segBtnName = `rux-segmented-button-${++name}`
     @Element() el!: HTMLRuxSegmentedButtonElement
 
     /**
@@ -127,10 +131,6 @@ export class RuxSegmentedButton {
         target.closest('li')?.classList.remove('--focused')
     }
 
-    //this random number is appended to <input name="" in order to give each segmented button group a unique name
-    //this allows users to tab between button groups that are adjacent to each other
-    private random = Math.floor(Math.random() * 100000)
-
     render() {
         return (
             <ul
@@ -144,7 +144,7 @@ export class RuxSegmentedButton {
                     <li class="rux-segmented-button__segment">
                         <input
                             type="radio"
-                            name={'rux-group' + this.random.toString()}
+                            name={this.segBtnName}
                             id={this._slugify(item.label)}
                             value={item.label}
                             checked={this._isSelected(item.label)}
