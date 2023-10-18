@@ -34,6 +34,16 @@ export class RuxRuler {
         )
     }
 
+    get dayRange() {
+        return getRange(
+            new Date(this.start),
+            new Date(this.end),
+            'day',
+            1,
+            this.timezone
+        )
+    }
+
     getColumn(index: number) {
         let unitOfTime = 60
         if (this.interval === 'day') {
@@ -51,33 +61,29 @@ export class RuxRuler {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRange.map(
-                        ([time, dayFormattedTime]: any, index: any) => {
-                            const newDay =
-                                this.interval === 'hour' &&
-                                this.timePattern.test(time)
-                                    ? dayFormattedTime
-                                    : ''
-                            return (
-                                <span
-                                    key={index}
-                                    class={{
-                                        'ruler-time': true,
-                                        'ruler-new-day-cell': newDay !== '',
-                                    }}
-                                    style={{
-                                        gridRow: '1',
-                                        gridColumn: this.getColumn(index),
-                                    }}
-                                >
-                                    {time}
-                                    <span class="ruler-new-day-display">
-                                        {newDay}
-                                    </span>
+                    {this.dateRange.map((time: any, index: any) => {
+                        const newDay = this.timePattern.test(time)
+                            ? this.dayRange[Math.floor(index / 24)]
+                            : ''
+                        return (
+                            <span
+                                key={index}
+                                class={{
+                                    'ruler-time': true,
+                                    'ruler-new-day-cell': newDay !== '',
+                                }}
+                                style={{
+                                    gridRow: '1',
+                                    gridColumn: this.getColumn(index),
+                                }}
+                            >
+                                {time}
+                                <span class="ruler-new-day-display">
+                                    {this.interval === 'hour' ? newDay : ''}
                                 </span>
-                            )
-                        }
-                    )}
+                            </span>
+                        )
+                    })}
                 </div>
             </Host>
         )

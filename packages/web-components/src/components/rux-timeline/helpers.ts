@@ -56,7 +56,6 @@ export function dateRange(
             const time = agnosticAddDays(startDate, i)
 
             const formattedTime = formatInTimeZone(time, timezone, 'MM/dd')
-
             return formattedTime
         })
 
@@ -71,9 +70,7 @@ export function dateRange(
             const time = addHours(startDate, i)
 
             const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
-            const dayFormattedTime = formatInTimeZone(time, timezone, 'MM/dd')
-
-            return [formattedTime, dayFormattedTime]
+            return formattedTime
         })
 
         return output
