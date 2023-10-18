@@ -12,9 +12,15 @@
     padding: 12px 20px;
 }
 
-.show-tick {
-    background-color: #101923;
-    font-size: 1rem;
-    padding: 4px;
-    text-wrap: wrap;
+.ruler-new-day-cell {
+    background-color: var(--color-background-base-default);
+    font-size: var(--font-size-sm);
+    display: block;
+    text-align: center;
+    padding: 5px;
+}
+
+.ruler-new-day-display {
+    display: block;
+    font-size: var(--font-size-sm);
 }

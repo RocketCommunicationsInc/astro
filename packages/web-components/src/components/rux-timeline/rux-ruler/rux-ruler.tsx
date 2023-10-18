@@ -70,7 +70,7 @@ export class RuxRuler {
                                 key={index}
                                 class={{
                                     'ruler-time': true,
-                                    'show-tick': newDay !== '',
+                                    'ruler-new-day-cell': newDay !== '',
                                 }}
                                 style={{
                                     gridRow: '1',
@@ -78,7 +78,9 @@ export class RuxRuler {
                                 }}
                             >
                                 {time}
-                                {this.interval === 'hour' ? newDay : ''}
+                                <span class="ruler-new-day-display">
+                                    {this.interval === 'hour' ? newDay : ''}
+                                </span>
                             </span>
                         )
                     })}
