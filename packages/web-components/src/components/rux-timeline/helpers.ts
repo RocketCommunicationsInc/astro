@@ -71,7 +71,9 @@ export function dateRange(
             const time = addHours(startDate, i)
 
             const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
-            return formattedTime
+            const dayFormattedTime = formatInTimeZone(time, timezone, 'MM/dd')
+
+            return [formattedTime, dayFormattedTime]
         })
 
         return output
