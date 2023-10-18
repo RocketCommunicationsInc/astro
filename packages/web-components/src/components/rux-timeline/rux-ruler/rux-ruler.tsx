@@ -36,6 +36,16 @@ export class RuxRuler {
         )
     }
 
+    get dayRange() {
+        return getRange(
+            new Date(this.start),
+            new Date(this.end),
+            'day',
+            1,
+            this.timezone
+        )
+    }
+
     getColumn(index: number) {
         let unitOfTime = 60
         if (this.interval === 'day') {
@@ -48,6 +58,17 @@ export class RuxRuler {
     }
 
     render() {
+        console.log(this.start, this.end, this.interval, this.timezone)
+        console.log(
+            getRange(
+                new Date(this.start),
+                new Date(this.end),
+                'day',
+                1,
+                this.timezone
+            )
+        )
+
         return (
             <Host>
                 <div class="rux-ruler rux-track">
@@ -61,7 +82,18 @@ export class RuxRuler {
                                 gridColumn: this.getColumn(index),
                             }}
                         >
-                            {time}
+                            <rux-tooltip
+                                message={`${
+                                    this.dayRange[Math.floor(index / 24)]
+                                } ${time}`}
+                                placement="top"
+                                delay={300}
+                                strategy="fixed"
+                                offset={8}
+                                disable-auto-update="false"
+                            >
+                                <span>{time}</span>
+                            </rux-tooltip>
                         </span>
                     ))}
                 </div>
