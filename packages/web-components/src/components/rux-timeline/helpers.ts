@@ -40,7 +40,6 @@ export function dateRange(
     interval: any,
     intervalValue: any = 1,
     timezone: any = 'UTC'
-    //day: any
 ) {
     const startDate = new Date(start)
     const endDate = new Date(end)
@@ -57,6 +56,7 @@ export function dateRange(
             const time = agnosticAddDays(startDate, i)
 
             const formattedTime = formatInTimeZone(time, timezone, 'MM/dd')
+
             return formattedTime
         })
 
