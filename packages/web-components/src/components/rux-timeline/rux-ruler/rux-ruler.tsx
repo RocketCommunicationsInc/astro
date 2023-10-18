@@ -1,6 +1,5 @@
 import { Prop, Component, Element, Host, h } from '@stencil/core'
 import { dateRange as getRange } from '../helpers'
-
 @Component({
     tag: 'rux-ruler',
     styleUrl: 'rux-ruler.scss',
@@ -25,12 +24,21 @@ export class RuxRuler {
      * @internal - The Ruler's time zone. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) timezone = 'UTC'
-
     get dateRange() {
         return getRange(
             new Date(this.start),
             new Date(this.end),
             this.interval,
+            1,
+            this.timezone
+        )
+    }
+
+    get dayRange() {
+        return getRange(
+            new Date(this.start),
+            new Date(this.end),
+            'day',
             1,
             this.timezone
         )
@@ -47,23 +55,33 @@ export class RuxRuler {
         return `${unitOfTime * index + 2} / ${end}`
     }
 
+    timePattern = /^00:.+$/
+
     render() {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRange.map((time: any, index: any) => (
-                        <span
-                            class={{
-                                'ruler-time': true,
-                            }}
-                            style={{
-                                gridRow: '1',
-                                gridColumn: this.getColumn(index),
-                            }}
-                        >
-                            {time}
-                        </span>
-                    ))}
+                    {this.dateRange.map((time: any, index: any) => {
+                        const newDay = this.timePattern.test(time)
+                            ? this.dayRange[Math.floor(index / 24)]
+                            : ''
+                        return (
+                            <span
+                                key={index}
+                                class={{
+                                    'ruler-time': true,
+                                    'show-tick': newDay !== '',
+                                }}
+                                style={{
+                                    gridRow: '1',
+                                    gridColumn: this.getColumn(index),
+                                }}
+                            >
+                                {time}
+                                {this.interval === 'hour' ? newDay : ''}
+                            </span>
+                        )
+                    })}
                 </div>
             </Host>
         )
