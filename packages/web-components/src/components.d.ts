@@ -19763,6 +19763,10 @@ export namespace Components {
         "interval": any;
         "start": string;
         "timezone": string;
+        /**
+          * Controls wether or not tooltips will show on ruler ticks
+         */
+        "tooltips": boolean;
     }
     interface RuxSegmentedButton {
         /**
@@ -55322,6 +55326,10 @@ declare namespace LocalJSX {
         "interval"?: any;
         "start"?: string;
         "timezone"?: string;
+        /**
+          * Controls wether or not tooltips will show on ruler ticks
+         */
+        "tooltips"?: boolean;
     }
     interface RuxSegmentedButton {
         /**

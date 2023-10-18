@@ -9,6 +9,10 @@ import { dateRange as getRange } from '../helpers'
 export class RuxRuler {
     @Element() el!: HTMLRuxRulerElement
     /**
+     * Controls wether or not tooltips will show on ruler ticks
+     */
+    @Prop() tooltips: boolean = false
+    /**
      * @internal The Timeline's interval. Set automatically from the parent Timeline component
      */
     @Prop() interval: any = ''
@@ -62,16 +66,20 @@ export class RuxRuler {
                                     gridColumn: this.getColumn(index),
                                 }}
                             >
-                                <rux-tooltip
-                                    message={`${tooltipTime}`}
-                                    placement="top"
-                                    delay={300}
-                                    strategy="fixed"
-                                    offset={8}
-                                    disable-auto-update="false"
-                                >
+                                {this.tooltips ? (
+                                    <rux-tooltip
+                                        message={`${tooltipTime}`}
+                                        placement="top"
+                                        delay={300}
+                                        strategy="fixed"
+                                        offset={8}
+                                        disable-auto-update="false"
+                                    >
+                                        <span>{time}</span>
+                                    </rux-tooltip>
+                                ) : (
                                     <span>{time}</span>
-                                </rux-tooltip>
+                                )}
                             </span>
                         )
                     )}
