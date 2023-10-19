@@ -68,14 +68,14 @@ export class RuxRuler {
                             >
                                 {this.tooltips ? (
                                     <rux-tooltip
-                                        message={`${tooltipTime}`}
+                                        message={tooltipTime}
                                         placement="top"
                                         delay={300}
                                         strategy="fixed"
                                         offset={8}
                                         disable-auto-update="false"
                                     >
-                                        <span>{time}</span>
+                                        <span class="pointer">{time}</span>
                                     </rux-tooltip>
                                 ) : (
                                     <span>{time}</span>
