@@ -61,31 +61,34 @@ export class RuxRuler {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRange.map((time: any, index: any) => {
-                        const newDay = this.timePattern.test(time)
-                            ? this.dayRange[Math.floor(index / 24)]
-                            : ''
-                        return (
-                            <span
-                                key={index}
-                                class={{
-                                    'ruler-time': true,
-                                    'ruler-new-day-cell': newDay !== '',
-                                }}
-                                style={{
-                                    gridRow: '1',
-                                    gridColumn: this.getColumn(index),
-                                }}
-                            >
-                                {time}
-                                {this.interval === 'hour' ? (
-                                    <span class="ruler-new-day-display">
-                                        {newDay}
-                                    </span>
-                                ) : null}
-                            </span>
-                        )
-                    })}
+                    {this.dateRange.map(
+                        ([time, newDayDate]: any, index: any) => {
+                            const newDay = this.timePattern.test(time)
+                                ? newDayDate
+                                : ''
+                            return (
+                                <span
+                                    key={index}
+                                    class={{
+                                        'ruler-time': true,
+                                        'ruler-new-day-cell': newDay !== '',
+                                    }}
+                                    style={{
+                                        gridRow: '1',
+                                        gridColumn: this.getColumn(index),
+                                    }}
+                                >
+                                    {time}
+                                    {this.interval === 'hour' &&
+                                    newDay !== '' ? (
+                                        <span class="ruler-new-day-display">
+                                            {newDay}
+                                        </span>
+                                    ) : null}
+                                </span>
+                            )
+                        }
+                    )}
                 </div>
             </Host>
         )
