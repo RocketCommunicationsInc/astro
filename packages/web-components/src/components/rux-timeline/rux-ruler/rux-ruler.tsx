@@ -62,11 +62,9 @@ export class RuxRuler {
             <Host>
                 <div class="rux-ruler rux-track">
                     {this.dateRange.map((time: any, index: any) => {
-                        const newDay =
-                            this.interval === 'hour' &&
-                            this.timePattern.test(time)
-                                ? this.dayRange[Math.floor(index / 24)]
-                                : ''
+                        const newDay = this.timePattern.test(time)
+                            ? this.dayRange[Math.floor(index / 24)]
+                            : ''
                         return (
                             <span
                                 key={index}
@@ -80,9 +78,11 @@ export class RuxRuler {
                                 }}
                             >
                                 {time}
-                                <span class="ruler-new-day-display">
-                                    {newDay}
-                                </span>
+                                {this.interval === 'hour' ? (
+                                    <span class="ruler-new-day-display">
+                                        {newDay}
+                                    </span>
+                                ) : null}
                             </span>
                         )
                     })}
