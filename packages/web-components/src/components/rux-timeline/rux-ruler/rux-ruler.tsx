@@ -34,16 +34,6 @@ export class RuxRuler {
         )
     }
 
-    get dayRange() {
-        return getRange(
-            new Date(this.start),
-            new Date(this.end),
-            'day',
-            1,
-            this.timezone
-        )
-    }
-
     getColumn(index: number) {
         let unitOfTime = 60
         if (this.interval === 'day') {
