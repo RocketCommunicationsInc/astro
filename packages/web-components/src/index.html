@@ -18,5 +18,58 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+        <section style="width: 950px; margin: auto">
+            <rux-timeline
+                id="timeline"
+                start="2020-01-01T00:00:00Z"
+                end="2020-02-01T00:00:00Z"
+                interval="hour"
+                zoom="2"
+            >
+                <rux-track>
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <header slot="label">Track 1</header>
+                    <rux-time-region
+                        start="2020-01-01T01:00:00Z"
+                        end="2020-01-02T00:00:00Z"
+                    ></rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <header slot="label">Track 2</header>
+                    <rux-time-region
+                        start="2020-01-01T01:00:00Z"
+                        end="2020-01-02T00:00:00Z"
+                    ></rux-time-region>
+                </rux-track>
+
+                <rux-track>
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        </section>
+        <script>
+            const events = [
+                {
+                    start: '2020-01-01T00:00:00',
+                    end: '2020-01-01T01:00:00',
+                },
+                {
+                    start: '2020-01-01T01:00:00',
+                    end: '2020-01-01T02:00:00',
+                },
+            ]
+            // events.forEach(event => {
+            //     const track = document.createElement('rux-track')
+            //     const region = document.createElement('rux-time-region')
+            //     track.appendChild(region)
+            //     timeline.appendChild(track)
+            // })
+        </script>
+    </body>
 </html>

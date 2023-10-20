@@ -274,6 +274,16 @@ export class RuxTimeline {
                     ) as [HTMLRuxTrackElement]),
             ]
 
+            const rulers = [
+                ...(slot
+                    ?.assignedElements({ flatten: true })
+                    .filter(
+                        (node: any) =>
+                            node.tagName.toLowerCase() === 'rux-ruler'
+                    ) as [HTMLRuxTrackElement]),
+            ]
+            console.log('rulers', rulers)
+
             tracks.map((el: HTMLRuxTrackElement) => {
                 el.width = this.width
                 el.columns = this.columns
@@ -287,40 +297,54 @@ export class RuxTimeline {
                 el.start = this.start
                 el.end = this.end
                 el.timezone = this.timezone
+
+                const rulers = [...el.children].filter(
+                    (el) => el.tagName.toLowerCase() === 'rux-ruler'
+                ) as HTMLRuxRulerElement[]
+                console.log('found rulers', rulers)
+                rulers.forEach((rulerEl) => {
+                    validateTimezone(this.timezone).then(() => {
+                        rulerEl.timezone = this.timezone
+                    })
+
+                    rulerEl.start = this.start
+                    rulerEl.end = this.end
+                    rulerEl.interval = this.interval
+                })
             })
         }
 
-        const rulerSlot = this.rulerContainer?.querySelector(
-            'slot'
-        ) as HTMLSlotElement
+        // const rulerSlot = this.rulerContainer?.querySelector(
+        //     'slot'
+        // ) as HTMLSlotElement
 
-        const rulerTrack = rulerSlot
-            ?.assignedElements({ flatten: true })
-            .find(
-                (el: any) => el.tagName.toLowerCase() === 'rux-track'
-            ) as HTMLRuxTrackElement
+        // const rulerTrack = rulerSlot
+        //     ?.assignedElements({ flatten: true })
+        //     .find(
+        //         (el: any) => el.tagName.toLowerCase() === 'rux-track'
+        //     ) as HTMLRuxTrackElement
 
-        if (rulerTrack) {
-            rulerTrack.width = this.width
-            rulerTrack.columns = this.columns
+        // if (rulerTrack) {
+        //     rulerTrack.width = this.width
+        //     rulerTrack.columns = this.columns
 
-            rulerTrack.interval = this.interval
-            rulerTrack.start = this.start
-            rulerTrack.end = this.end
-            const rulerEl = [...rulerTrack.children].find(
-                (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
-            ) as HTMLRuxRulerElement
+        //     rulerTrack.interval = this.interval
+        //     rulerTrack.start = this.start
+        //     rulerTrack.end = this.end
+        //     const rulerEl = [...rulerTrack.children].find(
+        //         (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
+        //     ) as HTMLRuxRulerElement
 
-            if (rulerEl) {
-                validateTimezone(this.timezone).then(() => {
-                    rulerEl.timezone = this.timezone
-                })
+        //     if (rulerEl) {
+        //         validateTimezone(this.timezone).then(() => {
+        //             rulerEl.timezone = this.timezone
+        //         })
 
-                rulerEl.start = this.start
-                rulerEl.end = this.end
-                rulerEl.interval = this.interval
-            }
-        }
+        //         rulerEl.start = this.start
+        //         rulerEl.end = this.end
+        //         rulerEl.interval = this.interval
+        //     }
+        // }
     }
 
     private _setZoom() {

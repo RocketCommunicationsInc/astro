@@ -1,5 +1,5 @@
 import { Prop, Component, Element, Host, h } from '@stencil/core'
-import { dateRange as getRange } from '../helpers'
+import { dateRange as getRange, dateRangeInMonths } from '../helpers'
 
 @Component({
     tag: 'rux-ruler',
@@ -36,6 +36,16 @@ export class RuxRuler {
         )
     }
 
+    get dateRangeMo() {
+        return dateRangeInMonths(
+            new Date(this.start),
+            new Date(this.end),
+            this.interval,
+            1,
+            this.timezone
+        )
+    }
+
     getColumn(index: number) {
         let unitOfTime = 60
         if (this.interval === 'day') {
@@ -51,7 +61,7 @@ export class RuxRuler {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRange.map((time: any, index: any) => (
+                    {this.dateRangeMo.map((time: any, index: any) => (
                         <span
                             class={{
                                 'ruler-time': true,
