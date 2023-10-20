@@ -19761,6 +19761,7 @@ export namespace Components {
     interface RuxRuler {
         "end": string;
         "interval": any;
+        "jawn": string;
         "start": string;
         "timezone": string;
     }
@@ -55320,6 +55321,7 @@ declare namespace LocalJSX {
     interface RuxRuler {
         "end"?: string;
         "interval"?: any;
+        "jawn"?: string;
         "start"?: string;
         "timezone"?: string;
     }

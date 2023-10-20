@@ -19,37 +19,54 @@
     </head>
 
     <body>
-        <section style="width: 950px; margin: auto">
+        <section style="width: 950px; margin: 2rem auto">
             <rux-timeline
                 id="timeline"
                 start="2020-01-01T00:00:00Z"
-                end="2020-02-01T00:00:00Z"
+                end="2020-01-05T00:00:00Z"
                 interval="hour"
-                zoom="2"
+                zoom="1"
             >
-                <rux-track>
-                    <rux-ruler></rux-ruler>
-                </rux-track>
                 <rux-track>
                     <header slot="label">Track 1</header>
                     <rux-time-region
                         start="2020-01-01T01:00:00Z"
-                        end="2020-01-02T00:00:00Z"
-                    ></rux-time-region>
+                        end="2020-01-01T03:00:00Z"
+                        >Region 1</rux-time-region
+                    >
                 </rux-track>
-                <rux-track>
-                    <rux-ruler></rux-ruler>
-                </rux-track>
+
                 <rux-track>
                     <header slot="label">Track 2</header>
                     <rux-time-region
-                        start="2020-01-01T01:00:00Z"
+                        start="2020-01-01T03:00:00Z"
+                        end="2020-01-01T05:00:00Z"
+                        >Region 2</rux-time-region
+                    >
+                </rux-track>
+                <rux-track>
+                    <header slot="label">Track</header>
+                    <rux-time-region
+                        start="2020-01-01T08:00:00Z"
+                        end="2020-01-01T20:00:00Z"
+                        >Region 2</rux-time-region
+                    >
+                </rux-track>
+
+                <rux-track>
+                    <header slot="label">Track 3</header>
+                    <rux-time-region
+                        start="2020-01-01T22:00:00Z"
                         end="2020-01-02T00:00:00Z"
-                    ></rux-time-region>
+                        >Region 2</rux-time-region
+                    >
                 </rux-track>
 
                 <rux-track>
                     <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <rux-ruler jawn="new"></rux-ruler>
                 </rux-track>
             </rux-timeline>
         </section>

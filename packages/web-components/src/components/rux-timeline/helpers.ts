@@ -1,12 +1,16 @@
 import {
     addHours,
     differenceInHours,
+    eachHourOfInterval,
     addDays,
     addMinutes,
     subMinutes,
     differenceInDays,
+    differenceInMonths,
+    eachDayOfInterval,
+    parseISO,
 } from 'date-fns'
-import { formatInTimeZone } from 'date-fns-tz'
+import { formatInTimeZone, utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz'
 
 export async function validateTimezone(timezone: string) {
     return new Promise((resolve, reject) => {
@@ -64,17 +68,67 @@ export function dateRange(
     }
 
     if (interval === 'hour') {
+        // intervalValue = 2
         let days = differenceInHours(endDate, startDate)
+        console.log('days', days)
+        console.log('intervaldays', days / intervalValue)
         days = days / intervalValue
 
-        const output = [...Array(days).keys()].map((i) => {
-            const time = addHours(startDate, i)
+        // const newout = [...Array(days).keys()].reduce((a: any, b: any) => {
 
-            const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
-            return formattedTime
+        //     let offset = 0
+        //     if (a.length === 0 ) {
+
+        //     }
+        //     if (a.length > 1) {
+        //         const last = a[a.length-1]
+        //         // if (last) {
+        //         //     const hour = parseInt(last.slice(0,2))
+        //         //     offset = hour
+        //         //     console.log('off', last);
+        //         // }
+        //         offset = last
+        //     }
+
+        //     // this might break bc new date not wrapped in timezone
+        //     const time = addHours(offset, 2)
+
+        //     const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
+        //     a.push(formattedTime)
+        //     return a
+
+        //     // console.log('a',a);
+        //     // console.log('b',b);
+
+        // }, ['00:00'])
+        // console.log('new', newout);
+
+        console.log('start', start)
+
+        const eachDay = eachHourOfInterval(
+            {
+                start: new Date(start),
+                end: new Date(end),
+            },
+            {
+                step: 2,
+            }
+        )
+        const test = eachDay.map((day) => {
+            return formatInTimeZone(day, timezone, 'HH:mm')
         })
+        return test
 
-        return output
+        // const output = [...Array(days).keys()].map((i) => {
+
+        //     const time = addHours(startDate, i + intervalValue)
+
+        //     const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
+        //     return formattedTime
+        // })
+        // console.log('out', output);
+
+        // return output
     }
 
     return []
@@ -111,14 +165,25 @@ export function dateRangeInMonths(
 
     if (interval === 'hour') {
         let days = differenceInHours(endDate, startDate)
-        days = days / intervalValue
+        let months = differenceInDays(endDate, startDate)
 
-        const output = [...Array(days).keys()].map((i) => {
-            const time = addHours(startDate, i)
+        // days = days / intervalValue
 
-            const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
+        // const output = [...Array(days).keys()].map((i) => {
+        //     const time = addHours(startDate, i)
+
+        //     const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
+        //     return formattedTime
+        // })
+
+        const output = [...Array(months).keys()].map((i) => {
+            const time = agnosticAddDays(startDate, i)
+
+            const formattedTime = formatInTimeZone(time, timezone, 'MM/dd')
+
             return formattedTime
         })
+        console.log('out', output)
 
         return output
     }

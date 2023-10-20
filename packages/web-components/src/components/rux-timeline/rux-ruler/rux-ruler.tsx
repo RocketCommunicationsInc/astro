@@ -12,6 +12,8 @@ export class RuxRuler {
      * @internal The Timeline's interval. Set automatically from the parent Timeline component
      */
     @Prop() interval: any = ''
+
+    @Prop() jawn = 'normal'
     /**
      * @internal The Timeline's start date. Set automatically from the parent Timeline component
      */
@@ -47,21 +49,55 @@ export class RuxRuler {
     }
 
     getColumn(index: number) {
-        let unitOfTime = 60
-        if (this.interval === 'day') {
-            unitOfTime = 24
-        }
+        if (this.jawn === 'normal') {
+            let unitOfTime = 60
+            if (this.interval === 'day') {
+                unitOfTime = 24
+            }
 
-        const start = unitOfTime * index + 2
-        const end = start + unitOfTime
-        return `${unitOfTime * index + 2} / ${end}`
+            const start = unitOfTime * index + 2
+            const end = start + unitOfTime
+            return `${unitOfTime * index + 2} / ${end}`
+        } else {
+            let unitOfTime = 60 * 24
+            const start = unitOfTime * index + 2
+            const end = start + unitOfTime
+            return `${unitOfTime * index + 2} / ${end}`
+        }
     }
 
     render() {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRangeMo.map((time: any, index: any) => (
+                    {this.jawn === 'normal'
+                        ? this.dateRange.map((time: any, index: any) => (
+                              <span
+                                  class={{
+                                      'ruler-time': true,
+                                  }}
+                                  style={{
+                                      gridRow: '1',
+                                      gridColumn: this.getColumn(index),
+                                  }}
+                              >
+                                  {time}
+                              </span>
+                          ))
+                        : this.dateRangeMo.map((time: any, index: any) => (
+                              <span
+                                  class={{
+                                      'ruler-time': true,
+                                  }}
+                                  style={{
+                                      gridRow: '1',
+                                      gridColumn: this.getColumn(index),
+                                  }}
+                              >
+                                  {time}
+                              </span>
+                          ))}
+                    {/* {this.dateRangeMo.map((time: any, index: any) => (
                         <span
                             class={{
                                 'ruler-time': true,
@@ -73,7 +109,7 @@ export class RuxRuler {
                         >
                             {time}
                         </span>
-                    ))}
+                    ))} */}
                 </div>
             </Host>
         )
