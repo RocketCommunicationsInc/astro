@@ -29,6 +29,30 @@ test.describe('Timeline DST', () => {
         expect(days).toEqual(['03/11', '03/12', '03/13', '03/14'])
     })
 })
+test.describe('Timeline ruler', () => {
+    test('it should contain correct number of rux-tooltips when tooltip prop is true', async ({
+        page,
+    }) => {
+        const template = `
+            <rux-timeline
+                timezone="America/New_York"
+                start="2023-03-11T21:00:00.000"
+                end="2023-03-12T00:00:00.000"
+                interval="hour"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler tooltips></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        `
+        await page.setContent(template)
+        const rulerEl = await page.locator('rux-ruler')
+        const rulerTimeSpanCount = await rulerEl.locator('.ruler-time').count()
+        const tooltipEls = await page.locator('rux-tooltip')
+
+        expect(tooltipEls).toHaveCount(rulerTimeSpanCount)
+    })
+})
 test.describe('Timeline', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
