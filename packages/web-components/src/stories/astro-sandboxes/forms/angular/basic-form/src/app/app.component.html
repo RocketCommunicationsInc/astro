@@ -57,6 +57,20 @@
             </rux-select>
         </div>
         <div>
+            <rux-select multiple formControlName="multiSelect">
+                <rux-option-group label="Group 1">
+                    <rux-option label="Option 1.1" value="1.1"></rux-option>
+                    <rux-option label="Option 2.1" value="2.1"></rux-option>
+                    <rux-option label="Option 3.1" value="3.1"></rux-option>
+                </rux-option-group>
+                <rux-option-group label="Group 2">
+                    <rux-option label="Option 1.2" value="1.2"></rux-option>
+                    <rux-option label="Option 2.2" value="2.2"></rux-option>
+                    <rux-option label="Option 3.2" value="3.2"></rux-option>
+                </rux-option-group>
+            </rux-select>
+        </div>
+        <div>
             <rux-checkbox-group label="Things">
                 <rux-checkbox
                     (ruxchange)="handleThings('comments', $event)"

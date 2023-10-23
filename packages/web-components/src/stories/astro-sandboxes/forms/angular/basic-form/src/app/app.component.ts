@@ -13,7 +13,8 @@ export class AppComponent {
         lastName: new FormControl('', [Validators.required]),
         email: new FormControl('', [Validators.required]),
         country: new FormControl(''),
-        things: new FormControl([]),
+        things: new FormControl(['']),
+        multiSelect: new FormControl([]),
         options: new FormControl(''),
         range: new FormControl(''),
     })
@@ -28,6 +29,7 @@ export class AppComponent {
             things,
             options,
             range,
+            multiSelect,
         } = this.profileForm.value
 
         alert(`
@@ -35,6 +37,7 @@ export class AppComponent {
       Last Name: ${lastName} \n
       Email: ${email} \n
       Country/Region: ${country} \n
+      Multi Select: ${multiSelect} \n
       Options: ${options} \n
       Things: ${things} \n
       Range: ${range} \n
@@ -47,9 +50,11 @@ export class AppComponent {
             this.profileForm.get(fieldName)?.touched
         )
     }
-    handleThings(value: string, event: CustomEvent) {
+    handleThings(value: string, event: any) {
         const target = event.target as HTMLInputElement
-        const notifications = [...this.profileForm.get('things')?.value]
+        const notifications: string[] = [
+            ...(<[]>this.profileForm.get('things')?.value),
+        ]
 
         if (target.checked) {
             this.profileForm.patchValue({
