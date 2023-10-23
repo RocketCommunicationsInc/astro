@@ -46,11 +46,12 @@ test.describe('Timeline ruler', () => {
             </rux-timeline>
         `
         await page.setContent(template)
-        const rulerEl = await page.locator('rux-ruler')
-        const rulerTimeSpanCount = await rulerEl.locator('.ruler-time').count()
-        const tooltipEls = await page.locator('rux-tooltip')
 
-        expect(tooltipEls).toHaveCount(rulerTimeSpanCount)
+        const rulerTimeSpanCount = await page.locator('.ruler-time').count()
+        expect(rulerTimeSpanCount).toEqual(3)
+
+        const tooltipElsCount = await page.locator('rux-tooltip').count()
+        expect(tooltipElsCount).toEqual(rulerTimeSpanCount)
     })
 })
 test.describe('Timeline', () => {

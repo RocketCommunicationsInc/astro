@@ -78,7 +78,7 @@ export class RuxRuler {
                                         <span class="pointer">{time}</span>
                                     </rux-tooltip>
                                 ) : (
-                                    <span>{time}</span>
+                                    { time }
                                 )}
                             </span>
                         )
