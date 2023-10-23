@@ -19,7 +19,7 @@ test.describe('Timeline DST', () => {
         const rulerEl = await page.locator('rux-ruler')
 
         const days = await rulerEl.evaluate((el) => {
-            const rulerSpans = el.shadowRoot?.querySelectorAll('span')
+            const rulerSpans = el.shadowRoot?.querySelectorAll('span span')
             if (rulerSpans) {
                 return [...rulerSpans].map((e) => e.innerHTML)
             } else {
