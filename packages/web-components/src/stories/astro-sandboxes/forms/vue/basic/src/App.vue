@@ -36,7 +36,20 @@
                     <rux-option value="Canada" label="Canada"></rux-option>
                 </rux-select>
             </div>
-
+            <div>
+                <rux-select multiple @ruxchange="updateMulti($event)">
+                    <rux-option-group label="Group 1">
+                        <rux-option label="Option 1" value="1"></rux-option>
+                        <rux-option label="Option 2" value="2"></rux-option>
+                        <rux-option label="Option 3" value="3"></rux-option>
+                    </rux-option-group>
+                    <rux-option-group label="Group 2">
+                        <rux-option label="Option 4" value="4"></rux-option>
+                        <rux-option label="Option 5" value="5"></rux-option>
+                        <rux-option label="Option 6" value="6"></rux-option>
+                    </rux-option-group>
+                </rux-select>
+            </div>
             <div>
                 <rux-checkbox-group label="Things">
                     <rux-checkbox
@@ -119,6 +132,7 @@ export default {
                 lastName: '',
                 email: '',
                 country: 'USA',
+                multi: [],
                 options: 'none',
                 things: [],
                 range: '',
@@ -148,6 +162,12 @@ export default {
                     (item) => item !== value
                 )
             }
+        },
+        updateMulti(event) {
+            const value = event.target.value
+            this.form.multi = this.form.multi.concat(value)
+            const unique = new Set(this.form.multi)
+            this.form.multi = Array.from(unique)
         },
     },
 }

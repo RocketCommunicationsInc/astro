@@ -9,7 +9,7 @@ import {
 Vue.config.productionTip = false
 Vue.config.ignoredElements = [/rux-\w*/]
 
-// // Bind the custom elements to the window object
+// Bind the custom elements to the window object
 applyPolyfills().then(() => {
     defineCustomElements()
 })
