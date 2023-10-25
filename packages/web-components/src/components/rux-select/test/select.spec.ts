@@ -83,7 +83,7 @@ test.describe('Select', () => {
                 <rux-option-group label="Group">
                     <rux-option value="flash" label="Flash"></rux-option>
                 </rux-option-group>
-            </rux-select> 
+            </rux-select>
         `
         await page.setContent(template)
 
@@ -152,6 +152,11 @@ test.describe('Select in a form', () => {
                 <rux-option value="blue" label="Blue"></rux-option>
                 <rux-option value="green" label="Green"></rux-option>
             </rux-select>
+            <rux-select id="allValues" label="Best Thing?" name="bestThing">
+            <rux-option label="Red" value="red"></rux-option>
+            <rux-option value="blue" label="Blue"></rux-option>
+            <rux-option value="green" label="Green"></rux-option>
+        </rux-select>
             <rux-select disabled id="disabledSelect" label="Best Thing?" name="disabled" value="red">
                 <rux-option label="Select an option" value=""></rux-option>
                 <rux-option label="Red" value="red"></rux-option>
@@ -189,6 +194,12 @@ test.describe('Select in a form', () => {
     test('it should defalut to the option with no value', async ({ page }) => {
         const el = await page.locator('#ruxSelect')
         await expect(el.locator('select')).toHaveValue('')
+    })
+    test('it should default to the first option if an option with no value is not present', async ({
+        page,
+    }) => {
+        const el = await page.locator('#allValues')
+        await expect(el.locator('select')).toHaveValue('red')
     })
     // Single Select in a form
     test('it should submit the correct value in a form', async ({ page }) => {

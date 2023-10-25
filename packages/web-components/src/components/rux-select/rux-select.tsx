@@ -84,7 +84,7 @@ export class RuxSelect implements FormFieldInterface {
     /**
      * The value of the selected option. If multiple is true, this is an array.
      */
-    @Prop({ mutable: true }) value?: string | string[]
+    @Prop({ mutable: true, reflect: true }) value?: string | string[]
 
     /**
      * The help or explanation text
@@ -149,6 +149,7 @@ export class RuxSelect implements FormFieldInterface {
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleLabelSlotChange = this._handleLabelSlotChange.bind(this)
+        this._initValue()
     }
 
     componentWillLoad() {
@@ -277,6 +278,12 @@ export class RuxSelect implements FormFieldInterface {
             })
         }
         return Promise.resolve()
+    }
+
+    private _initValue() {
+        if (this.value) return
+        const options = this.el.querySelectorAll('rux-option')
+        this.value = options[0].value
     }
 
     private _onChange(e: Event) {
