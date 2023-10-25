@@ -10,7 +10,7 @@ test.describe('Timeline DST', () => {
                 end="2023-03-15T00:00:00.000Z" 
                 interval="day" 
             >
-                <rux-track slot="ruler">
+                <rux-track>
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>  
@@ -53,7 +53,7 @@ test.describe('Timeline', () => {
                         >Existing Event</rux-time-region
                     >
                 </rux-track>
-                <rux-track slot="ruler">
+                <rux-track>
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>

@@ -11,6 +11,8 @@ import { dateRange } from './helpers'
 import { validateTimezone } from './helpers'
 
 /**
+ * @slot (default) - The Timeline's content
+ * @slot ruler [DEPRECATED] - The Timeline's ruler track
  * @part playhead - The timeline's playhead
  * @part time-region-container - The container for time regions. Use this part to set a maximum height and enable vertical scrolling.
  */
@@ -287,9 +289,30 @@ export class RuxTimeline {
                 el.start = this.start
                 el.end = this.end
                 el.timezone = this.timezone
+
+                const rulers = [...el.children].filter(
+                    (el) => el.tagName.toLowerCase() === 'rux-ruler'
+                ) as HTMLRuxRulerElement[]
+
+                rulers.forEach((rulerEl) => {
+                    validateTimezone(this.timezone).then(() => {
+                        rulerEl.timezone = this.timezone
+                    })
+
+                    rulerEl.start = this.start
+                    rulerEl.end = this.end
+                    rulerEl.interval = this.interval
+                })
             })
         }
 
+        /**
+         * @TODO Ruler slot is deprecated. Remove all of this code someday.
+         * The "ruler" slot didnt offer any value, was verbose, and prevented you
+         * from being able to use multiple rulers or control the placement of the ruler (top/bottom).
+         * We can't remove this code yet because the RuxRuler that is marked as the "ruler" slot won't
+         * show up in the assignedElements of the (default) slot.
+         */
         const rulerSlot = this.rulerContainer?.querySelector(
             'slot'
         ) as HTMLSlotElement

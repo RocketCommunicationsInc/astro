@@ -273,7 +273,7 @@ export const Default = (args) => {
                         Event 7.1
                     </rux-time-region>
                 </rux-track>
-                <rux-track slot="ruler">
+                <rux-track>
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>
@@ -354,15 +354,7 @@ To add any number of Time Regions, you can simply add them as children to any Tr
 </rux-track>
 ```
 
-### Enabling the Ruler
 
-To enable the bottom ruler, make use of the `ruler` slot by passing in a `rux-ruler` within a `rux-track`:
-
-```
-<rux-track slot="ruler">
-  <rux-ruler></rux-ruler>
-</rux-track>
-```
 
 ### Enabling Vertical Scrolling
 
@@ -427,7 +419,7 @@ export const VerticalScroll = (args) => {
                         Event 7.1
                     </rux-time-region>
                 </rux-track>
-                <rux-track slot="ruler">
+                <rux-track>
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>
@@ -489,9 +481,50 @@ If a Time Region's start and end date falls outside of the range of the Timeline
 
 **Ruler** is responsible for displaying the intervals of time across the timeline grid.
 
+### Enabling the Ruler
+
+To enable the ruler, use the `rux-ruler` component inside a `rux-track`.
+
 ```
-    <rux-ruler></rux-ruler>
+<rux-track>
+  <rux-ruler></rux-ruler>
+</rux-track>
 ```
+
+The ruler will be positioned based on the location of it's track in the DOM. For example, if you 
+wanted the ruler to be placed at the top of your timeline instead of the bottom, have your first Track contain the Ruler.
+
+export const TopRuler = (args) => {
+    return html`
+        <style>
+            rux-timeline::part(time-region-container) {
+                height: 223px;
+            }
+        </style>
+        <div style="width: 950px; margin: auto">
+            <rux-timeline start="2021-02-01T00:00:00Z" end="2021-02-03T00:00:00Z" interval="hour" zoom="2">
+                <rux-track>
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 1</div>
+                    <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T02:00:00Z" status="serious">
+                        Event 1.2
+                    </rux-time-region>
+                </rux-track>
+                
+            </rux-timeline>
+        </div>
+    `
+}
+
+<Canvas>
+    <Story
+        name="Top Ruler"
+    >
+        {TopRuler.bind()}
+    </Story>
+</Canvas>
 
 ## Sub Tracks
 
@@ -588,7 +621,7 @@ export const WithPlayedIndicator = (args) => {
                         Event 7.1
                     </rux-time-region>
                 </rux-track>
-                <rux-track slot="ruler">
+                <rux-track>
                     <rux-ruler></rux-ruler>
                 </rux-track>
             </rux-timeline>
