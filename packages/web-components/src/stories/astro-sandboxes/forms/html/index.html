@@ -24,6 +24,7 @@
             }
         </style>
     </head>
+
     <body>
         <div style="width: 60%; margin: auto">
             <form style="padding: 1rem" method="POST" action="/">
@@ -50,29 +51,42 @@
                     </rux-select>
                 </div>
                 <div>
+                    <rux-select
+                        multiple
+                        label="Multi-Select"
+                        name="multi"
+                        id="multi"
+                    >
+                        <rux-option-group label="Group 1">
+                            <rux-option label="Option 1" value="1"></rux-option>
+                            <rux-option label="Option 2" value="2"></rux-option>
+                            <rux-option label="Option 3" value="3"></rux-option>
+                        </rux-option-group>
+                        <rux-option-group label="Group 2">
+                            <rux-option label="Option 4" value="4"></rux-option>
+                            <rux-option label="Option 5" value="5"></rux-option>
+                            <rux-option label="Option 6" value="6"></rux-option>
+                        </rux-option-group>
+                    </rux-select>
+                </div>
+                <div>
                     <rux-checkbox-group label="Things">
-                        <rux-checkbox name="things" value="comments">
+                        <rux-checkbox name="comments" value="comments">
                             Comments
                         </rux-checkbox>
-                        <rux-checkbox name="things" value="offers">
+                        <rux-checkbox name="offers" value="offers">
                             Offers
                         </rux-checkbox>
-                        <rux-checkbox name="things" value="events">
+                        <rux-checkbox name="events" value="events">
                             Events
                         </rux-checkbox>
                     </rux-checkbox-group>
                 </div>
                 <div>
-                    <rux-radio-group label="Options">
-                        <rux-radio name="options" value="everything">
-                            Everything
-                        </rux-radio>
-                        <rux-radio name="options" value="same">
-                            Same
-                        </rux-radio>
-                        <rux-radio name="options" value="none">
-                            None
-                        </rux-radio>
+                    <rux-radio-group label="Options" name="options">
+                        <rux-radio value="everything"> Everything </rux-radio>
+                        <rux-radio value="same"> Same </rux-radio>
+                        <rux-radio value="none"> None </rux-radio>
                     </rux-radio-group>
                 </div>
                 <div>
@@ -83,5 +97,30 @@
                 </div>
             </form>
         </div>
+        <script>
+            const form = document.querySelector('form')
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+                const formData = new FormData(form)
+
+                const allThings = [
+                    formData.get('comments'),
+                    formData.get('offers'),
+                    formData.get('events'),
+                ]
+                console.log(allThings)
+
+                alert(`
+          First name: ${formData.get('firstName')} \n
+          Last name:  ${formData.get('lastName')}\n
+          Email: ${formData.get('email')} \n
+          Country / Region: ${formData.get('country')} \n
+          Multi-select:  ${formData.getAll('multi')}\n
+          Things: ${allThings[0]}, ${allThings[1]}, ${allThings[2]} \n
+          Options: ${formData.get('options')} \n
+          Range: ${formData.get('range')} \n
+      `)
+            })
+        </script>
     </body>
 </html>
