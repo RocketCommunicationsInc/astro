@@ -1,5 +1,27 @@
 # @astrouxds/astro-web-components
 
+## 7.18.0
+
+### Minor Changes
+
+#### Input
+
+-   Added autocomplete property to rux-input
+
+#### Timeline
+
+-   Adds `has-playhead-indicator` prop to timeline which visually marks past time as played in each track
+
+### Patch Changes
+
+#### Segmented Button
+
+-   Fixed an issue where segmented buttons could not be tabbed between when next to each other
+
+#### Timeline
+
+-   Fixed an issue where timeline's playhead wouldn't update correctly when changing the interval
+
 ## 7.17.1
 
 ### Patch Changes

@@ -1,20 +1,42 @@
 # @astrouxds/angular
 
+## 7.18.0
+
+### Minor Changes
+
+#### Input
+
+-   Added autocomplete property to rux-input
+
+#### Timeline
+
+-   Adds `has-playhead-indicator` prop to timeline which visually marks past time as played in each track
+
+### Patch Changes
+
+#### Segmented Button
+
+-   Fixed an issue where segmented buttons could not be tabbed between when next to each other
+
+#### Timeline
+
+-   Fixed an issue where timeline's playhead wouldn't update correctly when changing the interval
+
 ## 7.17.1
 
 ### Patch Changes
 
 #### Classification Marking
 
--   Added some default left/right padding
+- Added some default left/right padding
 
 #### General
 
--   Upgrade design token package to 1.12.0
+- Upgrade design token package to 1.12.0
 
 #### Tabs
 
--   Fixed tabbing issue when tab1 is selected by default
+- Fixed tabbing issue when tab1 is selected by default
 
 ## 7.17.0
 

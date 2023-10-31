@@ -23693,7 +23693,7 @@ export declare interface RuxIndeterminateProgress extends Components.RuxIndeterm
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
+  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
   methods: ['setFocus', 'getInput']
 })
 @Component({
@@ -23701,7 +23701,7 @@ export declare interface RuxIndeterminateProgress extends Components.RuxIndeterm
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
+  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
 })
 export class RuxInput {
   protected el: HTMLElement;
@@ -24594,14 +24594,14 @@ export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
 
 
 @ProxyCmp({
-  inputs: ['end', 'interval', 'playhead', 'start', 'timezone', 'zoom']
+  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'start', 'timezone', 'zoom']
 })
 @Component({
   selector: 'rux-timeline',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['end', 'interval', 'playhead', 'start', 'timezone', 'zoom'],
+  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'start', 'timezone', 'zoom'],
 })
 export class RuxTimeline {
   protected el: HTMLElement;
@@ -24704,13 +24704,14 @@ export declare interface RuxTooltip extends Components.RuxTooltip {
 
 
 @ProxyCmp({
+  inputs: ['playhead']
 })
 @Component({
   selector: 'rux-track',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: [],
+  inputs: ['playhead'],
 })
 export class RuxTrack {
   protected el: HTMLElement;
