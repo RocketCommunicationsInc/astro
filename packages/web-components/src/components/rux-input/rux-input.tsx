@@ -144,6 +144,11 @@ export class RuxInput implements FormFieldInterface {
     @Prop() readonly = false
 
     /**
+     * The inputs autocomplete attribute. In password inputs, this attribute gets set to 'off'.
+     */
+    @Prop() autocomplete = 'off'
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -244,6 +249,7 @@ export class RuxInput implements FormFieldInterface {
         this.type === 'password'
             ? (this.togglePassword = true)
             : (this.togglePassword = false)
+        if (this.type === 'password') this.autocomplete = 'off'
     }
 
     private _handleTogglePassword() {
@@ -281,6 +287,7 @@ export class RuxInput implements FormFieldInterface {
             readonly,
             togglePassword,
             isPasswordVisible,
+            autocomplete,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -360,6 +367,7 @@ export class RuxInput implements FormFieldInterface {
                             onBlur={_onBlur}
                             onFocus={_onFocus}
                             part="input"
+                            autocomplete={autocomplete}
                         ></input>
                         {togglePassword ? (
                             <button
