@@ -299,24 +299,24 @@ test.describe('Input with form', () => {
         await expect(spellCheckInput).toHaveAttribute('spellcheck', 'true')
     })
     //! Uncomment autocomplete tests when the attribute is added back in and working.
-    // test('applies autocomplete prop to shadow input', async ({ page }) => {
-    //     //Arrange
-    //     const autocomplete = page.locator('#autocomplete')
-    //     const autocompleteInput = autocomplete.locator('input').nth(1)
+    test('applies autocomplete prop to shadow input', async ({ page }) => {
+        //Arrange
+        const autocomplete = page.locator('#autocomplete')
+        const autocompleteInput = autocomplete.locator('input').nth(1)
 
-    //     //Assert
-    //     await expect(autocompleteInput).toHaveAttribute('autocomplete', 'on')
-    // })
-    // test('changes autocomplete to false if type is password', async ({
-    //     page,
-    // }) => {
-    //     //Arrange
-    //     const autocomplete = page.locator('#autocomplete-to-off')
-    //     const autocompleteInput = autocomplete.locator('input').nth(1)
+        //Assert
+        await expect(autocompleteInput).toHaveAttribute('autocomplete', 'on')
+    })
+    test('changes autocomplete to off if type is password', async ({
+        page,
+    }) => {
+        //Arrange
+        const autocomplete = page.locator('#autocomplete-to-off')
+        const autocompleteInput = autocomplete.locator('input').nth(1)
 
-    //     //Assert
-    //     await expect(autocompleteInput).toHaveAttribute('autocomplete', 'off')
-    // })
+        //Assert
+        await expect(autocompleteInput).toHaveAttribute('autocomplete', 'off')
+    })
     test('submits the correct value in type date', async ({ page }) => {
         //Arrange
         const dateType = page.locator('#date-type')

@@ -3,6 +3,13 @@
 <!-- Auto Generated Below -->
 
 
+## Properties
+
+| Property   | Attribute  | Description | Type  | Default     |
+| ---------- | ---------- | ----------- | ----- | ----------- |
+| `playhead` | `playhead` |             | `any` | `undefined` |
+
+
 ## Slots
 
 | Slot          | Description         |
