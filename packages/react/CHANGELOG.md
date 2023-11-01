@@ -1,26 +1,37 @@
 # @astrouxds/react
 
+## 7.19.0
+
+### Minor Changes
+
+- 2ee1e4f8: Timeline - Added `show-start-of-day` attribute to rux-ruler
+
+### Patch Changes
+
+- Updated dependencies [2ee1e4f8]
+  - @astrouxds/astro-web-components@7.19.0
+
 ## 7.18.0
 
 ### Minor Changes
 
 #### Input
 
--   Added autocomplete property to rux-input
+- Added autocomplete property to rux-input
 
 #### Timeline
 
--   Adds `has-playhead-indicator` prop to timeline which visually marks past time as played in each track
+- Adds `has-playhead-indicator` prop to timeline which visually marks past time as played in each track
 
 ### Patch Changes
 
 #### Segmented Button
 
--   Fixed an issue where segmented buttons could not be tabbed between when next to each other
+- Fixed an issue where segmented buttons could not be tabbed between when next to each other
 
 #### Timeline
 
--   Fixed an issue where timeline's playhead wouldn't update correctly when changing the interval
+- Fixed an issue where timeline's playhead wouldn't update correctly when changing the interval
 
 ## 7.17.1
 
