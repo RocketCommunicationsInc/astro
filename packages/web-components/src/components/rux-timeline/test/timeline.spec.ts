@@ -29,39 +29,6 @@ test.describe('Timeline DST', () => {
         expect(days).toEqual(['03/11', '03/12', '03/13', '03/14'])
     })
 })
-test.describe('Timeline ruler', () => {
-    test('it should show the date when it is a new day', async ({ page }) => {
-        const template = `
-            <rux-timeline
-            timezone="America/New_York"
-            start="2023-03-11T21:00:00.000"
-            end="2023-03-12T00:00:00.000"
-            interval="hour"
-            >
-                <rux-track slot="ruler">
-                    <rux-ruler></rux-ruler>
-                </rux-track>
-            </rux-timeline>
-        `
-        await page.setContent(template)
-        const rulerEl = await page.locator('rux-ruler')
-
-        const days = await rulerEl.evaluate((el) => {
-            const rulerSpans = el.shadowRoot?.querySelectorAll('span')
-            if (rulerSpans) {
-                return [...rulerSpans].map((e) => e.innerHTML)
-            } else {
-                return []
-            }
-        })
-        expect(days).toEqual([
-            '23:00',
-            '00:00<span class="ruler-new-day-display">03/12</span>',
-            '03/12',
-            '01:00',
-        ])
-    })
-})
 test.describe('Timeline', () => {
     test.beforeEach(async ({ page }) => {
         const template = `

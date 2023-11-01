@@ -24,6 +24,12 @@ export class RuxRuler {
      * @internal - The Ruler's time zone. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) timezone = 'UTC'
+
+    /**
+     * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+     */
+    @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
+
     get dateRange() {
         return getRange(
             new Date(this.start),
@@ -47,6 +53,18 @@ export class RuxRuler {
 
     timePattern = /^00:.+$/
 
+    shouldShowDate(time: string) {
+        if (this.interval !== 'hour') {
+            return false
+        }
+
+        if (!this.showStartOfDay) {
+            return false
+        }
+
+        return this.timePattern.test(time)
+    }
+
     render() {
         return (
             <Host>
@@ -61,7 +79,9 @@ export class RuxRuler {
                                     key={index}
                                     class={{
                                         'ruler-time': true,
-                                        'ruler-new-day-cell': newDay !== '',
+                                        'ruler-new-day-cell': this.shouldShowDate(
+                                            time
+                                        ),
                                     }}
                                     style={{
                                         gridRow: '1',
@@ -69,12 +89,13 @@ export class RuxRuler {
                                     }}
                                 >
                                     {time}
-                                    {this.interval === 'hour' &&
-                                    newDay !== '' ? (
+                                    {this.shouldShowDate(time) ? (
                                         <span class="ruler-new-day-display">
                                             {newDay}
                                         </span>
-                                    ) : null}
+                                    ) : (
+                                        ''
+                                    )}
                                 </span>
                             )
                         }
