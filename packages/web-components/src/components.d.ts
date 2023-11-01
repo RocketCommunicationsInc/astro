@@ -19765,6 +19765,10 @@ export namespace Components {
     interface RuxRuler {
         "end": string;
         "interval": any;
+        /**
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+         */
+        "showStartOfDay"?: boolean | undefined;
         "start": string;
         "timezone": string;
     }
@@ -55328,6 +55332,10 @@ declare namespace LocalJSX {
     interface RuxRuler {
         "end"?: string;
         "interval"?: any;
+        /**
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+         */
+        "showStartOfDay"?: boolean | undefined;
         "start"?: string;
         "timezone"?: string;
     }

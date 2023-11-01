@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Timeline</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <h2>Full</h2>
+        <rux-timeline
+            timezone="America/New_York"
+            start="2021-02-01T00:00:00.000Z"
+            end="2021-02-03T00:00:00.000Z"
+            interval="hour"
+            zoom="2"
+        >
+            <rux-track>
+                <div slot="label">Region 1</div>
+                <rux-time-region
+                    start="2021-02-01T01:00:00Z"
+                    end="2021-02-01T02:00:00Z"
+                    status="serious"
+                    partial="ongoing"
+                >
+                    Event 1.2</rux-time-region
+                >
+            </rux-track>
+
+            <rux-track>
+                <div slot="label">Region 3</div>
+                <rux-time-region
+                    start="2021-02-01T00:00:00Z"
+                    end="2021-02-02T02:00:00Z"
+                    status="standby"
+                    partial="start"
+                >
+                    Event 3.1
+                </rux-time-region>
+            </rux-track>
+            <rux-track slot="ruler">
+                <rux-ruler show-start-of-day></rux-ruler>
+            </rux-track>
+        </rux-timeline>
+    </body>
+</html>

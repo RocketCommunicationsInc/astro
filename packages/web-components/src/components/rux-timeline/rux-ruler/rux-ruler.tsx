@@ -1,6 +1,5 @@
 import { Prop, Component, Element, Host, h } from '@stencil/core'
 import { dateRange as getRange } from '../helpers'
-
 @Component({
     tag: 'rux-ruler',
     styleUrl: 'rux-ruler.scss',
@@ -26,6 +25,11 @@ export class RuxRuler {
      */
     @Prop({ reflect: true }) timezone = 'UTC'
 
+    /**
+     * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+     */
+    @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
+
     get dateRange() {
         return getRange(
             new Date(this.start),
@@ -47,23 +51,55 @@ export class RuxRuler {
         return `${unitOfTime * index + 2} / ${end}`
     }
 
+    timePattern = /^00:.+$/
+
+    shouldShowDate(time: string) {
+        if (this.interval !== 'hour') {
+            return false
+        }
+
+        if (!this.showStartOfDay) {
+            return false
+        }
+
+        return this.timePattern.test(time)
+    }
+
     render() {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
-                    {this.dateRange.map((time: any, index: any) => (
-                        <span
-                            class={{
-                                'ruler-time': true,
-                            }}
-                            style={{
-                                gridRow: '1',
-                                gridColumn: this.getColumn(index),
-                            }}
-                        >
-                            {time}
-                        </span>
-                    ))}
+                    {this.dateRange.map(
+                        ([time, newDayDate]: any, index: any) => {
+                            const newDay = this.timePattern.test(time)
+                                ? newDayDate
+                                : ''
+                            return (
+                                <span
+                                    key={index}
+                                    class={{
+                                        'ruler-time': true,
+                                        'ruler-new-day-cell': this.shouldShowDate(
+                                            time
+                                        ),
+                                    }}
+                                    style={{
+                                        gridRow: '1',
+                                        gridColumn: this.getColumn(index),
+                                    }}
+                                >
+                                    {time}
+                                    {this.shouldShowDate(time) ? (
+                                        <span class="ruler-new-day-display">
+                                            {newDay}
+                                        </span>
+                                    ) : (
+                                        ''
+                                    )}
+                                </span>
+                            )
+                        }
+                    )}
                 </div>
             </Host>
         )
