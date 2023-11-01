@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.19.0
+
+### Minor Changes
+
+#### Timeline
+
+-   Added `show-start-of-day` attribute to rux-ruler
+
 ## 7.18.0
 
 ### Minor Changes
