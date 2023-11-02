@@ -4,7 +4,6 @@ import {
     addDays,
     addMinutes,
     subMinutes,
-    differenceInDays,
 } from 'date-fns'
 import { formatInTimeZone } from 'date-fns-tz'
 
@@ -23,12 +22,16 @@ export async function validateTimezone(timezone: string) {
 // https://github.com/date-fns/date-fns/issues/571
 
 function agnosticAddDays(date: Date, amount: number) {
+    console.log('run aAD')
     const originalTZO = date.getTimezoneOffset()
     const endDate = addDays(date, amount)
     const endTZO = endDate.getTimezoneOffset()
 
     const dstDiff = originalTZO - endTZO
 
+    dstDiff >= 0
+        ? console.log(addMinutes(endDate, dstDiff), 'dstDiff addMin')
+        : console.log(subMinutes(endDate, Math.abs(dstDiff)), 'dstDiff subMin')
     return dstDiff >= 0
         ? addMinutes(endDate, dstDiff)
         : subMinutes(endDate, Math.abs(dstDiff))
@@ -50,7 +53,9 @@ export function dateRange(
     }
 
     if (interval === 'day') {
-        const days = differenceInDays(endDate, startDate)
+        //differenceInHours used here to avoid DST issues
+        //https://github.com/date-fns/date-fns/blob/main/src/differenceInDays/index.ts#L17C2-L17C2
+        const days = Math.floor(differenceInHours(endDate, startDate) / 24) | 0
 
         const output = [...Array(days).keys()].map((i) => {
             const time = agnosticAddDays(startDate, i)
@@ -64,6 +69,7 @@ export function dateRange(
 
     if (interval === 'hour') {
         let days = differenceInHours(endDate, startDate)
+
         days = days / intervalValue
 
         const output = [...Array(days).keys()].map((i) => {
