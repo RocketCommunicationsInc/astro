@@ -22,7 +22,6 @@ export async function validateTimezone(timezone: string) {
 // https://github.com/date-fns/date-fns/issues/571
 
 function agnosticAddDays(date: Date, amount: number) {
-    console.log('run aAD')
     const originalTZO = date.getTimezoneOffset()
     const endDate = addDays(date, amount)
     const endTZO = endDate.getTimezoneOffset()
