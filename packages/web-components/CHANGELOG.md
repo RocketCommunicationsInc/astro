@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.19.1
+
+### Patch Changes
+
+-   e97e46b7: Fixed an issue where timeline would display events incorrectly when the events spanned over daylight savings time
+
 ## 7.19.0
 
 ### Minor Changes
