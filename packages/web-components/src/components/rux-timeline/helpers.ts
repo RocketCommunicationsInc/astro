@@ -29,9 +29,6 @@ function agnosticAddDays(date: Date, amount: number) {
 
     const dstDiff = originalTZO - endTZO
 
-    dstDiff >= 0
-        ? console.log(addMinutes(endDate, dstDiff), 'dstDiff addMin')
-        : console.log(subMinutes(endDate, Math.abs(dstDiff)), 'dstDiff subMin')
     return dstDiff >= 0
         ? addMinutes(endDate, dstDiff)
         : subMinutes(endDate, Math.abs(dstDiff))
