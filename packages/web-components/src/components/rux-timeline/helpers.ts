@@ -4,7 +4,6 @@ import {
     addDays,
     addMinutes,
     subMinutes,
-    differenceInDays,
 } from 'date-fns'
 import { formatInTimeZone } from 'date-fns-tz'
 
@@ -50,7 +49,9 @@ export function dateRange(
     }
 
     if (interval === 'day') {
-        const days = differenceInDays(endDate, startDate)
+        //differenceInHours used here to avoid DST issues
+        //https://github.com/date-fns/date-fns/blob/main/src/differenceInDays/index.ts#L17C2-L17C2
+        const days = Math.floor(differenceInHours(endDate, startDate) / 24) | 0
 
         const output = [...Array(days).keys()].map((i) => {
             const time = agnosticAddDays(startDate, i)
@@ -64,6 +65,7 @@ export function dateRange(
 
     if (interval === 'hour') {
         let days = differenceInHours(endDate, startDate)
+
         days = days / intervalValue
 
         const output = [...Array(days).keys()].map((i) => {

@@ -2,18 +2,18 @@ import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 // import { test } from "stencil-playwright";
 // import { expect } from "@playwright/test";
 test.describe('Timeline DST', () => {
-    test('it should handle DST in UTC', async ({ page }) => {
+    test('it should handle DST start in UTC', async ({ page }) => {
         const template = `
-            <rux-timeline 
-                timezone="UTC" 
-                start="2023-03-11T00:00:00.000Z" 
-                end="2023-03-15T00:00:00.000Z" 
-                interval="day" 
+            <rux-timeline
+                timezone="UTC"
+                start="2023-03-11T00:00:00.000Z"
+                end="2023-03-15T00:00:00.000Z"
+                interval="day"
             >
                 <rux-track slot="ruler">
                     <rux-ruler></rux-ruler>
                 </rux-track>
-            </rux-timeline>  
+            </rux-timeline>
         `
         await page.setContent(template)
         const rulerEl = await page.locator('rux-ruler')
@@ -27,6 +27,32 @@ test.describe('Timeline DST', () => {
             }
         })
         expect(days).toEqual(['03/11', '03/12', '03/13', '03/14'])
+    })
+    test('it should handle DST end in UTC', async ({ page }) => {
+        const template = `
+          <rux-timeline
+              timezone="UTC"
+              start="2023-11-04T00:00:00.000Z"
+              end="2023-11-08T00:00:00.000Z"
+              interval="day"
+          >
+              <rux-track slot="ruler">
+                  <rux-ruler></rux-ruler>
+              </rux-track>
+          </rux-timeline>
+      `
+        await page.setContent(template)
+        const rulerEl = await page.locator('rux-ruler')
+
+        const days = await rulerEl.evaluate((el) => {
+            const rulerSpans = el.shadowRoot?.querySelectorAll('span')
+            if (rulerSpans) {
+                return [...rulerSpans].map((e) => e.innerHTML)
+            } else {
+                return []
+            }
+        })
+        expect(days).toEqual(['11/04', '11/05', '11/06', '11/07'])
     })
 })
 test.describe('Timeline', () => {
