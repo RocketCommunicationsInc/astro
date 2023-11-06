@@ -142,17 +142,20 @@ test.describe('Segmented-button', () => {
         await segmentedButton.evaluate((e) => {
             ;(e as HTMLRuxSegmentedButtonElement).selected = 'Second segment'
         })
+        await page.waitForChanges()
 
         //make sure it changed
         const secondChecked = await segButton2Input.evaluate(
             (e) => (e as HTMLInputElement).checked === true
         )
+        await page.waitForChanges()
         expect(secondChecked).toBe(true)
 
         // Imperatively set first segment as selected
         await segmentedButton.evaluate((e) => {
             ;(e as HTMLRuxSegmentedButtonElement).selected = 'First segment'
         })
+        await page.waitForChanges()
         //and make sure it gets checked
         const firstChecked = await segButton1Input.evaluate(
             (e) => (e as HTMLInputElement).checked === true
