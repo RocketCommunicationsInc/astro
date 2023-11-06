@@ -23,6 +23,7 @@
     //use inset shadow rather than border
     box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
     border-radius: var(--radius-base);
+    width: fit-content;
 }
 .rux-radio-group--invalid {
     box-shadow: var(--color-border-error) 0 0 0 1px inset;
