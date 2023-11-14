@@ -1,6 +1,7 @@
 import {
     addHours,
     differenceInHours,
+    differenceInMinutes,
     addDays,
     addMinutes,
     subMinutes,
@@ -70,6 +71,22 @@ export function dateRange(
 
         const output = [...Array(days).keys()].map((i) => {
             const time = addHours(startDate, i)
+
+            const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
+            const dayFormattedTime = formatInTimeZone(time, timezone, 'MM/dd')
+            return [formattedTime, dayFormattedTime]
+        })
+
+        return output
+    }
+
+    if (interval === 'minute') {
+        let days = differenceInMinutes(endDate, startDate)
+
+        days = days / intervalValue
+
+        const output = [...Array(days).keys()].map((i) => {
+            const time = addMinutes(startDate, i)
 
             const formattedTime = formatInTimeZone(time, timezone, 'HH:mm')
             const dayFormattedTime = formatInTimeZone(time, timezone, 'MM/dd')

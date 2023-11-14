@@ -60,7 +60,7 @@ export class RuxTimeline {
     /**
      * The timeline's date time interval
      */
-    @Prop() interval: 'hour' | 'day' = 'hour'
+    @Prop() interval: 'hour' | 'day' | 'minute' = 'hour'
 
     /**
      * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
@@ -139,6 +139,10 @@ export class RuxTimeline {
     get pxToTimeRatio() {
         if (this.interval === 'hour') {
             return this.columnWidth / 60 // for hours.
+        }
+
+        if (this.interval === 'minute') {
+            return this.columnWidth / 1 // for minutes.
         }
 
         if (this.interval === 'day') {
@@ -227,6 +231,7 @@ export class RuxTimeline {
                 differenceInHours(new Date(this.start), new Date(time))
             )
         }
+
         const result = newTime * this.pxToTimeRatio + 200
 
         return result
