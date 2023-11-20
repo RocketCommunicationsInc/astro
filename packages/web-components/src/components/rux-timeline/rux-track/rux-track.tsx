@@ -8,7 +8,11 @@ import {
     Watch,
     State,
 } from '@stencil/core'
-import { differenceInMinutes, differenceInHours } from 'date-fns'
+import {
+    differenceInMinutes,
+    differenceInHours,
+    differenceInSeconds,
+} from 'date-fns'
 
 interface DateValidation {
     success: boolean
@@ -99,6 +103,14 @@ export class RuxTrack {
             if (this.interval === 'hour') {
                 const difference = Math.abs(
                     differenceInMinutes(timelineStart, new Date(time))
+                )
+
+                return difference + 2
+            }
+
+            if (this.interval === 'minute') {
+                const difference = Math.abs(
+                    differenceInSeconds(timelineStart, new Date(time))
                 )
 
                 return difference + 2
