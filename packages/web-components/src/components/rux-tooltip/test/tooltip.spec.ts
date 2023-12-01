@@ -326,6 +326,7 @@ test.describe('Tooltip', async () => {
 
         //act
         await trigger.focus()
+        await expect(trigger).toBeFocused()
         await page.keyboard.press('Escape')
 
         //assert
