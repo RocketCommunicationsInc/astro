@@ -304,4 +304,33 @@ test.describe('Tooltip', async () => {
         //assert
         await expect(ruxTooltip).toHaveAttribute('open', '')
     })
+
+    test('on esc tooltip closes', async ({ page }) => {
+        const template = `
+              <rux-tooltip message="This is the tooltip" open>
+                <rux-button id="trigger">Trigger</rux-button>
+              </rux-tooltip>
+              `
+        await page.setContent(template)
+
+        //arrange
+        const trigger = page.locator('#trigger')
+        const ruxtooltip = page.locator('rux-tooltip')
+        await expect(ruxtooltip).toHaveAttribute('open', '')
+
+        //act
+        await page.keyboard.press('Escape')
+
+        //assert
+        await expect(ruxtooltip).toHaveAttribute('open', '')
+
+        //act
+        await trigger.focus()
+        await expect(trigger).toBeFocused()
+        await page.keyboard.press('Escape')
+
+        //assert
+        const open = await ruxtooltip.getAttribute('open')
+        expect(open).toBeNull()
+    })
 })

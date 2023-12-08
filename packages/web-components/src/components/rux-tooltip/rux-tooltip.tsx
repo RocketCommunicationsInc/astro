@@ -9,6 +9,7 @@ import {
     Watch,
     Method,
     State,
+    Listen,
 } from '@stencil/core'
 import {
     computePosition,
@@ -112,6 +113,17 @@ export class RuxTooltip {
     @Watch('placement')
     handlePlacement() {
         this._startPositioner()
+    }
+
+    @Listen('keydown', { target: 'document' })
+    handleKeypress(e: KeyboardEvent) {
+        if (e.key !== 'Escape') return
+        const hovered = this.trigger.matches(':hover')
+        const focused = this.triggerSlot.contains(document.activeElement)
+        if (!hovered && !focused) return
+        if (this.open) {
+            this.hide()
+        }
     }
 
     /**
