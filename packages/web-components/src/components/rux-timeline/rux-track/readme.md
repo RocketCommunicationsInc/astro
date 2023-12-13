@@ -5,9 +5,9 @@
 
 ## Properties
 
-| Property   | Attribute  | Description | Type  | Default     |
-| ---------- | ---------- | ----------- | ----- | ----------- |
-| `playhead` | `playhead` |             | `any` | `undefined` |
+| Property   | Attribute  | Description                | Type  | Default     |
+| ---------- | ---------- | -------------------------- | ----- | ----------- |
+| `playhead` | `playhead` | The playhead of rux-track. | `any` | `undefined` |
 
 
 ## Slots

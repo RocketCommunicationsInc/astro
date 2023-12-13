@@ -20163,6 +20163,9 @@ export namespace Components {
         "columns": number;
         "end": string;
         "interval": any;
+        /**
+          * The playhead of rux-track.
+         */
         "playhead": any;
         "start": string;
         "timezone": string;
@@ -55787,6 +55790,9 @@ declare namespace LocalJSX {
         "columns"?: number;
         "end"?: string;
         "interval"?: any;
+        /**
+          * The playhead of rux-track.
+         */
         "playhead"?: any;
         "start"?: string;
         "timezone"?: string;

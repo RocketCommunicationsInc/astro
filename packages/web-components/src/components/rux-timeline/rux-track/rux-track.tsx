@@ -35,12 +35,11 @@ export class RuxTrack {
 
     @Element() el!: HTMLRuxTrackElement
 
-    @Prop({ reflect: true }) playhead: any
-
     /**
      * @internal - The grid's width. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) width = 0
+
     /**
      * @internal - The number of grid columns to display. Set automatically from the parent Timeline component.
      */
@@ -50,10 +49,12 @@ export class RuxTrack {
      * @internal - The Track's interval. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) interval: any
+
     /**
      * @internal - The Track's start date. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) start = ''
+
     /**
      * @internal - The Track's end date. Set automatically from the parent Timeline component.
      */
@@ -63,6 +64,11 @@ export class RuxTrack {
      * @internal - The Track's time zone. Set automatically from the parent Timeline component.
      */
     @Prop({ reflect: true }) timezone = 'UTC'
+
+    /**
+     * The playhead of rux-track.
+     */
+    @Prop({ reflect: true }) playhead: any
 
     @Watch('start')
     @Watch('end')
