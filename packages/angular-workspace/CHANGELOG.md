@@ -1,12 +1,26 @@
 # @astrouxds/angular
 
+## 7.20.0
+
+### Minor Changes
+
+- 2ebdc623: Timeline - add support for minute interval
+
+### Patch Changes
+
+- 51fad3d8: Changed radio-button-group width to fit-content, which matches checkbox-group
+- Updated dependencies [51fad3d8]
+- Updated dependencies [cb4231fa]
+- Updated dependencies [2ebdc623]
+  - @astrouxds/astro-web-components@7.20.0
+
 ## 7.19.1
 
 ### Patch Changes
 
 #### Timeline
 
--   Fixed an issue where events displayed incorrectly when they spanned over daylight savings time
+- Fixed an issue where events displayed incorrectly when they spanned over daylight savings time
 
 ## 7.19.0
 

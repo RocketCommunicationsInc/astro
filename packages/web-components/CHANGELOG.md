@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 7.20.0
+
+### Minor Changes
+
+-   2ebdc623: Timeline - add support for minute interval
+
+### Patch Changes
+
+-   51fad3d8: Changed radio-button-group width to fit-content, which matches checkbox-group
+-   cb4231fa: Tooltip - allow pressing escape to close the tooltip
+
 ## 7.19.1
 
 ### Patch Changes
