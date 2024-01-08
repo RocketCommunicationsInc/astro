@@ -16,7 +16,28 @@
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            section {
+                padding: 2rem;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+        </style>
     </head>
 
-    <body></body>
+    <body>
+        <section>
+            <rux-input type="datetime-local" id="showval"></rux-input>
+            <div id="val"></div>
+            <div this locale>
+                <rux-input type="date"></rux-input>
+            </div>
+            <rux-input type="time"></rux-input>
+            <input type="time" />
+            <input type="datetime-local" />
+            <rux-input type="datetime-local" timeformat="24h"></rux-input>
+            <rux-input type="time" timeformat="24h"></rux-input>
+        </section>
+    </body>
 </html>

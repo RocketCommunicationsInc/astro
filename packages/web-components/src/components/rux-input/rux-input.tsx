@@ -41,6 +41,7 @@ let id = 0
 export class RuxInput implements FormFieldInterface {
     private inputId = `rux-input-${++id}`
     private inputEl!: HTMLInputElement
+    private inputEl2?: HTMLInputElement
 
     @Element() el!: HTMLRuxInputElement
 
@@ -142,6 +143,11 @@ export class RuxInput implements FormFieldInterface {
      * The inputs readonly attribute
      */
     @Prop() readonly = false
+
+    /**
+     * Sets time or datetime types to 12hr/24hr
+     */
+    @Prop() timeformat: '12h' | '24h' = '12h'
 
     /**
      * The inputs autocomplete attribute. In password inputs, this attribute gets set to 'off'.
@@ -256,6 +262,74 @@ export class RuxInput implements FormFieldInterface {
         this.isPasswordVisible = !this.isPasswordVisible
     }
 
+    private _getProperHTML() {
+        const onMod = (e: Event) => {
+            const target = e.target as HTMLInputElement
+            if (this.type === 'datetime-local') {
+                //we only set the rux-input value if this is actually a date
+                if (Date.parse(this.inputEl2!.value + 'T' + this.inputEl.value))
+                    this.value = this.inputEl2!.value + 'T' + this.inputEl.value
+            } else {
+                this.value = target.value
+            }
+            this.ruxInput.emit()
+        }
+
+        const timeInput = (
+            <input
+                name={this.name}
+                disabled={this.disabled}
+                ref={(el) => (this.inputEl = el!)}
+                type="text"
+                aria-invalid={this.invalid ? 'true' : 'false'}
+                placeholder={this.placeholder}
+                required={this.required}
+                step={this.step}
+                min={this.min}
+                max={this.max}
+                class="native-input"
+                id={this.inputId}
+                spellcheck={this.spellcheck}
+                readonly={this.readonly}
+                onChange={onMod}
+                onInput={onMod}
+                onBlur={this._onBlur}
+                onFocus={this._onFocus}
+                part="input"
+                autocomplete={this.autocomplete}
+            ></input>
+        )
+
+        if (this.type === 'datetime-local') {
+            return [
+                <input
+                    name={this.name}
+                    disabled={this.disabled}
+                    ref={(el) => (this.inputEl2 = el!)}
+                    type="date"
+                    aria-invalid={this.invalid ? 'true' : 'false'}
+                    placeholder={this.placeholder}
+                    required={this.required}
+                    step={this.step}
+                    min={this.min}
+                    max={this.max}
+                    class="native-input"
+                    id={this.inputId}
+                    spellcheck={this.spellcheck}
+                    readonly={this.readonly}
+                    onChange={onMod}
+                    onInput={onMod}
+                    onBlur={this._onBlur}
+                    onFocus={this._onFocus}
+                    part="input"
+                    autocomplete={this.autocomplete}
+                ></input>,
+                timeInput,
+            ]
+        }
+        return timeInput
+    }
+
     render() {
         const {
             disabled,
@@ -342,33 +416,42 @@ export class RuxInput implements FormFieldInterface {
                         <span part="prefix" class="rux-input-prefix">
                             <slot name="prefix"></slot>
                         </span>
-                        <input
-                            name={name}
-                            disabled={disabled}
-                            ref={(el) => (this.inputEl = el!)}
-                            type={
-                                type === 'password' && this.isPasswordVisible
-                                    ? 'text'
-                                    : type
-                            }
-                            aria-invalid={invalid ? 'true' : 'false'}
-                            placeholder={placeholder}
-                            required={required}
-                            step={step}
-                            min={min}
-                            max={max}
-                            value={value}
-                            class="native-input"
-                            id={inputId}
-                            spellcheck={spellcheck}
-                            readonly={readonly}
-                            onChange={_onChange}
-                            onInput={_onInput}
-                            onBlur={_onBlur}
-                            onFocus={_onFocus}
-                            part="input"
-                            autocomplete={autocomplete}
-                        ></input>
+                        {this.timeformat === '24h' &&
+                        (this.type === 'time' ||
+                            this.type === 'datetime-local') ? (
+                            this._getProperHTML()
+                        ) : (
+                            <input
+                                name={name}
+                                disabled={disabled}
+                                ref={(el) => (this.inputEl = el!)}
+                                type={
+                                    type === 'password' &&
+                                    this.isPasswordVisible
+                                        ? 'text'
+                                        : this.timeformat === '24h'
+                                        ? 'text'
+                                        : type
+                                }
+                                aria-invalid={invalid ? 'true' : 'false'}
+                                placeholder={placeholder}
+                                required={required}
+                                step={step}
+                                min={min}
+                                max={max}
+                                value={value}
+                                class="native-input"
+                                id={inputId}
+                                spellcheck={spellcheck}
+                                readonly={readonly}
+                                onChange={_onChange}
+                                onInput={_onInput}
+                                onBlur={_onBlur}
+                                onFocus={_onFocus}
+                                part="input"
+                                autocomplete={autocomplete}
+                            ></input>
+                        )}
                         {togglePassword ? (
                             <button
                                 onClick={_handleTogglePassword}
