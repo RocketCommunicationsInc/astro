@@ -263,13 +263,44 @@ export class RuxInput implements FormFieldInterface {
     }
 
     private _getProperHTML() {
+        const validateInput = (e: KeyboardEvent) => {
+            if (e.key !== 'Backspace') e.preventDefault()
+            if (Number(e.key) || e.key === '0') {
+                this.inputEl.value = this.inputEl.value + e.key
+            }
+            checkTimeInput()
+        }
+        const checkTimeInput = () => {
+            const value = this.inputEl.value.replace(/[^0-9]/g, '')
+            const regex = new RegExp(
+                /^([01][0-9]|2[0-3]):?([0-5]?[0-9])?:?([0-5]?[0-9])?$/
+            )
+            console.log('regex test', regex.test(this.inputEl.value))
+            if (value.length > 2 && value.length <= 4) {
+                this.inputEl.value = value.slice(0, 2) + ':' + value.slice(2)
+            }
+            if (value.length > 4) {
+                this.inputEl.value =
+                    value.slice(0, 2) +
+                    ':' +
+                    value.slice(2, 4) +
+                    ':' +
+                    value.slice(4, 6)
+            }
+            if (this.el.type === 'time') {
+                this.value = this.inputEl.value
+            }
+        }
+
         const onMod = (e: Event) => {
             const target = e.target as HTMLInputElement
+
             if (this.type === 'datetime-local') {
                 //we only set the rux-input value if this is actually a date
                 if (Date.parse(this.inputEl2!.value + 'T' + this.inputEl.value))
                     this.value = this.inputEl2!.value + 'T' + this.inputEl.value
             } else {
+                console.log('do we get here?', target.value)
                 this.value = target.value
             }
             this.ruxInput.emit()
@@ -282,7 +313,7 @@ export class RuxInput implements FormFieldInterface {
                 ref={(el) => (this.inputEl = el!)}
                 type="text"
                 aria-invalid={this.invalid ? 'true' : 'false'}
-                placeholder={this.placeholder}
+                placeholder={this.placeholder || '--:--'}
                 required={this.required}
                 step={this.step}
                 min={this.min}
@@ -291,8 +322,8 @@ export class RuxInput implements FormFieldInterface {
                 id={this.inputId}
                 spellcheck={this.spellcheck}
                 readonly={this.readonly}
+                onKeyDown={validateInput}
                 onChange={onMod}
-                onInput={onMod}
                 onBlur={this._onBlur}
                 onFocus={this._onFocus}
                 part="input"
@@ -308,7 +339,6 @@ export class RuxInput implements FormFieldInterface {
                     ref={(el) => (this.inputEl2 = el!)}
                     type="date"
                     aria-invalid={this.invalid ? 'true' : 'false'}
-                    placeholder={this.placeholder}
                     required={this.required}
                     step={this.step}
                     min={this.min}
@@ -318,7 +348,6 @@ export class RuxInput implements FormFieldInterface {
                     spellcheck={this.spellcheck}
                     readonly={this.readonly}
                     onChange={onMod}
-                    onInput={onMod}
                     onBlur={this._onBlur}
                     onFocus={this._onFocus}
                     part="input"
