@@ -303,7 +303,7 @@ export class RuxInput implements FormFieldInterface {
             else this.value = ''
         }
         //emit the right kind of change
-        e.type === 'input' ? this.ruxInput.emit() : this.ruxChange.emit
+        e.type === 'input' ? this.ruxInput.emit() : this.ruxChange.emit()
     }
 
     private _getProperHTML() {
