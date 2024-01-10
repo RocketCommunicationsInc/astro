@@ -70,8 +70,11 @@
                 valspan.classList.add('valspan')
                 valspan.textContent = 'Input Value:'
                 span.appendChild(valspan)
-                if (input.nodeName === 'RUXINPUT') {
+                if (input.nodeName === 'RUX-INPUT') {
                     input.addEventListener('ruxinput', () => {
+                        valspan.textContent = 'Input Value: ' + input.value
+                    })
+                    input.addEventListener('ruxchange', () => {
                         valspan.textContent = 'Input Value: ' + input.value
                     })
                 } else {

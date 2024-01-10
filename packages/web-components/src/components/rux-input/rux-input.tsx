@@ -235,7 +235,6 @@ export class RuxInput implements FormFieldInterface {
             (this.type === 'time' || this.type === 'datetime-local') &&
             this.inputEl
         ) {
-            this.inputEl.value = '00:00'
             //masking options
             const inputMaskOptions = maskitoTimeOptionsGenerator({
                 mode: 'HH:MM:SS',
@@ -289,9 +288,7 @@ export class RuxInput implements FormFieldInterface {
     }
 
     private _onMod(e: Event) {
-        console.log('hello?', this.inputEl, this.inputEl2, e)
         if (this.type === 'datetime-local') {
-            console.log('yo?')
             //we only set the rux-input value if this is actually a date
             if (Date.parse(this.inputEl2!.value + 'T' + this.inputEl.value))
                 this.value = this.inputEl2!.value + 'T' + this.inputEl.value
