@@ -57,22 +57,28 @@
         </section>
         <section>
             <h2 style="margin: 0">Control Group</h2>
-            <input type="time" />
-            <input type="datetime-local" />
+            <span><input type="time" /><br /></span>
+            <span><input type="datetime-local" /><br /></span>
         </section>
 
         <script>
             //write value below input
             const spans = [...document.querySelectorAll('span')]
             spans.forEach((span) => {
-                const input = span.querySelector('rux-input')
+                const input = span.querySelector('rux-input, input')
                 const valspan = document.createElement('span')
                 valspan.classList.add('valspan')
                 valspan.textContent = 'Input Value:'
                 span.appendChild(valspan)
-                input.addEventListener('ruxinput', () => {
-                    valspan.textContent = 'Input Value:' + input.value
-                })
+                if (input.nodeName === 'RUXINPUT') {
+                    input.addEventListener('ruxinput', () => {
+                        valspan.textContent = 'Input Value: ' + input.value
+                    })
+                } else {
+                    input.addEventListener('input', () => {
+                        valspan.textContent = 'Input Value: ' + input.value
+                    })
+                }
             })
         </script>
     </body>
