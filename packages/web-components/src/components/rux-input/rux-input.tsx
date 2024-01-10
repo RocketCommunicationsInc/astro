@@ -207,6 +207,7 @@ export class RuxInput implements FormFieldInterface {
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
+        this._onMod = this._onMod.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTogglePassword = this._handleTogglePassword.bind(this)
     }
@@ -216,8 +217,8 @@ export class RuxInput implements FormFieldInterface {
             'slotchange',
             this._handleSlotChange
         )
+        //remove Maskito when the element is removed from dom
         if (maskedElement) {
-            console.log('goodbye!')
             maskedElement.destroy
         }
     }
@@ -225,6 +226,22 @@ export class RuxInput implements FormFieldInterface {
     componentWillLoad() {
         this._handleSlotChange()
         this._setTogglePassword()
+    }
+
+    componentDidLoad() {
+        //add maskito once the input for it is loaded into the dom
+        if (
+            this.timeformat === '24h' &&
+            (this.type === 'time' || this.type === 'datetime-local') &&
+            this.inputEl
+        ) {
+            //masking options
+            const inputMaskOptions = maskitoTimeOptionsGenerator({
+                mode: 'HH:MM:SS',
+            })
+            //assign it to a variable so we can remove the mask on disconnected callback
+            maskedElement = new Maskito(this.inputEl, inputMaskOptions)
+        }
     }
 
     get hasLabel() {
@@ -270,32 +287,21 @@ export class RuxInput implements FormFieldInterface {
         this.isPasswordVisible = !this.isPasswordVisible
     }
 
-    private _getProperHTML() {
-        if (
-            this.timeformat === '24h' &&
-            (this.type === 'time' || this.type === 'datetime-local') &&
-            this.inputEl
-        ) {
-            //masking options
-            const inputMaskOptions = maskitoTimeOptionsGenerator({
-                mode: 'HH:MM:SS',
-            })
-            //assign it to a variable so we can remove the mask on disconnected callback
-            maskedElement = new Maskito(this.inputEl, inputMaskOptions)
+    private _onMod(e: Event) {
+        console.log('hello?', this.inputEl, this.inputEl2, e)
+        if (this.type === 'datetime-local') {
+            console.log('yo?')
+            //we only set the rux-input value if this is actually a date
+            if (Date.parse(this.inputEl2!.value + 'T' + this.inputEl.value))
+                this.value = this.inputEl2!.value + 'T' + this.inputEl.value
+        } else {
+            this.value = this.inputEl.value
         }
+        //emit the right kind of change
+        e.type === 'input' ? this.ruxInput.emit() : this.ruxChange.emit
+    }
 
-        // const onMod = (e: Event) => {
-        //     const target = e.target as HTMLInputElement
-        //     if (this.type === 'datetime-local') {
-        //         //we only set the rux-input value if this is actually a date
-        //         if (Date.parse(this.inputEl2!.value + 'T' + this.inputEl.value))
-        //             this.value = this.inputEl2!.value + 'T' + this.inputEl.value
-        //     } else {
-        //         this.value = this.inputEl.value
-        //     }
-        //     this.ruxInput.emit()
-        // }
-
+    private _getProperHTML() {
         const timeInput = (
             <input
                 name={this.name}
@@ -310,6 +316,8 @@ export class RuxInput implements FormFieldInterface {
                 max={this.max}
                 class="native-input"
                 id={this.inputId}
+                onChange={this._onMod}
+                onInput={this._onMod}
                 spellcheck={this.spellcheck}
                 readonly={this.readonly}
                 onBlur={this._onBlur}
@@ -335,6 +343,8 @@ export class RuxInput implements FormFieldInterface {
                     id={this.inputId}
                     spellcheck={this.spellcheck}
                     readonly={this.readonly}
+                    onChange={this._onMod}
+                    onInput={this._onMod}
                     onBlur={this._onBlur}
                     onFocus={this._onFocus}
                     part="input"
