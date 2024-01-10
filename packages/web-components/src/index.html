@@ -23,21 +23,57 @@
                 flex-direction: row;
                 gap: 1rem;
             }
+            .valspan {
+                display: inline-block;
+                margin-top: 0.5rem;
+            }
         </style>
     </head>
 
     <body>
         <section>
-            <rux-input type="datetime-local" id="showval"></rux-input>
-            <div id="val"></div>
-            <div this locale>
-                <rux-input type="date"></rux-input>
-            </div>
-            <rux-input type="time"></rux-input>
+            <span>
+                <rux-input
+                    type="datetime-local"
+                    id="showval"
+                    label="Datetime Local"
+                ></rux-input>
+            </span>
+            <span> <rux-input type="time" label="Time"></rux-input></span>
+            <span
+                ><rux-input
+                    type="datetime-local"
+                    timeformat="24h"
+                    label="Datetime 24hr"
+                ></rux-input
+            ></span>
+            <span
+                ><rux-input
+                    type="time"
+                    timeformat="24h"
+                    label="Time 24hr"
+                ></rux-input
+            ></span>
+        </section>
+        <section>
+            <h2 style="margin: 0">Control Group</h2>
             <input type="time" />
             <input type="datetime-local" />
-            <rux-input type="datetime-local" timeformat="24h"></rux-input>
-            <rux-input type="time" timeformat="24h"></rux-input>
         </section>
+
+        <script>
+            //write value below input
+            const spans = [...document.querySelectorAll('span')]
+            spans.forEach((span) => {
+                const input = span.querySelector('rux-input')
+                const valspan = document.createElement('span')
+                valspan.classList.add('valspan')
+                valspan.textContent = 'Input Value:'
+                span.appendChild(valspan)
+                input.addEventListener('ruxinput', () => {
+                    valspan.textContent = 'Input Value:' + input.value
+                })
+            })
+        </script>
     </body>
 </html>
