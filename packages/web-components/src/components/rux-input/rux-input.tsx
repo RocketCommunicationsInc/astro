@@ -294,8 +294,12 @@ export class RuxInput implements FormFieldInterface {
             //we only set the rux-input value if this is actually a date
             if (Date.parse(this.inputEl2!.value + 'T' + this.inputEl.value))
                 this.value = this.inputEl2!.value + 'T' + this.inputEl.value
+            else this.value = ''
         } else {
-            this.value = this.inputEl.value
+            const timeRegex = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/
+            if (timeRegex.test(this.inputEl.value))
+                this.value = this.inputEl.value
+            else this.value = ''
         }
         //emit the right kind of change
         e.type === 'input' ? this.ruxInput.emit() : this.ruxChange.emit
