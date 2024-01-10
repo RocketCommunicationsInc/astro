@@ -208,6 +208,7 @@ export class RuxInput implements FormFieldInterface {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._onMod = this._onMod.bind(this)
+        this._splitTime = this._splitTime.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleTogglePassword = this._handleTogglePassword.bind(this)
     }
@@ -242,6 +243,14 @@ export class RuxInput implements FormFieldInterface {
             //assign it to a variable so we can remove the mask on disconnected callback
             maskedElement = new Maskito(this.inputEl, inputMaskOptions)
         }
+        if (
+            this.type === 'datetime-local' &&
+            this.timeformat === '24h' &&
+            this.value &&
+            this.inputEl &&
+            this.inputEl2
+        )
+            this._splitTime()
     }
 
     get hasLabel() {
@@ -301,6 +310,16 @@ export class RuxInput implements FormFieldInterface {
         }
         //emit the right kind of change
         e.type === 'input' ? this.ruxInput.emit() : this.ruxChange.emit()
+    }
+
+    //when value is set on datetime-local 24hr we need to split it into two different inputs
+    //!!ToDo: make this update whenever this.value is changed from outside the component.
+    private _splitTime() {
+        if (Date.parse(this.value)) {
+            const timeArray = this.value.split('T')
+            this.inputEl.value = timeArray[1]
+            this.inputEl2!.value = timeArray[0]
+        }
     }
 
     private _getProperHTML() {
