@@ -176,6 +176,7 @@ export class RuxTimeInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
+    //??TODO Can we use maskito input on 12hr even though it doesn't have an AM/PM?
     @Watch('value')
     handleValueChange() {
         if (this.timeformat !== '24h') return
