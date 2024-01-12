@@ -131,6 +131,11 @@ export class RuxTimeInput implements FormFieldInterface {
     @Prop() timeformat: '12h' | '24h' = '12h'
 
     /**
+     * Sets input type of 24h input [Maskito types]()
+     */
+    @Prop() timeInput: 'HH:MM' | 'HH:MM:SS' | 'HH:MM:SS.MSS' = 'HH:MM:SS'
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -171,6 +176,12 @@ export class RuxTimeInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
+    @Watch('value')
+    handleValueChange() {
+        if (this.timeformat !== '24h') return
+        if (this.value && this.state24 !== this.value) this.state24 = this.value
+    }
+
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
@@ -190,6 +201,7 @@ export class RuxTimeInput implements FormFieldInterface {
 
     componentWillLoad() {
         this._handleSlotChange()
+        if (this.timeformat === '24h' && this.value) this.state24 = this.value
     }
 
     componentDidLoad() {
@@ -197,7 +209,7 @@ export class RuxTimeInput implements FormFieldInterface {
         if (this.timeformat === '24h' && this.inputEl) {
             //masking options
             const inputMaskOptions = maskitoTimeOptionsGenerator({
-                mode: 'HH:MM:SS',
+                mode: this.timeInput,
             })
             //assign it to a variable so we can remove the mask on disconnected callback
             this.maskedElement = new Maskito(this.inputEl, inputMaskOptions)
@@ -240,7 +252,7 @@ export class RuxTimeInput implements FormFieldInterface {
 
     private _onMod(inputValue: string) {
         this.state24 = inputValue
-        const timeRegex = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/
+        const timeRegex = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?(.[0-9]?[0-9]?[0-9])?$/
         if (timeRegex.test(inputValue)) this.value = this.state24
         else this.value = ''
     }
@@ -328,7 +340,7 @@ export class RuxTimeInput implements FormFieldInterface {
                             ref={(el) => (this.inputEl = el!)}
                             type={this.timeformat === '24h' ? 'text' : 'time'}
                             aria-invalid={invalid ? 'true' : 'false'}
-                            placeholder={placeholder || '--:--'}
+                            placeholder={placeholder || this.timeInput}
                             value={
                                 this.timeformat === '24h'
                                     ? this.state24

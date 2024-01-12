@@ -20106,6 +20106,10 @@ export namespace Components {
          */
         "step"?: string;
         /**
+          * Sets input type of 24h input [Maskito types]()
+         */
+        "timeInput": 'HH:MM' | 'HH:MM:SS' | 'HH:MM:SS.MSS';
+        /**
           * Sets time or datetime types to 12hr/24hr
          */
         "timeformat": '12h' | '24h';
@@ -55820,6 +55824,10 @@ declare namespace LocalJSX {
           * The input step attribute
          */
         "step"?: string;
+        /**
+          * Sets input type of 24h input [Maskito types]()
+         */
+        "timeInput"?: 'HH:MM' | 'HH:MM:SS' | 'HH:MM:SS.MSS';
         /**
           * Sets time or datetime types to 12hr/24hr
          */
