@@ -20062,6 +20062,10 @@ export namespace Components {
          */
         "helpText"?: string;
         /**
+          * Includes seconds as part of the time field
+         */
+        "includeSeconds": boolean;
+        /**
           * Presentational only. Renders the Input Field as invalid.
          */
         "invalid": boolean;
@@ -20105,10 +20109,6 @@ export namespace Components {
           * The input step attribute
          */
         "step"?: string;
-        /**
-          * Sets input type of 24h input [Maskito types]()
-         */
-        "timeInput": 'HH:MM' | 'HH:MM:SS' | 'HH:MM:SS.MSS';
         /**
           * Sets time or datetime types to 12hr/24hr
          */
@@ -55769,6 +55769,10 @@ declare namespace LocalJSX {
          */
         "helpText"?: string;
         /**
+          * Includes seconds as part of the time field
+         */
+        "includeSeconds"?: boolean;
+        /**
           * Presentational only. Renders the Input Field as invalid.
          */
         "invalid"?: boolean;
@@ -55824,10 +55828,6 @@ declare namespace LocalJSX {
           * The input step attribute
          */
         "step"?: string;
-        /**
-          * Sets input type of 24h input [Maskito types]()
-         */
-        "timeInput"?: 'HH:MM' | 'HH:MM:SS' | 'HH:MM:SS.MSS';
         /**
           * Sets time or datetime types to 12hr/24hr
          */

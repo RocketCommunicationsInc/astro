@@ -32,54 +32,18 @@
 
     <body>
         <section>
-            <span>
-                <rux-input
-                    value="2024-01-30T23:28"
-                    type="datetime-local"
-                    id="showval"
-                    label="Datetime Local"
-                ></rux-input>
-            </span>
-            <span> <rux-input type="time" label="Time"></rux-input></span>
-            <span
-                ><rux-input
-                    type="datetime-local"
-                    timeformat="24h"
-                    label="Datetime 24hr"
-                    value="2024-01-30T23:28"
-                ></rux-input
-            ></span>
-            <span
-                ><rux-input
-                    value="12:3"
-                    type="time"
-                    timeformat="24h"
-                    label="Time 24hr"
-                ></rux-input
-            ></span>
-        </section>
-        <section>
             <h2 style="margin: 0">Control Group</h2>
             <span><input type="time" /><br /></span>
             <span><input type="datetime-local" /><br /></span>
         </section>
         <section>
-            <rux-input type="date" value="2024-01-11" label="Date"> </rux-input
-            ><rux-input
-                type="time"
-                timeformat="24h"
-                placeholder="--:--:--"
-                label="Time"
-            ></rux-input>
-        </section>
-        <section>
-            <rux-time-input></rux-time-input>
-            <rux-time-input timeformat="24h" disabled invalid></rux-time-input>
+            <rux-time-input label="12 Hour Time"></rux-time-input>
             <rux-time-input
+                label="24 Hour Time"
                 timeformat="24h"
-                value="10:24"
-                time-input="HH:MM:SS.MSS"
+                include-seconds
             ></rux-time-input>
+            <rux-time-input timeformat="24h" disabled invalid></rux-time-input>
         </section>
 
         <script>
@@ -104,6 +68,10 @@
                     })
                 }
             })
+            document.addEventListener('ruxchange', () =>
+                console.log('RUXCHANGE')
+            )
+            document.addEventListener('ruxinput', () => console.log('RUXINPUT'))
         </script>
     </body>
 </html>

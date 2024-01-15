@@ -12,8 +12,7 @@ import {
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
-import { Maskito } from '@maskito/core'
-import { maskitoTimeOptionsGenerator } from '@maskito/kit'
+import IMask, { MaskedRange } from 'imask'
 
 let id = 0
 
@@ -43,17 +42,13 @@ let id = 0
 export class RuxTimeInput implements FormFieldInterface {
     private inputId = `rux-input-${++id}`
     private inputEl!: HTMLInputElement
-    //this is so we can destroy the maskito masking when the element is removed from dom.
-    private maskedElement: any = null
+    private iMaskRef: any | null = null
 
     @Element() el!: HTMLRuxInputElement
 
     @State() hasLabelSlot = false
     @State() hasHelpSlot = false
     @State() hasErrorSlot = false
-    //for 24hour time validation we need an interim state to check against
-    @State() state24 = ''
-
     @State() hasFocus = false
 
     /**
@@ -131,9 +126,9 @@ export class RuxTimeInput implements FormFieldInterface {
     @Prop() timeformat: '12h' | '24h' = '12h'
 
     /**
-     * Sets input type of 24h input [Maskito types]()
+     * Includes seconds as part of the time field
      */
-    @Prop() timeInput: 'HH:MM' | 'HH:MM:SS' | 'HH:MM:SS.MSS' = 'HH:MM:SS'
+    @Prop() includeSeconds: boolean = false
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -176,19 +171,18 @@ export class RuxTimeInput implements FormFieldInterface {
         this._handleSlotChange()
     }
 
-    //??TODO Can we use maskito input on 12hr even though it doesn't have an AM/PM?
     @Watch('value')
     handleValueChange() {
-        if (this.timeformat !== '24h') return
-        if (this.value && this.state24 !== this.value) this.state24 = this.value
+        //!!TODO make value work with masking
     }
 
     connectedCallback() {
         this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
-        this._onMod = this._onMod.bind(this)
+        this._checkValue = this._checkValue.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        if (this.timeformat === '24h') this.state24 = this.value
+        this._onAccept = this._onAccept.bind(this)
+        this._onComplete = this._onComplete.bind(this)
     }
 
     disconnectedCallback() {
@@ -196,24 +190,69 @@ export class RuxTimeInput implements FormFieldInterface {
             'slotchange',
             this._handleSlotChange
         )
-        //remove Maskito when the element is removed from dom
-        this.maskedElement.destroy()
+        this.iMaskRef?.destroy()
     }
 
     componentWillLoad() {
         this._handleSlotChange()
-        if (this.timeformat === '24h' && this.value) this.state24 = this.value
+    }
+
+    private maskVals = {
+        overwrite: true,
+        mask:
+            this.timeformat === '24h'
+                ? `HH{:}mm${this.includeSeconds ? '{:}ss' : ''}`
+                : `hh{:}mm${this.includeSeconds ? '{:}ss' : ''} A`,
+        lazy: false,
+        autofix: true,
+        blocks: {
+            HH: {
+                mask: MaskedRange,
+                from: 0,
+                to: 24,
+                maxLength: 2,
+                placeholderChar: 'H',
+                autofix: 'pad',
+            },
+            hh: {
+                mask: MaskedRange,
+                from: 0,
+                to: 12,
+                maxLength: 2,
+                placeholderChar: 'h',
+                autofix: 'pad',
+            },
+            mm: {
+                mask: MaskedRange,
+                from: 0,
+                to: 59,
+                maxLength: 2,
+                placeholderChar: 'm',
+                autofix: 'pad',
+            },
+            ss: {
+                mask: MaskedRange,
+                from: 0,
+                to: 59,
+                maxLength: 2,
+                placeholderChar: 's',
+                autofix: 'pad',
+            },
+            A: {
+                mask: IMask.MaskedEnum,
+                placeholderChar: 'a',
+                prepareChar: (char: string) => char.toUpperCase(),
+                enum: ['AM', 'PM'],
+            },
+        },
     }
 
     componentDidLoad() {
-        //add maskito once the input for it is loaded into the dom
-        if (this.timeformat === '24h' && this.inputEl) {
-            //masking options
-            const inputMaskOptions = maskitoTimeOptionsGenerator({
-                mode: this.timeInput,
-            })
-            //assign it to a variable so we can remove the mask on disconnected callback
-            this.maskedElement = new Maskito(this.inputEl, inputMaskOptions)
+        if (this.inputEl) {
+            //@ts-ignore - it thinks autofix isnt assignable to masked Range and it is wrong.
+            this.iMaskRef = IMask(this.inputEl, this.maskVals)
+            this.iMaskRef.on('accept', this._onAccept)
+            this.iMaskRef.on('complete', this._onComplete)
         }
     }
 
@@ -223,15 +262,11 @@ export class RuxTimeInput implements FormFieldInterface {
 
     private _onChange(e: Event) {
         const target = e.target as HTMLInputElement
-        if (this.timeformat === '24h') this._onMod(target.value)
-        else this.value = target.value
         this.ruxChange.emit()
     }
 
     private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
-        if (this.timeformat === '24h') this._onMod(target.value)
-        else this.value = target.value
         this.ruxInput.emit()
     }
 
@@ -251,11 +286,33 @@ export class RuxTimeInput implements FormFieldInterface {
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
-    private _onMod(inputValue: string) {
-        this.state24 = inputValue
-        const timeRegex = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?(.[0-9]?[0-9]?[0-9])?$/
-        if (timeRegex.test(inputValue)) this.value = this.state24
+    private _checkValue() {
+        if (this.timeformat === '12h') {
+            //we need to check whether AM or PM have been selected and convert time to military for the value
+            console.log('check!!', this.value, this.iMaskRef.unmaskedValue)
+            if (this.iMaskRef.unmaskedValue.includes('A')) {
+                console.log('this is AM!')
+                return
+            }
+            if (this.iMaskRef.unmaskedValue.includes('P')) {
+                console.log('This is PM!')
+                return
+            }
+            console.log('this is nothing')
+        }
+        const timeRegex = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/
+        if (timeRegex.test(this.iMaskRef.unmaskedValue))
+            this.value = this.iMaskRef.unmaskedValue
         else this.value = ''
+    }
+
+    private _onAccept(e: InputEvent) {
+        this._checkValue()
+        this.ruxChange.emit()
+    }
+
+    private _onComplete(e: CustomEvent) {
+        console.log('complete')
     }
 
     render() {
@@ -339,14 +396,9 @@ export class RuxTimeInput implements FormFieldInterface {
                             name={name}
                             disabled={disabled}
                             ref={(el) => (this.inputEl = el!)}
-                            type={this.timeformat === '24h' ? 'text' : 'time'}
+                            type="text"
                             aria-invalid={invalid ? 'true' : 'false'}
-                            placeholder={placeholder || this.timeInput}
-                            value={
-                                this.timeformat === '24h'
-                                    ? this.state24
-                                    : this.value
-                            }
+                            placeholder={placeholder}
                             required={required}
                             class="native-input"
                             id={this.inputId}
