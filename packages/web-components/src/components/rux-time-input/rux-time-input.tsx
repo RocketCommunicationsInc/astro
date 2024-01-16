@@ -182,7 +182,6 @@ export class RuxTimeInput implements FormFieldInterface {
         this._checkValue = this._checkValue.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._onAccept = this._onAccept.bind(this)
-        this._onComplete = this._onComplete.bind(this)
     }
 
     disconnectedCallback() {
@@ -209,14 +208,14 @@ export class RuxTimeInput implements FormFieldInterface {
             HH: {
                 mask: MaskedRange,
                 from: 0,
-                to: 24,
+                to: 23,
                 maxLength: 2,
                 placeholderChar: 'H',
                 autofix: 'pad',
             },
             hh: {
                 mask: MaskedRange,
-                from: 0,
+                from: 1,
                 to: 12,
                 maxLength: 2,
                 placeholderChar: 'h',
@@ -252,7 +251,6 @@ export class RuxTimeInput implements FormFieldInterface {
             //@ts-ignore - it thinks autofix isnt assignable to masked Range and it is wrong.
             this.iMaskRef = IMask(this.inputEl, this.maskVals)
             this.iMaskRef.on('accept', this._onAccept)
-            this.iMaskRef.on('complete', this._onComplete)
         }
     }
 
@@ -287,32 +285,41 @@ export class RuxTimeInput implements FormFieldInterface {
     }
 
     private _checkValue() {
+        let time = this.iMaskRef.unmaskedValue
+
         if (this.timeformat === '12h') {
             //we need to check whether AM or PM have been selected and convert time to military for the value
-            console.log('check!!', this.value, this.iMaskRef.unmaskedValue)
+            const hoursPlace = this.iMaskRef.unmaskedValue.slice(0, 2)
+            //this is for AM
             if (this.iMaskRef.unmaskedValue.includes('A')) {
-                console.log('this is AM!')
-                return
+                const timeArray = this.iMaskRef.unmaskedValue.split('A')
+                time =
+                    hoursPlace === '12'
+                        ? '00' + timeArray[0].slice(2)
+                        : timeArray[0]
             }
+            //this is for PM
             if (this.iMaskRef.unmaskedValue.includes('P')) {
-                console.log('This is PM!')
-                return
+                const militaryHours =
+                    hoursPlace === '12' ? hoursPlace : Number(hoursPlace) + 12
+                const timeArray = this.iMaskRef.unmaskedValue.split('P')
+                time = `${militaryHours}` + timeArray[0].slice(2)
             }
-            console.log('this is nothing')
         }
-        const timeRegex = /^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$/
-        if (timeRegex.test(this.iMaskRef.unmaskedValue))
-            this.value = this.iMaskRef.unmaskedValue
+        this._validate(time)
+    }
+
+    private _validate(time: string) {
+        //check time against a valid timestring and, if valid, assign it to rux-time-input value
+        const timeRegex = /^([0-1]?[0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?$/
+        if (timeRegex.test(time)) this.value = time
         else this.value = ''
     }
 
+    //we have to run things through the mask now so a change is emitted on successful entry of a number
     private _onAccept(e: InputEvent) {
         this._checkValue()
         this.ruxChange.emit()
-    }
-
-    private _onComplete(e: CustomEvent) {
-        console.log('complete')
     }
 
     render() {
