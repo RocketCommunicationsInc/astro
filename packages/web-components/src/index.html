@@ -37,31 +37,60 @@
             <span><input type="datetime-local" /><br /></span>
         </section>
         <section>
-            <rux-time-input label="12 Hour Time"></rux-time-input>
-            <rux-time-input
-                label="24 Hour Time"
-                timeformat="24h"
-                include-seconds
-                value="12:30:22"
-            ></rux-time-input>
-            <rux-time-input
-                timeformat="24h"
-                disabled
-                invalid
-                value="gfdjklhgdfkj"
-            ></rux-time-input>
+            <span
+                ><rux-time-input
+                    label="12 Hour Time"
+                    help-text="no other props"
+                ></rux-time-input
+            ></span>
+            <span
+                ><rux-time-input
+                    timeformat="12h"
+                    label="12 Hour Time"
+                    help-text="has seconds and an initial value"
+                    include-seconds
+                    value="00:39:59"
+                ></rux-time-input
+            ></span>
+            <span>
+                <rux-time-input
+                    label="24 Hour Time"
+                    timeformat="24h"
+                    help-text="no other props"
+                ></rux-time-input>
+            </span>
+            <span>
+                <rux-time-input
+                    label="24 Hour Time"
+                    timeformat="24h"
+                    help-text="has an initial value"
+                    value="18:56"
+                ></rux-time-input>
+            </span>
+            <span
+                ><rux-time-input
+                    label="Invalid/Disabled"
+                    timeformat="24h"
+                    disabled
+                    invalid
+                    help-text="has an invalid initial value and invalid and disabled"
+                    value="gfdjklhgdfkj"
+                ></rux-time-input
+            ></span>
         </section>
 
         <script>
             //write value below input
             const spans = [...document.querySelectorAll('span')]
             spans.forEach((span) => {
-                const input = span.querySelector('rux-input, input')
+                const input = span.querySelector(
+                    'rux-input, input, rux-time-input'
+                )
                 const valspan = document.createElement('span')
                 valspan.classList.add('valspan')
                 valspan.textContent = 'Input Value:'
                 span.appendChild(valspan)
-                if (input.nodeName === 'RUX-INPUT') {
+                if (input.nodeName === 'RUX-TIME-INPUT') {
                     input.addEventListener('ruxinput', () => {
                         valspan.textContent = 'Input Value: ' + input.value
                     })
@@ -74,10 +103,10 @@
                     })
                 }
             })
-            document.addEventListener('ruxchange', () =>
-                console.log('RUXCHANGE')
-            )
-            document.addEventListener('ruxinput', () => console.log('RUXINPUT'))
+            // document.addEventListener('ruxchange', () =>
+            //     console.log('RUXCHANGE')
+            // )
+            // document.addEventListener('ruxinput', () => console.log('RUXINPUT'))
         </script>
     </body>
 </html>

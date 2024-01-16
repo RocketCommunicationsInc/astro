@@ -173,19 +173,13 @@ export class RuxTimeInput implements FormFieldInterface {
 
     @Watch('value')
     handleValueChange() {
-        //!!TODO make value work with masking
-        //Validate that the value is military time
-        if (
-            !this._validate(this.value) ||
-            this.value === this.iMaskRef.unmaskedValue
-        )
-            return
-        if (this.timeformat === '24h') this.iMaskRef.unmaskedValue = this.value
+        this._setMaskValue()
     }
 
     connectedCallback() {
         this._onInput = this._onInput.bind(this)
         this._checkValue = this._checkValue.bind(this)
+        this._setMaskValue = this._setMaskValue.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._onAccept = this._onAccept.bind(this)
     }
@@ -204,10 +198,11 @@ export class RuxTimeInput implements FormFieldInterface {
 
     private maskVals = {
         overwrite: true,
+        eager: true,
         mask:
             this.timeformat === '24h'
-                ? `HH{:}mm${this.includeSeconds ? '{:}ss' : ''}`
-                : `hh{:}mm${this.includeSeconds ? '{:}ss' : ''} A`,
+                ? '`HH{:}`mm' + `${this.includeSeconds ? '{:}`ss' : ''}`
+                : '`hh{:}`mm' + `${this.includeSeconds ? '{:}`ss' : ''} A`,
         lazy: false,
         autofix: true,
         blocks: {
@@ -257,6 +252,7 @@ export class RuxTimeInput implements FormFieldInterface {
             //@ts-ignore - it thinks autofix isnt assignable to masked Range and it is wrong.
             this.iMaskRef = IMask(this.inputEl, this.maskVals)
             this.iMaskRef.on('accept', this._onAccept)
+            this._setMaskValue()
         }
     }
 
@@ -264,9 +260,7 @@ export class RuxTimeInput implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    private _onInput(e: Event) {
-        const target = e.target as HTMLInputElement
-        console.log(target)
+    private _onInput() {
         this.ruxInput.emit()
     }
 
@@ -286,9 +280,45 @@ export class RuxTimeInput implements FormFieldInterface {
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
-    // private _convertToAMPM(time: string) {
+    private _setMaskValue() {
+        //Validate that the value is military time
+        const isValid = this._validate(this.value)
+        if (!isValid) return
 
-    // }
+        if (
+            this.timeformat === '24h' &&
+            !(this.iMaskRef.unmaskedValue === this.value)
+        )
+            this.iMaskRef.unmaskedValue = this.value
+        else if (
+            this.timeformat === '12h' &&
+            !(
+                this._convertToMilitary(this.iMaskRef.unmaskedValue) ===
+                this.value
+            )
+        ) {
+            this.iMaskRef.unmaskedValue = this._convertToAMPM(this.value)
+        }
+    }
+
+    private _convertToAMPM(time: string) {
+        let ampmString
+        const hours = time.slice(0, 2)
+        if (Number(hours) === 0) {
+            ampmString = `12${time.slice(2)}` + 'AM'
+        }
+        if (Number(hours) < 12 && Number(hours) > 0) {
+            ampmString = `${time}` + 'AM'
+        }
+        if (Number(hours) === 12) {
+            ampmString = `${time}` + 'PM'
+        }
+        if (Number(hours) > 12) {
+            const newHours = Number(hours) - 12
+            ampmString = `${newHours}${time.slice(2)}` + 'PM'
+        }
+        return ampmString
+    }
 
     private _convertToMilitary(time: string) {
         let convertedTime
@@ -323,7 +353,7 @@ export class RuxTimeInput implements FormFieldInterface {
 
     private _validate(time: string) {
         //check time against a valid timestring and, if valid, assign it to rux-time-input value
-        const timeRegex = /^([0-1]?[0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?$/
+        const timeRegex = /^([0-1][0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?$/
         return timeRegex.test(time)
     }
 
