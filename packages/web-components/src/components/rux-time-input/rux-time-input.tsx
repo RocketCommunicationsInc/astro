@@ -12,7 +12,7 @@ import {
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
-import IMask, { MaskedRange } from 'imask'
+import IMask, { MaskedRange, MaskedEnum } from 'imask'
 
 let id = 0
 
@@ -174,10 +174,16 @@ export class RuxTimeInput implements FormFieldInterface {
     @Watch('value')
     handleValueChange() {
         //!!TODO make value work with masking
+        //Validate that the value is military time
+        if (
+            !this._validate(this.value) ||
+            this.value === this.iMaskRef.unmaskedValue
+        )
+            return
+        if (this.timeformat === '24h') this.iMaskRef.unmaskedValue = this.value
     }
 
     connectedCallback() {
-        this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._checkValue = this._checkValue.bind(this)
         this._handleSlotChange = this._handleSlotChange.bind(this)
@@ -238,7 +244,7 @@ export class RuxTimeInput implements FormFieldInterface {
                 autofix: 'pad',
             },
             A: {
-                mask: IMask.MaskedEnum,
+                mask: MaskedEnum,
                 placeholderChar: 'a',
                 prepareChar: (char: string) => char.toUpperCase(),
                 enum: ['AM', 'PM'],
@@ -258,13 +264,9 @@ export class RuxTimeInput implements FormFieldInterface {
         return this.label ? true : this.hasLabelSlot
     }
 
-    private _onChange(e: Event) {
-        const target = e.target as HTMLInputElement
-        this.ruxChange.emit()
-    }
-
     private _onInput(e: Event) {
         const target = e.target as HTMLInputElement
+        console.log(target)
         this.ruxInput.emit()
     }
 
@@ -284,40 +286,49 @@ export class RuxTimeInput implements FormFieldInterface {
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
     }
 
+    // private _convertToAMPM(time: string) {
+
+    // }
+
+    private _convertToMilitary(time: string) {
+        let convertedTime
+        const hoursPlace = time.slice(0, 2)
+        //this is for AM
+        if (time.includes('A')) {
+            const timeArray = time.split('A')
+            convertedTime =
+                hoursPlace === '12'
+                    ? '00' + timeArray[0].slice(2)
+                    : timeArray[0]
+        }
+        //this is for PM
+        if (time.includes('P')) {
+            const militaryHours =
+                hoursPlace === '12' ? hoursPlace : Number(hoursPlace) + 12
+            const timeArray = time.split('P')
+            convertedTime = `${militaryHours}` + timeArray[0].slice(2)
+        }
+        return convertedTime
+    }
+
     private _checkValue() {
         let time = this.iMaskRef.unmaskedValue
 
+        //we need to check whether AM or PM have been selected and convert time to military for the value
         if (this.timeformat === '12h') {
-            //we need to check whether AM or PM have been selected and convert time to military for the value
-            const hoursPlace = this.iMaskRef.unmaskedValue.slice(0, 2)
-            //this is for AM
-            if (this.iMaskRef.unmaskedValue.includes('A')) {
-                const timeArray = this.iMaskRef.unmaskedValue.split('A')
-                time =
-                    hoursPlace === '12'
-                        ? '00' + timeArray[0].slice(2)
-                        : timeArray[0]
-            }
-            //this is for PM
-            if (this.iMaskRef.unmaskedValue.includes('P')) {
-                const militaryHours =
-                    hoursPlace === '12' ? hoursPlace : Number(hoursPlace) + 12
-                const timeArray = this.iMaskRef.unmaskedValue.split('P')
-                time = `${militaryHours}` + timeArray[0].slice(2)
-            }
+            time = this._convertToMilitary(time)
         }
-        this._validate(time)
+        this.value = this._validate(time) ? time : ''
     }
 
     private _validate(time: string) {
         //check time against a valid timestring and, if valid, assign it to rux-time-input value
         const timeRegex = /^([0-1]?[0-9]|2[0-3]):([0-5][0-9])(:[0-5][0-9])?$/
-        if (timeRegex.test(time)) this.value = time
-        else this.value = ''
+        return timeRegex.test(time)
     }
 
     //we have to run things through the mask now so a change is emitted on successful entry of a number
-    private _onAccept(e: InputEvent) {
+    private _onAccept() {
         this._checkValue()
         this.ruxChange.emit()
     }
@@ -334,7 +345,6 @@ export class RuxTimeInput implements FormFieldInterface {
             invalid,
             label,
             name,
-            _onChange,
             _onInput,
             _onBlur,
             _onFocus,
@@ -409,7 +419,6 @@ export class RuxTimeInput implements FormFieldInterface {
                             required={required}
                             class="native-input"
                             id={this.inputId}
-                            onChange={_onChange}
                             onInput={_onInput}
                             readonly={readonly}
                             onBlur={_onBlur}
