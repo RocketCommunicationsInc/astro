@@ -86,16 +86,6 @@ export class RuxTimeInput implements FormFieldInterface {
     @Prop() name = ''
 
     /**
-     * The input min attribute
-     */
-    @Prop() min?: string
-
-    /**
-     * The input max attribute
-     */
-    @Prop() max?: string
-
-    /**
      * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
      */
     @Prop({ reflect: true }) disabled = false
@@ -123,12 +113,12 @@ export class RuxTimeInput implements FormFieldInterface {
     /**
      * Sets time or datetime types to 12hr/24hr
      */
-    @Prop() timeformat: '12h' | '24h' = '12h'
+    @Prop({ reflect: true }) timeformat: '12h' | '24h' = '12h'
 
     /**
      * Includes seconds as part of the time field
      */
-    @Prop() includeSeconds: boolean = false
+    @Prop({ reflect: true }) includeSeconds: boolean = false
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -174,6 +164,11 @@ export class RuxTimeInput implements FormFieldInterface {
     @Watch('value')
     handleValueChange() {
         this._setMaskValue()
+    }
+
+    @Watch('includeSeconds')
+    handleSecondsChange() {
+        console.log('changed!')
     }
 
     connectedCallback() {

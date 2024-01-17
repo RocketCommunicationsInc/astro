@@ -20074,14 +20074,6 @@ export namespace Components {
          */
         "label"?: string;
         /**
-          * The input max attribute
-         */
-        "max"?: string;
-        /**
-          * The input min attribute
-         */
-        "min"?: string;
-        /**
           * The input name
          */
         "name": string;
@@ -55780,14 +55772,6 @@ declare namespace LocalJSX {
           * The input label text. For HTML content, use the `label` slot instead.
          */
         "label"?: string;
-        /**
-          * The input max attribute
-         */
-        "max"?: string;
-        /**
-          * The input min attribute
-         */
-        "min"?: string;
         /**
           * The input name
          */
