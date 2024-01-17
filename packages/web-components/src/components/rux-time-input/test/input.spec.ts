@@ -1,7 +1,8 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Input with form', () => {
-    const testString = 'Hello World'
+    const testString = '18:30'
+    const testString12 = '06:30PM'
 
     test.beforeEach(async ({ page }) => {
         const template = `
@@ -9,137 +10,75 @@ test.describe('Input with form', () => {
             <div style="padding: 10%; display: flex; justify-content: center">
                 <form id="form">
                     <div>
-                        <rux-input
+                        <rux-time-input
                             label="Input Field"
                             id="ruxInput"
                             name="ruxInput"
+                            timeformat="24h"
                         >
-                        </rux-input>
-                        <input type="text" id="nativeInput" name="nativeInput" />
+                        </rux-time-input>
+                        <input type="time" id="nativeInput" name="nativeInput" />
                     </div>
+                    <div>
+                    <rux-time-input
+                        label="Input Field"
+                        id="ruxInput12"
+                        name="ruxInput12"
+                    >
+                    </rux-time-input>
+                    <input type="time" id="nativeInput12" name="nativeInput12" />
+                </div>
 
                     <div>
-                        <rux-input
+                        <rux-time-input
                             label="Disabled with value"
                             id="ruxInput2"
                             name="ruxInput2"
-                            value="Hello World"
+                            value="18:30"
                             disabled
                         >
-                        </rux-input>
+                        </rux-time-input>
                         <input
-                            type="text"
+                            type="time"
                             id="nativeInput2"
                             name="nativeInput2"
-                            value="Hello World"
+                            value="18:30"
                             disabled
                         />
                     </div>
 
                     <div>
-                        <rux-input
+                        <rux-time-input
                             label="Required"
                             id="ruxInput3"
                             name="ruxInput3"
                             required
                             help-text="Test Help Text"
                         >
-                        </rux-input>
-                        <input type="text" id="nativeInput3" name="nativeInput3" />
-                    </div>
-
-                    <div>
-                        <rux-input
-                            label="Password"
-                            id="ruxInput4"
-                            name="ruxInput4"
-                            type="password"
-                        >
-                        </rux-input>
+                        </rux-time-input>
+                        <input type="time" id="nativeInput3" name="nativeInput3" />
                     </div>
                     <div>
-                        <rux-input
-                            label="Read Only"
-                            id="readonly"
-                            name="readonly"
-                            value="Should remain the same"
-                            readonly
-                        >
-                        </rux-input>
-                    </div>
-                    <div>
-                        <rux-input
-                            label="Spellcheck"
-                            id="spellcheck"
-                            name="spellcheck"
-                            spellcheck
-                        >
-                        </rux-input>
-                    </div>
-                    <div>
-                        <rux-input
-                            label="Autocomplete"
-                            id="autocomplete"
-                            name="autocomplete"
-                            autocomplete="on"
-                        >
-                        </rux-input>
-                    </div>
-                    <div>
-                        <rux-input
-                            label="Autocomplete to off"
-                            id="autocomplete-to-off"
-                            name="autocomplete-to-off"
-                            autocomplete="on"
-                            type="password"
-                        >
-                        </rux-input>
-                    </div>
-                    <div>
-                        <rux-input
-                            label="Date type"
-                            id="date-type"
-                            name="date-type"
-                            type="date"
-                        >
-                        </rux-input>
-                        <input
-                            type="date"
-                            id="native-date"
-                            value="2022-10-05"
-                            name="native-date"
-                        />
-                    </div>
-                    <div>
-                        <rux-input
-                            label="Datetime-local type"
-                            id="datetime-local"
-                            name="datetime-local"
-                            type="datetime-local"
-                        >
-                        </rux-input>
-                        <input
-                            type="datetime-local"
-                            id="native-datetime-local"
-                            value="2022-10-05T13:25"
-                            name="native-datetime-local"
-                        />
-                    </div>
-                    <div>
-                        <rux-input
-                            label="Time type"
-                            id="time"
-                            name="time"
-                            type="time"
-                        >
-                        </rux-input>
-                        <input
-                            type="time"
-                            id="native-time"
-                            value="01:25:00"
-                            name="native-time"
-                        />
-                    </div>
+                    <rux-time-input
+                        readonly
+                        label="Input Field"
+                        id="readOnly"
+                        name="ruxInput"
+                        timeformat="24h"
+                    >
+                    </rux-time-input>
+                    <input type="time" readonly id="nativeInput" name="nativeInput" />
+                </div>
+                <div>
+                <rux-time-input
+                    label="Input Field"
+                    id="seconds"
+                    name="ruxInputSeconds"
+                    include-seconds
+                >
+                </rux-time-input>
+                <input type="time" id="nativeInput" name="nativeInput" />
+            </div>
 
                     <button id="formSubmitBtn" type="submit">submit</button>
                 </form>
@@ -153,7 +92,9 @@ test.describe('Input with form', () => {
             path: './tests/utils/formScript.js',
         })
     })
-    test('submits the correct value when using a form', async ({ page }) => {
+    test('submits the correct value when using a form (24h)', async ({
+        page,
+    }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput').first()
         const ruxInputChild = ruxInputComponent.locator('input').nth(1)
@@ -170,6 +111,25 @@ test.describe('Input with form', () => {
         await expect(log).toContainText(`ruxInput:${testString}`)
         await expect(log).toContainText(`nativeInput:${testString}`)
     })
+    test('submits the correct value when using a form (12h)', async ({
+        page,
+    }) => {
+        //Arrange
+        const ruxInputComponent = page.locator('#ruxInput12').first()
+        const ruxInputChild = ruxInputComponent.locator('input').nth(1)
+        const nativeInput = page.locator('#nativeInput12').first()
+        const formSubmitButton = page.locator('#formSubmitBtn')
+        const log = page.locator('#log')
+
+        //Act
+        await ruxInputChild.type(testString12)
+        await nativeInput.type(testString12)
+        await formSubmitButton.click()
+
+        //Assert - should convert to military time
+        await expect(log).toContainText(`ruxInput12:${testString}`)
+        await expect(log).toContainText(`nativeInput12:${testString}`)
+    })
     test('does not submit disabled even with value', async ({ page }) => {
         //Arrange
         const ruxInputComponent = page.locator('#ruxInput2').first()
@@ -179,7 +139,7 @@ test.describe('Input with form', () => {
         const log = page.locator('#log')
 
         //Assert
-        await expect(ruxInputChild).toHaveValue(testString)
+        await expect(ruxInputChild).toHaveValue('06:30 PM')
         await expect(nativeInput).toHaveValue(testString)
         await expect(ruxInputComponent).toHaveAttribute('disabled', '')
         await expect(ruxInputChild).toBeDisabled()
@@ -243,141 +203,49 @@ test.describe('Input with form', () => {
         //Assert
         await expect(ruxInputHelpText).toContainText('Test Help Text')
     })
-    test('adds rux-icon if type is password', async ({ page }) => {
-        //Arrange
-        const ruxInputComponent = page.locator('#ruxInput4').first()
-        const ruxInputIcon = ruxInputComponent.locator('rux-icon')
-
-        //Assert
-        await expect(ruxInputIcon).toBeVisible()
-    })
-    test('removes rux-icon if type is no longer password', async ({ page }) => {
-        //Arrange
-        const ruxInputComponent = page.locator('#ruxInput4').first()
-        const ruxInputIcon = ruxInputComponent.locator('rux-icon')
-
-        //Assert
-        await expect(ruxInputIcon).toBeVisible()
-
-        await ruxInputComponent.evaluate(
-            (e) => ((e as HTMLRuxInputElement).type = 'text')
-        )
-        await expect(ruxInputIcon).not.toBeVisible()
-    })
-    test('changes icon when icon is clicked', async ({ page }) => {
-        //Arrange
-        const ruxInputComponent = page.locator('#ruxInput4').first()
-        const ruxInputIcon = ruxInputComponent.locator('rux-icon')
-
-        //Act
-        await ruxInputIcon.click()
-
-        //Arrange
-        const ruxInputIconVisibilityOff = ruxInputIcon.locator(
-            'rux-icon-visibility-off'
-        )
-
-        //Assert
-        await expect(ruxInputIconVisibilityOff).toBeVisible()
-    })
     test('cannot have its value changed if readonly is true', async ({
         page,
     }) => {
         //Arrange
-        const readOnly = page.locator('#readonly')
+        const readOnly = page.locator('#readOnly')
         const readOnlyInput = readOnly.locator('input').nth(1)
 
         //Assert
         await expect(readOnlyInput).toHaveAttribute('readonly', '')
     })
-    test('applies spellcheck prop to shadow input', async ({ page }) => {
-        //Arrange
-        const spellCheck = page.locator('#spellcheck')
-        const spellCheckInput = spellCheck.locator('input').nth(1)
-
-        //Assert
-        await expect(spellCheckInput).toHaveAttribute('spellcheck', 'true')
-    })
-    //! Uncomment autocomplete tests when the attribute is added back in and working.
-    test('applies autocomplete prop to shadow input', async ({ page }) => {
-        //Arrange
-        const autocomplete = page.locator('#autocomplete')
-        const autocompleteInput = autocomplete.locator('input').nth(1)
-
-        //Assert
-        await expect(autocompleteInput).toHaveAttribute('autocomplete', 'on')
-    })
-    test('changes autocomplete to off if type is password', async ({
+    test('sumbits the correct value when seconds are entered', async ({
         page,
     }) => {
         //Arrange
-        const autocomplete = page.locator('#autocomplete-to-off')
-        const autocompleteInput = autocomplete.locator('input').nth(1)
-
-        //Assert
-        await expect(autocompleteInput).toHaveAttribute('autocomplete', 'off')
-    })
-    test('submits the correct value in type date', async ({ page }) => {
-        //Arrange
-        const dateType = page.locator('#date-type')
-        const dateTypeInput = dateType.locator('input').nth(1)
-        const formSubmitButton = page.locator('#formSubmitBtn')
-        const log = page.locator('#log')
-
-        //Act
-        await dateTypeInput.fill('2022-10-05')
-        await formSubmitButton.click()
-
-        //Assert
-        await expect(log).toContainText('date-type:2022-10-05')
-    })
-    test('submits the correct value in type datetime-local', async ({
-        page,
-    }) => {
-        //Arrange
-        const dateType = page.locator('#datetime-local')
-        const dateTypeInput = dateType.locator('input').nth(1)
-        const formSubmitButton = page.locator('#formSubmitBtn')
-        const log = page.locator('#log')
-
-        //Act
-        await dateTypeInput.fill('2022-10-05T13:25')
-        await formSubmitButton.click()
-
-        //Assert
-        await expect(log).toContainText('datetime-local:2022-10-05T13:25')
-    })
-    test('sumbits the correct value in type time', async ({ page }) => {
-        //Arrange
-        const time = page.locator('#time')
+        const time = page.locator('#seconds')
         const timeInput = time.locator('input').nth(1)
         const formSubmitButton = page.locator('#formSubmitBtn')
         const log = page.locator('#log')
 
         //Act
-        await timeInput.fill('01:25:00')
+        await timeInput.type('01:25:30PM')
         await formSubmitButton.click()
 
         //Assert
-        await expect(log).toContainText('time:01:25:00')
+        await expect(log).toContainText('ruxInputSeconds:13:25:30')
     })
 })
 test.describe('Input emits correct events', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
-            <rux-input type="text"></rux-input>
+            <rux-time-input></rux-time-input>
             <div id="blur-me" style="width: 100px; height: 100px; margin-top: 5rem;">Click to blur</div>
         `
         await page.setContent(template)
     })
     test('it emits ruxfocus event', async ({ page }) => {
         const focusEvent = await page.spyOnEvent('ruxfocus')
-        await page.locator('rux-input').click()
+        await page.locator('rux-time-input').click()
         expect(focusEvent).toHaveReceivedEventTimes(1)
     })
     test('it emits ruxblur event', async ({ page }) => {
         const blurEvent = await page.spyOnEvent('ruxblur')
-        await page.locator('rux-input').click()
+        await page.locator('rux-time-input').click()
         await page.locator('#blur-me').click()
         expect(blurEvent).toHaveReceivedEventTimes(1)
     })
@@ -385,7 +253,7 @@ test.describe('Input emits correct events', () => {
         const inputEvent = await page.spyOnEvent('ruxinput')
         //delay types it slower, like a user. This should fire the input event 5 times.
         await page
-            .locator('rux-input')
+            .locator('rux-time-input')
             .locator('input')
             .nth(1)
             .type('Hello', { delay: 100 })
@@ -395,15 +263,15 @@ test.describe('Input emits correct events', () => {
         page,
     }) => {
         const changeEvent = await page.spyOnEvent('ruxchange')
-        await page.locator('rux-input').locator('input').nth(1).type('Tonjiro')
+        await page.locator('rux-time-input').locator('input').nth(1).type('12')
         await page.locator('#blur-me').click()
         expect(changeEvent).toHaveReceivedEventTimes(1)
     })
 })
 test('getInput method returns the internal input', async ({ page }) => {
-    const template = `<rux-input></rux-input>`
+    const template = `<rux-time-input></rux-time-input>`
     await page.setContent(template)
-    const ruxInput = page.locator('rux-input')
+    const ruxInput = page.locator('rux-time-input')
     let test = await ruxInput.evaluate(
         async (el: HTMLRuxInputElement) => (await el.getInput()).classList
     )
@@ -411,10 +279,10 @@ test('getInput method returns the internal input', async ({ page }) => {
 })
 test.describe('Input', () => {
     test('it can be focused programatically', async ({ page }) => {
-        const template = `<rux-input type="text"></rux-input>`
+        const template = `<rux-time-input></rux-time-input>`
         await page.setContent(template)
 
-        const el = page.locator('rux-input')
+        const el = page.locator('rux-time-input')
 
         let isFocused = await el.evaluate((el) => el === document.activeElement)
         expect(isFocused).toBeFalsy()

@@ -177,6 +177,7 @@ export class RuxTimeInput implements FormFieldInterface {
     }
 
     connectedCallback() {
+        this._onChange = this._onChange.bind(this)
         this._onInput = this._onInput.bind(this)
         this._checkValue = this._checkValue.bind(this)
         this._setMaskValue = this._setMaskValue.bind(this)
@@ -262,6 +263,9 @@ export class RuxTimeInput implements FormFieldInterface {
 
     private _onInput() {
         this.ruxInput.emit()
+    }
+    private _onChange() {
+        this.ruxChange.emit()
     }
 
     private _onBlur = () => {
@@ -360,7 +364,6 @@ export class RuxTimeInput implements FormFieldInterface {
     //we have to run things through the mask now so a change is emitted on successful entry of a number
     private _onAccept() {
         this._checkValue()
-        this.ruxChange.emit()
     }
 
     render() {
@@ -375,6 +378,7 @@ export class RuxTimeInput implements FormFieldInterface {
             invalid,
             label,
             name,
+            _onChange,
             _onInput,
             _onBlur,
             _onFocus,
@@ -450,6 +454,7 @@ export class RuxTimeInput implements FormFieldInterface {
                             class="native-input"
                             id={this.inputId}
                             onInput={_onInput}
+                            onChange={_onChange}
                             readonly={readonly}
                             onBlur={_onBlur}
                             onFocus={_onFocus}
