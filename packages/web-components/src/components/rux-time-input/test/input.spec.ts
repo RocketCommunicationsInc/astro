@@ -1,6 +1,6 @@
 import { test, expect } from '../../../../tests/utils/_astro-fixtures'
 
-test.describe('Input with form', () => {
+test.describe('RuxTimeInput with form', () => {
     const testString = '18:30'
     const testString12 = '06:30PM'
 
@@ -277,7 +277,7 @@ test('getInput method returns the internal input', async ({ page }) => {
     )
     expect(test).toHaveProperty('0', 'native-input')
 })
-test.describe('Input', () => {
+test.describe('RuxTimeInput', () => {
     test('it can be focused programatically', async ({ page }) => {
         const template = `<rux-time-input></rux-time-input>`
         await page.setContent(template)
@@ -293,5 +293,61 @@ test.describe('Input', () => {
 
         isFocused = await el.evaluate((el) => el === document.activeElement)
         expect(isFocused).toBeTruthy()
+    })
+})
+//input masking specifics
+test.describe('RuxTimeInput Masking', () => {
+    test('it pushes values to the appropriate slot', async ({ page }) => {
+        const template = `<rux-time-input></rux-time-input>`
+        await page.setContent(template)
+
+        const el = page.locator('rux-time-input')
+        const childInput = el.locator('input').nth(1)
+
+        //Act
+        await childInput.fill('9')
+
+        //Assert - value + 0 and the rest of the mask
+        await expect(childInput).toHaveValue('09:mm aa')
+        await expect(el).toHaveAttribute('value', '') // not valid time string dso it doesn't pass.
+    })
+
+    test('it does not allow hours greater than 12 in 12h time and automatically corrects', async ({
+        page,
+    }) => {
+        const template = `<rux-time-input></rux-time-input>`
+        await page.setContent(template)
+
+        const el = page.locator('rux-time-input')
+        const childInput = el.locator('input').nth(1)
+
+        //Act
+        await childInput.fill('23')
+
+        //Assert - value + 0 and the rest of the mask
+        await expect(childInput).toHaveValue('02:3m aa')
+        await expect(el).toHaveAttribute('value', '') // not valid time string dso it doesn't pass.
+    })
+    test('deleting does not move one time block into another', async ({
+        page,
+    }) => {
+        const template = `<rux-time-input value="18:35"></rux-time-input>`
+        await page.setContent(template)
+
+        const el = page.locator('rux-time-input')
+        const childInput = el.locator('input').nth(1)
+
+        //Assert
+        await expect(childInput).toHaveValue('06:35 PM')
+
+        //Act
+        await childInput.click()
+        for (let i = 0; i < ':35 PM'.length; i++)
+            await childInput.press('ArrowLeft')
+        await childInput.press('Backspace')
+
+        //Assert - value + 0 and the rest of the mask
+        await expect(childInput).toHaveValue('0h:35 PM')
+        await expect(el).toHaveAttribute('value', '') // not valid time string so it doesn't pass.
     })
 })
