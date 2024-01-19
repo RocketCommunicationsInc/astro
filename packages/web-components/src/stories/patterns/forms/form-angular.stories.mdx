@@ -1,4 +1,4 @@
-import { Meta } from '@storybook/addon-docs'
+import { ComponentsTable, Meta } from '@storybook/addon-docs'
 
 <Meta title="Patterns/Forms/Angular" />
 
@@ -9,6 +9,7 @@ import { Meta } from '@storybook/addon-docs'
   }
   rux-tabs {
     margin-bottom: 1rem;
+    height: auto;
   }
   .sandbox {
     width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;
@@ -17,15 +18,229 @@ import { Meta } from '@storybook/addon-docs'
 </style>
 
 # Form Pattern
+<rux-tabs id="tab-set-id-1" small>
+  <rux-tab id="tab-id-1">app.component.html</rux-tab>
+  <rux-tab id="tab-id-2">app.component.ts</rux-tab>
+</rux-tabs>
+<rux-tab-panels aria-labelledby="tab-set-id-1">
+  <rux-tab-panel aria-labelledby="tab-id-1">
+
+```
+<style>
+    form > div {
+        margin-bottom: 1rem;
+    }
+</style>
+<div>
+    <form
+        (ngSubmit)="onSubmit($event)"
+        style="padding: 1rem"
+        method="POST"
+        action="/"
+        [formGroup]="profileForm"
+    >
+        <div>
+            <rux-input
+                required
+                formControlName="firstName"
+                name="firstName"
+                label="First Name"
+                [invalid]="showError('firstName')"
+                [errorText]="
+                    showError('firstName') ? 'First name is required' : ''
+                "
+            ></rux-input>
+        </div>
+        <div>
+            <rux-input
+                formControlName="lastName"
+                name="lastName"
+                label="Last Name"
+                required
+                [invalid]="showError('lastName')"
+                [errorText]="
+                    showError('lastName') ? 'Last name is required' : ''
+                "
+            ></rux-input>
+        </div>
+        <div>
+            <rux-input
+                formControlName="email"
+                name="email"
+                type="email"
+                label="Email"
+                required
+                [invalid]="showError('email')"
+                [errorText]="showError('email') ? 'Email is required' : ''"
+            ></rux-input>
+        </div>
+        <div>
+            <rux-select
+                formControlName="country"
+                name="country"
+                label="Country / Region"
+            >
+                <rux-option value="USA" label="United States"></rux-option>
+                <rux-option value="Canada" label="Canada"></rux-option>
+            </rux-select>
+        </div>
+        <div>
+            <rux-select multiple formControlName="multiSelect">
+                <rux-option-group label="Group 1">
+                    <rux-option label="Option 1.1" value="1.1"></rux-option>
+                    <rux-option label="Option 2.1" value="2.1"></rux-option>
+                    <rux-option label="Option 3.1" value="3.1"></rux-option>
+                </rux-option-group>
+                <rux-option-group label="Group 2">
+                    <rux-option label="Option 1.2" value="1.2"></rux-option>
+                    <rux-option label="Option 2.2" value="2.2"></rux-option>
+                    <rux-option label="Option 3.2" value="3.2"></rux-option>
+                </rux-option-group>
+            </rux-select>
+        </div>
+        <div>
+            <rux-checkbox-group label="Things">
+                <rux-checkbox
+                    (ruxchange)="handleThings('comments', $event)"
+                    name="things"
+                    value="comments"
+                >
+                    Comments
+                </rux-checkbox>
+                <rux-checkbox
+                    (ruxchange)="handleThings('offers', $event)"
+                    name="things"
+                    value="offers"
+                >
+                    Offers
+                </rux-checkbox>
+                <rux-checkbox
+                    (ruxchange)="handleThings('events', $event)"
+                    name="things"
+                    value="events"
+                >
+                    Events
+                </rux-checkbox>
+            </rux-checkbox-group>
+        </div>
+        <div>
+            <rux-radio-group label="Options" formControlName="options">
+                <rux-radio name="options" value="everything">
+                    Everything
+                </rux-radio>
+                <rux-radio name="options" value="same"> Same </rux-radio>
+                <rux-radio name="options" value="none"> None </rux-radio>
+            </rux-radio-group>
+        </div>
+        <div>
+            <rux-slider name="range" formControlName="range" label="A Range">
+            </rux-slider>
+        </div>
+        <div>
+            <rux-button [disabled]="!profileForm.valid" type="submit"
+                >Submit</rux-button
+            >
+        </div>
+    </form>
+</div>
+```  
+
+  </rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-2">
+
+```  
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { AstroComponentsModule } from '@astrouxds/angular';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators } from '@angular/forms'
+
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, ReactiveFormsModule, AstroComponentsModule],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
+})
+export class AppComponent {
+  title = 'astro-angular-basic-form';
+
+  profileForm = new FormGroup({
+    firstName: new FormControl('', [Validators.required]),
+    lastName: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
+    country: new FormControl(''),
+    things: new FormControl(['']),
+    multiSelect: new FormControl([]),
+    options: new FormControl(''),
+    range: new FormControl(''),
+})
+
+onSubmit(e: any) {
+    e.preventDefault()
+    const {
+        firstName,
+        lastName,
+        email,
+        country,
+        things,
+        options,
+        range,
+        multiSelect,
+    } = this.profileForm.value
+
+    alert(`
+  First Name: ${firstName} \n
+  Last Name: ${lastName} \n
+  Email: ${email} \n
+  Country/Region: ${country} \n
+  Multi Select: ${multiSelect} \n
+  Options: ${options} \n
+  Things: ${things} \n
+  Range: ${range} \n
+`)
+}
+
+showError(fieldName: string) {
+    return (
+        !this.profileForm.get(fieldName)?.valid &&
+        this.profileForm.get(fieldName)?.touched
+    )
+}
+handleThings(value: string, event: any) {
+    const target = event.target as HTMLInputElement
+    const notifications: string[] = [
+        ...(<[]>this.profileForm.get('things')?.value),
+    ]
+
+    if (target.checked) {
+        this.profileForm.patchValue({
+            things: notifications.concat(value),
+        })
+    } else {
+        this.profileForm.patchValue({
+            things: notifications.filter((item) => item !== value),
+        })
+    }
+}
+
+}
+```
+
+  </rux-tab-panel>
+</rux-tab-panels>
 
 ## Example
 
 Example form with validation using Angular's Reactive Forms and Astro Web Components
 
 <iframe
-    src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/forms/angular/basic-form?file=/src/app/app.component.html"
+    src="https://stackblitz.com/github/RocketCommunicationsInc/astro-sandboxes/tree/main/forms/angular/basic-form?embed=1&file=src%2Fapp%2Fapp.component.ts,src%2Fapp%2Fapp.component.html&hideExplorer=1&hideNavigation=1&hidedevtools=1"
     class="sandbox"
     title="Astro Angular Form Pattern with Validation"
     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
 ></iframe>
+
+
+
