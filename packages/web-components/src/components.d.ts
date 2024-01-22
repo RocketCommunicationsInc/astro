@@ -19449,10 +19449,6 @@ export namespace Components {
          */
         "step"?: string;
         /**
-          * Sets time or datetime types to 12hr/24hr
-         */
-        "timeformat": '12h' | '24h';
-        /**
           * The input type
          */
         "type": | 'text'
@@ -20102,7 +20098,7 @@ export namespace Components {
          */
         "step"?: string;
         /**
-          * Sets time or datetime types to 12hr/24hr
+          * Sets time type to 12hr/24hr
          */
         "timeformat": '12h' | '24h';
         /**
@@ -55076,10 +55072,6 @@ declare namespace LocalJSX {
          */
         "step"?: string;
         /**
-          * Sets time or datetime types to 12hr/24hr
-         */
-        "timeformat"?: '12h' | '24h';
-        /**
           * The input type
          */
         "type"?: | 'text'
@@ -55813,7 +55805,7 @@ declare namespace LocalJSX {
          */
         "step"?: string;
         /**
-          * Sets time or datetime types to 12hr/24hr
+          * Sets time type to 12hr/24hr
          */
         "timeformat"?: '12h' | '24h';
         /**

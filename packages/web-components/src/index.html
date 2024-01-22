@@ -37,19 +37,14 @@
             <span><input type="datetime-local" /><br /></span>
         </section>
         <section>
-            <span
-                ><rux-time-input
-                    label="12 Hour Time"
-                    help-text="no other props"
-                ></rux-time-input
-            ></span>
+            <span><rux-time-input label="12 Hour Time"></rux-time-input></span>
             <span
                 ><rux-time-input
                     timeformat="12h"
                     label="12 Hour Time"
-                    help-text="has seconds and an initial value"
                     include-seconds
-                    value="00:39:59"
+                    help-text="Includes seconds and initial value"
+                    value="18:30:59"
                 ></rux-time-input
             ></span>
             <span>
@@ -63,8 +58,9 @@
                 <rux-time-input
                     label="24 Hour Time"
                     timeformat="24h"
-                    help-text="has an initial value"
-                    value="18:56"
+                    help-text="Includes seconds and initial value"
+                    include-seconds
+                    value="18:30:59"
                 ></rux-time-input>
             </span>
             <span
@@ -87,14 +83,18 @@
                     'rux-input, input, rux-time-input'
                 )
                 const valspan = document.createElement('span')
+                console.log(input.value)
                 valspan.classList.add('valspan')
-                valspan.textContent = 'Input Value:'
+                valspan.textContent = `Input Value: ${
+                    input.getAttribute('value') || ''
+                }`
                 span.appendChild(valspan)
                 if (input.nodeName === 'RUX-TIME-INPUT') {
                     input.addEventListener('ruxinput', () => {
                         valspan.textContent = 'Input Value: ' + input.value
                     })
                     input.addEventListener('ruxchange', () => {
+                        console.log('change heard!')
                         valspan.textContent = 'Input Value: ' + input.value
                     })
                 } else {
