@@ -139,7 +139,7 @@ test.describe('RuxTimeInput with form', () => {
         const log = page.locator('#log')
 
         //Assert
-        await expect(ruxInputChild).toHaveValue('06:30 PM')
+        await expect(ruxInputChild).toHaveValue('18:30')
         await expect(nativeInput).toHaveValue(testString)
         await expect(ruxInputComponent).toHaveAttribute('disabled', '')
         await expect(ruxInputChild).toBeDisabled()
@@ -233,7 +233,7 @@ test.describe('RuxTimeInput with form', () => {
 test.describe('Input emits correct events', () => {
     test.beforeEach(async ({ page }) => {
         const template = `
-            <rux-time-input></rux-time-input>
+            <rux-time-input timeformat="24h"></rux-time-input>
             <div id="blur-me" style="width: 100px; height: 100px; margin-top: 5rem;">Click to blur</div>
         `
         await page.setContent(template)
@@ -256,15 +256,18 @@ test.describe('Input emits correct events', () => {
             .locator('rux-time-input')
             .locator('input')
             .nth(1)
-            .type('Hello', { delay: 100 })
-        expect(inputEvent).toHaveReceivedEventTimes(5)
+            .type('1234', { delay: 100 })
+        expect(inputEvent).toHaveReceivedEventTimes(4)
     })
     test('it emits ruxchange event when input is committed', async ({
         page,
     }) => {
         const changeEvent = await page.spyOnEvent('ruxchange')
-        await page.locator('rux-time-input').locator('input').nth(1).type('12')
-        await page.locator('#blur-me').click()
+        await page
+            .locator('rux-time-input')
+            .locator('input')
+            .nth(1)
+            .type('1234')
         expect(changeEvent).toHaveReceivedEventTimes(1)
     })
 })
@@ -298,7 +301,7 @@ test.describe('RuxTimeInput', () => {
 //input masking specifics
 test.describe('RuxTimeInput Masking', () => {
     test('it pushes values to the appropriate slot', async ({ page }) => {
-        const template = `<rux-time-input></rux-time-input>`
+        const template = `<rux-time-input timeformat='24h'></rux-time-input>`
         await page.setContent(template)
 
         const el = page.locator('rux-time-input')
@@ -308,46 +311,46 @@ test.describe('RuxTimeInput Masking', () => {
         await childInput.fill('9')
 
         //Assert - value + 0 and the rest of the mask
-        await expect(childInput).toHaveValue('09:mm aa')
+        await expect(childInput).toHaveValue('09:mm')
         await expect(el).toHaveAttribute('value', '') // not valid time string dso it doesn't pass.
     })
 
-    test('it does not allow hours greater than 12 in 12h time and automatically corrects', async ({
+    test('it does not allow hours greater than 23 in 24h time and automatically corrects', async ({
         page,
     }) => {
-        const template = `<rux-time-input></rux-time-input>`
+        const template = `<rux-time-input timeformat="24h"></rux-time-input>`
         await page.setContent(template)
 
         const el = page.locator('rux-time-input')
         const childInput = el.locator('input').nth(1)
 
         //Act
-        await childInput.fill('23')
+        await childInput.fill('29')
 
         //Assert - value + 0 and the rest of the mask
-        await expect(childInput).toHaveValue('02:3m aa')
+        await expect(childInput).toHaveValue('23:mm')
         await expect(el).toHaveAttribute('value', '') // not valid time string dso it doesn't pass.
     })
     test('deleting does not move one time block into another', async ({
         page,
     }) => {
-        const template = `<rux-time-input value="18:35"></rux-time-input>`
+        const template = `<rux-time-input timeformat="24h" value="18:35"></rux-time-input>`
         await page.setContent(template)
 
         const el = page.locator('rux-time-input')
         const childInput = el.locator('input').nth(1)
 
         //Assert
-        await expect(childInput).toHaveValue('06:35 PM')
+        await expect(childInput).toHaveValue('18:35')
 
         //Act
         await childInput.click()
-        for (let i = 0; i < ':35 PM'.length; i++)
+        for (let i = 0; i < ':35'.length; i++)
             await childInput.press('ArrowLeft')
         await childInput.press('Backspace')
 
         //Assert - value + 0 and the rest of the mask
-        await expect(childInput).toHaveValue('0h:35 PM')
+        await expect(childInput).toHaveValue('1H:35')
         await expect(el).toHaveAttribute('value', '') // not valid time string so it doesn't pass.
     })
 })

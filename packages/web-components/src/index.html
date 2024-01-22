@@ -91,6 +91,7 @@
                 span.appendChild(valspan)
                 if (input.nodeName === 'RUX-TIME-INPUT') {
                     input.addEventListener('ruxinput', () => {
+                        console.log('input heard rux!')
                         valspan.textContent = 'Input Value: ' + input.value
                     })
                     input.addEventListener('ruxchange', () => {
@@ -99,6 +100,7 @@
                     })
                 } else {
                     input.addEventListener('input', () => {
+                        console.log('input heard normal!')
                         valspan.textContent = 'Input Value: ' + input.value
                     })
                 }
