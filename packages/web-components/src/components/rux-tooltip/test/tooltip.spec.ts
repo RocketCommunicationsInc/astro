@@ -330,7 +330,8 @@ test.describe('Tooltip', async () => {
         await page.keyboard.press('Escape')
 
         //assert
-        const open = await ruxtooltip.getAttribute('open')
-        expect(open).toBeNull()
+        await expect(ruxtooltip).not.toHaveAttribute('open', '')
+        // const open = await ruxtooltip.getAttribute('open')
+        // expect(open).toBeNull()
     })
 })
