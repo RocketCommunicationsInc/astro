@@ -233,6 +233,8 @@ export class RuxPopUp {
         const triggerEl = this.el.querySelector(
             `[slot='trigger']`
         ) as HTMLElement
+        //if there is no trigger then there is nothing to set
+        if (!triggerEl) return
         triggerEl.hasAttribute('tabindex')
             ? null
             : triggerEl.setAttribute('tabindex', '0')
