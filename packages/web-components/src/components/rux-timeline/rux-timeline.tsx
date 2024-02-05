@@ -211,15 +211,17 @@ export class RuxTimeline {
      * Give it a time, get where it should be positioned visually (in pixels)
      */
     private _calculatePlayheadFromTime(time: any) {
-        if (
-            new Date(time) < new Date(this.start) ||
-            new Date(time) > new Date(this.end)
-        ) {
-            throw new RangeError(
-                `Playhead date must be between ${new Date(
-                    this.start
-                ).toISOString()} - ${new Date(this.end).toISOString()}`
-            )
+        if (time) {
+            if (
+                new Date(time) < new Date(this.start) ||
+                new Date(time) > new Date(this.end)
+            ) {
+                throw new RangeError(
+                    `Playhead date must be between ${new Date(
+                        this.start
+                    ).toISOString()} - ${new Date(this.end).toISOString()}`
+                )
+            }
         }
 
         let newTime = Math.abs(
