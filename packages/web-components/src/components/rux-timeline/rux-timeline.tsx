@@ -216,7 +216,7 @@ export class RuxTimeline {
                 new Date(time) < new Date(this.start) ||
                 new Date(time) > new Date(this.end)
             ) {
-                throw new RangeError(
+                console.warn(
                     `Playhead date must be between ${new Date(
                         this.start
                     ).toISOString()} - ${new Date(this.end).toISOString()}`
