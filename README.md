@@ -2,8 +2,12 @@
 
 The Astro UXDS Web Component and CSS libraries provide a starting point to build in-browser space app experiences and custom applications following today’s web development best practices. The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default.
 
-## Monthly Meeting
-On the first Monday of every month, we host a Zoom meeting at 11am PT as an opportunity to interact with the core design team, ask questions and share work in progress. These meetings are open to all and suitable for sharing work that falls below CUI and is not covered by an NDA. Request an invite through [support@astrouxds.com](mailto:support@astrouxds.com). Archives of [past Astro UXWG meetings](https://www.youtube.com/@AstroUXDS/videos) are available on YouTube.
+<!-- ## Monthly Meeting
+On the first Monday of every month, we host a Zoom meeting at 11am PT as an opportunity to interact with the core design team, ask questions and share work in progress. These meetings are open to all and suitable for sharing work that falls below CUI and is not covered by an NDA. Request an invite through [support@astrouxds.com](mailto:support@astrouxds.com). Archives of [past Astro UXWG meetings](https://www.youtube.com/@AstroUXDS/videos) are available on YouTube. -->
+
+## Support 
+
+For any issues, suggestions or feedback, you can open a discussion/issue here on github, or email support@astrouxds.com. 
 
 ## 7.0 Migration
 
