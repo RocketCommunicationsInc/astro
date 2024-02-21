@@ -20040,6 +20040,72 @@ export namespace Components {
          */
         "value": string;
     }
+    interface RuxTimeInput {
+        /**
+          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+         */
+        "disabled": boolean;
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * Returns the native input element used in the shadow dom.
+         */
+        "getInput": () => Promise<HTMLInputElement>;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
+          * Includes seconds as part of the time field
+         */
+        "includeSeconds": boolean;
+        /**
+          * Presentational only. Renders the Input Field as invalid.
+         */
+        "invalid": boolean;
+        /**
+          * The input label text. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
+        /**
+          * The input name
+         */
+        "name": string;
+        /**
+          * The input placeholder text
+         */
+        "placeholder"?: string;
+        /**
+          * The inputs readonly attribute
+         */
+        "readonly": boolean;
+        /**
+          * Sets the input as required
+         */
+        "required": boolean;
+        /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
+        /**
+          * Control the padding around the input field
+         */
+        "size": 'small' | 'medium' | 'large';
+        /**
+          * The input step attribute
+         */
+        "step"?: string;
+        /**
+          * Sets time type to 12hr/24hr
+         */
+        "timeformat": '12h' | '24h';
+        /**
+          * The input value
+         */
+        "value": string;
+    }
     interface RuxTimeRegion {
         /**
           * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
@@ -20273,6 +20339,10 @@ export interface RuxTabsCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTextareaElement;
+}
+export interface RuxTimeInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTimeInputElement;
 }
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -34365,6 +34435,12 @@ declare global {
         prototype: HTMLRuxTextareaElement;
         new (): HTMLRuxTextareaElement;
     };
+    interface HTMLRuxTimeInputElement extends Components.RuxTimeInput, HTMLStencilElement {
+    }
+    var HTMLRuxTimeInputElement: {
+        prototype: HTMLRuxTimeInputElement;
+        new (): HTMLRuxTimeInputElement;
+    };
     interface HTMLRuxTimeRegionElement extends Components.RuxTimeRegion, HTMLStencilElement {
     }
     var HTMLRuxTimeRegionElement: {
@@ -35523,6 +35599,7 @@ declare global {
         "rux-tabs": HTMLRuxTabsElement;
         "rux-tag": HTMLRuxTagElement;
         "rux-textarea": HTMLRuxTextareaElement;
+        "rux-time-input": HTMLRuxTimeInputElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
         "rux-toast": HTMLRuxToastElement;
@@ -55662,6 +55739,80 @@ declare namespace LocalJSX {
          */
         "value"?: string;
     }
+    interface RuxTimeInput {
+        /**
+          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+         */
+        "disabled"?: boolean;
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
+        "helpText"?: string;
+        /**
+          * Includes seconds as part of the time field
+         */
+        "includeSeconds"?: boolean;
+        /**
+          * Presentational only. Renders the Input Field as invalid.
+         */
+        "invalid"?: boolean;
+        /**
+          * The input label text. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
+        /**
+          * The input name
+         */
+        "name"?: string;
+        /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRuxblur"?: (event: RuxTimeInputCustomEvent<any>) => void;
+        /**
+          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+         */
+        "onRuxchange"?: (event: RuxTimeInputCustomEvent<any>) => void;
+        /**
+          * Fired when an element has gained focus - [HTMLElement/focus_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+         */
+        "onRuxfocus"?: (event: RuxTimeInputCustomEvent<any>) => void;
+        /**
+          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+         */
+        "onRuxinput"?: (event: RuxTimeInputCustomEvent<any>) => void;
+        /**
+          * The input placeholder text
+         */
+        "placeholder"?: string;
+        /**
+          * The inputs readonly attribute
+         */
+        "readonly"?: boolean;
+        /**
+          * Sets the input as required
+         */
+        "required"?: boolean;
+        /**
+          * Control the padding around the input field
+         */
+        "size"?: 'small' | 'medium' | 'large';
+        /**
+          * The input step attribute
+         */
+        "step"?: string;
+        /**
+          * Sets time type to 12hr/24hr
+         */
+        "timeformat"?: '12h' | '24h';
+        /**
+          * The input value
+         */
+        "value"?: string;
+    }
     interface RuxTimeRegion {
         /**
           * The end date. Must be an ISO string "2021-02-02T05:00:00Z"
@@ -56932,6 +57083,7 @@ declare namespace LocalJSX {
         "rux-tabs": RuxTabs;
         "rux-tag": RuxTag;
         "rux-textarea": RuxTextarea;
+        "rux-time-input": RuxTimeInput;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
         "rux-toast": RuxToast;
@@ -65475,6 +65627,7 @@ declare module "@stencil/core" {
             "rux-tabs": LocalJSX.RuxTabs & JSXBase.HTMLAttributes<HTMLRuxTabsElement>;
             "rux-tag": LocalJSX.RuxTag & JSXBase.HTMLAttributes<HTMLRuxTagElement>;
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
+            "rux-time-input": LocalJSX.RuxTimeInput & JSXBase.HTMLAttributes<HTMLRuxTimeInputElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
             "rux-toast": LocalJSX.RuxToast & JSXBase.HTMLAttributes<HTMLRuxToastElement>;

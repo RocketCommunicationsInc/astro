@@ -16,7 +16,95 @@
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
         <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            section {
+                padding: 2rem;
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+            .valspan {
+                display: inline-block;
+                margin-top: 0.5rem;
+            }
+        </style>
     </head>
 
-    <body></body>
+    <body>
+        <section>
+            <h2 style="margin: 0">Control Group</h2>
+            <span><input type="time" /><br /></span>
+            <span><input type="datetime-local" /><br /></span>
+        </section>
+        <section>
+            <span><rux-time-input label="12 Hour Time"></rux-time-input></span>
+            <span
+                ><rux-time-input
+                    timeformat="12h"
+                    label="12 Hour Time"
+                    include-seconds
+                    help-text="Includes seconds and initial value"
+                    value="18:30:59"
+                ></rux-time-input
+            ></span>
+            <span>
+                <rux-time-input
+                    label="24 Hour Time"
+                    timeformat="24h"
+                    help-text="no other props"
+                ></rux-time-input>
+            </span>
+            <span>
+                <rux-time-input
+                    label="24 Hour Time"
+                    timeformat="24h"
+                    help-text="Includes seconds and initial value"
+                    include-seconds
+                    value="18:30:59"
+                ></rux-time-input>
+            </span>
+            <span
+                ><rux-time-input
+                    label="Invalid/Disabled"
+                    timeformat="24h"
+                    disabled
+                    invalid
+                    help-text="has an invalid initial value and invalid and disabled"
+                    value="gfdjklhgdfkj"
+                ></rux-time-input
+            ></span>
+        </section>
+
+        <script>
+            //write value below input
+            const spans = [...document.querySelectorAll('span')]
+            spans.forEach((span) => {
+                const input = span.querySelector(
+                    'rux-input, input, rux-time-input'
+                )
+                const valspan = document.createElement('span')
+                console.log(input.value)
+                valspan.classList.add('valspan')
+                valspan.textContent = `Input Value: ${
+                    input.getAttribute('value') || ''
+                }`
+                span.appendChild(valspan)
+                if (input.nodeName === 'RUX-TIME-INPUT') {
+                    input.addEventListener('ruxinput', () => {
+                        console.log('input heard rux!')
+                        valspan.textContent = 'Input Value: ' + input.value
+                    })
+                    input.addEventListener('ruxchange', () => {
+                        console.log('change heard!')
+                        valspan.textContent = 'Input Value: ' + input.value
+                    })
+                } else {
+                    input.addEventListener('input', () => {
+                        console.log('input heard normal!')
+                        valspan.textContent = 'Input Value: ' + input.value
+                    })
+                }
+            })
+        </script>
+    </body>
 </html>

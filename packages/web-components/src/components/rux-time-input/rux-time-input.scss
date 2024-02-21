@@ -1,0 +1,144 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    display: block;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+
+    .rux-form-field {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--color-text-primary);
+    }
+    rux-icon {
+        cursor: pointer;
+    }
+
+    input::placeholder {
+        color: var(--color-text-placeholder);
+    }
+    input[type='time' i]::-webkit-calendar-picker-indicator {
+        background: var(--color-background-base-default)
+            url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.99 2C6.47 2 2 6.48 2 12C2 17.52 6.47 22 11.99 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 11.99 2ZM12 20C7.58 20 4 16.42 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20ZM11.72 7H11.78C12.18 7 12.5 7.32 12.5 7.72V12.26L16.37 14.56C16.72 14.76 16.83 15.21 16.62 15.55C16.42 15.89 15.98 15.99 15.64 15.79L11.49 13.3C11.18 13.12 11 12.79 11 12.44V7.72C11 7.32 11.32 7 11.72 7Z' fill='%234dacff'/%3E%3C/svg%3E");
+        cursor: pointer;
+        background-position: center;
+    }
+    .rux-input {
+        input {
+            border: none;
+            background: none;
+            box-shadow: none;
+            padding: var(--spacing-0);
+            margin: var(--spacing-0);
+            color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            -webkit-appearance: none;
+            //Sets input area input area to correct height
+            height: var(--line-height-sm);
+            appearance: none;
+            outline: none;
+            width: 100%;
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+        width: 100%;
+        overflow: hidden;
+        flex: 1 1 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+        box-sizing: border-box;
+        order: 2;
+        // use box shadow instead of border to create borders
+        box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
+        border-radius: var(--radius-base);
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        font-weight: var(--font-control-body-1-font-weight);
+        line-height: var(--font-control-body-1-line-height);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        color: var(--color-text-primary);
+        background-color: var(--color-background-base-default);
+
+        &--invalid {
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
+        }
+        &--disabled {
+            opacity: var(--opacity-disabled);
+            cursor: not-allowed;
+        }
+        &--small {
+            padding: var(--spacing-1) var(--spacing-2); // 4px 8px
+        }
+        &--medium {
+            padding: var(--spacing-2); //8px
+        }
+        &--large {
+            padding: var(--spacing-3) var(--spacing-2); //12px 8px
+        }
+        &--focused {
+            outline: var(--border-width-focus-default) solid
+                var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
+        }
+        &:hover {
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
+            outline: 2px solid transparent;
+        }
+        &--disabled:hover {
+            box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
+            color: var(--color-text-primary);
+        }
+        &--invalid:hover {
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
+        }
+        .rux-input-prefix,
+        .rux-input-suffix {
+            display: inline-flex;
+            flex: 0 0 auto;
+            align-items: center;
+            cursor: default;
+        }
+        .rux-input-prefix {
+            ::slotted(*) {
+                padding-right: var(--spacing-1);
+            }
+        }
+        .rux-input-suffix {
+            ::slotted(*) {
+                padding-left: var(--spacing-1);
+            }
+        }
+    }
+    .rux-input-label {
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        font-weight: var(--font-control-body-1-font-weight);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        margin-bottom: var(--spacing-2);
+        &__asterisk {
+            margin-left: var(--spacing-1);
+        }
+    }
+
+    ::selection {
+        background-color: var(--color-palette-brightblue-400);
+    }
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
