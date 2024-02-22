@@ -1,0 +1,178 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as TooltipStories from './tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over, or focusing on an element.
+
+export const Default = (args) => {
+    return html`
+<div style="padding: 5%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+    <rux-tooltip
+        message="${args.message}"
+        placement="${args.placement}"
+        delay="${args.delay}"
+        strategy="${args.strategy}"
+        offset="${args.offset}"
+        disable-auto-update="${args.disableAutoUpdate}"
+        open="${args.open}"
+    >
+        <rux-button>Trigger</rux-button>
+    </rux-tooltip>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={TooltipStories.Default_} />
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-tooltip" />
+
+## Usage
+
+## Variants
+
+### Placements
+
+export const Placements = (args) => {
+    return html`
+<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+  <div style="padding: 2.5% 5%;">
+    <div style="padding: 30px 10px 30px 30px;">
+        <rux-tooltip
+            placement="top"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Top</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px 10px 30px 30px;">
+        <rux-tooltip
+            placement="top-start"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Top Start</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px 10px 30px 30px;">
+        <rux-tooltip
+            placement="top-end"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Top End</rux-button>
+        </rux-tooltip>
+    </div>
+  </div>
+  <div style="padding: 2.5% 5%;">
+    <div style="padding: 30px 10px 30px 10px;">
+        <rux-tooltip
+            placement="bottom"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Bottom</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px 10px 30px 10px;">
+        <rux-tooltip
+            placement="bottom-start"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Bottom Start</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px 10px 30px 10px;">
+        <rux-tooltip
+            placement="bottom-end"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Bottom End</rux-button>
+        </rux-tooltip>
+    </div>
+  </div>
+  <div style="padding: 2.5% 5%;">
+    <div style="padding: 30px 30px 30px 0px;">
+        <rux-tooltip
+            placement="right"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Right</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px 30px 30px 0px;">
+        <rux-tooltip
+            placement="right-start"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Right Start</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px 30px 30px 0px;">
+        <rux-tooltip
+            placement="right-end"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Right End</rux-button>
+        </rux-tooltip>
+    </div>
+  </div>
+  <div style="padding: 2.5% 5%;">
+    <div style="padding: 30px;">
+        <rux-tooltip
+            placement="left"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Left</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px;">
+        <rux-tooltip
+            placement="left-start"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Left Start</rux-button>
+        </rux-tooltip>
+    </div>
+    <div style="padding: 30px;">
+        <rux-tooltip
+            placement="left-end"
+            message="Tooltip"
+            open
+        >
+            <rux-button>Left End</rux-button>
+        </rux-tooltip>
+    </div>
+  </div>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={TooltipStories.Placements_} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTooltip } from '@astrouxds/astro-web-components/dist/components/rux-tooltip.js'
+customElements.define('rux-tooltip', RuxTooltip)
+```

@@ -1,0 +1,83 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as BreadcrumbItemStories from './breadcrumb-item.stories';
+
+<Meta of={BreadcrumbItemStories} />
+
+# Breadcrumb Item
+
+Breadcrumb Item belongs to the Breadcrumb Component. When used in conjunction with Breadcrumd, each Breadcrumb Item except the last will have a chevron-right separator icon after it for separation.
+
+## Guidelines
+
+* [Astro UXDS: Breadcrumb](https://www.astrouxds.com/components/breadcrumb/)
+
+export const Default = (args) => {
+    return html`
+<div style="padding: 5%;">
+    <rux-breadcrumb-item href=${args.href} current=${args.current}>Breadcrumb Item</rux-breadcrumb-item>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={BreadcrumbItemStories.Default_} />
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-breadcrumb-item" />
+
+## Variants
+
+### Without Href
+
+export const NoLink = (args) => {
+    return html`
+    <div style="padding: 5%;">
+        <rux-breadcrumb-item current=${args.current}>Breadcrumb Item</rux-breadcrumb-item>
+    </div>
+        `
+}
+
+<Canvas>
+  <Story of={BreadcrumbItemStories.WithoutHref} />
+</Canvas>
+
+### With Icon
+
+export const Icon = (args) => {
+    return html`
+    <div style="padding: 5%;">
+        <rux-breadcrumb-item href=${args.href} current=${args.current}><rux-icon icon="border-clear"></rux-icon> Breadcrumb Item</rux-breadcrumb-item>
+    </div>
+        `
+}
+
+<Canvas>
+  <Story of={BreadcrumbItemStories.WithIcon} />
+</Canvas>
+
+### Icon Only
+
+export const IconOnly = (args) => {
+    return html`
+    <div style="padding: 5%;">
+        <rux-breadcrumb-item href=${args.href} current=${args.current}><rux-icon icon="border-clear"></rux-icon></rux-breadcrumb-item>
+    </div>
+        `
+}
+
+<Canvas>
+  <Story of={BreadcrumbItemStories.IconOnly_} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxBreacrumbItem } from '@astrouxds/astro-web-components/dist/components/rux-breadcrumb-item'
+customElements.define('rux-breadcrumb-item', RuxBreadcrumbItem)
+```

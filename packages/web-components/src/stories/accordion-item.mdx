@@ -1,0 +1,111 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as AccordionItemStories from './accordion-item.stories';
+
+<Meta of={AccordionItemStories} />
+
+# Accordion Item
+
+Accordion Item belongs to the Accordion Component
+
+## Guidelines
+
+* [Astro UXDS: Accordion](https://www.astrouxds.com/components/accordion/)
+
+export const Default = (args) => {
+    return html`
+<div style="padding: 5%;">
+        <rux-accordion-item
+            ?disabled="${args.disabled}"
+            ?expanded="${args.expanded}">
+            <div slot="label">Title 1</div>
+            <p>Content 1</p>
+        </rux-accordion-item>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionItemStories.Default_} />
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-accordion-item" />
+
+## Variants
+
+### Disabled
+
+export const Disabled = (args) => {
+    return html`
+    <div style="padding: 5%;">
+            <rux-accordion-item
+                ?disabled="${args.disabled}"
+                ?expanded="${args.expanded}">
+                <div slot="label">Title 1</div>
+                <p>Content 1</p>
+            </rux-accordion-item>
+    </div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionItemStories.Disabled_} />
+</Canvas>
+
+### Expanded
+
+export const Expanded = (args) => {
+    return html`
+    <div style="padding: 5%;">
+            <rux-accordion-item
+                ?disabled="${args.disabled}"
+                ?expanded="${args.expanded}">
+                <div slot="label">Title 1</div>
+                <p>Content 1</p>
+            </rux-accordion-item>
+    </div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionItemStories.Expanded_} />
+</Canvas>
+
+### With Slotted Icon
+
+An icon/status can be added to the left of the label by using the named [slot](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) `prefix`.
+For example,
+
+```html
+<rux-icon icon="apps" slot="prefix" size="auto"></rux-icon>
+```
+
+export const IconSlotted = (args) => {
+    return html`
+    <div style="padding: 5%;">
+            <rux-accordion-item
+                ?disabled="${args.disabled}"
+                ?expanded="${args.expanded}">
+                <rux-icon icon="apps" slot="prefix" size="auto"></rux-icon>
+                <div slot="label">Title 1</div>
+                <p>Content 1</p>
+            </rux-accordion-item>
+    </div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionItemStories.WithIcon} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxAccordionItem } from '@astrouxds/astro-web-components/dist/components/rux-accordion-item'
+customElements.define('rux-accordion-item', RuxAccordionItem)
+```

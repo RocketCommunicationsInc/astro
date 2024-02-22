@@ -1,0 +1,178 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Frameworks/JavaScript" />
+
+# Vanilla JavaScript
+
+## Installation
+
+Astro Web Components make use of Stencil's automatic lazy loader which only loads components that are actually used on the page.
+
+### Via CDN
+
+Add the following inside your head tag
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+/>
+<link
+    rel="stylesheet"
+    href="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css"
+/>
+<script
+    type="module"
+    src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+></script>
+```
+
+### Via NPM
+
+`npm i @astrouxds/astro-web-components`
+
+```js
+import { defineCustomElements } from '@astrouxds/astro-web-components/loader'
+defineCustomElements()
+```
+
+## With Typescript
+
+All of our component types can be imported from `@astrouxds/astro-web-components`.
+
+## Using our CSS Variables (Design Tokens).
+
+While our components may solve 60% of your UI needs, you will inevitably find yourself needing to
+create your own custom UI in the style of Astro.
+
+Our Astro Web Components are powered by our Design Tokens under the hood. These are imported
+and made available to you when you import `astro-web-components.css` in the form of CSS Custom Properties.
+Our Design Tokens include everything from our color palette to our spacing system.
+
+We also provide our tokens in other formats (SASS, json) for your convienence. For more information,
+check out our [Design Tokens](https://www.astrouxds.com/design-tokens/installation/) page for a list
+of our available tokens and their intended usage.
+
+## Setting Props
+
+### Basic Data
+
+For basic primitive types like `string`, `boolean`, `number`, set the attribute on the element:
+
+```js
+<rux-button size="large"></rux-button>
+```
+
+### Complex Data
+
+For non primitives like `array` or `object`, set them via properties.
+
+```js
+<rux-segmented-button></rux-segmented-button>
+
+<script>
+  const element = document.querySelector('rux-segmented-button')
+  const data = [
+    {
+      "label": "First item"
+    },
+    {
+      "label": "Second item",
+      "selected": true
+    },
+    {
+      "label": "Third item"
+    }
+  ]
+
+  element.data = data;
+
+</script>
+
+```
+
+## Updating Complex Data
+
+### Updating Arrays
+
+For arrays, the standard mutable array operations such as `push()` and `unshift()` won't trigger a component update.
+Instead, non-mutable array operators should be used as they return a copy of a new array. These include `map()` and `filter()`,
+and the ES6 spread operator syntax.
+
+For example, to push a new item to an array, create a new array with the existing values and the new value at the end:
+
+```js
+// our original array
+this.items = ['ionic', 'stencil', 'webcomponents']
+
+// update the array
+this.items = [...this.items, 'awesomeness']
+```
+
+The `...this.items` syntax is a relatively new feature of JavaScript that "expands" the given object in place.
+Read more about the Spread operator [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+### Updating Objects
+
+The spread operator should also be used to update objects. As with arrays, mutating an object will not trigger a view update,
+but returning a new copy of the object will. Below is an example:
+
+```js
+// our original object
+this.myCoolObject = { first: '1', second: '2' }
+
+// update our object
+this.myCoolObject = { ...myCoolObject, third: '3' }
+```
+
+## Using Slots
+
+Slots give you full control over the contents of a component. Some components may have multiple slots.
+
+> Web Component Concept:
+> Slotted content lives outside of the shadow DOM and as a result, you are free to style them however you want.
+
+```html
+<rux-global-status-bar>
+    <rux-icon slot="left-side" icon="apps"></rux-icon>
+    <div slot="app-meta">
+        <h1>Hello World</h1>
+    </div>
+</rux-global-status-bar>
+```
+
+## Listening to Events
+
+Astro Components emit their own custom events, prefixed with `rux`.
+
+```js
+<rux-input></rux-input>
+
+<script>
+  const element = document.querySelector('rux-input')
+  element.addEventListener('ruxinput', (event) => {
+    console.log('heard input event!', event.target.value)
+  })
+</script>
+```
+
+## Methods
+
+Some components offer public methods that can be executed. These methods are async and can be executed by selecting the Node element.
+
+```js
+<rux-tree>
+  <rux-tree-node id="firstNode">Hello</rux-tree-node>
+  <rux-tree-node>World</rux-tree-node>
+</rux-tree>
+<rux-button @click="selectNode">Select Node</rux-button>
+
+<script>
+  const button = document.querySelector('rux-button')
+  const node = document.querySelector('#firstNode')
+  button.addEventListener('click', () => {
+    node.setSelected(true)
+  })
+</script>
+```

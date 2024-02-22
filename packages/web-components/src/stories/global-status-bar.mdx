@@ -1,0 +1,218 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as GlobalStatusBarStories from './global-status-bar.stories';
+
+<Meta of={GlobalStatusBarStories} />
+
+# Global Status Bar
+
+The Global Status Bar is a full-width view across the top of an application — an area commonly reserved for global status, global command, and top-level navigation. The Global Status Bar often includes: Application Name, Application State, Monitoring Icons, Top Level Navigation, and an Emergency Button.
+
+## Guidelines
+
+* [Astro UXDS: Global Status Bar](https://astrouxds.com/ui-components/global-status-bar)
+
+export const Default = (args) => {
+    return html`
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon="${args.includeIcon}"
+        app-domain="${args.appDomain}"
+        app-name="${args.appName}"
+        app-version="${args.appVersion}"
+        menu-icon="${args.menuIcon}"
+        username="${args.username}"
+        app-state-color="${args.appStateColor}"
+        app-state="${args.appState}"
+    >
+    </rux-global-status-bar>
+</div>
+`
+}
+
+<Canvas>
+  <Story of={GlobalStatusBarStories.Default_} />
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-global-status-bar" />
+
+## Variants
+
+### With App State
+
+export const GlobalStatusBarWithAppState = (args) => {
+    return html`
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon="${args.includeIcon}"
+        app-state="${args.appState}"
+        app-state-color="${args.appStateColor}"
+        username="${args.username}"
+        app-domain="${args.appDomain}"
+        app-name="${args.appName}"
+        app-version="${args.appVersion}"
+        menu-icon="${args.menuIcon}"
+    >
+    </rux-global-status-bar>
+</div>
+`
+}
+
+<Canvas>
+  <Story of={GlobalStatusBarStories.WithAppState} />
+</Canvas>
+
+### With Slot Content
+
+export const GlobalStatusBarWithSlotContent = (args) => {
+    return html`
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon="${args.includeIcon}"
+        app-state="${args.appState}"
+        app-state-color="${args.appStateColor}"
+        username="${args.username}"
+        app-domain="${args.appDomain}"
+        app-name="${args.appName}"
+        app-version="${args.appVersion}"
+        menu-icon="${args.menuIcon}"
+    >
+        <rux-clock></rux-clock>
+        <rux-button slot="right-side">Emergency shut off</rux-button>
+    </rux-global-status-bar>
+</div>
+`
+}
+
+<Canvas>
+  <Story of={GlobalStatusBarStories.WithSlotContent} />
+</Canvas>
+
+## With Tabs
+
+export const GlobalStatusBarWithTabs = (args) => {
+    return html`
+<rux-global-status-bar
+    include-icon="${args.includeIcon}"
+    app-state="${args.appState}"
+    app-state-color="${args.appStateColor}"
+    username="${args.username}"
+    app-domain="${args.appDomain}"
+    app-name="${args.appName}"
+    app-version="${args.appVersion}"
+    menu-icon="${args.menuIcon}"
+>
+    <rux-tabs id="tab-set-id-1">
+        <rux-tab id="tab-id-1">Tab 1</rux-tab>
+        <rux-tab id="tab-id-2">Tab 2</rux-tab>
+        <rux-tab id="tab-id-3">Tab 3</rux-tab>
+    </rux-tabs>
+    <rux-button slot="right-side">Emergency shut off</rux-button>
+</rux-global-status-bar>
+<rux-tab-panels aria-labelledby="tab-set-id-1">
+    <rux-tab-panel aria-labelledby="tab-id-1">
+        <div
+            style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
+        >
+            <pre><<span>!-- Tab 1 HTML content --</span>></pre>
+        </div>
+    </rux-tab-panel>
+    <rux-tab-panel aria-labelledby="tab-id-2">
+        <div
+            style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
+        >
+            <pre><<span>!-- Tab 2 HTML content --</span>></pre>
+        </div>
+    </rux-tab-panel>
+    <rux-tab-panel aria-labelledby="tab-id-3">
+        <div
+            style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
+        >
+            <pre><<span>!-- Tab 3 HTML content --</span>></pre>
+        </div>
+    </rux-tab-panel>
+</rux-tab-panels>
+    `
+}
+
+<Canvas>
+  <Story of={GlobalStatusBarStories.WithTabs} />
+</Canvas>
+
+### Other Variants
+
+export const OtherVariants = () => {
+    return html`
+<style>
+h4 {
+    text-align: center;
+}
+</style>
+<h4>No Icon</h4>
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        app-state="Production"
+        username="Username"
+        app-name="Dashboard"
+        app-domain="Astro"
+        app-version="4.0 Alpha"
+    >
+    </rux-global-status-bar>
+</div>
+<br />
+<h4>No App Name</h4>
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon
+        app-domain="astro"
+        menu-icon="apps"
+        username="Username"
+        app-state="Production"
+        app-version="4.0 Alpha"
+    >
+    </rux-global-status-bar>
+</div>
+<br />
+<h4>No App Domain</h4>
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon
+        menu-icon="apps"
+        username="Username"
+        app-state="Production"
+        app-version="4.0 Alpha"
+        app-name="Dashboard"
+    >
+    </rux-global-status-bar>
+</div>
+<br />
+<h4>No App Version</h4>
+<div style="display: flex; justify-content: center;">
+    <rux-global-status-bar
+        include-icon
+        menu-icon="apps"
+        username="Username"
+        app-state="Production"
+        app-name="Dashboard"
+        app-domain="Astro"
+    >
+    </rux-global-status-bar>
+</div>
+`
+}
+
+<Canvas>
+  <Story of={GlobalStatusBarStories.OtherVariants_} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxGlobalStatusBar } from '@astrouxds/astro-web-components/dist/components/rux-global-status-bar'
+customElements.define('rux-global-status-bar', RuxGlobalStatusBar)
+```

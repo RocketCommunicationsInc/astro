@@ -1,0 +1,103 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as SwitchStories from './switch.stories';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+A Switch toggles between two mutually exclusive states such as "On" or "Off." Unlike a Checkbox, a Switch initiates an action with immediate effect without requiring a "Save" or "Submit" action.
+
+## Guidelines
+
+* [Astro UXDS: Switch](http://www.astrouxds.com/ui-components/switch)
+
+export const Switch = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        label=${args.label}
+        name=${args.name}
+        value=${args.value}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={SwitchStories.Switch_} />
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-switch" />
+
+## Variants
+
+### On
+
+export const On = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={SwitchStories.On_} />
+</Canvas>
+
+### Disabled
+
+export const Disabled = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        name=${args.name}
+        value=${args.value}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={SwitchStories.Disabled_} />
+</Canvas>
+
+### With Label
+
+export const WithLabel = (args) => {
+    return html`
+<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
+    <rux-switch
+        ?disabled=${args.disabled}
+        ?checked=${args.checked}
+        .label=${args.label}
+    ></rux-switch>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={SwitchStories.WithLabel_} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxSwitch } from '@astrouxds/astro-web-components/dist/components/rux-switch'
+customElements.define('rux-switch', RuxSwitch)
+```

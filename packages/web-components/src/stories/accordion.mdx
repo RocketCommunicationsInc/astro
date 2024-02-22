@@ -1,0 +1,155 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as AccordionStories from './accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+An Accordion is a device which presents a set of summary items which can expose details based on each summary. An item can be expanded to reveal details, and collapsed to hide details.
+
+## Guidelines
+
+* [Astro UXDS: Accordion](https://www.astrouxds.com/components/accordion/)
+
+export const Default = (args) => {
+    return html`
+<div style="padding: 5%;">
+    <rux-accordion
+        ?disabled="${args.disabled}"
+        ?disallow-multiple="${args.disallowMultiple}"
+    >
+        <rux-accordion-item><div slot="label">Title 1</div><p>Content 1</p></rux-accordion-item>
+        <rux-accordion-item><div slot="label">Title 2</div><p>Content 2</p></rux-accordion-item>
+        <rux-accordion-item><div slot="label">Title 3</div><p>Content 3</p></rux-accordion-item>
+    </rux-accordion>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionStories.Default_} />
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-accordion" />
+
+## Variants
+
+### Disabled
+
+export const Disabled = (args) => {
+    return html`
+<div style="padding: 5%;">
+    <rux-accordion
+        ?disabled="${args.disabled}"
+        ?disallow-multiple="${args.disallowMultiple}"
+    >
+        <rux-accordion-item><div slot="label">Title 1</div><p>Content 1</p></rux-accordion-item>
+        <rux-accordion-item><div slot="label">Title 2</div><p>Content 2</p></rux-accordion-item>
+        <rux-accordion-item><div slot="label">Title 3</div><p>Content 3</p></rux-accordion-item>
+    </rux-accordion>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionStories.Disabled_} />
+</Canvas>
+
+### Disallow Multiple
+
+Allows only one accordion item to be expanded at a time.
+
+export const DisallowMultiple = (args) => {
+    return html`
+<div style="padding: 5%;">
+    <rux-accordion
+        ?disabled="${args.disabled}"
+        ?disallow-multiple="${args.disallowMultiple}"
+    >
+        <rux-accordion-item><div slot="label">Title 1</div><p>Content 1</p></rux-accordion-item>
+        <rux-accordion-item><div slot="label">Title 2</div><p>Content 2</p></rux-accordion-item>
+        <rux-accordion-item><div slot="label">Title 3</div><p>Content 3</p></rux-accordion-item>
+    </rux-accordion>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionStories.DisallowMultiple_} />
+</Canvas>
+
+### Truncated
+
+Long accordion summaries wrap lines by default. These can be made to truncate instead by targeting the rux-accordion-item slot 'label' and applying styles. For example:
+
+```html
+<style>
+    #truncated [slot="label"] {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>
+```
+
+export const Truncate = (args) => {
+    return html`
+<div style="padding: 5%;">
+    <style>
+        #truncated [slot="label"] {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    </style>
+    <rux-accordion
+        ?disabled="${args.disabled}"
+        ?disallow-multiple="${args.disallowMultiple}"
+        id="truncated"
+    >
+        <rux-accordion-item>
+            <div slot="label">Title 1 - Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. A eos impedit tempora labore magnam magni maiores
+                esse unde, praesentium sed eaque ducimus in odit
+            </div>
+            <p>Content 1</p>
+        </rux-accordion-item>
+        <rux-accordion-item>
+            <div slot="label">Title 2 - Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. A eos impedit tempora labore magnam magni maiores
+                esse unde, praesentium sed eaque ducimus in odit
+            </div>
+            <p>Content 2</p>
+        </rux-accordion-item>
+        <rux-accordion-item>
+            <div slot="label">Title 3 - Lorem, ipsum dolor sit amet consectetur adipisicing
+                elit. A eos impedit tempora labore magnam magni maiores
+                esse unde, praesentium sed eaque ducimus in odit
+            </div>
+            <p>Content 3 Long - Lorem, ipsum dolor sit amet consectetur adipisicing elit. A eos impedit tempora
+                labore magnam magni maiores esse unde, praesentium sed eaque ducimus in oditLorem, ipsum dolor sit
+                amet consectetur adipisicing elit. A eos impedit tempora labore magnam magni maiores esse unde</p>
+        </rux-accordion-item>
+    </rux-accordion>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={AccordionStories.Truncated} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxAccordion } from '@astrouxds/astro-web-components/dist/components/rux-accordion'
+import { RuxAccordionItem } from '@astrouxds/astro-web-components/dist/components/rux-accordion-item'
+customElements.define('rux-accordion', RuxAccordion)
+customElements.define('rux-accordion-item', RuxAccordionItem)
+```

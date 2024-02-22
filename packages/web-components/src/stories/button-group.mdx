@@ -1,0 +1,109 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-palette-teal-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+import * as ButtonGroupStories from './button-group.stories';
+
+<Meta of={ButtonGroupStories} />
+
+# Button Group
+
+<StyledDiv>
+  <div>Warning: Button Group is deprecated.</div>
+
+  <p class="banner-text">
+    Instead, create your own group using `display: flex` and our `--spacing-2` design token.
+  </p>
+</StyledDiv>
+
+Common button groupings follow these conventions:
+
+* Cancel buttons are always presented to the left of actions such as “Submit.”
+* Always group together “Ok/Cancel” buttons. Do not justify them apart, but keep a reasonable margin between the buttons.
+* Buttons within the same group should maintain their inherent size. Do not stretch one button to match another’s width.
+
+## Guidelines
+
+* [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
+
+export const Default = (args) => {
+    return html`
+<style>
+    .light-theme {
+        --exampleContainerBackgroundColor: var(--color-text-inverse);
+        --exampleContainerBorderColor: var(--colorQuaternaryLighten1);
+    }
+    .dark-theme {
+        --exampleContainerBackgroundColor: var(
+            --color-background-surface-default
+        );
+        --exampleContainerBorderColor: #283f58;
+    }
+    .example-container {
+        min-width: 20rem;
+        background: var(--exampleContainerBackgroundColor);
+        border: 1px solid var(--exampleContainerBorderColor);
+        padding: 0.625rem;
+        display: block;
+    }
+</style>
+<div style="padding: 10%; display: flex; justify-content: center;">
+    <div class="example-container">
+        <rux-button-group
+            h-align="${args.hAlign ? args.hAlign : 'right'}"
+        >
+            <rux-button secondary>Cancel</rux-button>
+            <rux-button>Continue</rux-button>
+        </rux-button-group>
+    </div>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ButtonGroupStories.ButtonGroup} />
+</Canvas>
+
+## API
+
+<ArgsTable of="rux-button-group" />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxButtonGroup } from '@astrouxds/astro-web-components/dist/components/rux-button-group.js'
+import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button.js'
+import { RuxIcon } from '@astrouxds/astro-web-components/dist/components/rux-icon.js'
+customElements.define('rux-button', RuxButton)
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-button-group', RuxButtonGroup)
+```
