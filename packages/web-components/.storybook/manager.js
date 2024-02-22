@@ -1,5 +1,5 @@
 import themes from './theme'
-import { addons } from '@storybook/addons'
+import { addons } from '@storybook/manager-api'
 
 addons.setConfig({
     panelPosition: 'right',
