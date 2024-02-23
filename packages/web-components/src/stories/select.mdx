@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as SelectStories from './select.stories';
 
@@ -50,7 +50,7 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-select" />
+<Controls />
 
 ## Usage
 
@@ -387,7 +387,7 @@ export const MultipleWithOptionGroups = (args) => {
             <rux-option value="2.3" label="Option 2.3"></rux-option>
             <rux-option value="2.4" label="Option 2.4"></rux-option>
             <rux-option value="2.5" disabled label="Option 2.5 (disabled)"></rux-option>
-        </rux-option-group> 
+        </rux-option-group>
     </rux-select>
 </div>
     `

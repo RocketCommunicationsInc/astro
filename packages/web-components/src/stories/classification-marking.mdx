@@ -1,5 +1,5 @@
 import { html, render } from 'lit-html'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import * as ClassificationMarkingStories from './classification-marking.stories';
 
@@ -17,27 +17,13 @@ For the most up-to-date policies, see the [ISOO Training Aids](https://www.archi
 
 * [Astro UXDS: Classification Markings](https://astrouxds.com/components/classification-markings/)
 
-export const Default = (args) => {
-    return html`
-<div
-    style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
->
-    <rux-classification-marking
-        classification="${args.classification}"
-        .label="${args.label}"
-        ?tag="${args.tag}"
-    ></rux-classification-marking>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={ClassificationMarkingStories.Default_} />
 </Canvas>
 
 ## API
 
-<ArgsTable of="rux-classification-marking" />
+<Controls />
 
 ## Typescript Types
 
@@ -64,21 +50,6 @@ import { Classification } from '@astrouxds/astro-web-components'
 
 Applying the `label` property attribute to the Classification Custom Element adds `label` text value to the marking in addition to its classification text.
 
-export const WithLabel = (args) => {
-    return html`
-<div
-    style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
->
-    <rux-classification-marking
-        classification="${args.classification}"
-        label="${args.label}"
-        ?tag="${args.tag}"
-    >
-    </rux-classification-marking>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={ClassificationMarkingStories.WithLabel_} />
 </Canvas>
@@ -87,269 +58,17 @@ export const WithLabel = (args) => {
 
 When using the Classification Marking component as a wrapper with slotted children, setting the `footerBanner` property attribute to the Classification Custom Element adds a duplicate of the Classification Banner to the bottom of parent element.
 
-export const WithFooterBanner = (args) => {
-    return html`
-<div
-    style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
->
-     <rux-classification-marking
-        classification="${args.classification}"
-        label="${args.label}"
-        ?tag="${args.tag}"
-    >
-        <h1>Document Title</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus vitae euismod lacus. Pellentesque sollicitudin
-            quam tristique tristique eleifend. Nam nec nibh magna. Duis
-            iaculis nisi nec quam lobortis, id feugiat risus maximus.
-            Cras purus massa, vulputate id orci quis, semper iaculis
-            risus. Nam turpis ante, molestie auctor semper et, auctor
-            nec diam. Morbi vehicula enim ac enim ullamcorper
-            scelerisque. Etiam lacinia metus quis ligula ullamcorper,
-            sed suscipit orci sodales. venenatis. Donec a mi mattis,
-            scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
-            sit amet neque auctor, vitae vulputate sem volutpat.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus vitae euismod lacus. Pellentesque sollicitudin
-            quam tristique tristique eleifend. Nam nec nibh magna. Duis
-            iaculis nisi nec quam lobortis, id feugiat risus maximus.
-            Cras purus massa, vulputate id orci quis, semper iaculis
-            risus. Nam turpis ante, molestie auctor semper et, auctor
-            nec diam. Morbi vehicula enim ac enim ullamcorper
-            scelerisque. Etiam lacinia metus quis ligula ullamcorper,
-            sed suscipit orci sodales. venenatis. Donec a mi mattis,
-            scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
-            sit amet neque auctor, vitae vulputate sem volutpat.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus vitae euismod lacus. Pellentesque sollicitudin
-            quam tristique tristique eleifend. Nam nec nibh magna. Duis
-            iaculis nisi nec quam lobortis, id feugiat risus maximus.
-            Cras purus massa, vulputate id orci quis, semper iaculis
-            risus. Nam turpis ante, molestie auctor semper et, auctor
-            nec diam. Morbi vehicula enim ac enim ullamcorper
-            scelerisque. Etiam lacinia metus quis ligula ullamcorper,
-            sed suscipit orci sodales. venenatis. Donec a mi mattis,
-            scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
-            sit amet neque auctor, vitae vulputate sem volutpat.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus vitae euismod lacus. Pellentesque sollicitudin
-            quam tristique tristique eleifend. Nam nec nibh magna. Duis
-            iaculis nisi nec quam lobortis, id feugiat risus maximus.
-            Cras purus massa, vulputate id orci quis, semper iaculis
-            risus. Nam turpis ante, molestie auctor semper et, auctor
-            nec diam. Morbi vehicula enim ac enim ullamcorper
-            scelerisque. Etiam lacinia metus quis ligula ullamcorper,
-            sed suscipit orci sodales. venenatis. Donec a mi mattis,
-            scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
-            sit amet neque auctor, vitae vulputate sem volutpat.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus vitae euismod lacus. Pellentesque sollicitudin
-            quam tristique tristique eleifend. Nam nec nibh magna. Duis
-            iaculis nisi nec quam lobortis, id feugiat risus maximus.
-            Cras purus massa, vulputate id orci quis, semper iaculis
-            risus. Nam turpis ante, molestie auctor semper et, auctor
-            nec diam. Morbi vehicula enim ac enim ullamcorper
-            scelerisque. Etiam lacinia metus quis ligula ullamcorper,
-            sed suscipit orci sodales. venenatis. Donec a mi mattis,
-            scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
-            sit amet neque auctor, vitae vulputate sem volutpat.
-        </p>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Phasellus vitae euismod lacus. Pellentesque sollicitudin
-            quam tristique tristique eleifend. Nam nec nibh magna. Duis
-            iaculis nisi nec quam lobortis, id feugiat risus maximus.
-            Cras purus massa, vulputate id orci quis, semper iaculis
-            risus. Nam turpis ante, molestie auctor semper et, auctor
-            nec diam. Morbi vehicula enim ac enim ullamcorper
-            scelerisque. Etiam lacinia metus quis ligula ullamcorper,
-            sed suscipit orci sodales. venenatis. Donec a mi mattis,
-            scelerisque nisl in, tincidunt ipsum. Donec venenatis dui
-            sit amet neque auctor, vitae vulputate sem volutpat.
-        </p>
-    </rux-classification-marking>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={ClassificationMarkingStories.WithFooterBanner_} />
 </Canvas>
 
 ### All Banner Variants
 
-export const AllBannerVariants = (args) => {
-    return html`
-<div
-    style="display: flex; flex-flow: column; justify-content: center; margin:20px;"
->
-    <div
-        style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <rux-classification-marking
-            classification="top-secret-sci"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <rux-classification-marking
-            classification="top-secret"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <rux-classification-marking
-            classification="secret"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <rux-classification-marking
-            classification="confidential"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <rux-classification-marking
-            classification="controlled"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <rux-classification-marking
-            classification="cui"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <rux-classification-marking
-            classification="unclassified"
-        ></rux-classification-marking>
-    </div>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={ClassificationMarkingStories.AllBannerVariants_} />
 </Canvas>
 
 ### All Tag Variants
-
-export const AllTagVariants = () => {
-    return html`
-<div
-    style="display: flex; flex-flow: column; justify-content: flex-start; width: 400px; margin:60px auto;"
->
-    <div
-        style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <p
-            style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
-        >
-            Top Secret//SCI
-        </p>
-        <rux-classification-marking
-            tag
-            classification="top-secret-sci"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <p
-            style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
-        >
-            Top Secret
-        </p>
-        <rux-classification-marking
-            tag
-            classification="top-secret"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="display: flex; align-items:baseline;  position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <p
-            style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
-        >
-            Secret
-        </p>
-        <rux-classification-marking
-            tag
-            classification="secret"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <p
-            style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
-        >
-            Confidential
-        </p>
-        <rux-classification-marking
-            tag
-            classification="confidential"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <p
-            style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
-        >
-            Controlled Unclassified
-        </p>
-        <rux-classification-marking
-            tag
-            classification="controlled"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <p
-            style="display:flex; width:225px; font-size:14px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
-        >
-            CUI Unclassified
-        </p>
-        <rux-classification-marking
-            tag
-            classification="cui"
-        ></rux-classification-marking>
-    </div>
-    <div
-        style="display: flex; align-items:baseline; position: relative; height: 40px; margin-bottom: 20px; overflow: hidden;"
-    >
-        <p
-            style="display: flex; width:225px; font-size:13px; font-style:italic; color:#d5d7d9; margin: 0 0 1rem 0;"
-        >
-            Uncontrolled Unclassified
-        </p>
-        <rux-classification-marking
-            tag
-            classification="unclassified"
-        ></rux-classification-marking>
-    </div>
-</div>
-    `
-}
 
 By default Classification Markings are rendered in banner format. Applying the `tag` property attribute sets the marking type. The `tag` attribute property defines the Classification Marking as a Tag.
 

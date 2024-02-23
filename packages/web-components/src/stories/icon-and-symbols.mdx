@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import ruxIconsJson from './icons.json'
 import * as IconAndSymbolsStories from './icon-and-symbols.stories';
@@ -31,7 +31,7 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-icon" />
+<Controls />
 
 ## Usage
 

@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import { styled } from '@storybook/theming'
 export const StyledDiv = styled.div`
@@ -124,7 +124,7 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-timeline" />
+<Controls />
 
 ## Timeline
 
@@ -272,7 +272,7 @@ Tracks are responsible for displaying content in horizontal lanes across the Tim
 They can include **Time Regions** or the **Ruler** component.
 They are composed of a label section and a time region section.
 
-<ArgsTable of="rux-track" />
+<Controls />
 
 ### Setting the Label
 
@@ -304,7 +304,7 @@ the component will throw an error and not render.
 
 If a Time Region's start and end date falls outside of the range of the Timeline, a Time Region will be display visually as a Partial Time Region.
 
-<ArgsTable of="rux-time-region" />
+<Controls />
 
 ## Ruler
 
@@ -435,7 +435,7 @@ export const ShowStartOfDay = (args) => {
             }
         </style>
         <div style="width: 950px; margin: auto">
-            <rux-timeline start="2021-02-01T23:00:00Z" end="2021-02-03T00:00:00Z" interval="hour" zoom="2" 
+            <rux-timeline start="2021-02-01T23:00:00Z" end="2021-02-03T00:00:00Z" interval="hour" zoom="2"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
@@ -443,8 +443,8 @@ export const ShowStartOfDay = (args) => {
                         Event 1.2
                     </rux-time-region>
                 </rux-track>
-                
-                
+
+
                 <rux-track slot="ruler">
                     <rux-ruler show-start-of-day></rux-ruler>
                 </rux-track>
@@ -467,7 +467,7 @@ export const Minutes = (args) => {
             }
         </style>
         <div style="width: 950px; margin: auto">
-            <rux-timeline start="2021-02-01T00:00:00Z" end="2021-02-01T01:00:00Z" interval="minute" zoom="2" 
+            <rux-timeline start="2021-02-01T00:00:00Z" end="2021-02-01T01:00:00Z" interval="minute" zoom="2"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
@@ -475,8 +475,8 @@ export const Minutes = (args) => {
                         Event 1.2
                     </rux-time-region>
                 </rux-track>
-                
-                
+
+
                 <rux-track slot="ruler">
                     <rux-ruler></rux-ruler>
                 </rux-track>

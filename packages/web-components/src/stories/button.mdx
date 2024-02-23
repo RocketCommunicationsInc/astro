@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as ButtonStories from './button.stories';
 
@@ -13,30 +13,13 @@ Buttons allow users to trigger actions.
 
 * [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
 
-export const Default = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-button
-        ?disabled="${args.disabled}"
-        ?icon-only="${args.iconOnly}"
-        ?secondary="${args.secondary}"
-        ?borderless="${args.borderless}"
-        .size="${args.size}"
-        .icon="${args.icon}"
-    >
-        Button
-    </rux-button>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={ButtonStories.Default_} />
 </Canvas>
 
 ## API
 
-<ArgsTable of="rux-button" />
+<Controls />
 
 ## Variants
 
@@ -44,70 +27,17 @@ export const Default = (args) => {
 
 The component auto-imports the default Astro Icon Web Component for icons, if you specify one. Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) to define icons within Buttons. This method is best if you need to override the default icon library SVG file.
 
-export const slottedIconButton = (args) => {
-    const { size, disabled, secondary, iconOnly } = args
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-button
-        ?disabled="${args.disabled}"
-        ?icon-only="${args.iconOnly}"
-        ?secondary="${args.secondary}"
-        ?borderless="${args.borderless}"
-        .size="${args.size}"
-        .icon="${args.icon}"
-    >
-        <rux-icon icon="palette" size="extra-small"></rux-icon>
-        Slotted icon button
-    </rux-button>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={ButtonStories.WithSlottedIcon} />
 </Canvas>
 
 ### Secondary
 
-export const Secondary = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-button
-        ?disabled="${args.disabled}"
-        ?icon-only="${args.iconOnly}"
-        ?secondary="${args.secondary}"
-        ?borderless="${args.borderless}"
-        .size="${args.size}"
-        .icon="${args.icon}"
-    >
-        Button
-    </rux-button>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={ButtonStories.Secondary_} />
 </Canvas>
 
 ### Borderless
-
-export const Borderless = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-button
-        ?disabled="${args.disabled}"
-        ?icon-only="${args.iconOnly}"
-        ?secondary="${args.secondary}"
-        ?borderless="${args.borderless}"
-        .size="${args.size}"
-        .icon="${args.icon}"
-    >
-        Button
-    </rux-button>
-</div>
-    `
-}
 
 <Canvas>
   <Story of={ButtonStories.Borderless_} />

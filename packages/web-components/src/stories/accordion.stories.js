@@ -177,7 +177,7 @@ export const DisallowMultiple_ = {
     },
 }
 
-export const Truncated = {
+export const Truncated_ = {
     render: Truncate.bind(),
     name: 'Truncated',
 

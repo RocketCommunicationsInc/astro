@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as BreadcrumbStories from './breadcrumb.stories';
 
@@ -13,25 +13,13 @@ A Breadcrumb component is a secondary navigation mechanism that can improve user
 
 * [Astro UXDS: Breadcrumb](https://www.astrouxds.com/components/breadcrumb/)
 
-export const Default = (args) => {
-    return html`
-<div style="padding: 5%;">
-    <rux-breadcrumb>
-        <rux-breadcrumb-item href="#">Home</rux-breadcrumb-item>
-        <rux-breadcrumb-item href="#">Second Item</rux-breadcrumb-item>
-        <rux-breadcrumb-item>Current Item</rux-breadcrumb-item>
-    </rux-breadcrumb>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={BreadcrumbStories.Default_} />
 </Canvas>
 
 ## API
 
-<ArgsTable of="rux-breadcrumb" />
+<Controls />
 
 ##### *Note:* Any html element placed into the default slot of rux-breadcrumb will be automatically assigned its own slot. For instance, if three `<rux-breadcrumb-item>`s are assigned to the default slot of `<rux-breadcrumb>`, they will automatically be assigned `slot="slot-1"` `slot="slot-2"` and `slot="slot-3"` respectively.
 
@@ -75,14 +63,14 @@ To use Breadcrumbs in Angular Router, you'll need to listen on click and manuall
 ```html
 <!--app.component.html-->
 <rux-breadcrumb>
-	<rux-breadcrumb-item 
-		href="/first-component" 
+	<rux-breadcrumb-item
+		href="/first-component"
 		(click)="navigate($event)"
 	>
 		Home
 	</rux-breadcrumb-item>
-	<rux-breadcrumb-item 
-		href="/second-component" 
+	<rux-breadcrumb-item
+		href="/second-component"
 		(click)="navigate($event)"
 	>
 		Login
@@ -125,7 +113,7 @@ You'll also need to use the `v-slot` to pass the href down to `<rux-breadcrumb-i
             Home
         </rux-breadcrumb-item>
     </router-link>
-    
+
     <router-link to="/about" custom v-slot="{ href }">
         <rux-breadcrumb-item :href="href">Login</rux-breadcrumb-item>
     </router-link>
@@ -140,18 +128,6 @@ You'll also need to use the `v-slot` to pass the href down to `<rux-breadcrumb-i
 
 Rux-icons can be added to any breadcrumb item.
 
-export const Icons = (args) => {
-    return html`
-<div style="padding: 5%;">
-    <rux-breadcrumb>
-        <rux-breadcrumb-item href="#"><rux-icon icon="home"></rux-icon> Home</rux-breadcrumb-item>
-        <rux-breadcrumb-item href="#"><rux-icon icon="border-clear"></rux-icon> Second Item</rux-breadcrumb-item>
-        <rux-breadcrumb-item><rux-icon icon="person"></rux-icon>Current Item</rux-breadcrumb-item>
-    </rux-breadcrumb>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={BreadcrumbStories.Icons_} />
 </Canvas>
@@ -159,18 +135,6 @@ export const Icons = (args) => {
 ### Icons Only
 
 Breadcrumb items can contain only an icon as well
-
-export const IconsOnly = (args) => {
-    return html`
-<div style="padding: 5%;">
-    <rux-breadcrumb>
-        <rux-breadcrumb-item href="#"><rux-icon icon="home"></rux-icon></rux-breadcrumb-item>
-        <rux-breadcrumb-item href="#"><rux-icon icon="border-clear"></rux-icon></rux-breadcrumb-item>
-        <rux-breadcrumb-item><rux-icon icon="person"></rux-icon></rux-breadcrumb-item>
-    </rux-breadcrumb>
-</div>
-    `
-}
 
 <Canvas>
   <Story of={BreadcrumbStories.IconsOnly_} />

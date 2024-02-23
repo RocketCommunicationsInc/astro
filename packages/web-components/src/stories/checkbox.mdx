@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as CheckboxStories from './checkbox.stories';
 
@@ -16,69 +16,23 @@ For displaying invalid state, consider using a [Checkbox Group](?path=/docs/form
 * [Astro UXDS: Checkboxes](https://www.astrouxds.com/ui-components/checkbox)
 * [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
-export const Default = (args) => {
-    return html`
-<rux-checkbox
-    ?disabled="${args.disabled}"
-    ?checked="${args.checked}"
-    ?indeterminate="${args.indeterminate}"
-    .helpText="${args.helpText}"
-    name="${args.name}"
-    .value="${args.value}"
-    label="${args.label}"
->Checkbox Label</rux-checkbox>
-    `
-}
-
 <Canvas>
   <Story of={CheckboxStories.Default_} />
 </Canvas>
 
 ## API
 
-<ArgsTable of="rux-checkbox" />
+<Controls />
 
 ## Variants
 
 ### Checked
-
-export const Checked = (args) => {
-    return html`
-<rux-checkbox
-    ?disabled="${args.disabled}"
-    ?checked="${args.checked}"
-    ?indeterminate="${args.indeterminate}"
-    .helpText="${args.helpText}"
-    name="${args.name}"
-    .value="${args.value}"
-    label="${args.label}"
->
-    Checkbox Label
-</rux-checkbox>
-    `
-}
 
 <Canvas>
   <Story of={CheckboxStories.Checked_} />
 </Canvas>
 
 ### Disabled
-
-export const Disabled = (args) => {
-    return html`
-<rux-checkbox
-    ?disabled="${args.disabled}"
-    ?checked="${args.checked}"
-    ?indeterminate="${args.indeterminate}"
-    .helpText="${args.helpText}"
-    name="${args.name}"
-    .value="${args.value}"
-    label="${args.label}"
->
-Checkbox Label
-</rux-checkbox>
-    `
-}
 
 <Canvas>
   <Story of={CheckboxStories.Disabled_} />
@@ -88,43 +42,11 @@ Checkbox Label
 
 An Indeterminate state (a dash symbol rather than checked) may display when a Checkbox is used as a parent of a group of Checkboxes where at least one child is selected and at least one is not.
 
-export const Indeterminate = (args) => {
-    return html`
-<rux-checkbox
-    ?disabled="${args.disabled}"
-    ?checked="${args.checked}"
-    ?indeterminate="${args.indeterminate}"
-    .helpText="${args.helpText}"
-    name="${args.name}"
-    .value="${args.value}"
-    label="${args.label}"
->
-    Checkbox Label
-</rux-checkbox>
-`
-}
-
 <Canvas>
   <Story of={CheckboxStories.Indeterminate_} />
 </Canvas>
 
 ### With Help Text
-
-export const WithHelpText = (args) => {
-    return html`
-<rux-checkbox
-    ?disabled="${args.disabled}"
-    ?checked="${args.checked}"
-    ?indeterminate="${args.indeterminate}"
-    help-text="${args.helpText}"
-    name="${args.name}"
-    .value="${args.value}"
-    label="${args.label}"
->
-    Checkbox Label
-</rux-checkbox>
-    `
-}
 
 <Canvas>
   <Story of={CheckboxStories.WithHelpText_} />

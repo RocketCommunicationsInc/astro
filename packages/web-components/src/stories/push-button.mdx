@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as PushButtonStories from './push-button.stories';
 
@@ -36,7 +36,7 @@ export const PushButton = (args) => {
 
 ## API
 
-<ArgsTable of="rux-push-button" />
+<Controls />
 
 export const AllVariants = (args) => {
     return html`

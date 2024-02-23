@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as TreeStories from './tree.stories';
 
@@ -147,7 +147,7 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-tree" />
+<Controls />
 
 ## Usage
 
@@ -338,7 +338,7 @@ export const WrapText = (args) => {
             <rux-tree-node slot="node">Three</rux-tree-node>
         </rux-tree-node>
         <rux-tree-node>
-            Four score and seven years ago 
+            Four score and seven years ago
             <rux-tree-node slot="node">One</rux-tree-node>
             <rux-tree-node slot="node">Two</rux-tree-node>
             <rux-tree-node slot="node">Three</rux-tree-node>

@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as BreadcrumbItemStories from './breadcrumb-item.stories';
 
@@ -13,33 +13,17 @@ Breadcrumb Item belongs to the Breadcrumb Component. When used in conjunction wi
 
 * [Astro UXDS: Breadcrumb](https://www.astrouxds.com/components/breadcrumb/)
 
-export const Default = (args) => {
-    return html`
-<div style="padding: 5%;">
-    <rux-breadcrumb-item href=${args.href} current=${args.current}>Breadcrumb Item</rux-breadcrumb-item>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={BreadcrumbItemStories.Default_} />
 </Canvas>
 
 ## API
 
-<ArgsTable of="rux-breadcrumb-item" />
+<Controls />
 
 ## Variants
 
 ### Without Href
-
-export const NoLink = (args) => {
-    return html`
-    <div style="padding: 5%;">
-        <rux-breadcrumb-item current=${args.current}>Breadcrumb Item</rux-breadcrumb-item>
-    </div>
-        `
-}
 
 <Canvas>
   <Story of={BreadcrumbItemStories.WithoutHref} />
@@ -47,27 +31,11 @@ export const NoLink = (args) => {
 
 ### With Icon
 
-export const Icon = (args) => {
-    return html`
-    <div style="padding: 5%;">
-        <rux-breadcrumb-item href=${args.href} current=${args.current}><rux-icon icon="border-clear"></rux-icon> Breadcrumb Item</rux-breadcrumb-item>
-    </div>
-        `
-}
-
 <Canvas>
   <Story of={BreadcrumbItemStories.WithIcon} />
 </Canvas>
 
 ### Icon Only
-
-export const IconOnly = (args) => {
-    return html`
-    <div style="padding: 5%;">
-        <rux-breadcrumb-item href=${args.href} current=${args.current}><rux-icon icon="border-clear"></rux-icon></rux-breadcrumb-item>
-    </div>
-        `
-}
 
 <Canvas>
   <Story of={BreadcrumbItemStories.IconOnly_} />

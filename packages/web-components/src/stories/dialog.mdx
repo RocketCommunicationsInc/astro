@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as DialogStories from './dialog.stories';
 
@@ -33,7 +33,7 @@ export const Dialog = (args) => {
 
 ## API
 
-<ArgsTable of="rux-dialog" />
+<Controls />
 
 ### Variants
 
@@ -92,7 +92,7 @@ using a `rux-button` to open the Dialog, and another `rux-button` in the `footer
     const openDialog = document.getElementById('open')
     const dialog = document.getElementById('dialog');
     const confirm = document.getElementById('confirm')
-    openDialog.addEventListener('click', () => { 
+    openDialog.addEventListener('click', () => {
         dialog.open = true;
     })
     confirm.addEventListener('click', () => {

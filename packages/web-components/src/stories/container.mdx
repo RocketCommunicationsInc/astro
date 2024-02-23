@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as ContainerStories from './container.stories';
 
@@ -23,7 +23,7 @@ export const Default = (args) => {
 
 ## API
 
-<ArgsTable of="rux-container" />
+<Controls />
 
 ## Variants
 
@@ -59,7 +59,7 @@ export const WithTabBar = (args) => {
         </div>
         <rux-tab-panels aria-labelledby="tab-set-id-1">
             <rux-tab-panel aria-labelledby="tab-id-1">
-                Tab 1 HTML content 
+                Tab 1 HTML content
             </rux-tab-panel>
             <rux-tab-panel aria-labelledby="tab-id-2">
                 Tab 2 HTML content

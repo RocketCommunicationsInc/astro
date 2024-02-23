@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import { styled } from '@storybook/theming'
 export const StyledDiv = styled.div`
@@ -77,7 +77,7 @@ The toast stack component can create toasts via the internal method `addToast()`
 
 ## API
 
-<ArgsTable of="rux-toast-stack" />
+<Controls />
 
 ## Variants
 

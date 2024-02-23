@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as IndeterminateProgressStories from './indeterminate-progress.stories';
 
@@ -15,7 +15,7 @@ A CSS implementation of an indeterminate progress spinner.
 
 ## API
 
-<ArgsTable of="rux-indeterminate-progress" />
+<Controls />
 
 export const Default = (args) => {
     return html`

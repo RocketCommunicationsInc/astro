@@ -1,5 +1,5 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
 import { html, render } from 'lit-html'
 import * as AccordionItemStories from './accordion-item.stories';
 
@@ -13,62 +13,23 @@ Accordion Item belongs to the Accordion Component
 
 * [Astro UXDS: Accordion](https://www.astrouxds.com/components/accordion/)
 
-export const Default = (args) => {
-    return html`
-<div style="padding: 5%;">
-        <rux-accordion-item
-            ?disabled="${args.disabled}"
-            ?expanded="${args.expanded}">
-            <div slot="label">Title 1</div>
-            <p>Content 1</p>
-        </rux-accordion-item>
-</div>
-    `
-}
-
 <Canvas>
   <Story of={AccordionItemStories.Default_} />
 </Canvas>
 
 ## API
 
-<ArgsTable of="rux-accordion-item" />
+<Controls />
 
 ## Variants
 
 ### Disabled
-
-export const Disabled = (args) => {
-    return html`
-    <div style="padding: 5%;">
-            <rux-accordion-item
-                ?disabled="${args.disabled}"
-                ?expanded="${args.expanded}">
-                <div slot="label">Title 1</div>
-                <p>Content 1</p>
-            </rux-accordion-item>
-    </div>
-    `
-}
 
 <Canvas>
   <Story of={AccordionItemStories.Disabled_} />
 </Canvas>
 
 ### Expanded
-
-export const Expanded = (args) => {
-    return html`
-    <div style="padding: 5%;">
-            <rux-accordion-item
-                ?disabled="${args.disabled}"
-                ?expanded="${args.expanded}">
-                <div slot="label">Title 1</div>
-                <p>Content 1</p>
-            </rux-accordion-item>
-    </div>
-    `
-}
 
 <Canvas>
   <Story of={AccordionItemStories.Expanded_} />
@@ -82,20 +43,6 @@ For example,
 ```html
 <rux-icon icon="apps" slot="prefix" size="auto"></rux-icon>
 ```
-
-export const IconSlotted = (args) => {
-    return html`
-    <div style="padding: 5%;">
-            <rux-accordion-item
-                ?disabled="${args.disabled}"
-                ?expanded="${args.expanded}">
-                <rux-icon icon="apps" slot="prefix" size="auto"></rux-icon>
-                <div slot="label">Title 1</div>
-                <p>Content 1</p>
-            </rux-accordion-item>
-    </div>
-    `
-}
 
 <Canvas>
   <Story of={AccordionItemStories.WithIcon} />

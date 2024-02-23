@@ -20,7 +20,7 @@ export default {
     component: 'ag-Grid',
 }
 
-export const AgGrid = {
+export const AgGrid_ = {
     render: AGGrid.bind(),
     name: 'ag-Grid',
 }
