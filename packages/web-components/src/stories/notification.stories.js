@@ -1,5 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html, render } from 'lit-html'
+const args = extractArgTypes('rux-notification')
 
 const Default = (args) => {
     return html`

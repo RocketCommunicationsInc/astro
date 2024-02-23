@@ -1,6 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html, render } from 'lit-html'
 import ruxIconsJson from './icons.json'
+const args = extractArgTypes('rux-icon')
 
 const Default = (args) => {
     return html` <rux-icon icon="${args.icon}" size="${args.size}"></rux-icon> `

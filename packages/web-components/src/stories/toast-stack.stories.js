@@ -1,6 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html, render } from 'lit-html'
 import { styled } from '@storybook/theming'
+const args = extractArgTypes('rux-toast-stack')
 
 const StyledDiv = styled.div`
     position: relative;
