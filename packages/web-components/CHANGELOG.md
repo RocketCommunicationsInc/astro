@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.20.1
+
+### Patch Changes
+
+-   ce4b8e95: fix: rux-pop-up resolve console log error
+
 ## 7.20.0
 
 ### Minor Changes
