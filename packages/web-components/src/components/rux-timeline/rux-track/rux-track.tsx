@@ -12,7 +12,14 @@ import {
     differenceInMinutes,
     differenceInHours,
     differenceInSeconds,
+    differenceInMonths,
+    differenceInDays,
 } from 'date-fns'
+import {
+    daysInMonth,
+    getBeginningOfDay,
+    getStartEndDateForInterval,
+} from '../helpers'
 
 interface DateValidation {
     success: boolean
@@ -104,11 +111,17 @@ export class RuxTrack {
      */
     private _calculateGridColumnFromTime(time: any) {
         if (this.start) {
-            const timelineStart = new Date(this.start)
+            let useStartEndDates: {
+                timelineStart: Date
+                timelineEnd: Date
+            } = getStartEndDateForInterval(this.start, this.end, this.interval)
 
             if (this.interval === 'hour') {
                 const difference = Math.abs(
-                    differenceInMinutes(timelineStart, new Date(time))
+                    differenceInMinutes(
+                        useStartEndDates.timelineStart,
+                        new Date(time)
+                    )
                 )
 
                 return difference + 2
@@ -116,18 +129,66 @@ export class RuxTrack {
 
             if (this.interval === 'minute') {
                 const difference = Math.abs(
-                    differenceInSeconds(timelineStart, new Date(time))
+                    differenceInSeconds(
+                        useStartEndDates.timelineStart,
+                        new Date(time)
+                    )
                 )
 
                 return difference + 2
             }
 
             if (this.interval === 'day') {
-                const difference = Math.abs(
-                    differenceInHours(timelineStart, new Date(time))
+                return (
+                    Math.abs(
+                        differenceInHours(
+                            useStartEndDates.timelineStart,
+                            new Date(time)
+                        )
+                    ) + 2
                 )
+            }
 
-                return difference + 2
+            if (this.interval === 'week') {
+                const timeAsDate = new Date(time)
+                const numWeeks =
+                    Math.ceil(
+                        Math.abs(
+                            differenceInDays(
+                                useStartEndDates.timelineStart,
+                                getBeginningOfDay(timeAsDate, 0)
+                            ) / 7
+                        )
+                    ) - 1
+                const weekStartsOnDay = useStartEndDates.timelineStart.getDay()
+
+                let extraDays = timeAsDate.getDay()
+                if (weekStartsOnDay > extraDays) {
+                    extraDays += 7
+                }
+                return (
+                    Math.ceil(
+                        (numWeeks + (extraDays - weekStartsOnDay) / 7) * 24
+                    ) + 2
+                )
+            }
+
+            if (this.interval === 'month') {
+                // For a month, the timeline starts on the first of the month
+                const timeAsDate = new Date(time)
+                const numMonths = Math.abs(
+                    differenceInMonths(
+                        useStartEndDates.timelineStart,
+                        timeAsDate
+                    )
+                )
+                const extraDays = timeAsDate.getDate()
+                const daysInCurrentMonth = daysInMonth(timeAsDate)
+                return (
+                    Math.ceil(
+                        (numMonths + extraDays / daysInCurrentMonth) * 24
+                    ) + 2
+                )
             }
         }
         return 0
@@ -192,6 +253,11 @@ export class RuxTrack {
             (el) => el.tagName.toLowerCase() === 'rux-time-region'
         ) as HTMLRuxTimeRegionElement[]
 
+        let useStartEndDates: {
+            timelineStart: Date
+            timelineEnd: Date
+        } = getStartEndDateForInterval(this.start, this.end, this.interval)
+
         children.forEach((el) => {
             const isHidden = el.style.visibility === 'hidden'
             const isValid = this._validateTimeRegion(el.start, el.end)
@@ -202,18 +268,23 @@ export class RuxTrack {
              * */
             let start = el.start
             let end = el.end
+            let startDate = new Date(el.start)
+            let endDate = new Date(el.end)
 
             if (isValid.success) {
-                if (el.start < this.start && el.end > this.end) {
+                if (
+                    startDate < useStartEndDates.timelineStart &&
+                    endDate > useStartEndDates.timelineEnd
+                ) {
                     el.partial = 'ongoing'
-                    start = this.start
-                    end = this.end
-                } else if (el.start < this.start) {
+                    start = useStartEndDates.timelineStart.toISOString()
+                    end = useStartEndDates.timelineEnd.toISOString()
+                } else if (startDate < useStartEndDates.timelineStart) {
                     el.partial = 'start'
                     start = this.start
-                } else if (el.end > this.end) {
+                } else if (endDate > useStartEndDates.timelineEnd) {
                     el.partial = 'end'
-                    end = this.end
+                    end = useStartEndDates.timelineEnd.toISOString()
                 } else {
                     el.partial = 'none'
                 }
@@ -224,6 +295,7 @@ export class RuxTrack {
                 const gridColumn = `${this._calculateGridColumnFromTime(
                     start
                 )} / ${this._calculateGridColumnFromTime(end)}`
+
                 el.style.gridColumn = gridColumn
             } else {
                 if (!isHidden) {

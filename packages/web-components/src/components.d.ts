@@ -20079,7 +20079,7 @@ export namespace Components {
         /**
           * The timeline's date time interval
          */
-        "interval": 'hour' | 'day' | 'minute';
+        "interval": 'month' | 'week' | 'hour' | 'day' | 'minute';
         /**
           * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */
@@ -55702,7 +55702,7 @@ declare namespace LocalJSX {
         /**
           * The timeline's date time interval
          */
-        "interval"?: 'hour' | 'day' | 'minute';
+        "interval"?: 'month' | 'week' | 'hour' | 'day' | 'minute';
         /**
           * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */
