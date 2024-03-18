@@ -292,13 +292,13 @@ export class RuxTimeline {
             const numMonths = Math.abs(
                 differenceInMonths(monthStart, timeAsDate)
             )
-            const extraDays = timeAsDate.getDate()
+            const extraDays = timeAsDate.getDate() - 1
             const daysInCurrentMonth = daysInMonth(timeAsDate)
             const extraHours = timeAsDate.getHours()
             newTime =
                 (numMonths +
                     (extraDays + extraHours / 24) / daysInCurrentMonth) *
-                    (this.columnWidth + this.zoom) +
+                    this.columnWidth +
                 200
             return newTime
         }

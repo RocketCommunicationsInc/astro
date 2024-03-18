@@ -13,7 +13,7 @@ import {
     differenceInHours,
     differenceInSeconds,
     differenceInMonths,
-    differenceInDays,
+    differenceInWeeks,
 } from 'date-fns'
 import {
     daysInMonth,
@@ -151,15 +151,14 @@ export class RuxTrack {
 
             if (this.interval === 'week') {
                 const timeAsDate = new Date(time)
-                const numWeeks =
-                    Math.ceil(
-                        Math.abs(
-                            differenceInDays(
-                                useStartEndDates.timelineStart,
-                                getBeginningOfDay(timeAsDate, 0)
-                            ) / 7
+                const numWeeks = Math.ceil(
+                    Math.abs(
+                        differenceInWeeks(
+                            useStartEndDates.timelineStart,
+                            getBeginningOfDay(timeAsDate, 0)
                         )
-                    ) - 1
+                    )
+                )
                 const weekStartsOnDay = useStartEndDates.timelineStart.getDay()
 
                 let extraDays = timeAsDate.getDay()
@@ -182,11 +181,15 @@ export class RuxTrack {
                         timeAsDate
                     )
                 )
-                const extraDays = timeAsDate.getDate()
+                const extraDays = timeAsDate.getDate() - 1
                 const daysInCurrentMonth = daysInMonth(timeAsDate)
+                const extraHours = timeAsDate.getHours()
                 return (
                     Math.ceil(
-                        (numMonths + extraDays / daysInCurrentMonth) * 24
+                        (numMonths +
+                            (extraDays + extraHours / 24) /
+                                daysInCurrentMonth) *
+                            24
                     ) + 2
                 )
             }
