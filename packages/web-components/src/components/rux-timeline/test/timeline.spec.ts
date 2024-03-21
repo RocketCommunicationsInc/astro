@@ -55,6 +55,112 @@ test.describe('Timeline DST', () => {
         expect(days).toEqual(['11/04', '11/05', '11/06', '11/07'])
     })
 })
+
+test.describe('Timeline Interval Year', () => {
+    test('it should show first of month', async ({ page }) => {
+        const template = `
+            <rux-timeline
+                timezone="UTC"
+                start="2023-12-11T00:00:00.000Z"
+                end="2024-04-15T00:00:00.000Z"
+                interval="month"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        `
+        await page.setContent(template)
+        const rulerEl = await page.locator('rux-ruler')
+
+        const days = await rulerEl.evaluate((el) => {
+            const rulerSpans = el.shadowRoot?.querySelectorAll('span')
+            if (rulerSpans) {
+                return [...rulerSpans].map((e) => e.innerHTML)
+            } else {
+                return []
+            }
+        })
+        expect(days).toEqual([
+            '12/01/23',
+            '01/01/24',
+            '02/01',
+            '03/01',
+            '04/01',
+        ])
+    })
+})
+
+test.describe('Timeline Interval Week', () => {
+    test('it should show first of each week', async ({ page }) => {
+        const template = `
+            <rux-timeline
+                timezone="UTC"
+                start="2024-02-08T08:08:00.000Z"
+                end="2024-03-15T08:00:00.000Z"
+                interval="week"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        `
+        await page.setContent(template)
+        const rulerEl = await page.locator('rux-ruler')
+
+        const days = await rulerEl.evaluate((el) => {
+            const rulerSpans = el.shadowRoot?.querySelectorAll('span')
+            if (rulerSpans) {
+                return [...rulerSpans].map((e) => e.innerHTML)
+            } else {
+                return []
+            }
+        })
+        expect(days).toEqual([
+            '02/08/24',
+            '02/15',
+            '02/22',
+            '02/29',
+            '03/07',
+            '03/14',
+        ])
+    })
+    test('it should show first of each week - cross year boundaries', async ({
+        page,
+    }) => {
+        const template = `
+            <rux-timeline
+                timezone="UTC"
+                start="2023-12-19T08:08:00.000Z"
+                end="2024-01-17T08:00:00.000Z"
+                interval="week"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        `
+        await page.setContent(template)
+        const rulerEl = await page.locator('rux-ruler')
+
+        const days = await rulerEl.evaluate((el) => {
+            const rulerSpans = el.shadowRoot?.querySelectorAll('span')
+            if (rulerSpans) {
+                return [...rulerSpans].map((e) => e.innerHTML)
+            } else {
+                return []
+            }
+        })
+        expect(days).toEqual([
+            '12/19/23',
+            '12/26',
+            '01/02/24',
+            '01/09',
+            '01/16',
+        ])
+    })
+})
+
 test.describe('Timeline', () => {
     test.beforeEach(async ({ page }) => {
         const template = `

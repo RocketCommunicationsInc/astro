@@ -45,6 +45,13 @@ export class RuxRuler {
         if (this.interval === 'day') {
             unitOfTime = 24
         }
+        // same as for days
+        if (this.interval === 'week') {
+            unitOfTime = 24
+        }
+        if (this.interval === 'month') {
+            unitOfTime = 24
+        }
 
         const start = unitOfTime * index + 2
         const end = start + unitOfTime

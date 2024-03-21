@@ -1,14 +1,17 @@
-import { Watch, Element, State, Component, Host, h, Prop } from '@stencil/core'
+import { Component, Element, Host, Prop, State, Watch, h } from '@stencil/core'
 import {
-    // addHours,
-    // addMinutes,
-    differenceInMinutes,
-    // startOfDay,
     differenceInHours,
+    differenceInMinutes,
+    differenceInMonths,
     format,
 } from 'date-fns'
-import { dateRange } from './helpers'
-import { validateTimezone } from './helpers'
+import {
+    dateRange,
+    daysInMonth,
+    getBeginningOfMonth,
+    getStartEndDateForInterval,
+    validateTimezone,
+} from './helpers'
 
 /**
  * @part playhead - The timeline's playhead
@@ -60,7 +63,7 @@ export class RuxTimeline {
     /**
      * The timeline's date time interval
      */
-    @Prop() interval: 'hour' | 'day' | 'minute' = 'hour'
+    @Prop() interval: 'month' | 'week' | 'hour' | 'day' | 'minute' = 'hour'
 
     /**
      * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
@@ -112,11 +115,25 @@ export class RuxTimeline {
         if (this.interval === 'day') {
             unitOfTime = 24
         }
+        // widths will be the same as for days
+        if (this.interval === 'week') {
+            unitOfTime = 24
+        }
+        if (this.interval === 'month') {
+            unitOfTime = 24
+        }
         return this.columnWidth / unitOfTime
     }
     get columns() {
         let unitOfTime = 60
         if (this.interval === 'day') {
+            unitOfTime = 24
+        }
+        // columns will be the same as for days
+        if (this.interval === 'week') {
+            unitOfTime = 24
+        }
+        if (this.interval === 'month') {
             unitOfTime = 24
         }
         return this.totalColumns * unitOfTime
@@ -148,6 +165,16 @@ export class RuxTimeline {
         if (this.interval === 'day') {
             return this.columnWidth / 24 //tbd
         }
+        // same as for days
+
+        if (this.interval === 'week') {
+            return this.columnWidth / 24 //seems ok
+        }
+
+        if (this.interval === 'month') {
+            return this.columnWidth / 24 //seems ok
+        }
+
         return 2
     }
 
@@ -164,6 +191,12 @@ export class RuxTimeline {
             (el) => el.tagName.toLowerCase() === 'rux-track'
         ) as HTMLRuxTrackElement[]
 
+        // handle start/end timeline for boundaries for month/week
+        let useStartEndDates: {
+            timelineStart: Date
+            timelineEnd: Date
+        } = getStartEndDateForInterval(this.start, this.end, this.interval)
+
         tracks.map((el) => {
             el.width = this.width
             el.columns = this.columns
@@ -174,8 +207,8 @@ export class RuxTimeline {
             }
 
             el.interval = this.interval
-            el.start = this.start
-            el.end = this.end
+            el.start = useStartEndDates.timelineStart.toISOString()
+            el.end = useStartEndDates.timelineEnd.toISOString()
         })
     }
 
@@ -212,25 +245,62 @@ export class RuxTimeline {
      */
     private _calculatePlayheadFromTime(time: any) {
         if (!time) return
+        // handle start/end timeline for boundaries for month/week
+        let useStartEndDates: {
+            timelineStart: Date
+            timelineEnd: Date
+        } = getStartEndDateForInterval(this.start, this.end, this.interval)
         if (
-            new Date(time) < new Date(this.start) ||
-            new Date(time) > new Date(this.end)
+            new Date(time) < useStartEndDates.timelineStart ||
+            new Date(time) > useStartEndDates.timelineEnd
         ) {
             console.warn(
-                `Playhead date must be between ${new Date(
-                    this.start
-                ).toISOString()} - ${new Date(this.end).toISOString()}`
+                `Playhead date must be between ${useStartEndDates.timelineStart.toISOString()} - ${useStartEndDates.timelineEnd.toISOString()}`
             )
         }
 
+        const timeAsDate = new Date(time)
         let newTime = Math.abs(
-            differenceInMinutes(new Date(this.start), new Date(time))
+            differenceInMinutes(useStartEndDates.timelineStart, timeAsDate)
         )
 
         if (this.interval === 'day') {
             newTime = Math.abs(
-                differenceInHours(new Date(this.start), new Date(time))
+                differenceInHours(useStartEndDates.timelineStart, timeAsDate)
             )
+        }
+
+        if (this.interval === 'week') {
+            newTime =
+                Math.abs(
+                    differenceInHours(
+                        useStartEndDates.timelineStart,
+                        timeAsDate
+                    )
+                ) / 7
+        }
+
+        if (this.interval === 'month') {
+            // For a month, the timeline starts on the first of the month
+            // This code allows us to take into account the varying length of each month.
+            const monthStart = getBeginningOfMonth(
+                useStartEndDates.timelineStart,
+                0
+            )
+
+            // number of months from start + 1/nth of the current month
+            const numMonths = Math.abs(
+                differenceInMonths(monthStart, timeAsDate)
+            )
+            const extraDays = timeAsDate.getDate() - 1
+            const daysInCurrentMonth = daysInMonth(timeAsDate)
+            const extraHours = timeAsDate.getHours()
+            newTime =
+                (numMonths +
+                    (extraDays + extraHours / 24) / daysInCurrentMonth) *
+                    this.columnWidth +
+                200
+            return newTime
         }
 
         const result = newTime * this.pxToTimeRatio + 200
@@ -280,6 +350,11 @@ export class RuxTimeline {
                     ) as [HTMLRuxTrackElement]),
             ]
 
+            let useStartEndDates: {
+                timelineStart: Date
+                timelineEnd: Date
+            } = getStartEndDateForInterval(this.start, this.end, this.interval)
+
             tracks.map((el: HTMLRuxTrackElement) => {
                 el.width = this.width
                 el.columns = this.columns
@@ -290,8 +365,8 @@ export class RuxTimeline {
                     el.playhead = null
                 }
                 el.interval = this.interval
-                el.start = this.start
-                el.end = this.end
+                el.start = useStartEndDates.timelineStart.toISOString()
+                el.end = useStartEndDates.timelineEnd.toISOString()
                 el.timezone = this.timezone
             })
         }
@@ -307,12 +382,17 @@ export class RuxTimeline {
             ) as HTMLRuxTrackElement
 
         if (rulerTrack) {
+            let useStartEndDates: {
+                timelineStart: Date
+                timelineEnd: Date
+            } = getStartEndDateForInterval(this.start, this.end, this.interval)
+
             rulerTrack.width = this.width
             rulerTrack.columns = this.columns
 
             rulerTrack.interval = this.interval
-            rulerTrack.start = this.start
-            rulerTrack.end = this.end
+            rulerTrack.start = useStartEndDates.timelineStart.toISOString()
+            rulerTrack.end = useStartEndDates.timelineEnd.toISOString()
             const rulerEl = [...rulerTrack.children].find(
                 (el: any) => el.tagName.toLowerCase() === 'rux-ruler'
             ) as HTMLRuxRulerElement
@@ -322,8 +402,8 @@ export class RuxTimeline {
                     rulerEl.timezone = this.timezone
                 })
 
-                rulerEl.start = this.start
-                rulerEl.end = this.end
+                rulerEl.start = useStartEndDates.timelineStart.toISOString()
+                rulerEl.end = useStartEndDates.timelineEnd.toISOString()
                 rulerEl.interval = this.interval
             }
         }
@@ -332,11 +412,22 @@ export class RuxTimeline {
     private _setZoom() {
         let unitOfTime = 60
         if (this.interval === 'day') {
-            unitOfTime = 24 * 5
+            unitOfTime = 120
+        }
+        if (this.interval === 'month') {
+            unitOfTime = 120
+        }
+        if (this.interval === 'week') {
+            unitOfTime = 120
         }
 
-        if (this.zoom >= 1) {
-            this.columnWidth = this.zoom * unitOfTime
+        if (isNaN(this.zoom)) {
+            this.zoom = 1
+        }
+
+        // this change allows the developers to zoom more tightly if desired.
+        if (this.zoom > 0) {
+            this.columnWidth = Math.floor(this.zoom * unitOfTime)
         }
     }
 
