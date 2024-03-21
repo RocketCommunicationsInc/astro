@@ -1,5 +1,17 @@
 # astro-vue
 
+## 0.3.0
+
+### Minor Changes
+
+- e7acf582: Updated timeline BETA to support Month and Week intervals for displaying data and allow zoom to be < 1
+
+### Patch Changes
+
+- Updated dependencies [ce4b8e95]
+- Updated dependencies [e7acf582]
+  - @astrouxds/astro-web-components@7.21.0
+
 ## 0.2.1
 
 ### Patch Changes
