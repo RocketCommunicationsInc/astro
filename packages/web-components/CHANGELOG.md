@@ -1,5 +1,19 @@
 # @astrouxds/astro-web-components
 
+## 7.21.0
+
+### Minor Changes
+
+#### Timeline
+
+-   Updated timeline to support Month and Week intervals for displaying data and allow zoom to be < 1
+
+### Patch Changes
+
+#### Pop Up
+
+-   Resolved console log error
+
 ## 7.20.0
 
 ### Minor Changes
