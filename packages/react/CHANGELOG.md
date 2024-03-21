@@ -1,22 +1,34 @@
 # @astrouxds/react
 
+## 7.21.0
+
+### Minor Changes
+
+- e7acf582: Updated timeline BETA to support Month and Week intervals for displaying data and allow zoom to be < 1
+
+### Patch Changes
+
+- Updated dependencies [ce4b8e95]
+- Updated dependencies [e7acf582]
+  - @astrouxds/astro-web-components@7.21.0
+
 ## 7.20.0
 
 ### Minor Changes
 
 #### Timeline
 
--   Add support for minute interval
+- Add support for minute interval
 
 ### Patch Changes
 
 #### Radio Button Group
 
--   Changed radio-button-group width to fit-content, which matches checkbox-group
+- Changed radio-button-group width to fit-content, which matches checkbox-group
 
 #### Tooltip
 
--   Allow pressing escape to close the tooltip
+- Allow pressing escape to close the tooltip
 
 ## 7.19.1
 
