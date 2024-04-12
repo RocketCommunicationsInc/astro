@@ -16,7 +16,8 @@
 
 ### `addToast(props: { [x: string]: any; hasOwnProperty: (arg0: string) => any; }) => Promise<void>`
 
-adds an individual toast to the stack with the set props passed in as an object
+Adds an individual toast to the stack with the set props passed in as an object.
+Accepts any key's that match rux-toast props (message, hideClose, ect).
 
 #### Returns
 
