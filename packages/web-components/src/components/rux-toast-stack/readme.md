@@ -42,6 +42,7 @@ Type: `Promise<void>`
 ```mermaid
 graph TD;
   rux-toast-stack --> rux-toast
+  rux-toast --> rux-status
   rux-toast --> rux-icon
   style rux-toast-stack fill:#f9f,stroke:#333,stroke-width:4px
 ```

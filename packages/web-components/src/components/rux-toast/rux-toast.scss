@@ -4,6 +4,10 @@
   * @prop --height: the Toast's height
   */
     --height: auto;
+    /**
+  * @prop --iconSize: The cloes icons size.
+  */
+    --iconSize: 16px;
 }
 
 .rux-toast {
@@ -43,6 +47,50 @@
     }
 }
 
+.rux-toast__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-4);
+}
+
 .rux-toast__close {
     cursor: pointer;
+}
+
+.rux-toast.rux-toast-status__standby {
+    border-color: var(--color-status-standby);
+    rux-icon::part(icon) {
+        color: var(--color-status-standby);
+    }
+}
+.rux-toast.rux-toast-status__critical {
+    border-color: var(--color-status-critical);
+    rux-icon::part(icon) {
+        color: var(--color-status-critical);
+    }
+}
+.rux-toast.rux-toast-status__serious {
+    border-color: var(--color-status-serious);
+    rux-icon::part(icon) {
+        color: var(--color-status-serious);
+    }
+}
+.rux-toast.rux-toast-status__caution {
+    border-color: var(--color-status-caution);
+    rux-icon::part(icon) {
+        color: var(--color-status-caution);
+    }
+}
+.rux-toast.rux-toast-status__off {
+    border-color: var(--color-status-off);
+    rux-icon::part(icon) {
+        color: var(--color-status-off);
+    }
+}
+.rux-toast.rux-toast-status__normal {
+    border-color: var(--color-status-normal);
+    rux-icon::part(icon) {
+        color: var(--color-status-normal);
+    }
 }

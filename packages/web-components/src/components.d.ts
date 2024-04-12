@@ -9,11 +9,13 @@ import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
+import { Status as Status1 } from "./components";
 import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
 export { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 export { LogRow } from "./components/rux-log/rux-log.model";
 export { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 export { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
+export { Status as Status1 } from "./components";
 export { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
 export namespace Components {
     interface RuxAccordion {
@@ -20110,10 +20112,14 @@ export namespace Components {
           * Message for the toast.
          */
         "message": string;
+        /**
+          * Allows for a status to be assigned to the toast.
+         */
+        "status"?: Status1;
     }
     interface RuxToastStack {
         /**
-          * adds an individual toast to the stack with the set props passed in as an object
+          * Adds an individual toast to the stack with the set props passed in as an object. Accepts any key's that match rux-toast props (message, hideClose, ect).
          */
         "addToast": (props: { [x: string]: any; hasOwnProperty: (arg0: string) => any; }) => Promise<void>;
         /**
@@ -55741,6 +55747,10 @@ declare namespace LocalJSX {
           * Fires when a toast is opened
          */
         "onRuxtoastopen"?: (event: RuxToastCustomEvent<boolean>) => void;
+        /**
+          * Allows for a status to be assigned to the toast.
+         */
+        "status"?: Status1;
     }
     interface RuxToastStack {
         /**
