@@ -1,14 +1,16 @@
 import {
     Component,
-    Host,
-    h,
-    Prop,
     Element,
-    State,
     Event,
     EventEmitter,
+    Host,
+    Prop,
+    State,
     Watch,
+    h,
 } from '@stencil/core'
+
+import { Status } from '../../components'
 import { hasSlot } from '../../utils/utils'
 
 /**
@@ -43,6 +45,11 @@ export class RuxToast {
      * Prevents the user from dismissing the notification. Hides the close icon.
      */
     @Prop({ attribute: 'hide-close', reflect: true }) hideClose: boolean = false
+
+    /**
+     * Allows for a status to be assigned to the toast.
+     */
+    @Prop({ attribute: 'status', reflect: true }) status?: Status
 
     /**
      * Fires when a toast is opened
@@ -139,9 +146,7 @@ export class RuxToast {
         return (
             <Host>
                 <div
-                    class={{
-                        'rux-toast': true,
-                    }}
+                    class={`rux-toast rux-toast-status__${this.status}`}
                     part="container"
                 >
                     <div
@@ -150,6 +155,9 @@ export class RuxToast {
                         }}
                         part="message"
                     >
+                        {this.status ? (
+                            <rux-status status={this.status}></rux-status>
+                        ) : null}
                         <slot onSlotchange={this._handleSlotChange}></slot>
                         {!this.hasMessageSlot && this.message ? (
                             <span>{this.message}</span>
@@ -166,7 +174,9 @@ export class RuxToast {
                                 onKeyDown={this._onKeyPress}
                                 icon="clear"
                                 exportparts="icon"
-                                size="16px"
+                                size={getComputedStyle(
+                                    this.el
+                                ).getPropertyValue('--iconSize')}
                             ></rux-icon>
                         </div>
                     ) : null}

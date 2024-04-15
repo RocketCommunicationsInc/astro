@@ -1,22 +1,51 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
-        />
-        <title>Stencil Component Starter</title>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-        />
-        <script type="module" src="/build/astro-web-components.esm.js"></script>
-        <script nomodule src="/build/astro-web-components.js"></script>
-        <link rel="stylesheet" href="/build/astro-web-components.css" />
-    </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
 
-    <body></body>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+  <script type="module" src="/build/astro-web-components.esm.js"></script>
+  <script nomodule src="/build/astro-web-components.js"></script>
+  <link rel="stylesheet" href="/build/astro-web-components.css" />
+  <style>
+    rux-toast {
+      --iconSize: 24px;
+    }
+
+    .my-custom {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <rux-toast-stack></rux-toast-stack>
+  <rux-button id="suc">Add Success Toast</rux-button>
+  <rux-button id="crit">Add critical Toast</rux-button>
+  <rux-button id="standby">Add standby Toast</rux-button>
+
+  <script>
+    const suc = document.getElementById('suc')
+    const crit = document.getElementById('crit')
+    const standby = document.getElementById('standby')
+
+    const stack = document.querySelector('rux-toast-stack')
+    suc.addEventListener(('click'), () => {
+      stack.addToast({ message: "Success/Normal Toast", status: "normal" })
+    })
+    crit.addEventListener(('click'), () => {
+      stack.addToast({ message: "Critical", status: "critical" })
+    })
+    standby.addEventListener(('click'), () => {
+      stack.addToast({ message: "Standby", status: "standby" })
+    })
+  </script>
+</body>
+
 </html>

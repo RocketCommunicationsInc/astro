@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element, Method } from '@stencil/core'
+import { Component, Element, Host, Method, Prop, h } from '@stencil/core'
 
 export type ToastStackPosition =
     | 'top-right'
@@ -24,7 +24,8 @@ export class RuxToastStack {
     position: ToastStackPosition = 'top-right'
 
     /**
-     * adds an individual toast to the stack with the set props passed in as an object
+     * Adds an individual toast to the stack with the set props passed in as an object.
+     * Accepts any key's that match rux-toast props (message, hideClose, ect).
      */
     @Method()
     async addToast(props: {
@@ -45,6 +46,9 @@ export class RuxToastStack {
                         break
                     case 'closeAfter':
                         toast.closeAfter = props[key]
+                        break
+                    case 'status':
+                        toast.status = props[key]
                         break
                 }
             }

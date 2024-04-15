@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Toast', () => {
     test('it renders', async ({ page }) => {
@@ -236,5 +236,30 @@ test.describe('Toast', () => {
         })
 
         await expect(el).toHaveAttribute('message', 'testing time')
+    })
+    test('status works when set via prop', async ({ page }) => {
+        const template = `
+      <rux-toast
+      ></rux-toast>
+      `
+        await page.setContent(template)
+        const el = page.locator('rux-toast')
+        el.evaluate((el) => {
+            const toast = el as HTMLRuxToastElement
+            toast.status = 'normal'
+        })
+
+        await expect(el).toHaveAttribute('status', 'normal')
+    })
+    test('icon size can be changed via css prop', async ({ page }) => {
+        const template = `<rux-toast message="Icon size test"></rux-toast>`
+        await page.setContent(template)
+        await page.addStyleTag({ content: `rux-toast { --iconSize: 24px; }` })
+        const el = page.locator('rux-toast')
+        const iconSize = await el.evaluate((el) =>
+            getComputedStyle(el).getPropertyValue('--iconSize')
+        )
+
+        expect(iconSize).toBe('24px')
     })
 })
