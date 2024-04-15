@@ -259,9 +259,7 @@ test.describe('Toast', () => {
         const iconSize = await el.evaluate((el) =>
             getComputedStyle(el).getPropertyValue('--iconSize')
         )
-        // await el.evaluate((el) => {
-        //     iconSize = getComputedStyle(el).getPropertyValue('--iconSize')
-        // })
+
         expect(iconSize).toBe('24px')
     })
 })

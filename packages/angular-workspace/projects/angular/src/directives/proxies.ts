@@ -24617,14 +24617,14 @@ export declare interface RuxTimeline extends Components.RuxTimeline {}
 
 
 @ProxyCmp({
-  inputs: ['closeAfter', 'hideClose', 'message']
+  inputs: ['closeAfter', 'hideClose', 'message', 'status']
 })
 @Component({
   selector: 'rux-toast',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['closeAfter', 'hideClose', 'message'],
+  inputs: ['closeAfter', 'hideClose', 'message', 'status'],
 })
 export class RuxToast {
   protected el: HTMLElement;

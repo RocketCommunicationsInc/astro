@@ -41,10 +41,10 @@
 
 ## CSS Custom Properties
 
-| Name         | Description           |
-| ------------ | --------------------- |
-| `--height`   | the Toast's height    |
-| `--iconSize` | The cloes icons size. |
+| Name         | Description          |
+| ------------ | -------------------- |
+| `--height`   | the Toast's height   |
+| `--iconSize` | The close icon size. |
 
 
 ## Dependencies

@@ -61,6 +61,8 @@ Toasts should array down in a toast stack, with the most recent toast appearing 
 
 Toasts can be created imperatively via the `addToast()` method in the toast-stack component. A toast on its own will need to be added into the appropriate toast stack.
 
+The toast's close icon size can be changed by setting the `--iconSize` CSS custom property.
+
 <StyledDiv>
     <div>Warning: This is an experimental component</div>
     <p class="banner-text">
@@ -76,6 +78,9 @@ export const Default = (args) => {
 <div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
     <rux-toast
         message="${args.message}"
+        close-after="${args.closeAfter}"
+        hide-close=${args.hideClose}
+        status="${args.status}"
     ></rux-toast>
 </div>
     `
@@ -87,8 +92,9 @@ export const Default = (args) => {
         height="100px"
         args={{
             closeAfter: null,
-            hideCLose: null,
+            hideClose: null,
             message: "This is a toast",
+            status: "standby"
         }}
     >
         {Default.bind()}
@@ -167,6 +173,39 @@ export const HideClose = (args) => {
     </Story>
 </Canvas>
 
+### With Status
+
+In cases where you need to display a certain status (for example success or error toasts), you can use
+the `status` prop.
+
+export const WithStatus = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <rux-toast
+        close-after="${args.closeAfter}"
+        hide-close="${args.hideClose}"
+        message="${args.message}"
+        status="${args.status}"
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+    <Story
+        args={{
+            closeAfter: null,
+            hideClose: true,
+            message: "Toast with a status.",
+            status: "normal"
+        }}
+        name="With Status"
+        height="100px"
+    >
+        {WithStatus.bind()}
+    </Story>
+</Canvas>
+
 ### Default Slot
 
 Use the default slot for more control over the content inside your toast, for example, adding a link
@@ -211,6 +250,30 @@ export const AllVariants = () => html`
         hide-close="true"
         message="Toast will close after 2000ms"
       ></rux-toast>
+      <rux-toast
+        message="Standby"
+        status="standby"
+        ></rux-toast>
+              <rux-toast
+        message="Normal"
+        status="normal"
+        ></rux-toast>
+              <rux-toast
+        message="Off"
+        status="off"
+        ></rux-toast>
+              <rux-toast
+        message="Caution"
+        status="caution"
+        ></rux-toast>
+              <rux-toast
+        message="Serious"
+        status="serious"
+        ></rux-toast>
+              <rux-toast
+        message="Critical"
+        status="critical"
+        ></rux-toast>
 </div>
 `
 
