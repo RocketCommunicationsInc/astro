@@ -1,5 +1,13 @@
 # @astrouxds/angular
 
+## 7.22.0
+
+### Minor Changes
+
+#### Toast
+
+-   Added a new status prop and the ability to resize toast close icon via the new iconSize CSS prop.
+
 ## 7.21.0
 
 ### Minor Changes
