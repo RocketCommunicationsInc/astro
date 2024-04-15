@@ -1,18 +1,29 @@
 # @astrouxds/angular
 
+## 7.22.0
+
+### Minor Changes
+
+- 0369a4a0: Added a new status prop to toasts. Also adds the ability to resize toast close icon via the new iconSize CSS prop.
+
+### Patch Changes
+
+- Updated dependencies [0369a4a0]
+  - @astrouxds/astro-web-components@7.22.0
+
 ## 7.21.0
 
 ### Minor Changes
 
 #### Timeline
 
--   Updated timeline to support Month and Week intervals for displaying data and allow zoom to be < 1
+- Updated timeline to support Month and Week intervals for displaying data and allow zoom to be < 1
 
 ### Patch Changes
 
 #### Pop Up
 
--   Resolved console log error
+- Resolved console log error
 
 ## 7.20.0
 

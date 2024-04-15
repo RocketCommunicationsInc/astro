@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.22.0
+
+### Minor Changes
+
+-   0369a4a0: Added a new status prop to toasts. Also adds the ability to resize toast close icon via the new iconSize CSS prop.
+
 ## 7.21.0
 
 ### Minor Changes
