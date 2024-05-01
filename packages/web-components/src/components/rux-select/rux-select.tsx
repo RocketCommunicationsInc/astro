@@ -1,19 +1,21 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
+
 import {
     Component,
     Element,
-    Host,
-    h,
-    Prop,
     Event,
     EventEmitter,
-    Watch,
+    Host,
     Listen,
-    State,
     Method,
+    Prop,
+    State,
+    Watch,
+    h,
 } from '@stencil/core'
-import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenSelect } from '../../utils/utils'
+
+import { FormFieldInterface } from '../../common/interfaces.module'
 
 /**
  * @slot (default) - The select options
@@ -290,7 +292,7 @@ export class RuxSelect implements FormFieldInterface {
                 return option.value
             })
 
-        if (values.length === 1) {
+        if (values.length === 1 && !this.multiple) {
             this.value = values[0]
         } else {
             this.value = values
