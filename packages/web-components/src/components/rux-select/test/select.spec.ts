@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Select', () => {
     test('it renders', async ({ page }) => {
@@ -83,7 +83,7 @@ test.describe('Select', () => {
                 <rux-option-group label="Group">
                     <rux-option value="flash" label="Flash"></rux-option>
                 </rux-option-group>
-            </rux-select> 
+            </rux-select>
         `
         await page.setContent(template)
 
@@ -317,6 +317,46 @@ test.describe('Options can dynamically add/remove props', () => {
         await expect(redOption).toHaveAttribute('value', 'new value')
     })
 })
+test.describe(
+    'Value changes between a stirng and an array depending on multiple',
+    () => {
+        test.beforeEach(async ({ page }) => {
+            const template = `
+    <rux-select multiple label="mult test" id="mult">
+      <rux-option value="1" label="1"></rux-option>
+      <rux-option value="2" label="2"></rux-option>
+    </rux-select>
+    <rux-select label="reg" id="reg">
+      <rux-option value="1" label="1"></rux-option>
+      <rux-option value="2" label="2"></rux-option>
+    </rux-select>
+    `
+            await page.setContent(template)
+        })
+        test('value is a string in non-multi select', async ({ page }) => {
+            const reg = page.locator('#reg')
+            const shadowReg = reg.locator('select')
+            await page.click('#reg')
+            await shadowReg.selectOption('2')
+            const val = await reg.evaluate(
+                (el: HTMLRuxSelectElement) => el.value
+            )
+            expect(val).toBe('2')
+            expect(typeof val).toBe('string')
+        })
+        test('value is an array when multiple is true', async ({ page }) => {
+            const mult = page.locator('#mult')
+            const shadowMult = mult.locator('select')
+            await page.click('#mult')
+            await shadowMult.selectOption('2')
+            const val = await mult.evaluate(
+                (el: HTMLRuxSelectElement) => el.value
+            )
+            expect(typeof val).not.toBe('string')
+            expect(val).toHaveLength(1)
+        })
+    }
+)
 // test.describe('Emits events', () => {
 //     test.beforeEach(async ({ page }) => {
 //         const template = `
