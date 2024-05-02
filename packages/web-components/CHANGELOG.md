@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.22.1
+
+### Patch Changes
+
+-   2ac99dd8: fixed an issue with selects value sometimes not being an array in a multi select
+
 ## 7.22.0
 
 ### Minor Changes

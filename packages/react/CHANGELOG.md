@@ -1,12 +1,20 @@
 # @astrouxds/react
 
+## 7.22.1
+
+### Patch Changes
+
+- 2ac99dd8: fixed an issue with selects value sometimes not being an array in a multi select
+- Updated dependencies [2ac99dd8]
+  - @astrouxds/astro-web-components@7.22.1
+
 ## 7.22.0
 
 ### Minor Changes
 
 #### Toast
 
--   Added a new status prop and the ability to resize toast close icon via the new iconSize CSS prop.
+- Added a new status prop and the ability to resize toast close icon via the new iconSize CSS prop.
 
 ### Patch Changes
 
