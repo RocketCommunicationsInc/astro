@@ -1,5 +1,13 @@
 # @astrouxds/angular
 
+## 7.22.1
+
+### Patch Changes
+
+#### Select
+
+- Fixed an issue with selects value sometimes not being an array in a multi select
+
 ## 7.22.0
 
 ### Minor Changes
