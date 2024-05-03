@@ -47,6 +47,7 @@
     }
 
     --grid-line-color: transparent;
+    --odd-day-color: var(--color-background-surface-selected);
 }
 
 :host([show-grid]) {

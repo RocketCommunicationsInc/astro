@@ -73,6 +73,7 @@ export class RuxRuler {
     }
 
     render() {
+        let firstNewDay: number
         return (
             <Host>
                 <div class="rux-ruler rux-track">
@@ -81,11 +82,21 @@ export class RuxRuler {
                             const newDay = this.timePattern.test(time)
                                 ? newDayDate
                                 : ''
+                            if (newDay !== '' && !firstNewDay)
+                                firstNewDay = index
+
+                            const isOddDay = (index: number) => {
+                                if (firstNewDay) {
+                                    return (index - firstNewDay) % 48 <= 23
+                                }
+                                return false
+                            }
                             return (
                                 <span
                                     key={index}
                                     class={{
                                         'ruler-time': true,
+                                        'odd-day': isOddDay(index),
                                         'ruler-new-day-cell': this.shouldShowDate(
                                             time
                                         ),
@@ -95,7 +106,7 @@ export class RuxRuler {
                                         gridColumn: this.getColumn(index),
                                     }}
                                 >
-                                    {time}
+                                    {time} {firstNewDay ? firstNewDay : null}
                                     {this.shouldShowDate(time) ? (
                                         <span class="ruler-new-day-display">
                                             {newDay}

@@ -21,6 +21,10 @@
     padding: 5px;
 }
 
+.odd-day:not(.ruler-new-day-cell) {
+    background: var(--odd-day-color);
+}
+
 .ruler-new-day-display {
     display: block;
     font-size: var(--font-size-sm);
