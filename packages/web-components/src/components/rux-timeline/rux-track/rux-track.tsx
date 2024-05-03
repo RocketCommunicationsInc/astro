@@ -7,6 +7,7 @@ import {
     h,
     Watch,
     State,
+    Fragment,
 } from '@stencil/core'
 import {
     differenceInMinutes,
@@ -317,6 +318,31 @@ export class RuxTrack {
         this.hasRuler = !!hasRuler
     }
 
+    renderGrid() {
+        const getCols = () => {
+            if (['minute', 'hour'].includes(this.interval)) return 60
+            if (['day', 'week', 'month'].includes(this.interval)) return 24
+            return 60
+        }
+        const intervalCols = getCols()
+        return (
+            <Fragment>
+                {[...Array(this.columns)].map((_: any, i: any) =>
+                    i % intervalCols === 0 ? (
+                        <div
+                            style={{
+                                gridColumn: `${i + 2} / ${++i + 2}`,
+                            }}
+                            class="grid-line"
+                        ></div>
+                    ) : (
+                        ''
+                    )
+                )}
+            </Fragment>
+        )
+    }
+
     render() {
         return (
             <Host>
@@ -336,7 +362,6 @@ export class RuxTrack {
                     >
                         <slot name="label"></slot>
                     </div>
-
                     <slot onSlotchange={this._handleSlotChange}></slot>
                     <div
                         class={{
@@ -347,6 +372,7 @@ export class RuxTrack {
                             (this.playedIndicator = el as HTMLInputElement)
                         }
                     ></div>
+                    {this.renderGrid()}
                 </div>
             </Host>
         )

@@ -7,6 +7,13 @@
     border-bottom: 2px solid var(--color-background-base-default);
 }
 
+.grid-line {
+    grid-row: 1/-1;
+    width: 1px;
+    background-color: var(--color-background-base-default);
+    opacity: 0.8;
+}
+
 .rux-track__header {
     box-sizing: border-box;
     padding: 11px 8px 13px 8px;
