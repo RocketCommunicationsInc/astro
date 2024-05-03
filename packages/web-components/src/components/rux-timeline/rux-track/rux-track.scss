@@ -12,6 +12,7 @@
     width: 1px;
     background-color: var(--color-background-base-default);
     opacity: 0.8;
+    pointer-events: none;
 }
 
 .rux-track__header {
