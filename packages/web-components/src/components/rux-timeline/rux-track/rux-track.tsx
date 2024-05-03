@@ -335,9 +335,7 @@ export class RuxTrack {
                             }}
                             class="grid-line"
                         ></div>
-                    ) : (
-                        ''
-                    )
+                    ) : null
                 )}
             </Fragment>
         )
