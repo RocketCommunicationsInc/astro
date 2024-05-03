@@ -73,6 +73,9 @@
                         icon="zoom-in"
                         onclick="zoom(1)"
                     ></rux-button>
+                    <rux-button secondary onclick="togglegrid()"
+                        >Toggle Grid</rux-button
+                    >
                 </section>
 
                 <rux-timeline
@@ -83,6 +86,7 @@
                     playhead="2021-02-02T00:00:00.000Z"
                     interval="hour"
                     zoom="2"
+                    show-grid
                 >
                     <rux-track>
                         <div slot="label">Region 1</div>
@@ -170,6 +174,10 @@
                 input.value = zoomLevel
                 setZoomInterval(zoomLevel)
                 timeline.setAttribute('zoom', zoomLevel)
+            }
+
+            const togglegrid = () => {
+                timeline.toggleAttribute('show-grid')
             }
 
             function setZoomInterval(zoomLevel) {

@@ -66,6 +66,11 @@ export class RuxTimeline {
     @Prop() interval: 'month' | 'week' | 'hour' | 'day' | 'minute' = 'hour'
 
     /**
+     * Controls the display of grid lines
+     */
+    @Prop() showGrid: boolean = false
+
+    /**
      * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
      */
     @Prop() timezone = 'UTC'
@@ -93,6 +98,7 @@ export class RuxTimeline {
     @Watch('end')
     @Watch('interval')
     @Watch('timezone')
+    @Watch('showGrid')
     handleChange() {
         this.syncPlayhead()
         this._updateRegions()
@@ -368,6 +374,7 @@ export class RuxTimeline {
                 el.start = useStartEndDates.timelineStart.toISOString()
                 el.end = useStartEndDates.timelineEnd.toISOString()
                 el.timezone = this.timezone
+                el.showGrid = this.showGrid
             })
         }
 

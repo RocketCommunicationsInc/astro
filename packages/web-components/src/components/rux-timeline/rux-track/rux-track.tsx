@@ -74,6 +74,11 @@ export class RuxTrack {
     @Prop({ reflect: true }) timezone = 'UTC'
 
     /**
+     * @internal - The timeline's grid indicator. Set automatically from the parent Timeline component.
+     */
+    @Prop({ reflect: true }) showGrid = false
+
+    /**
      * The playhead of rux-track.
      */
     @Prop({ reflect: true }) playhead: any
@@ -81,6 +86,7 @@ export class RuxTrack {
     @Watch('start')
     @Watch('end')
     @Watch('interval')
+    @Watch('showGrid')
     handleUpdate(_newValue: any, old: any) {
         if (old) {
             this.initializeRows()
@@ -370,7 +376,7 @@ export class RuxTrack {
                             (this.playedIndicator = el as HTMLInputElement)
                         }
                     ></div>
-                    {this.renderGrid()}
+                    {this.showGrid ? this.renderGrid() : null}
                 </div>
             </Host>
         )

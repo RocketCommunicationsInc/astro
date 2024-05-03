@@ -20087,6 +20087,10 @@ export namespace Components {
          */
         "playhead"?: string;
         /**
+          * Controls the display of grid lines
+         */
+        "showGrid": boolean;
+        /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "start": string;
@@ -20173,6 +20177,7 @@ export namespace Components {
           * The playhead of rux-track.
          */
         "playhead": any;
+        "showGrid": boolean;
         "start": string;
         "timezone": string;
         "width": number;
@@ -55714,6 +55719,10 @@ declare namespace LocalJSX {
          */
         "playhead"?: string;
         /**
+          * Controls the display of grid lines
+         */
+        "showGrid"?: boolean;
+        /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "start"?: string;
@@ -55804,6 +55813,7 @@ declare namespace LocalJSX {
           * The playhead of rux-track.
          */
         "playhead"?: any;
+        "showGrid"?: boolean;
         "start"?: string;
         "timezone"?: string;
         "width"?: number;
