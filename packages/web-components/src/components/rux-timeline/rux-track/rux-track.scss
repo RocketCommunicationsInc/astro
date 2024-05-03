@@ -10,7 +10,7 @@
 .grid-line {
     grid-row: 1/-1;
     width: 1px;
-    background-color: var(--color-background-base-default);
+    background-color: var(--grid-line-color);
     opacity: 0.8;
     pointer-events: none;
 }

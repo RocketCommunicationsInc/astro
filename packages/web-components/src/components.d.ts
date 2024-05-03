@@ -20177,7 +20177,6 @@ export namespace Components {
           * The playhead of rux-track.
          */
         "playhead": any;
-        "showGrid": boolean;
         "start": string;
         "timezone": string;
         "width": number;
@@ -55813,7 +55812,6 @@ declare namespace LocalJSX {
           * The playhead of rux-track.
          */
         "playhead"?: any;
-        "showGrid"?: boolean;
         "start"?: string;
         "timezone"?: string;
         "width"?: number;
