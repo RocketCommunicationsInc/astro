@@ -70,6 +70,28 @@ export class RuxRuler {
         return `${unitOfTime * index + 2} / ${end}`
     }
 
+    getPartialDay() {
+        if (!this.firstNewDay) return
+        console.log(this.firstNewDay)
+        const prevDay = this.dateRange[this.firstNewDay - 1]
+        console.log(this.dateRange, prevDay)
+        //Set Last Column
+        let unitOfTime = 60
+        const end = unitOfTime * this.firstNewDay! + 2
+
+        return (
+            <span
+                class="ruler-new-day-display"
+                style={{
+                    gridRow: '2',
+                    gridColumn: `2 / ${end}`,
+                }}
+            >
+                <span>{prevDay[1]}</span>
+            </span>
+        )
+    }
+
     timePattern = /^00:.+$/
 
     shouldShowDate(time: string) {
@@ -84,8 +106,8 @@ export class RuxRuler {
         return this.timePattern.test(time)
     }
 
+    private firstNewDay: number | undefined
     render() {
-        let firstNewDay: number
         return (
             <Host>
                 <div class="rux-ruler rux-track">
@@ -94,12 +116,12 @@ export class RuxRuler {
                             const newDay = this.timePattern.test(time)
                                 ? newDayDate
                                 : ''
-                            if (newDay !== '' && !firstNewDay)
-                                firstNewDay = index
+                            if (newDay !== '' && !this.firstNewDay)
+                                this.firstNewDay = index
 
                             const isOddDay = (index: number) => {
-                                if (firstNewDay) {
-                                    return (index - firstNewDay) % 48 <= 23
+                                if (this.firstNewDay) {
+                                    return (index - this.firstNewDay) % 48 <= 23
                                 }
                                 return false
                             }
@@ -138,6 +160,9 @@ export class RuxRuler {
                             )
                         }
                     )}
+                    {this.showStartOfDay && this.firstNewDay
+                        ? this.getPartialDay()
+                        : null}
                 </div>
             </Host>
         )

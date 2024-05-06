@@ -76,6 +76,12 @@
                     <rux-button secondary onclick="togglegrid()"
                         >Toggle Grid</rux-button
                     >
+                    <rux-button
+                        id="timezone"
+                        secondary
+                        onclick="toggleTimezone()"
+                        >Toggle Timezone</rux-button
+                    ><span id="currentTimezone"></span>
                 </section>
 
                 <rux-timeline
@@ -276,6 +282,8 @@
             const input = document.querySelector('rux-input')
             const timeline2 = document.querySelector('rux-timeline#second')
             const input2 = document.querySelector('rux-input#second')
+            const currenttz = document.querySelector('#currentTimezone')
+            currenttz.textContent = timeline.getAttribute('timezone')
 
             let zoomLevel = 2
             let zoomLevel2 = 4
@@ -290,6 +298,16 @@
 
             const togglegrid = () => {
                 timeline.toggleAttribute('show-grid')
+            }
+
+            const toggleTimezone = () => {
+                const current = timeline.timezone
+
+                const newTz =
+                    current === 'America/New_York' ? 'UTC' : 'America/New_York'
+                console.log(current, newTz)
+                timeline.timezone = newTz
+                currenttz.textContent = newTz
             }
 
             function setZoomInterval(zoomLevel) {
