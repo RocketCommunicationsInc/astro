@@ -9,16 +9,12 @@
 .ruler-time {
     display: flex;
     align-items: center;
-    padding: 12px 20px;
+    padding: 8px 20px 8px;
     justify-content: center;
 }
 
 .ruler-new-day-cell {
     background-color: var(--color-background-base-default);
-    font-size: var(--font-size-sm);
-    display: block;
-    text-align: center;
-    padding: 5px;
 }
 
 .odd-day:not(.ruler-new-day-cell) {
@@ -26,6 +22,16 @@
 }
 
 .ruler-new-day-display {
-    display: block;
-    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: flex-end;
+    background: var(--color-background-surface-header);
+    text-align: left;
+    padding-inline-start: 20px;
+
+    padding-block: var(--spacing-1);
+
+    & span {
+        position: sticky;
+        left: 210px;
+    }
 }

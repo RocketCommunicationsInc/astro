@@ -355,7 +355,7 @@ export class RuxTrack {
                         class="rux-track__header"
                         part="track-header"
                         style={{
-                            gridRow: '1',
+                            gridRow: '1 / -1',
                         }}
                     >
                         <slot name="label"></slot>

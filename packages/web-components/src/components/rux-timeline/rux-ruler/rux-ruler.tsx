@@ -1,4 +1,4 @@
-import { Prop, Component, Element, Host, h } from '@stencil/core'
+import { Prop, Component, Element, Host, h, Fragment } from '@stencil/core'
 import { dateRange as getRange } from '../helpers'
 @Component({
     tag: 'rux-ruler',
@@ -58,6 +58,18 @@ export class RuxRuler {
         return `${unitOfTime * index + 2} / ${end}`
     }
 
+    getWeekColumn(index: number) {
+        let unitOfTime = 60
+        let intervalOfTime = 60 * 24
+        if (this.interval === 'minute') {
+            intervalOfTime = intervalOfTime * 60
+        }
+        const start = unitOfTime * index + 2
+        const end = start + intervalOfTime
+
+        return `${unitOfTime * index + 2} / ${end}`
+    }
+
     timePattern = /^00:.+$/
 
     shouldShowDate(time: string) {
@@ -92,29 +104,37 @@ export class RuxRuler {
                                 return false
                             }
                             return (
-                                <span
-                                    key={index}
-                                    class={{
-                                        'ruler-time': true,
-                                        'odd-day': isOddDay(index),
-                                        'ruler-new-day-cell': this.shouldShowDate(
-                                            time
-                                        ),
-                                    }}
-                                    style={{
-                                        gridRow: '1',
-                                        gridColumn: this.getColumn(index),
-                                    }}
-                                >
-                                    {time}
+                                <Fragment>
+                                    <span
+                                        key={index}
+                                        class={{
+                                            'ruler-time': true,
+                                            'odd-day': isOddDay(index),
+                                            'ruler-new-day-cell': this.shouldShowDate(
+                                                time
+                                            ),
+                                        }}
+                                        style={{
+                                            gridRow: '1',
+                                            gridColumn: this.getColumn(index),
+                                        }}
+                                    >
+                                        {time}
+                                    </span>
                                     {this.shouldShowDate(time) ? (
-                                        <span class="ruler-new-day-display">
-                                            {newDay}
+                                        <span
+                                            class="ruler-new-day-display"
+                                            style={{
+                                                gridRow: '2',
+                                                gridColumn: this.getWeekColumn(
+                                                    index
+                                                ),
+                                            }}
+                                        >
+                                            <span>{newDay}</span>
                                         </span>
-                                    ) : (
-                                        ''
-                                    )}
-                                </span>
+                                    ) : null}
+                                </Fragment>
                             )
                         }
                     )}

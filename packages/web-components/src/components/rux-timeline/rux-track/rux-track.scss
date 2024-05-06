@@ -1,6 +1,10 @@
 :host {
 }
 
+:host([slot='ruler']) .rux-timeline.rux-track {
+    grid-template-rows: auto auto;
+}
+
 .rux-track {
     background: var(--color-background-surface-default);
     width: fit-content;
@@ -8,7 +12,7 @@
 }
 
 .grid-line {
-    grid-row: 1/-1;
+    grid-row: 1 / -1;
     width: 1px;
     background-color: var(--grid-line-color);
     opacity: 0.8;
