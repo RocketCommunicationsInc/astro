@@ -160,7 +160,9 @@ export class RuxRuler {
                             )
                         }
                     )}
-                    {this.showStartOfDay && this.firstNewDay
+                    {this.showStartOfDay &&
+                    this.interval === 'hour' &&
+                    this.firstNewDay
                         ? this.getPartialDay()
                         : null}
                 </div>
