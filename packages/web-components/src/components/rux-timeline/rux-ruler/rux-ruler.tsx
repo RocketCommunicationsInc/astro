@@ -106,7 +106,7 @@ export class RuxRuler {
                                         gridColumn: this.getColumn(index),
                                     }}
                                 >
-                                    {time} {firstNewDay ? firstNewDay : null}
+                                    {time}
                                     {this.shouldShowDate(time) ? (
                                         <span class="ruler-new-day-display">
                                             {newDay}
