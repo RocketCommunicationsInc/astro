@@ -114,7 +114,6 @@ export class RuxRuler {
     timePattern = /^00:00+$/
 
     shouldShowDate(time: string) {
-        console.log(time, this.timePattern.test(time))
         if (!['hour', 'minute'].includes(this.interval)) {
             return false
         }
