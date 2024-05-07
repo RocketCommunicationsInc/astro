@@ -118,20 +118,12 @@ export class RuxRuler {
                                 : ''
                             if (newDay !== '' && !this.firstNewDay)
                                 this.firstNewDay = index
-
-                            const isOddDay = (index: number) => {
-                                if (this.firstNewDay) {
-                                    return (index - this.firstNewDay) % 48 <= 23
-                                }
-                                return false
-                            }
                             return (
                                 <Fragment>
                                     <span
                                         key={index}
                                         class={{
                                             'ruler-time': true,
-                                            'odd-day': isOddDay(index),
                                             'ruler-new-day-cell': this.shouldShowDate(
                                                 time
                                             ),

@@ -17,10 +17,6 @@
     background-color: var(--color-background-base-default);
 }
 
-.odd-day:not(.ruler-new-day-cell) {
-    background: var(--odd-day-color);
-}
-
 .ruler-new-day-display {
     display: flex;
     align-items: flex-end;
