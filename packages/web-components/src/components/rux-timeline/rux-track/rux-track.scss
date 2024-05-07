@@ -12,14 +12,6 @@
     border-bottom: 2px solid var(--color-background-base-default);
 }
 
-.grid-line {
-    grid-row: 1 / -1;
-    width: 1px;
-    background-color: var(--grid-line-color);
-    opacity: 0.8;
-    pointer-events: none;
-}
-
 .rux-track__header {
     box-sizing: border-box;
     padding: 11px 8px 13px 8px;
