@@ -7,7 +7,6 @@ import {
     h,
     Watch,
     State,
-    Fragment,
 } from '@stencil/core'
 import {
     differenceInMinutes,
@@ -314,31 +313,21 @@ export class RuxTrack {
         const hasRuler = [...this.el.children].find(
             (el) => el.tagName.toLowerCase() === 'rux-ruler'
         )
-
         this.hasRuler = !!hasRuler
     }
 
-    renderGrid() {
+    renderCssGrid() {
+        //we need the width of an hour so we need the interval * whatever the width of a grid col is
         const getCols = () => {
             if (['minute', 'hour'].includes(this.interval)) return 60
             if (['day', 'week', 'month'].includes(this.interval)) return 24
             return 60
         }
-        const intervalCols = getCols()
-        return (
-            <Fragment>
-                {[...Array(this.columns)].map((_: any, i: any) =>
-                    i % intervalCols === 0 ? (
-                        <div
-                            style={{
-                                gridColumn: `${i + 2} / ${++i + 2}`,
-                            }}
-                            class="grid-line"
-                        ></div>
-                    ) : null
-                )}
-            </Fragment>
-        )
+        const span = getCols()
+        const width = span * this.width
+        // we set this as --grid-gap and then use that variable
+        // in rux-track.scss to set the gap between lines
+        return `${width}px`
     }
 
     render() {
@@ -348,6 +337,7 @@ export class RuxTrack {
                     class="rux-timeline rux-track"
                     style={{
                         gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
+                        '--grid-gap': this.renderCssGrid(),
                     }}
                     part="container"
                 >
@@ -370,7 +360,6 @@ export class RuxTrack {
                             (this.playedIndicator = el as HTMLInputElement)
                         }
                     ></div>
-                    {this.renderGrid()}
                 </div>
             </Host>
         )
