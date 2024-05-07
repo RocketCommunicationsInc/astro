@@ -78,6 +78,7 @@ export class RuxRuler {
         //Set Last Column
         let unitOfTime = 60
         const end = unitOfTime * this.firstNewDay! + 2
+        console.log(prevDay)
 
         return (
             <span
@@ -95,14 +96,13 @@ export class RuxRuler {
     timePattern = /^00:.+$/
 
     shouldShowDate(time: string) {
-        if (this.interval !== 'hour') {
+        if (!['hour', 'minute'].includes(this.interval)) {
             return false
         }
 
         if (!this.showStartOfDay) {
             return false
         }
-
         return this.timePattern.test(time)
     }
 
@@ -129,7 +129,9 @@ export class RuxRuler {
                                             ),
                                             'has-date-scroll':
                                                 (this.showStartOfDay &&
-                                                    this.interval === 'hour') ||
+                                                    ['hour', 'minute'].includes(
+                                                        this.interval
+                                                    )) ||
                                                 false,
                                         }}
                                         style={{
@@ -157,8 +159,7 @@ export class RuxRuler {
                         }
                     )}
                     {this.showStartOfDay &&
-                    this.interval === 'hour' &&
-                    this.firstNewDay
+                    ['hour', 'minute'].includes(this.interval)
                         ? this.getPartialDay()
                         : null}
                 </div>

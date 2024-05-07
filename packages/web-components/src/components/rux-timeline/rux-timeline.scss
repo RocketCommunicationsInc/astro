@@ -47,10 +47,12 @@
     }
 
     --grid-line-color: transparent;
+    --ruler-text-placement: start;
 }
 
 :host([show-grid]) {
     --grid-line-color: var(--color-background-base-default);
+    --ruler-text-placement: center;
 }
 
 .rux-timeline {
