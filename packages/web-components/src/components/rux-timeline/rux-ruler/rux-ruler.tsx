@@ -127,6 +127,10 @@ export class RuxRuler {
                                             'ruler-new-day-cell': this.shouldShowDate(
                                                 time
                                             ),
+                                            'has-date-scroll':
+                                                (this.showStartOfDay &&
+                                                    this.interval === 'hour') ||
+                                                false,
                                         }}
                                         style={{
                                             gridRow: '1',

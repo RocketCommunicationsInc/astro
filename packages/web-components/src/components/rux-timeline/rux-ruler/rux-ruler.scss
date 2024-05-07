@@ -9,8 +9,12 @@
 .ruler-time {
     display: flex;
     align-items: center;
-    padding: 8px 20px 8px;
+    padding: 12px 20px;
     justify-content: center;
+}
+
+.ruler-time.has-date-scroll {
+    padding: 8px 20px 8px;
 }
 
 .ruler-new-day-cell {
