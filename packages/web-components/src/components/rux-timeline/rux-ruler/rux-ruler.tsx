@@ -71,31 +71,50 @@ export class RuxRuler {
     }
 
     getPartialDay() {
-        if (!this.firstNewDay) return
-        console.log(this.firstNewDay)
-        const prevDay = this.dateRange[this.firstNewDay - 1]
-        console.log(this.dateRange, prevDay)
-        //Set Last Column
-        let unitOfTime = 60
-        const end = unitOfTime * this.firstNewDay! + 2
-        console.log(prevDay)
+        let partialDay = {
+            end: -1,
+            date: this.dateRange[0][1],
+        }
+        /**
+         * If this.firsNewDay exists it means that there is the start of a day within the date range
+         * so we need to find where it starts and backfill the previous day to the start day
+         */
+        if (this.firstNewDay) {
+            //Set Last Column
+            let unitOfTime = 60
+            if (this.interval === 'minute') {
+                unitOfTime = unitOfTime * 60
+            }
+            const prevDay = this.dateRange[this.firstNewDay - 1]
+            const end = unitOfTime * this.firstNewDay! + 2
+            partialDay = {
+                end,
+                date: prevDay[1],
+            }
+        }
 
+        /**
+         * Otherwise there is not the start of a day
+         * within the timeine so we can make the partial
+         * date take up the full width of the timeline.
+         */
         return (
             <span
                 class="ruler-new-day-display"
                 style={{
                     gridRow: '2',
-                    gridColumn: `2 / ${end}`,
+                    gridColumn: `2 / ${partialDay.end}`,
                 }}
             >
-                <span>{prevDay[1]}</span>
+                <span>{partialDay.date}</span>
             </span>
         )
     }
 
-    timePattern = /^00:.+$/
+    timePattern = /^00:00+$/
 
     shouldShowDate(time: string) {
+        console.log(time, this.timePattern.test(time))
         if (!['hour', 'minute'].includes(this.interval)) {
             return false
         }

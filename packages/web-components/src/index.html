@@ -91,7 +91,7 @@
                     start="2021-02-01T00:00:00.000Z"
                     end="2021-03-03T01:00:00.000Z"
                     playhead="2021-02-02T00:00:00.000Z"
-                    interval="week"
+                    interval="hour"
                     zoom="4"
                     show-grid
                 >
@@ -193,9 +193,9 @@
                 <rux-timeline
                     id="second"
                     has-played-indicator="false"
-                    timezone="America/New_York"
+                    timezone="UTC"
                     start="2021-02-01T14:00:00.000Z"
-                    end="2021-02-01T18:00:00.000Z"
+                    end="2021-02-02T01:00:00.000Z"
                     playhead="2021-02-01T16:00:00.000Z"
                     interval="hour"
                     zoom="4"
@@ -239,36 +239,6 @@
                             status="critical"
                         >
                             Event 4.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 5</div>
-                        <rux-time-region
-                            start="2021-02-01T05:00:00Z"
-                            end="2021-02-02T05:33:00Z"
-                            status="caution"
-                        >
-                            Event 5.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 6</div>
-                        <rux-time-region
-                            start="2021-02-01T05:00:00Z"
-                            end="2021-02-02T05:33:00Z"
-                            status="normal"
-                        >
-                            Event 6.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 7</div>
-                        <rux-time-region
-                            start="2021-02-01T05:00:00Z"
-                            end="2021-02-02T05:33:00Z"
-                            status="normal"
-                        >
-                            Event 7.1
                         </rux-time-region>
                     </rux-track>
                     <rux-track slot="ruler">
@@ -328,10 +298,8 @@
             }
 
             function setZoomInterval2(zoomLevel) {
-                if (zoomLevel <= 2) timeline2.setAttribute('interval', 'hour')
-                if (zoomLevel > 2 && zoomLevel <= 6)
-                    timeline2.setAttribute('interval', 'minute')
-                if (zoomLevel > 6) timeline2.setAttribute('interval', 'second')
+                if (zoomLevel <= 4) timeline2.setAttribute('interval', 'hour')
+                if (zoomLevel > 4) timeline2.setAttribute('interval', 'minute')
             }
         </script>
     </body>
