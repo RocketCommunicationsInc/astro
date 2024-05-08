@@ -52,6 +52,19 @@
     background: var(--color-background-surface-selected);
 }
 
+.grid {
+    background: repeating-linear-gradient(
+        to left,
+        var(--grid-line-color),
+        var(--grid-line-color) 1px,
+        transparent 1px,
+        transparent var(--grid-gap) /* determines gap between lines */
+    );
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
 .hidden {
     display: none;
 }

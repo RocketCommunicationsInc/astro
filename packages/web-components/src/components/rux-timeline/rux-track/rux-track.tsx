@@ -360,6 +360,7 @@ export class RuxTrack {
                             (this.playedIndicator = el as HTMLInputElement)
                         }
                     ></div>
+                    <div class="grid"></div>
                 </div>
             </Host>
         )
