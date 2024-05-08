@@ -119,7 +119,7 @@ export function dateRange(
                 i === 0 || time.getMonth() === 0
                     ? formatInTimeZone(time, timezone, 'MM/dd/yy')
                     : formatInTimeZone(time, timezone, 'MM/dd')
-            return [formattedTime]
+            return [formattedTime, time]
         })
 
         return output
@@ -142,7 +142,7 @@ export function dateRange(
                 i === 0 || showYear
                     ? formatInTimeZone(time, timezone, 'MM/dd/yy')
                     : formatInTimeZone(time, timezone, 'MM/dd')
-            return [formattedTime]
+            return [formattedTime, time]
         })
 
         return output
@@ -157,7 +157,7 @@ export function dateRange(
             const time = agnosticAddDays(startDate, i)
 
             const formattedTime = formatInTimeZone(time, timezone, 'MM/dd')
-            return [formattedTime]
+            return [formattedTime, time]
         })
 
         return output

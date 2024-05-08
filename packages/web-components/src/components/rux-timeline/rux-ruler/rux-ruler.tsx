@@ -1,4 +1,12 @@
 import { Prop, Component, Element, Host, h, Fragment } from '@stencil/core'
+import {
+    differenceInDays,
+    endOfMonth,
+    format,
+    getDaysInMonth,
+    getMonth,
+    getYear,
+} from 'date-fns'
 import { dateRange as getRange } from '../helpers'
 @Component({
     tag: 'rux-ruler',
@@ -26,7 +34,7 @@ export class RuxRuler {
     @Prop({ reflect: true }) timezone = 'UTC'
 
     /**
-     * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+     * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
      */
     @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
 
@@ -59,11 +67,39 @@ export class RuxRuler {
     }
 
     getWeekColumn(index: number) {
-        let unitOfTime = 60
-        let intervalOfTime = 60 * 24
+        let unitOfTime = 60 // hour and minutes interval of columns
+        let intervalOfTime = unitOfTime * 24 // by default assume hours 24hours in a day
         if (this.interval === 'minute') {
-            intervalOfTime = intervalOfTime * 60
+            intervalOfTime = intervalOfTime * 60 // interval * minutes * hours for minutes
         }
+        const start = unitOfTime * index + 2
+        const end = start + intervalOfTime
+
+        return `${unitOfTime * index + 2} / ${end}`
+    }
+
+    getMonthColumn(index: number) {
+        const date = this.dateRange[index][1] as Date
+        let unitOfTime = 24 // day/week/month grid unit
+        let intervalOfTime = unitOfTime * getDaysInMonth(date)
+        if (this.interval === 'week') {
+            const endofMonthDate: Date = endOfMonth(date)
+            const daysBetween: number = differenceInDays(endofMonthDate, date)
+            /**
+             * days between the first day shown of the month and the last day of the month
+             * divided by days in a week
+             */
+            intervalOfTime = unitOfTime * Math.ceil(daysBetween / 7)
+        }
+        const start = unitOfTime * index + 2
+        const end = start + intervalOfTime
+
+        return `${unitOfTime * index + 2} / ${end}`
+    }
+
+    getYearColumn(index: number) {
+        let unitOfTime = 24 // day/week/month grid unit
+        let intervalOfTime = unitOfTime * 12 // 12 months in a year
         const start = unitOfTime * index + 2
         const end = start + intervalOfTime
 
@@ -113,18 +149,83 @@ export class RuxRuler {
 
     timePattern = /^00:00+$/
 
-    shouldShowDate(time: string) {
-        if (!['hour', 'minute'].includes(this.interval)) {
-            return false
+    secondaryRuler(time: string, newDay: string, index: number) {
+        if (!this.showStartOfDay) return null
+        if (
+            ['hour', 'minute'].includes(this.interval) &&
+            this.shouldShowDate(time)
+        ) {
+            return (
+                <span
+                    class="ruler-new-day-display"
+                    style={{
+                        gridRow: '2',
+                        gridColumn: this.getWeekColumn(index),
+                    }}
+                >
+                    <span>{newDay}</span>
+                </span>
+            )
         }
+        if (
+            ['day', 'week'].includes(this.interval) &&
+            this.shouldShowMonth(index)
+        )
+            return (
+                <span
+                    class="ruler-new-day-display"
+                    style={{
+                        gridRow: '2',
+                        gridColumn: this.getMonthColumn(index),
+                    }}
+                >
+                    <span>
+                        {format(this.dateRange[index][1] as Date, 'MMMM')}
+                    </span>
+                </span>
+            )
 
-        if (!this.showStartOfDay) {
-            return false
-        }
+        if (['month'].includes(this.interval) && this.shouldShowYear(index))
+            return (
+                <span
+                    class="ruler-new-day-display"
+                    style={{
+                        gridRow: '2',
+                        gridColumn: this.getYearColumn(index),
+                    }}
+                >
+                    <span>
+                        {format(this.dateRange[index][1] as Date, 'yyyy')}
+                    </span>
+                </span>
+            )
+        return null
+    }
+
+    shouldShowDate(time: string) {
         return this.timePattern.test(time)
     }
 
+    shouldShowMonth(index: number) {
+        //if no previous point of comparison, return false
+        if (index < 1) return false
+        //compare previous months
+        const currentMonth = getMonth(this.dateRange[index][1] as Date)
+        const prevMonth = getMonth(this.dateRange[index - 1][1] as Date)
+        return currentMonth === prevMonth ? false : true
+    }
+    shouldShowYear(index: number) {
+        //if no previous point of comparison, return false
+        if (index < 1) return false
+        //compare previous months
+        const currentYear = getYear(this.dateRange[index][1] as Date)
+        const prevYear = getYear(this.dateRange[index - 1][1] as Date)
+        return currentYear === prevYear ? false : true
+    }
+
     private firstNewDay: number | undefined
+    private firstNewMonth: number | undefined
+    private firstNewYear: number | undefined
     render() {
         return (
             <Host>
@@ -159,27 +260,15 @@ export class RuxRuler {
                                     >
                                         {time}
                                     </span>
-                                    {this.shouldShowDate(time) ? (
-                                        <span
-                                            class="ruler-new-day-display"
-                                            style={{
-                                                gridRow: '2',
-                                                gridColumn: this.getWeekColumn(
-                                                    index
-                                                ),
-                                            }}
-                                        >
-                                            <span>{newDay}</span>
-                                        </span>
-                                    ) : null}
+                                    {this.secondaryRuler(time, newDay, index)}
                                 </Fragment>
                             )
                         }
                     )}
-                    {this.showStartOfDay &&
+                    {/* {this.showStartOfDay &&
                     ['hour', 'minute'].includes(this.interval)
                         ? this.getPartialDay()
-                        : null}
+                        : null} */}
                 </div>
             </Host>
         )

@@ -19768,7 +19768,7 @@ export namespace Components {
         "end": string;
         "interval": any;
         /**
-          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
          */
         "showStartOfDay"?: boolean | undefined;
         "start": string;
@@ -55346,7 +55346,7 @@ declare namespace LocalJSX {
         "end"?: string;
         "interval"?: any;
         /**
-          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
          */
         "showStartOfDay"?: boolean | undefined;
         "start"?: string;
