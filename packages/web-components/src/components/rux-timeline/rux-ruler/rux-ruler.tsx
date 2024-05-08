@@ -208,6 +208,7 @@ export class RuxRuler {
 
     shouldShowMonth(index: number) {
         //if no previous point of comparison, return false
+        //!! there is a logic error here when date exactly equals this.start
         if (index < 1) return false
         //compare previous months
         const currentMonth = getMonth(this.dateRange[index][1] as Date)
