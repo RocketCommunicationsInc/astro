@@ -1,13 +1,7 @@
 import { Prop, Component, Element, Host, h, Fragment } from '@stencil/core'
-import {
-    differenceInDays,
-    endOfMonth,
-    format,
-    getDaysInMonth,
-    getMonth,
-    getYear,
-} from 'date-fns'
+import { differenceInDays, endOfMonth, format, getDaysInMonth } from 'date-fns'
 import { dateRange as getRange } from '../helpers'
+import { formatInTimeZone } from 'date-fns-tz'
 @Component({
     tag: 'rux-ruler',
     styleUrl: 'rux-ruler.scss',
@@ -148,6 +142,8 @@ export class RuxRuler {
     }
 
     timePattern = /^00:00+$/
+    monthPattern = /^[0-1][0-9]\/01/
+    yearPattern = /^01\/([0-3][0-9])/
 
     secondaryRuler(time: string, newDay: string, index: number) {
         if (!this.showStartOfDay) return null
@@ -169,7 +165,7 @@ export class RuxRuler {
         }
         if (
             ['day', 'week'].includes(this.interval) &&
-            this.shouldShowMonth(index)
+            this.shouldShowMonth(time, index)
         )
             return (
                 <span
@@ -180,12 +176,17 @@ export class RuxRuler {
                     }}
                 >
                     <span>
-                        {format(this.dateRange[index][1] as Date, 'MMMM')}
+                        {formatInTimeZone(
+                            this.dateRange[index][1] as Date,
+                            this.timezone,
+                            'MMMM'
+                        )}
                     </span>
                 </span>
             )
 
-        if (['month'].includes(this.interval) && this.shouldShowYear(index))
+        if (['month'].includes(this.interval) && this.shouldShowYear(time)) {
+            if (!this.firstNewYear) this.firstNewYear = index
             return (
                 <span
                     class="ruler-new-day-display"
@@ -199,6 +200,7 @@ export class RuxRuler {
                     </span>
                 </span>
             )
+        }
         return null
     }
 
@@ -206,26 +208,30 @@ export class RuxRuler {
         return this.timePattern.test(time)
     }
 
-    shouldShowMonth(index: number) {
-        //if no previous point of comparison, return false
-        //!! there is a logic error here when date exactly equals this.start
-        if (index < 1) return false
-        //compare previous months
-        const currentMonth = getMonth(this.dateRange[index][1] as Date)
-        const prevMonth = getMonth(this.dateRange[index - 1][1] as Date)
-        return currentMonth === prevMonth ? false : true
+    shouldShowMonth(time: string, index: number) {
+        if (this.interval === 'day') {
+            return this.monthPattern.test(time)
+        }
+        if (this.interval === 'week') {
+            if (index === 0) return false
+            const currentWeek = (this.dateRange[index][0] as string).slice(0, 3)
+            const prevWeek = (this.dateRange[index - 1][0] as string).slice(
+                0,
+                3
+            )
+            if (prevWeek !== currentWeek && !this.firstNewWeek)
+                this.firstNewWeek = index
+            return prevWeek !== currentWeek
+        }
+        return false
     }
-    shouldShowYear(index: number) {
-        //if no previous point of comparison, return false
-        if (index < 1) return false
-        //compare previous months
-        const currentYear = getYear(this.dateRange[index][1] as Date)
-        const prevYear = getYear(this.dateRange[index - 1][1] as Date)
-        return currentYear === prevYear ? false : true
+
+    shouldShowYear(time: string) {
+        return this.yearPattern.test(time)
     }
 
     private firstNewDay: number | undefined
-    private firstNewMonth: number | undefined
+    private firstNewWeek: number | undefined
     private firstNewYear: number | undefined
     render() {
         return (
@@ -266,10 +272,6 @@ export class RuxRuler {
                             )
                         }
                     )}
-                    {/* {this.showStartOfDay &&
-                    ['hour', 'minute'].includes(this.interval)
-                        ? this.getPartialDay()
-                        : null} */}
                 </div>
             </Host>
         )
