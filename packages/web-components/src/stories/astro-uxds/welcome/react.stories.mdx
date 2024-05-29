@@ -4,15 +4,11 @@ import { Meta } from '@storybook/addon-docs'
 
 # React Integration
 
+For new projects, we recommend using [Vite with React + Typescript](https://vitejs.dev/guide/)
+
 ## Installation
 
 ### Via NPM
-
-To get started quickly with all boilerplate and dependencies included, run:
-
-`npx @astrouxds/react-starter my-app`
-
-Otherwise, use:
 
 `npm i @astrouxds/react`
 
@@ -54,12 +50,12 @@ const MyComp = () => {
 ```
 ## Using our CSS Variables (Design Tokens).
 
-While our components may solve 60% of your UI needs, you will inevitably find yourself needing to 
-create your own custom UI in the style of Astro. 
+While our components may solve 60% of your UI needs, you will inevitably find yourself needing to
+create your own custom UI in the style of Astro.
 
-Our Astro Web Components are powered by our Design Tokens under the hood. These are imported 
-and made available to you when you import `astro-web-components.css` in the form of CSS Custom Properties. 
-Our Design Tokens include everything from our color palette to our spacing system. 
+Our Astro Web Components are powered by our Design Tokens under the hood. These are imported
+and made available to you when you import `astro-web-components.css` in the form of CSS Custom Properties.
+Our Design Tokens include everything from our color palette to our spacing system.
 
 We also provide our tokens in other formats (SASS, json) for your convienence. For more information,
 check out our [Design Tokens](https://www.astrouxds.com/design-tokens/installation/) page for a list
@@ -254,40 +250,9 @@ const FuncTree = () => {
 export default FuncTree
 ```
 
-#### Class Component
-
-```jsx
-import React, { createRef } from 'react'
-import { RuxButton, RuxTree, RuxTreeNode } from '@astrouxds/react'
-
-class Tree extends React.Component {
-    treeRef = createRef()
-
-    render() {
-        return (
-            <div>
-                <RuxTree>
-                    <RuxTreeNode ref={this.treeRef}>Hello</RuxTreeNode>
-                    <RuxTreeNode>World</RuxTreeNode>
-                </RuxTree>
-                <RuxButton
-                    onClick={() => this.treeRef.current.setSelected(true)}
-                >
-                    Set First Selected
-                </RuxButton>
-            </div>
-        )
-    }
-}
-
-export default Tree
-```
-
 ## Data Binding
 
 Because `@astrouxds/react` components are React components, data binding happens the same way.
-
-#### Functional Component
 
 ```jsx
 import React, { useState } from 'react'
@@ -304,31 +269,6 @@ const MyComp = () => {
             />
         </div>
     )
-}
-```
-
-#### Class Component
-
-```jsx
-import React from 'react'
-import { RuxInput } from '@astrouxds/react'
-
-class MyComp extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = { myInput: '' }
-    }
-
-    handleInput(e) {
-        this.setState({ myInput: e.target.value })
-    }
-    render() {
-        return (
-            <div>
-                <RuxInput onRuxinput={(e) => this.handleInput(e)} />
-            </div>
-        )
-    }
 }
 ```
 
@@ -366,9 +306,9 @@ React also has syntactic sugar for two way data binding, which can be found [her
 
 #### Overview
 
-[React Testing Library](https://testing-library.com/docs/react-testing-library/intro) is built for testing React components and supports the native HTML elements such as `<input>`. 
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro) is built for testing React components and supports the native HTML elements such as `<input>`.
 Because our Astro components are web-components, some adaptations must be made to make testing with React Testing Library possible.
-[testing-library__dom](https://www.npmjs.com/package/testing-library__dom) is an adpatation of the DOM testing library for use with 
+[testing-library__dom](https://www.npmjs.com/package/testing-library__dom) is an adpatation of the DOM testing library for use with
 shadow dom. It is still in an early beta stage, however we will show some examples on how to make use of it below.
 
 > For a complete list of the React Testing Library API, read their [docs](https://testing-library.com/docs/react-testing-library/api).
@@ -397,14 +337,14 @@ test('Can find and click a rux-button', async () => {
     const { getByTestId } = render(<Comp handleClick={mockClick}/>)
     let btn = getByTestId('btn')
     expect(btn).not.toBeNull()
-    
+
     fireEvent.click(btn);
     expect(mockClick).toHaveBeenCalledTimes(1)
 })
 ```
 #### User input
 
-Handling user input can be done through `fireEvent` or `userEvent`. According to [the docs](https://testing-library.com/docs/ecosystem-user-event), `userEvent` is more true to 
+Handling user input can be done through `fireEvent` or `userEvent`. According to [the docs](https://testing-library.com/docs/ecosystem-user-event), `userEvent` is more true to
 how the dom would behave with actual user interaction. However, there may be some hiccups with `userEvent` and shadow dom.
 
 Here's an example using both `fireEvent` and `userEvent` to handle user input.
@@ -416,7 +356,7 @@ import { RuxInput } from "@astrouxds/react"
 
 function RuxInputTest() {
     const [input, setInput] = useState("")
-    
+
     return(
         <div>
             <RuxInput
