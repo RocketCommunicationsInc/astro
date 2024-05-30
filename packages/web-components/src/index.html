@@ -88,9 +88,9 @@
                     id="first"
                     has-played-indicator="false"
                     timezone="America/New_York"
-                    start="2021-02-01T00:00:00.000Z"
-                    end="2021-03-03T01:00:00.000Z"
-                    playhead="2021-02-02T00:00:00.000Z"
+                    start="2021-01-01T00:00:00.000Z"
+                    end="2021-03-01T01:00:00.000Z"
+                    playhead="2021-01-02T00:00:00.000Z"
                     interval="hour"
                     zoom="4"
                     show-grid
@@ -108,137 +108,11 @@
                     <rux-track>
                         <div slot="label">Region 2</div>
                         <rux-time-region
-                            start="2021-02-01T10:00:00Z"
-                            end="2021-02-01T12:00:00Z"
+                            start="2022-01-01T10:00:00Z"
+                            end="2022-02-01T12:00:00Z"
                             status="serious"
                         >
                             Event 2.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 3</div>
-                        <rux-time-region
-                            start="2021-02-01T00:00:00Z"
-                            end="2021-02-02T02:00:00Z"
-                            status="standby"
-                        >
-                            Event 3.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 4</div>
-                        <rux-time-region
-                            start="2021-02-01T03:00:00Z"
-                            end="2021-02-02T04:33:00Z"
-                            status="critical"
-                        >
-                            Event 4.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 5</div>
-                        <rux-time-region
-                            start="2021-02-01T05:00:00Z"
-                            end="2021-02-02T05:33:00Z"
-                            status="caution"
-                        >
-                            Event 5.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 6</div>
-                        <rux-time-region
-                            start="2021-02-01T05:00:00Z"
-                            end="2021-02-02T05:33:00Z"
-                            status="normal"
-                        >
-                            Event 6.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 7</div>
-                        <rux-time-region
-                            start="2021-02-01T05:00:00Z"
-                            end="2021-02-02T05:33:00Z"
-                            status="normal"
-                        >
-                            Event 7.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track slot="ruler">
-                        <rux-ruler show-start-of-day></rux-ruler>
-                    </rux-track>
-                </rux-timeline>
-
-                <section class="zoomSelector">
-                    <span>Current Zoom:</span>
-                    <rux-button
-                        id="sub"
-                        icon-only
-                        icon="zoom-out"
-                        onclick="zoom2(-1)"
-                    ></rux-button>
-                    <rux-input id="second" readonly></rux-input>
-                    <rux-button
-                        id="add"
-                        icon-only
-                        icon="zoom-in"
-                        onclick="zoom2(1)"
-                    ></rux-button>
-                    <rux-button secondary onclick="togglegrid2()"
-                        >Toggle Grid</rux-button
-                    >
-                </section>
-
-                <rux-timeline
-                    id="second"
-                    has-played-indicator
-                    timezone="UTC"
-                    start="2021-12-31T22:00:00.000Z"
-                    end="2022-01-01T05:00:00.000Z"
-                    playhead="2022-01-01T00:00:00.000Z"
-                    interval="hour"
-                    zoom="4"
-                    show-grid
-                >
-                    <rux-track>
-                        <div slot="label">Region 1</div>
-                        <rux-time-region
-                            start="2021-12-31T22:00:00.000Z"
-                            end="2021-02-01T02:00:00Z"
-                            status="serious"
-                        >
-                            Event 1.2
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 2</div>
-                        <rux-time-region
-                            start="2021-12-31T22:00:00.000Z"
-                            end="2021-02-01T12:00:00Z"
-                            status="serious"
-                        >
-                            Event 2.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 3</div>
-                        <rux-time-region
-                            start="2021-12-31T22:00:00.000Z"
-                            end="2021-02-02T02:00:00Z"
-                            status="standby"
-                        >
-                            Event 3.1
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 4</div>
-                        <rux-time-region
-                            start="2021-12-31T23:10:00.000Z"
-                            end="2022-01-01T00:00:00.000Z"
-                            status="critical"
-                        >
-                            Event 4.1
                         </rux-time-region>
                     </rux-track>
                     <rux-track slot="ruler">
@@ -250,15 +124,11 @@
         <script>
             const timeline = document.querySelector('rux-timeline')
             const input = document.querySelector('rux-input')
-            const timeline2 = document.querySelector('rux-timeline#second')
-            const input2 = document.querySelector('rux-input#second')
             const currenttz = document.querySelector('#currentTimezone')
             currenttz.textContent = timeline.getAttribute('timezone')
 
             let zoomLevel = 4
-            let zoomLevel2 = 4
             input.value = zoomLevel
-            input2.value = zoomLevel2
             function zoom(number) {
                 zoomLevel = zoomLevel + number
                 input.value = zoomLevel
@@ -275,31 +145,15 @@
 
                 const newTz =
                     current === 'America/New_York' ? 'UTC' : 'America/New_York'
-                console.log(current, newTz)
                 timeline.timezone = newTz
                 currenttz.textContent = newTz
             }
 
             function setZoomInterval(zoomLevel) {
-                if (zoomLevel < 1) timeline.setAttribute('interval', 'month')
-                if (zoomLevel < 2) timeline.setAttribute('interval', 'week')
-                if (zoomLevel <= 3) timeline.setAttribute('interval', 'day')
+                if (zoomLevel === 1) timeline.setAttribute('interval', 'month')
+                if (zoomLevel === 2) timeline.setAttribute('interval', 'week')
+                if (zoomLevel === 3) timeline.setAttribute('interval', 'day')
                 if (zoomLevel > 3) timeline.setAttribute('interval', 'hour')
-            }
-            function zoom2(number) {
-                zoomLevel2 = zoomLevel2 + number
-                input2.value = zoomLevel2
-                setZoomInterval2(zoomLevel2)
-                timeline2.setAttribute('zoom', zoomLevel2)
-            }
-
-            const togglegrid2 = () => {
-                timeline2.toggleAttribute('show-grid')
-            }
-
-            function setZoomInterval2(zoomLevel) {
-                if (zoomLevel <= 4) timeline2.setAttribute('interval', 'hour')
-                if (zoomLevel > 4) timeline2.setAttribute('interval', 'minute')
             }
         </script>
     </body>

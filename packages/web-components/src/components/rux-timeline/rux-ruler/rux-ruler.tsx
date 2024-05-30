@@ -1,5 +1,7 @@
 import { Prop, Component, Element, Host, h, Fragment } from '@stencil/core'
+import { differenceInDays, endOfMonth, getDaysInMonth } from 'date-fns'
 import { dateRange as getRange } from '../helpers'
+import { formatInTimeZone } from 'date-fns-tz'
 @Component({
     tag: 'rux-ruler',
     styleUrl: 'rux-ruler.scss',
@@ -26,7 +28,7 @@ export class RuxRuler {
     @Prop({ reflect: true }) timezone = 'UTC'
 
     /**
-     * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+     * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
      */
     @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
 
@@ -42,27 +44,29 @@ export class RuxRuler {
 
     getColumn(index: number) {
         let unitOfTime = 60
-        if (this.interval === 'day') {
-            unitOfTime = 24
+        if (['minute', 'hour'].includes(this.interval)) {
+            this.timePattern = this.timePatterns['day']
         }
-        // same as for days
-        if (this.interval === 'week') {
+        if (['day', 'week'].includes(this.interval)) {
             unitOfTime = 24
+            this.timePattern = this.timePatterns['month']
         }
         if (this.interval === 'month') {
             unitOfTime = 24
+            this.timePattern = this.timePatterns['year']
         }
 
         const start = unitOfTime * index + 2
         const end = start + unitOfTime
+
         return `${unitOfTime * index + 2} / ${end}`
     }
 
     getWeekColumn(index: number) {
-        let unitOfTime = 60
-        let intervalOfTime = 60 * 24
+        let unitOfTime = 60 // hour and minutes interval of columns
+        let intervalOfTime = unitOfTime * 24 // by default assume hours 24hours in a day
         if (this.interval === 'minute') {
-            intervalOfTime = intervalOfTime * 60
+            intervalOfTime = intervalOfTime * 60 // interval * minutes * hours for minutes
         }
         const start = unitOfTime * index + 2
         const end = start + intervalOfTime
@@ -70,27 +74,65 @@ export class RuxRuler {
         return `${unitOfTime * index + 2} / ${end}`
     }
 
-    getPartialDay() {
-        let partialDay = {
-            end: -1,
-            date: this.dateRange[0][1],
+    getMonthColumn(index: number) {
+        const date = this.dateRange[index][1] as Date
+        let unitOfTime = 24 // day/week/month grid unit
+        let intervalOfTime = unitOfTime * getDaysInMonth(date)
+        if (this.interval === 'week') {
+            const endofMonthDate: Date = endOfMonth(date)
+            const daysBetween: number = differenceInDays(endofMonthDate, date)
+            /**
+             * days between the first day shown of the month and the last day of the month
+             * divided by days in a week
+             */
+            intervalOfTime = unitOfTime * Math.ceil(daysBetween / 7)
         }
+        const start = unitOfTime * index + 2
+        const end = start + intervalOfTime
+        return `${unitOfTime * index + 2} / ${end}`
+    }
+
+    getYearColumn(index: number) {
+        let unitOfTime = 24 // day/week/month grid unit
+        let intervalOfTime = unitOfTime * 12 // 12 months in a year
+        const start = unitOfTime * index + 2
+        const end = start + intervalOfTime
+
+        return `${unitOfTime * index + 2} / ${end}`
+    }
+
+    getPartial() {
+        let partialIncrement: string = '-1'
+        const getText = () => {
+            let text: string = ''
+            if (['minute', 'hour'].includes(this.interval)) {
+                text = this.dateRange[0][1] as string
+            }
+            if (['day', 'week'].includes(this.interval)) {
+                text = formatInTimeZone(
+                    this.dateRange[0][1] as Date,
+                    this.timezone,
+                    'MMMM'
+                )
+            }
+            if (this.interval === 'month') {
+                text = formatInTimeZone(
+                    this.dateRange[0][1] as Date,
+                    this.timezone,
+                    'yyyy'
+                )
+            }
+            return text
+        }
+        const textContent = getText()
+
         /**
-         * If this.firsNewDay exists it means that there is the start of a day within the date range
-         * so we need to find where it starts and backfill the previous day to the start day
+         * If this.firsFullIncrement exists it means that there is the start of a time increment within the date range
+         * so we need to find where it starts and backfill the previous increment to the start of the new day
          */
-        if (this.firstNewDay) {
-            //Set Last Column
-            let unitOfTime = 60
-            if (this.interval === 'minute') {
-                unitOfTime = unitOfTime * 60
-            }
-            const prevDay = this.dateRange[this.firstNewDay - 1]
-            const end = unitOfTime * this.firstNewDay! + 2
-            partialDay = {
-                end,
-                date: prevDay[1],
-            }
+        if (this.firstFullIncrement) {
+            partialIncrement = this.firstFullIncrement
+            this.firstFullIncrement = undefined
         }
 
         /**
@@ -103,46 +145,129 @@ export class RuxRuler {
                 class="ruler-new-day-display"
                 style={{
                     gridRow: '2',
-                    gridColumn: `2 / ${partialDay.end}`,
+                    gridColumn: `2 / ${partialIncrement}`,
+                    display:
+                        Number(partialIncrement) === 2 ? 'none' : undefined,
                 }}
             >
-                <span>{partialDay.date}</span>
+                <span>{textContent}</span>
             </span>
         )
     }
 
-    timePattern = /^00:00+$/
+    timePatterns = {
+        day: /^00:00+$/,
+        month: /^[0-1][0-9]\/01/,
+        year: /^01\/([0-3][0-9])/,
+    }
+    timePattern: RegExp = this.timePatterns['day']
 
-    shouldShowDate(time: string) {
-        if (!['hour', 'minute'].includes(this.interval)) {
-            return false
+    secondaryRuler(time: string, newDay: string, index: number) {
+        if (!this.showStartOfDay) return null
+        let gridColumn
+        let textDisplay = ''
+        if (
+            ['hour', 'minute'].includes(this.interval) &&
+            this.shouldShow(time)
+        ) {
+            if (!this.firstFullIncrement)
+                this.firstFullIncrement = this.getWeekColumn(index).split(
+                    '/'
+                )[0]
+            gridColumn = this.getWeekColumn(index)
+            textDisplay = newDay
+        }
+        if (
+            (this.interval === 'day' && this.shouldShow(time)) ||
+            (this.interval === 'week' && this.shouldShowMonth(index))
+        ) {
+            if (!this.firstFullIncrement) {
+                this.firstFullIncrement = this.getMonthColumn(index).split(
+                    '/'
+                )[0]
+            }
+            gridColumn = this.getMonthColumn(index)
+            textDisplay = formatInTimeZone(
+                this.dateRange[index][1] as Date,
+                this.timezone,
+                'MMMM'
+            )
         }
 
-        if (!this.showStartOfDay) {
-            return false
+        if (['month'].includes(this.interval) && this.shouldShow(time)) {
+            if (!this.firstFullIncrement)
+                this.firstFullIncrement = this.getYearColumn(index).split(
+                    '/'
+                )[0]
+            gridColumn = this.getYearColumn(index)
+            textDisplay = formatInTimeZone(
+                this.dateRange[index][1] as Date,
+                this.timezone,
+                'yyyy'
+            )
         }
+        return gridColumn ? (
+            <span
+                class="ruler-new-day-display"
+                style={{
+                    gridRow: '2',
+                    gridColumn: gridColumn,
+                }}
+            >
+                <span>{textDisplay}</span>
+            </span>
+        ) : null
+    }
+
+    /**
+     * Returns boolean value when comparing hour minute day month against pattern
+     */
+    shouldShow(time: string) {
         return this.timePattern.test(time)
     }
 
-    private firstNewDay: number | undefined
+    /**
+     * month is a special case because there is no obvious
+     * time pattern to tell when a new one happens, it has to
+     * rely on the dates around it
+     */
+    shouldShowMonth(index: number) {
+        if (this.interval === 'week') {
+            if (index === 0) return false
+            const currentWeek = (this.dateRange[index][0] as string).slice(0, 3)
+            const prevWeek = (this.dateRange[index - 1][0] as string).slice(
+                0,
+                3
+            )
+            if (prevWeek !== currentWeek && !this.firstFullIncrement)
+                this.firstFullIncrement = this.getMonthColumn(index).split(
+                    '/'
+                )[0]
+            return prevWeek !== currentWeek
+        }
+        return false
+    }
+
+    private firstFullIncrement: string | undefined
     render() {
         return (
             <Host>
                 <div class="rux-ruler rux-track">
                     {this.dateRange.map(
                         ([time, newDayDate]: any, index: any) => {
-                            const newDay = this.timePattern.test(time)
-                                ? newDayDate
-                                : ''
-                            if (newDay !== '' && !this.firstNewDay)
-                                this.firstNewDay = index
+                            let newDay
+                            if (['hour', 'minute'].includes(this.interval)) {
+                                newDay = this.timePattern.test(time)
+                                    ? newDayDate
+                                    : ''
+                            }
                             return (
                                 <Fragment>
                                     <span
                                         key={index}
                                         class={{
                                             'ruler-time': true,
-                                            'ruler-new-day-cell': this.shouldShowDate(
+                                            'ruler-new-day-cell': this.shouldShow(
                                                 time
                                             ),
                                             'has-date-scroll':
@@ -159,27 +284,12 @@ export class RuxRuler {
                                     >
                                         {time}
                                     </span>
-                                    {this.shouldShowDate(time) ? (
-                                        <span
-                                            class="ruler-new-day-display"
-                                            style={{
-                                                gridRow: '2',
-                                                gridColumn: this.getWeekColumn(
-                                                    index
-                                                ),
-                                            }}
-                                        >
-                                            <span>{newDay}</span>
-                                        </span>
-                                    ) : null}
+                                    {this.secondaryRuler(time, newDay, index)}
                                 </Fragment>
                             )
                         }
                     )}
-                    {this.showStartOfDay &&
-                    ['hour', 'minute'].includes(this.interval)
-                        ? this.getPartialDay()
-                        : null}
+                    {this.showStartOfDay ? this.getPartial() : null}
                 </div>
             </Host>
         )
