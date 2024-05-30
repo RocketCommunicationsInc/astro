@@ -89,7 +89,6 @@ export class RuxRuler {
         }
         const start = unitOfTime * index + 2
         const end = start + intervalOfTime
-
         return `${unitOfTime * index + 2} / ${end}`
     }
 
@@ -103,9 +102,32 @@ export class RuxRuler {
     }
 
     getPartial() {
-        let partialIncrement = '-1'
+        let partialIncrement: string = '-1'
+        const getText = () => {
+            let text: string = ''
+            if (['minute', 'hour'].includes(this.interval)) {
+                text = this.dateRange[0][1] as string
+            }
+            if (['day', 'week'].includes(this.interval)) {
+                text = formatInTimeZone(
+                    this.dateRange[0][1] as Date,
+                    this.timezone,
+                    'MMMM'
+                )
+            }
+            if (this.interval === 'month') {
+                text = formatInTimeZone(
+                    this.dateRange[0][1] as Date,
+                    this.timezone,
+                    'yyyy'
+                )
+            }
+            return text
+        }
+        const textContent = getText()
+
         /**
-         * If this.firsFullIncrement exists it means that there is the start of a time incremment within the date range
+         * If this.firsFullIncrement exists it means that there is the start of a time increment within the date range
          * so we need to find where it starts and backfill the previous increment to the start of the new day
          */
         if (this.firstFullIncrement) {
@@ -124,13 +146,15 @@ export class RuxRuler {
                 style={{
                     gridRow: '2',
                     gridColumn: `2 / ${partialIncrement}`,
-                    background: 'hotpink',
+                    display:
+                        Number(partialIncrement) === 2 ? 'none' : undefined,
                 }}
             >
-                <span>hey..</span>
+                <span>{textContent}</span>
             </span>
         )
     }
+
     timePatterns = {
         day: /^00:00+$/,
         month: /^[0-1][0-9]\/01/,
@@ -157,10 +181,11 @@ export class RuxRuler {
             (this.interval === 'day' && this.shouldShow(time)) ||
             (this.interval === 'week' && this.shouldShowMonth(index))
         ) {
-            if (!this.firstFullIncrement)
+            if (!this.firstFullIncrement) {
                 this.firstFullIncrement = this.getMonthColumn(index).split(
                     '/'
                 )[0]
+            }
             gridColumn = this.getMonthColumn(index)
             textDisplay = formatInTimeZone(
                 this.dateRange[index][1] as Date,
@@ -215,7 +240,7 @@ export class RuxRuler {
                 3
             )
             if (prevWeek !== currentWeek && !this.firstFullIncrement)
-                this.firstFullIncrement = this.getWeekColumn(index).split(
+                this.firstFullIncrement = this.getMonthColumn(index).split(
                     '/'
                 )[0]
             return prevWeek !== currentWeek
