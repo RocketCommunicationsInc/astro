@@ -19768,6 +19768,10 @@ export namespace Components {
         "end": string;
         "interval": any;
         /**
+          * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
+         */
+        "showSecondaryRuler"?: boolean | undefined;
+        /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
          */
         "showStartOfDay"?: boolean | undefined;
@@ -55345,6 +55349,10 @@ declare namespace LocalJSX {
     interface RuxRuler {
         "end"?: string;
         "interval"?: any;
+        /**
+          * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
+         */
+        "showSecondaryRuler"?: boolean | undefined;
         /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
          */

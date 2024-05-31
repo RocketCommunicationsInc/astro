@@ -32,6 +32,11 @@ export class RuxRuler {
      */
     @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
 
+    /**
+     * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
+     */
+    @Prop({ attribute: 'show-secondary-ruler' }) showSecondaryRuler? = false
+
     get dateRange() {
         return getRange(
             new Date(this.start),
@@ -163,7 +168,6 @@ export class RuxRuler {
     timePattern: RegExp = this.timePatterns['day']
 
     secondaryRuler(time: string, newDay: string, index: number) {
-        if (!this.showStartOfDay) return null
         let gridColumn
         let textDisplay = ''
         if (
@@ -267,9 +271,10 @@ export class RuxRuler {
                                         key={index}
                                         class={{
                                             'ruler-time': true,
-                                            'ruler-new-day-cell': this.shouldShow(
-                                                time
-                                            ),
+                                            'ruler-new-day-cell':
+                                                (this.showStartOfDay &&
+                                                    this.shouldShow(time)) ||
+                                                false,
                                             'has-date-scroll':
                                                 (this.showStartOfDay &&
                                                     ['hour', 'minute'].includes(
@@ -284,12 +289,18 @@ export class RuxRuler {
                                     >
                                         {time}
                                     </span>
-                                    {this.secondaryRuler(time, newDay, index)}
+                                    {this.showSecondaryRuler
+                                        ? this.secondaryRuler(
+                                              time,
+                                              newDay,
+                                              index
+                                          )
+                                        : null}
                                 </Fragment>
                             )
                         }
                     )}
-                    {this.showStartOfDay ? this.getPartial() : null}
+                    {this.showSecondaryRuler ? this.getPartial() : null}
                 </div>
             </Host>
         )
