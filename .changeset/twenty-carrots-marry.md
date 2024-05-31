@@ -8,4 +8,4 @@
 "@astrouxds/react": minor
 ---
 
-Feat(rux-timeline) add a grid option to rux-timeline and a show-secondary-ruler option to rux-ruler
+feat(rux-timeline) add a showGrid option to rux-timeline when implemented it displays gridlines on the timeline
