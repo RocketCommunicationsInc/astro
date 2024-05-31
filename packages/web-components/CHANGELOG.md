@@ -1,5 +1,16 @@
 # @astrouxds/astro-web-components
 
+## 0.0.0-timeline-enhanced-20240531164326
+
+### Minor Changes
+
+-   ac4380a7: feat(rux-timeline) added a showSecondaryRuler prop to rux-ruler to show a secondary rule that is one increment up from the main interval (for days it shows months, for months it shows years, etc.)
+-   023b1de1: feat(rux-timeline) add a showGrid option to rux-timeline when implemented it displays gridlines on the timeline
+
+### Patch Changes
+
+-   2ac99dd8: fixed an issue with selects value sometimes not being an array in a multi select
+
 ## 7.22.0
 
 ### Minor Changes
