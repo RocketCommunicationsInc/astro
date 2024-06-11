@@ -16,7 +16,7 @@ To get up and running quickly, Astro web components are available via a CDN. Add
 />
 <script
     type="module"
-    src="https://unpkg.com/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
+    src="https://cdn.jsdelivr.net/npm/@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.esm.js"
 ></script>
 ```
 
