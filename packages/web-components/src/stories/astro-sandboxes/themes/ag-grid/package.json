@@ -1,25 +1,22 @@
 {
-    "name": "vanilla",
-    "version": "1.0.0",
-    "description": "JavaScript example starter project",
-    "main": "index.html",
-    "scripts": {
-        "start": "parcel index.html --open",
-        "build": "parcel build index.html"
-    },
-    "dependencies": {
-        "@astrouxds/ag-grid-theme": "6.0.1",
-        "ag-grid-community": "26.1.0",
-        "parcel-bundler": "^1.6.1"
-    },
-    "devDependencies": {
-        "@babel/core": "7.2.0"
-    },
-    "resolutions": {
-        "@babel/preset-env": "7.13.8"
-    },
-    "keywords": [
-        "javascript",
-        "starter"
-    ]
+  "name": "vanilla",
+  "version": "2.0.0",
+  "description": "JavaScript example starter project",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@astrouxds/ag-grid-theme": "8.0.0",
+    "ag-grid-community": "32.1.0",
+    "parcel-bundler": "^1.12.5"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0"
+  },
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
+  },
+  "keywords": ["javascript", "starter"]
 }
