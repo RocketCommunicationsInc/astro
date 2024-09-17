@@ -1,51 +1,132 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-  <title>Stencil Component Starter</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            rux-toast {
+                --iconSize: 24px;
+            }
 
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
-    rel="stylesheet" />
-  <script type="module" src="/build/astro-web-components.esm.js"></script>
-  <script nomodule src="/build/astro-web-components.js"></script>
-  <link rel="stylesheet" href="/build/astro-web-components.css" />
-  <style>
-    rux-toast {
-      --iconSize: 24px;
-    }
+            .my-custom {
+                color: green;
+            }
+        </style>
+    </head>
 
-    .my-custom {
-      color: green;
-    }
-  </style>
-</head>
+    <body>
+        <rux-toast-stack></rux-toast-stack>
+        <rux-button id="suc">Add Success Toast</rux-button>
+        <rux-button id="crit">Add critical Toast</rux-button>
+        <rux-button id="standby">Add standby Toast</rux-button>
 
-<body>
-  <rux-toast-stack></rux-toast-stack>
-  <rux-button id="suc">Add Success Toast</rux-button>
-  <rux-button id="crit">Add critical Toast</rux-button>
-  <rux-button id="standby">Add standby Toast</rux-button>
+        <script>
+            const suc = document.getElementById('suc')
+            const crit = document.getElementById('crit')
+            const standby = document.getElementById('standby')
 
-  <script>
-    const suc = document.getElementById('suc')
-    const crit = document.getElementById('crit')
-    const standby = document.getElementById('standby')
+            const stack = document.querySelector('rux-toast-stack')
+            suc.addEventListener('click', () => {
+                stack.addToast({
+                    message: 'Success/Normal Toast',
+                    status: 'normal',
+                })
+            })
+            crit.addEventListener('click', () => {
+                stack.addToast({ message: 'Critical', status: 'critical' })
+            })
+            standby.addEventListener('click', () => {
+                stack.addToast({ message: 'Standby', status: 'standby' })
+            })
+        </script>
 
-    const stack = document.querySelector('rux-toast-stack')
-    suc.addEventListener(('click'), () => {
-      stack.addToast({ message: "Success/Normal Toast", status: "normal" })
-    })
-    crit.addEventListener(('click'), () => {
-      stack.addToast({ message: "Critical", status: "critical" })
-    })
-    standby.addEventListener(('click'), () => {
-      stack.addToast({ message: "Standby", status: "standby" })
-    })
-  </script>
-</body>
-
+        <style>
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 2rem;
+            }
+        </style>
+        <div class="grid">
+            <rux-input
+                label="Text Input"
+                type="text"
+                placeholder="Text input"
+            ></rux-input>
+            <rux-input
+                label="Number Input"
+                type="number"
+                placeholder="1"
+            ></rux-input>
+            <rux-input
+                label="Phone Input"
+                type="tel"
+                placeholder="(999) 999-9999"
+            ></rux-input>
+            <rux-input
+                label="Password Input"
+                type="password"
+                placeholder="Reindeer Flotilla"
+            ></rux-input>
+            <rux-input
+                label="Web address"
+                type="url"
+                placeholder="http://example.com"
+            ></rux-input>
+            <rux-input
+                label="Email"
+                type="email"
+                placeholder="user@example.com"
+            ></rux-input>
+            <rux-input
+                label="Search"
+                type="search"
+                placeholder="Enter search term"
+            ></rux-input>
+            <rux-input label="Date" type="date"></rux-input>
+            <rux-input label="Datetime-local" type="datetime-local"></rux-input>
+            <rux-input label="Time" type="time"></rux-input>
+        </div>
+        <div class="grid">
+            <input label="Text Input" type="text" placeholder="Text input" />
+            <input label="Number Input" type="number" placeholder="1" />
+            <input
+                label="Phone Input"
+                type="tel"
+                placeholder="(999) 999-9999"
+            />
+            <input
+                label="Password Input"
+                type="password"
+                placeholder="Reindeer Flotilla"
+            />
+            <input
+                label="Web address"
+                type="url"
+                placeholder="http://example.com"
+            />
+            <input label="Email" type="email" placeholder="user@example.com" />
+            <input
+                label="Search"
+                type="search"
+                placeholder="Enter search term"
+            />
+            <input label="Date" type="date" />
+            <input label="Datetime-local" type="datetime-local" />
+            <input label="Time" type="time" />
+        </div>
+    </body>
 </html>
