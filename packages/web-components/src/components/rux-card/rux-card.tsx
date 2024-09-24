@@ -1,8 +1,10 @@
-import { State, Element, Component, Host, h } from '@stencil/core'
+import { Component, Element, Host, State, h } from '@stencil/core'
+
 import { hasSlot } from '../../utils/utils'
 /**
  * @slot (default) - The card's content
  * @slot header - The card's header
+ * @slot footer - The cards footer
  * @part container - The card's outtermost container
  * @part header - The card's outside header element
  * @part body - The card's outside body element

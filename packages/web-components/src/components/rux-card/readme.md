@@ -10,6 +10,7 @@
 | Slot          | Description        |
 | ------------- | ------------------ |
 | `"(default)"` | The card's content |
+| `"footer"`    | The cards footer   |
 | `"header"`    | The card's header  |
 
 
