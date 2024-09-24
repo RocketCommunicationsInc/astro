@@ -1,5 +1,11 @@
 # astro-react
 
+## 0.3.1
+
+### Patch Changes
+
+- 4c4e3bc8: Added missing footer slot documentation to storybook
+
 ## 0.3.0
 
 ### Minor Changes
