@@ -1,5 +1,14 @@
 # @astrouxds/angular
 
+## 7.22.2
+
+### Patch Changes
+
+- 4c4e3bc8: Added missing footer slot documentation to storybook
+- Updated dependencies [52f1c2a0]
+- Updated dependencies [4c4e3bc8]
+  - @astrouxds/astro-web-components@7.22.2
+
 ## 7.22.1
 
 ### Patch Changes
@@ -14,7 +23,7 @@
 
 #### Toast
 
--   Added a new status prop and the ability to resize toast close icon via the new iconSize CSS prop.
+- Added a new status prop and the ability to resize toast close icon via the new iconSize CSS prop.
 
 ## 7.21.0
 
@@ -22,13 +31,13 @@
 
 #### Timeline
 
--   Updated timeline to support Month and Week intervals for displaying data and allow zoom to be < 1
+- Updated timeline to support Month and Week intervals for displaying data and allow zoom to be < 1
 
 ### Patch Changes
 
 #### Pop Up
 
--   Resolved console log error
+- Resolved console log error
 
 ## 7.20.0
 

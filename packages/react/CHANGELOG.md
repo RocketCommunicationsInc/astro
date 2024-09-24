@@ -1,5 +1,14 @@
 # @astrouxds/react
 
+## 7.22.2
+
+### Patch Changes
+
+- 4c4e3bc8: Added missing footer slot documentation to storybook
+- Updated dependencies [52f1c2a0]
+- Updated dependencies [4c4e3bc8]
+  - @astrouxds/astro-web-components@7.22.2
+
 ## 7.22.1
 
 ### Patch Changes
