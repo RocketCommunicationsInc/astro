@@ -1,12 +1,13 @@
 import {
-    Prop,
     Component,
-    Host,
-    h,
+    Element,
     Event,
     EventEmitter,
-    Element,
+    Host,
+    Prop,
+    h,
 } from '@stencil/core'
+
 import { renderHiddenInput } from '../../utils/utils'
 
 /**
@@ -66,6 +67,14 @@ export class RuxPushButton {
      */
     @Prop({ reflect: true }) size?: 'small' | 'medium' | 'large'
     /**
+     * Specifies the label text to use if the push button is pushed.
+     */
+    @Prop({ attribute: 'active-label' }) activeLabel?: string
+    /**
+     * Specifies the label text to use if the push button is not pushed.
+     */
+    @Prop({ attribute: 'inactive-label' }) inactiveLabel?: string
+    /**
      * Fired when an alteration to the input's value is committed by the user and emits the value on the event.detail - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -82,6 +91,7 @@ export class RuxPushButton {
 
     private _onChange(e: Event) {
         const target = e.target as HTMLInputElement
+        console.log('changing checked value')
         this.checked = target.checked
         this.ruxChange.emit(this.checked)
     }
@@ -90,11 +100,21 @@ export class RuxPushButton {
         this.ruxBlur.emit()
     }
 
+    private _determineLabelText(): string {
+        console.log(`checked: ${this.checked}`)
+        if (this.checked && this.activeLabel) {
+            return this.activeLabel
+        } else if (!this.checked && this.inactiveLabel) {
+            return this.inactiveLabel
+        } else {
+            return this.label
+        }
+    }
+
     render() {
         const {
             disabled,
             checked,
-            label,
             size,
             _onChange,
             value,
@@ -146,7 +166,7 @@ export class RuxPushButton {
                         ></rux-icon>
                     ) : null}
 
-                    {label}
+                    {this._determineLabelText()}
                 </label>
                 <slot></slot>
             </Host>
