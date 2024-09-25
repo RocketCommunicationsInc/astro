@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <rux-card style="width: 300px; margin: auto;">
             Suscipit potenti habitant penatibus praesent quam class erat purus
@@ -37,7 +37,7 @@ const WithFooter = (args) => {
     `
 }
 
-const FullExample = (args) => {
+const WithFullExample = (args) => {
     return html`
         <rux-card style="width: 300px; margin: auto;">
             <div slot="header" style="display: flex; align-items: center;">
@@ -101,22 +101,22 @@ export default {
     argTypes: extractArgTypes('rux-card'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 }
 
-export const WithHeader_ = {
+export const Header = {
     render: WithHeader.bind(),
     name: 'With Header',
 }
 
-export const WithFooter_ = {
+export const Footer = {
     render: WithFooter.bind(),
     name: 'With Footer',
 }
 
-export const FullExample_ = {
-    render: FullExample.bind(),
+export const FullExample = {
+    render: WithFullExample.bind(),
     name: 'Full Example',
 }

@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <rux-checkbox
             ?disabled="${args.disabled}"
@@ -13,70 +13,6 @@ const Default = (args) => {
             label="${args.label}"
             >Checkbox Label</rux-checkbox
         >
-    `
-}
-
-const Checked = (args) => {
-    return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-            label="${args.label}"
-        >
-            Checkbox Label
-        </rux-checkbox>
-    `
-}
-
-const Disabled = (args) => {
-    return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-            label="${args.label}"
-        >
-            Checkbox Label
-        </rux-checkbox>
-    `
-}
-
-const Indeterminate = (args) => {
-    return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            .helpText="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-            label="${args.label}"
-        >
-            Checkbox Label
-        </rux-checkbox>
-    `
-}
-
-const WithHelpText = (args) => {
-    return html`
-        <rux-checkbox
-            ?disabled="${args.disabled}"
-            ?checked="${args.checked}"
-            ?indeterminate="${args.indeterminate}"
-            help-text="${args.helpText}"
-            name="${args.name}"
-            .value="${args.value}"
-            label="${args.label}"
-        >
-            Checkbox Label
-        </rux-checkbox>
     `
 }
 
@@ -100,8 +36,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -115,8 +51,8 @@ export const Default_ = {
     },
 }
 
-export const Checked_ = {
-    render: Checked.bind(),
+export const Checked = {
+    render: Base.bind(),
 
     args: {
         checked: true,
@@ -131,8 +67,8 @@ export const Checked_ = {
     name: 'Checked',
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
 
     args: {
         checked: false,
@@ -147,8 +83,8 @@ export const Disabled_ = {
     name: 'Disabled',
 }
 
-export const Indeterminate_ = {
-    render: Indeterminate.bind(),
+export const Indeterminate = {
+    render: Base.bind(),
 
     args: {
         indeterminate: true,
@@ -163,8 +99,8 @@ export const Indeterminate_ = {
     name: 'Indeterminate',
 }
 
-export const WithHelpText_ = {
-    render: WithHelpText.bind(),
+export const WithHelpText = {
+    render: Base.bind(),
 
     args: {
         indeterminate: false,

@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
             <rux-clock
@@ -19,74 +19,7 @@ const Default = (args) => {
     `
 }
 
-const ClockWithAosLos = (args) => {
-    return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                aos="${args.aos}"
-                los="${args.los}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-                date-in="${args.dateIn}"
-            ></rux-clock>
-        </div>
-    `
-}
-
-const DateIn = (args) => {
-    return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                aos="${args.aos}"
-                los="${args.los}"
-                date-in="${args.dateIn}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
-    `
-}
-
-const Small = (args) => {
-    return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                .aos="${args.aos}"
-                .los="${args.los}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-            ></rux-clock>
-        </div>
-    `
-}
-
-const Static = (args) => {
-    return html`
-        <div style="padding: 10%; display: flex; justify-content: center;">
-            <rux-clock
-                .timezone="${args.timezone}"
-                .aos="${args.aos}"
-                .los="${args.los}"
-                ?hide-timezone="${args.hideTimezone}"
-                ?hide-date="${args.hideDate}"
-                ?hide-labels="${args.hideLabels}"
-                ?small="${args.small}"
-                ?static="${args.static}"
-            ></rux-clock>
-        </div>
-    `
-}
-
-const OtherVariants = () => {
+const WithOtherVariants = () => {
     return html`
         <style>
             .clock-list {
@@ -129,8 +62,8 @@ export default {
     argTypes: extractArgTypes('rux-clock'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -147,7 +80,7 @@ export const Default_ = {
 }
 
 export const WithAosLos = {
-    render: ClockWithAosLos.bind(),
+    render: Base.bind(),
 
     args: {
         aos: '1988-04-22T12:12:12.000Z',
@@ -158,13 +91,14 @@ export const WithAosLos = {
         small: false,
         timezone: 'UTC',
         dateIn: '',
+        static: false,
     },
 
     name: 'With AOS/LOS',
 }
 
 export const WithDateIn = {
-    render: DateIn.bind(),
+    render: Base.bind(),
 
     args: {
         aos: '',
@@ -175,13 +109,15 @@ export const WithDateIn = {
         small: false,
         timezone: 'UTC',
         dateIn: '2022-04-22T23:59:55.000Z',
+        static: false,
+        dateIn: '',
     },
 
     name: 'With Date In',
 }
 
-export const Small_ = {
-    render: Small.bind(),
+export const Small = {
+    render: Base.bind(),
 
     args: {
         aos: '',
@@ -191,13 +127,15 @@ export const Small_ = {
         hideTimezone: false,
         small: true,
         timezone: 'UTC',
+        static: false,
+        dateIn: '',
     },
 
     name: 'Small',
 }
 
-export const Static_ = {
-    render: Static.bind(),
+export const Static = {
+    render: Base.bind(),
 
     args: {
         aos: '',
@@ -214,7 +152,7 @@ export const Static_ = {
     name: 'Static',
 }
 
-export const OtherVariants_ = {
-    render: OtherVariants.bind(),
+export const OtherVariants = {
+    render: WithOtherVariants.bind(),
     name: 'Other Variants',
 }

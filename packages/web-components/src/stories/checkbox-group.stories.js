@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html, render } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <rux-checkbox-group
             name="checkboxes"
@@ -19,79 +19,7 @@ const Default = (args) => {
     `
 }
 
-const Invalid = (args) => {
-    return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            ?required="${args.required}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
-    `
-}
-
-const Required = (args) => {
-    return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            ?required="${args.required}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
-    `
-}
-
-const WithHelpText = (args) => {
-    return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            ?required="${args.required}"
-            help-text="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
-    `
-}
-
-const WithErrorText = (args) => {
-    return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            ?required="${args.required}"
-            .helpText="${args.helpText}"
-            error-text="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
-    `
-}
-
-const HorizontalLabel = (args) => {
+const WithHorizontalLabel = (args) => {
     return html`
         <style>
             #left-example::part(form-field) {
@@ -128,8 +56,8 @@ export default {
     argTypes: extractArgTypes('rux-checkbox-group'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         label: 'Checkbox group',
@@ -141,8 +69,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const Invalid_ = {
-    render: Invalid.bind(),
+export const Invalid = {
+    render: Base.bind(),
 
     args: {
         label: 'Checkbox group',
@@ -154,8 +82,8 @@ export const Invalid_ = {
     name: 'Invalid',
 }
 
-export const Required_ = {
-    render: Required.bind(),
+export const Required = {
+    render: Base.bind(),
 
     args: {
         name: 'checkboxes',
@@ -166,8 +94,8 @@ export const Required_ = {
     name: 'Required',
 }
 
-export const WithHelpText_ = {
-    render: WithHelpText.bind(),
+export const HelpText = {
+    render: Base.bind(),
 
     args: {
         label: 'Checkbox group',
@@ -179,8 +107,8 @@ export const WithHelpText_ = {
     name: 'With Help Text',
 }
 
-export const WithErrorText_ = {
-    render: WithErrorText.bind(),
+export const ErrorText = {
+    render: Base.bind(),
 
     args: {
         label: 'Checkbox group',
@@ -192,8 +120,8 @@ export const WithErrorText_ = {
     name: 'With Error Text',
 }
 
-export const HorizontalLabel_ = {
-    render: HorizontalLabel.bind(),
+export const HorizontalLabel = {
+    render: WithHorizontalLabel.bind(),
     name: 'Horizontal Label',
 
     args: {

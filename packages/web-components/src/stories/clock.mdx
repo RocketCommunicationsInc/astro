@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as ClockStories from './clock.stories';
 
 <Meta of={ClockStories} />
@@ -13,27 +11,7 @@ Clock shows the current or provided date and time, and optional AOS and LOS time
 
 * [Astro UXDS: Clock](https://www.astrouxds.com/ui-components/clock)
 
-export const Default = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-clock
-        .aos="${args.aos}"
-        .los="${args.los}"
-        .timezone="${args.timezone}"
-        ?hide-timezone="${args.hideTimezone}"
-        ?hide-date="${args.hideDate}"
-        ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
-        date-in="${args.dateIn}"
-        ?static="${args.static}"
-    ></rux-clock>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ClockStories.Default_} />
-</Canvas>
+<Canvas of={ClockStories.Default} />
 
 ## API
 
@@ -46,143 +24,29 @@ export const Default = (args) => {
 > NOTE: The AOS and LOS timestamps accept a number of different time formats. If you don't provide a timezone ("1988-04-22 12:12:12"), they will default to the user's system time zone.
 > It is recommended to use the following format `"1988-04-22T12:12:12.000Z"`.
 
-export const ClockWithAosLos = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-clock
-        .timezone="${args.timezone}"
-        aos="${args.aos}"
-        los="${args.los}"
-        ?hide-timezone="${args.hideTimezone}"
-        ?hide-date="${args.hideDate}"
-        ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
-        date-in="${args.dateIn}"
-    ></rux-clock>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ClockStories.WithAosLos} />
-</Canvas>
+<Canvas of={ClockStories.WithAosLos} />
 
 ### With date-in
 
 > NOTE: Similar to the AOS/LOS timestamps, date-in accepts a number of different time formats. If you don't provide a timezone ("1988-04-22 12:12:12"), they will default to the user's system time zone.
 > It is recommended to use the following format `"1988-04-22T12:12:12.000Z"`.
 
-export const DateIn = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-clock
-        .timezone="${args.timezone}"
-        aos="${args.aos}"
-        los="${args.los}"
-        date-in="${args.dateIn}"
-        ?hide-timezone="${args.hideTimezone}"
-        ?hide-date="${args.hideDate}"
-        ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
-    ></rux-clock>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ClockStories.WithDateIn} />
-</Canvas>
+<Canvas of={ClockStories.WithDateIn} />
 
 ### Small
 
-export const Small = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-clock
-        .timezone="${args.timezone}"
-        .aos="${args.aos}"
-        .los="${args.los}"
-        ?hide-timezone="${args.hideTimezone}"
-        ?hide-date="${args.hideDate}"
-        ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
-    ></rux-clock>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ClockStories.Small_} />
-</Canvas>
+<Canvas of={ClockStories.Small} />
 
 ### Static
 
 If you need full control over the time, you can use the `static` attribute and pass in your own time via the
 `date-in` attribute. `static` will prevent the clock from ticking.
 
-export const Static = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-clock
-        .timezone="${args.timezone}"
-        .aos="${args.aos}"
-        .los="${args.los}"
-        ?hide-timezone="${args.hideTimezone}"
-        ?hide-date="${args.hideDate}"
-        ?hide-labels="${args.hideLabels}"
-        ?small="${args.small}"
-        ?static="${args.static}"
-    ></rux-clock>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ClockStories.Static_} />
-</Canvas>
+<Canvas of={ClockStories.Static} />
 
 ### Other Variants
 
-export const OtherVariants = () => {
-    return html`
-    <style>
-        .clock-list {
-            list-style-type: none;
-            margin: 0 1rem 1rem 0;
-            display: flex;
-            flex-flow: column;
-        }
-        .clock-list li {
-            padding-bottom: 2rem;
-        }
-        .clock-list span {
-            margin: 0 0 1rem 1rem;
-        }
-    </style>
-    <div
-    style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
->
-    <ul class="clock-list">
-            <span>Hide Date</span>
-        <li>
-            <rux-clock hide-date></rux-clock>
-        </li>
-            <span>Hide Labels</span>
-        <li>
-            <rux-clock hide-labels></rux-clock>
-        </li>
-            <span>Hide Timezone</span>
-        <li>
-            <rux-clock hide-timezone></rux-clock>
-        </li>
-    </ul>
-</div>
-`
-}
-
-<Canvas>
-  <Story of={ClockStories.OtherVariants_} />
-</Canvas>
+<Canvas of={ClockStories.OtherVariants} />
 
 ## Military Timezones
 

@@ -1,7 +1,7 @@
-import { html, render } from 'lit-html'
+import { html } from 'lit-html';
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div
             style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
@@ -11,21 +11,6 @@ const Default = (args) => {
                 .label="${args.label}"
                 ?tag="${args.tag}"
             ></rux-classification-marking>
-        </div>
-    `
-}
-
-const WithLabel = (args) => {
-    return html`
-        <div
-            style="display: flex; flex-flow: column; justify-content: center; margin-bottom:50px; position: relative;"
-        >
-            <rux-classification-marking
-                classification="${args.classification}"
-                label="${args.label}"
-                ?tag="${args.tag}"
-            >
-            </rux-classification-marking>
         </div>
     `
 }
@@ -124,7 +109,7 @@ const WithFooterBanner = (args) => {
     `
 }
 
-const AllBannerVariants = (args) => {
+const WithAllBannerVariants = (args) => {
     return html`
         <div
             style="display: flex; flex-flow: column; justify-content: center; margin:20px;"
@@ -182,7 +167,7 @@ const AllBannerVariants = (args) => {
     `
 }
 
-const AllTagVariants = () => {
+const WithAllTagVariants = () => {
     return html`
         <div
             style="display: flex; flex-flow: column; justify-content: flex-start; width: 400px; margin:60px auto;"
@@ -288,8 +273,8 @@ export default {
     argTypes: extractArgTypes('rux-classification-marking'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         classification: 'unclassified',
@@ -300,8 +285,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const WithLabel_ = {
-    render: WithLabel.bind(),
+export const WithLabel = {
+    render: Base.bind(),
 
     args: {
         classification: 'unclassified',
@@ -312,7 +297,7 @@ export const WithLabel_ = {
     name: 'With Label',
 }
 
-export const WithFooterBanner_ = {
+export const FooterBanner = {
     render: WithFooterBanner.bind(),
 
     args: {
@@ -324,8 +309,8 @@ export const WithFooterBanner_ = {
     name: 'With Footer Banner',
 }
 
-export const AllBannerVariants_ = {
-    render: AllBannerVariants.bind(),
+export const AllBannerVariants = {
+    render: WithAllBannerVariants.bind(),
 
     argTypes: {
         classification: {
@@ -350,8 +335,8 @@ export const AllBannerVariants_ = {
     name: 'All Banner Variants',
 }
 
-export const AllTagVariants_ = {
-    render: AllTagVariants.bind(),
+export const AllTagVariants = {
+    render: WithAllTagVariants.bind(),
 
     argTypes: {
         classification: {

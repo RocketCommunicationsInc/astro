@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as CheckboxGroupStories from './checkbox-group.stories';
 
 <Meta of={CheckboxGroupStories} />
@@ -14,27 +12,7 @@ The Checkbox Group component is responsible for display invalid state and error 
 * [Astro UXDS: Checkbox](https://www.astrouxds.com/ui-components/checkbox)
 * [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
-export const Default = (args) => {
-    return html`
-        <rux-checkbox-group
-            name="checkboxes"
-            label="${args.label}"
-            .value="${args.value}"
-            ?invalid="${args.invalid}"
-            ?required="${args.required}"
-            .helpText="${args.helpText}"
-            .errorText="${args.errorText}"
-        >
-            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-        </rux-checkbox-group>
-    `
-}
-
-<Canvas>
-  <Story of={CheckboxGroupStories.Default_} />
-</Canvas>
+<Canvas of={CheckboxGroupStories.Default} />
 
 ## API
 
@@ -44,99 +22,19 @@ export const Default = (args) => {
 
 ### Invalid
 
-export const Invalid = (args) => {
-    return html`
-<rux-checkbox-group
-    name="checkboxes"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    .helpText="${args.helpText}"
-    .errorText="${args.errorText}"
->
-    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-</rux-checkbox-group>
-    `
-}
-
-<Canvas>
-  <Story of={CheckboxGroupStories.Invalid_} />
-</Canvas>
+<Canvas of={CheckboxGroupStories.Invalid} />
 
 ### Required
 
-export const Required = (args) => {
-    return html`
-<rux-checkbox-group
-    name="checkboxes"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    .helpText="${args.helpText}"
-    .errorText="${args.errorText}"
->
-    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-</rux-checkbox-group>
-    `
-}
-
-<Canvas>
-  <Story of={CheckboxGroupStories.Required_} />
-</Canvas>
+<Canvas of={CheckboxGroupStories.Required} />
 
 ### With Help Text
 
-export const WithHelpText = (args) => {
-    return html`
-<rux-checkbox-group
-    name="checkboxes"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    help-text="${args.helpText}"
-    .errorText="${args.errorText}"
->
-    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-</rux-checkbox-group>
-    `
-}
-
-<Canvas>
-  <Story of={CheckboxGroupStories.WithHelpText_} />
-</Canvas>
+<Canvas of={CheckboxGroupStories.HelpText} />
 
 ### With Error Text
 
-export const WithErrorText = (args) => {
-    return html`
-<rux-checkbox-group
-    name="checkboxes"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    .helpText="${args.helpText}"
-    error-text="${args.errorText}"
->
-    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
-    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
-    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
-</rux-checkbox-group>
-    `
-}
-
-<Canvas>
-  <Story of={CheckboxGroupStories.WithErrorText_} />
-</Canvas>
+<Canvas of={CheckboxGroupStories.ErrorText} />
 
 ## Customization
 
@@ -155,34 +53,7 @@ rux-checkbox-group::part(label) {
 }
 ```
 
-export const HorizontalLabel = (args) => {
-    return html`
-<style>
-    #left-example::part(form-field) {
-        display: flex;
-        flex-direction: row;
-    }
-    #left-example::part(label) {
-        margin-right: var(--spacing-2);
-    }
-</style>
-<rux-checkbox-group id="left-example"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    .helpText="${args.helpText}"
-    error-text="${args.errorText}"
->
-    <rux-checkbox value="1">one</rux-checkbox>
-    <rux-checkbox value="2">two</rux-checkbox>
-    <rux-checkbox value="3">three</rux-checkbox>
-</rux-checkbox-group>
-    `
-}
-
-<Canvas>
-  <Story of={CheckboxGroupStories.HorizontalLabel_} />
-</Canvas>
+<Canvas of={CheckboxGroupStories.HorizontalLabel} />
 
 ## Cherry Picking
 

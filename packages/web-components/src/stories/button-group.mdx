@@ -1,7 +1,5 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
-import { styled } from '@storybook/theming'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { styled } from '@storybook/theming';
 export const StyledDiv = styled.div`
     position: relative;
     margin: 1rem 0;
@@ -17,18 +15,7 @@ export const StyledDiv = styled.div`
         margin-top: 1rem;
         color: var(--color-text-inverse);
     }
-`
-export const BetaTag = styled.div`
-  display: inline-block;
-  padding: 7px;
-  color: var(--color-palette-neutral-1000);
-  border-radius: var(--radius-base);
-  background: var(--color-palette-teal-300);
-      font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
-`
+`;
 import * as ButtonGroupStories from './button-group.stories';
 
 <Meta of={ButtonGroupStories} />
