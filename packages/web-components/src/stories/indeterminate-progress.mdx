@@ -1,0 +1,50 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as IndeterminateProgressStories from './indeterminate-progress.stories';
+
+<Meta of={IndeterminateProgressStories} />
+
+# Indeterminate Progress
+
+A CSS implementation of an indeterminate progress spinner.
+
+## Guidelines
+
+* [Astro UXDS: Progress](https://www.astrouxds.com/components/progress/)
+
+## API
+
+<Controls />
+
+export const Default = (args) => {
+    return html`
+<div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+    <rux-indeterminate-progress></rux-indeterminate-progress>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={IndeterminateProgressStories.Default_} />
+</Canvas>
+
+## Sizing
+
+In order to re-size `rux-indeterminate-progress`, change the `--size` CSS custom property to your desired size.
+Setting height or width will change the size of the container, but not the spinner itself.
+
+```
+rux-indeterminate-progress {
+    --size: 100px;
+}
+```
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxIndeterminateProgress } from '@astrouxds/astro-web-components/dist/components/rux-indeterminate-progress.js'
+customElements.define('rux-indeterminate-progress', RuxIndeterminateProgress)
+```

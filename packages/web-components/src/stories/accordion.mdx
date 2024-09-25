@@ -1,0 +1,57 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as AccordionStories from './accordion.stories';
+
+<Meta of={AccordionStories} />
+
+# Accordion
+
+An Accordion is a device which presents a set of summary items which can expose details based on each summary. An item can be expanded to reveal details, and collapsed to hide details.
+
+## Guidelines
+
+* [Astro UXDS: Accordion](https://www.astrouxds.com/components/accordion/)
+
+<Canvas of={AccordionStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Disabled
+
+<Canvas of={AccordionStories.Disabled} />
+
+### Disallow Multiple
+
+Allows only one accordion item to be expanded at a time.
+
+<Canvas of={AccordionStories.DisallowMultiple} />
+
+### Truncated
+
+Long accordion summaries wrap lines by default. These can be made to truncate instead by targeting the rux-accordion-item slot 'label' and applying styles. For example:
+
+```html
+<style>
+    #truncated [slot="label"] {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+</style>
+```
+
+<Canvas of={AccordionStories.Truncated} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxAccordion } from '@astrouxds/astro-web-components/dist/components/rux-accordion'
+import { RuxAccordionItem } from '@astrouxds/astro-web-components/dist/components/rux-accordion-item'
+customElements.define('rux-accordion', RuxAccordion)
+customElements.define('rux-accordion-item', RuxAccordionItem)
+```

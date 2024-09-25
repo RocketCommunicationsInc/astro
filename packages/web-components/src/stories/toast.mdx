@@ -1,0 +1,241 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import { styled } from '@storybook/theming'
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+import * as ToastStories from './toast.stories';
+
+export const BetaTag = styled.div`
+  display: inline-block;
+  padding: 7px;
+  color: var(--color-palette-neutral-1000);
+  border-radius: var(--radius-base);
+  background: var(--color-palette-teal-300);
+      font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+`
+
+{/* const args = extractArgTypes('rux-toast')
+args.message.defaultValue =
+    'This is a toast.' */}
+
+<Meta of={ToastStories} />
+
+# Toast <BetaTag>BETA</BetaTag>
+
+Alerts that confirm user actions, and typically don’t require a response, may be displayed in a toast. Toasts should display within the toast-stack component, in the user’s field-of-view. A toast will overlay ui content, but shouldn't block higher level alerts, such as those in a monitoring icon in the Global Status Bar.
+
+A toast should not contain critical information or require user action.
+
+Toasts should array down in a toast stack, with the most recent toast appearing and slotting in at the top.
+
+Toasts can be created imperatively via the `addToast()` method in the toast-stack component. A toast on its own will need to be added into the appropriate toast stack.
+
+The toast's close icon size can be changed by setting the `--iconSize` CSS custom property.
+
+<StyledDiv>
+  <div>Warning: This is an experimental component</div>
+
+  <p class="banner-text">
+    Toast is currently experimental which means that we may introduce breaking changes at any time.
+    These will not be reflected in our current semver versioning and release strategy.
+    If you are using this component, make sure to frequently check our release notes and update your
+    applications accordingly.
+  </p>
+</StyledDiv>
+
+export const Default = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <rux-toast
+        message="${args.message}"
+        close-after="${args.closeAfter}"
+        hide-close=${args.hideClose}
+        status="${args.status}"
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ToastStories.Default_} />
+</Canvas>
+
+## Usage
+
+### Multiple Toasts
+
+Toasts should be added to a toast-stack component to manage their position in the viewport. Best practice is to limit the amount of toasts shown in an app at a time to 4.
+
+## API
+
+<Controls />
+
+## Variants
+
+### Auto Close
+
+Sets a value in seconds or milliseconds to close the toast.
+
+export const ToastAutoClose = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <rux-toast
+        close-after="${args.closeAfter}"
+        message="${args.message}"
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ToastStories.AutoClose} />
+</Canvas>
+
+### Hide Close
+
+In cases like auto close where you don't want to allow the user to be able to manually close the toast,
+you may use the `hide-close` attribute.
+
+export const HideClose = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <rux-toast
+        close-after="${args.closeAfter}"
+        hide-close="${args.hideClose}"
+        message="${args.message}"
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ToastStories.HideClose_} />
+</Canvas>
+
+### With Status
+
+In cases where you need to display a certain status (for example success or error toasts), you can use
+the `status` prop.
+
+export const WithStatus = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <rux-toast
+        close-after="${args.closeAfter}"
+        hide-close="${args.hideClose}"
+        message="${args.message}"
+        status="${args.status}"
+    ></rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ToastStories.WithStatus_} />
+</Canvas>
+
+### Default Slot
+
+Use the default slot for more control over the content inside your toast, for example, adding a link
+within your message.
+
+> NOTE: Content placed inside the default slot will override the `message` attribute.
+
+export const DefaultSlot = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+    <rux-toast
+         message="Toast message"
+    >
+    Toast
+    <a href="#" style="margin-left: 8px">Link</a>
+    </rux-toast>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ToastStories.DefaultSlot_} />
+</Canvas>
+
+### All Variants
+
+export const AllVariants = () => html`
+<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
+      <rux-toast message="Toast with message set via prop."></rux-toast>
+      <rux-toast>
+          Toast with content set via default slot
+          <a href="#" style="margin-left: 8px">Link</a>
+      </rux-toast>
+      <rux-toast
+        hide-close="true"
+        message="Toast with close icon hidden."
+      ></rux-toast>
+      <rux-toast
+        close-after="2000"
+        hide-close="true"
+        message="Toast will close after 2000ms"
+      ></rux-toast>
+      <rux-toast
+        message="Standby"
+        status="standby"
+        ></rux-toast>
+              <rux-toast
+        message="Normal"
+        status="normal"
+        ></rux-toast>
+              <rux-toast
+        message="Off"
+        status="off"
+        ></rux-toast>
+              <rux-toast
+        message="Caution"
+        status="caution"
+        ></rux-toast>
+              <rux-toast
+        message="Serious"
+        status="serious"
+        ></rux-toast>
+              <rux-toast
+        message="Critical"
+        status="critical"
+        ></rux-toast>
+</div>
+`
+
+<Canvas>
+  <Story of={ToastStories.AllVariants_} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxToast } from '@astrouxds/astro-web-components/dist/components/rux-toast'
+import { RuxToastStack } from '@astrouxds/astro-web-components/dist/components/rux-toast-stack'
+import { RuxIcon } from '@astrouxds/astro-web-components/dist/components/rux-icon'
+import { RuxIconClear } from '@astrouxds/astro-web-components/dist/components/rux-icon-clear'
+customElements.define('rux-toast', RuxToast)
+customElements.define('rux-toast-stack', RuxToastStack)
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-icon-clear', RuxIconClear)
+```

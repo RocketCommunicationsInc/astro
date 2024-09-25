@@ -1,0 +1,88 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as ProgressStories from './progress.stories';
+
+<Meta of={ProgressStories} />
+
+# Progress
+
+A visual indicator of a task's progress. When indicating progress with a finite duration, use Determinate Progress. When indicating progress with an indefinite duration, use Indeterminate Progress.
+
+## Guidelines
+
+* [Astro UXDS: Progress](https://astrouxds.com/components/progress/)
+
+export const Default = (args) => {
+    return html`
+<div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+    <rux-progress
+        value="${args.value}"
+        .max=${args.max}
+        ?hide-label="${args.hideLabel}"
+    ></rux-progress>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ProgressStories.Default_} />
+</Canvas>
+
+## API
+
+<Controls />
+
+## Usage
+
+### Label
+
+If `max` is 100, the label is displayed as a percentage.
+If `max` is not 100, the label is displayed as value/max (1450/2000)
+
+## Variants
+
+### Determinate Progress Max
+
+export const DeterminateProgressMax = (args) => {
+    return html`
+        <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+            <rux-progress
+                value="${args.value}"
+                max=${args.max}
+                ?hide-label="${args.hideLabel}"
+            ></rux-progress>
+        </div>
+    `
+}
+
+<Canvas>
+  <Story of={ProgressStories.DeterminateProgressMax_} />
+</Canvas>
+
+### Determinate Progress with Custom Max
+
+export const DeterminateProgressCustomMax = (args) => {
+    return html`
+<div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
+    <rux-progress
+        value="${args.value}"
+        max=${args.max}
+        ?hide-label="${args.hideLabel}"
+    ></rux-progress>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={ProgressStories.DeterminateProgressWithCustomMax} />
+</Canvas>
+
+### Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxProgress } from '@astrouxds/astro-web-components/dist/components/rux-progress'
+customElements.define('rux-progress', RuxProgress)
+```

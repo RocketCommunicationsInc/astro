@@ -1,0 +1,163 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as TabsStories from './tabs.stories';
+
+<Meta of={TabsStories} />
+
+# Tabs
+
+Tabs are used to divide major areas of content and to indicate work process.
+
+## Guidelines
+
+* [Astro UXDS: Tabs](https://www.astrouxds.com/ui-components/tabs)
+
+## Usage
+
+The Astro UXDS Tabs pattern makes use of four Web Components via [slots](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot):
+
+1. **Tabs:** Container for the tab bar, handles tabs logic and state
+2. **Tab:** Individual tab title element
+3. **Panels:** Container for the tab content panels
+4. **Panel:** Individual tab content element
+
+Note that you only need to import the first component (Astro UXDS Tabs) in your application. The other three are automatically imported by the Astro UXDS Tabs component.
+
+The Astro UXDS Tabs pattern is configured using properties passed into the custom elements via attributes at either the top level or at the child level. Make sure that you set a unique `id` for `<rux-tabs>` and each of its children `<rux-tab>`, and associate each with corresponding `aria-labelledby` attributes ([W3C spec](https://www.w3.org/WAI/PF/aria-1.1/states_and_properties#aria-labelledby)), as indicated below:
+
+```xml
+<rux-tabs id="tab-set-id-1">
+  <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+  <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+  <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+</rux-tabs>
+
+<rux-tab-panels aria-labelledby="tab-set-id-1">
+  <rux-tab-panel aria-labelledby="tab-id-1">Tab 1 HTML content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-2">Tab 2 HTML content</rux-tab-panel>
+  <rux-tab-panel aria-labelledby="tab-id-3">Tab 3 HTML content</rux-tab-panel>
+</rux-tab-panels>
+```
+
+Astro UXDS Tab (child) properties are passed as simple attributes on the individual tabs themselves.
+
+```xml
+<rux-tabs id="tab-set-id-1">
+  <rux-tab id="tab-id-1">Tab 1 title</rux-tab>
+  <rux-tab id="tab-id-2" selected>Tab 2 title</rux-tab>
+  <rux-tab id="tab-id-3" disabled>Tab 3 title</rux-tab>
+</rux-tabs>
+...
+```
+
+export const Default = (args) => {
+    return html`
+<style>
+    pre {
+        margin: 0;
+    }
+</style>
+<div style="display: flex; flex-flow: column;">
+    <rux-tabs ?small="${args.small}" id="tab-set-id-1">
+        <rux-tab id="tab-id-1">Tab 1</rux-tab>
+        <rux-tab id="tab-id-2">Tab 2</rux-tab>
+        <rux-tab ?disabled="${args.disabled}" id="tab-id-3"
+            >Tab 3</rux-tab
+        >
+    </rux-tabs>
+    <rux-tab-panels aria-labelledby="tab-set-id-1">
+        <rux-tab-panel aria-labelledby="tab-id-1">
+            <div
+                style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
+            >
+                <pre><<span>!-- Tab 1 HTML content --</span>></pre>
+            </div>
+        </rux-tab-panel>
+        <rux-tab-panel aria-labelledby="tab-id-2">
+            <div
+                style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
+            >
+                <pre><<span>!-- Tab 2 HTML content --</span>></pre>
+            </div>
+        </rux-tab-panel>
+        <rux-tab-panel aria-labelledby="tab-id-3">
+            <div
+                style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; font-family: monospace;"
+            >
+                <pre><<span>!-- Tab 3 HTML content --</span>></pre>
+            </div>
+        </rux-tab-panel>
+    </rux-tab-panels>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={TabsStories.Default_} />
+</Canvas>
+
+## API
+
+<Controls />
+
+## Variants
+
+### Small
+
+The small property may be passed as a simple attribute on the Astro UXDS Tabs container element:
+
+export const Small = (args) => {
+    return html`
+<div style="display: flex; flex-flow: column;">
+    <div
+        style="border: rgba(255,255,255, .25) dashed 1px; margin: 1vw 1vw 0; padding: 2px;"
+    >
+        <rux-tabs ?small="${args.small}" id="tab-set-id-2">
+            <rux-tab id="tab-id-2-1">Tab 1</rux-tab>
+            <rux-tab id="tab-id-2-2">Tab 2</rux-tab>
+            <rux-tab id="tab-id-2-3" disabled
+                >Tab 3 (disabled)
+            </rux-tab>
+        </rux-tabs>
+        <rux-tab-panels aria-labelledby="tab-set-id-2">
+            <rux-tab-panel aria-labelledby="tab-id-2-1">
+                <pre
+                    style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
+                ><<span>!-- Small tab 1 HTML content --</span>></pre>
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-2-2">
+                <pre
+                    style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
+                ><<span>!-- Small tab 2 HTML content --</span>></pre>
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-2-3">
+                <pre
+                    style="padding: 1vw; border: rgba(255,255,255, .15) dashed 1px; margin: 0;"
+                ><<span>!-- Small tab 3 HTML content --</span>></pre>
+            </rux-tab-panel>
+        </rux-tab-panels>
+    </div>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={TabsStories.Small_} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTab } from '@astrouxds/astro-web-components/dist/components/rux-tab'
+import { RuxTabs } from '@astrouxds/astro-web-components/dist/components/rux-tabs'
+import { RuxTabPanels } from '@astrouxds/astro-web-components/dist/components/rux-tab-panels'
+import { RuxTabPanel } from '@astrouxds/astro-web-components/dist/components/rux-tab-panel'
+
+customElements.define('rux-tab', RuxTab)
+customElements.define('rux-tabs', RuxTabs)
+customElements.define('rux-tab-panels', RuxTabPanels)
+customElements.define('rux-tab-panel', RuxTabPanel)
+```

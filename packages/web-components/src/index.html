@@ -18,5 +18,71 @@
         <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
-    <body></body>
+    <body>
+      <div style="display: flex; flex-flow: column">
+        <rux-tabs small id="tab-set-id-1">
+            <rux-tab id="tab-id-1"><span>Tab 1</span>
+              <div slot="actions">
+                <rux-button iconOnly icon="close" borderless onclick="handleClick()"></rux-button>
+                <rux-icon style="padding-left:10px;" size="1.25rem" icon="apps" borderless ></rux-icon>
+                <rux-icon style="padding-left:10px;" size="1.25rem" icon="close" borderless ></rux-icon>
+              </div>
+
+            </rux-tab>
+            <rux-tab id="tab-id-2"><span>Tab 2</span>
+              <rux-button iconOnly icon="close" borderless slot="actions" onclick="handleClick()"></rux-button>
+            </rux-tab>
+
+            <rux-tab id="tab-id-3">Tab 3</rux-tab>
+        </rux-tabs>
+        <rux-tab-panels aria-labelledby="tab-set-id-1">
+            <rux-tab-panel aria-labelledby="tab-id-1">
+                <div
+                    style="
+                        padding: 1vw;
+                        border: rgba(255, 255, 255, 0.15) dashed 1px;
+                        font-family: monospace;
+                    "
+                >
+                    <pre><<span>!-- Tab 1 HTML content --</span>></pre>
+                </div>
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-2">
+                <div
+                    style="
+                        padding: 1vw;
+                        border: rgba(255, 255, 255, 0.15) dashed 1px;
+                        font-family: monospace;
+                    "
+                >
+                    <pre><<span>!-- Tab 2 HTML content --</span>></pre>
+                </div>
+            </rux-tab-panel>
+            <rux-tab-panel aria-labelledby="tab-id-3">
+                <div
+                    style="
+                        padding: 1vw;
+                        border: rgba(255, 255, 255, 0.15) dashed 1px;
+                        font-family: monospace;
+                    "
+                >
+                    <pre><<span>!-- Tab 3 HTML content --</span>></pre>
+                </div>
+            </rux-tab-panel>
+        </rux-tab-panels>
+    </div>
+    </body>
+    <script>
+      const handleClick = () => {
+        const tab = document.getElementById('tab-id-1');
+        tab.remove();
+      }
+
+
+      const handleSelected = () => {
+        console.log('it selected!')
+      }
+
+      document.addEventListener('ruxselected', handleSelected)
+    </script>
 </html>

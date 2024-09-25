@@ -1,0 +1,144 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as BreadcrumbStories from './breadcrumb.stories';
+
+<Meta of={BreadcrumbStories} />
+
+# Breadcrumb
+
+A Breadcrumb component is a secondary navigation mechanism that can improve users' sense of locational awareness within a site or app's hierarchy.
+
+## Guidelines
+
+* [Astro UXDS: Breadcrumb](https://www.astrouxds.com/components/breadcrumb/)
+
+<Canvas of={BreadcrumbStories.Default} />
+
+## API
+
+<Controls />
+
+##### *Note:* Any html element placed into the default slot of rux-breadcrumb will be automatically assigned its own slot. For instance, if three `<rux-breadcrumb-item>`s are assigned to the default slot of `<rux-breadcrumb>`, they will automatically be assigned `slot="slot-1"` `slot="slot-2"` and `slot="slot-3"` respectively.
+
+## Framework Integration
+
+### React
+
+To use Breadcrumbs in React Router, you'll need to listen on click and manually navigate using [useNavigate](https://reactrouter.com/en/main/hooks/use-navigate)
+
+```js
+import { RuxBreadcrumb, RuxBreadcrumbItem } from "@astrouxds/react";
+import { useNavigate } from "react-router-dom";
+
+const Nav = (props) => {
+  const navigate = useNavigate();
+  function onClick(e) {
+    e.preventDefault(); // prevents page reload
+    navigate(e.target.href);
+  }
+  return (
+    <RuxBreadcrumb>
+      <RuxBreadcrumbItem href="./" onClick={(e) => onClick(e)}>
+        Home
+      </RuxBreadcrumbItem>
+      <RuxBreadcrumbItem href="./login" onClick={(e) => onClick(e)}>
+        Login
+      </RuxBreadcrumbItem>
+      <RuxBreadcrumbItem href="./dash" onClick={(e) => onClick(e)}>
+        Dash
+      </RuxBreadcrumbItem>
+    </RuxBreadcrumb>
+  );
+};
+export default Nav;
+```
+
+### Angular
+
+To use Breadcrumbs in Angular Router, you'll need to listen on click and manually navigate.
+
+```html
+<!--app.component.html-->
+<rux-breadcrumb>
+	<rux-breadcrumb-item
+		href="/first-component"
+		(click)="navigate($event)"
+	>
+		Home
+	</rux-breadcrumb-item>
+	<rux-breadcrumb-item
+		href="/second-component"
+		(click)="navigate($event)"
+	>
+		Login
+	</rux-breadcrumb-item>
+</rux-breadcrumb>
+
+<router-outlet></router-outlet>
+```
+
+```js
+//app.component.ts
+import { Component } from '@angular/core';
+import { Router } from "@angular/router"
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'My App';
+  constructor(private router: Router) {}
+
+  navigate(e: Event) {
+    e.preventDefault() // prevents page reload
+    this.router.navigate([(e.target as HTMLRuxBreadcrumbItem).href])
+  }
+}
+```
+
+### Vue
+
+You'll need to make use of `<router-link>`'s [custom](https://router.vuejs.org/api/interfaces/routerlinkprops.html#custom) attribute to prevent RouterLink from rendering a second `a` tag.
+You'll also need to use the `v-slot` to pass the href down to `<rux-breadcrumb-item>`
+
+```js
+<rux-breadcrumb>
+    <router-link to="/" custom v-slot="{ href }">
+        <rux-breadcrumb-item :href="href">
+            <rux-icon icon="border-clear"></rux-icon>
+            Home
+        </rux-breadcrumb-item>
+    </router-link>
+
+    <router-link to="/about" custom v-slot="{ href }">
+        <rux-breadcrumb-item :href="href">Login</rux-breadcrumb-item>
+    </router-link>
+</rux-breadcrumb>
+
+<router-view></router-view>
+```
+
+## Variants
+
+### With Icons
+
+Rux-icons can be added to any breadcrumb item.
+
+<Canvas of={BreadcrumbStories.Icons} />
+
+### Icons Only
+
+Breadcrumb items can contain only an icon as well
+
+<Canvas of={BreadcrumbStories.IconsOnly} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxBreadcrumb } from '@astrouxds/astro-web-components/dist/components/rux-accordion'
+import { RuxBreadcrumbItem } from '@astrouxds/astro-web-components/dist/components/rux-accordion-item'
+customElements.define('rux-breadcrumb', RuxBreadcrumb)
+customElements.define('rux-breadcrumb-item', RuxBreadcrumbItem)
+```

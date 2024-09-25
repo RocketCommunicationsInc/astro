@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as ButtonStories from './button.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+Buttons allow users to trigger actions.
+
+## Guidelines
+
+* [Astro UXDS: Buttons](http://www.astrouxds.com/ui-components/buttons)
+
+<Canvas of={ButtonStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### With Slotted Icon
+
+The component auto-imports the default Astro Icon Web Component for icons, if you specify one. Also, you can use [Slots](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) to define icons within Buttons. This method is best if you need to override the default icon library SVG file.
+
+<Canvas  of={ButtonStories.WithSlottedIcon} />
+
+### Secondary
+
+<Canvas of={ButtonStories.Secondary} />
+
+### Borderless
+
+<Canvas of={ButtonStories.Borderless} />
+
+### All Variants
+
+<Canvas of={ButtonStories.AllVariants} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button'
+customElements.define('rux-button', RuxButton)
+```

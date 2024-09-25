@@ -140,9 +140,17 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ## Events
 
-| Event            | Description                  | Type               |
-| ---------------- | ---------------------------- | ------------------ |
-| `ruxtabselected` | Fires when a tab is selected | `CustomEvent<any>` |
+| Event            | Description                   | Type               |
+| ---------------- | ----------------------------- | ------------------ |
+| `ruxtabselected` | Fires when a tab is selected. | `CustomEvent<any>` |
+
+
+## Slots
+
+| Slot          | Description                                   |
+| ------------- | --------------------------------------------- |
+| `"(default)"` | Used for tab content                          |
+| `"actions"`   | Used for tab actions, does not select the tab |
 
 
 ## Shadow Parts

@@ -1,0 +1,362 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as TreeStories from './tree.stories';
+
+<Meta of={TreeStories} />
+
+# Tree
+
+A Tree navigation element presents a hierarchical set of related items, and allow users to explore and select items within that hierarchy. Each item can have a number of subitems.
+
+An item can be expanded to reveal subitems, if any exist, and collapsed to hide subitems.
+
+## Guidelines
+
+* [Astro UXDS: Tree](http://www.astrouxds.com/library/tree)
+
+export const Default = (args) => {
+    const treeData = [
+        {
+            label: 'Tree item 1',
+            expanded: true,
+            children: [
+                {
+                    label: 'Tree item 1.1',
+                    expanded: true,
+                    children: [
+                        { label: 'Tree item 1.1.1' },
+                        { label: 'Tree item 1.1.2', selected: true },
+                        { label: 'Tree item 1.1.3' },
+                    ],
+                },
+                { label: 'Tree item 1.2' },
+                {
+                    label: 'Tree item 1.3',
+                    expanded: false,
+                    children: [
+                        {
+                            label: 'Tree item 1.3.1',
+                            children: [
+                                { label: 'Tree item 1.1.1' },
+                                { label: 'Tree item 1.1.2' },
+                                { label: 'Tree item 1.1.3' },
+                            ],
+                        },
+                        {
+                            label: 'Tree item 1.3.2',
+                            children: [
+                                { label: 'Tree item 1.1.1' },
+                                { label: 'Tree item 1.1.2' },
+                                { label: 'Tree item 1.1.3' },
+                            ],
+                        },
+                        {
+                            label: 'Tree item 1.3.3',
+                            expanded: true,
+                            children: [
+                                { label: 'Tree item 1.3.3.1' },
+                                { label: 'Tree item 1.3.3.2' },
+                                { label: 'Tree item 1.3.3.3' },
+                            ],
+                        },
+                    ],
+                },
+                {
+                    label: 'Tree item 1.4',
+                    children: [
+                        { label: 'Tree item 1.4.1' },
+                        { label: 'Tree item 1.4.2' },
+                        { label: 'Tree item 1.4.3' },
+                    ],
+                },
+                { label: 'Tree item 1.5' },
+            ],
+        },
+        {
+            label: 'Tree item 2',
+            children: [
+                { label: 'Tree item 2.1' },
+                { label: 'Tree item 2.2' },
+                { label: 'Tree item 2.3' },
+            ],
+        },
+        {
+            label: 'Tree item 3',
+        },
+    ]
+    return html`
+<style>
+    .container {
+        padding: 1rem 10%;
+        display: flex;
+        justify-content: center;
+    }
+    rux-tree {
+        width: 18rem;
+        margin: 1rem;
+    }
+</style>
+<div class="container">
+    <rux-tree>
+        ${treeData.map(
+            (node) => html`
+                <rux-tree-node .expanded=${node.expanded}>
+                    ${node.label} ${node.children?.map(
+                        (child) => html`
+                            <rux-tree-node
+                                .expanded=${child.expanded}
+                                .selected=${child.selected}
+                                slot="node"
+                            >
+                                ${child.label} ${child.children?.map(
+                                    (grandchild) => html`
+                                        <rux-tree-node
+                                            .expanded=${grandchild.expanded}
+                                            .selected=${grandchild.selected}
+                                            slot="node"
+                                        >
+                                            ${grandchild.label} ${grandchild.children?.map(
+                                                (grandchild) => html`
+                                                    <rux-tree-node
+                                                        .expanded=${grandchild.expanded}
+                                                        .selected=${grandchild.selected}
+                                                        slot="node"
+                                                    >
+                                                        ${grandchild.label}
+                                                    </rux-tree-node>
+                                                `
+                                            )}
+                                        </rux-tree-node>
+                                    `
+                                )}
+                            </rux-tree-node>
+                        `
+                    )}
+                </rux-tree-node>
+            `
+        )}
+    </rux-tree>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={TreeStories.Default_} />
+</Canvas>
+
+## API
+
+<Controls />
+
+## Usage
+
+### Nesting
+
+To create deeply nested Trees, use the `node` slot on the TreeNode component.
+
+TreeNode has two slots:
+
+1. Default - The parent content
+2. Node - Any child nodes
+
+Tree currently only supports **up to 4 levels** of nesting.
+
+```html
+<rux-tree-node>
+    I'm the parent
+    <rux-tree-node slot="node">I'm a child (1)</rux-tree-node>
+    <rux-tree-node slot="node">I'm a child (2)</rux-tree-node>
+    <rux-tree-node slot="node">I'm a child (3)</rux-tree-node>
+    <rux-tree-node slot="node">
+        I'm a child parent
+        <rux-tree-node slot="node">I'm a grandchild</rux-tree-node>
+    </rux-tree-node>
+</rux-tree-node>
+```
+
+## Variants
+
+### With Status
+
+export const status = (args) => {
+    const treeData = [
+        {
+            label: 'Tree item 1',
+            status: 'normal',
+            children: [
+                {
+                    label: 'Tree item 1.1',
+                    status: 'normal'
+                },
+                { label: 'Tree item 1.2', status: 'normal' },
+                {
+                    label: 'Tree item 1.3',
+                    status: 'normal'
+                },
+            ],
+        },
+        {
+            label: 'Tree item 2',
+            status: 'standby',
+        },
+        {
+            label: 'Tree item 3',
+            status: 'normal',
+            children: [
+                { label: 'Tree item 3.1', status: 'off' },
+                { label: 'Tree item 3.2', status: 'critical' },
+                { label: 'Tree item 3.3', status: 'normal' },
+            ],
+        },
+        {
+            label: 'Tree item 4',
+            status: 'caution',
+            children: [
+                { label: 'Tree item 4.1', status: 'caution' },
+                { label: 'Tree item 4.2', status: 'normal' },
+            ],
+        },
+    ]
+    return html`
+<style>
+    .container {
+        padding: 1rem 10%;
+        display: flex;
+        justify-content: center;
+    }
+    rux-tree {
+        width: 18rem;
+        margin: 1rem;
+    }
+</style>
+<div class="container">
+    <rux-tree>
+        ${treeData.map(
+            (node) => html`
+                <rux-tree-node>
+                    <rux-status slot="prefix" status="${node.status}"></rux-status>
+                    ${node.label} ${node.children?.map(
+                        (child) => html`
+                            <rux-tree-node
+                                .expanded=${child.expanded}
+                                .selected=${child.selected}
+                                slot="node"
+                            >
+                                <rux-status
+                                slot="prefix"
+                                    status="${child.status}"
+                                ></rux-status>
+                                ${child.label} ${child.children?.map(
+                                    (grandchild) => html`
+                                        <rux-tree-node
+                                            .expanded=${grandchild.expanded}
+                                            .selected=${grandchild.selected}
+                                            slot="node"
+                                        >
+                                            <rux-status
+                                                slot="prefix"
+                                                status="${grandchild.status}"
+                                            ></rux-status>
+                                            ${grandchild.label} ${grandchild.children?.map(
+                                                (grandchild) => html`
+                                                    <rux-tree-node
+                                                        .expanded=${grandchild.expanded}
+                                                        .selected=${grandchild.selected}
+                                                        slot="node"
+                                                    >
+                                                        <rux-status
+                                                            status="${grandchild.status}"
+                                                            slot="prefix"
+                                                        ></rux-status>
+                                                        ${grandchild.label}
+                                                    </rux-tree-node>
+                                                `
+                                            )}
+                                        </rux-tree-node>
+                                    `
+                                )}
+                            </rux-tree-node>
+                        `
+                    )}
+                </rux-tree-node>
+            `
+        )}
+    </rux-tree>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={TreeStories.WithStatus} />
+</Canvas>
+
+## Wrapped Text
+
+The text within Tree Nodes truncate by default, but if you need to support wrapped text, you can make use of the `text` CSS Shadow Part and override the white-space property:
+
+```
+rux-tree-node::part(text) {
+    white-space: normal;
+}
+```
+
+export const WrapText = (args) => {
+    return html`
+<style>
+    .container {
+        padding: 1rem 10%;
+        display: flex;
+        justify-content: center;
+    }
+    rux-tree {
+        width: 15rem;
+        margin: 1rem;
+    }
+    rux-tree-node::part(text) {
+        white-space: normal;
+    }
+</style>
+<div class="container">
+    <rux-tree>
+        <rux-tree-node>
+            The first item has a long line of text
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Two
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Three
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+        <rux-tree-node>
+            Four score and seven years ago 
+            <rux-tree-node slot="node">One</rux-tree-node>
+            <rux-tree-node slot="node">Two</rux-tree-node>
+            <rux-tree-node slot="node">Three</rux-tree-node>
+        </rux-tree-node>
+    </rux-tree>
+</div>
+    `
+}
+
+<Canvas>
+  <Story of={TreeStories.WithWrappedText} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTree } from '@astrouxds/astro-web-components/dist/components/rux-tree.js'
+customElements.define('rux-tree', RuxTree)
+```

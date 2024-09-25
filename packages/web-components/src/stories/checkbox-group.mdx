@@ -1,0 +1,196 @@
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import { html, render } from 'lit-html'
+import * as CheckboxGroupStories from './checkbox-group.stories';
+
+<Meta of={CheckboxGroupStories} />
+
+# Checkbox Group
+
+The Checkbox Group component is responsible for display invalid state and error text.
+
+## Guidelines
+
+* [Astro UXDS: Checkbox](https://www.astrouxds.com/ui-components/checkbox)
+* [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+
+export const Default = (args) => {
+    return html`
+        <rux-checkbox-group
+            name="checkboxes"
+            label="${args.label}"
+            .value="${args.value}"
+            ?invalid="${args.invalid}"
+            ?required="${args.required}"
+            .helpText="${args.helpText}"
+            .errorText="${args.errorText}"
+        >
+            <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+            <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+            <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+        </rux-checkbox-group>
+    `
+}
+
+<Canvas>
+  <Story of={CheckboxGroupStories.Default_} />
+</Canvas>
+
+## API
+
+<Controls />
+
+## Variants
+
+### Invalid
+
+export const Invalid = (args) => {
+    return html`
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
+    `
+}
+
+<Canvas>
+  <Story of={CheckboxGroupStories.Invalid_} />
+</Canvas>
+
+### Required
+
+export const Required = (args) => {
+    return html`
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
+    `
+}
+
+<Canvas>
+  <Story of={CheckboxGroupStories.Required_} />
+</Canvas>
+
+### With Help Text
+
+export const WithHelpText = (args) => {
+    return html`
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    help-text="${args.helpText}"
+    .errorText="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
+    `
+}
+
+<Canvas>
+  <Story of={CheckboxGroupStories.WithHelpText_} />
+</Canvas>
+
+### With Error Text
+
+export const WithErrorText = (args) => {
+    return html`
+<rux-checkbox-group
+    name="checkboxes"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    ?required="${args.required}"
+    .helpText="${args.helpText}"
+    error-text="${args.errorText}"
+>
+    <rux-checkbox value="one" name="checkboxes">One</rux-checkbox>
+    <rux-checkbox value="two" name="checkboxes">Two</rux-checkbox>
+    <rux-checkbox value="three" name="checkboxes">Three</rux-checkbox>
+</rux-checkbox-group>
+    `
+}
+
+<Canvas>
+  <Story of={CheckboxGroupStories.WithErrorText_} />
+</Canvas>
+
+## Customization
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-checkbox-group::part(form-field) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+rux-checkbox-group::part(label) {
+    margin-right: var(--spacing-2);
+}
+```
+
+export const HorizontalLabel = (args) => {
+    return html`
+<style>
+    #left-example::part(form-field) {
+        display: flex;
+        flex-direction: row;
+    }
+    #left-example::part(label) {
+        margin-right: var(--spacing-2);
+    }
+</style>
+<rux-checkbox-group id="left-example"
+    label="${args.label}"
+    .value="${args.value}"
+    ?invalid="${args.invalid}"
+    .helpText="${args.helpText}"
+    error-text="${args.errorText}"
+>
+    <rux-checkbox value="1">one</rux-checkbox>
+    <rux-checkbox value="2">two</rux-checkbox>
+    <rux-checkbox value="3">three</rux-checkbox>
+</rux-checkbox-group>
+    `
+}
+
+<Canvas>
+  <Story of={CheckboxGroupStories.HorizontalLabel_} />
+</Canvas>
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxCheckbox } from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
+import { RuxCheckboxGroup } from '@astrouxds/astro-web-components/dist/components/rux-checkbox-group.js'
+customElements.define('rux-checkbox', RuxCheckbox)
+customElements.define('rux-checkbox-group', RuxCheckboxGroup)
+```

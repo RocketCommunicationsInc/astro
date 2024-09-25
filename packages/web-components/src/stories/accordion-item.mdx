@@ -1,0 +1,48 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as AccordionItemStories from './accordion-item.stories';
+
+<Meta of={AccordionItemStories} />
+
+# Accordion Item
+
+Accordion Item belongs to the Accordion Component
+
+## Guidelines
+
+* [Astro UXDS: Accordion](https://www.astrouxds.com/components/accordion/)
+
+<Canvas of={AccordionItemStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Disabled
+
+<Canvas of={AccordionItemStories.Disabled} />
+
+### Expanded
+
+<Canvas of={AccordionItemStories.Expanded} />
+
+### With Slotted Icon
+
+An icon/status can be added to the left of the label by using the named [slot](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_templates_and_slots#Adding_flexibility_with_slots) `prefix`.
+For example,
+
+```html
+<rux-icon icon="apps" slot="prefix" size="auto"></rux-icon>
+```
+
+<Canvas of={AccordionItemStories.WithIcon} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxAccordionItem } from '@astrouxds/astro-web-components/dist/components/rux-accordion-item'
+customElements.define('rux-accordion-item', RuxAccordionItem)
+```

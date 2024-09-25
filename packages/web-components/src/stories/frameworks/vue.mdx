@@ -1,0 +1,325 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Frameworks/Vue" />
+
+# Vue Integration
+
+Out of the box, Vue has [nearly flawless support for Web Components](https://v3.vuejs.org/guide/web-components.html).
+The only limitation is that **v-model is not supported.** The following documentation is for Vue 3, but should be mostly applicable to Vue 2 as well.
+
+### Via NPM
+
+`npm i @astrouxds/astro-web-components`
+
+You have two options for importing Astro Web Components: Lazy Loading and Cherry Picking.
+
+#### Lazy Loading
+
+Astro Web Components make use of Stencil's automatic lazy loader which only loads components that are actually used on the page.
+
+```js
+// main.js
+import { createApp } from 'vue'
+import App from './App.vue'
+import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'
+
+import {
+    applyPolyfills,
+    defineCustomElements,
+} from '@astrouxds/astro-web-components/loader'
+
+applyPolyfills().then(() => {
+    defineCustomElements()
+})
+
+createApp(App).mount('#app')
+```
+
+#### Cherry Picking
+
+If you need more control over your bundle size, you can also import and register individual components.
+Cherry picking components will result in a much smaller overall bundle size; however, you will need to manually register any component dependencies.
+This will be listed for each component in their documentation.
+
+```js
+// main.js
+import { createApp } from 'vue'
+import App from './App.vue'
+import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'
+
+// Import Button
+import { RuxButton } from '@astrouxds/astro-web-components/dist/components/rux-button'
+
+// Register Button
+customElements.define('rux-button', RuxButton)
+
+createApp(App).mount('#app')
+```
+
+Import [Roboto](https://fonts.google.com/specimen/Roboto) in your index.html. We recommend using Google's CDN for ease of use but you can also install it locally.
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+/>
+```
+
+### Skipping Component Resolution
+
+By default, Vue will attempt to resolve a non-native HTML tag as a registered Vue component before falling back to rendering it as a custom element.
+To let Vue know that certain elements should be treated as custom elements and skip component resolution, we can specify the compilerOptions.isCustomElement option.
+
+<rux-tabs id="tab-set-id-1" small style={{height:'auto'}}>
+  <rux-tab id="tab-id-1">Vite</rux-tab>
+  <rux-tab id="tab-id-2">Webpack</rux-tab>
+</rux-tabs>
+
+<rux-tab-panels aria-labelledby="tab-set-id-1">
+  <rux-tab-panel aria-labelledby="tab-id-1">
+    ```js
+    // vite.config.js
+    import vue from '@vitejs/plugin-vue'
+
+    export default {
+        plugins: [
+            vue({
+                template: {
+                    compilerOptions: {
+                        // treat all tags with a dash as custom elements
+                        isCustomElement: (tag) => tag.includes('-'),
+                    },
+                },
+            }),
+        ],
+    }
+    ```
+  </rux-tab-panel>
+
+  <rux-tab-panel aria-labelledby="tab-id-2">
+    ```js
+    // vue.config.js
+    module.exports = {
+        chainWebpack: (config) => {
+            config.module
+                .rule('vue')
+                .use('vue-loader')
+                .tap((options) => ({
+                    ...options,
+                    compilerOptions: {
+                        // treat any tag that starts with rux- as custom elements
+                        isCustomElement: (tag) => tag.startsWith('rux-'),
+                    },
+                }))
+        },
+    }
+    ```
+  </rux-tab-panel>
+</rux-tab-panels>
+
+### Disable eslint rule
+
+Be aware that if you try to pass in any native HTML elements as slots using the `slot` attribute, as of Vue 2.6.0+, Vue's eslint config will throw a [no-deprecated-slot-attribute](https://eslint.vuejs.org/rules/no-deprecated-slot-attribute.html) error at you.
+This is because Vue 3 removed the `slot` attribute in favor of `v-slot`, but the `slot` attribute is still part of the [HTML Standard](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/slot).
+
+As a workaround, you can disable this eslint rule.
+
+In your package.json, under `eslintConfig`, add to your rules:
+
+```
+    "rules": {
+      "vue/no-deprecated-slot-attribute": "off"
+    }
+```
+
+## Using our CSS Variables (Design Tokens).
+
+While our components may solve 60% of your UI needs, you will inevitably find yourself needing to
+create your own custom UI in the style of Astro.
+
+Our Astro Web Components are powered by our Design Tokens under the hood. These are imported
+and made available to you when you import `astro-web-components.css` in the form of CSS Custom Properties.
+Our Design Tokens include everything from our color palette to our spacing system.
+
+We also provide our tokens in other formats (SASS, json) for your convienence. For more information,
+check out our [Design Tokens](https://www.astrouxds.com/design-tokens/installation/) page for a list
+of our available tokens and their intended usage.
+
+## Setting Props
+
+### Basic Data
+
+For basic primitive types like `string`, `boolean`, `number`, set the attribute on the element:
+
+```js
+<rux-button size="large"></rux-button>
+```
+
+### Complex Data
+
+For non primitives like `array` or `object`, make use of Vue's .prop modifier:
+
+```js
+<template>
+  <rux-segmented-button :data.prop="data"></rux-segmented-button>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const data = [
+        { label: 'First item' },
+        { label: 'Second item' },
+        { label: 'Third item' },
+    ]
+    return {
+      data
+    }
+  }
+})
+</script>
+```
+
+## Updating Complex Data
+
+### Updating Arrays
+
+For arrays, the standard mutable array operations such as `push()` and `unshift()` won't trigger a component update.
+Instead, non-mutable array operators should be used as they return a copy of a new array. These include `map()` and `filter()`,
+and the ES6 spread operator syntax.
+
+For example, to push a new item to an array, create a new array with the existing values and the new value at the end:
+
+```js
+// our original array
+this.items = ['ionic', 'stencil', 'webcomponents']
+
+// update the array
+this.items = [...this.items, 'awesomeness']
+```
+
+The `...this.items` syntax is a relatively new feature of JavaScript that "expands" the given object in place.
+Read more about the Spread operator [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+### Updating Objects
+
+The spread operator should also be used to update objects. As with arrays, mutating an object will not trigger a view update,
+but returning a new copy of the object will. Below is an example:
+
+```js
+// our original object
+this.myCoolObject = { first: '1', second: '2' }
+
+// update our object
+this.myCoolObject = { ...myCoolObject, third: '3' }
+```
+
+## Using Slots
+
+Slots give you full control over the contents of a component. Some components may have multiple slots.
+
+> Web Component Concept:
+> Slotted content lives outside of the shadow DOM and as a result, you are free to style them however you want.
+
+Vue's slots were inspired by the Web Component spec so they should look very familiar:
+
+```html
+<rux-global-status-bar>
+    <rux-icon slot="left-side" icon="apps"></rux-icon>
+    <div slot="app-meta">
+        <h1>Hello World</h1>
+    </div>
+</rux-global-status-bar>
+```
+
+## Listening to Events
+
+Astro Components emit their own custom events, prefixed with `rux`. You will likely use these to sync state between your Vue components and the Astro Web Components.
+
+```js
+<template>
+  <rux-input @ruxinput="handleInput"></rux-input>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  setup() {
+    const handleInput = (event: Event) => {
+      console.log('heard event', event)
+    }
+    return {
+      handleInput
+    }
+  }
+})
+</script>
+```
+
+## With Typescript
+
+All of our component types can be imported from `@astrouxds/astro-web-components`.
+
+## Methods
+
+Some components offer public methods that can be executed. These methods are async and can be executed by setting a ref on the element.
+
+```js
+<template>
+  <rux-tree>
+    <rux-tree-node ref="node">Hello</rux-tree-node>
+    <rux-tree-node>World</rux-tree-node>
+  </rux-tree>
+  <rux-button @click="selectNode">Select Node</rux-button>
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+
+export default defineComponent({
+  setup() {
+    const node = ref<HTMLRuxTreeNodeElement | null>(null);
+    const selectNode = () => {
+      if (node && node.value) {
+        node.value.setSelected(true);
+      }
+    };
+
+    return {
+      node,
+      selectNode,
+    };
+  }
+});
+</script>
+```
+
+## Data Binding
+
+One current limitation with Web Components in Vue is that **v-model is not supported** because Astro Components emit their own custom events.
+Since `v-model` is just syntactic sugar for `:modelValue` and `@update:modelValue`, you just need to explicitly listen for `@rux{event}`.
+
+```js
+<template>
+  <rux-input :modelValue="firstName" @ruxinput="firstName = $event.target.value"></rux-input>
+    {{firstName}}
+</template>
+
+<script lang="ts">
+import { defineComponent, ref } from "vue";
+
+export default defineComponent({
+  setup() {
+    const firstName = ref('')
+
+    return {
+      firstName
+    };
+  }
+});
+</script>
+```

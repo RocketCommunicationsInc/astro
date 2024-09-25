@@ -18,6 +18,11 @@
     rel="stylesheet"
 />
 <style type="text/css">
+    /* sidebar outer wrapper */
+    .sidebar-container .css-d3imve {
+        padding-left: 0;
+        padding-right: 0;
+    }
     .sidebar-container .sidebar-item {
         font-size: 16px;
         line-height: 20px;
@@ -28,9 +33,14 @@
         font-weight: 500;
     }
 
+    .sidebar-item .css-caedy5,
+    .sidebar-item .css-154pbrb {
+        font-size: 16px;
+    }
+
     /* drop down caret & active caret */
-    .sidebar-container .sidebar-item .css-bt79wf,
-    .sidebar-container .sidebar-item .css-1j9r8vi {
+    .sidebar-container .css-5ba62h,
+    .sidebar-container .sidebar-item css-1yuef8z {
         color: rgb(77, 172, 255);
         border-top-width: 5px;
         border-bottom-width: 5px;
@@ -193,5 +203,14 @@
 
     ::-webkit-scrollbar-track:horizontal {
         box-shadow: inset 1px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (min-width: 600px) {
+        .css-1nolumm {
+            grid-template-columns: minmax(0, 230px) minmax(100px, 1fr) minmax(
+                    0,
+                    400px
+                );
+        }
     }
 </style>

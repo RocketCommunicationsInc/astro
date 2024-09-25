@@ -1,0 +1,90 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Patterns/Forms/Vue" />
+
+<style>
+  {`
+    .sbdocs .sbdocs-content {
+      max-width: 90%;
+    }
+    rux-tabs {
+      margin-bottom: 1rem;
+    }
+    .sandbox {
+      width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;
+    }
+  `}
+</style>
+
+# Form Pattern
+
+<rux-tabs id="tab-set-id-1" small style={{height:'auto'}}>
+  <rux-tab id="tab-id-1">Basic</rux-tab>
+  <rux-tab id="tab-id-2">With Validation</rux-tab>
+</rux-tabs>
+
+<rux-tab-panels aria-labelledby="tab-set-id-1">
+  <rux-tab-panel aria-labelledby="tab-id-1">
+    ## Example
+
+    Basic example form using all Astro form elements.
+
+    <iframe src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/forms/vue/basic" class="sandbox" title="Astro Vue Basic Form Pattern" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" />
+
+    ## Caveats
+
+    ### Checkboxes
+
+    Because of the lack of `v-model` support, checkboxes require a little extra work.
+
+    Your template might look like:
+
+    ```js
+    <div>
+      <rux-checkbox-group label="things">
+        <rux-checkbox
+          value="comments"
+          :checked="form.notifications.includes('comments')"
+          @ruxchange="updateNotifications('comments', $event.target.checked)"
+        >
+          Comments
+        </rux-checkbox>
+        <rux-checkbox
+          value="offers"
+          :checked="form.notifications.includes('offers')"
+          @ruxchange="updateNotifications('offers', $event.target.checked)"
+        >
+          Offers
+        </rux-checkbox>
+        <rux-checkbox
+          value="events"
+          :checked="form.notifications.includes('events')"
+          @ruxchange="updateNotifications('events', $event.target.checked)"
+        >
+          Events
+        </rux-checkbox>
+      </rux-checkbox-group>
+    </div>
+    ```
+
+    For data-binding, you'll need to manually update your array with a method like:
+
+    ```js
+    updateNotifications(value, checked) {
+      if (checked) {
+        this.form.notifications = this.form.notifications.concat(value);
+      } else {
+        this.form.notifications = this.form.notifications.filter((item) => item !== value);
+      }
+    }
+    ```
+  </rux-tab-panel>
+
+  <rux-tab-panel aria-labelledby="tab-id-2">
+    ## Example
+
+    An example using Vue 3 + [VeeValidate](vee-validate.logaretm.com/v4/) + [Yup](https://github.com/jquense/yup) for easy validation.
+
+    <iframe src="https://codesandbox.io/embed/github/RocketCommunicationsInc/astro/tree/main/packages/web-components/src/stories/astro-sandboxes/forms/vue/validation" class="sandbox" title="Astro Vue Form Pattern with VeeValidate" allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts" />
+  </rux-tab-panel>
+</rux-tab-panels>
