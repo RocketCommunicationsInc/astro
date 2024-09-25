@@ -26,6 +26,8 @@ export const PushButton = (args) => {
 <div style="padding: 10%; display: flex; justify-content: center;">
     <rux-push-button
         label=${args.label}
+        active-label=${args.activeLabel}
+        inactive-label=${args.inactiveLabel}
         .size=${args.size}
         .icon=${args.icon}
         ?checked=${args.checked}
@@ -42,13 +44,15 @@ export const PushButton = (args) => {
     <Story
         args={{
             label: "Push Button",
-            checked: false,    
+            checked: false,
             disabled: false,
             icon: "",
             iconOnly: false,
             name: "",
             size: "medium",
-            value: ""
+            value: "",
+            activeLabel: "",
+            inactiveLabel: "",
         }}
         argTypes={{
             size: { control: "select"}
@@ -62,6 +66,50 @@ export const PushButton = (args) => {
 ## API
 
 <ArgsTable of="rux-push-button" />
+
+export const DynamicLabels = (args) => {
+    return html`
+<div
+    style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;"
+>
+   <rux-push-button
+        label=${args.label}
+        active-label=${args.activeLabel}
+        inactive-label=${args.inactiveLabel}
+        .size=${args.size}
+        .icon=${args.icon}
+        ?checked=${args.checked}
+        ?disabled=${args.disabled}
+        ?icon-only=${args.iconOnly}
+        .name=${args.name}
+        .value=${args.value}
+    ></rux-push-button>
+</div>
+`
+}
+
+<Canvas>
+    <Story
+        name="Dynamic Label"
+        args={{
+            label: "Push Button",
+            checked: false,
+            disabled: false,
+            icon: "",
+            iconOnly: false,
+            name: "",
+            size: "medium",
+            value: "",
+            activeLabel: "Active Label",
+            inactiveLabel: "Inactive Label",
+        }}
+        argTypes={{
+            size: { control: "select"}
+        }}
+    >
+        {DynamicLabels.bind()}
+    </Story>
+</Canvas>
 
 export const AllVariants = (args) => {
     return html`
