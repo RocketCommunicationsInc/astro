@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as DatetimeStories from './datetime.stories';
 
 <Meta of={DatetimeStories} />
@@ -9,31 +7,7 @@ import * as DatetimeStories from './datetime.stories';
 
 Datetime is a utility component that provides a convenient wrapper around the [Intl.DateTimeFormat](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat) API.
 
-export const Default = (args) => {
-    return html`
-<div style="padding: 10%; display: flex; justify-content: center;">
-    <rux-datetime
-        date=${args.date}
-        day=${args.day}
-        hour=${args.hour}
-        minute=${args.minute}
-        month=${args.month}
-        second=${args.second}
-        time-zone=${args.timeZone}
-        year=${args.year}
-        hour-12=${args.hour12}
-        .era=${args.era}
-        .time-zone-name=${args.timeZoneName}
-        .weekday=${args.weekday}
-        .locale=${args.locale}
-    ></rux-datetime>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={DatetimeStories.Default_} />
-</Canvas>
+<Canvas of={DatetimeStories.Default} />
 
 ## API
 

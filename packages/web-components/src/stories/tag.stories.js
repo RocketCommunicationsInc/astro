@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div
             style="padding-top: 1%; display: flex; flex-direction: column; justify-content: center; align-items: center;"
@@ -11,7 +11,7 @@ const Default = (args) => {
     `
 }
 
-const Variants = (args) => {
+const VariantsExample = (args) => {
     return html`
         <style>
             #custom {
@@ -45,8 +45,8 @@ export default {
     argTypes: extractArgTypes('rux-tag'),
 }
 
-export const RuxTag = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         status: 'pass',
@@ -56,6 +56,6 @@ export const RuxTag = {
 }
 
 export const AllVariants = {
-    render: Variants.bind(),
+    render: VariantsExample.bind(),
     name: 'All Variants',
 }

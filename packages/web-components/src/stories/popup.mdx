@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as PopupStories from './popup.stories';
 
 <Meta of={PopupStories} />
@@ -13,24 +11,7 @@ A Pop Up provides users with a quick way to access common actions for a highligh
 
 * [Astro UXDS: Pop Up](http://www.astrouxds.com/library/pop-up)
 
-export const Default = (args) => {
-    return html`
-<div style="display: flex; width: 100%; justify-content: center; margin-top: 10%;">
-    <rux-pop-up open=${args.open} placement=${args.placement} ?close-on-select=${args.closeOnSelect} ?disable-auto-update="${args.disableAutoUpdate} ?enable-animation-frame="${args.enableAnimationFrame}">
-        <rux-icon icon="apps" slot="trigger"></rux-icon>
-        <rux-menu>
-            <rux-menu-item href="#">Menu Item 1</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 2</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 3</rux-menu-item>
-        </rux-menu>
-    </rux-pop-up>
-</div>
-`
-}
-
-<Canvas>
-  <Story of={PopupStories.Default_} />
-</Canvas>
+<Canvas of={PopupStories.Default} />
 
 ## API
 
@@ -46,54 +27,7 @@ The menu will attempt to position according to the `placement` prop if provided,
 
 ### Placements
 
-export const Placements = (args) => {
-    return html`
-<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%; margin-top: 10%;">
-    <rux-pop-up placement="top" open>
-        <rux-button slot="trigger">Top</rux-button>
-        <rux-menu>
-            <rux-menu-item href="#">Menu Item 1</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 2</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 3</rux-menu-item>
-        </rux-menu>
-    </rux-pop-up>
-</div>
-<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%">
-    <rux-pop-up placement="right" open>
-        <rux-button slot="trigger">Right</rux-button>
-        <rux-menu>
-            <rux-menu-item href="#">Menu Item 1</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 2</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 3</rux-menu-item>
-        </rux-menu>
-    </rux-pop-up>
-</div>
-<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 15%">
-    <rux-pop-up placement="bottom" open>
-        <rux-button slot="trigger">Bottom</rux-button>
-        <rux-menu>
-            <rux-menu-item href="#">Menu Item 1</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 2</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 3</rux-menu-item>
-        </rux-menu>
-    </rux-pop-up>
-</div>
-<div style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%">
-    <rux-pop-up placement="left" open>
-        <rux-button slot="trigger">Left</rux-button>
-        <rux-menu>
-            <rux-menu-item href="#">Menu Item 1</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 2</rux-menu-item>
-            <rux-menu-item href="#">Menu Item 3</rux-menu-item>
-        </rux-menu>
-    </rux-pop-up>
-</div>
-`
-}
-
-<Canvas>
-  <Story of={PopupStories.Placements_} />
-</Canvas>
+<Canvas of={PopupStories.Placements} />
 
 NOTE: If the `disable-auto-update` prop is set and placement is `auto`, the pop up will default to `top`.
 

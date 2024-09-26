@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as MenuItemStories from './menu-item.stories';
 
 <Meta of={MenuItemStories} />
@@ -9,23 +7,7 @@ import * as MenuItemStories from './menu-item.stories';
 
 Menu Item should be used inside of [Pop Up](?path=/docs/components-pop-up--default-story).
 
-export const Default = (args) => {
-    return html`
-        <rux-menu-item
-            ?disabled="${args.disabled}"
-            .download="${args.download}"
-            .href="${args.href}"
-            .rel="${args.rel}"
-            .target="${args.target}"
-            .value="${args.value}"
-            >Menu Item</rux-menu-item
-        >
-    `
-}
-
-<Canvas>
-  <Story of={MenuItemStories.Default_} />
-</Canvas>
+<Canvas of={MenuItemStories.Default} />
 
 ## API
 
@@ -35,23 +17,7 @@ export const Default = (args) => {
 
 ### Disabled
 
-export const Disabled = (args) => {
-    return html`
-        <rux-menu-item
-            ?disabled="${args.disabled}"
-            .download="${args.download}"
-            .href="${args.href}"
-            .rel="${args.rel}"
-            .target="${args.target}"
-            .value="${args.value}"
-            >Menu Item</rux-menu-item
-        >
-    `
-}
-
-<Canvas>
-  <Story of={MenuItemStories.Disabled_} />
-</Canvas>
+<Canvas of={MenuItemStories.Disabled} />
 
 ## Cherry Picking
 

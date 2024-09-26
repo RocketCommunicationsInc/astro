@@ -1,12 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
+const Base = (args) => {
     document.addEventListener('change', (e) => action('change')(e.target))
     return html`
         <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
@@ -14,58 +9,7 @@ const Default = (args) => {
                 .data="${args.data}"
                 .selected="${args.selected}"
                 .size="${args.size}"
-            ></rux-segmented-button>
-        </div>
-    `
-}
-
-const Disabled = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
-    document.addEventListener('change', (e) => action('change')(e.target))
-    return html`
-        <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-            <rux-segmented-button
-                .data="${args.data}"
-                .size="${args.size}"
-                ?disabled="${args.disabled}"
-            ></rux-segmented-button>
-        </div>
-    `
-}
-
-const Medium = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
-    document.addEventListener('change', (e) => action('change')(e.target))
-    return html`
-        <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-            <rux-segmented-button
-                .data="${args.data}"
-                .size="${args.size}"
-            ></rux-segmented-button>
-        </div>
-    `
-}
-
-const Large = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
-    document.addEventListener('change', (e) => action('change')(e.target))
-    return html`
-        <div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-            <rux-segmented-button
-                .data="${args.data}"
-                .size="${args.size}"
+                .disabled="${args.disabled}"
             ></rux-segmented-button>
         </div>
     `
@@ -83,8 +27,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         data: [
@@ -102,13 +46,14 @@ export const Default_ = {
 
         selected: 'Second item',
         size: 'small',
+        disabled: false,
     },
 
     name: 'Default',
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
 
     args: {
         data: [
@@ -132,8 +77,8 @@ export const Disabled_ = {
     name: 'Disabled',
 }
 
-export const Medium_ = {
-    render: Medium.bind(),
+export const Medium = {
+    render: Base.bind(),
 
     args: {
         data: [
@@ -151,13 +96,14 @@ export const Medium_ = {
 
         selected: 'Second item',
         size: 'medium',
+        disabled: false,
     },
 
     name: 'Medium',
 }
 
-export const Large_ = {
-    render: Large.bind(),
+export const Large = {
+    render: Base.bind(),
 
     args: {
         data: [
@@ -175,6 +121,7 @@ export const Large_ = {
 
         selected: 'Second item',
         size: 'large',
+        disabled: false,
     },
 
     name: 'Large',

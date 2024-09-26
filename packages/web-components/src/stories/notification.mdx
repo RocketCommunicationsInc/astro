@@ -1,13 +1,5 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as NotificationStories from './notification.stories';
-
-const args = extractArgTypes('rux-notification')
-args.open.defaultValue = true
-args.message.defaultValue =
-'This is a notification banner. It won’t disappear until the user dismisses it.'
-args.status.defaultValue = 'standby'
 
 <Meta of={NotificationStories} />
 
@@ -23,24 +15,7 @@ If another Notification Banner is waiting, it appears when the current Banner is
 
 * [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
 
-export const Default = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        .hideClose="${args.hideClose}"
-        status="${args.status}"
-        message="${args.message}"
-    ></rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.Default_} />
-</Canvas>
+<Canvas of={NotificationStories.Default} />
 
 ## Usage
 
@@ -129,92 +104,22 @@ enum StatusSymbol {
 
 ### Auto Close
 
-export const NotificationAutoClose = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        .status="${args.status}"
-        message="This is a notification banner. It will disappear in 2000 ms."
-    ></rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.AutoClose} />
-</Canvas>
+<Canvas of={NotificationStories.AutoClose} />
 
 ### Hide Close
 
 In cases like auto close where you don't want to allow the user to be able to manually close the Notification,
 you may use the `hide-close` attribute. NOTE: this will override and hide any content inside the `actions` slot.
 
-export const HideClose = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        .status="${args.status}"
-        .hideClose="${args.hideClose}"
-        message="This is a notification banner. It will disappear in 2000 ms."
-    ></rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.HideClose_} />
-</Canvas>
+<Canvas of={NotificationStories.HideClose} />
 
 ### Small
 
-export const Small = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        status="${args.status}"
-        message="${args.message}"
-        .hideClose="${args.hideClose}"
-    ></rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.Small_} />
-</Canvas>
+<Canvas of={NotificationStories.Small} />
 
 ### Prefix Slot
 
-export const PrefixSlot = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        status="${args.status}"
-        message="${args.message}"
-        .hideClose="${args.hideClose}"
-    >
-    <rux-classification-marking classification="unclassified" tag slot="prefix"></rux-classification-marking>
-    Notification banner
-    </rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.PrefixSlot_} />
-</Canvas>
+<Canvas of={NotificationStories.WithPrefixSlot} />
 
 ### Default Slot
 
@@ -223,27 +128,7 @@ within your message.
 
 > NOTE: Content placed inside the default slot will override the `message` attribute.
 
-export const DefaultSlot = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        status="${args.status}"
-        message="${args.message}"
-        .hideClose="${args.hideClose}"
-    >
-    Notification banner
-    <a href="#" style="margin-left: 8px">Link</a>
-    </rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.DefaultSlot_} />
-</Canvas>
+<Canvas of={NotificationStories.WithDefaultSlot} />
 
 ### Actions Slot
 
@@ -253,55 +138,11 @@ instead of using an icon, you may instead pass in a `rux-button`
 > NOTE: By default, this slot will contain a `rux-icon` that automatically closes the modal.
 > You will be responsible for closing the Notification yourself if you chose to use this slot.
 
-export const ActionsSlot = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        status="${args.status}"
-        message="${args.message}"
-        .hideClose="${args.hideClose}"
-    >
-    Notification banner
-    <rux-button slot="actions">Acknowledge</rux-button>
-    </rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.ActionsSlot_} />
-</Canvas>
+<Canvas of={NotificationStories.WithActionsSlot} />
 
 ### With Slotted Content
 
-export const WithSlottedContent = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        status="${args.status}"
-        message="${args.message}"
-        .hideClose="${args.hideClose}"
-    >
-    <rux-classification-marking classification="unclassified" tag slot="prefix"></rux-classification-marking>
-    <div>
-      Slotted Content
-      <a href="#" style="margin-left: 8px">Link</a>
-    </div>
-    <rux-button slot="actions">Acknowledge</rux-button>
-    </rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.WithSlottedContent_} />
-</Canvas>
+<Canvas of={NotificationStories.WithSlottedContent} />
 
 ### With Wrapped Text
 
@@ -315,137 +156,11 @@ rux-notification::part(message) {
     white-space: normal;
 }
 ```
-
-export const WithWrappedText = (args) => {
-    return html`
-    <style>
-    rux-notification::part(message) {
-        overflow: visible;
-        text-overflow: unset;
-        white-space: normal;
-    }
-    </style>
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-notification
-        ?open="${args.open}"
-        ?small="${args.small}"
-        .closeAfter="${args.closeAfter}"
-        status="${args.status}"
-        message="${args.message}"
-        .hideClose="${args.hideClose}"
-    >
-        In my younger and more vulnerable years my father gave me some advice that I’ve been
-        turning over in my mind ever since. “Whenever you feel like criticizing any one,”
-        he told me, “just remember that all the people in this world haven’t had the advantages
-        that you’ve had.”
-    </rux-notification>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={NotificationStories.WithWrappedContent} />
-</Canvas>
+<Canvas of={NotificationStories.WithWrappedContent} />
 
 ### All Variants
 
-export const AllVariants = () => html`
-    <style>
-        .wrapper {
-            margin-bottom: 1rem;
-        }
-    </style>
-    <section>
-     <div class="wrapper">
-            <rux-notification open status="normal">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-          <div class="wrapper wrapper--small">
-            <rux-notification open small status="normal">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper">
-            <rux-notification open status="caution">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper wrapper--small">
-            <rux-notification open small status="caution">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper">
-            <rux-notification open status="serious">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper wrapper--small">
-            <rux-notification open small status="serious">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper">
-            <rux-notification open status="critical">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper wrapper--small">
-            <rux-notification open small status="critical">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper">
-            <rux-notification open status="standby">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper wrapper--small">
-            <rux-notification open small status="standby">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper">
-            <rux-notification open status="off">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper wrapper--small">
-            <rux-notification open small status="off">
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper">
-            <rux-notification open>
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-        <div class="wrapper wrapper--small">
-            <rux-notification open small>
-                Notification banner
-                <a href="#" style="margin-left: 8px">Link</a>
-            </rux-notification>
-        </div>
-    </section>
-`
-
-<Canvas>
-  <Story of={NotificationStories.AllVariants_} />
-</Canvas>
+<Canvas of={NotificationStories.WithAllVariants} />
 
 ## Cherry Picking
 

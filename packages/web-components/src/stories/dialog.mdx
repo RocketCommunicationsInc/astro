@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
 import * as DialogStories from './dialog.stories';
 
 <Meta of={DialogStories} />
@@ -13,23 +11,7 @@ A Dialog interrupts the app experience to prompt a user to confirm an action or 
 
 * [Astro UXDS: Dialog](https://astrouxds.com/ui-components/dialog)
 
-export const Dialog = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-dialog
-        ?open="${args.open}"
-        message="${args.message}"
-        header="${args.header}"
-        confirm-text="${args.confirmText}"
-        deny-text="${args.denyText}"
-    ></rux-dialog>
-</div
-    `
-}
-
-<Canvas>
-  <Story of={DialogStories.Dialog_} />
-</Canvas>
+<Canvas of={DialogStories.Dialog} />
 
 ## API
 
@@ -37,32 +19,7 @@ export const Dialog = (args) => {
 
 ### Variants
 
-export const WithSlots = (args) => {
-    return html`
-<div style="display: flex; flex-direction: column; justify-content: center;">
-<rux-dialog
-    ?open="${args.open}"
->
-    <span slot="header">Slot Header</span>
-    <div style="display: flex; flex-direction: column;">
-        <span style="margin-bottom: 1rem;">Default Slot Content</span>
-        <rux-input label="Input Label" placeholder="Dialog Input"></rux-input>
-    </div>
-    <div slot="footer" style="display: flex; justify-content: space-between; align-items: center;">
-        <a href="astrouxds.com">Link</a>
-        <div style="display: flex; align-items: center; margin-left: auto;">
-            <rux-button secondary style="margin-right: var(--spacing-2);">Cancel</rux-button>
-            <rux-button>Confirm</rux-button>
-        </div>
-    </div>
-</rux-dialog>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={DialogStories.WithSlots_} />
-</Canvas>
+<Canvas of={DialogStories.WithSlots} />
 
 ## Keyboard Interactions
 
@@ -92,7 +49,7 @@ using a `rux-button` to open the Dialog, and another `rux-button` in the `footer
     const openDialog = document.getElementById('open')
     const dialog = document.getElementById('dialog');
     const confirm = document.getElementById('confirm')
-    openDialog.addEventListener('click', () => { 
+    openDialog.addEventListener('click', () => {
         dialog.open = true;
     })
     confirm.addEventListener('click', () => {

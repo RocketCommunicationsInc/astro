@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select
@@ -35,7 +35,7 @@ const Default = (args) => {
     `
 }
 
-const Sizes = (args) => {
+const WithSizes = () => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select size="small" label="Small">
@@ -62,7 +62,7 @@ const Sizes = (args) => {
     `
 }
 
-const WithOptionGroups = (args) => {
+const OptionGroups = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select
@@ -105,7 +105,7 @@ const WithOptionGroups = (args) => {
     `
 }
 
-const Disabled = (args) => {
+const Base_2 = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select
@@ -135,126 +135,7 @@ const Disabled = (args) => {
     `
 }
 
-const Invalid = (args) => {
-    return html`
-        <div style="width: 200px; margin: 0 auto;">
-            <rux-select
-                ?disabled="${args.disabled}"
-                ?required="${args.required}"
-                ?invalid="${args.invalid}"
-                label="${args.label}"
-                input-id="${args.inputId}"
-                label-id="${args.labelId}"
-                .errorText="${args.errorText}"
-                .helpText="${args.helpText}"
-                .name="${args.name}"
-                size="${args.size}"
-                ?multiple="${args.multiple}"
-            >
-                <rux-option
-                    value=""
-                    selected
-                    label="Select an option"
-                ></rux-option>
-                <rux-option value="1.1" label="Option 1.1"></rux-option>
-                <rux-option value="1.2" label="Option 1.2"></rux-option>
-                <rux-option value="1.3" label="Option 1.3"></rux-option>
-                <rux-option value="1.4" label="Option 1.4"></rux-option>
-            </rux-select>
-        </div>
-    `
-}
-
-const Required = (args) => {
-    return html`
-        <div style="width: 200px; margin: 0 auto;">
-            <rux-select
-                ?disabled="${args.disabled}"
-                ?required="${args.required}"
-                ?invalid="${args.invalid}"
-                label="${args.label}"
-                input-id="${args.inputId}"
-                label-id="${args.labelId}"
-                .errorText="${args.errorText}"
-                .helpText="${args.helpText}"
-                size="${args.size}"
-                ?multiple="${args.multiple}"
-            >
-                <rux-option
-                    value=""
-                    selected
-                    label="Select an option"
-                ></rux-option>
-                <rux-option value="1.1" label="Option 1.1"></rux-option>
-                <rux-option value="1.2" label="Option 1.2"></rux-option>
-                <rux-option value="1.3" label="Option 1.3"></rux-option>
-                <rux-option value="1.4" label="Option 1.4"></rux-option>
-            </rux-select>
-        </div>
-    `
-}
-
-const WithHelpText = (args) => {
-    return html`
-        <div style="width: 200px; margin: 0 auto;">
-            <rux-select
-                ?disabled="${args.disabled}"
-                ?required="${args.required}"
-                ?invalid="${args.invalid}"
-                label="${args.label}"
-                input-id="${args.inputId}"
-                label-id="${args.labelId}"
-                .error-text="${args.errorText}"
-                help-text="${args.helpText}"
-                name="${args.name}"
-                size="${args.size}"
-                ?multiple="${args.multiple}"
-            >
-                <rux-option
-                    value=""
-                    selected
-                    label="Select an option"
-                ></rux-option>
-                <rux-option value="1.1" label="Option 1.1"></rux-option>
-                <rux-option value="1.2" label="Option 1.2"></rux-option>
-                <rux-option value="1.3" label="Option 1.3"></rux-option>
-                <rux-option value="1.4" label="Option 1.4"></rux-option>
-            </rux-select>
-        </div>
-    `
-}
-
-const WithErrorText = (args) => {
-    return html`
-        <div style="width: 200px; margin: 0 auto;">
-            <rux-select
-                ?disabled="${args.disabled}"
-                ?required="${args.required}"
-                ?invalid="${args.invalid}"
-                label="${args.label}"
-                input-id="${args.inputId}"
-                label-id="${args.labelId}"
-                error-text="${args.errorText}"
-                help-text="${args.helpText}"
-                name="${args.name}"
-                size="${args.size}"
-                ?multiple="${args.multiple}"
-            >
-                <rux-option
-                    value=""
-                    selected
-                    label="Select an option"
-                ></rux-option>
-                <rux-option value="1.1" label="Option 1.1"></rux-option>
-                <rux-option value="1.2" label="Option 1.2"></rux-option>
-                <rux-option value="1.3" label="Option 1.3"></rux-option>
-                <rux-option value="1.4" label="Option 1.4"></rux-option>
-            </rux-select>
-        </div>
-    `
-}
-
-const Multiple = (args) => {
+const WithMultiple = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select
@@ -283,7 +164,7 @@ const Multiple = (args) => {
     `
 }
 
-const MultipleWithOptionGroups = (args) => {
+const WithMultipleWithOptionGroups = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select
@@ -322,7 +203,7 @@ const MultipleWithOptionGroups = (args) => {
     `
 }
 
-const Inline = (args) => {
+const WithInline = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
             <rux-select ?inline="${args.inline}">
@@ -341,7 +222,7 @@ const Inline = (args) => {
     `
 }
 
-const WidthExample = (args) => {
+const WidthExample = () => {
     return html`
         <style>
             rux-select::part(select) {
@@ -375,8 +256,8 @@ export default {
     },
 }
 
-export const SelectMenu = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         label: 'Select Menu',
@@ -403,8 +284,8 @@ export const SelectMenu = {
     name: 'Select Menu',
 }
 
-export const Sizes_ = {
-    render: Sizes.bind(),
+export const Sizes = {
+    render: WithSizes.bind(),
 
     argTypes: {
         value: {
@@ -483,8 +364,8 @@ export const Sizes_ = {
     name: 'Sizes',
 }
 
-export const WithOptionGroups_ = {
-    render: WithOptionGroups.bind(),
+export const WithOptionGroups = {
+    render: OptionGroups.bind(),
 
     args: {
         label: 'With option groups',
@@ -511,8 +392,8 @@ export const WithOptionGroups_ = {
     name: 'With Option Groups',
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base_2.bind(),
 
     args: {
         label: 'Disabled Select Menu',
@@ -539,8 +420,8 @@ export const Disabled_ = {
     name: 'Disabled',
 }
 
-export const Invalid_ = {
-    render: Invalid.bind(),
+export const Invalid = {
+    render: Base_2.bind(),
 
     args: {
         label: 'Invalid Select Menu',
@@ -567,8 +448,8 @@ export const Invalid_ = {
     name: 'Invalid',
 }
 
-export const Required_ = {
-    render: Required.bind(),
+export const Required = {
+    render: Base_2.bind(),
 
     args: {
         label: 'Required Select Menu',
@@ -595,8 +476,8 @@ export const Required_ = {
     name: 'Required',
 }
 
-export const WithHelpText_ = {
-    render: WithHelpText.bind(),
+export const WithHelpText = {
+    render: Base_2.bind(),
 
     args: {
         label: 'Select menu',
@@ -623,8 +504,8 @@ export const WithHelpText_ = {
     name: 'With Help Text',
 }
 
-export const WithErrorText_ = {
-    render: WithErrorText.bind(),
+export const WithErrorText = {
+    render: Base_2.bind(),
 
     args: {
         label: 'Select menu',
@@ -651,8 +532,8 @@ export const WithErrorText_ = {
     name: 'With Error Text',
 }
 
-export const Multiple_ = {
-    render: Multiple.bind(),
+export const Multiple = {
+    render: WithMultiple.bind(),
 
     args: {
         label: 'Select menu',
@@ -679,8 +560,8 @@ export const Multiple_ = {
     name: 'Multiple',
 }
 
-export const MultipleWithOptionGroups_ = {
-    render: MultipleWithOptionGroups.bind(),
+export const MultipleWithOptionGroups = {
+    render: WithMultipleWithOptionGroups.bind(),
 
     args: {
         label: 'Select menu',
@@ -707,8 +588,8 @@ export const MultipleWithOptionGroups_ = {
     name: 'Multiple With Option Groups',
 }
 
-export const Inline_ = {
-    render: Inline.bind(),
+export const Inline = {
+    render: WithInline.bind(),
 
     args: {
         inline: true,

@@ -1,37 +1,7 @@
-import { html, render } from 'lit-html'
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { styled } from '@storybook/theming'
+import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
 
-const StyledDiv = styled.div`
-    position: relative;
-    margin: 1rem 0;
-    border-left: 20px solid var(--status-symbol-color-fill-serious);
-    background: white;
-    color: var(--status-symbol-color-fill-serious);
-    padding: 19px;
-    font-family: var(--font-body-1-bold-font-family);
-    font-size: var(--font-body-1-bold-font-size);
-    font-weight: var(--font-body-1-bold-font-weight);
-    letter-spacing: var(--font-body-1-bold-letter-spacing);
-    .banner-text {
-        margin-top: 1rem;
-        color: var(--color-text-inverse);
-    }
-`
-
-const BetaTag = styled.div`
-    display: inline-block;
-    padding: 7px;
-    color: var(--color-palette-neutral-1000);
-    border-radius: var(--radius-base);
-    background: var(--color-palette-teal-300);
-    font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
-`
-
-const Default = (args) => {
+const Base = (args) => {
     let start = args.start
     let end = args.end
     if (args.start) {
@@ -54,7 +24,7 @@ const Default = (args) => {
     `
 }
 
-const Selected = (args) => {
+const SelectedExample = (args) => {
     return html`
         <rux-time-region
             start="2021-01-01T00:00"
@@ -68,7 +38,7 @@ const Selected = (args) => {
     `
 }
 
-const Partial = (args) => {
+const PartialExample = (args) => {
     return html`
         <rux-time-region
             partial="${args.partial}"
@@ -82,7 +52,7 @@ const Partial = (args) => {
     `
 }
 
-const AllVariants = (args) => {
+const AllVariantsExample = () => {
     return html`
         <style>
             rux-time-region {
@@ -201,11 +171,11 @@ const AllVariants = (args) => {
 export default {
     title: 'Beta/Timeline [BETA]/Time Region',
     component: 'rux-time-region',
-    argTypes: args,
+    argTypes: extractArgTypes('rux-time-region'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -218,8 +188,8 @@ export const Default_ = {
     },
 }
 
-export const Selected_ = {
-    render: Selected.bind(),
+export const Selected = {
+    render: SelectedExample.bind(),
     name: 'Selected',
 
     args: {
@@ -229,8 +199,8 @@ export const Selected_ = {
     },
 }
 
-export const Partial_ = {
-    render: Partial.bind(),
+export const Partial = {
+    render: PartialExample.bind(),
     name: 'Partial',
 
     args: {
@@ -240,8 +210,8 @@ export const Partial_ = {
     },
 }
 
-export const AllVariants_ = {
-    render: AllVariants.bind(),
+export const AllVariants = {
+    render: AllVariantsExample.bind(),
     name: 'All Variants',
 
     args: {

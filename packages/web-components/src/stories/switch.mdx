@@ -13,23 +13,7 @@ A Switch toggles between two mutually exclusive states such as "On" or "Off." Un
 
 * [Astro UXDS: Switch](http://www.astrouxds.com/ui-components/switch)
 
-export const Switch = (args) => {
-    return html`
-<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-    <rux-switch
-        ?disabled=${args.disabled}
-        ?checked=${args.checked}
-        label=${args.label}
-        name=${args.name}
-        value=${args.value}
-    ></rux-switch>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SwitchStories.Switch_} />
-</Canvas>
+<Canvas of={SwitchStories.Default} />
 
 ## API
 
@@ -39,59 +23,15 @@ export const Switch = (args) => {
 
 ### On
 
-export const On = (args) => {
-    return html`
-<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-    <rux-switch
-        ?disabled=${args.disabled}
-        ?checked=${args.checked}
-        .label=${args.label}
-    ></rux-switch>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SwitchStories.On_} />
-</Canvas>
+<Canvas of={SwitchStories.On} />
 
 ### Disabled
 
-export const Disabled = (args) => {
-    return html`
-<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-    <rux-switch
-        ?disabled=${args.disabled}
-        ?checked=${args.checked}
-        name=${args.name}
-        value=${args.value}
-        .label=${args.label}
-    ></rux-switch>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SwitchStories.Disabled_} />
-</Canvas>
+<Canvas of={SwitchStories.Disabled} />
 
 ### With Label
 
-export const WithLabel = (args) => {
-    return html`
-<div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-    <rux-switch
-        ?disabled=${args.disabled}
-        ?checked=${args.checked}
-        .label=${args.label}
-    ></rux-switch>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SwitchStories.WithLabel_} />
-</Canvas>
+<Canvas of={SwitchStories.WithLabel} />
 
 ## Cherry Picking
 

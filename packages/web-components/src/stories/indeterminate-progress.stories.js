@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div
             style="width: 100%; display: flex; align-items: center; justify-content: center;"
@@ -17,7 +17,7 @@ export default {
     argTypes: extractArgTypes('rux-indeterminate-progress'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 }

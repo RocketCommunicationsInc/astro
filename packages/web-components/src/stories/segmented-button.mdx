@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as SegmentedButtonStories from './segmented-button.stories';
 
 <Meta of={SegmentedButtonStories} />
@@ -13,27 +11,7 @@ Segmented Buttons allow users to select one item at a time from two to four opti
 
 * [Astro UXDS: Segmented Button](https://astrouxds.com/ui-components/segmented-button)
 
-export const Default = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
-    document.addEventListener('change', (e) => action('change')(e.target))
-    return html`
-<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-    <rux-segmented-button
-        .data="${args.data}"
-        .selected="${args.selected}"
-        .size="${args.size}"
-    ></rux-segmented-button>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SegmentedButtonStories.Default_} />
-</Canvas>
+<Canvas of={SegmentedButtonStories.Default} />
 
 ## API
 
@@ -43,73 +21,15 @@ export const Default = (args) => {
 
 ### Disabled
 
-export const Disabled = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
-    document.addEventListener('change', (e) => action('change')(e.target))
-    return html`
-<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-    <rux-segmented-button
-        .data="${args.data}"
-        .size="${args.size}"
-        ?disabled="${args.disabled}"
-    ></rux-segmented-button>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SegmentedButtonStories.Disabled_} />
-</Canvas>
+<Canvas of={SegmentedButtonStories.Disabled} />
 
 ### Medium
 
-export const Medium = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
-    document.addEventListener('change', (e) => action('change')(e.target))
-    return html`
-<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-    <rux-segmented-button
-        .data="${args.data}"
-        .size="${args.size}"
-    ></rux-segmented-button>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SegmentedButtonStories.Medium_} />
-</Canvas>
+<Canvas of={SegmentedButtonStories.Medium} />
 
 ### Large
 
-export const Large = (args) => {
-    const segmentButtonArray = [
-        { label: 'First item' },
-        { label: 'Second item' },
-        { label: 'Third item' },
-    ]
-    document.addEventListener('change', (e) => action('change')(e.target))
-    return html`
-<div style="padding: 10vh 5vw; display: flex; justify-content: center;">
-    <rux-segmented-button
-        .data="${args.data}"
-        .size="${args.size}"
-    ></rux-segmented-button>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SegmentedButtonStories.Large_} />
-</Canvas>
+<Canvas of={SegmentedButtonStories.Large} />
 
 ## Usage
 

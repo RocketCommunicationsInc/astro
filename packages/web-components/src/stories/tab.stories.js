@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <rux-tab
             id="tab1"
@@ -13,27 +13,7 @@ const Default = (args) => {
     `
 }
 
-const Disabled = (args) => {
-    return html`
-        <rux-tab
-            id="tab1"
-            ?disabled=${args.disabled}
-            ?selected=${args.selected}
-        >
-            Tab 1
-        </rux-tab>
-    `
-}
-
-const Selected = (args) => {
-    return html`
-        <rux-tab id="tab1" ?disabled=${args.disabled} ?selected=${args.selected}
-            >Tab 1</rux-tab
-        >
-    `
-}
-
-const Actions = (args) => {
+const ActionsExample = (args) => {
     return html`
         <rux-tab id="tab1" ?disabled=${args.disabled} ?selected=${args.selected}
             ><span>Tab 1</span
@@ -58,8 +38,8 @@ export default {
     argTypes: extractArgTypes('rux-tab'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -68,8 +48,8 @@ export const Default_ = {
     },
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
     name: 'Disabled',
 
     args: {
@@ -78,8 +58,8 @@ export const Disabled_ = {
     },
 }
 
-export const Selected_ = {
-    render: Selected.bind(),
+export const Selected = {
+    render: Base.bind(),
     name: 'Selected',
 
     args: {
@@ -88,8 +68,8 @@ export const Selected_ = {
     },
 }
 
-export const Actions_ = {
-    render: Actions.bind(),
+export const Actions = {
+    render: ActionsExample.bind(),
     name: 'Actions',
 
     args: {

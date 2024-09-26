@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as TextareaStories from './textarea.stories';
 
 <Meta of={TextareaStories} />
@@ -11,31 +9,7 @@ import * as TextareaStories from './textarea.stories';
 
 * [Astro UXDS: Input Field](https://www.astrouxds.com/components/input-field/)
 
-export const Default = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    rows="${args.rows}"
-    ?small="${args.small}"
-    value="${args.value}"
-    type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.Default_} />
-</Canvas>
+<Canvas of={TextareaStories.Default} />
 
 ## API
 
@@ -45,199 +19,31 @@ export const Default = (args) => {
 
 ### Small
 
-export const Small = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    .rows="${args.rows}"
-    ?small="${args.small}"
-    .value="${args.value}"
-    .type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.Small_} />
-</Canvas>
+<Canvas of={TextareaStories.Small} />
 
 ### Large
 
-export const Large = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    .rows="${args.rows}"
-    ?small="${args.small}"
-    .value="${args.value}"
-    .type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.Large_} />
-</Canvas>
+<Canvas of={TextareaStories.Large} />
 
 ### Disabled
 
-export const Disabled = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    rows="${args.rows}"
-    ?small="${args.small}"
-    .value="${args.value}"
-    .type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.Disabled_} />
-</Canvas>
+<Canvas of={TextareaStories.Disabled} />
 
 ### Required
 
-export const Required = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    .rows="${args.rows}"
-    ?small="${args.small}"
-    .value="${args.value}"
-    .type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.Required_} />
-</Canvas>
+<Canvas of={TextareaStories.Required} />
 
 ### Help Text
 
-export const HelpText = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    rows="${args.rows}"
-    ?small="${args.small}"
-    value="${args.value}"
-    type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.HelpText_} />
-</Canvas>
+<Canvas of={TextareaStories.HelpText} />
 
 ### Invalid w/ Error Text
 
-export const Invalid = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    .placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    rows="${args.rows}"
-    ?small="${args.small}"
-    value="${args.value}"
-    type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.Invalid_} />
-</Canvas>
+<Canvas of={TextareaStories.Invalid} />
 
 ### Placeholder Text
 
-export const Placeholder = (args) => {
-    return html`
-<rux-textarea
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    .name="${args.name}"
-    placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    rows="${args.rows}"
-    ?small="${args.small}"
-    value="${args.value}"
-    type="${args.type}"
-    .size="${args.size}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.Placeholder_} />
-</Canvas>
+<Canvas of={TextareaStories.Placeholder} />
 
 ## Customization
 
@@ -253,40 +59,7 @@ rux-textarea::part(label) {
     margin-right: var(--spacing-2);
 }
 ```
-
-export const HorizontalLabel = (args) => {
-    return html`
-<style>
-    #left-example::part(form-field) {
-        flex-direction: row;
-    }
-    #left-example::part(label) {
-        margin-right: var(--spacing-2);
-    }
-</style>
-<rux-textarea
-    id="left-example"
-    label="${args.label}"
-    ?disabled="${args.disabled}"
-    error-text="${args.errorText}"
-    help-text="${args.helpText}"
-    ?invalid="${args.invalid}"
-    max-length="${args.maxLength}"
-    min-length="${args.minLength}"
-    name="${args.name}"
-    placeholder="${args.placeholder}"
-    ?required="${args.required}"
-    rows="${args.rows}"
-    ?small="${args.small}"
-    value="${args.value}"
-    type="${args.type}"
-></rux-textarea>
-    `
-}
-
-<Canvas>
-  <Story of={TextareaStories.HorizontalLabel_} />
-</Canvas>
+<Canvas of={TextareaStories.HorizontalLabel} />
 
 ## Cherry Picking
 

@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html` <rux-menu-item-divider></rux-menu-item-divider> `
 }
 
@@ -16,7 +16,7 @@ export default {
     argTypes: extractArgTypes('rux-menu-item-divider'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 }

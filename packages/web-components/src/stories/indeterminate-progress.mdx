@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as IndeterminateProgressStories from './indeterminate-progress.stories';
 
 <Meta of={IndeterminateProgressStories} />
@@ -25,9 +23,7 @@ export const Default = (args) => {
     `
 }
 
-<Canvas>
-  <Story of={IndeterminateProgressStories.Default_} />
-</Canvas>
+<Canvas of={IndeterminateProgressStories.Default} />
 
 ## Sizing
 

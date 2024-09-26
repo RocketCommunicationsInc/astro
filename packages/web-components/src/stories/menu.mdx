@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as MenuStories from './menu.stories';
 
 <Meta of={MenuStories} />
@@ -9,19 +7,7 @@ import * as MenuStories from './menu.stories';
 
 Menu's are pre-built containers primarily used in [Pop Up](?path=/docs/components-pop-up--default-story).
 
-export const Default = (args) => {
-    return html`
-        <rux-menu>
-            <rux-menu-item>Menu Item</rux-menu-item>
-            <rux-menu-item>Menu Item</rux-menu-item>
-            <rux-menu-item>Menu Item</rux-menu-item>
-        </rux-menu>
-    `
-}
-
-<Canvas>
-  <Story of={MenuStories.Default_} />
-</Canvas>
+<Canvas of={MenuStories.Default} />
 
 ## API
 

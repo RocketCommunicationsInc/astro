@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="padding: 5%">
             <rux-slider
@@ -14,86 +14,16 @@ const Default = (args) => {
                 error-text="${args.errorText}"
                 label="${args.label}"
                 name="${args.name}"
-            ></rux-slider>
-        </div>
-    `
-}
-
-const Disabled = (args) => {
-    return html`
-        <div style="padding: 5%">
-            <rux-slider
-                max="${args.max}"
-                min="${args.min}"
-                step="${args.step}"
-                value="${args.value}"
-                ?disabled="${args.disabled}"
-                help-text="${args.helpText}"
-                error-text="${args.errorText}"
-                label="${args.label}"
-                name="${args.name}"
-            ></rux-slider>
-        </div>
-    `
-}
-
-const WithHelpText = (args) => {
-    return html`
-        <div style="padding: 5%">
-            <rux-slider
-                max="${args.max}"
-                min="${args.min}"
-                step="${args.step}"
-                .value="${args.value}"
-                ?disabled="${args.disabled}"
-                help-text="${args.helpText}"
-                error-text="${args.errorText}"
-                label="${args.label}"
-                name="${args.label}"
-            ></rux-slider>
-        </div>
-    `
-}
-
-const WithErrorText = (args) => {
-    return html`
-        <div style="padding: 5%">
-            <rux-slider
-                max="${args.max}"
-                min="${args.min}"
-                step="${args.step}"
-                .value="${args.value}"
-                ?disabled="${args.disabled}"
-                help-text="${args.helpText}"
-                error-text="${args.errorText}"
-                label="${args.label}"
-                name="${args.name}"
-            ></rux-slider>
-        </div>
-    `
-}
-
-const WithAxisLabels = (args, data) => {
-    return html`
-        <div style="padding: 5%">
-            <rux-slider
-                id="axis-labels"
-                max="${args.max}"
-                min="${args.min}"
-                step="${args.step}"
-                .value="${args.value}"
-                ?disabled="${args.disabled}"
-                help-text="${args.helpText}"
-                error-text="${args.errorText}"
                 .axisLabels="${args.axisLabels}"
                 ?ticks-only="${args.ticksOnly}"
-                label="${args.label}"
+                ?strict="${args.strict}"
+                name="${args.name}"
             ></rux-slider>
         </div>
     `
 }
 
-const DualRange = (args, data) => {
+const WithDualRange = (args, data) => {
     return html`
         <div style="padding: 5%">
             <rux-slider
@@ -116,7 +46,7 @@ const DualRange = (args, data) => {
     `
 }
 
-const HorizontalLabel = (args) => {
+const WithHorizontalLabel = (args) => {
     return html`
         <style>
             #left-example::part(form-field) {
@@ -158,8 +88,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -175,8 +105,8 @@ export const Default_ = {
     },
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
     name: 'Disabled',
 
     args: {
@@ -192,8 +122,8 @@ export const Disabled_ = {
     },
 }
 
-export const WithHelpText_ = {
-    render: WithHelpText.bind(),
+export const WithHelpText = {
+    render: Base.bind(),
     name: 'With Help Text',
 
     args: {
@@ -209,8 +139,8 @@ export const WithHelpText_ = {
     },
 }
 
-export const WithErrorText_ = {
-    render: WithErrorText.bind(),
+export const WithErrorText = {
+    render: Base.bind(),
     name: 'With Error Text',
 
     args: {
@@ -226,8 +156,8 @@ export const WithErrorText_ = {
     },
 }
 
-export const WithAxisLabels_ = {
-    render: WithAxisLabels.bind(),
+export const WithAxisLabels = {
+    render: Base.bind(),
     name: 'With Axis Labels',
 
     args: {
@@ -239,8 +169,8 @@ export const WithAxisLabels_ = {
     },
 }
 
-export const DualRange_ = {
-    render: DualRange.bind(),
+export const DualRange = {
+    render: WithDualRange.bind(),
     name: 'Dual Range',
 
     args: {
@@ -260,8 +190,8 @@ export const DualRange_ = {
     },
 }
 
-export const HorizontalLabel_ = {
-    render: HorizontalLabel.bind(),
+export const HorizontalLabel = {
+    render: WithHorizontalLabel.bind(),
     name: 'Horizontal Label',
 
     args: {

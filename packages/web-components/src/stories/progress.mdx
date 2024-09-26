@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as ProgressStories from './progress.stories';
 
 <Meta of={ProgressStories} />
@@ -13,21 +11,7 @@ A visual indicator of a task's progress. When indicating progress with a finite 
 
 * [Astro UXDS: Progress](https://astrouxds.com/components/progress/)
 
-export const Default = (args) => {
-    return html`
-<div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-    <rux-progress
-        value="${args.value}"
-        .max=${args.max}
-        ?hide-label="${args.hideLabel}"
-    ></rux-progress>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ProgressStories.Default_} />
-</Canvas>
+<Canvas of={ProgressStories.Default} />
 
 ## API
 
@@ -44,39 +28,11 @@ If `max` is not 100, the label is displayed as value/max (1450/2000)
 
 ### Determinate Progress Max
 
-export const DeterminateProgressMax = (args) => {
-    return html`
-        <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-            <rux-progress
-                value="${args.value}"
-                max=${args.max}
-                ?hide-label="${args.hideLabel}"
-            ></rux-progress>
-        </div>
-    `
-}
-
-<Canvas>
-  <Story of={ProgressStories.DeterminateProgressMax_} />
-</Canvas>
+<Canvas of={ProgressStories.DeterminateProgressMax} />
 
 ### Determinate Progress with Custom Max
 
-export const DeterminateProgressCustomMax = (args) => {
-    return html`
-<div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
-    <rux-progress
-        value="${args.value}"
-        max=${args.max}
-        ?hide-label="${args.hideLabel}"
-    ></rux-progress>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ProgressStories.DeterminateProgressWithCustomMax} />
-</Canvas>
+<Canvas of={ProgressStories.DeterminateProgressWithCustomMax} />
 
 ### Cherry Picking
 

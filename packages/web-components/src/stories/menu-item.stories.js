@@ -1,21 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
-    return html`
-        <rux-menu-item
-            ?disabled="${args.disabled}"
-            .download="${args.download}"
-            .href="${args.href}"
-            .rel="${args.rel}"
-            .target="${args.target}"
-            .value="${args.value}"
-            >Menu Item</rux-menu-item
-        >
-    `
-}
-
-const Disabled = (args) => {
+const Base = (args) => {
     return html`
         <rux-menu-item
             ?disabled="${args.disabled}"
@@ -41,8 +27,8 @@ export default {
     argTypes: extractArgTypes('rux-menu-item'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -55,8 +41,8 @@ export const Default_ = {
     },
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
 
     args: {
         disabled: true,

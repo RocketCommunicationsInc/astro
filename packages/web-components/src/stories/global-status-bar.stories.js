@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="display: flex; justify-content: center;">
             <rux-global-status-bar
@@ -13,24 +13,6 @@ const Default = (args) => {
                 username="${args.username}"
                 app-state-color="${args.appStateColor}"
                 app-state="${args.appState}"
-            >
-            </rux-global-status-bar>
-        </div>
-    `
-}
-
-const GlobalStatusBarWithAppState = (args) => {
-    return html`
-        <div style="display: flex; justify-content: center;">
-            <rux-global-status-bar
-                include-icon="${args.includeIcon}"
-                app-state="${args.appState}"
-                app-state-color="${args.appStateColor}"
-                username="${args.username}"
-                app-domain="${args.appDomain}"
-                app-name="${args.appName}"
-                app-version="${args.appVersion}"
-                menu-icon="${args.menuIcon}"
             >
             </rux-global-status-bar>
         </div>
@@ -168,8 +150,8 @@ export default {
     argTypes: extractArgTypes('rux-global-status-bar'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -193,7 +175,7 @@ export const Default_ = {
 }
 
 export const WithAppState = {
-    render: GlobalStatusBarWithAppState.bind(),
+    render: Base.bind(),
 
     args: {
         appState: 'Production',
@@ -267,7 +249,7 @@ export const WithTabs = {
     name: 'With Tabs',
 }
 
-export const OtherVariants_ = {
+export const WithOtherVariants = {
     render: OtherVariants.bind(),
     name: 'Other Variants',
 }

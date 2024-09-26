@@ -1,8 +1,8 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
-    return html`
+const Base = (args) => {
+return html`
         <rux-input
             label="${args.label}"
             .disabled="${args.disabled}"
@@ -25,54 +25,7 @@ const Default = (args) => {
     `
 }
 
-const Disabled = (args) => {
-    return html`
-        <rux-input
-            label="${args.label}"
-            ?disabled="${args.disabled}"
-            .error-text="${args.errorText}"
-            ?invalid="${args.invalid}"
-            .help-text="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            .step="${args.step}"
-            type=${args.type}
-            ?readonly="${args.readonly}"
-            ?autocomplete="${args.autocomplete}"
-            ?spellcheck="${args.spellcheck}"
-            size="${args.size}"
-        ></rux-input>
-    `
-}
-
-const Required = (args) => {
-    return html`
-        <rux-input
-            label="${args.label}"
-            ?disabled="${args.disabled}"
-            .error-text="${args.errorText}"
-            ?invalid="${args.invalid}"
-            .help-text="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            .step="${args.step}"
-            type=${args.type}
-            ?readonly="${args.readonly}"
-            ?autocomplete="${args.autocomplete}"
-            ?spellcheck="${args.spellcheck}"
-        ></rux-input>
-    `
-}
-
-const WithIcons = (args) => {
+const Icons = (args) => {
     return html`
         <rux-input
             label="With Prefix"
@@ -223,54 +176,6 @@ const Sizes = (args) => {
     `
 }
 
-const HelpText = (args) => {
-    return html`
-        <rux-input
-            label="${args.label}"
-            ?disabled="${args.disabled}"
-            .error-text="${args.errorText}"
-            ?invalid="${args.invalid}"
-            help-text="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            type=${args.type}
-            .step="${args.step}"
-            ?readonly="${args.readonly}"
-            ?autocomplete="${args.autocomplete}"
-            ?spellcheck="${args.spellcheck}"
-            size="${args.size}"
-        ></rux-input>
-    `
-}
-
-const Invalid = (args) => {
-    return html`
-        <rux-input
-            label="${args.label}"
-            .disabled="${args.disabled}"
-            error-text="${args.errorText}"
-            ?invalid="${args.invalid}"
-            .helpText="${args.helpText}"
-            .min="${args.min}"
-            .max="${args.max}"
-            .name="${args.name}"
-            .placeholder="${args.placeholder}"
-            ?required="${args.required}"
-            .value="${args.value}"
-            type=${args.type}
-            .step="${args.step}"
-            ?readonly="${args.readonly}"
-            ?autocomplete="${args.autocomplete}"
-            ?spellcheck="${args.spellcheck}"
-            size="${args.size}"
-        ></rux-input>
-    `
-}
-
 const Types = (args) => {
     return html`
         <style>
@@ -385,8 +290,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -416,8 +321,8 @@ export const Default_ = {
     },
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
     name: 'Disabled',
 
     args: {
@@ -447,19 +352,20 @@ export const Disabled_ = {
     },
 }
 
-export const Required_ = {
-    render: Required.bind(),
+export const Required = {
+    render: Base.bind(),
     name: 'Required',
 
     args: {
         label: 'Required input',
         required: true,
         type: 'text',
+        size: 'medium',
     },
 }
 
-export const WithIcons_ = {
-    render: WithIcons.bind(),
+export const WithIcons = {
+    render: Icons.bind(),
     name: 'With Icons',
 
     args: {
@@ -468,7 +374,7 @@ export const WithIcons_ = {
     },
 }
 
-export const Sizes_ = {
+export const WithSizes = {
     render: Sizes.bind(),
     name: 'Sizes',
 
@@ -581,8 +487,8 @@ export const Sizes_ = {
     },
 }
 
-export const HelpText_ = {
-    render: HelpText.bind(),
+export const HelpText = {
+    render: Base.bind(),
     name: 'Help Text',
 
     args: {
@@ -612,8 +518,8 @@ export const HelpText_ = {
     },
 }
 
-export const Invalid_ = {
-    render: Invalid.bind(),
+export const Invalid = {
+    render: Base.bind(),
     name: 'Invalid',
 
     args: {
@@ -643,7 +549,7 @@ export const Invalid_ = {
     },
 }
 
-export const Types_ = {
+export const WithTypes = {
     render: Types.bind(),
     name: 'Types',
 
@@ -763,7 +669,7 @@ export const JulianMask = {
     name: 'Julian Mask',
 }
 
-export const HorizontalLabel_ = {
+export const WithHorizontalLabel = {
     render: HorizontalLabel.bind(),
     name: 'Horizontal Label',
 

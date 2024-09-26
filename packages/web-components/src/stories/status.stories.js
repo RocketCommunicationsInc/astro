@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="display: flex; margin-top: 1rem;">
             <rux-status
@@ -12,7 +12,7 @@ const Default = (args) => {
     `
 }
 
-const AllVariants = () => {
+const WithAllVariants = () => {
     return html`
         <style>
             ul {
@@ -62,8 +62,8 @@ export default {
     argTypes: extractArgTypes('rux-status'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         status: 'critical',
@@ -72,8 +72,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const AllVariants_ = {
-    render: AllVariants.bind(),
+export const AllVariants = {
+    render: WithAllVariants.bind(),
     name: 'All Variants',
 
     argTypes: {

@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as RadioGroupStories from './radio-group.stories';
 
 <Meta of={RadioGroupStories} />
@@ -16,27 +14,7 @@ The Radio Group component is responsible for checking and unchecking individual 
 * [Astro UXDS: Radio Buttons](https://www.astrouxds.com/ui-components/radio-button)
 * [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
-export const Default = (args) => {
-    return html`
-<rux-radio-group
-    name="${args.name}"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    .helpText="${args.helpText}"
-    .errorText="${args.errorText}"
->
-    <rux-radio value="one" name="radios">One</rux-radio>
-    <rux-radio value="two" name="radios">Two</rux-radio>
-    <rux-radio value="three" name="radios">Three</rux-radio>
-</rux-radio-group>
-    `
-}
-
-<Canvas>
-  <Story of={RadioGroupStories.Default_} />
-</Canvas>
+<Canvas of={RadioGroupStories.Default} />
 
 ## API
 
@@ -52,99 +30,19 @@ Make use of the `value` property to control the state of the checked Radio value
 
 ### Invalid
 
-export const Invalid = (args) => {
-    return html`
-<rux-radio-group
-    name="radios"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    .helpText="${args.helpText}"
-    .errorText="${args.errorText}"
->
-    <rux-radio value="one" name="radios">One</rux-radio>
-    <rux-radio value="two" name="radios">Two</rux-radio>
-    <rux-radio value="three" name="radios">Three</rux-radio>
-</rux-radio-group>
-    `
-}
-
-<Canvas>
-  <Story of={RadioGroupStories.Invalid_} />
-</Canvas>
+<Canvas of={RadioGroupStories.Invalid} />
 
 ### Required
 
-export const Required = (args) => {
-    return html`
-<rux-radio-group
-    name="radios"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    .helpText="${args.helpText}"
-    .errorText="${args.errorText}"
->
-    <rux-radio value="one" name="radios">One</rux-radio>
-    <rux-radio value="two" name="radios">Two</rux-radio>
-    <rux-radio value="three" name="radios">Three</rux-radio>
-</rux-radio-group>
-    `
-}
-
-<Canvas>
-  <Story of={RadioGroupStories.Required_} />
-</Canvas>
+<Canvas of={RadioGroupStories.Required} />
 
 ### With Help Text
 
-export const WithHelpText = (args) => {
-    return html`
-<rux-radio-group
-    name="radios"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    help-text="${args.helpText}"
-    .error-text="${args.errorText}"
->
-    <rux-radio value="one" name="radios">One</rux-radio>
-    <rux-radio value="two" name="radios">Two</rux-radio>
-    <rux-radio value="three" name="radios">Three</rux-radio>
-</rux-radio-group>
-    `
-}
-
-<Canvas>
-  <Story of={RadioGroupStories.WithHelpText_} />
-</Canvas>
+<Canvas of={RadioGroupStories.WithHelpText} />
 
 ### With Error Text
 
-export const WithErrorText = (args) => {
-    return html`
-<rux-radio-group
-    name="radios"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    ?required="${args.required}"
-    .help-text="${args.helpText}"
-    error-text="${args.errorText}"
->
-    <rux-radio value="one" name="radios">One</rux-radio>
-    <rux-radio value="two" name="radios">Two</rux-radio>
-    <rux-radio value="three" name="radios">Three</rux-radio>
-</rux-radio-group>
-    `
-}
-
-<Canvas>
-  <Story of={RadioGroupStories.WithErrorText_} />
-</Canvas>
+<Canvas of={RadioGroupStories.WithErrorText} />
 
 ## Customization
 
@@ -162,37 +60,7 @@ rux-radio-group::part(label) {
     margin-right: var(--spacing-2);
 }
 ```
-
-export const HorizontalLabel = (args) => {
-    return html`
-<style>
-    #left-example::part(form-field) {
-        display: flex;
-        flex-direction: row;
-    }
-    #left-example::part(label) {
-        margin-right: var(--spacing-2);
-    }
-</style>
-<rux-radio-group
-    id="left-example"
-    name="${args.name}"
-    label="${args.label}"
-    .value="${args.value}"
-    ?invalid="${args.invalid}"
-    help-text="${args.helpText}"
-    error-text="${args.errorText}"
->
-    <rux-radio value="1">one</rux-radio>
-    <rux-radio value="2">two</rux-radio>
-    <rux-radio value="3">three</rux-radio>
-</rux-radio-group>
-    `
-}
-
-<Canvas>
-  <Story of={RadioGroupStories.HorizontalLabel_} />
-</Canvas>
+<Canvas of={RadioGroupStories.HorizontalLabel} />
 
 ## Cherry Picking
 

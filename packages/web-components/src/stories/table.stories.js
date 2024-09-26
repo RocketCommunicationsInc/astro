@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = () => {
     const columnData = [
         { headerName: 'Current tag', field: 'currentTag' },
         { headerName: 'Original tag', field: 'originalTag' },
@@ -71,7 +71,7 @@ const Default = (args) => {
     `
 }
 
-const WithSelectedRow = (args) => {
+const WithSelectedRowExample = () => {
     const columnData = [
         { headerName: 'Current tag', field: 'currentTag' },
         { headerName: 'Original tag', field: 'originalTag' },
@@ -170,12 +170,12 @@ export default {
     argTypes: extractArgTypes('rux-table'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 }
 
-export const WithSelectedRow_ = {
-    render: WithSelectedRow.bind(),
+export const WithSelectedRow = {
+    render: WithSelectedRowExample.bind(),
     name: 'With Selected Row',
 }

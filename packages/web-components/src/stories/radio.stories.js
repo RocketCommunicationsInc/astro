@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <rux-radio
             name="${args.name}"
@@ -12,31 +12,6 @@ const Default = (args) => {
         >
             ${args.label}
         </rux-radio>
-    `
-}
-
-const Checked = (args) => {
-    return html`
-        <rux-radio
-            name="${args.name}"
-            ?checked=${args.checked}
-            ?disabled=${args.disabled}
-            value="${args.value}"
-            >${args.label}</rux-radio
-        >
-    `
-}
-
-const Disabled = (args) => {
-    return html`
-        <rux-radio
-            .name="${args.name}"
-            ?checked=${args.checked}
-            ?disabled=${args.disabled}
-            .value="${args.value}"
-            .label="${args.label}"
-            >${args.label}</rux-radio
-        >
     `
 }
 
@@ -57,8 +32,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -70,8 +45,8 @@ export const Default_ = {
     },
 }
 
-export const Checked_ = {
-    render: Checked.bind(),
+export const Checked = {
+    render: Base.bind(),
     name: 'Checked',
 
     args: {
@@ -83,8 +58,8 @@ export const Checked_ = {
     },
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
 
     args: {
         name: 'radios',

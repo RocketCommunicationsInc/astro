@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-notification
@@ -11,50 +11,6 @@ const Default = (args) => {
                 .hideClose="${args.hideClose}"
                 status="${args.status}"
                 message="${args.message}"
-            ></rux-notification>
-        </div>
-    `
-}
-
-const NotificationAutoClose = (args) => {
-    return html`
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-notification
-                ?open="${args.open}"
-                ?small="${args.small}"
-                .closeAfter="${args.closeAfter}"
-                .status="${args.status}"
-                message="This is a notification banner. It will disappear in 2000 ms."
-            ></rux-notification>
-        </div>
-    `
-}
-
-const HideClose = (args) => {
-    return html`
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-notification
-                ?open="${args.open}"
-                ?small="${args.small}"
-                .closeAfter="${args.closeAfter}"
-                .status="${args.status}"
-                .hideClose="${args.hideClose}"
-                message="This is a notification banner. It will disappear in 2000 ms."
-            ></rux-notification>
-        </div>
-    `
-}
-
-const Small = (args) => {
-    return html`
-        <div style="display: flex; flex-flow: column; justify-content: center;">
-            <rux-notification
-                ?open="${args.open}"
-                ?small="${args.small}"
-                .closeAfter="${args.closeAfter}"
-                status="${args.status}"
-                message="${args.message}"
-                .hideClose="${args.hideClose}"
             ></rux-notification>
         </div>
     `
@@ -118,7 +74,7 @@ const ActionsSlot = (args) => {
     `
 }
 
-const WithSlottedContent = (args) => {
+const SlottedContent = (args) => {
     return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-notification
@@ -144,7 +100,7 @@ const WithSlottedContent = (args) => {
     `
 }
 
-const WithWrappedText = (args) => {
+const WrappedText = (args) => {
     return html`
         <style>
             rux-notification::part(message) {
@@ -269,7 +225,7 @@ const AllVariants = () => html`
 export default {
     title: 'Components/Notification',
     component: 'rux-notification',
-    argTypes: args,
+    argTypes: extractArgTypes('rux-notification'),
 
     parameters: {
         actions: {
@@ -278,8 +234,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
     height: '100px',
 
@@ -293,91 +249,108 @@ export const Default_ = {
 }
 
 export const AutoClose = {
-    render: NotificationAutoClose.bind(),
+    render: Base.bind(),
 
     args: {
         open: true,
         closeAfter: 2000,
+        message: 'This is a notification banner. It will disappear in 2000 ms.',
+        status: 'standby',
     },
 
     name: 'Auto Close',
     height: '100px',
 }
 
-export const HideClose_ = {
-    render: HideClose.bind(),
+export const HideClose = {
+    render: Base.bind(),
 
     args: {
         open: true,
         hideClose: true,
+        closeAfter: 2000,
+        message: 'This is a notification banner. It will disappear in 2000 ms.',
+        status: 'standby',
     },
 
     name: 'Hide Close',
     height: '100px',
 }
 
-export const Small_ = {
-    render: Small.bind(),
+export const Small = {
+    render: Base.bind(),
     name: 'Small',
     height: '100px',
 
     args: {
+        open: true,
         small: true,
+        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
+        status: 'standby',
     },
 }
 
-export const PrefixSlot_ = {
+export const WithPrefixSlot = {
     render: PrefixSlot.bind(),
     name: 'Prefix Slot',
     height: '100px',
 
     args: {
         open: true,
+        status: 'standby',
+        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
-export const DefaultSlot_ = {
+export const WithDefaultSlot = {
     render: DefaultSlot.bind(),
     name: 'Default Slot',
     height: '100px',
 
     args: {
         open: true,
+        status: 'standby',
+        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
-export const ActionsSlot_ = {
+export const WithActionsSlot = {
     render: ActionsSlot.bind(),
     name: 'Actions Slot',
     height: '100px',
 
     args: {
         open: true,
+        status: 'standby',
+        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
-export const WithSlottedContent_ = {
-    render: WithSlottedContent.bind(),
+export const WithSlottedContent = {
+    render: SlottedContent.bind(),
     name: 'With Slotted Content',
     height: '100px',
 
     args: {
         open: true,
+        status: 'standby',
+        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
 export const WithWrappedContent = {
-    render: WithWrappedText.bind(),
+    render: WrappedText.bind(),
     name: 'With Wrapped Content',
     height: '100px',
 
     args: {
         open: true,
         status: 'normal',
+        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
-export const AllVariants_ = {
+export const WithAllVariants = {
     render: AllVariants.bind(),
     name: 'All Variants',
 

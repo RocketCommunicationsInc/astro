@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
 <div style="display: flex; width: 100%; justify-content: center; margin-top: 10%;">
     <rux-pop-up open=${args.open} placement=${args.placement} ?close-on-select=${args.closeOnSelect} ?disable-auto-update="${args.disableAutoUpdate} ?enable-animation-frame="${args.enableAnimationFrame}">
@@ -16,7 +16,7 @@ const Default = (args) => {
 `
 }
 
-const Placements = (args) => {
+const WithPlacements = () => {
     return html`
         <div
             style="display: flex; width: 100%; justify-content: center; margin-bottom: 10%; margin-top: 10%;"
@@ -87,8 +87,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         open: true,
@@ -100,8 +100,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const Placements_ = {
-    render: Placements.bind(),
+export const Placements = {
+    render: WithPlacements.bind(),
     name: 'Placements',
 
     argTypes: {

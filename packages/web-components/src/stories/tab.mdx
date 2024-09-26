@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as TabStories from './tab.stories';
 
 <Meta of={TabStories} />
@@ -13,20 +11,7 @@ Tab belongs to the Tabs component.
 
 * [Astro UXDS: Tabs](https://www.astrouxds.com/components/tabs/)
 
-export const Default = (args) => {
-    return html`
-<rux-tab id="tab1"
-    ?disabled=${args.disabled}
-    ?selected=${args.selected}
->
-    Tab 1
-</rux-tab>
-    `
-}
-
-<Canvas>
-  <Story of={TabStories.Default_} />
-</Canvas>
+<Canvas of={TabStories.Default} />
 
 ## API
 
@@ -36,50 +21,17 @@ export const Default = (args) => {
 
 ### Disabled
 
-export const Disabled = (args) => {
-    return html`
-<rux-tab id="tab1"
-    ?disabled=${args.disabled}
-    ?selected=${args.selected}
->
-    Tab 1
-</rux-tab>
-    `
-}
-
-<Canvas>
-  <Story of={TabStories.Disabled_} />
-</Canvas>
+<Canvas of={TabStories.Disabled} />
 
 ### Selected
 
-export const Selected = (args) => {
-    return html`
-<rux-tab id="tab1" ?disabled=${args.disabled} ?selected=${args.selected}
-    >Tab 1</rux-tab
->
-    `
-}
-
-<Canvas>
-  <Story of={TabStories.Selected_} />
-</Canvas>
+<Canvas of={TabStories.Selected} />
 
 ### Actions Slot
 
 The actions slot can be used to trigger a tab action that will not fire off the `ruxselected` event.
 
-export const Actions = (args) => {
-    return html`
-<rux-tab id="tab1" ?disabled=${args.disabled} ?selected=${args.selected}
-    ><span>Tab 1</span><rux-button iconOnly icon="close" borderless slot="actions"></rux-button></rux-tab
->
-    `
-}
-
-<Canvas>
-  <Story of={TabStories.Actions_} />
-</Canvas>
+<Canvas of={TabStories.Actions} />
 
 ## Cherry Picking
 

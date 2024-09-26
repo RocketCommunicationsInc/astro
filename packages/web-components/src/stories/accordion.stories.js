@@ -80,7 +80,7 @@ const Truncate = (args) => {
 }
 
 export default {
-    title: 'Accordion',
+    title: 'Components/Accordion',
     component: 'rux-accordion',
 
     subcomponents: {

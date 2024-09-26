@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
             <rux-monitoring-icon
@@ -24,7 +24,7 @@ const Default = (args) => {
     `
 }
 
-const AllVariants = (args) => {
+const WithAllVariants = () => {
     return html`
         <style>
             ul {
@@ -103,8 +103,8 @@ export default {
     argTypes: extractArgTypes('rux-monitoring-icon'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         status: 'normal',
@@ -118,8 +118,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const AllVariants_ = {
-    render: AllVariants.bind(),
+export const AllVariants = {
+    render: WithAllVariants.bind(),
     name: 'All Variants',
 
     argTypes: {

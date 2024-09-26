@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
             <rux-monitoring-progress-icon
@@ -24,7 +24,7 @@ export default {
 }
 
 export const MonitoringProgressIcon = {
-    render: Default.bind(),
+    render: Base.bind(),
 
     args: {
         progress: 50,

@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as MenuItemDividerStories from './menu-item-divider.stories';
 
 <Meta of={MenuItemDividerStories} />
@@ -9,13 +7,7 @@ import * as MenuItemDividerStories from './menu-item-divider.stories';
 
 Menu Item should be used inside of [Pop Up](?path=/docs/components-pop-up--default-story). It is used to group Menu Items.
 
-export const Default = (args) => {
-    return html` <rux-menu-item-divider></rux-menu-item-divider> `
-}
-
-<Canvas>
-  <Story of={MenuItemDividerStories.Default_} />
-</Canvas>
+<Canvas of={MenuItemDividerStories.Default} />
 
 ## API
 

@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as LogStories from './log.stories';
 
 <Meta of={LogStories} />
@@ -18,18 +16,7 @@ A Log is a tabular representation of application events and may include username
 
 Log is a simple collection of other Astro components: [Table](?path=/docs/components-table--default-story), [Status](?path=/docs/components-status--default-story), [Input Field](?path=/docs/components-input-field--default-story), and a custom [Notification](?path=/docs/components-notification--default-story) bar. For an off-the-shelf solution, you can pass in a data array in the following format.
 
-export const Log = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-log filter="${args.filter}" .data="${args.data}">
-    </rux-log>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={LogStories.Log_} />
-</Canvas>
+<Canvas of={LogStories.Default} />
 
 ## API
 

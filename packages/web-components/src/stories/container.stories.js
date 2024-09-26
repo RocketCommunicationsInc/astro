@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <rux-container>
             Suscipit potenti habitant penatibus praesent quam class erat purus
@@ -11,7 +11,7 @@ const Default = (args) => {
     `
 }
 
-const WithHeader = (args) => {
+const Header = (args) => {
     return html`
         <rux-container>
             <div slot="header">Container</div>
@@ -21,7 +21,7 @@ const WithHeader = (args) => {
     `
 }
 
-const WithTabBar = (args) => {
+const TabBar = (args) => {
     return html`
         <rux-container>
             <div slot="header">Container</div>
@@ -47,7 +47,7 @@ const WithTabBar = (args) => {
     `
 }
 
-const WithToolbar = (args) => {
+const Toolbar = (args) => {
     return html`
         <rux-container>
             <div slot="header">Container</div>
@@ -64,7 +64,7 @@ const WithToolbar = (args) => {
     `
 }
 
-const WithFooter = (args) => {
+const Footer = (args) => {
     return html`
         <rux-container>
             <div slot="header">Container</div>
@@ -81,7 +81,7 @@ const WithFooter = (args) => {
     `
 }
 
-const WithCards = (args) => {
+const Cards = (args) => {
     return html`
         <rux-container>
             <div slot="header">Container</div>
@@ -339,37 +339,37 @@ export default {
     argTypes: extractArgTypes('rux-container'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 }
 
-export const WithHeader_ = {
-    render: WithHeader.bind(),
+export const WithHeader = {
+    render: Header.bind(),
     name: 'With Header',
 }
 
-export const WithTabBar_ = {
-    render: WithTabBar.bind(),
+export const WithTabBar = {
+    render: TabBar.bind(),
     name: 'With Tab Bar',
 }
 
-export const WithToolbar_ = {
-    render: WithToolbar.bind(),
+export const WithToolbar = {
+    render: Toolbar.bind(),
     name: 'With Toolbar',
 }
 
-export const WithFooter_ = {
-    render: WithFooter.bind(),
+export const WithFooter = {
+    render: Footer.bind(),
     name: 'With Footer',
 }
 
-export const WithCards_ = {
-    render: WithCards.bind(),
+export const WithCards = {
+    render: Cards.bind(),
     name: 'With Cards',
 }
 
-export const FullExample_ = {
+export const WithFullExample = {
     render: FullExample.bind(),
     name: 'Full Example',
 }

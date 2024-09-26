@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as TagStories from './tag.stories';
 
 <Meta of={TagStories} />
@@ -9,20 +7,7 @@ import * as TagStories from './tag.stories';
 
 Tags help users quickly identify important information related to an item and categorize items by keywords.
 
-export const Default = (args) => {
-    return html`
-<div style="padding-top: 1%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-    <rux-tag
-        status=${args.status}
-    >
-    </rux-tag>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={TagStories.RuxTag} />
-</Canvas>
+<Canvas of={TagStories.Default} />
 
 ## API
 
@@ -39,44 +24,7 @@ If the status isn't provided or isn't one of the above mentioned types, it will 
 
 ### All Variants
 
-export const Variants = (args) => {
-    return html`
-<style>
-    #custom {
-        width: 100%;
-        background: #003655;
-        border-color: #2B659B;
-    }
-</style>
-<div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-<div style="padding: 1% 5%;">
-    <rux-tag
-        status="pass"
-    >
-    </rux-tag>
-</div>
-<div style="padding: 1% 5%;">
-    <rux-tag
-        status="fail"
-    >
-    </rux-tag>
-</div>
-<div style="padding: 1% 5%;">
-    <rux-tag
-        status="unknown"
-    >
-    </rux-tag>
-</div>
-<div style="padding: 1% 5%;">
-    <rux-tag id="custom">Custom Tag</rux-tag>
-</div>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={TagStories.AllVariants} />
-</Canvas>
+<Canvas of={TagStories.AllVariants} />
 
 ## Cherry Picking
 

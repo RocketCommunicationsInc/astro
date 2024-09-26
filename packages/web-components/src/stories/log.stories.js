@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Log = (args) => {
+const Base = (args) => {
     return html`
         <div style="display: flex; flex-flow: column; justify-content: center;">
             <rux-log filter="${args.filter}" .data="${args.data}"> </rux-log>
@@ -15,8 +15,8 @@ export default {
     argTypes: extractArgTypes('rux-log'),
 }
 
-export const Log_ = {
-    render: Log.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         data: [

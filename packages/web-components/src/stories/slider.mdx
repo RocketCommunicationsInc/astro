@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as SliderStories from './slider.stories';
 
 <Meta of={SliderStories} />
@@ -13,27 +11,7 @@ A Slider allows users to choose from a range of continuous and discrete values. 
 
 * [Astro UXDS: Slider](https://www.astrouxds.com/components/slider/)
 
-export const Default = (args) => {
-    return html`
-<div style="padding: 5%">
-    <rux-slider
-        max="${args.max}"
-        min="${args.min}"
-        step="${args.step}"
-        value="${args.value}"
-        ?disabled="${args.disabled}"
-        help-text="${args.helpText}"
-        error-text="${args.errorText}"
-        label="${args.label}"
-        name="${args.name}"
-    ></rux-slider>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SliderStories.Default_} />
-</Canvas>
+<Canvas of={SliderStories.Default} />
 
 ## API
 
@@ -43,101 +21,19 @@ export const Default = (args) => {
 
 ### Disabled
 
-export const Disabled = (args) => {
-    return html`
-<div style="padding: 5%">
-    <rux-slider
-        max="${args.max}"
-        min="${args.min}"
-        step="${args.step}"
-        value="${args.value}"
-        ?disabled="${args.disabled}"
-        help-text="${args.helpText}"
-        error-text="${args.errorText}"
-        label="${args.label}"
-        name="${args.name}"
-    ></rux-slider>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SliderStories.Disabled_} />
-</Canvas>
+<Canvas of={SliderStories.Disabled} />
 
 ### With Help Text
 
-export const WithHelpText = (args) => {
-    return html`
-<div style="padding: 5%">
-    <rux-slider
-        max="${args.max}"
-        min="${args.min}"
-        step="${args.step}"
-        .value="${args.value}"
-        ?disabled="${args.disabled}"
-        help-text="${args.helpText}"
-        error-text="${args.errorText}"
-        label="${args.label}"
-        name="${args.label}"
-    ></rux-slider>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SliderStories.WithHelpText_} />
-</Canvas>
+<Canvas of={SliderStories.WithHelpText} />
 
 ### With Error Text
 
-export const WithErrorText = (args) => {
-    return html`
-<div style="padding: 5%">
-    <rux-slider
-        max="${args.max}"
-        min="${args.min}"
-        step="${args.step}"
-        .value="${args.value}"
-        ?disabled="${args.disabled}"
-        help-text="${args.helpText}"
-        error-text="${args.errorText}"
-        label="${args.label}"
-        name="${args.name}"
-    ></rux-slider>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SliderStories.WithErrorText_} />
-</Canvas>
+<Canvas of={SliderStories.WithErrorText} />
 
 ### With Axis Labels
 
-export const WithAxisLabels = (args, data) => {
-    return html`
-<div style="padding: 5%">
-    <rux-slider
-        id="axis-labels"
-        max="${args.max}"
-        min="${args.min}"
-        step="${args.step}"
-        .value="${args.value}"
-        ?disabled="${args.disabled}"
-        help-text="${args.helpText}"
-        error-text="${args.errorText}"
-        .axisLabels="${args.axisLabels}"
-        ?ticks-only="${args.ticksOnly}"
-        label="${args.label}"
-    ></rux-slider>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={SliderStories.WithAxisLabels_} />
-</Canvas>
+<Canvas of={SliderStories.WithAxisLabels} />
 
 To display tick marks and labels, make use of the `axis-labels` attribute. This accepts an array of strings that will
 be evenly distributed across the progress bar.
@@ -151,32 +47,7 @@ ticks to show.
 
 Adding the `min-val` attribute to the slider will add a second thumb, creating a dual-range slider.
 
-export const DualRange = (args, data) => {
-    return html`
-<div style="padding: 5%">
-    <rux-slider
-        id="dual-range"
-        max="${args.max}"
-        min="${args.min}"
-        step="${args.step}"
-        value="${args.value}"
-        min-val="${args.minVal}"
-        ?disabled="${args.disabled}"
-        help-text="${args.helpText}"
-        error-text="${args.errorText}"
-        .axisLabels="${args.axisLabels}"
-        ?ticks-only="${args.ticksOnly}"
-        label="${args.label}"
-        ?strict="${args.strict}"
-        name="${args.name}"
-    ></rux-slider>
-</div>
-  `
-}
-
-<Canvas>
-  <Story of={SliderStories.DualRange_} />
-</Canvas>
+<Canvas of={SliderStories.DualRange} />
 
 #### Strict
 
@@ -197,36 +68,7 @@ rux-slider::part(label) {
     margin-right: var(--spacing-2);
 }
 ```
-
-export const HorizontalLabel = (args) => {
-    return html`
-<style>
-    #left-example::part(form-field) {
-        display: flex;
-        flex-direction: row;
-    }
-    #left-example::part(label) {
-        margin-right: var(--spacing-2);
-    }
-</style>
-<rux-slider
-    id="left-example"
-    max="${args.max}"
-    min="${args.min}"
-    step="${args.step}"
-    .value="${args.value}"
-    ?disabled="${args.disabled}"
-    help-text="${args.helpText}"
-    error-text="${args.errorText}"
-    label="${args.label}"
-    name="${args.label}"
-></rux-slider>
-    `
-}
-
-<Canvas>
-  <Story of={SliderStories.HorizontalLabel_} />
-</Canvas>
+<Canvas of={SliderStories.HorizontalLabel} />
 
 ## Cherry Picking
 

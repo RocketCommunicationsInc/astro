@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as MonitoringProgressIconStories from './monitoring-progress-icon.stories';
 
 <Meta of={MonitoringProgressIconStories} />
@@ -13,25 +11,7 @@ The Monitoring Progress Icon is a unique instance of the Monitoring Icon for dis
 
 * [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
 
-export const Default = (args) => {
-    return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-monitoring-progress-icon
-                progress="${args.progress}"
-                .max="${args.max}"
-                .min="${args.min}"
-                label="${args.label}"
-                .range="${args.range}"
-                .sublabel="${args.sublabel}"
-                .notifications="${args.notifications}"
-            ></rux-monitoring-progress-icon>
-        </div>
-    `
-}
-
-<Canvas>
-  <Story of={MonitoringProgressIconStories.MonitoringProgressIcon} />
-</Canvas>
+<Canvas of={MonitoringProgressIconStories.MonitoringProgressIcon} />
 
 ## API
 

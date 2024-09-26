@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const PushButton = (args) => {
+const Base = (args) => {
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
             <rux-push-button
@@ -18,7 +18,7 @@ const PushButton = (args) => {
     `
 }
 
-const AllVariants = (args) => {
+const WithAllVariants = () => {
     return html`
         <style>
             .button-list {
@@ -149,8 +149,8 @@ export default {
     },
 }
 
-export const PushButton_ = {
-    render: PushButton.bind(),
+export const PushButton = {
+    render: Base.bind(),
 
     args: {
         label: 'Push Button',
@@ -172,8 +172,8 @@ export const PushButton_ = {
     name: 'Push Button',
 }
 
-export const AllVariants_ = {
-    render: AllVariants.bind(),
+export const AllVariants = {
+    render: WithAllVariants.bind(),
     name: 'All Variants',
 
     argTypes: {

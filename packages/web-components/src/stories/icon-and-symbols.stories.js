@@ -1,12 +1,12 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
-import ruxIconsJson from './icons.json'
+import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import ruxIconsJson from './icons.json';
 
-const Default = (args) => {
+const Base = (args) => {
     return html` <rux-icon icon="${args.icon}" size="${args.size}"></rux-icon> `
 }
 
-const AllIcons = (args) => {
+const WithAllIcons = (args) => {
     const displaySection = (section) => {
         return html`
             <div class="icon__section">
@@ -31,7 +31,7 @@ const AllIcons = (args) => {
                                     return html`
                                         <div class="icon">
                                             <rux-icon
-                                                size="normal"
+                                                size="${args.size}"
                                                 icon="${name}"
                                             ></rux-icon>
                                             <div class="icon-label">
@@ -95,11 +95,11 @@ const AllIcons = (args) => {
 export default {
     title: 'Components/Icons',
     component: 'rux-icon',
-    argTypes: args,
+    argTypes: extractArgTypes('rux-icon'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         icon: 'satellite-transmit',
@@ -117,8 +117,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const AllIcons_ = {
-    render: AllIcons.bind(),
+export const AllIcons = {
+    render: WithAllIcons.bind(),
 
     args: {
         size: 'normal',

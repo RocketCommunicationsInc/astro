@@ -82,10 +82,10 @@
 }
 
 .sbdocs .css-15ysoxh .banner-text p,
-.sbdocs .css-15ysoxh .banner-text code {
-    color: var(--color-text-inverse);
+.sbdocs .css-15ysoxh .banner-text code, .sbdocs p, .sbdocs.sbdocs-content p {
+  color: var(--color-text-inverse);
 }
 
 .sbdocs .css-15ysoxh .banner-text p {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }

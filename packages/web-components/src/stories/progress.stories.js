@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
             <rux-progress
@@ -13,7 +13,7 @@ const Default = (args) => {
     `
 }
 
-const DeterminateProgressMax = (args) => {
+const WithDeterminateProgressMax = (args) => {
     return html`
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
             <rux-progress
@@ -25,7 +25,7 @@ const DeterminateProgressMax = (args) => {
     `
 }
 
-const DeterminateProgressCustomMax = (args) => {
+const WithDeterminateProgressCustomMax = (args) => {
     return html`
         <div style="margin: 3rem auto;  padding: 2rem; text-align: center;">
             <rux-progress
@@ -43,8 +43,8 @@ export default {
     argTypes: extractArgTypes('rux-progress'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         value: 1,
@@ -55,8 +55,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const DeterminateProgressMax_ = {
-    render: DeterminateProgressMax.bind(),
+export const DeterminateProgressMax = {
+    render: WithDeterminateProgressMax.bind(),
 
     args: {
         value: 100,
@@ -68,7 +68,7 @@ export const DeterminateProgressMax_ = {
 }
 
 export const DeterminateProgressWithCustomMax = {
-    render: DeterminateProgressCustomMax.bind(),
+    render: WithDeterminateProgressCustomMax.bind(),
 
     args: {
         value: 1123,

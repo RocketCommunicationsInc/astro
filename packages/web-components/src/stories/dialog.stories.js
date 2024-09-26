@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Dialog = (args) => {
+const Base = (args) => {
     return html`
 <div style="display: flex; flex-flow: column; justify-content: center;">
     <rux-dialog
@@ -11,11 +11,11 @@ const Dialog = (args) => {
         confirm-text="${args.confirmText}"
         deny-text="${args.denyText}"
     ></rux-dialog>
-</div
+</div>
     `
 }
 
-const WithSlots = (args) => {
+const Slots = (args) => {
     return html`
         <div
             style="display: flex; flex-direction: column; justify-content: center;"
@@ -67,8 +67,8 @@ export default {
     },
 }
 
-export const Dialog_ = {
-    render: Dialog.bind(),
+export const Dialog = {
+    render: Base.bind(),
 
     args: {
         open: true,
@@ -82,8 +82,8 @@ export const Dialog_ = {
     name: 'Dialog',
 }
 
-export const WithSlots_ = {
-    render: WithSlots.bind(),
+export const WithSlots = {
+    render: Slots.bind(),
 
     args: {
         open: true,

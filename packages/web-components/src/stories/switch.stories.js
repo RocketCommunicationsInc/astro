@@ -1,53 +1,15 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Switch = (args) => {
+const Base = (args) => {
     return html`
         <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
             <rux-switch
                 ?disabled=${args.disabled}
                 ?checked=${args.checked}
-                label=${args.label}
+                .label=${args.label}
                 name=${args.name}
                 value=${args.value}
-            ></rux-switch>
-        </div>
-    `
-}
-
-const On = (args) => {
-    return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-switch
-                ?disabled=${args.disabled}
-                ?checked=${args.checked}
-                .label=${args.label}
-            ></rux-switch>
-        </div>
-    `
-}
-
-const Disabled = (args) => {
-    return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-switch
-                ?disabled=${args.disabled}
-                ?checked=${args.checked}
-                name=${args.name}
-                value=${args.value}
-                .label=${args.label}
-            ></rux-switch>
-        </div>
-    `
-}
-
-const WithLabel = (args) => {
-    return html`
-        <div style="margin: 3rem auto; max-width: 5rem; text-align: center;">
-            <rux-switch
-                ?disabled=${args.disabled}
-                ?checked=${args.checked}
-                .label=${args.label}
             ></rux-switch>
         </div>
     `
@@ -69,8 +31,8 @@ export default {
     },
 }
 
-export const Switch_ = {
-    render: Switch.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Switch',
 
     args: {
@@ -82,17 +44,21 @@ export const Switch_ = {
     },
 }
 
-export const On_ = {
-    render: On.bind(),
+export const On = {
+    render: Base.bind(),
     name: 'On',
 
     args: {
         checked: true,
+        disabled: false,
+        label: '',
+        name: '',
+        value: '',
     },
 }
 
-export const Disabled_ = {
-    render: Disabled.bind(),
+export const Disabled = {
+    render: Base.bind(),
     name: 'Disabled',
 
     args: {
@@ -104,11 +70,15 @@ export const Disabled_ = {
     },
 }
 
-export const WithLabel_ = {
-    render: WithLabel.bind(),
+export const WithLabel = {
+    render: Base.bind(),
     name: 'With Label',
 
     args: {
         label: 'Switch Label',
+        checked: false,
+        disabled: false,
+        name: '',
+        value: '',
     },
 }

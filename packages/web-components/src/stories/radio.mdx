@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as RadioStories from './radio.stories';
 
 <Meta of={RadioStories} />
@@ -18,23 +16,7 @@ The Radio Group component is responsible for checking and unchecking individual 
 * [Astro UXDS: Radio Buttons](https://www.astrouxds.com/ui-components/radio-button)
 * [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
 
-export const Default = (args) => {
-    return html`
-    <rux-radio
-        name="${args.name}"
-        ?checked=${args.checked}
-        ?disabled=${args.disabled}
-        .value="${args.value}"
-        label="${args.label}"
-    >
-        ${args.label}
-    </rux-radio>
-    `
-}
-
-<Canvas>
-  <Story of={RadioStories.Default_} />
-</Canvas>
+<Canvas of={RadioStories.Default} />
 
 ## API
 
@@ -44,40 +26,11 @@ export const Default = (args) => {
 
 ### Checked
 
-export const Checked = (args) => {
-    return html`
-<rux-radio
-    name="${args.name}"
-    ?checked=${args.checked}
-    ?disabled=${args.disabled}
-    value="${args.value}"
-    >${args.label}</rux-radio
->
-    `
-}
-
-<Canvas>
-  <Story of={RadioStories.Checked_} />
-</Canvas>
+<Canvas of={RadioStories.Checked} />
 
 ### Disabled
 
-export const Disabled = (args) => {
-    return html`
-<rux-radio
-    .name="${args.name}"
-    ?checked=${args.checked}
-    ?disabled=${args.disabled}
-    .value="${args.value}"
-    .label="${args.label}"
-    >${args.label}</rux-radio
->
-    `
-}
-
-<Canvas>
-  <Story of={RadioStories.Disabled_} />
-</Canvas>
+<Canvas of={RadioStories.Disabled} />
 
 ## Cherry Picking
 

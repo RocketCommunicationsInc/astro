@@ -1,7 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <style>
             pre {
@@ -43,7 +43,7 @@ const Default = (args) => {
     `
 }
 
-const Small = (args) => {
+const SmallExample = (args) => {
     return html`
         <div style="display: flex; flex-flow: column;">
             <div
@@ -96,8 +96,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -105,8 +105,8 @@ export const Default_ = {
     },
 }
 
-export const Small_ = {
-    render: Small.bind(),
+export const Small = {
+    render: SmallExample.bind(),
     name: 'Small',
 
     args: {
