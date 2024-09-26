@@ -19678,6 +19678,10 @@ export namespace Components {
     }
     interface RuxPushButton {
         /**
+          * Specifies the label text to use if the push button is pushed.
+         */
+        "activeLabel"?: string;
+        /**
           * Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.
          */
         "checked": boolean;
@@ -19693,6 +19697,10 @@ export namespace Components {
           * Hides slotted text from the button by setting rux-button--icon-only class
          */
         "iconOnly": boolean;
+        /**
+          * Specifies the label text to use if the push button is not pushed.
+         */
+        "inactiveLabel"?: string;
         /**
           * The label of the push button.
          */
@@ -55238,6 +55246,10 @@ declare namespace LocalJSX {
     }
     interface RuxPushButton {
         /**
+          * Specifies the label text to use if the push button is pushed.
+         */
+        "activeLabel"?: string;
+        /**
           * Checks the push button via HTML `checked` attribute. Push button takes on a distinct "enabled" or "selected" visual state.
          */
         "checked"?: boolean;
@@ -55253,6 +55265,10 @@ declare namespace LocalJSX {
           * Hides slotted text from the button by setting rux-button--icon-only class
          */
         "iconOnly"?: boolean;
+        /**
+          * Specifies the label text to use if the push button is not pushed.
+         */
+        "inactiveLabel"?: string;
         /**
           * The label of the push button.
          */

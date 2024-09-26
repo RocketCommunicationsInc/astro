@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Dialog', () => {
     test('it renders with slots', async ({ page }) => {
@@ -155,6 +155,18 @@ test.describe('Dialog', () => {
 
         expect(closeEvent).toHaveReceivedEventDetail(false)
     })
+    test('it renders the message prop text when used with slots', async ({
+        page,
+    }) => {
+        const template = `
+          <rux-dialog open message="Message Prop">
+              <span slot="header">Slot Header</span>
+          </rux-dialog>
+      `
+        await page.setContent(template)
+        const messageContainer = await page.locator('.rux-dialog__message')
+        await expect(messageContainer).toContainText('Message Prop')
+    })
 })
 test.describe(
     'Dialog does not close on an off click unless click-to-close is true',
@@ -223,18 +235,6 @@ test.describe(
 
             //using NthReceivedEventDetail here because the spy should have fired twice
             expect(closeEvent).toHaveNthReceivedEventDetail(1, null)
-        })
-        test('it renders the message prop text when used with slots', async ({
-            page,
-        }) => {
-            const template = `
-                <rux-dialog open message="Message Prop">
-                    <span slot="header">Slot Header</span>
-                </rux-dialog>
-            `
-            await page.setContent(template)
-            const messageContainer = await page.locator('.rux-dialog__message')
-            await expect(messageContainer).toContainText('Message Prop')
         })
     }
 )

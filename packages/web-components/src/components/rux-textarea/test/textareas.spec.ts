@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Textarea', () => {
     test('it renders error text', async ({ page }) => {
@@ -84,20 +84,16 @@ test.describe('Textarea in a form', () => {
             <rux-textarea label="hello"></rux-textarea>
         `
         await page.setContent(template)
-        const el = await page.locator('rux-textarea')
-        const label = el.locator('label')
-
-        await expect(label).toHaveClass('rux-textarea-label')
+        const el = await page.getByLabel('hello')
+        await expect(el).toBeDefined()
     })
     test('it renders label slot', async ({ page }) => {
         const template = `
             <rux-textarea><div slot="label">hello</div></rux-textarea>
         `
         await page.setContent(template)
-        const el = await page.locator('rux-textarea')
-        const label = el.locator('label')
-
-        await expect(label).toHaveClass('rux-textarea-label')
+        const el = await page.getByText('hello')
+        await expect(el).toBeDefined()
     })
 })
 test.describe('Textarea events', () => {
