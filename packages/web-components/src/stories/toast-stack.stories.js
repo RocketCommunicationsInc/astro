@@ -1,58 +1,24 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
-import { styled } from '@storybook/theming'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const StyledDiv = styled.div`
-    position: relative;
-    margin: 1rem 0;
-    border-left: 20px solid var(--color-status-serious);
-    background: white;
-    color: var(--color-status-serious);
-    padding: 19px;
-    font-family: var(--font-body-1-bold-font-family);
-    font-size: var(--font-body-1-bold-font-size);
-    font-weight: var(--font-body-1-bold-font-weight);
-    letter-spacing: var(--font-body-1-bold-letter-spacing);
-    .banner-text {
-        margin-top: 1rem;
-        color: var(--color-text-inverse);
-    }
-`
-
-const BetaTag = styled.div`
-    display: inline-block;
-    padding: 7px;
-    color: var(--color-palette-neutral-1000);
-    border-radius: var(--radius-base);
-    background: var(--color-palette-teal-300);
-    font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
-`
-
-const Default = (args) => {
+const Base = (args) => {
     return html`
-        <rux-toast-stack position="${args.position}">
-            <rux-toast message="Toast 2"></rux-toast>
+    <div style="height: 300px;">
+      <rux-toast-stack position="${args.position}">
+            <rux-toast message="Toast 1"></rux-toast>
             <rux-toast message="Toast 2"></rux-toast>
         </rux-toast-stack>
+    </div>
+
     `
 }
 
-const HideClose = (args) => {
-    return html`
-        <rux-toast-stack position="${args.position}">
-            <rux-toast message="Toast 2"></rux-toast>
-            <rux-toast message="Toast 2"></rux-toast>
-        </rux-toast-stack>
-    `
-}
-
-const AllVariants = () => html`
+const AllVariantsExample = () => {
+  return html`
     <style>
         .wrapper {
             margin-bottom: 1rem;
+            height: 500px;
         }
     </style>
     <section>
@@ -76,6 +42,7 @@ const AllVariants = () => html`
         </div>
     </section>
 `
+      }
 
 export default {
     title: 'Beta/Toast Stack [BETA]',
@@ -85,13 +52,12 @@ export default {
         RuxToast: 'rux-toast',
     },
 
-    argTypes: args,
+    argTypes: extractArgTypes('rux-toast-stack'),
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
-    height: '300px',
 
     args: {
         position: 'top-right',
@@ -99,20 +65,18 @@ export const Default_ = {
 }
 
 export const Position = {
-    render: HideClose.bind(),
+    render: Base.bind(),
 
     args: {
         position: 'top-right',
     },
 
     name: 'Position',
-    height: '300px',
 }
 
-export const AllVariants_ = {
-    render: AllVariants.bind(),
+export const AllVariants = {
+    render: AllVariantsExample.bind(),
     name: 'All Variants',
-    height: '500px',
 
     argTypes: {
         position: {

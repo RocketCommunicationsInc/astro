@@ -1,37 +1,7 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
-import { styled } from '@storybook/theming'
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
+import { html } from 'lit-html';
 
-const StyledDiv = styled.div`
-    position: relative;
-    margin: 1rem 0;
-    border-left: 20px solid var(--color-status-serious);
-    background: white;
-    color: var(--color-status-serious);
-    padding: 19px;
-    font-family: var(--font-body-1-bold-font-family);
-    font-size: var(--font-body-1-bold-font-size);
-    font-weight: var(--font-body-1-bold-font-weight);
-    letter-spacing: var(--font-body-1-bold-letter-spacing);
-    .banner-text {
-        margin-top: 1rem;
-        color: var(--color-text-inverse);
-    }
-`
-
-const BetaTag = styled.div`
-    display: inline-block;
-    padding: 7px;
-    color: var(--color-palette-neutral-1000);
-    border-radius: var(--radius-base);
-    background: var(--color-palette-teal-300);
-    font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
-`
-
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div
             style="display: flex; flex-flow: column; justify-content: center; align-items: center;"
@@ -46,49 +16,7 @@ const Default = (args) => {
     `
 }
 
-const ToastAutoClose = (args) => {
-    return html`
-        <div
-            style="display: flex; flex-flow: column; justify-content: center; align-items: center;"
-        >
-            <rux-toast
-                close-after="${args.closeAfter}"
-                message="${args.message}"
-            ></rux-toast>
-        </div>
-    `
-}
-
-const HideClose = (args) => {
-    return html`
-        <div
-            style="display: flex; flex-flow: column; justify-content: center; align-items: center;"
-        >
-            <rux-toast
-                close-after="${args.closeAfter}"
-                hide-close="${args.hideClose}"
-                message="${args.message}"
-            ></rux-toast>
-        </div>
-    `
-}
-
-const WithStatus = (args) => {
-    return html`
-        <div
-            style="display: flex; flex-flow: column; justify-content: center; align-items: center;"
-        >
-            <rux-toast
-                close-after="${args.closeAfter}"
-                hide-close="${args.hideClose}"
-                message="${args.message}"
-                status="${args.status}"
-            ></rux-toast>
-        </div>
-    `
-}
-
-const DefaultSlot = (args) => {
+const DefaultSlotExample = () => {
     return html`
         <div
             style="display: flex; flex-flow: column; justify-content: center; align-items: center;"
@@ -101,7 +29,7 @@ const DefaultSlot = (args) => {
     `
 }
 
-const AllVariants = () => html`
+const AllVariantsExample = () => html`
     <div
         style="display: flex; flex-flow: column; justify-content: center; align-items: center;"
     >
@@ -136,7 +64,7 @@ export default {
         RuxToastStack: 'rux-toast-stack',
     },
 
-    argTypes: args,
+    argTypes: extractArgTypes('rux-toast'),
 
     parameters: {
         actions: {
@@ -145,67 +73,65 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
-    height: '100px',
 
     args: {
         closeAfter: null,
-        hideClose: null,
+        hideClose: false,
         message: 'This is a toast',
-        status: 'standby',
+        status: '',
     },
 }
 
 export const AutoClose = {
-    render: ToastAutoClose.bind(),
+    render: Base.bind(),
+    name: 'Auto Close',
 
     args: {
-        closeAfter: 2000,
+        closeAfter: 5000,
         hideClose: null,
-        message: 'This toast will disappear in 2000 ms.',
+        message: 'This toast will disappear in 5000 ms.',
+        status: '',
     },
 
-    name: 'Auto Close',
-    height: '100px',
+
 }
 
-export const HideClose_ = {
-    render: HideClose.bind(),
+export const HideClose = {
+    render: Base.bind(),
 
     args: {
         closeAfter: null,
         hideClose: true,
         message: 'Toast without the close icon.',
+        status: '',
     },
 
     name: 'Hide Close',
-    height: '100px',
 }
 
-export const WithStatus_ = {
-    render: WithStatus.bind(),
+export const WithStatus = {
+    render: Base.bind(),
 
     args: {
         closeAfter: null,
-        hideClose: true,
+        hideClose: false,
         message: 'Toast with a status.',
         status: 'normal',
     },
 
     name: 'With Status',
-    height: '100px',
 }
 
-export const DefaultSlot_ = {
-    render: DefaultSlot.bind(),
+export const DefaultSlot = {
+    render: DefaultSlotExample.bind(),
     name: 'Default Slot',
-    height: '100px',
 }
 
-export const AllVariants_ = {
-    render: AllVariants.bind(),
+export const AllVariants = {
+    render: AllVariantsExample.bind(),
     name: 'All Variants',
 
     argTypes: {

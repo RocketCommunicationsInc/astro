@@ -1,7 +1,8 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
-import { styled } from '@storybook/theming'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { styled } from '@storybook/theming';
+import * as ToastStackStories from './toast-stack.stories';
+import { BetaTag } from './storybook-tags.mdx';
+
 export const StyledDiv = styled.div`
     position: relative;
     margin: 1rem 0;
@@ -18,22 +19,6 @@ export const StyledDiv = styled.div`
         color: var(--color-text-inverse);
     }
 `
-import * as ToastStackStories from './toast-stack.stories';
-
-export const BetaTag = styled.div`
-  display: inline-block;
-  padding: 7px;
-  color: var(--color-palette-neutral-1000);
-  border-radius: var(--radius-base);
-  background: var(--color-palette-teal-300);
-      font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
-`
-
-const args = extractArgTypes('rux-toast-stack')
-args.position.defaultValue = 'top-right'
 
 <Meta of={ToastStackStories} />
 
@@ -52,24 +37,7 @@ A toast stack is a container component that controls the creation and positionin
   </p>
 </StyledDiv>
 
-export const Default = (args) => {
-    return html`
-<rux-toast-stack
-    position="${args.position}"
->
-  <rux-toast
-      message="Toast 2"
-  ></rux-toast>
-  <rux-toast
-      message="Toast 2"
-  ></rux-toast>
-</rux-toast-stack>
-    `
-}
-
-<Canvas>
-  <Story of={ToastStackStories.Default_} />
-</Canvas>
+<Canvas of={ToastStackStories.Default} />
 
 ## Usage
 
@@ -85,82 +53,11 @@ The toast stack component can create toasts via the internal method `addToast()`
 
 The toast stack can be positioned around the four corners of the viewport by setting values using the position prop.
 
-export const HideClose = (args) => {
-    return html`
-  <rux-toast-stack
-        position="${args.position}"
-    >
-      <rux-toast
-          message="Toast 2"
-      ></rux-toast>
-      <rux-toast
-          message="Toast 2"
-      ></rux-toast>
-  </rux-toast-stack>
-    `
-}
-
-<Canvas>
-  <Story of={ToastStackStories.Position} />
-</Canvas>
+<Canvas of={ToastStackStories.Position} />
 
 ### All Variants
 
-export const AllVariants = () => html`
-<style>
-    .wrapper {
-        margin-bottom: 1rem;
-    }
-</style>
-<section>
-  <div class="wrapper">
-      <rux-toast-stack
-            position="top-right"
-        >
-          <rux-toast
-              message="Toast 1"
-          ></rux-toast>
-          <rux-toast
-              message="Toast 2"
-          ></rux-toast>
-      </rux-toast-stack>
-      <rux-toast-stack
-            position="top-left"
-        >
-          <rux-toast
-              message="Toast 1"
-          ></rux-toast>
-          <rux-toast
-              message="Toast 2"
-          ></rux-toast>
-      </rux-toast-stack>
-      <rux-toast-stack
-            position="bottom-right"
-        >
-          <rux-toast
-              message="Toast 1"
-          ></rux-toast>
-          <rux-toast
-              message="Toast 2"
-          ></rux-toast>
-      </rux-toast-stack>
-      <rux-toast-stack
-            position="bottom-left"
-        >
-          <rux-toast
-              message="Toast 1"
-          ></rux-toast>
-          <rux-toast
-              message="Toast 2"
-          ></rux-toast>
-      </rux-toast-stack>
-    </div>
-</section>
-`
-
-<Canvas>
-  <Story of={ToastStackStories.AllVariants_} />
-</Canvas>
+<Canvas of={ToastStackStories.AllVariants} />
 
 ## Cherry Picking
 

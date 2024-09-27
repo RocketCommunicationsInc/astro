@@ -1,6 +1,4 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
 import * as TreeNodeStories from './tree-node.stories';
 
 <Meta of={TreeNodeStories} />
@@ -13,21 +11,7 @@ Tree Node should be used with the [Tree](/?path=/story/components-tree--tree) co
 
 * [Astro UXDS: Tree](http://www.astrouxds.com/library/tree)
 
-export const Default = (args) => {
-    return html`
-<rux-tree-node
-    ?selected="${args.selected}"
-    ?expanded="${args.expanded}"
-    aria-level="1"
->
-    Level 1
-</rux-tree-node>
-    `
-}
-
-<Canvas>
-  <Story of={TreeNodeStories.Default_} />
-</Canvas>
+<Canvas of={TreeNodeStories.Default} />
 
 ## API
 
@@ -37,40 +21,11 @@ export const Default = (args) => {
 
 ### Selected
 
-export const Selected = (args) => {
-    return html`
-<rux-tree-node
-    ?selected="${args.selected}"
-    ?expanded="${args.expanded}"
-    aria-level="1"
->
-    Level 1
-</rux-tree-node>
-    `
-}
-
-<Canvas>
-  <Story of={TreeNodeStories.Selected_} />
-</Canvas>
+<Canvas of={TreeNodeStories.Selected} />
 
 ### Expanded
 
-export const Expanded = (args) => {
-    return html`
-<rux-tree-node
-    ?selected="${args.selected}"
-    ?expanded="${args.expanded}"
-    aria-level="1"
->
-    Level 1
-    <rux-tree-node slot="node">Level 2</rux-tree-node>
-</rux-tree-node>
-    `
-}
-
-<Canvas>
-  <Story of={TreeNodeStories.Expanded_} />
-</Canvas>
+<Canvas of={TreeNodeStories.Expanded} />
 
 ## Cherry Picking
 

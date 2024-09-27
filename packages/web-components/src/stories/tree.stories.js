@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = () => {
     const treeData = [
         {
             label: 'Tree item 1',
@@ -130,7 +130,7 @@ const Default = (args) => {
     `
 }
 
-const status = (args) => {
+const StatusExample = () => {
     const treeData = [
         {
             label: 'Tree item 1',
@@ -244,7 +244,7 @@ const status = (args) => {
     `
 }
 
-const WrapText = (args) => {
+const WrapTextExample = () => {
     return html`
         <style>
             .container {
@@ -312,17 +312,17 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 }
 
 export const WithStatus = {
-    render: status.bind(),
+    render: StatusExample.bind(),
     name: 'With Status',
 }
 
 export const WithWrappedText = {
-    render: WrapText.bind(),
+    render: WrapTextExample.bind(),
     name: 'With Wrapped Text',
 }

@@ -1,36 +1,6 @@
-import { html, render } from 'lit-html'
-import { styled } from '@storybook/theming'
+import { html } from 'lit-html';
 
-const StyledDiv = styled.div`
-    position: relative;
-    margin: 1rem 0;
-    border-left: 20px solid var(--color-status-serious);
-    background: white;
-    color: var(--color-status-serious);
-    padding: 19px;
-    font-family: var(--font-body-1-bold-font-family);
-    font-size: var(--font-body-1-bold-font-size);
-    font-weight: var(--font-body-1-bold-font-weight);
-    letter-spacing: var(--font-body-1-bold-letter-spacing);
-    .banner-text {
-        margin-top: 1rem;
-        color: var(--color-text-inverse);
-    }
-`
-
-const BetaTag = styled.div`
-    display: inline-block;
-    padding: 7px;
-    color: var(--color-palette-neutral-1000);
-    border-radius: var(--radius-base);
-    background: var(--color-palette-teal-300);
-    font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
-`
-
-const Default = (args) => {
+const Base = (args) => {
     let start = args.start
     let end = args.end
     let position = args.playhead
@@ -132,7 +102,7 @@ const Default = (args) => {
     `
 }
 
-const VerticalScroll = (args) => {
+const VerticalScrollExample = () => {
     return html`
         <style>
             rux-timeline::part(time-region-container) {
@@ -224,7 +194,7 @@ const VerticalScroll = (args) => {
     `
 }
 
-const SubTracks = () => {
+const SubTracksExample = () => {
     return html` <iframe
         src="https://codesandbox.io/embed/timeline-demo-collapse-js-rqf39e"
         style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
@@ -234,7 +204,7 @@ const SubTracks = () => {
     ></iframe>`
 }
 
-const WithPlayedIndicator = (args) => {
+const WithPlayedIndicatorExample = () => {
     return html`
         <style>
             rux-timeline::part(time-region-container) {
@@ -328,7 +298,7 @@ const WithPlayedIndicator = (args) => {
     `
 }
 
-const ShowStartOfDay = (args) => {
+const ShowStartOfDayExample = () => {
     return html`
         <style>
             rux-timeline::part(time-region-container) {
@@ -361,7 +331,7 @@ const ShowStartOfDay = (args) => {
     `
 }
 
-const Minutes = (args) => {
+const MinutesExample = () => {
     return html`
         <style>
             rux-timeline::part(time-region-container) {
@@ -394,7 +364,7 @@ const Minutes = (args) => {
     `
 }
 
-const Months = (args) => {
+const MonthsExample = (args) => {
     let start = args.start
     if (!start) {
         start = '2023-01-01T00:00:00Z'
@@ -694,8 +664,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -710,7 +680,7 @@ export const Default_ = {
 }
 
 export const WithVerticalScroll = {
-    render: VerticalScroll.bind(),
+    render: VerticalScrollExample.bind(),
     name: 'With Vertical Scroll',
 }
 
@@ -719,28 +689,28 @@ export const Track = {
     name: 'Track',
 }
 
-export const SubTracks_ = {
-    render: SubTracks.bind(),
+export const SubTracks = {
+    render: SubTracksExample.bind(),
     name: 'SubTracks',
 }
 
-export const WithPlayedIndicator_ = {
-    render: WithPlayedIndicator.bind(),
+export const WithPlayedIndicator = {
+    render: WithPlayedIndicatorExample.bind(),
     name: 'With Played Indicator',
 }
 
-export const ShowStartOfDay_ = {
-    render: ShowStartOfDay.bind(),
+export const ShowStartOfDay = {
+    render: ShowStartOfDayExample.bind(),
     name: 'Show Start of Day',
 }
 
-export const Minutes_ = {
-    render: Minutes.bind(),
+export const Minutes = {
+    render: MinutesExample.bind(),
     name: 'Minutes',
 }
 
 export const MonthsWeeks = {
-    render: Months.bind(),
+    render: MonthsExample.bind(),
     name: 'Months/Weeks',
 
     args: {

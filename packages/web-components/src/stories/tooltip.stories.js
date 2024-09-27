@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <div
             style="padding: 5%; display: flex; flex-direction: column; justify-content: center; align-items: center;"
@@ -21,7 +21,7 @@ const Default = (args) => {
     `
 }
 
-const Placements = (args) => {
+const PlacementsExample = () => {
     return html`
         <div
             style="display: flex; flex-direction: row; justify-content: center; align-items: center;"
@@ -117,8 +117,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
 
     args: {
         open: true,
@@ -133,8 +133,8 @@ export const Default_ = {
     name: 'Default',
 }
 
-export const Placements_ = {
-    render: Placements.bind(),
+export const Placements = {
+    render: PlacementsExample.bind(),
     name: 'Placements',
 
     argTypes: {

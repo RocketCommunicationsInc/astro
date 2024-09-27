@@ -1,7 +1,7 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { html, render } from 'lit-html'
+import { html } from 'lit-html'
 
-const Default = (args) => {
+const Base = (args) => {
     return html`
         <rux-tree-node
             ?selected="${args.selected}"
@@ -13,19 +13,7 @@ const Default = (args) => {
     `
 }
 
-const Selected = (args) => {
-    return html`
-        <rux-tree-node
-            ?selected="${args.selected}"
-            ?expanded="${args.expanded}"
-            aria-level="1"
-        >
-            Level 1
-        </rux-tree-node>
-    `
-}
-
-const Expanded = (args) => {
+const ExpandedExample = (args) => {
     return html`
         <rux-tree-node
             ?selected="${args.selected}"
@@ -50,8 +38,8 @@ export default {
     },
 }
 
-export const Default_ = {
-    render: Default.bind(),
+export const Default = {
+    render: Base.bind(),
     name: 'Default',
 
     args: {
@@ -60,8 +48,8 @@ export const Default_ = {
     },
 }
 
-export const Selected_ = {
-    render: Selected.bind(),
+export const Selected = {
+    render: Base.bind(),
 
     args: {
         expanded: false,
@@ -71,8 +59,8 @@ export const Selected_ = {
     name: 'Selected',
 }
 
-export const Expanded_ = {
-    render: Expanded.bind(),
+export const Expanded = {
+    render: ExpandedExample.bind(),
 
     args: {
         expanded: true,

@@ -1,7 +1,8 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
-import { html, render } from 'lit-html'
-import { styled } from '@storybook/theming'
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { styled } from '@storybook/theming';
+import { BetaTag } from './storybook-tags.mdx';
+import * as ToastStories from './toast.stories';
+
 export const StyledDiv = styled.div`
     position: relative;
     margin: 1rem 0;
@@ -17,19 +18,6 @@ export const StyledDiv = styled.div`
         margin-top: 1rem;
         color: var(--color-text-inverse);
     }
-`
-import * as ToastStories from './toast.stories';
-
-export const BetaTag = styled.div`
-  display: inline-block;
-  padding: 7px;
-  color: var(--color-palette-neutral-1000);
-  border-radius: var(--radius-base);
-  background: var(--color-palette-teal-300);
-      font-family: var(--font-body-2-bold-font-family);
-    font-size: var(--font-body-2-bold-font-size);
-    font-weight: var(--font-body-2-bold-font-weight);
-    letter-spacing: var(--font-body-2-bold-letter-spacing);
 `
 
 {/* const args = extractArgTypes('rux-toast')
@@ -61,22 +49,7 @@ The toast's close icon size can be changed by setting the `--iconSize` CSS custo
   </p>
 </StyledDiv>
 
-export const Default = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-    <rux-toast
-        message="${args.message}"
-        close-after="${args.closeAfter}"
-        hide-close=${args.hideClose}
-        status="${args.status}"
-    ></rux-toast>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ToastStories.Default_} />
-</Canvas>
+<Canvas of={ToastStories.Default} />
 
 ## Usage
 
@@ -94,63 +67,21 @@ Toasts should be added to a toast-stack component to manage their position in th
 
 Sets a value in seconds or milliseconds to close the toast.
 
-export const ToastAutoClose = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-    <rux-toast
-        close-after="${args.closeAfter}"
-        message="${args.message}"
-    ></rux-toast>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ToastStories.AutoClose} />
-</Canvas>
+<Canvas of={ToastStories.AutoClose} />
 
 ### Hide Close
 
 In cases like auto close where you don't want to allow the user to be able to manually close the toast,
 you may use the `hide-close` attribute.
 
-export const HideClose = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-    <rux-toast
-        close-after="${args.closeAfter}"
-        hide-close="${args.hideClose}"
-        message="${args.message}"
-    ></rux-toast>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ToastStories.HideClose_} />
-</Canvas>
+<Canvas of={ToastStories.HideClose} />
 
 ### With Status
 
 In cases where you need to display a certain status (for example success or error toasts), you can use
 the `status` prop.
 
-export const WithStatus = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-    <rux-toast
-        close-after="${args.closeAfter}"
-        hide-close="${args.hideClose}"
-        message="${args.message}"
-        status="${args.status}"
-    ></rux-toast>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ToastStories.WithStatus_} />
-</Canvas>
+<Canvas of={ToastStories.WithStatus} />
 
 ### Default Slot
 
@@ -159,71 +90,11 @@ within your message.
 
 > NOTE: Content placed inside the default slot will override the `message` attribute.
 
-export const DefaultSlot = (args) => {
-    return html`
-<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-    <rux-toast
-         message="Toast message"
-    >
-    Toast
-    <a href="#" style="margin-left: 8px">Link</a>
-    </rux-toast>
-</div>
-    `
-}
-
-<Canvas>
-  <Story of={ToastStories.DefaultSlot_} />
-</Canvas>
+<Canvas of={ToastStories.DefaultSlot} />
 
 ### All Variants
 
-export const AllVariants = () => html`
-<div style="display: flex; flex-flow: column; justify-content: center; align-items: center;">
-      <rux-toast message="Toast with message set via prop."></rux-toast>
-      <rux-toast>
-          Toast with content set via default slot
-          <a href="#" style="margin-left: 8px">Link</a>
-      </rux-toast>
-      <rux-toast
-        hide-close="true"
-        message="Toast with close icon hidden."
-      ></rux-toast>
-      <rux-toast
-        close-after="2000"
-        hide-close="true"
-        message="Toast will close after 2000ms"
-      ></rux-toast>
-      <rux-toast
-        message="Standby"
-        status="standby"
-        ></rux-toast>
-              <rux-toast
-        message="Normal"
-        status="normal"
-        ></rux-toast>
-              <rux-toast
-        message="Off"
-        status="off"
-        ></rux-toast>
-              <rux-toast
-        message="Caution"
-        status="caution"
-        ></rux-toast>
-              <rux-toast
-        message="Serious"
-        status="serious"
-        ></rux-toast>
-              <rux-toast
-        message="Critical"
-        status="critical"
-        ></rux-toast>
-</div>
-`
-
-<Canvas>
-  <Story of={ToastStories.AllVariants_} />
-</Canvas>
+<Canvas of={ToastStories.AllVariants} />
 
 ## Cherry Picking
 
