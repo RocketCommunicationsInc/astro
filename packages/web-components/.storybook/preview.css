@@ -42,7 +42,10 @@
   text-decoration: none;
 }
 
-.sbdocs a {
+.sbdocs a,
+.sbdocs a p,
+.sbdocs.sbdocs-content a p
+ {
   color: var(--color-background-interactive-default);
   text-decoration: none;
 }
@@ -93,4 +96,22 @@
 .sbdocs .css-wzniqs {
   display: flex;
   align-items: center;
+}
+
+.sbdocs .framework {
+  padding: 1rem;
+  text-align: center;
+  border-radius: var(--radius-base);
+  border: 1px solid var(--color-background-interactive-default);
+  cursor: pointer;
+}
+
+.sbdocs .framework  svg {
+  margin-bottom: 2rem;
+  width: 100px;
+  height: 100px;
+}
+
+.sbdocs .framework a p {
+  font-size: 1.5rem;
 }
