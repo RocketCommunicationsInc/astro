@@ -25,7 +25,7 @@ const Base = (args) => {
     `
 }
 
-const Truncate = (args) => {
+const TruncateExample = (args) => {
     return html`
         <div style="padding: 5%;">
             <style>
@@ -130,7 +130,7 @@ export const DisallowMultiple = {
 }
 
 export const Truncated = {
-    render: Truncate.bind(),
+    render: TruncateExample.bind(),
     name: 'Truncated',
 
     args: {
