@@ -9,7 +9,6 @@ module.exports = {
       '@storybook/addon-a11y',
       'storybook-addon-themes',
       '@astrouxds/storybook-addon-docs-stencil',
-      '@storybook/addon-mdx-gfm',
       {
         name: '@storybook/addon-docs',
       },
