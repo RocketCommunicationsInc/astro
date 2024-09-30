@@ -1,0 +1,44 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as ProgressStories from './progress.stories';
+
+<Meta of={ProgressStories} />
+
+# Progress
+
+A visual indicator of a task's progress. When indicating progress with a finite duration, use Determinate Progress. When indicating progress with an indefinite duration, use Indeterminate Progress.
+
+## Guidelines
+
+* [Astro UXDS: Progress](https://astrouxds.com/components/progress/)
+
+<Canvas of={ProgressStories.Default} />
+
+## API
+
+<Controls />
+
+## Usage
+
+### Label
+
+If `max` is 100, the label is displayed as a percentage.
+If `max` is not 100, the label is displayed as value/max (1450/2000)
+
+## Variants
+
+### Determinate Progress Max
+
+<Canvas of={ProgressStories.DeterminateProgressMax} />
+
+### Determinate Progress with Custom Max
+
+<Canvas of={ProgressStories.DeterminateProgressWithCustomMax} />
+
+### Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxProgress } from '@astrouxds/astro-web-components/dist/components/rux-progress'
+customElements.define('rux-progress', RuxProgress)
+```

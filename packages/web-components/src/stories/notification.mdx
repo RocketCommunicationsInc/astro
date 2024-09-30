@@ -1,0 +1,176 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as NotificationStories from './notification.stories';
+
+<Meta of={NotificationStories} />
+
+# Notification
+
+Events that deserve user attention, but don’t require a response, may be displayed in a Notification Banner. The Banner displays within the user’s field-of-view, but doesn’t block other interaction.
+
+If the user is currently working in a specific screen area, the Banner may be presented in that area. If the Notification is more general, or doesn’t relate to a specific area of the screen, it may be presented in the center of the screen just below the Global Status Bar.
+
+If another Notification Banner is waiting, it appears when the current Banner is dismissed. Banners don’t stack or group.
+
+## Guidelines
+
+* [Astro UXDS: Notification Banner](https://www.astrouxds.com/ui-components/notification-banner)
+
+<Canvas of={NotificationStories.Default} />
+
+## Usage
+
+### Multiple Notifications
+
+To show multiple notifications, you'll need to create and manage a notification stack within your application code.
+Instead of using multiple `rux-notification` elements, you can listen on `ruxclosed` and update a single `rux-notification`
+element as the user dismisses the current visible notification.
+
+A very basic pattern would look like:
+
+```html
+<rux-notification open id="notification" status="caution">Something caution has happened!</rux-notification>
+<script>
+    const eventSequence = [
+        {
+            status: 'critical',
+            message: '1 - something critical'
+        },
+        {
+            status: 'normal',
+            message: '2 - something normal'
+        },
+            {
+            status: 'normal',
+            message: '3 - something normal again'
+        }
+    ]
+    notification.addEventListener('ruxclosed', () => {
+        if (eventSequence.length > 0) {
+            // Grab the first notification data
+            notification.message = eventSequence[0].message
+            notification.status = eventSequence[0].status
+            // Remove the notification from the stack
+            eventSequence.shift()
+            // Reopen the notification
+            notification.open = true
+        }
+    })
+</script>
+```
+
+<a href="https://codepen.io/rocketmark/pen/jOxLLNZ" target="_blank">View on CodePen</a>
+
+## API
+
+<Controls />
+
+## Typescript Types
+
+```
+import { Status } from '@astrouxds/astro-web-components'
+```
+
+**Status**
+
+```
+ type Classification =
+    | 'cui'
+    | 'controlled'
+    | 'confidential'
+    | 'secret'
+    | 'top-secret'
+    | 'top-secret-sci'
+    | 'unclassified'
+```
+
+```
+import { StatusSymbol } from '@astrouxds/astro-web-components'
+```
+
+**Status Symbol**
+
+```
+enum StatusSymbol {
+    CRITICAL = 'critical',
+    SERIOUS = 'serious',
+    CAUTION = 'caution',
+    NORMAL = 'normal',
+    STANDBY = 'standby',
+    OFF = 'off',
+}
+```
+
+## Variants
+
+### Auto Close
+
+<Canvas of={NotificationStories.AutoClose} />
+
+### Hide Close
+
+In cases like auto close where you don't want to allow the user to be able to manually close the Notification,
+you may use the `hide-close` attribute. NOTE: this will override and hide any content inside the `actions` slot.
+
+<Canvas of={NotificationStories.HideClose} />
+
+### Small
+
+<Canvas of={NotificationStories.Small} />
+
+### Prefix Slot
+
+<Canvas of={NotificationStories.WithPrefixSlot} />
+
+### Default Slot
+
+Use the default slot for more control over the content inside your Notification, for example, adding a link
+within your message.
+
+> NOTE: Content placed inside the default slot will override the `message` attribute.
+
+<Canvas of={NotificationStories.WithDefaultSlot} />
+
+### Actions Slot
+
+The `actions` slot can be used to customize the close icon or to allow additional actions. For example,
+instead of using an icon, you may instead pass in a `rux-button`
+
+> NOTE: By default, this slot will contain a `rux-icon` that automatically closes the modal.
+> You will be responsible for closing the Notification yourself if you chose to use this slot.
+
+<Canvas of={NotificationStories.WithActionsSlot} />
+
+### With Slotted Content
+
+<Canvas of={NotificationStories.WithSlottedContent} />
+
+### With Wrapped Text
+
+Text within Notifications is truncated by default. If you need to have text wrap, you can make use
+of the `message` CSS Shadow Part to override the following properties:
+
+```
+rux-notification::part(message) {
+    overflow: visible;
+    text-overflow: unset;
+    white-space: normal;
+}
+```
+<Canvas of={NotificationStories.WithWrappedContent} />
+
+### All Variants
+
+<Canvas of={NotificationStories.WithAllVariants} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxNotification } from '@astrouxds/astro-web-components/dist/components/rux-notification'
+import { RuxIcon } from '@astrouxds/astro-web-components/dist/components/rux-icon'
+import { RuxIconClear } from '@astrouxds/astro-web-components/dist/components/rux-icon-clear'
+customElements.define('rux-notification', RuxNotification)
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-icon-clear', RuxIconClear)
+```

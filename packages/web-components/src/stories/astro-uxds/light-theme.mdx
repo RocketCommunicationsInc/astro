@@ -1,0 +1,25 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Astro UXDS/Light Theme" />
+
+# Theming
+
+Astro supports a light theme along with the original, default dark theme.
+
+> By convention, the Global Status Bar and its enclosed elements will always use the dark theme styling.
+
+For usage guidelines, refer to [Astro UXDS - Theming](https://www.astrouxds.com/design-guidelines/theme/).
+
+## Enabling the Light Theme
+
+To enable the light theme, simply add the `light-theme` CSS class to your body element. This will apply the light theme globally.
+
+## Mixed Use
+
+Individual sections or components can override their inherited theme on a case-by-case basis, enabling the render of an element with a light theme in an predominantly dark-themed interface and vice versa.
+
+You can also apply the `light-theme` class on individual components. For example:
+
+```html
+<rux-button class="light-theme">Submit</rux-button>
+```

@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as MonitoringIconStories from './monitoring-icon.stories';
+
+<Meta of={MonitoringIconStories} />
+
+# Monitoring Icon
+
+These Icons represent objects, equipment, and concepts that are being administered or monitored. The purpose of these Icons is to easily, concisely, and clearly visually communicate their status to be to users.
+
+## Guidelines
+
+* [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+
+<Canvas of={MonitoringIconStories.Default} />
+
+## API
+
+<Controls />
+
+## All Variants
+
+<Canvas of={MonitoringIconStories.AllVariants} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxMonitoringIcon } from '@astrouxds/astro-web-components/dist/components/rux-monitoring-icon'
+import { RuxStatus } from '@astrouxds/astro-web-components/dist/components/rux-status'
+
+customElements.define('rux-monitoring-icon', RuxMonitoringIcon)
+customElements.define('rux-status', RuxStatus)
+```

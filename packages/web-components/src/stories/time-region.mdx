@@ -1,0 +1,71 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { styled } from '@storybook/theming';
+import { BetaTag } from '../utils/storybook-tags.mdx';
+import * as TimeRegionStories from './time-region.stories';
+
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--status-symbol-color-fill-serious-on-light);
+    background: white;
+    color: var(--status-symbol-color-fill-serious-on-light);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+
+<Meta of={TimeRegionStories} />
+
+# Time Region <BetaTag>BETA</BetaTag>
+
+<StyledDiv>
+  <div>Warning: This is an experimental component</div>
+
+  <p class="banner-text">
+    Time Region is currently experimental which means that we may introduce breaking changes at any time.
+    These will not be reflected in our current semver versioning and release strategy.
+    If you are using this component, make sure to frequently check our release notes and update your
+    applications accordingly.
+  </p>
+</StyledDiv>
+
+## Guidelines
+
+* [Astro UXDS: Timeline](http://www.astrouxds.com/components/timeline)
+
+<Canvas of={TimeRegionStories.Default} />
+
+<Canvas of={TimeRegionStories.Selected} />
+
+## Partial Events
+
+When a Time Region start and end dates fall outside the range of the Timeline, they have a "partial" appearance.
+For example, if your timeline range is set to 2020-02-01 - 2020-02-10 and you have a Time Region that starts on 2020-01-10 and ends on 2020-02-05,
+the "partial" appearance indicates that the Time Region's start date falls outside the current Timeline range.
+
+<Canvas of={TimeRegionStories.Partial} />
+
+<Canvas of={TimeRegionStories.AllVariants} />
+
+## API
+
+<Controls />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTimeRegion } from '@astrouxds/astro-web-components/dist/components/rux-time-region'
+customElements.define('rux-time-region', RuxTimeRegion)
+
+// If using the status attribute
+// import { RuxStatus } from '@astrouxds/astro-web-components/dist/components/rux-status'
+// customElements.define('rux-status', RuxStatus)
+```

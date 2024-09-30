@@ -1,0 +1,65 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as TableStories from './table.stories';
+
+<Meta of={TableStories} />
+
+# Table
+
+Table is a set of styled wrapper elements that mimic the native HTML table elements.
+
+## Guidelines
+
+* [Astro UXDS: Table](https://www.astrouxds.com/patterns/table/)
+
+<Canvas of={TableStories.Default} />
+
+## API
+
+<Controls />
+
+## Usage
+
+| Native HTML Element | Astro Component       |
+| ------------------- | --------------------- |
+| table               | rux-table             |
+| thead               | rux-table-header      |
+| tr (in thead)       | rux-table-header-row  |
+| th                  | rux-table-header-cell |
+| tbody               | rux-table-body        |
+| tr (in tbody)       | rux-table-row         |
+| td                  | rux-table-cell        |
+
+## Limitations
+
+Table uses [CSS Display Table](https://developer.mozilla.org/en-US/docs/Web/CSS/display) under the hood and as a result, there are a few limitations.
+For example, colspan and rowspan attributes are currently not supported.
+
+For a more robust data table, consider using [AG Grid with the Astro theme](?path=/docs/themes-ag-Grid--ag-Grid).
+
+## Variants
+
+### With Selected Row
+
+<Canvas of={TableStories.WithSelectedRow} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTable } from '@astrouxds/astro-web-components/dist/components/rux-table'
+import { RuxTableHeader } from '@astrouxds/astro-web-components/dist/components/rux-table-header'
+import { RuxTableHeaderRow } from '@astrouxds/astro-web-components/dist/components/rux-table-header-row'
+import { RuxTableHeaderCell } from '@astrouxds/astro-web-components/dist/components/rux-table-header-cell'
+import { RuxTableBody } from '@astrouxds/astro-web-components/dist/components/rux-table-body'
+import { RuxTableRow } from '@astrouxds/astro-web-components/dist/components/rux-table-row'
+import { RuxTableCell } from '@astrouxds/astro-web-components/dist/components/rux-table-cell'
+
+customElements.define('rux-table', RuxTable)
+customElements.define('rux-table-header', RuxTableHeader)
+customElements.define('rux-table-header-row', RuxTableHeaderRow)
+customElements.define('rux-table-header-cell', RuxTableHeaderCell)
+customElements.define('rux-table-body', RuxTableBody)
+customElements.define('rux-table-row', RuxTableRow)
+customElements.define('rux-table-cell', RuxTableCell)
+```

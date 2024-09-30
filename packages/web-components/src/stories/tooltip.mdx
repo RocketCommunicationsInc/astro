@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as TooltipStories from './tooltip.stories';
+
+<Meta of={TooltipStories} />
+
+# Tooltip
+
+A Tooltip is a message box that provides a concise amount of relevant contextual information about an associated UI element. Tooltips are activated by hovering over, or focusing on an element.
+
+<Canvas of={TooltipStories.Default} />
+
+## API
+
+<Controls />
+
+## Usage
+
+## Variants
+
+### Placements
+
+<Canvas of={TooltipStories.Placements} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTooltip } from '@astrouxds/astro-web-components/dist/components/rux-tooltip.js'
+customElements.define('rux-tooltip', RuxTooltip)
+```

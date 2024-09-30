@@ -1,0 +1,47 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as StatusStories from './status.stories';
+
+<Meta of={StatusStories} />
+
+# Status
+
+The Status Symbol combines color and shape to create a standard and consistent way to indicate the status of a device or feature.
+
+## Guidelines
+
+* [Astro UXDS: Status Symbols](http://www.astrouxds.com/ui-components/status-symbol)
+
+<Canvas of={StatusStories.Default} />
+
+## API
+
+<Controls />
+
+## Typescript Types
+
+**Status**
+
+```
+import { Status } from '@astrouxds/astro-web-components'
+```
+
+```
+export type Status =
+    | 'off'
+    | 'standby'
+    | 'normal'
+    | 'caution'
+    | 'serious'
+    | 'critical'
+```
+
+<Canvas of={StatusStories.AllVariants} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxStatus } from '@astrouxds/astro-web-components/dist/components/rux-status'
+customElements.define('rux-status', RuxStatus)
+```

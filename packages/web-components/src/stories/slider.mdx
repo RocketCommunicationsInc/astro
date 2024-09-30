@@ -1,0 +1,80 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as SliderStories from './slider.stories';
+
+<Meta of={SliderStories} />
+
+# Slider
+
+A Slider allows users to choose from a range of continuous and discrete values. The Slider displays the range of possible values and the Slider’s indicator displays the current value.
+
+## Guidelines
+
+* [Astro UXDS: Slider](https://www.astrouxds.com/components/slider/)
+
+<Canvas of={SliderStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Disabled
+
+<Canvas of={SliderStories.Disabled} />
+
+### With Help Text
+
+<Canvas of={SliderStories.WithHelpText} />
+
+### With Error Text
+
+<Canvas of={SliderStories.WithErrorText} />
+
+### With Axis Labels
+
+<Canvas of={SliderStories.WithAxisLabels} />
+
+To display tick marks and labels, make use of the `axis-labels` attribute. This accepts an array of strings that will
+be evenly distributed across the progress bar.
+
+#### Ticks Only
+
+If you only want to show tick marks without labels, make use of the `ticks-only` attribute. NOTE: you will still need to pass in the array of strings to determine how many
+ticks to show.
+
+### Dual Range
+
+Adding the `min-val` attribute to the slider will add a second thumb, creating a dual-range slider.
+
+<Canvas of={SliderStories.DualRange} />
+
+#### Strict
+
+By default, the dual-range slider can have it's thumbs go anywhere, including past each other. If you'd rather the thumbs not be able to swap,
+you can use the `strict` property to prevent it.
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-slider::part(form-field) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+rux-slider::part(label) {
+    margin-right: var(--spacing-2);
+}
+```
+<Canvas of={SliderStories.HorizontalLabel} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxSlider } from '@astrouxds/astro-web-components/dist/components/rux-slider.js'
+customElements.define('rux-slider', RuxSlider)
+```

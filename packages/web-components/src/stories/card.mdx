@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as CardStories from './card.stories';
+
+<Meta of={CardStories} />
+
+# Card
+
+By default, Cards have a default padding of 8px set on the body. If you'd like to change this (for example, using tables or a list inside your Card), you can use the `--body-padding` CSS custom property for convenience or the `body` CSS shadow part.
+
+<Canvas of={CardStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### With Header
+
+<Canvas of={CardStories.Header} />
+
+### With Footer
+
+<Canvas of={CardStories.Footer} />
+
+### Full Example
+
+<Canvas of={CardStories.FullExample} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxCard } from '@astrouxds/astro-web-components/dist/components/rux-card'
+customElements.define('rux-card', RuxCard)
+```

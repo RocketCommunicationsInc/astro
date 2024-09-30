@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as MenuItemDividerStories from './menu-item-divider.stories';
+
+<Meta of={MenuItemDividerStories} />
+
+# Menu Item Divider
+
+Menu Item should be used inside of [Pop Up](?path=/docs/components-pop-up--default-story). It is used to group Menu Items.
+
+<Canvas of={MenuItemDividerStories.Default} />
+
+## API
+
+<Controls />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxMenuItemDivider } from '@astrouxds/astro-web-components/dist/components/rux-menu-item-divider'
+customElements.define('rux-menu-item-divider', RuxMenuItemDivider)
+```

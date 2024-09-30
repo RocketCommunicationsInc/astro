@@ -1,0 +1,102 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as InputStories from './input.stories';
+
+<Meta of={InputStories} />
+
+# Input
+
+Input allow users to enter freeform text. Variations on this field often provide specific data entry formats such as masked data (e.g. passwords or phone numbers), date and time, and numeric data entry.
+
+## Guidelines
+
+* [Astro UXDS: Input Field](https://www.astrouxds.com/components/input-field/)
+
+<Canvas of={InputStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Disabled
+
+<Canvas of={InputStories.Disabled} />
+
+### Required
+
+<Canvas of={InputStories.Required} />
+
+### With Icons
+
+Icons on either the left or right can be accomplished using the named slots `prefix` or `suffix`.
+For example,
+
+```html
+<rux-icon icon="apps" slot="prefix"></rux-icon>
+```
+
+<Canvas of={InputStories.WithIcons} />
+
+### Sizes
+
+<Canvas of={InputStories.WithSizes} />
+
+### Help Text
+
+<Canvas of={InputStories.HelpText} />
+
+### Invalid w/ Error Text
+
+<Canvas of={InputStories.Invalid} />
+
+### Types
+
+The following `<input>` types are available:
+
+* Text inputs (type="text")
+* Password inputs (type="password")
+* URL inputs (type="url")
+* Email inputs (type="email")
+* Telephone inputs (type="tel")
+* Search inputs (type="search")
+* Number-only inputs (type="number")
+* Date inputs (type="date")
+* Datetime-local inputs (type="datetime-local")
+* Time inputs (type="time")
+
+<Canvas of={InputStories.WithTypes} />
+
+## Customization
+
+### Custom Input Mask
+
+If you need a custom input type for your rux-input, we recommend using [Maskito](https://maskito.dev/getting-started/what-is-maskito) to create your own input mask.
+Below is an example of the common use case of a Julian/Ordinal date input.
+
+<Canvas of={InputStories.JulianMask} />
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-input::part(form-field) {
+    flex-direction: row;
+    align-items: center;
+}
+rux-input::part(label) {
+    margin-right: var(--spacing-2);
+}
+```
+
+<Canvas of={InputStories.WithHorizontalLabel} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxInput } from '@astrouxds/astro-web-components/dist/components/rux-input.js'
+customElements.define('rux-input', RuxInput)
+```

@@ -1,0 +1,55 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as SegmentedButtonStories from './segmented-button.stories';
+
+<Meta of={SegmentedButtonStories} />
+
+# Segmented Button
+
+Segmented Buttons allow users to select one item at a time from two to four options. Selecting one option automatically turns off the last selection made. Segmented Buttons are mutually exclusive.
+
+## Guidelines
+
+* [Astro UXDS: Segmented Button](https://astrouxds.com/ui-components/segmented-button)
+
+<Canvas of={SegmentedButtonStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Disabled
+
+<Canvas of={SegmentedButtonStories.Disabled} />
+
+### Medium
+
+<Canvas of={SegmentedButtonStories.Medium} />
+
+### Large
+
+<Canvas of={SegmentedButtonStories.Large} />
+
+## Usage
+
+Pass an array of segments via the `data` attribute on the Segmented Button custom element. Segment items in the `data` array must be objects with a `label` string. The first item in the array will be auto-selected unless another segment item has a `selected` property with a truthy value. Avoid labels with the same text, as this will interfere with selecting segments.
+
+### SegmentedButton Data Object
+
+```json
+[
+  { label: "First segment" },
+  { label: "Second segment", selected: true },
+  { label: "Third segment" },
+];
+```
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxSegmentedButton } from '@astrouxds/astro-web-components/dist/components/rux-segmented-button.js'
+customElements.define('rux-segmented-button', RuxSegmentedButton)
+```

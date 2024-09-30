@@ -1,0 +1,97 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as LogStories from './log.stories';
+
+<Meta of={LogStories} />
+
+# Log
+
+A Log is a tabular representation of application events and may include username, priority, equipment type, signal type, etc. As part of the [Notification System](https://www.astrouxds.com/design-guidelines/notifications), Logs provide sorting and filtering function for examining events
+
+## Guidelines
+
+* [Astro UXDS: Log](http://www.astrouxds.com/ui-components/log)
+* [Astro UXDS: Notification System](https://www.astrouxds.com/design-guidelines/notifications)
+
+## Usage
+
+Log is a simple collection of other Astro components: [Table](?path=/docs/components-table--default-story), [Status](?path=/docs/components-status--default-story), [Input Field](?path=/docs/components-input-field--default-story), and a custom [Notification](?path=/docs/components-notification--default-story) bar. For an off-the-shelf solution, you can pass in a data array in the following format.
+
+<Canvas of={LogStories.Default} />
+
+## API
+
+<Controls />
+
+## Typescript Types
+
+**LogRow**
+
+```
+import { LogRow } from '@astrouxds/astro-web-components'
+```
+
+```
+export interface LogRow {
+  timestamp: Date;
+  status: Status;
+  message: string;
+}
+```
+
+### Example LogRow\[] Data
+
+```
+[
+  {
+    timestamp: new Date(),
+    status: 'off',
+    message: 'Antenna DGS 1 went offline.',
+  }
+]
+```
+
+**Status**
+
+```
+import { Status } from '@astrouxds/astro-web-components'
+```
+
+```
+export type Status =
+    | 'off'
+    | 'standby'
+    | 'normal'
+    | 'caution'
+    | 'serious'
+    | 'critical'
+```
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxLog } from '@astrouxds/astro-web-components/dist/components/rux-log'
+import { RuxTable } from '@astrouxds/astro-web-components/dist/components/rux-table'
+import { RuxTableHeader } from '@astrouxds/astro-web-components/dist/components/rux-table-header'
+import { RuxTableHeaderRow } from '@astrouxds/astro-web-components/dist/components/rux-table-header-row'
+import { RuxTableHeaderCell } from '@astrouxds/astro-web-components/dist/components/rux-table-header-cell'
+import { RuxInput } from '@astrouxds/astro-web-components/dist/components/rux-input'
+import { RuxTableBody } from '@astrouxds/astro-web-components/dist/components/rux-table-body'
+import { RuxTableRow } from '@astrouxds/astro-web-components/dist/components/rux-table-row'
+import { RuxTableCell } from '@astrouxds/astro-web-components/dist/components/rux-table-cell'
+import { RuxDatetime } from '@astrouxds/astro-web-components/dist/components/rux-datetime'
+import { RuxStatus } from '@astrouxds/astro-web-components/dist/components/rux-status'
+
+customElements.define('rux-log', RuxLog)
+customElements.define('rux-table', RuxTable)
+customElements.define('rux-table-header', RuxTableHeader)
+customElements.define('rux-table-header-row', RuxTableHeaderRow)
+customElements.define('rux-table-header-cell', RuxTableHeaderCell)
+customElements.define('rux-input', RuxInput)
+customElements.define('rux-table-body', RuxTableBody)
+customElements.define('rux-table-row', RuxTableRow)
+customElements.define('rux-table-cell', RuxTableCell)
+customElements.define('rux-datetime', RuxDatetime)
+customElements.define('rux-status', RuxStatus)
+```

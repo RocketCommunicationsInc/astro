@@ -1,0 +1,106 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as SelectStories from './select.stories';
+
+<Meta of={SelectStories} />
+
+# Select Menu
+
+Select Menus allow users to select a value from a list of values.
+
+## Guidelines
+
+* [Astro UXDS: Select Menu](https://astrouxds.com/components/select/)
+* [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+
+<Canvas of={SelectStories.Default} />
+
+## API
+
+<Controls />
+
+## Usage
+
+> Select **requires** the use of the `<rux-option>` component instead of the native `<option>`. Make sure to set the label using the `label` property instead of a slot like you would with the native `<option>`
+
+### Selecting Options
+
+The `value` property will sync the currently selected option value property
+
+### Grouping
+
+For Grouping, make sure to use the Astro `<rux-option-group>` component instead of the native `<optgroup>`.
+
+## Variants
+
+### Sizes
+
+<Canvas of={SelectStories.Sizes} />
+
+### With Option Groups
+
+<Canvas of={SelectStories.WithOptionGroups} />
+
+### Disabled
+
+<Canvas of={SelectStories.Disabled} />
+
+### Invalid
+
+<Canvas of={SelectStories.Invalid} />
+
+### Required
+
+<Canvas of={SelectStories.Required} />
+
+### With Help Text
+
+<Canvas of={SelectStories.WithHelpText} />
+
+### With Error Text
+
+<Canvas of={SelectStories.WithErrorText} />
+
+### Multiple
+
+> NOTE: This component uses the native browser `<select>` element under the hood.
+> As a result, styling may appear inconsistent across different browsers.
+
+<Canvas of={SelectStories.Multiple} />
+
+### Multiple With Option Groups
+
+<Canvas of={SelectStories.MultipleWithOptionGroups} />
+
+### Inline
+
+<Canvas of={SelectStories.Inline} />
+
+### Adjusting the width
+
+By default, Select's width is set to 100%. If you'd prefer to have it automatic based on the longest option, you can make use of the `select` part.
+
+```
+rux-select::part(select) {
+    width: inherit;
+}
+```
+
+> NOTE: This will become the default behavior in a future release.
+
+<Canvas of={SelectStories.Width} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxSelect } from '@astrouxds/astro-web-components/dist/components/rux-select'
+import { RuxOption } from '@astrouxds/astro-web-components/dist/components/rux-option'
+
+customElements.define('rux-select', RuxSelect)
+customElements.define('rux-option', RuxOption)
+
+// Optional
+//import { RuxOptionGroup } from '@astrouxds/astro-web-components/rux-option-group'
+//customElements.define('rux-option-group', RuxOptionGroup)
+```

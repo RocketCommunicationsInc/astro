@@ -1,0 +1,240 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import { styled } from '@storybook/theming';
+import { BetaTag } from '../utils/storybook-tags.mdx';
+import * as TimelineStories from './timeline.stories';
+
+export const StyledDiv = styled.div`
+    position: relative;
+    margin: 1rem 0;
+    border-left: 20px solid var(--color-status-serious);
+    background: white;
+    color: var(--color-status-serious);
+    padding: 19px;
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    .banner-text {
+        margin-top: 1rem;
+        color: var(--color-text-inverse);
+    }
+`
+
+<Meta of={TimelineStories} />
+
+# Timeline <BetaTag>BETA</BetaTag>
+
+Timeline displays a sequence of realtime events during a fixed time span. The Playhead indicates the current time of day. Time Regions represent events.
+
+<StyledDiv>
+  <div>Warning: This is an experimental component</div>
+
+  <p class="banner-text">
+    Timeline is currently experimental which means that we may introduce breaking changes at any time.
+    These will not be reflected in our current semver versioning and release strategy.
+    If you are using this component, make sure to frequently check our release notes and update your
+    applications accordingly.
+  </p>
+</StyledDiv>
+
+## Guidelines
+
+* [Astro UXDS: Timeline](http://www.astrouxds.com/components/timeline)
+
+<Canvas of={TimelineStories.Default} />
+
+## API
+
+<Controls />
+
+## Timeline
+
+The Timeline component is responsible for
+
+* creating and manipulating the grid used to display events.
+* rendering the appropriate labels for **Ruler**
+* controlling the position of the playhead
+
+It is composed of the following subcomponents:
+
+* Track
+* Time Region
+* Ruler
+
+### Date Formats and Timezones
+
+When passing in a date to either the timeline, playhead, or time regions, you must specify a time and timezone in your date string, otherwise it will default to the local user's timezone.
+For example: If you wanted to show "2021-01-01" in UTC, you would pass in `2021-01-01**T00:00:00Z**`.
+
+### Zoom
+
+The width between each time interval can be controlled by the `zoom` property. By default, it starts at 1 and can be incremented.
+The column width is automatically calculated based off of the timeline's current interval (days/hours/etc).
+You should consider your timeline's range and set an appropriate default zoom level so that your time intervals can fill the entire viewport.
+
+If your timeline spans multiple days, you will also want to consider manually controlling the interval. For example, if your timeline is set to days,
+you will probably want your interval to change to hours as your zoom level increases.
+
+### Setting the Time Regions
+
+To add any number of Time Regions, you can simply add them as children to any Track element:
+
+```
+<rux-track>
+    <div slot="label">
+        Region1
+    </div>
+    <rux-time-region
+        start="2021-02-01T00:00:00Z"
+        end="2021-02-01T00:30:00Z"
+    >
+        Region1
+    </rux-time-region>
+    <rux-time-region
+        start="2021-02-01T03:00:00Z"
+        end="2021-02-01T05:30:00Z"
+    >
+        Region2
+    </rux-time-region>
+</rux-track>
+```
+
+### Enabling the Ruler
+
+To enable the bottom ruler, make use of the `ruler` slot by passing in a `rux-ruler` within a `rux-track`:
+
+```
+<rux-track slot="ruler">
+  <rux-ruler></rux-ruler>
+</rux-track>
+```
+
+### Enabling Vertical Scrolling
+
+If your Timeline contains too many rows to fit into your viewport, you can make use of the `time-region-container` CSS Shadow Part and set a height using CSS.
+This will enable the overflow: scroll.
+
+For example:
+
+```
+rux-timeline::part(time-region-container) {
+    height: 223px;
+}
+```
+
+<Canvas of={TimelineStories.WithVerticalScroll} />
+
+<Story of={TimelineStories.Track} />
+
+## Track
+
+Tracks are responsible for displaying content in horizontal lanes across the Timeline.
+They can include **Time Regions** or the **Ruler** component.
+They are composed of a label section and a time region section.
+
+<Controls />
+
+### Setting the Label
+
+To set the label of a Region, you can use the `label` slot:
+
+```
+<rux-track>
+    <div slot="label">
+        Region1
+    </div>
+</rux-track>
+```
+
+## Time Region
+
+Time Regions represent single events in time. A `start` time and an `end` time are required. If a `start` and `end` time aren't provided, or an invalid range is provided,
+the component will throw an error and not render.
+
+```
+<rux-time-region
+    start="2021-02-01T00:00:00Z"
+    end="2021-02-01T00:30:00Z"
+>
+    Region1
+</rux-time-region>
+```
+
+### Partial Time Regions
+
+If a Time Region's start and end date falls outside of the range of the Timeline, a Time Region will be display visually as a Partial Time Region.
+
+<Controls />
+
+## Ruler
+
+**Ruler** is responsible for displaying the intervals of time across the timeline grid. If the Timeline `interval` is set to `hour`, the start of a new day is indicated by the date displayed underneath the time, and the background color is changed.
+
+```
+    <rux-ruler></rux-ruler>
+```
+
+## Sub Tracks
+
+Timeline supports the ability to add SubTracks. These can then be collapsed/expanded with a minimal amount of additional script. Here is an example using basic HTML/JS.
+
+<Canvas of={TimelineStories.SubTracks} />
+
+**In these examples we:**
+
+1. Include all of the `rux-time-region` in the main track when the subtracks are collapsed.
+2. Break the `rux-time-region` out into the appropriate sub-tracks when they are expanded, and remove them from the main track.
+3. (Optional) For visual differentiation between a main track and a sub track, add a class like `sub-track` to each sub-track and then add the following css:
+
+```css
+  .sub-track,
+  .sub-track::part(container),
+  .sub-track::part(track-header) {
+    background-color: var(--color-background-surface-header);
+  }
+  .sub-track [slot="label"] {
+    padding-inline-start: 2rem;
+  }
+```
+
+## Other Examples
+
+* [Vue Example](https://codesandbox.io/s/timeline-demo-collapse-vue-lomiki)
+* [React Example](https://codesandbox.io/s/timeline-demo-collapse-react-z5cq3m?file=/src/App.js)
+* [Angular Example](https://codesandbox.io/s/timeline-demo-collapse-angular-vic3fn?file=/src/app/app.component.html)
+
+## With Played Indicator
+
+Timeline tracks can optionally show a "played" visual state to indicate past time relative to the current playhead. To show this state, use the `has-played-indicator` attribute on your RuxTimeline.
+
+<Canvas of={TimelineStories.WithPlayedIndicator} />
+
+## Show Start of Day
+
+When using the 'hour' interval spanning multiple days, it can be difficult to determine when a given day has ended or started.
+In this case, you can make use of the `show-start-of-day` attribute to display a visual indicator at 00:00.
+
+<Canvas of={TimelineStories.ShowStartOfDay} />
+
+## Minutes
+
+<Canvas of={TimelineStories.Minutes} />
+
+## Months/Weeks
+
+<Canvas of={TimelineStories.MonthsWeeks} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTimeline } from '@astrouxds/astro-web-components/dist/components/rux-timeline'
+import { RuxTrack } from '@astrouxds/astro-web-components/dist/components/rux-track'
+import { RuxTimeRegion } from '@astrouxds/astro-web-components/dist/components/rux-time-region'
+import { RuxRuler } from '@astrouxds/astro-web-components/dist/components/rux-ruler'
+customElements.define('rux-timeline', RuxTimeline)
+customElements.define('rux-track', RuxTrack)
+customElements.define('rux-time-region', RuxTimeRegion)
+customElements.define('rux-ruler', RuxRuler)
+```

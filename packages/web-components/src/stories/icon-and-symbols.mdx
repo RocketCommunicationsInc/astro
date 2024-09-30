@@ -1,0 +1,80 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import ruxIconsJson from './icons.json'
+import * as IconAndSymbolsStories from './icon-and-symbols.stories';
+
+const args = extractArgTypes('rux-icon')
+
+<Meta of={IconAndSymbolsStories} />
+
+# Icon
+
+Display Icons used in the Astro Design System
+
+## Guidelines
+
+* [Astro UXDS: Icons and Symbols](https://astrouxds.com/ui-components/icons-and-symbols)
+
+<Canvas of={IconAndSymbolsStories.Default} />
+
+## API
+
+<Controls />
+
+## Usage
+
+### Customizing the Color
+
+#### Via CSS
+
+Under the hood, all Icons have their fill property set to [currentColor](https://css-tricks.com/cascading-svg-fill-color/)
+so you can style them using the CSS `color` property:
+
+```
+  <rux-icon icon="settings" style="color: #FFF;"></rux-icon>
+```
+
+### Customizing the Size
+
+#### Via the Size Property
+
+The `size` property includes several pre-defined sizes for ease of use:
+
+```
+<rux-icon icon="settings" size="extra-small"></rux-icon>
+<rux-icon icon="settings" size="small"></rux-icon>
+<rux-icon icon="settings" size="normal"></rux-icon>
+<rux-icon icon="settings" size="large"></rux-icon>
+```
+
+It also accepts any custom size attribute. For example:
+
+```
+<rux-icon icon="settings" size="1rem"></rux-icon>
+<rux-icon icon="settings" size="20px"></rux-icon>
+```
+
+#### Via CSS
+
+You can also manually set the `width` and `height` using CSS.
+
+```
+<rux-icon icon="settings" width="1rem" height="1rem"></rux-icon>
+```
+
+**NOTE:** Styling via CSS will override the component's `size` property if set.
+
+## All Icons
+
+<Canvas of={IconAndSymbolsStories.AllIcons} />
+
+### Cherry Picking
+
+When cherry picking Icons, you'll need to register both RuxIcon and any individual Icons you wish to use.
+For example, if you wanted to use `rux-icon-close` you would import the following:
+
+```js
+import { RuxIcon } from '@astrouxds/astro-web-components/dist/components/rux-icon'
+import { RuxIconClose } from '@astrouxds/astro-web-components/dist/components/rux-icon-close'
+customElements.define('rux-icon', RuxIcon)
+customElements.define('rux-icon-close', RuxIconClose)
+```

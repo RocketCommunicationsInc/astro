@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as TreeNodeStories from './tree-node.stories';
+
+<Meta of={TreeNodeStories} />
+
+# Tree Node
+
+Tree Node should be used with the [Tree](/?path=/story/components-tree--tree) component. If a rux-tree-node is used in isolation (like this example), it will be missing it's bottom border.
+
+## Guidelines
+
+* [Astro UXDS: Tree](http://www.astrouxds.com/library/tree)
+
+<Canvas of={TreeNodeStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Selected
+
+<Canvas of={TreeNodeStories.Selected} />
+
+### Expanded
+
+<Canvas of={TreeNodeStories.Expanded} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTreeNode } from '@astrouxds/astro-web-components/dist/components/rux-tree-node.js'
+customElements.define('rux-tree-node', RuxTreeNode)
+```

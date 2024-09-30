@@ -175,6 +175,8 @@ export class RuxTabs {
 
     private _onClick(e: KeyboardEvent | MouseEvent) {
         const target = e.target as HTMLElement
+        // if the click is on or inside the actions slot, don't select the tab
+        if (target.closest(`*[slot='actions']`)) return
         //get the tab in case complex html is nested inside rux-tab
         const tab = target.closest('rux-tab') as HTMLRuxTabElement
         //if user does not click on a tab but instead on rux-tabs, tab will be null
