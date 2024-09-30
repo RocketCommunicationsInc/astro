@@ -1,5 +1,17 @@
 # @astrouxds/astro-web-components
 
+## 7.24.0
+
+### Minor Changes
+
+-   6b6b0034: Adding actions slot to tab component and bumping Storybook up to 8 and rewriting all stories to match the new version.
+
+### Patch Changes
+
+-   52f1c2a0: fix(rux-input) prevent caret navigation from appearing innappropriately within input
+-   d1cb7d94: Fixed button bug when clicking and dragging over an icon-only, borderless button
+-   4c4e3bc8: Added missing footer slot documentation to storybook
+
 ## 7.23.0
 
 ### Minor Changes
