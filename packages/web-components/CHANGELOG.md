@@ -8,6 +8,16 @@
 
 -   Added a new 'actions' slot to allow for tab actions on individual tabs (such as closing a tab), without firing off the `ruxselected` event.
 
+### Patch Changes
+
+#### Button
+
+-   Fixed button bug when clicking and dragging over an icon-only, borderless button
+
+#### Input
+
+-   Fixed an issue causing caret navigation to appear innappropriately within input
+
 ## 7.22.1
 
 ### Patch Changes
