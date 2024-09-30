@@ -12,13 +12,6 @@ module.exports = {
       '@storybook/addon-mdx-gfm',
       {
         name: '@storybook/addon-docs',
-        options: {
-          mdxPluginOptions: {
-            mdxCompileOptions: {
-              remarkPlugins: [remarkGfm],
-            },
-          },
-        },
       },
   ],
 
