@@ -1,6 +1,6 @@
 {
   "name": "astro-angular",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "scripts": {
     "postinstall": "npm link @astrouxds/astro-web-components @astrouxds/angular",
     "ng": "ng",
@@ -27,8 +27,8 @@
     "@angular-devkit/build-angular": "^16.0.0",
     "@angular/cli": "~16.0.0",
     "@angular/compiler-cli": "^16.0.0",
-    "@astrouxds/angular": "^7.21.0",
-    "@astrouxds/astro-web-components": "^7.21.0",
+    "@astrouxds/angular": "^7.22.2",
+    "@astrouxds/astro-web-components": "^7.23.0",
     "@astrouxds/tailwind": "^1.0.0-beta.1",
     "@types/jasmine": "~4.3.0",
     "autoprefixer": "^10.4.14",
