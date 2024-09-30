@@ -70,7 +70,6 @@
     "@storybook/addon-docs": "^8.3.2",
     "@storybook/addon-essentials": "^8.3.2",
     "@storybook/addon-links": "^8.3.2",
-    "@storybook/addon-mdx-gfm": "~8.3.3",
     "@storybook/addons": "^7.6.17",
     "@storybook/blocks": "~8.3.3",
     "@storybook/theming": "^8.3.2",
