@@ -24283,7 +24283,7 @@ export class RuxTab {
 
 export declare interface RuxTab extends Components.RuxTab {
   /**
-   * Fires when a tab is selected
+   * Fires when a tab is selected.
    */
   ruxtabselected: EventEmitter<CustomEvent<any>>;
 }

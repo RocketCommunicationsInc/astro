@@ -1,0 +1,43 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as TabStories from './tab.stories';
+
+<Meta of={TabStories} />
+
+# Tab
+
+Tab belongs to the Tabs component.
+
+## Guidelines
+
+* [Astro UXDS: Tabs](https://www.astrouxds.com/components/tabs/)
+
+<Canvas of={TabStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Disabled
+
+<Canvas of={TabStories.Disabled} />
+
+### Selected
+
+<Canvas of={TabStories.Selected} />
+
+### Actions Slot
+
+The actions slot can be used to trigger a tab action that will not fire off the `ruxselected` event.
+
+<Canvas of={TabStories.Actions} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTab } from '@astrouxds/astro-web-components/dist/components/rux-tab'
+customElements.define('rux-tab', RuxTab)
+```

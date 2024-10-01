@@ -55556,7 +55556,7 @@ declare namespace LocalJSX {
          */
         "disabled"?: boolean;
         /**
-          * Fires when a tab is selected
+          * Fires when a tab is selected.
          */
         "onRuxtabselected"?: (event: RuxTabCustomEvent<any>) => void;
         /**

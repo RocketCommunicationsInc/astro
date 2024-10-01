@@ -1,0 +1,50 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as CheckboxStories from './checkbox.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+A Checkbox describes a state or value that can be either "True or False.” Checkboxes are not mutually exclusive. More than one Checkbox may be checked at the same time.
+
+For displaying invalid state, consider using a [Checkbox Group](?path=/docs/forms-checkbox-group--default-story) component.
+
+## Guidelines
+
+* [Astro UXDS: Checkboxes](https://www.astrouxds.com/ui-components/checkbox)
+* [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+
+<Canvas of={CheckboxStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Checked
+
+<Canvas of={CheckboxStories.Checked} />
+
+### Disabled
+
+<Canvas of={CheckboxStories.Disabled} />
+
+### Indeterminate
+
+An Indeterminate state (a dash symbol rather than checked) may display when a Checkbox is used as a parent of a group of Checkboxes where at least one child is selected and at least one is not.
+
+<Canvas of={CheckboxStories.Indeterminate} />
+
+### With Help Text
+
+<Canvas of={CheckboxStories.WithHelpText} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxCheckbox } from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
+customElements.define('rux-checkbox', RuxCheckbox)
+```

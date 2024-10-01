@@ -31,7 +31,7 @@
     "test.react": "lerna run --scope '@astrouxds/react' test"
   },
   "engines": {
-    "node": "^16 || ^18",
-    "npm": "^8.5"
+    "node": ">=18",
+    "npm": ">=10.7.0"
   }
 }

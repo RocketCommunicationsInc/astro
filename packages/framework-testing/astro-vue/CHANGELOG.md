@@ -13,6 +13,17 @@
 - Updated dependencies [2ac99dd8]
 - Updated dependencies [023b1de1]
   - @astrouxds/astro-web-components@0.0.0-timeline-enhanced-20240531164326
+## 0.3.1
+
+### Patch Changes
+
+- d1cb7d94: Fixed button bug when clicking and dragging over an icon-only, borderless button
+- 4c4e3bc8: Added missing footer slot documentation to storybook
+- Updated dependencies [52f1c2a0]
+- Updated dependencies [6b6b0034]
+- Updated dependencies [d1cb7d94]
+- Updated dependencies [4c4e3bc8]
+  - @astrouxds/astro-web-components@7.23.0
 
 ## 0.3.0
 

@@ -7,7 +7,12 @@ test.describe('Tabs', () => {
                 <rux-tabs id="tab-set-id-1">
                     <rux-tab id="tab-id-1">Tab 1</rux-tab>
                     <rux-tab id="tab-id-2">Tab 2</rux-tab>
-                    <rux-tab id="tab-id-3">Tab 3</rux-tab>
+                    <rux-tab id="tab-id-3">
+                     <span>Tab 3</span>
+                      <div slot="actions">
+                        <rux-icon icon="close" borderless size="small"></rux-icon>
+                      </div>
+                    </rux-tab>
                 </rux-tabs>
                 <rux-tab-panels aria-labelledby="tab-set-id-1">
                     <rux-tab-panel aria-labelledby="tab-id-1">
@@ -118,6 +123,35 @@ test.describe('Tabs', () => {
 
         //Assert
         await expect(tab1).toHaveAttribute('selected', '')
+    })
+    test('does not select tab if actions slot is clicked on', async ({
+        page,
+    }) => {
+        //Arrange
+        const tab1 = page.locator('#tab-id-1')
+        const tab3 = page.locator('#tab-id-3')
+        const tab3Actions = tab3.locator('*[slot="actions"]')
+
+        //Act
+        await tab3Actions.click({ force: true })
+
+        //Assert
+        await expect(tab1).toHaveAttribute('selected', '')
+        await expect(tab3).not.toHaveAttribute('selected', '')
+    })
+    test('does not emit ruxselected event when actions slot is clicked', async ({
+        page,
+    }) => {
+        //Arrange
+        const tab3 = page.locator('#tab-id-3')
+        const tab3Actions = tab3.locator('*[slot="actions"]')
+        const selectedEvent = await page.spyOnEvent('ruxselected')
+
+        //Act
+        await tab3Actions.click({ force: true })
+
+        //Assert
+        expect(selectedEvent).toHaveReceivedEventTimes(0)
     })
     test('shows correct panel when its tab is clicked', async ({ page }) => {
         //Arrange

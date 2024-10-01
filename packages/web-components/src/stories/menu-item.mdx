@@ -1,0 +1,29 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as MenuItemStories from './menu-item.stories';
+
+<Meta of={MenuItemStories} />
+
+# Menu Item
+
+Menu Item should be used inside of [Pop Up](?path=/docs/components-pop-up--default-story).
+
+<Canvas of={MenuItemStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Disabled
+
+<Canvas of={MenuItemStories.Disabled} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxMenuItem } from '@astrouxds/astro-web-components/dist/components/rux-menu-item'
+customElements.define('rux-menu-item', RuxMenuItem)
+```

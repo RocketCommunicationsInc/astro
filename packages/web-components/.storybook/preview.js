@@ -1,10 +1,10 @@
 import themes from './theme'
-import { addDecorator } from '@storybook/web-components'
 import {
     extractArgTypes,
     extractComponentDescription,
     setStencilDocJson,
 } from '@astrouxds/storybook-addon-docs-stencil'
+import './preview.css'
 
 import docJson from '../docs.json'
 if (docJson) setStencilDocJson(docJson)
@@ -38,7 +38,7 @@ export const parameters = {
         },
         disable: true,
     },
-    actions: { argTypesRegex: '^on[A-Z].*' },
+    // actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
         hideNoControlsWarning: true,
         matchers: {
@@ -49,6 +49,23 @@ export const parameters = {
     backgrounds: { disable: true },
     a11y: {
         element: '#root',
+    },
+    globalTypes: {
+      theme: {
+        description: 'Global theme for components',
+        toolbar: {
+          // The label to show for this toolbar item
+          title: 'Theme',
+          icon: 'circlehollow',
+          // Array of plain string values or MenuItem shape (see below)
+          items: ['light', 'dark'],
+          // Change title based on selected value
+          dynamicTitle: true,
+        },
+      },
+    },
+    initialGlobals: {
+      theme: 'dark',
     },
     themes: {
         default: 'Dark Theme',
@@ -92,3 +109,4 @@ export const parameters = {
         },
     },
 }
+export const tags = ['autodocs'];

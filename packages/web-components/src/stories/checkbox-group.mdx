@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as CheckboxGroupStories from './checkbox-group.stories';
+
+<Meta of={CheckboxGroupStories} />
+
+# Checkbox Group
+
+The Checkbox Group component is responsible for display invalid state and error text.
+
+## Guidelines
+
+* [Astro UXDS: Checkbox](https://www.astrouxds.com/ui-components/checkbox)
+* [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+
+<Canvas of={CheckboxGroupStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Invalid
+
+<Canvas of={CheckboxGroupStories.Invalid} />
+
+### Required
+
+<Canvas of={CheckboxGroupStories.Required} />
+
+### With Help Text
+
+<Canvas of={CheckboxGroupStories.HelpText} />
+
+### With Error Text
+
+<Canvas of={CheckboxGroupStories.ErrorText} />
+
+## Customization
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-checkbox-group::part(form-field) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+rux-checkbox-group::part(label) {
+    margin-right: var(--spacing-2);
+}
+```
+
+<Canvas of={CheckboxGroupStories.HorizontalLabel} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxCheckbox } from '@astrouxds/astro-web-components/dist/components/rux-checkbox.js'
+import { RuxCheckboxGroup } from '@astrouxds/astro-web-components/dist/components/rux-checkbox-group.js'
+customElements.define('rux-checkbox', RuxCheckbox)
+customElements.define('rux-checkbox-group', RuxCheckboxGroup)
+```

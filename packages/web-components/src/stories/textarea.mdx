@@ -1,0 +1,71 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as TextareaStories from './textarea.stories';
+
+<Meta of={TextareaStories} />
+
+# Textarea
+
+## Guidelines
+
+* [Astro UXDS: Input Field](https://www.astrouxds.com/components/input-field/)
+
+<Canvas of={TextareaStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Small
+
+<Canvas of={TextareaStories.Small} />
+
+### Large
+
+<Canvas of={TextareaStories.Large} />
+
+### Disabled
+
+<Canvas of={TextareaStories.Disabled} />
+
+### Required
+
+<Canvas of={TextareaStories.Required} />
+
+### Help Text
+
+<Canvas of={TextareaStories.HelpText} />
+
+### Invalid w/ Error Text
+
+<Canvas of={TextareaStories.Invalid} />
+
+### Placeholder Text
+
+<Canvas of={TextareaStories.Placeholder} />
+
+## Customization
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-textarea::part(form-field) {
+    flex-direction: row;
+}
+rux-textarea::part(label) {
+    margin-right: var(--spacing-2);
+}
+```
+<Canvas of={TextareaStories.HorizontalLabel} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTextarea } from '@astrouxds/astro-web-components/dist/components/rux-textarea.js'
+customElements.define('rux-textarea', RuxTextarea)
+```

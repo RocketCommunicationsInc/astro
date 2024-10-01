@@ -12,7 +12,8 @@ import {
 /**
  *
  * @part container - individual tabs
- *
+ * @slot (default) - Used for tab content
+ * @slot actions - Used for tab actions, does not select the tab
  */
 
 @Component({
@@ -38,7 +39,7 @@ export class RuxTab {
     @Element() el!: HTMLRuxTabElement
 
     /**
-     * Fires when a tab is selected
+     * Fires when a tab is selected.
      */
     @Event({ eventName: 'ruxtabselected' }) ruxTabSelected!: EventEmitter
 
@@ -76,6 +77,7 @@ export class RuxTab {
                     tabindex={this.disabled || !this.selected ? '-1' : '0'}
                 >
                     <slot></slot>
+                    <slot name="actions"></slot>
                 </div>
             </Host>
         )

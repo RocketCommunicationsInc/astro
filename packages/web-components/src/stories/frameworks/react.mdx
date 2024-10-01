@@ -1,0 +1,508 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Frameworks/React" />
+
+# React Integration
+
+## Installation
+
+### Via NPM
+
+`npm i @astrouxds/react`
+
+#### Lazy Loading
+
+Astro Web Components make use of Stencil's automatic lazy loader which only loads components that are actually used on the page.
+
+Our dark theme component styles come out of the box, but if you need light theme or theme switching capabilities then you'll need to import the Astro UXDS CSS stylesheet as shown below. This stylesheet also provides some
+global styles for things like body background color, link and scrollbar styles, among others. If you need to add these styles yourself, you can reference them in our [global CSS file](https://github.com/RocketCommunicationsInc/astro/blob/main/packages/web-components/src/global/_reset.scss).
+
+`import '@astrouxds/astro-web-components/dist/astro-web-components/astro-web-components.css'`
+
+Import [Roboto](https://fonts.google.com/specimen/Roboto) in your index.html. We recommend using Google's CDN for ease of use but you can also install it locally.
+
+```html
+<link rel="preconnect" href="https://fonts.gstatic.com" />
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    rel="stylesheet"
+/>
+```
+
+Next, import any desired Astro component as you would any React component.
+
+`import { RuxButton } from '@astrouxds/react'`
+
+You can now use Astro components as regular React components.
+
+```jsx
+import React from 'react'
+import { RuxButton } from '@astrouxds/react'
+
+const MyComp = () => {
+    return (
+        <div>
+            <RuxButton>Rux Button</RuxButton>
+        </div>
+    )
+}
+```
+
+## With Typescript
+
+All of our component types can be imported from `@astrouxds/astro-web-components`.
+
+## Using our CSS Variables (Design Tokens).
+
+While our components may solve 60% of your UI needs, you will inevitably find yourself needing to
+create your own custom UI in the style of Astro.
+
+Our Astro Web Components are powered by our Design Tokens under the hood. These are imported
+and made available to you when you import `astro-web-components.css` in the form of CSS Custom Properties.
+Our Design Tokens include everything from our color palette to our spacing system.
+
+We also provide our tokens in other formats (SASS, json) for your convienence. For more information,
+check out our [Design Tokens](https://www.astrouxds.com/design-tokens/installation/) page for a list
+of our available tokens and their intended usage.
+
+## Setting Props
+
+Props are set the same way as any other React component.
+
+```js
+const MyComp = () => {
+    return (
+        <div>
+            <RuxButton size="small">Rux Button</RuxButton>
+        </div>
+    )
+}
+```
+
+## Updating Complex Data
+
+### Updating Arrays
+
+For arrays, the standard mutable array operations such as `push()` and `unshift()` won't trigger a component update.
+Instead, non-mutable array operators should be used as they return a copy of a new array. These include `map()` and `filter()`,
+and the ES6 spread operator syntax.
+
+For example, to push a new item to an array, create a new array with the existing values and the new value at the end:
+
+```js
+// our original array
+this.items = ['ionic', 'stencil', 'webcomponents']
+// update the array
+this.items = [...this.items, 'awesomeness']
+```
+
+The `...this.items` syntax is a relatively new feature of JavaScript that "expands" the given object in place.
+Read more about the Spread operator [here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax).
+
+### Updating Objects
+
+The spread operator should also be used to update objects. As with arrays, mutating an object will not trigger a view update,
+but returning a new copy of the object will. Below is an example:
+
+```js
+// our original object
+this.myCoolObject = { first: '1', second: '2' }
+// update our object
+this.myCoolObject = { ...myCoolObject, third: '3' }
+```
+
+Below is an example of updating an array of objects using Astro components in TypeScript and React.
+
+```jsx
+import React, { useState } from 'react'
+import { RuxSegmentedButton, RuxInput, RuxButton } from '@astrouxds/react'
+
+const SegmentedButton = () => {
+  const [dataArr, setDataArr] = useState([
+    {
+      selected: true,
+      label: "One",
+    },
+    {
+      label: "Two",
+    },
+    {
+      label: "Three",
+    },
+  ])
+  const [inputVal, setInputVal] = useState("")
+
+  const handleSubmit = (str: string) => {
+    let strObj = { label: str };
+    //spread in old state, add in new state
+    setDataArr(() => [...dataArr, strObj]);
+  }
+  return(
+    <div>
+      <RuxSegmentedButton data={dataArr} />
+      <RuxInput
+          onRuxchange={(e: CustomEvent<HTMLRuxInputElement>) => {
+            const target = e.target as HTMLInputElement;
+            setInputVal(target.value);
+          }}
+
+      />
+      <RuxButton onClick={() => handleSubmit(inputVal)}>Submit</RuxButton>
+    </div>
+  )
+}
+
+```
+
+This will take the input from RuxInput and add to the dataArr, thus adding to RuxSegmentedButton and triggering a re-render.
+
+## Using Slots
+
+Slots give you full control over the contents of a component. Some components may have multiple slots.
+
+> Web Component Concept:
+> [Slotted content](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot) lives outside of the shadow DOM and as a result, you are free to style them however you want.
+
+Some slots are named slots, which means they are explicitly assigned. In the example below, the two named slots are `right-side` and `left-side`.
+A slot without a `name` is the component's default slot. Each component can only have one default slot, but that doesn't mean you can't put multiple elements inside of a default slot.
+In the below example, The `RuxClock` is being rendered in the default slot of the global status bar. This could also be easily changed to render a `<div>` with child elements, for example.
+
+Here's an example of customizing our global status bar using slots:
+
+```jsx
+import {
+  RuxGlobalStatusBar,
+  RuxMonitoringIcon,
+  RuxClock,
+  RuxIcon
+} from "@astrouxds/react";
+
+function App() {
+  return (
+    <div className="App">
+      <RuxGlobalStatusBar
+        appDomain="Domain"
+        appState="State"
+        appVersion="7.0"
+        username="User Name"
+      >
+        <RuxIcon slot="left-side" icon="apps"></RuxIcon>
+        <RuxClock></RuxClock>
+        <RuxMonitoringIcon
+          slot="right-side"
+          notifications="10"
+          status="normal"
+        ></RuxMonitoringIcon>
+        <RuxMonitoringIcon
+          slot="right-side"
+          icon="antenna-receive"
+          notifications="15"
+          status="caution"
+        ></RuxMonitoringIcon>
+        <RuxMonitoringIcon
+          slot="right-side"
+          notifications="1"
+          status="off"
+          icon="antenna-off"
+        ></RuxMonitoringIcon>
+      </RuxGlobalStatusBar>
+    </div>
+  );
+}
+
+export default App;
+
+```
+
+## Listening To Events
+
+Astro Components emit their own custom events, prefixed with `onRux`.
+
+```jsx
+const MyComp = () => {
+    return (
+        <div>
+            <RuxInput
+                onRuxinput={() => console.log('Heard ruxinput!')}
+                onRuxchange={() => console.log('Heard ruxchange!')}
+            />
+        </div>
+    )
+}
+```
+
+In TypeScript, accessing the events target value requires some type assertion.
+
+```jsx
+const MyComp = () => {
+  return (
+    <div>
+      <RuxInput
+          onRuxchange={(e: CustomEvent<HTMLRuxInputElement>) =>
+            {
+              const target = e.target as HTMLInputElement;
+              console.log(`Here is e.target.value: ${target.value}`)
+            }
+          }
+      />
+    </div>
+  )
+}
+
+```
+
+It is **highly** encouraged to listen to these custom events rather than default React events such as onChange. Because some
+React events are different from their native JS counterparts, and although rare, some bugs can arise from using default React
+events.
+
+Because Astro components were built using [Stencil](https://stenciljs.com/), the custom events were named following the JavaScript convention. React handles onChange differently than JavaScript, therefore the `onRuxinput` event
+is the equivalent of React's onChange. [React onChange event docs.](https://reactjs.org/docs/dom-elements.html#onchange)
+
+## Methods
+
+Some components offer public methods that can be executed. These methods are async and can be executed by setting a ref on the element.
+The React docs for setting and using `ref` can be found [here](https://reactjs.org/docs/refs-and-the-dom.html).
+
+#### Functional Component
+
+```jsx
+import React, { useRef } from 'react'
+import { RuxTree, RuxTreeNode, RuxButton } from '@astrouxds/react'
+
+const FuncTree = () => {
+    const treeRef = useRef(null)
+    const setFirst = (node) => {
+        node.current.setSelected(true)
+    }
+    return (
+        <div>
+            <RuxTree>
+                <RuxTreeNode ref={treeRef}>Hello</RuxTreeNode>
+                <RuxTreeNode>World</RuxTreeNode>
+            </RuxTree>
+            <RuxButton onClick={() => setFirst(treeRef)}>
+                Set First Selected
+            </RuxButton>
+        </div>
+    )
+}
+
+export default FuncTree
+```
+
+#### Class Component
+
+```jsx
+import React, { createRef } from 'react'
+import { RuxButton, RuxTree, RuxTreeNode } from '@astrouxds/react'
+
+class Tree extends React.Component {
+    treeRef = createRef()
+
+    render() {
+        return (
+            <div>
+                <RuxTree>
+                    <RuxTreeNode ref={this.treeRef}>Hello</RuxTreeNode>
+                    <RuxTreeNode>World</RuxTreeNode>
+                </RuxTree>
+                <RuxButton
+                    onClick={() => this.treeRef.current.setSelected(true)}
+                >
+                    Set First Selected
+                </RuxButton>
+            </div>
+        )
+    }
+}
+
+export default Tree
+```
+
+## Data Binding
+
+Because `@astrouxds/react` components are React components, data binding happens the same way.
+
+#### Functional Component
+
+```jsx
+import React, { useState } from 'react'
+import { RuxInput } from '@astrouxds/react'
+
+const MyComp = () => {
+
+    const [myInput, setMyInput] = useState("")
+
+    return (
+        <div>
+            <RuxInput
+                onRuxinput={(e) => setMyInput(e.target.value))}
+            />
+        </div>
+    )
+}
+```
+
+#### Class Component
+
+```jsx
+import React from 'react'
+import { RuxInput } from '@astrouxds/react'
+
+class MyComp extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = { myInput: '' }
+    }
+
+    handleInput(e) {
+        this.setState({ myInput: e.target.value })
+    }
+    render() {
+        return (
+            <div>
+                <RuxInput onRuxinput={(e) => this.handleInput(e)} />
+            </div>
+        )
+    }
+}
+```
+
+#### TypeScript
+
+If you're using TypeScript, make sure you are passing the correct types as props.
+
+```jsx
+import React, { useState } from 'react'
+import { RuxInput } from '@astrouxds/react'
+
+const MyComp = () => {
+
+    const [myInput, setMyInput] = useState("")
+
+    return (
+        <div>
+            <RuxInput
+                onRuxinput={(e: CustomEvent<HTMLRuxInputElement>) => {
+                    const target = e.target as HTMLInputElement
+                    setMyInput(target.value)
+                  }}
+                small={true}
+            />
+        </div>
+    )
+}
+```
+
+React also has syntactic sugar for two way data binding, which can be found [here](https://reactjs.org/docs/two-way-binding-helpers.html).
+
+## Testing
+
+### React Testing Library
+
+#### Overview
+
+[React Testing Library](https://testing-library.com/docs/react-testing-library/intro) is built for testing React components and supports the native HTML elements such as `<input>`.
+Because our Astro components are web-components, some adaptations must be made to make testing with React Testing Library possible.
+[testing-library\_\_dom](https://www.npmjs.com/package/testing-library__dom) is an adpatation of the DOM testing library for use with
+shadow dom. It is still in an early beta stage, however we will show some examples on how to make use of it below.
+
+> For a complete list of the React Testing Library API, read their [docs](https://testing-library.com/docs/react-testing-library/api).
+
+#### Queires
+
+To find certain elements on the page, use the `findBy...` and `getBy...` queries. Here's an example using `getByTestId`.
+
+```jsx
+import { RuxButton } from "@astrouxds/react"
+import { render, fireEvent } from "@testing-library/react";
+
+declare interface Props {
+    handleClick: React.MouseEventHandler<HTMLRuxButtonElement>
+}
+
+const Comp = (props: Props) =>{
+    return(
+        <div>
+            <RuxButton data-testid="btn" onClick={(e) => props.handleClick(e)}>Button</RuxButton>
+        </div>
+    )
+}
+
+test('Can find and click a rux-button', async () => {
+    const mockClick = jest.fn();
+    const { getByTestId } = render(<Comp handleClick={mockClick}/>)
+    let btn = getByTestId('btn')
+    expect(btn).not.toBeNull()
+
+    fireEvent.click(btn);
+    expect(mockClick).toHaveBeenCalledTimes(1)
+})
+```
+
+#### User input
+
+Handling user input can be done through `fireEvent` or `userEvent`. According to [the docs](https://testing-library.com/docs/ecosystem-user-event), `userEvent` is more true to
+how the dom would behave with actual user interaction. However, there may be some hiccups with `userEvent` and shadow dom.
+
+Here's an example using both `fireEvent` and `userEvent` to handle user input.
+
+```jsx
+// MyForm.tsx
+import { useState } from "react";
+import { RuxInput } from "@astrouxds/react";
+
+function RuxInputTest() {
+  const [input, setInput] = useState("");
+
+  return (
+    <div>
+      <RuxInput
+        label="Rux Input"
+        type="text"
+        data-testid="rux-input-test"
+        value={input}
+        onRuxinput={(e: CustomEvent<HTMLRuxInputElement>) => {
+          const target = e.target as HTMLInputElement;
+          setInput(target.value);
+        }}
+      />
+    </div>
+  );
+}
+
+export default RuxInputTest;
+```
+
+```jsx
+//input.test.tsx
+import { render, fireEvent, act } from "@testing-library/react";
+import { within } from "testing-library__dom";
+import userEvent from "@testing-library/user-event";
+import RuxInputTest from './MyForm'
+
+describe('RuxInput', () => {
+    test("Input changes with fireEvent", async () => {
+        const { getByTestId, findByDisplayValue } = render(<RuxInputTest />)
+        const ruxInput = getByTestId('rux-input-test')
+        fireEvent.change(ruxInput, {target: { value: 'Input!'}})
+        await findByDisplayValue('Input!')
+    })
+
+    test("Input changes with userEvent", async () => {
+        const { getByTestId, findByDisplayValue } = render(<RuxInputTest />)
+        const ruxInput = getByTestId('rux-input-test')
+        let shadowInput: HTMLRuxInputElement = await within(ruxInput).findByLabelText('Rux Input')
+        act(() => {
+            userEvent.type(shadowInput, 'User input!')
+        })
+        await findByDisplayValue('User input!')
+        expect(shadowInput.value).toBe('User input!')
+    })
+})
+```
+
+Depending on your enviornment, you may also need to update the test command. For example, in a create-react-app you might need to change the test script to be: `test: "react-scripts test --transformIgnorePatterns=\"node_modules/(?!@astrouxds/react)/\" --env=jsdom"`,
+or otherwise configure Jest to use jsdom and set the `--transformIgnorePatterns` inside `jest.config`. More info can be found at [Jest's documentation](https://jestjs.io/docs/configuration#transformignorepatterns-arraystring).
+
+For more React testing examples, see our React repo [here](https://github.com/RocketCommunicationsInc/astro/tree/v7.7.0/packages/react/test-app).

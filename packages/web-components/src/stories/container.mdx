@@ -1,0 +1,52 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as ContainerStories from './container.stories';
+
+<Meta of={ContainerStories} />
+
+# Container
+
+By default, Containers have a default padding of 1rem (16px) set on the body. If you'd like to change this (for example, using tables or a list inside your Container), you can use the `--body-padding` CSS custom property for convenience or the `body` CSS shadow part.
+
+<Canvas of={ContainerStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### With Header
+
+<Canvas of={ContainerStories.WithHeader} />
+
+### With Tab Bar
+
+<Canvas of={ContainerStories.WithTabBar} />
+
+### With Toolbar
+
+<Canvas of={ContainerStories.WithToolbar} />
+
+### With Footer
+
+<Canvas of={ContainerStories.WithFooter} />
+
+### With Cards
+
+<Canvas of={ContainerStories.WithCards} />
+
+### Full Example
+
+> NOTE: This example uses both tables, which require no padding, and plain text, which should have padding. To implement this,
+> you'll need to set the `--body-padding` to zero and then manually set the padding in your non-table panel sections.
+
+<Canvas of={ContainerStories.WithFullExample} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxContainer } from '@astrouxds/astro-web-components/dist/components/rux-container'
+customElements.define('rux-container', RuxContainer)
+```

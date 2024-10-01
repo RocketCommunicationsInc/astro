@@ -1,0 +1,45 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks'
+import * as GlobalStatusBarStories from './global-status-bar.stories';
+
+<Meta of={GlobalStatusBarStories} />
+
+# Global Status Bar
+
+The Global Status Bar is a full-width view across the top of an application — an area commonly reserved for global status, global command, and top-level navigation. The Global Status Bar often includes: Application Name, Application State, Monitoring Icons, Top Level Navigation, and an Emergency Button.
+
+## Guidelines
+
+* [Astro UXDS: Global Status Bar](https://astrouxds.com/ui-components/global-status-bar)
+
+<Canvas of={GlobalStatusBarStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### With App State
+
+<Canvas of={GlobalStatusBarStories.WithAppState} />
+
+### With Slot Content
+
+<Canvas of={GlobalStatusBarStories.WithSlotContent} />
+
+## With Tabs
+
+<Canvas of={GlobalStatusBarStories.WithTabs} />
+
+### Other Variants
+
+<Canvas of={GlobalStatusBarStories.WithOtherVariants} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxGlobalStatusBar } from '@astrouxds/astro-web-components/dist/components/rux-global-status-bar'
+customElements.define('rux-global-status-bar', RuxGlobalStatusBar)
+```
