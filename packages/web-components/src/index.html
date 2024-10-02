@@ -15,9 +15,42 @@
         />
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
-        <!-- <link rel="stylesheet" href="/build/astro-web-components.css" /> -->
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
     </head>
 
     <body>
+        <div style="width: 400px; margin: auto">
+            <rux-slider></rux-slider>
+            <br />
+            <div id="display"></div>
+        </div>
+        <div style="width: 400px; margin: auto">
+            <rux-slider id="slider-1"></rux-slider>
+            <br />
+            <div id="display-1"></div>
+        </div>
+        <script>
+            const slider = document.querySelector('rux-slider')
+            slider.valueBasedLabels = [
+                { label: 'label', value: 0 },
+                { label: 'label', value: 25 },
+                { label: 'label', value: 50 },
+                { label: 'label', value: 100 },
+            ]
+            const display = document.getElementById('display')
+            slider.addEventListener('ruxchange', (e) => {
+                display.textContent = e.target.value
+            })
+            const slider1 = document.getElementById('slider-1')
+            slider1.valueBasedLabels = [
+                { label: 'lab', value: 25 },
+                { label: 'l', value: 75 },
+                { label: 'l', value: 95 },
+            ]
+            const display1 = document.getElementById('display-1')
+            slider1.addEventListener('ruxchange', (e) => {
+                display1.textContent = e.target.value
+            })
+        </script>
     </body>
 </html>

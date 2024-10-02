@@ -33,3 +33,8 @@ export enum StatusSymbol {
 }
 
 export declare type ExtendedPlacement = Placement | 'auto'
+
+export type AxisLabelObj = {
+    label: string // The text to display next to the tick mark
+    value: number // The position of the tick mark, representing its value on the slider scale
+}

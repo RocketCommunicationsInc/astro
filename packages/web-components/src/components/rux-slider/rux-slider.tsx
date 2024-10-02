@@ -1,20 +1,22 @@
 import {
     Component,
-    h,
-    Prop,
     Element,
-    Host,
     Event,
     EventEmitter,
-    Watch,
+    Host,
+    Prop,
     State,
+    Watch,
+    h,
 } from '@stencil/core'
-import { FormFieldInterface } from '../../common/interfaces.module'
 import {
     hasSlot,
     renderHiddenInput,
     renderHiddenSliderInput,
 } from '../../utils/utils'
+
+import { AxisLabelObj } from '../../common/commonTypes.module'
+import { FormFieldInterface } from '../../common/interfaces.module'
 
 let id = 0
 
@@ -68,6 +70,9 @@ export class RuxSlider implements FormFieldInterface {
      *  Shows tick marks and labels in the order provided and aligns evenly based on the length.
      */
     @Prop({ attribute: 'axis-labels' }) axisLabels: string[] = []
+
+    @Prop({ attribute: 'value-based-labels' })
+    valueBasedLabels: AxisLabelObj[] = []
 
     /**
      * Hides labels and only shows tick marks if axis-labels is provided.
@@ -264,10 +269,19 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     private _getTickWidths() {
-        if (this.axisLabels) {
+        if (this.axisLabels.length > 0) {
+            console.log('here')
             const width = 100 / (this.axisLabels.length - 1)
             return width
         }
+    }
+
+    private _getLabelPosition(value: number) {
+        //set label at specfic value
+        const positionPercent =
+            ((value - this.min) / (this.max - this.min)) * 100
+        console.log(positionPercent, 'posPercent from the value of: ', value)
+        return positionPercent.toString()
     }
 
     /**
@@ -444,6 +458,7 @@ export class RuxSlider implements FormFieldInterface {
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
                             part="input"
+                            list="steplist"
                         ></input>
                         {minVal !== undefined ? (
                             <div class="rux-range-overlay"></div>
@@ -453,6 +468,7 @@ export class RuxSlider implements FormFieldInterface {
                         <datalist
                             id="steplist"
                             style={{
+                                display: 'grid',
                                 gridTemplateColumns: `[tick] repeat(${
                                     axisLabels.length - 1
                                 }, ${this._getTickWidths()}%)`,
@@ -471,6 +487,41 @@ export class RuxSlider implements FormFieldInterface {
                                                 part="axis-label"
                                             >
                                                 {label}
+                                            </div>
+                                        )}
+                                    </div>
+                                )
+                            })}
+                        </datalist>
+                    ) : this.valueBasedLabels.length > 0 ? (
+                        <datalist
+                            id="steplist"
+                            style={{
+                                position: 'relative',
+                                display: 'block',
+                            }}
+                        >
+                            {this.valueBasedLabels.map((label) => {
+                                return (
+                                    <div
+                                        class="tick-label"
+                                        part="tick-container"
+                                        style={{
+                                            position: 'absolute',
+                                            left: `${this._getLabelPosition(
+                                                label.value
+                                            )}`,
+                                            width: '20px',
+                                            transform: `translateX(-${label.value}%)`,
+                                        }}
+                                    >
+                                        <div class="tick" part="tick"></div>
+                                        {ticksOnly ? null : (
+                                            <div
+                                                class="axis-label"
+                                                part="axis-label"
+                                            >
+                                                {label.label}
                                             </div>
                                         )}
                                     </div>

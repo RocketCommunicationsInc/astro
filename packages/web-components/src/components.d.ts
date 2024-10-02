@@ -5,13 +5,13 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+import { AxisLabelObj, Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 import { Status as Status1 } from "./components";
 import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
-export { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+export { AxisLabelObj, Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 export { LogRow } from "./components/rux-log/rux-log.model";
 export { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 export { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
@@ -19903,6 +19903,7 @@ export namespace Components {
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
          */
         "value": number;
+        "valueBasedLabels": AxisLabelObj[];
     }
     interface RuxStatus {
         /**
@@ -55497,6 +55498,7 @@ declare namespace LocalJSX {
           * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
          */
         "value"?: number;
+        "valueBasedLabels"?: AxisLabelObj[];
     }
     interface RuxStatus {
         /**
