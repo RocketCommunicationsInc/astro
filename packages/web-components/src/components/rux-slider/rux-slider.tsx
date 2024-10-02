@@ -280,7 +280,6 @@ export class RuxSlider implements FormFieldInterface {
         //set label at specfic value
         const positionPercent =
             ((value - this.min) / (this.max - this.min)) * 100
-        console.log(positionPercent, 'posPercent from the value of: ', value)
         return positionPercent.toString()
     }
 
@@ -510,7 +509,7 @@ export class RuxSlider implements FormFieldInterface {
                                             position: 'absolute',
                                             left: `${this._getLabelPosition(
                                                 label.value
-                                            )}`,
+                                            )}%`,
                                             width: '20px',
                                             transform: `translateX(-${label.value}%)`,
                                         }}
