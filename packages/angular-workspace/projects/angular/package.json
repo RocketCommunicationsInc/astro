@@ -1,6 +1,6 @@
 {
   "name": "@astrouxds/angular",
-  "version": "0.0.0-timeline-enhanced-20240531164326",
+  "version": "0.0.0-timeline-enhanced-3",
   "description": "Astro Web Components Angular Wrapper",
   "license": "MIT",
   "repository": {
@@ -12,7 +12,7 @@
     "@angular/core": ">=12.0.0"
   },
   "dependencies": {
-    "@astrouxds/astro-web-components": "0.0.0-timeline-enhanced-20240531164326",
+    "@astrouxds/astro-web-components": "0.0.0-timeline-enhanced-3",
     "tslib": "^2.4.1"
   }
 }

@@ -1,5 +1,11 @@
 # @astrouxds/react
 
+## 0.0.0-timeline-enhanced-3
+
+### Patch Changes
+
+-   fixed an issue with secondary ruler and date not working if start time minute was anything but 00:00
+
 ## 0.0.0-timeline-enhanced-20240531164326
 
 ### Minor Changes

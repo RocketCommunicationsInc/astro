@@ -1,5 +1,17 @@
 # @astrouxds/astro-web-components
 
+## 0.0.0-timeline-enhanced-3
+
+### Patch Changes
+
+-   fixed an issue with secondary ruler and date not working if start time minute was anything but 00:00
+
+## 0.0.0-timeline-enhanced-3
+
+### Patch Changes
+
+-   fixed an issue with secondary ruler and date not working if start time minute was anything but 00:00
+
 ## 0.0.0-timeline-enhanced-20240531164326
 
 ### Minor Changes
@@ -10,6 +22,7 @@
 ### Patch Changes
 
 -   2ac99dd8: fixed an issue with selects value sometimes not being an array in a multi select
+
 ## 7.23.0
 
 ### Minor Changes

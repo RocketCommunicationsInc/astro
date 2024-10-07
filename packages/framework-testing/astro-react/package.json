@@ -1,7 +1,7 @@
 {
   "name": "astro-react",
   "private": true,
-  "version": "0.0.0-timeline-enhanced-20240531164326",
+  "version": "0.0.0-timeline-enhanced-3",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -14,8 +14,8 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@astrouxds/astro-web-components": "0.0.0-timeline-enhanced-20240531164326",
-    "@astrouxds/react": "0.0.0-timeline-enhanced-20240531164326",
+    "@astrouxds/astro-web-components": "0.0.0-timeline-enhanced-3",
+    "@astrouxds/react": "0.0.0-timeline-enhanced-3",
     "@astrouxds/tailwind": "^1.0.0-beta.1",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",

@@ -1,5 +1,11 @@
 # astro-vue
 
+## 0.0.0-timeline-enhanced-3
+
+### Patch Changes
+
+- fixed an issue with secondary ruler and date not working if start time minute was anything but 00:00
+
 ## 0.0.0-timeline-enhanced-20240531164326
 
 ### Minor Changes
@@ -13,6 +19,7 @@
 - Updated dependencies [2ac99dd8]
 - Updated dependencies [023b1de1]
   - @astrouxds/astro-web-components@0.0.0-timeline-enhanced-20240531164326
+
 ## 0.3.1
 
 ### Patch Changes
