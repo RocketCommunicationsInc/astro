@@ -174,19 +174,16 @@ export class RuxRuler {
     secondaryRuler(time: string, newDay: string, index: number) {
         let gridColumn
         let textDisplay = ''
-        console.log('time', this.shouldShow(time));
         if (
             ['hour', 'minute'].includes(this.interval) &&
             this.shouldShow(time)
         ) {
-          console.log('in the hour', this.firstFullIncrement)
             if (!this.firstFullIncrement)
                 this.firstFullIncrement = this.getWeekColumn(index).split(
                     '/'
                 )[0]
             gridColumn = this.getWeekColumn(index)
             textDisplay = newDay
-            console.log('look here', this.firstFullIncrement)
         }
         if (
             (this.interval === 'day' && this.shouldShow(time)) ||
@@ -235,7 +232,6 @@ export class RuxRuler {
      * Returns boolean value when comparing hour minute day month against pattern
      */
     shouldShow(time: string) {
-      console.log(this.timePattern)
         return this.timePattern.test(time)
     }
 
