@@ -66,6 +66,11 @@ export class RuxTimeline {
     @Prop() interval: 'month' | 'week' | 'hour' | 'day' | 'minute' = 'hour'
 
     /**
+     * Controls the display of grid lines
+     */
+    @Prop() showGrid: boolean = false
+
+    /**
      * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
      */
     @Prop() timezone = 'UTC'

@@ -24085,14 +24085,14 @@ export declare interface RuxRadioGroup extends Components.RuxRadioGroup {
 
 
 @ProxyCmp({
-  inputs: ['showStartOfDay']
+  inputs: ['showSecondaryRuler', 'showStartOfDay']
 })
 @Component({
   selector: 'rux-ruler',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['showStartOfDay'],
+  inputs: ['showSecondaryRuler', 'showStartOfDay'],
 })
 export class RuxRuler {
   protected el: HTMLElement;
@@ -24595,14 +24595,14 @@ export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
 
 
 @ProxyCmp({
-  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'start', 'timezone', 'zoom']
+  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'showGrid', 'start', 'timezone', 'zoom']
 })
 @Component({
   selector: 'rux-timeline',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'start', 'timezone', 'zoom'],
+  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'showGrid', 'start', 'timezone', 'zoom'],
 })
 export class RuxTimeline {
   protected el: HTMLElement;

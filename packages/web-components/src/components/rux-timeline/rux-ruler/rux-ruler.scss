@@ -10,17 +10,28 @@
     display: flex;
     align-items: center;
     padding: 12px 20px;
+    justify-content: var(--ruler-text-placement);
+}
+
+.ruler-time.has-date-scroll {
+    padding: 8px 20px 8px;
 }
 
 .ruler-new-day-cell {
     background-color: var(--color-background-base-default);
-    font-size: var(--font-size-sm);
-    display: block;
-    text-align: center;
-    padding: 5px;
 }
 
 .ruler-new-day-display {
-    display: block;
-    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: flex-end;
+    background: var(--color-background-surface-header);
+    text-align: left;
+    padding-inline-start: 20px;
+
+    padding-block: var(--spacing-1);
+
+    & span {
+        position: sticky;
+        left: 210px;
+    }
 }
