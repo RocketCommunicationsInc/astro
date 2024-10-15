@@ -457,7 +457,6 @@ export class RuxSlider implements FormFieldInterface {
                             aria-disabled={disabled ? 'true' : 'false'}
                             onBlur={_onBlur}
                             part="input"
-                            list="steplist"
                         ></input>
                         {minVal !== undefined ? (
                             <div class="rux-range-overlay"></div>
@@ -467,7 +466,6 @@ export class RuxSlider implements FormFieldInterface {
                         <datalist
                             id="steplist"
                             style={{
-                                display: 'grid',
                                 gridTemplateColumns: `[tick] repeat(${
                                     axisLabels.length - 1
                                 }, ${this._getTickWidths()}%)`,
