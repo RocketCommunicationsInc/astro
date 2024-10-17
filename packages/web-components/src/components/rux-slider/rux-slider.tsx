@@ -143,6 +143,7 @@ export class RuxSlider implements FormFieldInterface {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._onChange = this._onChange.bind(this)
         this._handleTrackClick = this._handleTrackClick.bind(this)
+        this._handleLabelTickClick = this._handleLabelTickClick.bind(this)
     }
 
     disconnectedCallback() {
@@ -162,6 +163,7 @@ export class RuxSlider implements FormFieldInterface {
     @Watch('max')
     @Watch('minVal')
     handleChange() {
+        console.log('watch')
         this._setValuePercent()
     }
 
@@ -215,13 +217,18 @@ export class RuxSlider implements FormFieldInterface {
         }
     }
 
-    private _onInput(e: Event) {
-        const target = e.target as HTMLInputElement
-        if (this.value !== undefined) {
-            this.value = parseFloat(target.value)
-            if (this.value <= this.minVal! && this.strict) {
-                this.value = this.minVal!
-                target.value = this.value.toString()
+    private _onInput(e: Event, value?: number) {
+        console.log('running oninput')
+        if (value) {
+            this.value = value
+        } else {
+            const target = e.target as HTMLInputElement
+            if (this.value !== undefined) {
+                this.value = parseFloat(target.value)
+                if (this.value <= this.minVal! && this.strict) {
+                    this.value = this.minVal!
+                    target.value = this.value.toString()
+                }
             }
         }
         this._setValuePercent()
@@ -282,7 +289,15 @@ export class RuxSlider implements FormFieldInterface {
             ((value - this.min) / (this.max - this.min)) * 100
         return positionPercent.toString()
     }
-
+    private _handleLabelTickClick(e: MouseEvent) {
+        const target = e.target as HTMLElement
+        console.log(this.value, 'value before')
+        if (target.classList.contains('tick-label')) {
+            // this.value = target.style.left
+            let res = parseFloat(target.style.left.slice(0, -1))
+            this._onInput(e, res)
+        }
+    }
     /**
      * Given the position of the click on a dual range slider, move the appropiate thumb to that
      * postion.
@@ -302,8 +317,9 @@ export class RuxSlider implements FormFieldInterface {
         if (
             target.nodeName === 'INPUT' ||
             target.classList.contains('rux-range-overlay')
-        )
+        ) {
             return
+        }
 
         // Find the size of the element
         const currentTarget = e.currentTarget as HTMLElement
@@ -476,6 +492,7 @@ export class RuxSlider implements FormFieldInterface {
                                     <div
                                         class="tick-label"
                                         part="tick-container"
+                                        onClick={_handleTrackClick}
                                     >
                                         <div class="tick" part="tick"></div>
                                         {ticksOnly ? null : (
@@ -511,6 +528,7 @@ export class RuxSlider implements FormFieldInterface {
                                             width: '20px',
                                             transform: `translateX(-${label.value}%)`,
                                         }}
+                                        onClick={this._handleLabelTickClick}
                                     >
                                         <div class="tick" part="tick"></div>
                                         {ticksOnly ? null : (
