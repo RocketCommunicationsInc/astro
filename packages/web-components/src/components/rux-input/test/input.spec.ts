@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../tests/utils/_astro-fixtures'
 
 test.describe('Input with form', () => {
     const testString = 'Hello World'
@@ -145,6 +145,7 @@ test.describe('Input with form', () => {
                 </form>
                 <ul id="log"></ul>
             </div>
+
         </body>
         `
 
@@ -425,5 +426,49 @@ test.describe('Input', () => {
 
         isFocused = await el.evaluate((el) => el === document.activeElement)
         expect(isFocused).toBeTruthy()
+    })
+})
+
+test.describe('Min and max length', () => {
+    test('minlength works', async ({ page }) => {
+        const template = `
+          <div style="margin: auto; width: 300px;">
+            <rux-input id="minmaxlength" minlength="1" maxlength="3"></rux-input>
+          </div>`
+        await page.setContent(template)
+
+        // Access the shadow DOM input inside the <rux-input> component
+        const input = page.locator('#minmaxlength').locator('#rux-input-1')
+
+        // Type into the input
+        await input.type('12')
+
+        // Check validity
+        await input.evaluate((el: HTMLInputElement) => el.reportValidity())
+        const validityState = await input.evaluate(
+            (el: HTMLInputElement) => el.validity.tooShort
+        )
+
+        // Assert the validity
+        expect(validityState).toBe(false)
+    })
+    test('maxlength works', async ({ page }) => {
+        const template = `
+        <div style="margin: auto; width: 300px;">
+          <rux-input id="minmaxlength" minlength="1" maxlength="3"></rux-input>
+        </div>`
+        await page.setContent(template)
+
+        // Access the shadow DOM input inside the <rux-input> component
+        const input = page.locator('#minmaxlength').locator('#rux-input-1')
+
+        // Type into the input
+        await input.type('1234')
+
+        //test that only 123 were typed, since the maxlength is 3
+        const inputValue = await input.evaluate(
+            (el: HTMLInputElement) => el.value
+        )
+        expect(inputValue.length).toBe(3) // Input should only contain '123'
     })
 })
