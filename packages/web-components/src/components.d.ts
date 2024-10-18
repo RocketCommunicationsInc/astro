@@ -19415,9 +19415,17 @@ export namespace Components {
          */
         "max"?: string;
         /**
+          * The input maxlength attribute
+         */
+        "maxlength"?: string;
+        /**
           * The input min attribute
          */
         "min"?: string;
+        /**
+          * The input minlength attribute
+         */
+        "minlength"?: string;
         /**
           * The input name
          */
@@ -54953,9 +54961,17 @@ declare namespace LocalJSX {
          */
         "max"?: string;
         /**
+          * The input maxlength attribute
+         */
+        "maxlength"?: string;
+        /**
           * The input min attribute
          */
         "min"?: string;
+        /**
+          * The input minlength attribute
+         */
+        "minlength"?: string;
         /**
           * The input name
          */
