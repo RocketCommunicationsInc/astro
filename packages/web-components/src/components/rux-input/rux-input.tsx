@@ -1,17 +1,18 @@
 import {
-    Prop,
-    Host,
     Component,
+    Element,
     Event,
     EventEmitter,
-    h,
-    Element,
+    Host,
+    Method,
+    Prop,
     State,
     Watch,
-    Method,
+    h,
 } from '@stencil/core'
-import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot, renderHiddenInput } from '../../utils/utils'
+
+import { FormFieldInterface } from '../../common/interfaces.module'
 
 let id = 0
 
@@ -112,6 +113,16 @@ export class RuxInput implements FormFieldInterface {
      * The input max attribute
      */
     @Prop() max?: string
+
+    /**
+     * The input maxlength attribute
+     */
+    @Prop() maxlength?: string
+
+    /**
+     * The input minlength attribute
+     */
+    @Prop() minlength?: string
 
     /**
      * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
@@ -288,6 +299,8 @@ export class RuxInput implements FormFieldInterface {
             togglePassword,
             isPasswordVisible,
             autocomplete,
+            minlength,
+            maxlength,
         } = this
 
         renderHiddenInput(true, el, name, value, disabled)
@@ -357,6 +370,8 @@ export class RuxInput implements FormFieldInterface {
                             step={step}
                             min={min}
                             max={max}
+                            minlength={minlength}
+                            maxlength={maxlength}
                             value={value}
                             class="native-input"
                             id={inputId}
