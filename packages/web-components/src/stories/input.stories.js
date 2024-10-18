@@ -1,8 +1,8 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
-import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { html } from 'lit-html'
 
 const Base = (args) => {
-return html`
+    return html`
         <rux-input
             label="${args.label}"
             .disabled="${args.disabled}"
@@ -21,6 +21,8 @@ return html`
             autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
             size="${args.size}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         ></rux-input>
     `
 }
@@ -45,6 +47,8 @@ const Icons = (args) => {
             ?readonly="${args.readonly}"
             ?autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         >
             <rux-icon
                 slot="prefix"
@@ -71,6 +75,8 @@ const Icons = (args) => {
             ?readonly="${args.readonly}"
             ?autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         >
             <rux-icon
                 slot="suffix"
@@ -97,6 +103,8 @@ const Icons = (args) => {
             ?readonly="${args.readonly}"
             ?autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         >
             <rux-icon
                 slot="prefix"
@@ -132,6 +140,8 @@ const Sizes = (args) => {
             ?readonly="${args.readonly}"
             ?autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         ></rux-input>
         <br />
         <rux-input
@@ -152,6 +162,8 @@ const Sizes = (args) => {
             ?readonly="${args.readonly}"
             ?autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         ></rux-input>
         <br />
         <rux-input
@@ -172,6 +184,8 @@ const Sizes = (args) => {
             ?readonly="${args.readonly}"
             ?autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         ></rux-input>
     `
 }
@@ -269,6 +283,8 @@ const HorizontalLabel = (args) => {
             ?autocomplete="${args.autocomplete}"
             ?spellcheck="${args.spellcheck}"
             size="${args.size}"
+            .minlength="${args.minlength}"
+            .maxlength="${args.maxlength}"
         ></rux-input>
     `
 }
@@ -312,6 +328,8 @@ export const Default = {
         spellcheck: false,
         step: '',
         value: '',
+        minlength: '',
+        maxlength: '',
     },
 
     argTypes: {
@@ -343,6 +361,8 @@ export const Disabled = {
         spellcheck: false,
         step: '',
         value: '',
+        minlength: '',
+        maxlength: '',
     },
 
     argTypes: {
@@ -357,10 +377,25 @@ export const Required = {
     name: 'Required',
 
     args: {
-        label: 'Required input',
-        required: true,
         type: 'text',
+        label: 'Required Input',
+        autocomplete: '',
+        disabled: false,
+        errorText: '',
+        helpText: '',
+        invalid: false,
+        max: '',
+        min: '',
+        name: '',
+        placeholder: '',
+        readonly: false,
+        required: true,
         size: 'medium',
+        spellcheck: false,
+        step: '',
+        value: '',
+        minlength: '',
+        maxlength: '',
     },
 }
 
@@ -370,7 +405,24 @@ export const WithIcons = {
 
     args: {
         type: 'text',
+        label: '',
+        autocomplete: '',
+        disabled: false,
+        errorText: '',
+        helpText: '',
+        invalid: false,
+        max: '',
+        min: '',
+        name: '',
+        placeholder: '',
+        readonly: false,
+        required: false,
         size: 'medium',
+        spellcheck: false,
+        step: '',
+        value: '',
+        minlength: '',
+        maxlength: '',
     },
 }
 
@@ -484,6 +536,16 @@ export const WithSizes = {
                 disable: true,
             },
         },
+        minlength: {
+            table: {
+                disable: true,
+            },
+        },
+        maxlength: {
+            table: {
+                disable: true,
+            },
+        },
     },
 }
 
@@ -509,6 +571,8 @@ export const HelpText = {
         spellcheck: false,
         step: '',
         value: '',
+        minlength: '',
+        maxlength: '',
     },
 
     argTypes: {
@@ -540,6 +604,8 @@ export const Invalid = {
         spellcheck: false,
         step: '',
         value: '',
+        minlength: '',
+        maxlength: '',
     },
 
     argTypes: {
@@ -661,6 +727,16 @@ export const WithTypes = {
                 disable: true,
             },
         },
+        minlength: {
+            table: {
+                disable: true,
+            },
+        },
+        maxlength: {
+            table: {
+                disable: true,
+            },
+        },
     },
 }
 
@@ -691,6 +767,8 @@ export const WithHorizontalLabel = {
         spellcheck: false,
         step: '',
         value: '',
+        minlength: '',
+        maxlength: '',
     },
 
     argTypes: {
