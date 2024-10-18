@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.24.0
+
+### Minor Changes
+
+-   44237a22: Added minlength and maxlength to rux-input
+
 ## 7.23.0
 
 ### Minor Changes

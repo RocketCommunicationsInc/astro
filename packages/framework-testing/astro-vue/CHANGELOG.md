@@ -1,5 +1,16 @@
 # astro-vue
 
+## 0.4.0
+
+### Minor Changes
+
+- 44237a22: Added minlength and maxlength to rux-input
+
+### Patch Changes
+
+- Updated dependencies [44237a22]
+  - @astrouxds/astro-web-components@7.24.0
+
 ## 0.3.1
 
 ### Patch Changes

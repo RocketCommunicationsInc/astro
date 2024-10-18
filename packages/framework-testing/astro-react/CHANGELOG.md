@@ -1,5 +1,11 @@
 # astro-react
 
+## 0.4.0
+
+### Minor Changes
+
+- 44237a22: Added minlength and maxlength to rux-input
+
 ## 0.3.1
 
 ### Patch Changes
