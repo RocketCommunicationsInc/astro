@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.24.0
+
+### Minor Changes
+
+#### Input
+
+-   Added minlength and maxlength props
+
 ## 7.23.0
 
 ### Minor Changes

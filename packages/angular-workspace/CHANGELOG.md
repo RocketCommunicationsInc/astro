@@ -1,22 +1,30 @@
 # @astrouxds/angular
 
+## 7.24.0
+
+### Minor Changes
+
+#### Input
+
+-   Added minlength and maxlength props
+
 ## 7.23.0
 
 ### Minor Changes
 
 #### Tabs
 
--   Added a new 'actions' slot to allow for tab actions on individual tabs (such as closing a tab), without firing off the `ruxselected` event.
+- Added a new 'actions' slot to allow for tab actions on individual tabs (such as closing a tab), without firing off the `ruxselected` event.
 
 ### Patch Changes
 
 #### Button
 
--   Fixed button bug when clicking and dragging over an icon-only, borderless button
+- Fixed button bug when clicking and dragging over an icon-only, borderless button
 
 #### Input
 
--   Fixed an issue causing caret navigation to appear innappropriately within input
+- Fixed an issue causing caret navigation to appear innappropriately within input
 
 ## 7.22.1
 
