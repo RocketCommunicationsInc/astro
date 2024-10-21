@@ -23693,7 +23693,7 @@ export declare interface RuxIndeterminateProgress extends Components.RuxIndeterm
 
 
 @ProxyCmp({
-  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
+  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'maxlength', 'min', 'minlength', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
   methods: ['setFocus', 'getInput']
 })
 @Component({
@@ -23701,7 +23701,7 @@ export declare interface RuxIndeterminateProgress extends Components.RuxIndeterm
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'min', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
+  inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'maxlength', 'min', 'minlength', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
 })
 export class RuxInput {
   protected el: HTMLElement;
