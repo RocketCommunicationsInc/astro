@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.24.2
+
+### Patch Changes
+
+-   89c6be77: Rux-accordion css fix for new Chrome version
+
 ## 7.24.1
 
 ### Patch Changes

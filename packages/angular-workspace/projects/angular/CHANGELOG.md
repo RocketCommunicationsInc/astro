@@ -1,12 +1,20 @@
 # @astrouxds/angular
 
+## 7.24.2
+
+### Patch Changes
+
+- 89c6be77: Rux-accordion css fix for new Chrome version
+- Updated dependencies [89c6be77]
+  - @astrouxds/astro-web-components@7.24.2
+
 ## 7.24.1
 
 ### Patch Changes
 
 #### Accordion
 
--   CSS fix for accordion-item for Chrome version 131.0.6778.70.
+- CSS fix for accordion-item for Chrome version 131.0.6778.70.
 
 ## 7.24.0
 
@@ -14,7 +22,7 @@
 
 #### Input
 
--   Added minlength and maxlength props
+- Added minlength and maxlength props
 
 ## 7.23.0
 
