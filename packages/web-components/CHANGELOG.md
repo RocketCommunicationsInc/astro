@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.24.1
+
+### Patch Changes
+
+#### Accordion
+
+-   CSS fix for accordion-item for Chrome version 131.0.6778.70.
+
 ## 7.24.0
 
 ### Minor Changes

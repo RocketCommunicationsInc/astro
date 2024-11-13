@@ -44,6 +44,7 @@ summary:hover .rux-accordion-item--title {
 
 .rux-accordion-item {
     display: flex;
+    flex-direction: column;
     font-family: var(--font-control-body-1-font-family);
     font-size: var(--font-control-body-1-font-size);
     font-weight: var(--font-control-body-1-font-weight);
@@ -61,6 +62,7 @@ summary:hover .rux-accordion-item--title {
     }
 
     &--content {
+        display: block;
         padding: var(--spacing-4);
         margin: var(--spacing-0);
         font-size: var(--font-body-2-font-size);
