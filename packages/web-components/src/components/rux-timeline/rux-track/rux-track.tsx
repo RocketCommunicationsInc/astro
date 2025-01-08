@@ -1,25 +1,25 @@
 import {
-    Element,
-    Listen,
     Component,
-    Prop,
+    Element,
     Host,
-    h,
-    Watch,
+    Listen,
+    Prop,
     State,
+    Watch,
+    h,
 } from '@stencil/core'
-import {
-    differenceInMinutes,
-    differenceInHours,
-    differenceInSeconds,
-    differenceInMonths,
-    differenceInWeeks,
-} from 'date-fns'
 import {
     daysInMonth,
     getBeginningOfDay,
     getStartEndDateForInterval,
 } from '../helpers'
+import {
+    differenceInHours,
+    differenceInMinutes,
+    differenceInMonths,
+    differenceInSeconds,
+    differenceInWeeks,
+} from 'date-fns'
 
 interface DateValidation {
     success: boolean
@@ -37,8 +37,6 @@ interface DateValidation {
 })
 export class RuxTrack {
     playedIndicator!: HTMLElement
-
-    @State() hasRuler: boolean = false
 
     @Element() el!: HTMLRuxTrackElement
 
@@ -76,6 +74,8 @@ export class RuxTrack {
      * The playhead of rux-track.
      */
     @Prop({ reflect: true }) playhead: any
+
+    @State() hasRuler: boolean = false
 
     @Watch('start')
     @Watch('end')

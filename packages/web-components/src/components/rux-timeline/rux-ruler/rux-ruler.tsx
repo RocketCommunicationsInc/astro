@@ -1,5 +1,7 @@
-import { Prop, Component, Element, Host, h } from '@stencil/core'
+import { Component, Element, Host, Prop, h } from '@stencil/core'
+
 import { dateRange as getRange } from '../helpers'
+
 @Component({
     tag: 'rux-ruler',
     styleUrl: 'rux-ruler.scss',

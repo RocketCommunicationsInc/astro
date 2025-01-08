@@ -1,17 +1,17 @@
 import { Component, Element, Host, Prop, State, Watch, h } from '@stencil/core'
 import {
-    differenceInHours,
-    differenceInMinutes,
-    differenceInMonths,
-    format,
-} from 'date-fns'
-import {
     dateRange,
     daysInMonth,
     getBeginningOfMonth,
     getStartEndDateForInterval,
     validateTimezone,
 } from './helpers'
+import {
+    differenceInHours,
+    differenceInMinutes,
+    differenceInMonths,
+    format,
+} from 'date-fns'
 
 /**
  * @part playhead - The timeline's playhead
@@ -70,6 +70,12 @@ export class RuxTimeline {
      */
     @Prop() timezone = 'UTC'
 
+    /**
+     * Controls the position of the ruler
+     */
+    @Prop({ attribute: 'ruler-position' }) rulerPostion?: 'top' | 'bottom' =
+        'bottom'
+
     @Watch('hasPlayedIndicator')
     @Watch('playhead')
     syncPlayhead() {
@@ -108,6 +114,7 @@ export class RuxTimeline {
     componentWillLoad() {
         this._setZoom()
         this.syncPlayhead()
+        this._updateRegions()
     }
 
     get width() {
@@ -403,7 +410,9 @@ export class RuxTimeline {
                 })
 
                 rulerEl.start = useStartEndDates.timelineStart.toISOString()
+
                 rulerEl.end = useStartEndDates.timelineEnd.toISOString()
+
                 rulerEl.interval = this.interval
             }
         }
@@ -467,13 +476,25 @@ export class RuxTimeline {
                             }}
                         ></div>
                     )}
-
+                    {this.rulerPostion === 'top' ? (
+                        <div
+                            class="ruler"
+                            ref={(el) => (this.rulerContainer = el)}
+                        >
+                            <slot name="ruler"></slot>
+                        </div>
+                    ) : null}
                     <div class="events" ref={(el) => (this.slotContainer = el)}>
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
-                    <div class="ruler" ref={(el) => (this.rulerContainer = el)}>
-                        <slot name="ruler"></slot>
-                    </div>
+                    {this.rulerPostion === 'bottom' ? (
+                        <div
+                            class="ruler"
+                            ref={(el) => (this.rulerContainer = el)}
+                        >
+                            <slot name="ruler"></slot>
+                        </div>
+                    ) : null}
                 </div>
             </Host>
         )

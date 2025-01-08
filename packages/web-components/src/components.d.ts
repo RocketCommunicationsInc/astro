@@ -20095,6 +20095,10 @@ export namespace Components {
          */
         "playhead"?: string;
         /**
+          * Controls the position of the ruler
+         */
+        "rulerPostion"?: 'top' | 'bottom';
+        /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "start": string;
@@ -55729,6 +55733,10 @@ declare namespace LocalJSX {
           * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "playhead"?: string;
+        /**
+          * Controls the position of the ruler
+         */
+        "rulerPostion"?: 'top' | 'bottom';
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
