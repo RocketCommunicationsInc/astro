@@ -20,6 +20,7 @@ import {
     differenceInSeconds,
     differenceInWeeks,
 } from 'date-fns'
+import { format, utcToZonedTime } from 'date-fns-tz'
 
 interface DateValidation {
     success: boolean
@@ -76,6 +77,7 @@ export class RuxTrack {
     @Prop({ reflect: true }) playhead: any
 
     @State() hasRuler: boolean = false
+    @State() displayDate: string = 'Default'
 
     @Watch('start')
     @Watch('end')
@@ -84,6 +86,7 @@ export class RuxTrack {
         if (old) {
             this.initializeRows()
         }
+        this._handleDisplayDate()
     }
 
     @Watch('playhead')
@@ -92,7 +95,9 @@ export class RuxTrack {
     }
     @Watch('timezone')
     handleTimezoneUpdate() {
+        console.log('TZ change')
         this.initializeRows()
+        this._handleDisplayDate()
     }
 
     @Listen('ruxtimeregionchange')
@@ -103,6 +108,7 @@ export class RuxTrack {
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
+        this._handleDisplayDate()
     }
 
     /**
@@ -194,6 +200,7 @@ export class RuxTrack {
                 )
             }
         }
+
         return 0
     }
 
@@ -313,8 +320,31 @@ export class RuxTrack {
         const hasRuler = [...this.el.children].find(
             (el) => el.tagName.toLowerCase() === 'rux-ruler'
         )
-
         this.hasRuler = !!hasRuler
+    }
+
+    private _formatMonthDayWithTimeZone(
+        isoDate: string,
+        timeZone: string
+    ): string {
+        // Convert the ISO string to a Date object
+        const date = new Date(isoDate)
+
+        // Convert the Date object to the specified timezone
+        const zonedDate = utcToZonedTime(date, timeZone)
+
+        // Format the date as MM/DD
+        return format(zonedDate, 'MM/dd', { timeZone })
+    }
+
+    private _handleDisplayDate() {
+        console.log('Handle DD Call')
+        if (this.start && this.timezone) {
+            this.displayDate = this._formatMonthDayWithTimeZone(
+                this.start,
+                this.timezone
+            )
+        }
     }
 
     render() {
@@ -334,7 +364,11 @@ export class RuxTrack {
                             gridRow: '1',
                         }}
                     >
-                        <slot name="label"></slot>
+                        {this.hasRuler ? (
+                            <slot name="label">{this.displayDate}</slot>
+                        ) : (
+                            <slot name="label"></slot>
+                        )}
                     </div>
 
                     <slot onSlotchange={this._handleSlotChange}></slot>

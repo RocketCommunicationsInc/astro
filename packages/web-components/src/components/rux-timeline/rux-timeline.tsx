@@ -396,7 +396,7 @@ export class RuxTimeline {
 
             rulerTrack.width = this.width
             rulerTrack.columns = this.columns
-
+            rulerTrack.timezone = this.timezone
             rulerTrack.interval = this.interval
             rulerTrack.start = useStartEndDates.timelineStart.toISOString()
             rulerTrack.end = useStartEndDates.timelineEnd.toISOString()
