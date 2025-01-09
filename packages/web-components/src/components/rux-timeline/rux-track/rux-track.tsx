@@ -95,7 +95,6 @@ export class RuxTrack {
     }
     @Watch('timezone')
     handleTimezoneUpdate() {
-        console.log('TZ change')
         this.initializeRows()
         this._handleDisplayDate()
     }
@@ -338,7 +337,6 @@ export class RuxTrack {
     }
 
     private _handleDisplayDate() {
-        console.log('Handle DD Call')
         if (this.start && this.timezone) {
             this.displayDate = this._formatMonthDayWithTimeZone(
                 this.start,
