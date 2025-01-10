@@ -701,6 +701,11 @@ export default {
             name: 'ruler-position',
             description: 'The position of the rux-ruler within the timeline.',
 
+            type: {
+                name: 'string',
+                required: false,
+            },
+
             control: {
                 type: 'radio',
             },
