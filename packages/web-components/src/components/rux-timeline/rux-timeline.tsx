@@ -73,7 +73,7 @@ export class RuxTimeline {
     /**
      * Controls the position of the ruler, placing it on either the top or bottom of the timeline.
      */
-    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPostion?:
+    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPosition?:
         | 'top'
         | 'bottom' = 'bottom'
 
@@ -460,7 +460,7 @@ export class RuxTimeline {
                 <div
                     class={{
                         'rux-timeline': true,
-                        'rux-ruler-top': this.rulerPostion === 'top',
+                        'rux-ruler-top': this.rulerPosition === 'top',
                     }}
                     onMouseMove={(ev) => this._handleMouse(ev)}
                     onScroll={() => this._handleScroll()}

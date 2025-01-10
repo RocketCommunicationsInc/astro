@@ -20095,9 +20095,10 @@ export namespace Components {
          */
         "playhead"?: string;
         /**
-          * Controls the position of the ruler
+          * Controls the position of the ruler, placing it on either the top or bottom of the timeline.
          */
-        "rulerPostion"?: 'top' | 'bottom';
+        "rulerPosition"?: | 'top'
+        | 'bottom';
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
@@ -55734,9 +55735,10 @@ declare namespace LocalJSX {
          */
         "playhead"?: string;
         /**
-          * Controls the position of the ruler
+          * Controls the position of the ruler, placing it on either the top or bottom of the timeline.
          */
-        "rulerPostion"?: 'top' | 'bottom';
+        "rulerPosition"?: | 'top'
+        | 'bottom';
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */

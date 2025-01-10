@@ -699,7 +699,8 @@ export default {
         },
         rulerPosition: {
             name: 'ruler-position',
-            description: 'The position of the rux-ruler within the timeline.',
+            description:
+                'Controls the position of the ruler, placing it on either the top or bottom of the timeline.   ',
 
             control: {
                 type: 'radio',
@@ -709,7 +710,7 @@ export default {
                 category: 'props',
 
                 type: {
-                    summary: '"top" | "bottom"',
+                    summary: '"top" | "bottom" | undefined',
                 },
 
                 defaultValue: {
