@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from 'lit-html'
 
 const Base = (args) => {
     let start = args.start
@@ -23,6 +23,7 @@ const Base = (args) => {
                 playhead="${position}"
                 interval="${args.interval}"
                 zoom="${args.zoom}"
+                ruler-position="${args.rulerPosition}"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
@@ -454,6 +455,41 @@ const MonthsExample = (args) => {
     `
 }
 
+const RulerPositionExample = (args) => {
+    return html`
+        <style>
+            rux-timeline::part(time-region-container) {
+                height: auto;
+            }
+        </style>
+        <div style="width: 950px; margin: auto">
+            <rux-timeline
+                has-played-indicator="${args.hasPlayedIndicator}"
+                timezone="${args.timezone}"
+                start="${args.start}"
+                end="${args.end}"
+                interval="${args.interval}"
+                zoom="${args.zoom}"
+                ruler-position="${args.rulerPosition}"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 1</div>
+                    <rux-time-region
+                        start="2021-02-01T01:00:00Z"
+                        end="2021-02-01T04:00:00Z"
+                        status="serious"
+                    >
+                        Event 1.2
+                    </rux-time-region>
+                </rux-track>
+            </rux-timeline>
+        </div>
+    `
+}
+
 export default {
     title: 'Beta/Timeline [BETA]',
     component: 'rux-timeline',
@@ -549,7 +585,7 @@ export default {
         },
 
         hasPlayedIndicator: {
-            name: 'hasPlayedIndicator',
+            name: 'has-played-indicator',
             description: 'Visually marks past time as played in each track',
 
             type: {
@@ -661,6 +697,28 @@ export default {
 
             options: [null],
         },
+        rulerPosition: {
+            name: 'ruler-position',
+            description: 'The position of the rux-ruler within the timeline.',
+
+            control: {
+                type: 'radio',
+            },
+
+            table: {
+                category: 'props',
+
+                type: {
+                    summary: '"top" | "bottom"',
+                },
+
+                defaultValue: {
+                    summary: "'bottom'",
+                },
+            },
+
+            options: ['top', 'bottom'],
+        },
     },
 }
 
@@ -676,6 +734,7 @@ export const Default = {
         playhead: '2021-02-01T04:00:00Z',
         timezone: 'America/New_York',
         hasPlayedIndicator: false,
+        rulerPosition: 'bottom',
     },
 }
 
@@ -721,5 +780,21 @@ export const MonthsWeeks = {
         playhead: '2024-02-15T07:00:00Z',
         timezone: 'UTC',
         hasPlayedIndicator: false,
+    },
+}
+
+export const RulerPosition = {
+    render: RulerPositionExample.bind(),
+    name: 'Ruler Position',
+
+    args: {
+        zoom: 2,
+        interval: 'hour',
+        start: '2021-02-01T00:00:00Z',
+        end: '2021-02-03T00:00:00Z',
+        playhead: '2021-02-01T04:00:00Z',
+        timezone: 'America/New_York',
+        hasPlayedIndicator: false,
+        rulerPosition: 'top',
     },
 }

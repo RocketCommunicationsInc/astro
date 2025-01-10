@@ -71,10 +71,11 @@ export class RuxTimeline {
     @Prop() timezone = 'UTC'
 
     /**
-     * Controls the position of the ruler
+     * Controls the position of the ruler, placing it on either the top or bottom of the timeline.
      */
-    @Prop({ attribute: 'ruler-position' }) rulerPostion?: 'top' | 'bottom' =
-        'bottom'
+    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPostion?:
+        | 'top'
+        | 'bottom' = 'bottom'
 
     @Watch('hasPlayedIndicator')
     @Watch('playhead')
@@ -457,7 +458,10 @@ export class RuxTimeline {
         return (
             <Host>
                 <div
-                    class="rux-timeline"
+                    class={{
+                        'rux-timeline': true,
+                        'rux-ruler-top': this.rulerPostion === 'top',
+                    }}
                     onMouseMove={(ev) => this._handleMouse(ev)}
                     onScroll={() => this._handleScroll()}
                     ref={(el) => (this.timelineContainer = el)}
@@ -476,25 +480,12 @@ export class RuxTimeline {
                             }}
                         ></div>
                     )}
-                    {this.rulerPostion === 'top' ? (
-                        <div
-                            class="ruler"
-                            ref={(el) => (this.rulerContainer = el)}
-                        >
-                            <slot name="ruler"></slot>
-                        </div>
-                    ) : null}
                     <div class="events" ref={(el) => (this.slotContainer = el)}>
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>
-                    {this.rulerPostion === 'bottom' ? (
-                        <div
-                            class="ruler"
-                            ref={(el) => (this.rulerContainer = el)}
-                        >
-                            <slot name="ruler"></slot>
-                        </div>
-                    ) : null}
+                    <div class="ruler" ref={(el) => (this.rulerContainer = el)}>
+                        <slot name="ruler"></slot>
+                    </div>
                 </div>
             </Host>
         )

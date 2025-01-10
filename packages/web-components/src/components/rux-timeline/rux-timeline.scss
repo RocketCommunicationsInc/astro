@@ -52,6 +52,9 @@
     overflow-x: auto;
     position: relative;
 }
+.rux-ruler-top {
+    flex-direction: column-reverse;
+}
 
 .hidden {
     display: none;
