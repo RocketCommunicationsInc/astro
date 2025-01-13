@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../tests/utils/_astro-fixtures'
 // import { test } from "stencil-playwright";
 // import { expect } from "@playwright/test";
 test.describe('Timeline DST', () => {
@@ -366,6 +366,76 @@ test.describe('Timeline', () => {
         await expect(el).toHaveClass(
             'rux-time-region rux-time-region--partial-start rux-time-region--partial-end'
         )
+    })
+})
+test.describe('Timeline Ruler Position', () => {
+    test('ruler-position top renders ruler in correct place', async ({
+        page,
+    }) => {
+        const content = `
+        <div style="width: 950px; margin: auto">
+    <rux-timeline has-played-indicator="false" timezone="America/New_York" start="2021-02-01T00:00:00Z"
+      end="2021-02-03T00:00:00Z" interval="hour" zoom="2" ruler-position="top">
+      <rux-track slot="ruler">
+        <rux-ruler></rux-ruler>
+      </rux-track>
+      <rux-track>
+        <div slot="label">Region 1</div>
+        <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T04:00:00Z" status="serious">
+          Event 1.2
+        </rux-time-region>
+      </rux-track>
+    </rux-timeline>
+  </div>
+      `
+        await page.setContent(content)
+
+        const timeline = page.locator('rux-timeline')
+        await expect(timeline).toHaveAttribute('ruler-position', 'top')
+        const classDiv = timeline.locator('rux-ruler-top')
+        await expect(classDiv).toBeTruthy()
+    })
+    test('ruler-position can be programatically changed', async ({ page }) => {
+        const content = `
+              <div style="width: 950px; margin: auto">
+    <rux-timeline has-played-indicator="false" timezone="America/New_York" start="2021-02-01T00:00:00Z"
+      end="2021-02-03T00:00:00Z" interval="hour" zoom="2" ruler-position="bottom">
+      <rux-track slot="ruler">
+        <rux-ruler></rux-ruler>
+      </rux-track>
+      <rux-track>
+        <div slot="label">Region 1</div>
+        <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T04:00:00Z" status="serious">
+          Event 1.2
+        </rux-time-region>
+      </rux-track>
+    </rux-timeline>
+  </div>
+  <rux-button>Swap</rux-button>
+
+      `
+        await page.setContent(content)
+        await page.addScriptTag({
+            content: `
+    const timeline = document.querySelector('rux-timeline')
+    const btns = document.querySelectorAll('rux-button')
+    btns[0].addEventListener('click', () => {
+      if (timeline.getAttribute('ruler-position') === 'bottom') {
+        timeline.setAttribute('ruler-position', 'top')
+      } else {
+        timeline.setAttribute('ruler-position', 'bottom')
+      }
+    })
+        `,
+        })
+        const timeline = page.locator('rux-timeline')
+        const btn = page.locator('rux-button')
+
+        await expect(timeline).toHaveAttribute('ruler-position', 'bottom')
+        await btn.click()
+        await expect(timeline).toHaveAttribute('ruler-position', 'top')
+        await btn.click()
+        await expect(timeline).toHaveAttribute('ruler-position', 'bottom')
     })
 })
 
