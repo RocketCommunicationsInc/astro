@@ -702,6 +702,11 @@ export default {
             description:
                 'Controls the position of the ruler, placing it on either the top or bottom of the timeline.   ',
 
+            type: {
+                name: 'string',
+                required: false,
+            },
+
             control: {
                 type: 'radio',
             },
