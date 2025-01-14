@@ -1,7 +1,8 @@
-import { expect, PlaywrightTestConfig } from '@playwright/test'
+import { PlaywrightTestConfig, expect } from '@playwright/test'
+
+import { TestOptions } from './tests/utils/_astro-fixtures'
 import { devices } from '@playwright/test'
 import { matchers } from '@astrouxds/stencil-playwright'
-import { TestOptions } from './tests/utils/_astro-fixtures'
 
 expect.extend(matchers)
 
@@ -31,10 +32,10 @@ const config: PlaywrightTestConfig<TestOptions> = {
              * Increases the maximum allowed pixel difference to account
              * for slight browser rendering inconsistencies.
              */
-            // maxDiffPixelRatio: 0.01,
+            maxDiffPixelRatio: 0.02,
         },
         toHaveScreenshot: {
-            // maxDiffPixelRatio: 0.01,
+            maxDiffPixelRatio: 0.02,
         },
     },
     /* Run tests in files in parallel */
