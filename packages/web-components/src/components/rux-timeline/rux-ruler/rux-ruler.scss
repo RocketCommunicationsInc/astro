@@ -9,7 +9,15 @@
 .ruler-time {
     display: flex;
     align-items: center;
-    padding: 12px 20px;
+    padding: var(--spacing-1);
+    border: 2px solid var(--color-background-base-default);
+    border-width: 0 2px 0 2px;
+    &:not(:last-child) {
+        border-right: none;
+    }
+    &:first-child {
+        border-left: none;
+    }
 }
 
 .ruler-new-day-cell {
