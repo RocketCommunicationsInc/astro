@@ -66,16 +66,14 @@ export class RuxTimeline {
     @Prop() interval: 'month' | 'week' | 'hour' | 'day' | 'minute' = 'hour'
 
     /**
+     * Controls the display of grid lines
+     */
+    @Prop() showGrid: boolean = false
+
+    /**
      * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
      */
     @Prop() timezone = 'UTC'
-
-    /**
-     * Controls the position of the ruler, placing it on either the top or bottom of the timeline.
-     */
-    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPosition?:
-        | 'top'
-        | 'bottom' = 'bottom'
 
     @Watch('hasPlayedIndicator')
     @Watch('playhead')
@@ -115,7 +113,6 @@ export class RuxTimeline {
     componentWillLoad() {
         this._setZoom()
         this.syncPlayhead()
-        this._updateRegions()
     }
 
     get width() {
@@ -397,7 +394,7 @@ export class RuxTimeline {
 
             rulerTrack.width = this.width
             rulerTrack.columns = this.columns
-            rulerTrack.timezone = this.timezone
+
             rulerTrack.interval = this.interval
             rulerTrack.start = useStartEndDates.timelineStart.toISOString()
             rulerTrack.end = useStartEndDates.timelineEnd.toISOString()
@@ -411,9 +408,7 @@ export class RuxTimeline {
                 })
 
                 rulerEl.start = useStartEndDates.timelineStart.toISOString()
-
                 rulerEl.end = useStartEndDates.timelineEnd.toISOString()
-
                 rulerEl.interval = this.interval
             }
         }
@@ -458,10 +453,7 @@ export class RuxTimeline {
         return (
             <Host>
                 <div
-                    class={{
-                        'rux-timeline': true,
-                        'rux-ruler-top': this.rulerPosition === 'top',
-                    }}
+                    class="rux-timeline"
                     onMouseMove={(ev) => this._handleMouse(ev)}
                     onScroll={() => this._handleScroll()}
                     ref={(el) => (this.timelineContainer = el)}
@@ -480,6 +472,7 @@ export class RuxTimeline {
                             }}
                         ></div>
                     )}
+
                     <div class="events" ref={(el) => (this.slotContainer = el)}>
                         <slot onSlotchange={this._handleSlotChange}></slot>
                     </div>

@@ -20,7 +20,6 @@ import {
     differenceInSeconds,
     differenceInWeeks,
 } from 'date-fns'
-import { format, utcToZonedTime } from 'date-fns-tz'
 
 interface DateValidation {
     success: boolean
@@ -38,6 +37,8 @@ interface DateValidation {
 })
 export class RuxTrack {
     playedIndicator!: HTMLElement
+
+    @State() hasRuler: boolean = false
 
     @Element() el!: HTMLRuxTrackElement
 
@@ -76,8 +77,12 @@ export class RuxTrack {
      */
     @Prop({ reflect: true }) playhead: any
 
-    @State() hasRuler: boolean = false
-    @State() displayDate: string = 'Default'
+    /**
+     * The position of the ruler, either top or bottom.
+     */
+    @Prop({ reflect: true, attribute: 'ruler-position' }) rulerPosition:
+        | 'top'
+        | 'bottom' = 'bottom'
 
     @Watch('start')
     @Watch('end')
@@ -86,7 +91,6 @@ export class RuxTrack {
         if (old) {
             this.initializeRows()
         }
-        this._handleDisplayDate()
     }
 
     @Watch('playhead')
@@ -96,7 +100,6 @@ export class RuxTrack {
     @Watch('timezone')
     handleTimezoneUpdate() {
         this.initializeRows()
-        this._handleDisplayDate()
     }
 
     @Listen('ruxtimeregionchange')
@@ -107,7 +110,6 @@ export class RuxTrack {
 
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
-        this._handleDisplayDate()
     }
 
     /**
@@ -199,7 +201,6 @@ export class RuxTrack {
                 )
             }
         }
-
         return 0
     }
 
@@ -322,27 +323,18 @@ export class RuxTrack {
         this.hasRuler = !!hasRuler
     }
 
-    private _formatMonthDayWithTimeZone(
-        isoDate: string,
-        timeZone: string
-    ): string {
-        // Convert the ISO string to a Date object
-        const date = new Date(isoDate)
-
-        // Convert the Date object to the specified timezone
-        const zonedDate = utcToZonedTime(date, timeZone)
-
-        // Format the date as MM/DD
-        return format(zonedDate, 'MM/dd', { timeZone })
-    }
-
-    private _handleDisplayDate() {
-        if (this.start && this.timezone) {
-            this.displayDate = this._formatMonthDayWithTimeZone(
-                this.start,
-                this.timezone
-            )
+    renderCssGrid() {
+        //we need the width of an hour so we need the interval * whatever the width of a grid col is
+        const getCols = () => {
+            if (['minute', 'hour'].includes(this.interval)) return 60
+            if (['day', 'week', 'month'].includes(this.interval)) return 24
+            return 60
         }
+        const span = getCols()
+        const width = span * this.width
+        // we set this as --grid-gap and then use that variable
+        // in rux-track.scss to set the gap between lines
+        return `${width}px`
     }
 
     render() {
@@ -352,6 +344,7 @@ export class RuxTrack {
                     class="rux-timeline rux-track"
                     style={{
                         gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
+                        '--grid-gap': this.renderCssGrid(),
                     }}
                     part="container"
                 >
@@ -359,16 +352,11 @@ export class RuxTrack {
                         class="rux-track__header"
                         part="track-header"
                         style={{
-                            gridRow: '1',
+                            gridRow: '1 / -1',
                         }}
                     >
-                        {this.hasRuler ? (
-                            <slot name="label">{this.displayDate}</slot>
-                        ) : (
-                            <slot name="label"></slot>
-                        )}
+                        <slot name="label"></slot>
                     </div>
-
                     <slot onSlotchange={this._handleSlotChange}></slot>
                     <div
                         class={{
@@ -379,6 +367,7 @@ export class RuxTrack {
                             (this.playedIndicator = el as HTMLInputElement)
                         }
                     ></div>
+                    <div class="grid"></div>
                 </div>
             </Host>
         )

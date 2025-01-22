@@ -1,13 +1,14 @@
 import {
+    addDays,
     addHours,
+    addMinutes,
+    differenceInDays,
     differenceInHours,
     differenceInMinutes,
-    addDays,
-    addMinutes,
-    subMinutes,
     differenceInMonths,
-    differenceInDays,
+    subMinutes,
 } from 'date-fns'
+
 import { formatInTimeZone } from 'date-fns-tz'
 
 export async function validateTimezone(timezone: string) {
@@ -119,7 +120,7 @@ export function dateRange(
                 i === 0 || time.getMonth() === 0
                     ? formatInTimeZone(time, timezone, 'MM/dd/yy')
                     : formatInTimeZone(time, timezone, 'MM/dd')
-            return [formattedTime]
+            return [formattedTime, time]
         })
 
         return output
@@ -142,7 +143,7 @@ export function dateRange(
                 i === 0 || showYear
                     ? formatInTimeZone(time, timezone, 'MM/dd/yy')
                     : formatInTimeZone(time, timezone, 'MM/dd')
-            return [formattedTime]
+            return [formattedTime, time]
         })
 
         return output
@@ -157,7 +158,7 @@ export function dateRange(
             const time = agnosticAddDays(startDate, i)
 
             const formattedTime = formatInTimeZone(time, timezone, 'MM/dd')
-            return [formattedTime]
+            return [formattedTime, time]
         })
 
         return output

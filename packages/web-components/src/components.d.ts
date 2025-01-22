@@ -19776,7 +19776,11 @@ export namespace Components {
         "end": string;
         "interval": any;
         /**
-          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+          * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
+         */
+        "showSecondaryRuler"?: boolean | undefined;
+        /**
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
          */
         "showStartOfDay"?: boolean | undefined;
         "start": string;
@@ -20095,10 +20099,9 @@ export namespace Components {
          */
         "playhead"?: string;
         /**
-          * Controls the position of the ruler, placing it on either the top or bottom of the timeline.
+          * Controls the display of grid lines
          */
-        "rulerPosition"?: | 'top'
-        | 'bottom';
+        "showGrid": boolean;
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
@@ -20186,6 +20189,11 @@ export namespace Components {
           * The playhead of rux-track.
          */
         "playhead": any;
+        /**
+          * The position of the ruler, either top or bottom.
+         */
+        "rulerPosition": | 'top'
+        | 'bottom';
         "start": string;
         "timezone": string;
         "width": number;
@@ -55363,7 +55371,11 @@ declare namespace LocalJSX {
         "end"?: string;
         "interval"?: any;
         /**
-          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+          * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
+         */
+        "showSecondaryRuler"?: boolean | undefined;
+        /**
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
          */
         "showStartOfDay"?: boolean | undefined;
         "start"?: string;
@@ -55735,10 +55747,9 @@ declare namespace LocalJSX {
          */
         "playhead"?: string;
         /**
-          * Controls the position of the ruler, placing it on either the top or bottom of the timeline.
+          * Controls the display of grid lines
          */
-        "rulerPosition"?: | 'top'
-        | 'bottom';
+        "showGrid"?: boolean;
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
@@ -55830,6 +55841,11 @@ declare namespace LocalJSX {
           * The playhead of rux-track.
          */
         "playhead"?: any;
+        /**
+          * The position of the ruler, either top or bottom.
+         */
+        "rulerPosition"?: | 'top'
+        | 'bottom';
         "start"?: string;
         "timezone"?: string;
         "width"?: number;
