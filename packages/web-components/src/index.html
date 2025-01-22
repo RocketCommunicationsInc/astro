@@ -153,7 +153,8 @@
                 if (zoomLevel === 1) timeline.setAttribute('interval', 'month')
                 if (zoomLevel === 2) timeline.setAttribute('interval', 'week')
                 if (zoomLevel === 3) timeline.setAttribute('interval', 'day')
-                if (zoomLevel > 3) timeline.setAttribute('interval', 'hour')
+                if (zoomLevel === 4) timeline.setAttribute('interval', 'hour')
+                if (zoomLevel <= 5) timeline.setAttribute('interval', 'minute')
             }
         </script>
     </body>
