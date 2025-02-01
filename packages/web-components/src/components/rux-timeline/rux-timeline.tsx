@@ -75,6 +75,14 @@ export class RuxTimeline {
      */
     @Prop() timezone = 'UTC'
 
+    /**
+     * Controls the position of the ruler. Either top, bottom or both.
+     */
+    @Prop({ attribute: 'ruler-position' }) rulerPosition:
+        | 'top'
+        | 'bottom'
+        | 'both' = 'both'
+
     @Watch('hasPlayedIndicator')
     @Watch('playhead')
     syncPlayhead() {
@@ -410,6 +418,11 @@ export class RuxTimeline {
                 rulerEl.start = useStartEndDates.timelineStart.toISOString()
                 rulerEl.end = useStartEndDates.timelineEnd.toISOString()
                 rulerEl.interval = this.interval
+                console.log(
+                    'setting rulerPostion on ruler to: ',
+                    this.rulerPosition
+                )
+                rulerEl.rulerPosition = this.rulerPosition
             }
         }
     }
@@ -453,7 +466,13 @@ export class RuxTimeline {
         return (
             <Host>
                 <div
-                    class="rux-timeline"
+                    class={{
+                        'rux-timeline': true,
+                        'ruler-position__top': this.rulerPosition === 'top',
+                        'ruler-position__bottom':
+                            this.rulerPosition === 'bottom',
+                        'ruler-position__both': this.rulerPosition === 'both',
+                    }}
                     onMouseMove={(ev) => this._handleMouse(ev)}
                     onScroll={() => this._handleScroll()}
                     ref={(el) => (this.timelineContainer = el)}

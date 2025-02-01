@@ -30,6 +30,15 @@ export class RuxRuler {
     @Prop({ reflect: true }) timezone = 'UTC'
 
     /**
+     * @internal - The position of the ruler, either top bottom or both. This denotes if the new-day span is rendered
+     * on top or bottom within the ruler.
+     */
+    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPosition:
+        | 'top'
+        | 'bottom'
+        | 'both' = 'both'
+
+    /**
      * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
      */
     @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
@@ -39,6 +48,22 @@ export class RuxRuler {
      */
     @Prop({ attribute: 'show-secondary-ruler' }) showSecondaryRuler? = false
 
+    datePositionMap = {
+        top: '1',
+        bottom: '2',
+        both: '1',
+    }
+    timePositionMap = {
+        top: '2',
+        bottom: '1',
+        both: '1',
+    }
+
+    componentDidLoad() {
+        console.log(this.interval, 'interval in ruler. idk how its set')
+        console.log(this.timePositionMap[this.rulerPosition], 'look')
+        console.log(this.datePositionMap[this.rulerPosition], 'look')
+    }
     get dateRange() {
         return getRange(
             new Date(this.start),
@@ -192,11 +217,12 @@ export class RuxRuler {
          * within the timeine so we can make the partial
          * date take up the full width of the timeline.
          */
+
         return (
             <span
                 class="ruler-new-day-display"
                 style={{
-                    gridRow: '2',
+                    gridRow: this.datePositionMap[this.rulerPosition],
                     gridColumn: `2 / ${partialIncrement}`,
                     display:
                         Number(partialIncrement) === 2 ? 'none' : undefined,
@@ -267,7 +293,7 @@ export class RuxRuler {
             <span
                 class="ruler-new-day-display"
                 style={{
-                    gridRow: '2',
+                    gridRow: this.datePositionMap[this.rulerPosition],
                     gridColumn: gridColumn,
                 }}
             >
@@ -336,7 +362,9 @@ export class RuxRuler {
                                                 false,
                                         }}
                                         style={{
-                                            gridRow: '1',
+                                            gridRow: this.timePositionMap[
+                                                this.rulerPosition
+                                            ],
                                             gridColumn: this.getColumn(index),
                                         }}
                                     >

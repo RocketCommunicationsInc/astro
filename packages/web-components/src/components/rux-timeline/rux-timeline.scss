@@ -62,6 +62,10 @@
     position: relative;
 }
 
+.ruler-position__top {
+    flex-direction: column-reverse;
+}
+
 .hidden {
     display: none;
 }

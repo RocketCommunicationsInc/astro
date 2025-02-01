@@ -19775,6 +19775,9 @@ export namespace Components {
     interface RuxRuler {
         "end": string;
         "interval": any;
+        "rulerPosition": | 'top'
+        | 'bottom'
+        | 'both';
         /**
           * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
          */
@@ -20099,6 +20102,12 @@ export namespace Components {
          */
         "playhead"?: string;
         /**
+          * Controls the position of the ruler. Either top, bottom or both.
+         */
+        "rulerPosition": | 'top'
+        | 'bottom'
+        | 'both';
+        /**
           * Controls the display of grid lines
          */
         "showGrid": boolean;
@@ -20189,11 +20198,6 @@ export namespace Components {
           * The playhead of rux-track.
          */
         "playhead": any;
-        /**
-          * The position of the ruler, either top or bottom.
-         */
-        "rulerPosition": | 'top'
-        | 'bottom';
         "start": string;
         "timezone": string;
         "width": number;
@@ -55370,6 +55374,9 @@ declare namespace LocalJSX {
     interface RuxRuler {
         "end"?: string;
         "interval"?: any;
+        "rulerPosition"?: | 'top'
+        | 'bottom'
+        | 'both';
         /**
           * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
          */
@@ -55747,6 +55754,12 @@ declare namespace LocalJSX {
          */
         "playhead"?: string;
         /**
+          * Controls the position of the ruler. Either top, bottom or both.
+         */
+        "rulerPosition"?: | 'top'
+        | 'bottom'
+        | 'both';
+        /**
           * Controls the display of grid lines
          */
         "showGrid"?: boolean;
@@ -55841,11 +55854,6 @@ declare namespace LocalJSX {
           * The playhead of rux-track.
          */
         "playhead"?: any;
-        /**
-          * The position of the ruler, either top or bottom.
-         */
-        "rulerPosition"?: | 'top'
-        | 'bottom';
         "start"?: string;
         "timezone"?: string;
         "width"?: number;

@@ -77,13 +77,6 @@ export class RuxTrack {
      */
     @Prop({ reflect: true }) playhead: any
 
-    /**
-     * The position of the ruler, either top or bottom.
-     */
-    @Prop({ reflect: true, attribute: 'ruler-position' }) rulerPosition:
-        | 'top'
-        | 'bottom' = 'bottom'
-
     @Watch('start')
     @Watch('end')
     @Watch('interval')
