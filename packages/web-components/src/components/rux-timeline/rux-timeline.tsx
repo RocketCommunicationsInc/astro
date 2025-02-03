@@ -26,6 +26,8 @@ export class RuxTimeline {
     private slotContainer?: HTMLElement
     private timelineContainer?: HTMLElement
     private rulerContainer?: HTMLElement
+    private secondaryRulerContainer?: HTMLElement
+
     public slots?: any = 'empty'
     @Element() el!: HTMLRuxTimelineElement
 
@@ -491,6 +493,32 @@ export class RuxTimeline {
                             }}
                         ></div>
                     )}
+                    {
+                        //? If ruler-position is both, render a second ruler. Can that go here?
+                        //? Can I just throw a rux-track or rux-ruler here?
+                    }
+                    {this.rulerPosition === 'both' ? (
+                        <rux-track
+                            slot="ruler"
+                            interval={this.interval}
+                            timezone={this.timezone}
+                            start={this.start}
+                            end={this.end}
+                            width={this.width}
+                            columns={this.columns}
+                            playhead={this.playhead}
+                        >
+                            <rux-ruler
+                                interval={this.interval}
+                                start={this.start}
+                                end={this.end}
+                                timezone={this.timezone}
+                                rulerPosition={this.rulerPosition}
+                                showSecondaryRuler
+                                isSecondary
+                            ></rux-ruler>
+                        </rux-track>
+                    ) : null}
 
                     <div class="events" ref={(el) => (this.slotContainer = el)}>
                         <slot onSlotchange={this._handleSlotChange}></slot>

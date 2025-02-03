@@ -19775,6 +19775,7 @@ export namespace Components {
     interface RuxRuler {
         "end": string;
         "interval": any;
+        "isSecondary": boolean;
         "rulerPosition": | 'top'
         | 'bottom'
         | 'both';
@@ -55374,6 +55375,7 @@ declare namespace LocalJSX {
     interface RuxRuler {
         "end"?: string;
         "interval"?: any;
+        "isSecondary"?: boolean;
         "rulerPosition"?: | 'top'
         | 'bottom'
         | 'both';
