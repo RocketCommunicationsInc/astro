@@ -82,6 +82,17 @@
                         onclick="toggleTimezone()"
                         >Toggle Timezone</rux-button
                     ><span id="currentTimezone"></span>
+                    <rux-radio-group
+                        name="radios"
+                        label="Set Ruler Position"
+                        id="set-ruler-position"
+                    >
+                        <rux-radio value="top" name="radios">Top</rux-radio>
+                        <rux-radio value="both" name="radios">Both</rux-radio>
+                        <rux-radio value="bottom" name="radios"
+                            >Bottom</rux-radio
+                        >
+                    </rux-radio-group>
                 </section>
 
                 <rux-timeline
@@ -127,6 +138,13 @@
             const input = document.querySelector('rux-input')
             const currenttz = document.querySelector('#currentTimezone')
             currenttz.textContent = timeline.getAttribute('timezone')
+            const setRulerPosition = document.getElementById(
+                'set-ruler-position'
+            )
+
+            setRulerPosition.addEventListener('ruxchange', (e) => {
+                timeline.setAttribute('ruler-position', e.target.value)
+            })
 
             let zoomLevel = 4
             input.value = zoomLevel
