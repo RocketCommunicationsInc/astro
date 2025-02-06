@@ -4,6 +4,10 @@ import { differenceInDays, endOfMonth, getDaysInMonth } from 'date-fns'
 import { formatInTimeZone } from 'date-fns-tz'
 import { dateRange as getRange } from '../helpers'
 
+type Position = 'top' | 'bottom' | 'both'
+type Variant = 'primary' | 'secondary'
+type Type = 'date' | 'time'
+
 @Component({
     tag: 'rux-ruler',
     styleUrl: 'rux-ruler.scss',
@@ -54,26 +58,16 @@ export class RuxRuler {
      */
     @Prop() isSecondary: boolean = false
 
-    datePositionMap = {
-        top: '1',
-        bottom: '2',
-        both: '2',
-    }
-    timePositionMap = {
-        top: '2',
-        bottom: '1',
-        both: '1',
-    }
-    //if it's a part of a top/bottom pair, invert the values here to flip the grid row. Only 'both' needs to be changed.
-    secondaryDatePositionMap = {
-        top: '1',
-        bottom: '2',
-        both: '1',
-    }
-    secondaryTimePositionMap = {
-        top: '2',
-        bottom: '1',
-        both: '2',
+    //a "map" that allows us to tell which grid-row a given ruler section should be.
+    positionMap: Record<Type, Record<Variant, Record<Position, string>>> = {
+        date: {
+            primary: { top: '1', bottom: '2', both: '2' },
+            secondary: { top: '1', bottom: '2', both: '1' },
+        },
+        time: {
+            primary: { top: '2', bottom: '1', both: '1' },
+            secondary: { top: '2', bottom: '1', both: '2' },
+        },
     }
 
     get dateRange() {
@@ -84,6 +78,10 @@ export class RuxRuler {
             1,
             this.timezone
         )
+    }
+
+    getPosition(type: Type, variant: Variant, position: Position) {
+        return this.positionMap[type]?.[variant]?.[position]
     }
 
     getColumn(index: number) {
@@ -235,8 +233,16 @@ export class RuxRuler {
                 class="ruler-new-day-display"
                 style={{
                     gridRow: this.isSecondary
-                        ? this.secondaryDatePositionMap[this.rulerPosition]
-                        : this.datePositionMap[this.rulerPosition],
+                        ? this.getPosition(
+                              'date',
+                              'secondary',
+                              this.rulerPosition
+                          )
+                        : this.getPosition(
+                              'date',
+                              'primary',
+                              this.rulerPosition
+                          ),
                     gridColumn: `2 / ${partialIncrement}`,
                     display:
                         Number(partialIncrement) === 2 ? 'none' : undefined,
@@ -302,14 +308,21 @@ export class RuxRuler {
         if (textDisplay && textDisplay.includes('/')) {
             textDisplay = this.formatDate(textDisplay)
         }
-
         return gridColumn ? (
             <span
                 class="ruler-new-day-display"
                 style={{
                     gridRow: this.isSecondary
-                        ? this.secondaryDatePositionMap[this.rulerPosition]
-                        : this.datePositionMap[this.rulerPosition],
+                        ? this.getPosition(
+                              'date',
+                              'secondary',
+                              this.rulerPosition
+                          )
+                        : this.getPosition(
+                              'date',
+                              'primary',
+                              this.rulerPosition
+                          ),
                     gridColumn: gridColumn,
                 }}
             >
@@ -379,12 +392,16 @@ export class RuxRuler {
                                         }}
                                         style={{
                                             gridRow: this.isSecondary
-                                                ? this.secondaryTimePositionMap[
+                                                ? this.getPosition(
+                                                      'time',
+                                                      'secondary',
                                                       this.rulerPosition
-                                                  ]
-                                                : this.timePositionMap[
+                                                  )
+                                                : this.getPosition(
+                                                      'time',
+                                                      'primary',
                                                       this.rulerPosition
-                                                  ],
+                                                  ),
                                             gridColumn: this.getColumn(index),
                                         }}
                                     >

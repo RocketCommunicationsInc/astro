@@ -424,10 +424,6 @@ export class RuxTimeline {
                 rulerEl.start = useStartEndDates.timelineStart.toISOString()
                 rulerEl.end = useStartEndDates.timelineEnd.toISOString()
                 rulerEl.interval = this.interval
-                console.log(
-                    'setting rulerPostion on ruler to: ',
-                    this.rulerPosition
-                )
                 rulerEl.rulerPosition = this.rulerPosition
             }
         }
