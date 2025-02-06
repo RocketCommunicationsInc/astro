@@ -84,6 +84,12 @@ export class RuxTimeline {
         | 'bottom'
         | 'both' = 'both'
 
+    /**
+     * Controls wether or not the attached rux-ruler displays the secondary date portion.
+     */
+    @Prop({ attribute: 'show-secondary-ruler' })
+    showSecondaryRuler: boolean = false
+
     @Watch('hasPlayedIndicator')
     @Watch('playhead')
     syncPlayhead() {
@@ -420,11 +426,12 @@ export class RuxTimeline {
                 validateTimezone(this.timezone).then(() => {
                     rulerEl.timezone = this.timezone
                 })
-
+                // pass any relative props to rux-ruler element
                 rulerEl.start = useStartEndDates.timelineStart.toISOString()
                 rulerEl.end = useStartEndDates.timelineEnd.toISOString()
                 rulerEl.interval = this.interval
                 rulerEl.rulerPosition = this.rulerPosition
+                rulerEl.showSecondaryRuler = this.showSecondaryRuler
             }
         }
     }
@@ -512,7 +519,7 @@ export class RuxTimeline {
                                     end={this.end}
                                     timezone={this.timezone}
                                     rulerPosition={this.rulerPosition}
-                                    showSecondaryRuler
+                                    showSecondaryRuler={this.showSecondaryRuler}
                                     isSecondary
                                 ></rux-ruler>
                             </rux-track>

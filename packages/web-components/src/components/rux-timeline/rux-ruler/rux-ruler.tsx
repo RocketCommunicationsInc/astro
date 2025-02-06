@@ -43,14 +43,14 @@ export class RuxRuler {
         | 'both' = 'both'
 
     /**
+     * @internal Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc. Set by the parent Timeline component.
+     */
+    @Prop({ attribute: 'show-secondary-ruler' }) showSecondaryRuler? = false
+
+    /**
      * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
      */
     @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
-
-    /**
-     * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
-     */
-    @Prop({ attribute: 'show-secondary-ruler' }) showSecondaryRuler? = false
 
     /**
      * @internal - determines if the ruler is part of a top and bottom pair of rulers. If so,

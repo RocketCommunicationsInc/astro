@@ -19779,9 +19779,6 @@ export namespace Components {
         "rulerPosition": | 'top'
         | 'bottom'
         | 'both';
-        /**
-          * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
-         */
         "showSecondaryRuler"?: boolean | undefined;
         /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
@@ -20112,6 +20109,10 @@ export namespace Components {
           * Controls the display of grid lines
          */
         "showGrid": boolean;
+        /**
+          * Controls wether or not the attached rux-ruler displays the secondary date portion.
+         */
+        "showSecondaryRuler": boolean;
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
@@ -55379,9 +55380,6 @@ declare namespace LocalJSX {
         "rulerPosition"?: | 'top'
         | 'bottom'
         | 'both';
-        /**
-          * Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc.
-         */
         "showSecondaryRuler"?: boolean | undefined;
         /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
@@ -55765,6 +55763,10 @@ declare namespace LocalJSX {
           * Controls the display of grid lines
          */
         "showGrid"?: boolean;
+        /**
+          * Controls wether or not the attached rux-ruler displays the secondary date portion.
+         */
+        "showSecondaryRuler"?: boolean;
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */

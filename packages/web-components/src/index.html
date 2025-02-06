@@ -106,6 +106,7 @@
                     interval="hour"
                     zoom="4"
                     show-grid
+                    show-secondary-ruler
                 >
                     <rux-track>
                         <div slot="label">Region 1</div>
@@ -128,7 +129,7 @@
                         </rux-time-region>
                     </rux-track>
                     <rux-track slot="ruler">
-                        <rux-ruler show-secondary-ruler></rux-ruler>
+                        <rux-ruler></rux-ruler>
                     </rux-track>
                 </rux-timeline>
                 <h3>Existing markup (look for breaking changes)</h3>
@@ -172,51 +173,13 @@
                                 Event 3.1
                             </rux-time-region>
                         </rux-track>
-                        <rux-track>
-                            <div slot="label">Region 4</div>
-                            <rux-time-region
-                                start="2021-02-01T03:00:00Z"
-                                end="2021-02-02T04:33:00Z"
-                                status="critical"
-                            >
-                                Event 4.1
-                            </rux-time-region>
-                        </rux-track>
-                        <rux-track>
-                            <div slot="label">Region 5</div>
-                            <rux-time-region
-                                start="2021-02-01T05:00:00Z"
-                                end="2021-02-02T05:33:00Z"
-                                status="caution"
-                            >
-                                Event 5.1
-                            </rux-time-region>
-                        </rux-track>
-                        <rux-track>
-                            <div slot="label">Region 6</div>
-                            <rux-time-region
-                                start="2021-02-01T05:00:00Z"
-                                end="2021-02-02T05:33:00Z"
-                                status="normal"
-                            >
-                                Event 6.1
-                            </rux-time-region>
-                        </rux-track>
-                        <rux-track>
-                            <div slot="label">Region 7</div>
-                            <rux-time-region
-                                start="2021-02-01T05:00:00Z"
-                                end="2021-02-02T05:33:00Z"
-                                status="normal"
-                            >
-                                Event 7.1
-                            </rux-time-region>
-                        </rux-track>
+
                         <rux-track slot="ruler">
                             <rux-ruler></rux-ruler>
                         </rux-track>
                     </rux-timeline>
                 </div>
+                <div style="height: 1000px; width: 1000px"></div>
             </main>
         </rux-classification-marking>
         <script>
