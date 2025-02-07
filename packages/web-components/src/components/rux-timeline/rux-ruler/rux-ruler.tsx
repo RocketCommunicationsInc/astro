@@ -1,5 +1,11 @@
 import { Component, Element, Fragment, Host, Prop, h } from '@stencil/core'
-import { differenceInDays, endOfMonth, getDaysInMonth } from 'date-fns'
+import {
+    differenceInDays,
+    endOfMonth,
+    getDayOfYear,
+    getDaysInMonth,
+    getYear,
+} from 'date-fns'
 
 import { formatInTimeZone } from 'date-fns-tz'
 import { dateRange as getRange } from '../helpers'
@@ -181,7 +187,32 @@ export class RuxRuler {
 
         const paddedDay = day.padStart(2, '0') // Pad the day
         const monthName = monthNames[month - 1]
-        return `${paddedDay} ${monthName}`
+        const startYear = getYear(new Date(this.start))
+        const endYear = getYear(new Date(this.end))
+        let inputYear = startYear
+
+        if (startYear !== endYear) {
+            // If the start and end years are different, determine the correct year based on the input. This is important to get the correct Julian day.
+            const startDate = new Date(`${startYear}-${month}-${paddedDay}`)
+            const endDate = new Date(`${endYear}-${month}-${paddedDay}`)
+
+            if (
+                startDate >= new Date(this.start) &&
+                startDate <= new Date(this.end)
+            ) {
+                inputYear = startYear
+            } else if (
+                endDate >= new Date(this.start) &&
+                endDate <= new Date(this.end)
+            ) {
+                inputYear = endYear
+            }
+        }
+
+        // Construct the full date string
+        const fullDate = new Date(inputYear, month - 1, parseInt(paddedDay))
+        const jday = getDayOfYear(fullDate).toString().padStart(3, '0')
+        return `${paddedDay} ${monthName}/${jday}`
     }
 
     getPartial() {
