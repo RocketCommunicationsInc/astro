@@ -56,7 +56,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: playwright-report
+          name: playwright-report-e2e
           path: packages/web-components/playwright-report/
           retention-days: 30
   VRTs:
@@ -82,6 +82,6 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: playwright-report
+          name: playwright-report-vrt
           path: packages/web-components/playwright-report/
           retention-days: 30
