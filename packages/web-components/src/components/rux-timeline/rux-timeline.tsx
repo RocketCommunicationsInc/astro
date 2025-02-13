@@ -69,7 +69,7 @@ export class RuxTimeline {
     /**
      * Controls the display of grid lines
      */
-    @Prop() showGrid: boolean = false
+    @Prop({ attribute: 'show-grid' }) showGrid: boolean = false
 
     /**
      * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
@@ -83,6 +83,11 @@ export class RuxTimeline {
         | 'top'
         | 'bottom'
         | 'both' = 'both'
+
+    /**
+     * Hides the J-Day display when show-secondary-ruler is true.
+     */
+    @Prop({ attribute: 'hide-j-day' }) hideJDay: boolean = false
 
     /**
      * Controls wether or not the attached rux-ruler displays the secondary date portion.
@@ -120,8 +125,19 @@ export class RuxTimeline {
     }
 
     @Watch('rulerPosition')
+    @Watch('showSecondaryRuler')
+    @Watch('hideJDay')
     handleRulerPosChange() {
         this._updateRegions()
+    }
+
+    @Watch('showGrid')
+    handleGridChange() {
+        //because we're using the :host selector, we need to set the attribute on the host element. otherwise,
+        //`show-grid="false"` will register as show-grid still being there, thus applying the grid styles.
+        if (!this.showGrid) {
+            this.el.removeAttribute('show-grid')
+        }
     }
 
     connectedCallback() {
@@ -129,6 +145,9 @@ export class RuxTimeline {
         this._handleMouse = this._handleMouse.bind(this)
         this.syncPlayhead = this.syncPlayhead.bind(this)
         this._updateRegions = this._updateRegions.bind(this)
+        if (!this.showGrid) {
+            this.el.removeAttribute('show-grid')
+        }
     }
     componentWillLoad() {
         this._setZoom()
@@ -432,6 +451,7 @@ export class RuxTimeline {
                 rulerEl.interval = this.interval
                 rulerEl.rulerPosition = this.rulerPosition
                 rulerEl.showSecondaryRuler = this.showSecondaryRuler
+                rulerEl.hideJDay = this.hideJDay
             }
         }
     }
@@ -521,6 +541,7 @@ export class RuxTimeline {
                                     rulerPosition={this.rulerPosition}
                                     showSecondaryRuler={this.showSecondaryRuler}
                                     isSecondary
+                                    hideJDay={this.hideJDay}
                                 ></rux-ruler>
                             </rux-track>
                         ) : null

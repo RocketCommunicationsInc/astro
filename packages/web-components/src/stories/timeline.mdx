@@ -18,6 +18,9 @@ export const StyledDiv = styled.div`
         margin-top: 1rem;
         color: var(--color-text-inverse);
     }
+    .custom-code code {
+      color: var(--color-text-inverse);
+    }
 `
 
 <Meta of={TimelineStories} />
@@ -211,6 +214,14 @@ Timeline tracks can optionally show a "played" visual state to indicate past tim
 
 ## Show Start of Day
 
+<StyledDiv>
+  <div>Warning: <span class="custom-code">`show-start-of-day`</span> is deprecated.</div>
+
+  <p class="banner-text">
+    Instead, use the `show-secondary-ruler` prop on the rux-timeline. This will display the start of the intervals.
+  </p>
+</StyledDiv>
+
 When using the 'hour' interval spanning multiple days, it can be difficult to determine when a given day has ended or started.
 In this case, you can make use of the `show-start-of-day` attribute to display a visual indicator at 00:00.
 
@@ -226,9 +237,15 @@ In this case, you can make use of the `show-start-of-day` attribute to display a
 
 ## With Ruler Position
 
-You can change the position of a timeline's ruler via the `ruler-position` prop. The valid positions are `top` or `bottom`.
+You can change the position of a timeline's ruler via the `ruler-position` prop. The valid positions are `top`, `bottom`, or `both`.
 
 <Canvas of={TimelineStories.RulerPosition} />
+
+## With Secondary Ruler
+
+You can enable a secondary ruler to show the start of each interval. Showing the Julian Day next to the start of the interval is the default behavior. To remove this, add the `hide-j-day` prop on the timeline.
+
+<Canvas of={TimelineStories.ShowSecondaryRuler} />
 
 ## Cherry Picking
 

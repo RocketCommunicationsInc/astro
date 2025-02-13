@@ -55,6 +55,7 @@ export class RuxRuler {
 
     /**
      * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
+     * @deprecated This property is deprecated and will be removed in the next major release. Please use the `show-secondary-ruler` property on the rux-timeline component instead.
      */
     @Prop({ attribute: 'show-start-of-day' }) showStartOfDay? = false
 
@@ -63,6 +64,11 @@ export class RuxRuler {
      * the styling needs to be slightly different.
      */
     @Prop() isSecondary: boolean = false
+
+    /**
+     * @internal used to hide j-day in secondary ruler
+     */
+    @Prop({ attribute: 'hide-j-day' }) hideJDay: boolean = false
 
     //a "map" that allows us to tell which grid-row a given ruler section should be.
     positionMap: Record<Type, Record<Variant, Record<Position, string>>> = {
@@ -154,25 +160,26 @@ export class RuxRuler {
 
     formatDate(input: string) {
         const monthNames = [
-            'Jan',
-            'Feb',
-            'Mar',
-            'Apr',
+            'January',
+            'February',
+            'March',
+            'April',
             'May',
-            'Jun',
-            'Jul',
-            'Aug',
-            'Sep',
-            'Oct',
-            'Nov',
-            'Dec',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
         ]
 
-        // Validate the input format using a regular expression
-        const match = input.match(/^(\d{1,2})\/(\d{1,2})$/)
+        // Regex now supports MM/DD or MM/DD/YY
+        const match = input.match(/^(\d{1,2})\/(\d{1,2})(?:\/(\d{2}))?$/)
+
         if (!match) {
             throw new Error(
-                `Invalid input format. Expected MM/DD, recieved: ${input}`
+                `Invalid input format. Expected MM/DD or MM/DD/YY, received: ${input}`
             )
         }
 
@@ -186,7 +193,12 @@ export class RuxRuler {
         }
 
         const paddedDay = day.padStart(2, '0') // Pad the day
-        const monthName = monthNames[month - 1]
+
+        //If interval is month, we want the entire month name. If not, we just need the abbreviated month name.
+        const monthName =
+            this.interval !== 'month'
+                ? monthNames[month - 1].slice(0, 3)
+                : monthNames[month - 1]
         const startYear = getYear(new Date(this.start))
         const endYear = getYear(new Date(this.end))
         let inputYear = startYear
@@ -212,7 +224,9 @@ export class RuxRuler {
         // Construct the full date string
         const fullDate = new Date(inputYear, month - 1, parseInt(paddedDay))
         const jday = getDayOfYear(fullDate).toString().padStart(3, '0')
-        return `${paddedDay} ${monthName}/${jday}`
+        if (this.interval === 'month') return `${monthName}`
+        if (this.hideJDay) return `${paddedDay} ${monthName}`
+        else return `${paddedDay} ${monthName}/${jday}`
     }
 
     getPartial() {
@@ -389,6 +403,15 @@ export class RuxRuler {
             return prevWeek !== currentWeek
         }
         return false
+    }
+
+    componentDidLoad() {
+        //add deprecation warning if show-start-of-day is being used
+        if (this.showStartOfDay) {
+            console.warn(
+                'The show-start-of-day property is deprecated and will be removed in the next major release. Please use the show-secondary-ruler prop on the rux-timeline component instead.'
+            )
+        }
     }
 
     private firstFullIncrement: string | undefined

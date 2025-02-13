@@ -19774,6 +19774,7 @@ export namespace Components {
     }
     interface RuxRuler {
         "end": string;
+        "hideJDay": boolean;
         "interval": any;
         "isSecondary": boolean;
         "rulerPosition": | 'top'
@@ -19782,6 +19783,7 @@ export namespace Components {
         "showSecondaryRuler"?: boolean | undefined;
         /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
+          * @deprecated This property is deprecated and will be removed in the next major release. Please use the `show-secondary-ruler` property on the rux-timeline component instead.
          */
         "showStartOfDay"?: boolean | undefined;
         "start": string;
@@ -20091,6 +20093,10 @@ export namespace Components {
           * Visually marks past time as played in each track
          */
         "hasPlayedIndicator": boolean;
+        /**
+          * Hides the J-Day display when show-secondary-ruler is true.
+         */
+        "hideJDay": boolean;
         /**
           * The timeline's date time interval
          */
@@ -55375,6 +55381,7 @@ declare namespace LocalJSX {
     }
     interface RuxRuler {
         "end"?: string;
+        "hideJDay"?: boolean;
         "interval"?: any;
         "isSecondary"?: boolean;
         "rulerPosition"?: | 'top'
@@ -55383,6 +55390,7 @@ declare namespace LocalJSX {
         "showSecondaryRuler"?: boolean | undefined;
         /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
+          * @deprecated This property is deprecated and will be removed in the next major release. Please use the `show-secondary-ruler` property on the rux-timeline component instead.
          */
         "showStartOfDay"?: boolean | undefined;
         "start"?: string;
@@ -55745,6 +55753,10 @@ declare namespace LocalJSX {
           * Visually marks past time as played in each track
          */
         "hasPlayedIndicator"?: boolean;
+        /**
+          * Hides the J-Day display when show-secondary-ruler is true.
+         */
+        "hideJDay"?: boolean;
         /**
           * The timeline's date time interval
          */

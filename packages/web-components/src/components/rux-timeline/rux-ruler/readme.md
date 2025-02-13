@@ -5,10 +5,23 @@
 
 ## Properties
 
-| Property         | Attribute           | Description                                                                           | Type                   | Default |
-| ---------------- | ------------------- | ------------------------------------------------------------------------------------- | ---------------------- | ------- |
-| `showStartOfDay` | `show-start-of-day` | Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'. | `boolean \| undefined` | `false` |
+| Property         | Attribute           | Description                                                                                                                                                                                                                                                                                                          | Type                   | Default |
+| ---------------- | ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ------- |
+| `showStartOfDay` | `show-start-of-day` | <span style="color:red">**[DEPRECATED]**</span> This property is deprecated and will be removed in the next major release. Please use the new `show-secondary-ruler` prop on the rux-timeline component.<br/><br/>Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'. | `boolean \| undefined` | `false` |
 
+
+## Dependencies
+
+### Used by
+
+ - [rux-timeline](..)
+
+### Graph
+```mermaid
+graph TD;
+  rux-timeline --> rux-ruler
+  style rux-ruler fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
