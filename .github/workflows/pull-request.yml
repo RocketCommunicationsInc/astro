@@ -6,7 +6,6 @@ on:
     types: [ready_for_review, opened, synchronize]
     branches: [main, next]
   workflow_dispatch:
-    permissions:
 
 env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -54,7 +53,7 @@ jobs:
       - name: e2e Tests
         run: npm run test.e2e.ci
         working-directory: ./packages/web-components
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
@@ -80,7 +79,7 @@ jobs:
       - name: Run VRTs
         run: npm run test.vrt
         working-directory: ./packages/web-components
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: playwright-report
