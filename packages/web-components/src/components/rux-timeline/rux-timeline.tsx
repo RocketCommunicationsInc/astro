@@ -79,7 +79,7 @@ export class RuxTimeline {
     /**
      * Controls the position of the ruler. Either top, bottom or both.
      */
-    @Prop({ attribute: 'ruler-position' }) rulerPosition:
+    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPosition:
         | 'top'
         | 'bottom'
         | 'both' = 'both'

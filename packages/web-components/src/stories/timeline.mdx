@@ -20,6 +20,7 @@ export const StyledDiv = styled.div`
     }
     .custom-code code {
       color: var(--color-text-inverse);
+      font-weight: 300;
     }
 `
 
@@ -135,7 +136,6 @@ Tracks are responsible for displaying content in horizontal lanes across the Tim
 They can include **Time Regions** or the **Ruler** component.
 They are composed of a label section and a time region section.
 
-<Controls />
 
 ### Setting the Label
 
@@ -167,7 +167,6 @@ the component will throw an error and not render.
 
 If a Time Region's start and end date falls outside of the range of the Timeline, a Time Region will be display visually as a Partial Time Region.
 
-<Controls />
 
 ## Ruler
 
@@ -246,6 +245,12 @@ You can change the position of a timeline's ruler via the `ruler-position` prop.
 You can enable a secondary ruler to show the start of each interval. Showing the Julian Day next to the start of the interval is the default behavior. To remove this, add the `hide-j-day` prop on the timeline.
 
 <Canvas of={TimelineStories.ShowSecondaryRuler} />
+
+## With Grid
+
+You can enable a grid to show the start of each interval. To do this, add the `show-grid` prop on the timeline.
+
+<Canvas of={TimelineStories.ShowGrid} />
 
 ## Cherry Picking
 
