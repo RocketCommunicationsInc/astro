@@ -8,4 +8,4 @@
 "@astrouxds/react": minor
 ---
 
-Added a new ruler-position prop to timeline. Added start date to begining of rux-ruler.
+Added several new props to rux-timeline. `show-secondary-ruler`, `ruler-position`, `show-grid`, and `hide-j-day`.
