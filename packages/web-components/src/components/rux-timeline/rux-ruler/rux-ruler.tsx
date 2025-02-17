@@ -43,15 +43,12 @@ export class RuxRuler {
      * @internal - The position of the ruler, either top bottom or both. This denotes if the new-day span is rendered
      * on top or bottom within the ruler.
      */
-    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPosition:
-        | 'top'
-        | 'bottom'
-        | 'both' = 'both'
+    @Prop() rulerPosition: 'top' | 'bottom' | 'both' = 'both'
 
     /**
      * @internal Display a secondary ruler which shows one level up from the current interval. IE: Days for Hours, Months for Days, etc. Set by the parent Timeline component.
      */
-    @Prop({ attribute: 'show-secondary-ruler' }) showSecondaryRuler? = false
+    @Prop() showSecondaryRuler? = false
 
     /**
      * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
@@ -68,7 +65,7 @@ export class RuxRuler {
     /**
      * @internal used to hide j-day in secondary ruler
      */
-    @Prop({ attribute: 'hide-j-day' }) hideJDay: boolean = false
+    @Prop() hideJDay: boolean = false
 
     //a "map" that allows us to tell which grid-row a given ruler section should be.
     positionMap: Record<Type, Record<Variant, Record<Position, string>>> = {

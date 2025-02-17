@@ -19777,9 +19777,7 @@ export namespace Components {
         "hideJDay": boolean;
         "interval": any;
         "isSecondary": boolean;
-        "rulerPosition": | 'top'
-        | 'bottom'
-        | 'both';
+        "rulerPosition": 'top' | 'bottom' | 'both';
         "showSecondaryRuler"?: boolean | undefined;
         /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
@@ -20116,7 +20114,7 @@ export namespace Components {
          */
         "showGrid": boolean;
         /**
-          * Controls wether or not the attached rux-ruler displays the secondary date portion.
+          * Controls whether or not the attached rux-ruler displays the secondary date portion.
          */
         "showSecondaryRuler": boolean;
         /**
@@ -55384,9 +55382,7 @@ declare namespace LocalJSX {
         "hideJDay"?: boolean;
         "interval"?: any;
         "isSecondary"?: boolean;
-        "rulerPosition"?: | 'top'
-        | 'bottom'
-        | 'both';
+        "rulerPosition"?: 'top' | 'bottom' | 'both';
         "showSecondaryRuler"?: boolean | undefined;
         /**
           * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
@@ -55776,7 +55772,7 @@ declare namespace LocalJSX {
          */
         "showGrid"?: boolean;
         /**
-          * Controls wether or not the attached rux-ruler displays the secondary date portion.
+          * Controls whether or not the attached rux-ruler displays the secondary date portion.
          */
         "showSecondaryRuler"?: boolean;
         /**

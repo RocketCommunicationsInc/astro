@@ -90,7 +90,7 @@ export class RuxTimeline {
     @Prop({ attribute: 'hide-j-day' }) hideJDay: boolean = false
 
     /**
-     * Controls wether or not the attached rux-ruler displays the secondary date portion.
+     * Controls whether or not the attached rux-ruler displays the secondary date portion.
      */
     @Prop({ attribute: 'show-secondary-ruler' })
     showSecondaryRuler: boolean = false
