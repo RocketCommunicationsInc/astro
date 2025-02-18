@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../tests/utils/_astro-fixtures'
 // import { test } from "stencil-playwright";
 // import { expect } from "@playwright/test";
 test.describe('Timeline DST', () => {
@@ -16,7 +16,7 @@ test.describe('Timeline DST', () => {
             </rux-timeline>
         `
         await page.setContent(template)
-        const rulerEl = await page.locator('rux-ruler')
+        const rulerEl = await page.locator('rux-ruler').first()
 
         const days = await rulerEl.evaluate((el) => {
             const rulerSpans = el.shadowRoot?.querySelectorAll('span')
@@ -26,7 +26,12 @@ test.describe('Timeline DST', () => {
                 return []
             }
         })
-        expect(days).toEqual(['03/11', '03/12', '03/13', '03/14'])
+        expect(days).toEqual([
+            '11 Mar/070',
+            '12 Mar/071',
+            '13 Mar/072',
+            '14 Mar/073',
+        ])
     })
     test('it should handle DST end in UTC', async ({ page }) => {
         const template = `
@@ -42,7 +47,7 @@ test.describe('Timeline DST', () => {
           </rux-timeline>
       `
         await page.setContent(template)
-        const rulerEl = await page.locator('rux-ruler')
+        const rulerEl = await page.locator('rux-ruler').first()
 
         const days = await rulerEl.evaluate((el) => {
             const rulerSpans = el.shadowRoot?.querySelectorAll('span')
@@ -52,7 +57,12 @@ test.describe('Timeline DST', () => {
                 return []
             }
         })
-        expect(days).toEqual(['11/04', '11/05', '11/06', '11/07'])
+        expect(days).toEqual([
+            '04 Nov/308',
+            '05 Nov/309',
+            '06 Nov/310',
+            '07 Nov/311',
+        ])
     })
 })
 
@@ -71,7 +81,7 @@ test.describe('Timeline Interval Year', () => {
             </rux-timeline>
         `
         await page.setContent(template)
-        const rulerEl = await page.locator('rux-ruler')
+        const rulerEl = await page.locator('rux-ruler').first()
 
         const days = await rulerEl.evaluate((el) => {
             const rulerSpans = el.shadowRoot?.querySelectorAll('span')
@@ -82,11 +92,11 @@ test.describe('Timeline Interval Year', () => {
             }
         })
         expect(days).toEqual([
-            '12/01/23',
-            '01/01/24',
-            '02/01',
-            '03/01',
-            '04/01',
+            'December',
+            'January',
+            'February',
+            'March',
+            'April',
         ])
     })
 })
@@ -106,7 +116,7 @@ test.describe('Timeline Interval Week', () => {
             </rux-timeline>
         `
         await page.setContent(template)
-        const rulerEl = await page.locator('rux-ruler')
+        const rulerEl = await page.locator('rux-ruler').first()
 
         const days = await rulerEl.evaluate((el) => {
             const rulerSpans = el.shadowRoot?.querySelectorAll('span')
@@ -141,7 +151,7 @@ test.describe('Timeline Interval Week', () => {
             </rux-timeline>
         `
         await page.setContent(template)
-        const rulerEl = await page.locator('rux-ruler')
+        const rulerEl = await page.locator('rux-ruler').first()
 
         const days = await rulerEl.evaluate((el) => {
             const rulerSpans = el.shadowRoot?.querySelectorAll('span')
@@ -366,6 +376,120 @@ test.describe('Timeline', () => {
         await expect(el).toHaveClass(
             'rux-time-region rux-time-region--partial-start rux-time-region--partial-end'
         )
+    })
+})
+test.describe('Timeline Ruler Position', () => {
+    test('ruler-position is set to both by default', async ({ page }) => {
+        const content = `
+            <rux-timeline timezone="America/New_York" start="2021-02-01T00:00:00Z"
+      end="2021-02-03T00:00:00Z" interval="hour" zoom="2">
+      <rux-track slot="ruler">
+        <rux-ruler></rux-ruler>
+      </rux-track>
+      <rux-track>
+        <div slot="label">Region 1</div>
+        <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T04:00:00Z" status="serious">
+          Event 1.2
+        </rux-time-region>
+      </rux-track>
+    </rux-timeline>
+        `
+        await page.setContent(content)
+        const timeline = page.locator('rux-timeline')
+        await expect(timeline).toHaveAttribute('ruler-position', 'both')
+        const rulers = await page.locator('rux-ruler').all()
+        //expect rulers to have exactly 2 rux-ruler elements
+        expect(rulers.length).toBe(2)
+    })
+    test('ruler-position can be programmatically changed', async ({ page }) => {
+        const content = `
+              <div style="width: 950px; margin: auto">
+    <rux-timeline has-played-indicator="false" timezone="America/New_York" start="2021-02-01T00:00:00Z"
+      end="2021-02-03T00:00:00Z" interval="hour" zoom="2" ruler-position="bottom">
+      <rux-track slot="ruler">
+        <rux-ruler></rux-ruler>
+      </rux-track>
+      <rux-track>
+        <div slot="label">Region 1</div>
+        <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T04:00:00Z" status="serious">
+          Event 1.2
+        </rux-time-region>
+      </rux-track>
+    </rux-timeline>
+  </div>
+  <rux-button>Swap</rux-button>
+
+      `
+        await page.setContent(content)
+        await page.addScriptTag({
+            content: `
+    const timeline = document.querySelector('rux-timeline')
+    const btns = document.querySelectorAll('rux-button')
+    btns[0].addEventListener('click', () => {
+      if (timeline.getAttribute('ruler-position') === 'bottom') {
+        timeline.setAttribute('ruler-position', 'top')
+      } else {
+        timeline.setAttribute('ruler-position', 'bottom')
+      }
+    })
+        `,
+        })
+        const timeline = page.locator('rux-timeline')
+        const btn = page.locator('rux-button')
+
+        await expect(timeline).toHaveAttribute('ruler-position', 'bottom')
+        await btn.click()
+        await expect(timeline).toHaveAttribute('ruler-position', 'top')
+        await btn.click()
+        await expect(timeline).toHaveAttribute('ruler-position', 'bottom')
+    })
+})
+test.describe('show-secondary-ruler prop', () => {
+    test('if show-secondary-ruler is true, then it should show the secondary ruler', async ({
+        page,
+    }) => {
+        const content = `
+        <div style="width: 950px; margin: auto">
+            <rux-timeline show-secondary-ruler timezone="America/New_York" start="2021-02-01T00:00:00Z"
+                end="2021-02-03T00:00:00Z" interval="hour" zoom="2">
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        </div>
+    `
+        await page.setContent(content)
+        const ruler = page.locator('rux-ruler')
+        const secondaryRuler = ruler.locator('.ruler-new-day-display').first() //if the first one is visible, then the secondary ruler is visible
+        await expect(secondaryRuler).toBeVisible()
+    })
+})
+
+test.describe('hide-j-day prop', () => {
+    test('if hide-j-day is true, then it should not show the j-day', async ({
+        page,
+    }) => {
+        const content = `
+        <div style="width: 950px; margin: auto">
+            <rux-timeline hide-j-day timezone="America/New_York" start="2021-02-01T00:00:00Z"
+                end="2021-02-03T00:00:00Z" interval="hour" zoom="2" show-secondary-ruler>
+                 <rux-track>
+                  <div slot="label">Region 1</div>
+                  <rux-time-region start="2021-02-01T01:00:00Z" end="2021-02-01T04:00:00Z" status="serious">
+                    Event 1.2
+                  </rux-time-region>
+                </rux-track>
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+            </rux-timeline>
+        </div>
+    `
+        await page.setContent(content)
+        const ruler = page.locator('rux-ruler')
+        const secondaryRuler = ruler.locator('.ruler-new-day-display').first()
+        //check to see if secondary ruler has the j-day as part of it's text content. The J-Day has a leading '/', so we're checking if that's present or not.
+        await expect(secondaryRuler).not.toHaveText(/\/\//)
     })
 })
 

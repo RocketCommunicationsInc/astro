@@ -1,5 +1,6 @@
 :host {
     display: block;
+
     ::-webkit-scrollbar {
         width: 16px;
         height: 16px;
@@ -44,6 +45,14 @@
     ::-webkit-scrollbar-track:horizontal {
         box-shadow: var(--scrollbar-shadow-inner-horizontal);
     }
+
+    --grid-line-color: transparent;
+    --ruler-text-placement: start;
+}
+
+:host([show-grid]) {
+    --grid-line-color: var(--color-background-base-default);
+    --ruler-text-placement: center;
 }
 
 .rux-timeline {
@@ -51,6 +60,10 @@
     flex-direction: column;
     overflow-x: auto;
     position: relative;
+}
+
+.ruler-position__top {
+    flex-direction: column-reverse;
 }
 
 .hidden {
@@ -65,6 +78,7 @@
     height: 100%;
     top: 0;
     pointer-events: none; // allows scrolling when mouse cursor is positioned over the playhead
+
     &:after {
         width: 0;
         height: 0;

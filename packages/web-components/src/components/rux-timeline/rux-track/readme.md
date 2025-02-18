@@ -25,6 +25,19 @@
 | `"track-header"` | The Track's header    |
 
 
+## Dependencies
+
+### Used by
+
+ - [rux-timeline](..)
+
+### Graph
+```mermaid
+graph TD;
+  rux-timeline --> rux-track
+  style rux-track fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

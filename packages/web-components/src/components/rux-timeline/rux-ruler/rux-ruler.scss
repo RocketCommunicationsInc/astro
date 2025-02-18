@@ -8,19 +8,25 @@
 
 .ruler-time {
     display: flex;
-    align-items: center;
-    padding: 12px 20px;
+    padding: var(--spacing-2);
+    background: #2c3d4d;
+    border-right: 1px solid var(--color-background-surface-default);
 }
 
 .ruler-new-day-cell {
     background-color: var(--color-background-base-default);
-    font-size: var(--font-size-sm);
-    display: block;
-    text-align: center;
-    padding: 5px;
 }
 
 .ruler-new-day-display {
-    display: block;
-    font-size: var(--font-size-sm);
+    display: flex;
+    align-items: flex-end;
+    text-align: left;
+    padding-inline-start: var(--spacing-2);
+
+    padding-block: var(--spacing-1);
+
+    & span {
+        position: sticky;
+        left: 210px;
+    }
 }

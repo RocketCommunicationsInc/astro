@@ -24595,14 +24595,14 @@ export declare interface RuxTimeRegion extends Components.RuxTimeRegion {}
 
 
 @ProxyCmp({
-  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'start', 'timezone', 'zoom']
+  inputs: ['end', 'hasPlayedIndicator', 'hideJDay', 'interval', 'playhead', 'rulerPosition', 'showGrid', 'showSecondaryRuler', 'start', 'timezone', 'zoom']
 })
 @Component({
   selector: 'rux-timeline',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['end', 'hasPlayedIndicator', 'interval', 'playhead', 'start', 'timezone', 'zoom'],
+  inputs: ['end', 'hasPlayedIndicator', 'hideJDay', 'interval', 'playhead', 'rulerPosition', 'showGrid', 'showSecondaryRuler', 'start', 'timezone', 'zoom'],
 })
 export class RuxTimeline {
   protected el: HTMLElement;

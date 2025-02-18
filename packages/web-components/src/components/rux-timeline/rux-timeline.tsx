@@ -1,17 +1,17 @@
 import { Component, Element, Host, Prop, State, Watch, h } from '@stencil/core'
 import {
-    differenceInHours,
-    differenceInMinutes,
-    differenceInMonths,
-    format,
-} from 'date-fns'
-import {
     dateRange,
     daysInMonth,
     getBeginningOfMonth,
     getStartEndDateForInterval,
     validateTimezone,
 } from './helpers'
+import {
+    differenceInHours,
+    differenceInMinutes,
+    differenceInMonths,
+    format,
+} from 'date-fns'
 
 /**
  * @part playhead - The timeline's playhead
@@ -26,6 +26,7 @@ export class RuxTimeline {
     private slotContainer?: HTMLElement
     private timelineContainer?: HTMLElement
     private rulerContainer?: HTMLElement
+
     public slots?: any = 'empty'
     @Element() el!: HTMLRuxTimelineElement
 
@@ -66,9 +67,33 @@ export class RuxTimeline {
     @Prop() interval: 'month' | 'week' | 'hour' | 'day' | 'minute' = 'hour'
 
     /**
+     * Controls the display of grid lines
+     */
+    @Prop({ attribute: 'show-grid' }) showGrid: boolean = false
+
+    /**
      * Controls the timezone that the timeline is localized to. Must be an IANA time zone name ("America/New_York") or an offset string.
      */
     @Prop() timezone = 'UTC'
+
+    /**
+     * Controls the position of the ruler. Either top, bottom or both.
+     */
+    @Prop({ attribute: 'ruler-position', reflect: true }) rulerPosition:
+        | 'top'
+        | 'bottom'
+        | 'both' = 'both'
+
+    /**
+     * Hides the J-Day display when show-secondary-ruler is true.
+     */
+    @Prop({ attribute: 'hide-j-day' }) hideJDay: boolean = false
+
+    /**
+     * Controls whether or not the attached rux-ruler displays the secondary date portion.
+     */
+    @Prop({ attribute: 'show-secondary-ruler' })
+    showSecondaryRuler: boolean = false
 
     @Watch('hasPlayedIndicator')
     @Watch('playhead')
@@ -99,11 +124,30 @@ export class RuxTimeline {
         this.syncPlayhead()
     }
 
+    @Watch('rulerPosition')
+    @Watch('showSecondaryRuler')
+    @Watch('hideJDay')
+    handleRulerPosChange() {
+        this._updateRegions()
+    }
+
+    @Watch('showGrid')
+    handleGridChange() {
+        //because we're using the :host selector, we need to set the attribute on the host element. otherwise,
+        //`show-grid="false"` will register as show-grid still being there, thus applying the grid styles.
+        if (!this.showGrid) {
+            this.el.removeAttribute('show-grid')
+        }
+    }
+
     connectedCallback() {
         this._handleSlotChange = this._handleSlotChange.bind(this)
         this._handleMouse = this._handleMouse.bind(this)
         this.syncPlayhead = this.syncPlayhead.bind(this)
         this._updateRegions = this._updateRegions.bind(this)
+        if (!this.showGrid) {
+            this.el.removeAttribute('show-grid')
+        }
     }
     componentWillLoad() {
         this._setZoom()
@@ -401,10 +445,13 @@ export class RuxTimeline {
                 validateTimezone(this.timezone).then(() => {
                     rulerEl.timezone = this.timezone
                 })
-
+                // pass any relative props to rux-ruler element
                 rulerEl.start = useStartEndDates.timelineStart.toISOString()
                 rulerEl.end = useStartEndDates.timelineEnd.toISOString()
                 rulerEl.interval = this.interval
+                rulerEl.rulerPosition = this.rulerPosition
+                rulerEl.showSecondaryRuler = this.showSecondaryRuler
+                rulerEl.hideJDay = this.hideJDay
             }
         }
     }
@@ -448,7 +495,13 @@ export class RuxTimeline {
         return (
             <Host>
                 <div
-                    class="rux-timeline"
+                    class={{
+                        'rux-timeline': true,
+                        'ruler-position__top': this.rulerPosition === 'top',
+                        'ruler-position__bottom':
+                            this.rulerPosition === 'bottom',
+                        'ruler-position__both': this.rulerPosition === 'both',
+                    }}
                     onMouseMove={(ev) => this._handleMouse(ev)}
                     onScroll={() => this._handleScroll()}
                     ref={(el) => (this.timelineContainer = el)}
@@ -467,6 +520,32 @@ export class RuxTimeline {
                             }}
                         ></div>
                     )}
+                    {
+                        //* If we need a second ruler, create one here.
+                        this.rulerPosition === 'both' ? (
+                            <rux-track
+                                slot="ruler"
+                                interval={this.interval}
+                                timezone={this.timezone}
+                                start={this.start}
+                                end={this.end}
+                                width={this.width}
+                                columns={this.columns}
+                                playhead={this.playhead}
+                            >
+                                <rux-ruler
+                                    interval={this.interval}
+                                    start={this.start}
+                                    end={this.end}
+                                    timezone={this.timezone}
+                                    rulerPosition={this.rulerPosition}
+                                    showSecondaryRuler={this.showSecondaryRuler}
+                                    isSecondary
+                                    hideJDay={this.hideJDay}
+                                ></rux-ruler>
+                            </rux-track>
+                        ) : null
+                    }
 
                     <div class="events" ref={(el) => (this.slotContainer = el)}>
                         <slot onSlotchange={this._handleSlotChange}></slot>

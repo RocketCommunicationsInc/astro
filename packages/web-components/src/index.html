@@ -15,9 +15,212 @@
         />
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
-        <!-- <link rel="stylesheet" href="/build/astro-web-components.css" /> -->
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+        <style>
+            body {
+                min-height: 100vh;
+            }
+
+            rux-classification-marking {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+
+                &::part(header),
+                &::part(footer) {
+                    max-height: 1.5rem;
+                }
+            }
+
+            main {
+                flex-grow: 1;
+            }
+
+            .zoomSelector {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+
+                & > span {
+                    margin-right: var(--spacing-2);
+                }
+            }
+        </style>
     </head>
 
     <body>
+        <rux-classification-marking classification="unclassified">
+            <rux-global-status-bar
+                app-domain="DOMAIN"
+                app-state="state"
+                username="username"
+            >
+                <rux-clock></rux-clock>
+            </rux-global-status-bar>
+            <main>
+                <section class="zoomSelector">
+                    <span>Current Zoom:</span>
+                    <rux-button
+                        id="sub"
+                        icon-only
+                        icon="zoom-out"
+                        onclick="zoom(-1)"
+                    ></rux-button>
+                    <rux-input readonly></rux-input>
+                    <rux-input id="interval-level" readonly></rux-input>
+                    <rux-button
+                        id="add"
+                        icon-only
+                        icon="zoom-in"
+                        onclick="zoom(1)"
+                    ></rux-button>
+                    <rux-button secondary onclick="togglegrid()"
+                        >Toggle Grid</rux-button
+                    >
+                    <rux-button
+                        id="timezone"
+                        secondary
+                        onclick="toggleTimezone()"
+                        >Toggle Timezone</rux-button
+                    ><span id="currentTimezone"></span>
+                    <rux-radio-group
+                        name="radios"
+                        label="Set Ruler Position"
+                        id="set-ruler-position"
+                        value="both"
+                    >
+                        <rux-radio value="top" name="radios">Top</rux-radio>
+                        <rux-radio value="both" name="radios">Both</rux-radio>
+                        <rux-radio value="bottom" name="radios"
+                            >Bottom</rux-radio
+                        >
+                    </rux-radio-group>
+                    <rux-switch
+                        id="show-secondary-ruler"
+                        label="Show Secondary Ruler"
+                    ></rux-switch>
+                    <rux-switch id="hide-j-day" label="Hide J-Day"></rux-switch>
+                </section>
+
+                <rux-timeline
+                    id="first"
+                    has-played-indicator="false"
+                    timezone="America/New_York"
+                    start="2021-01-01T00:00:00.000Z"
+                    end="2021-03-02T01:00:00.000Z"
+                    playhead="2021-01-02T00:00:00.000Z"
+                    interval="hour"
+                    zoom="4"
+                    show-grid
+                    show-secondary-ruler
+                    show-start-of-day
+                    show-grid
+                >
+                    <rux-track>
+                        <div slot="label">Region 1</div>
+                        <rux-time-region
+                            start="2021-01-01T03:00:00.000Z"
+                            end="2021-01-02T02:00:00Z"
+                            status="serious"
+                        >
+                            Event 1.2
+                        </rux-time-region>
+                    </rux-track>
+                    <rux-track>
+                        <div slot="label">Region 2</div>
+                        <rux-time-region
+                            start="2021-01-10T01:00:00Z"
+                            end="2021-01-12T02:00:00Z"
+                            status="serious"
+                        >
+                            Event 1.2
+                        </rux-time-region>
+                    </rux-track>
+                    <rux-track>
+                        <div slot="label">Region 3</div>
+                        <rux-time-region
+                            start="2021-02-25T01:00:00Z"
+                            end="2021-02-27T02:00:00Z"
+                            status="serious"
+                        >
+                            Event 3.2
+                        </rux-time-region>
+                    </rux-track>
+                    <rux-track slot="ruler">
+                        <rux-ruler></rux-ruler>
+                    </rux-track>
+                </rux-timeline>
+            </main>
+        </rux-classification-marking>
+        <script>
+            const timeline = document.querySelector('rux-timeline')
+            const input = document.querySelector('rux-input')
+            const interval = document.getElementById('interval-level')
+            const currenttz = document.querySelector('#currentTimezone')
+            currenttz.textContent = timeline.getAttribute('timezone')
+            const setRulerPosition = document.getElementById(
+                'set-ruler-position'
+            )
+            const toggleShowSecondaryRuler = document.getElementById(
+                'show-secondary-ruler'
+            )
+            const hideJDay = document.getElementById('hide-j-day')
+
+            hideJDay.addEventListener('ruxchange', (e) => {
+                timeline.toggleAttribute('hide-j-day')
+            })
+            toggleShowSecondaryRuler.addEventListener('ruxchange', (e) => {
+                timeline.toggleAttribute('show-secondary-ruler')
+            })
+            setRulerPosition.addEventListener('ruxchange', (e) => {
+                timeline.setAttribute('ruler-position', e.target.value)
+            })
+
+            let zoomLevel = 4
+            input.value = zoomLevel
+            interval.value = timeline.getAttribute('interval')
+            function zoom(number) {
+                zoomLevel = zoomLevel + number
+                input.value = zoomLevel
+                setZoomInterval(zoomLevel)
+                timeline.setAttribute('zoom', zoomLevel)
+            }
+
+            const togglegrid = () => {
+                timeline.toggleAttribute('show-grid')
+            }
+
+            const toggleTimezone = () => {
+                const current = timeline.timezone
+
+                const newTz =
+                    current === 'America/New_York' ? 'UTC' : 'America/New_York'
+                timeline.timezone = newTz
+                currenttz.textContent = newTz
+            }
+
+            function setZoomInterval(zoomLevel) {
+                if (zoomLevel === 1) {
+                    timeline.setAttribute('interval', 'month')
+                    interval.value = 'month'
+                }
+                if (zoomLevel === 2) {
+                    timeline.setAttribute('interval', 'week')
+                    interval.value = 'week'
+                }
+                if (zoomLevel === 3) {
+                    timeline.setAttribute('interval', 'day')
+                    interval.value = 'day'
+                }
+                if (zoomLevel === 4) {
+                    timeline.setAttribute('interval', 'hour')
+                    interval.value = 'hour'
+                }
+                if (zoomLevel >= 5) {
+                    timeline.setAttribute('interval', 'minute')
+                    interval.value = 'minute'
+                }
+            }
+        </script>
     </body>
 </html>

@@ -1,25 +1,25 @@
 import {
-    Element,
-    Listen,
     Component,
-    Prop,
+    Element,
     Host,
-    h,
-    Watch,
+    Listen,
+    Prop,
     State,
+    Watch,
+    h,
 } from '@stencil/core'
-import {
-    differenceInMinutes,
-    differenceInHours,
-    differenceInSeconds,
-    differenceInMonths,
-    differenceInWeeks,
-} from 'date-fns'
 import {
     daysInMonth,
     getBeginningOfDay,
     getStartEndDateForInterval,
 } from '../helpers'
+import {
+    differenceInHours,
+    differenceInMinutes,
+    differenceInMonths,
+    differenceInSeconds,
+    differenceInWeeks,
+} from 'date-fns'
 
 interface DateValidation {
     success: boolean
@@ -313,8 +313,21 @@ export class RuxTrack {
         const hasRuler = [...this.el.children].find(
             (el) => el.tagName.toLowerCase() === 'rux-ruler'
         )
-
         this.hasRuler = !!hasRuler
+    }
+
+    renderCssGrid() {
+        //we need the width of an hour so we need the interval * whatever the width of a grid col is
+        const getCols = () => {
+            if (['minute', 'hour'].includes(this.interval)) return 60
+            if (['day', 'week', 'month'].includes(this.interval)) return 24
+            return 60
+        }
+        const span = getCols()
+        const width = span * this.width
+        // we set this as --grid-gap and then use that variable
+        // in rux-track.scss to set the gap between lines
+        return `${width}px`
     }
 
     render() {
@@ -324,6 +337,7 @@ export class RuxTrack {
                     class="rux-timeline rux-track"
                     style={{
                         gridTemplateColumns: `[header] 200px repeat(${this.columns}, ${this.width}px)`,
+                        '--grid-gap': this.renderCssGrid(),
                     }}
                     part="container"
                 >
@@ -331,12 +345,11 @@ export class RuxTrack {
                         class="rux-track__header"
                         part="track-header"
                         style={{
-                            gridRow: '1',
+                            gridRow: '1 / -1',
                         }}
                     >
                         <slot name="label"></slot>
                     </div>
-
                     <slot onSlotchange={this._handleSlotChange}></slot>
                     <div
                         class={{
@@ -347,6 +360,7 @@ export class RuxTrack {
                             (this.playedIndicator = el as HTMLInputElement)
                         }
                     ></div>
+                    <div class="grid"></div>
                 </div>
             </Host>
         )

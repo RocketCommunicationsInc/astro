@@ -1,4 +1,4 @@
-import { html } from 'lit-html';
+import { html } from 'lit-html'
 
 const Base = (args) => {
     let start = args.start
@@ -23,12 +23,16 @@ const Base = (args) => {
                 playhead="${position}"
                 interval="${args.interval}"
                 zoom="${args.zoom}"
+                ruler-position="${args.rulerPosition}"
+                show-secondary-ruler="${args.showSecondaryRuler}"
+                show-grid="${args.showGrid}"
+                hide-j-day="${args.hideJDay}"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
                     <rux-time-region
-                        start="2021-02-01T01:00:00Z"
-                        end="2021-02-01T02:00:00Z"
+                        start="2025-02-01T01:00:00Z"
+                        end="2025-02-01T02:00:00Z"
                         status="serious"
                     >
                         Event 1.2
@@ -37,8 +41,8 @@ const Base = (args) => {
                 <rux-track>
                     <div slot="label">Region 2</div>
                     <rux-time-region
-                        start="2021-02-01T10:00:00Z"
-                        end="2021-02-01T12:00:00Z"
+                        start="2025-02-01T10:00:00Z"
+                        end="2025-02-01T12:00:00Z"
                         status="serious"
                     >
                         Event 2.1
@@ -47,8 +51,8 @@ const Base = (args) => {
                 <rux-track>
                     <div slot="label">Region 3</div>
                     <rux-time-region
-                        start="2021-02-01T00:00:00Z"
-                        end="2021-02-02T02:00:00Z"
+                        start="2025-02-01T00:00:00Z"
+                        end="2025-02-02T02:00:00Z"
                         status="standby"
                     >
                         Event 3.1
@@ -57,8 +61,8 @@ const Base = (args) => {
                 <rux-track>
                     <div slot="label">Region 4</div>
                     <rux-time-region
-                        start="2021-02-01T03:00:00Z"
-                        end="2021-02-02T04:33:00Z"
+                        start="2025-02-01T03:00:00Z"
+                        end="2025-02-02T04:33:00Z"
                         status="critical"
                     >
                         Event 4.1
@@ -67,8 +71,8 @@ const Base = (args) => {
                 <rux-track>
                     <div slot="label">Region 5</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="caution"
                     >
                         Event 5.1
@@ -77,8 +81,8 @@ const Base = (args) => {
                 <rux-track>
                     <div slot="label">Region 6</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="normal"
                     >
                         Event 6.1
@@ -87,8 +91,8 @@ const Base = (args) => {
                 <rux-track>
                     <div slot="label">Region 7</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="normal"
                     >
                         Event 7.1
@@ -111,16 +115,16 @@ const VerticalScrollExample = () => {
         </style>
         <div style="width: 950px; margin: auto">
             <rux-timeline
-                start="2021-02-01T00:00:00Z"
-                end="2021-02-03T00:00:00Z"
+                start="2025-02-01T00:00:00Z"
+                end="2025-02-03T00:00:00Z"
                 interval="hour"
                 zoom="2"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
                     <rux-time-region
-                        start="2021-02-01T01:00:00Z"
-                        end="2021-02-01T02:00:00Z"
+                        start="2025-02-01T01:00:00Z"
+                        end="2025-02-01T02:00:00Z"
                         status="serious"
                     >
                         Event 1.2
@@ -129,8 +133,8 @@ const VerticalScrollExample = () => {
                 <rux-track>
                     <div slot="label">Region 2</div>
                     <rux-time-region
-                        start="2021-02-01T10:00:00Z"
-                        end="2021-02-01T12:00:00Z"
+                        start="2025-02-01T10:00:00Z"
+                        end="2025-02-01T12:00:00Z"
                         status="serious"
                     >
                         Event 2.1
@@ -139,8 +143,8 @@ const VerticalScrollExample = () => {
                 <rux-track>
                     <div slot="label">Region 3</div>
                     <rux-time-region
-                        start="2021-02-01T00:00:00Z"
-                        end="2021-02-02T02:00:00Z"
+                        start="2025-02-01T00:00:00Z"
+                        end="2025-02-02T02:00:00Z"
                         status="standby"
                     >
                         Event 3.1
@@ -149,8 +153,8 @@ const VerticalScrollExample = () => {
                 <rux-track>
                     <div slot="label">Region 4</div>
                     <rux-time-region
-                        start="2021-02-01T03:00:00Z"
-                        end="2021-02-02T04:33:00Z"
+                        start="2025-02-01T03:00:00Z"
+                        end="2025-02-02T04:33:00Z"
                         status="critical"
                     >
                         Event 4.1
@@ -159,8 +163,8 @@ const VerticalScrollExample = () => {
                 <rux-track>
                     <div slot="label">Region 5</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="caution"
                     >
                         Event 5.1
@@ -169,8 +173,8 @@ const VerticalScrollExample = () => {
                 <rux-track>
                     <div slot="label">Region 6</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="normal"
                     >
                         Event 6.1
@@ -179,8 +183,8 @@ const VerticalScrollExample = () => {
                 <rux-track>
                     <div slot="label">Region 7</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="normal"
                     >
                         Event 7.1
@@ -213,18 +217,18 @@ const WithPlayedIndicatorExample = () => {
         </style>
         <div style="width: 950px; margin: auto">
             <rux-timeline
-                start="2021-02-01T00:00:00Z"
-                end="2021-02-03T00:00:00Z"
+                start="2025-02-01T00:00:00Z"
+                end="2025-02-03T00:00:00Z"
                 interval="hour"
                 zoom="2"
-                playhead="2021-02-01T01:00:00Z"
+                playhead="2025-02-01T01:00:00Z"
                 has-played-indicator
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
                     <rux-time-region
-                        start="2021-02-01T01:00:00Z"
-                        end="2021-02-01T02:00:00Z"
+                        start="2025-02-01T01:00:00Z"
+                        end="2025-02-01T02:00:00Z"
                         status="serious"
                     >
                         Event 1.2
@@ -233,8 +237,8 @@ const WithPlayedIndicatorExample = () => {
                 <rux-track>
                     <div slot="label">Region 2</div>
                     <rux-time-region
-                        start="2021-02-01T10:00:00Z"
-                        end="2021-02-01T12:00:00Z"
+                        start="2025-02-01T10:00:00Z"
+                        end="2025-02-01T12:00:00Z"
                         status="serious"
                     >
                         Event 2.1
@@ -243,8 +247,8 @@ const WithPlayedIndicatorExample = () => {
                 <rux-track>
                     <div slot="label">Region 3</div>
                     <rux-time-region
-                        start="2021-02-01T00:00:00Z"
-                        end="2021-02-02T02:00:00Z"
+                        start="2025-02-01T00:00:00Z"
+                        end="2025-02-02T02:00:00Z"
                         status="standby"
                     >
                         Event 3.1
@@ -253,8 +257,8 @@ const WithPlayedIndicatorExample = () => {
                 <rux-track>
                     <div slot="label">Region 4</div>
                     <rux-time-region
-                        start="2021-02-01T03:00:00Z"
-                        end="2021-02-02T04:33:00Z"
+                        start="2025-02-01T03:00:00Z"
+                        end="2025-02-02T04:33:00Z"
                         status="critical"
                     >
                         Event 4.1
@@ -263,8 +267,8 @@ const WithPlayedIndicatorExample = () => {
                 <rux-track>
                     <div slot="label">Region 5</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="caution"
                     >
                         Event 5.1
@@ -273,8 +277,8 @@ const WithPlayedIndicatorExample = () => {
                 <rux-track>
                     <div slot="label">Region 6</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="normal"
                     >
                         Event 6.1
@@ -283,8 +287,8 @@ const WithPlayedIndicatorExample = () => {
                 <rux-track>
                     <div slot="label">Region 7</div>
                     <rux-time-region
-                        start="2021-02-01T05:00:00Z"
-                        end="2021-02-02T05:33:00Z"
+                        start="2025-02-01T05:00:00Z"
+                        end="2025-02-02T05:33:00Z"
                         status="normal"
                     >
                         Event 7.1
@@ -307,16 +311,16 @@ const ShowStartOfDayExample = () => {
         </style>
         <div style="width: 950px; margin: auto">
             <rux-timeline
-                start="2021-02-01T23:00:00Z"
-                end="2021-02-03T00:00:00Z"
+                start="2025-02-01T23:00:00Z"
+                end="2025-02-03T00:00:00Z"
                 interval="hour"
                 zoom="2"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
                     <rux-time-region
-                        start="2021-02-01T23:00:00Z"
-                        end="2021-02-02T02:00:00Z"
+                        start="2025-02-01T23:00:00Z"
+                        end="2025-02-02T02:00:00Z"
                         status="serious"
                     >
                         Event 1.2
@@ -331,7 +335,7 @@ const ShowStartOfDayExample = () => {
     `
 }
 
-const MinutesExample = () => {
+const MinutesExample = (args) => {
     return html`
         <style>
             rux-timeline::part(time-region-container) {
@@ -340,16 +344,21 @@ const MinutesExample = () => {
         </style>
         <div style="width: 950px; margin: auto">
             <rux-timeline
-                start="2021-02-01T00:00:00Z"
-                end="2021-02-01T01:00:00Z"
-                interval="minute"
-                zoom="2"
+                start="${args.start}"
+                end="${args.end}"
+                interval="${args.interval}"
+                zoom="${args.zoom}"
+                show-secondary-ruler="${args.showSecondaryRuler}"
+                show-grid="${args.showGrid}"
+                timezone="${args.timezone}"
+                ruler-position="${args.rulerPosition}"
+                hide-j-day="${args.hideJDay}"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
                     <rux-time-region
-                        start="2021-02-01T00:01:00Z"
-                        end="2021-02-01T00:08:00Z"
+                        start="2025-02-01T00:01:00Z"
+                        end="2025-02-01T00:08:00Z"
                         status="serious"
                     >
                         Event 1.2
@@ -394,6 +403,9 @@ const MonthsExample = (args) => {
                 playhead="${position}"
                 interval="${args.interval}"
                 zoom="${args.zoom}"
+                show-secondary-ruler="${args.showSecondaryRuler}"
+                show-grid="${args.showGrid}"
+                hide-j-day="${args.hideJDay}"
             >
                 <rux-track>
                     <div slot="label">Region 1</div>
@@ -454,6 +466,160 @@ const MonthsExample = (args) => {
     `
 }
 
+const RulerPositionExample = (args) => {
+    return html`
+        <style>
+            rux-timeline::part(time-region-container) {
+                height: auto;
+            }
+        </style>
+        <div style="width: 950px; margin: auto">
+            <rux-timeline
+                has-played-indicator="${args.hasPlayedIndicator}"
+                timezone="${args.timezone}"
+                start="${args.start}"
+                end="${args.end}"
+                interval="${args.interval}"
+                zoom="${args.zoom}"
+                ruler-position="${args.rulerPosition}"
+                show-secondary-ruler="${args.showSecondaryRuler}"
+                show-grid="${args.showGrid}"
+                hide-j-day="${args.hideJDay}"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 1</div>
+                    <rux-time-region
+                        start="2025-02-01T01:00:00Z"
+                        end="2025-02-01T04:00:00Z"
+                        status="serious"
+                    >
+                        Event 1.2
+                    </rux-time-region>
+                </rux-track>
+            </rux-timeline>
+        </div>
+    `
+}
+
+const ShowGridExample = (args) => {
+    return html`
+        <style>
+            rux-timeline::part(time-region-container) {
+                height: auto;
+            }
+        </style>
+        <div style="width: 950px; margin: auto">
+            <rux-timeline
+                has-played-indicator="${args.hasPlayedIndicator}"
+                timezone="${args.timezone}"
+                start="${args.start}"
+                end="${args.end}"
+                interval="${args.interval}"
+                zoom="${args.zoom}"
+                ruler-position="${args.rulerPosition}"
+                show-secondary-ruler="${args.showSecondaryRuler}"
+                show-grid="${args.showGrid}"
+                hide-j-day="${args.hideJDay}"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 1</div>
+                    <rux-time-region
+                        start="2025-02-01T01:00:00Z"
+                        end="2025-02-01T04:00:00Z"
+                        status="serious"
+                    >
+                        Event 1.2
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 2</div>
+                    <rux-time-region
+                        start="2025-02-02T01:00:00Z"
+                        end="2025-02-02T04:00:00Z"
+                        status="serious"
+                    >
+                        Event 2.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 3</div>
+                    <rux-time-region
+                        start="2025-02-01T04:00:00Z"
+                        end="2025-02-01T06:00:00Z"
+                        status="serious"
+                    >
+                        Event 3.1
+                    </rux-time-region>
+                </rux-track>
+            </rux-timeline>
+        </div>
+    `
+}
+
+const ShowSecondaryRulerExample = (args) => {
+    return html`
+        <style>
+            rux-timeline::part(time-region-container) {
+                height: auto;
+            }
+        </style>
+        <div style="width: 950px; margin: auto">
+            <rux-timeline
+                has-played-indicator="${args.hasPlayedIndicator}"
+                timezone="${args.timezone}"
+                start="${args.start}"
+                end="${args.end}"
+                interval="${args.interval}"
+                zoom="${args.zoom}"
+                ruler-position="${args.rulerPosition}"
+                show-secondary-ruler="${args.showSecondaryRuler}"
+                show-grid="${args.showGrid}"
+                hide-j-day="${args.hideJDay}"
+            >
+                <rux-track slot="ruler">
+                    <rux-ruler></rux-ruler>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 1</div>
+                    <rux-time-region
+                        start="2025-02-01T01:00:00Z"
+                        end="2025-02-01T04:00:00Z"
+                        status="serious"
+                    >
+                        Event 1.2
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 2</div>
+                    <rux-time-region
+                        start="2025-02-02T01:00:00Z"
+                        end="2025-02-02T04:00:00Z"
+                        status="serious"
+                    >
+                        Event 2.1
+                    </rux-time-region>
+                </rux-track>
+                <rux-track>
+                    <div slot="label">Region 3</div>
+                    <rux-time-region
+                        start="2025-02-01T04:00:00Z"
+                        end="2025-02-01T06:00:00Z"
+                        status="serious"
+                    >
+                        Event 3.1
+                    </rux-time-region>
+                </rux-track>
+            </rux-timeline>
+        </div>
+    `
+}
+
 export default {
     title: 'Beta/Timeline [BETA]',
     component: 'rux-timeline',
@@ -468,7 +634,7 @@ export default {
         end: {
             name: 'end',
             description:
-                'The timeline\'s end date. Must be an ISO string "2021-02-02T05:00:00Z"',
+                'The timeline\'s end date. Must be an ISO string "2025-02-02T05:00:00Z"',
 
             type: {
                 name: 'date',
@@ -487,7 +653,7 @@ export default {
                 },
 
                 defaultValue: {
-                    summary: '2021-02-02T00:00:00Z',
+                    summary: '2025-02-02T00:00:00Z',
                 },
             },
         },
@@ -549,7 +715,7 @@ export default {
         },
 
         hasPlayedIndicator: {
-            name: 'hasPlayedIndicator',
+            name: 'has-played-indicator',
             description: 'Visually marks past time as played in each track',
 
             type: {
@@ -579,7 +745,7 @@ export default {
         playhead: {
             name: 'playhead',
             description:
-                'The timeline\'s playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"',
+                'The timeline\'s playhead date time. Must be an ISO string "2025-02-02T05:00:00Z"',
 
             type: {
                 name: 'date | undefined',
@@ -598,7 +764,7 @@ export default {
                 },
 
                 defaultValue: {
-                    summary: '2021-02-01T10:00:00Z',
+                    summary: '2025-02-01T10:00:00Z',
                 },
             },
 
@@ -608,7 +774,7 @@ export default {
         start: {
             name: 'start',
             description:
-                'The timeline\'s start date. Must be an ISO string "2021-02-02T05:00:00Z"',
+                'The timeline\'s start date. Must be an ISO string "2025-02-02T05:00:00Z"',
 
             type: {
                 name: 'string',
@@ -627,7 +793,7 @@ export default {
                 },
 
                 defaultValue: {
-                    summary: '2021-02-01T00:00:00Z',
+                    summary: '2025-02-01T00:00:00Z',
                 },
             },
 
@@ -661,6 +827,99 @@ export default {
 
             options: [null],
         },
+        rulerPosition: {
+            name: 'ruler-position',
+            description:
+                'Controls the position of the ruler. Placing the ruler on either the top, the bottom, or the top and bottom of the timeline.   ',
+
+            type: {
+                name: 'string',
+                required: false,
+            },
+
+            control: {
+                type: 'radio',
+            },
+
+            table: {
+                category: 'props',
+
+                type: {
+                    summary: '"top" | "bottom" | both',
+                },
+
+                defaultValue: {
+                    summary: "'both'",
+                },
+            },
+
+            options: ['top', 'bottom', 'both'],
+        },
+        showSecondaryRuler: {
+            name: 'show-secondary-ruler',
+            description:
+                'Displays a secondary ruler that shows the start of each interval',
+            type: {
+                name: 'boolean',
+                required: false,
+            },
+            control: {
+                type: 'boolean',
+            },
+            table: {
+                category: 'props',
+                type: {
+                    summary: 'boolean',
+                },
+                defaultValue: {
+                    summary: false,
+                },
+            },
+            options: [null],
+        },
+        showGrid: {
+            name: 'show-grid',
+            description: 'Displays a grid on the timeline',
+            type: {
+                name: 'boolean',
+                required: false,
+            },
+            control: {
+                type: 'boolean',
+            },
+            table: {
+                category: 'props',
+                type: {
+                    summary: 'boolean',
+                },
+                defaultValue: {
+                    summary: false,
+                },
+            },
+            options: [null],
+        },
+        hideJDay: {
+            name: 'hide-j-day',
+            description:
+                'Hides the Julian Day label within the secondary-ruler.',
+            type: {
+                name: 'boolean',
+                required: false,
+            },
+            control: {
+                type: 'boolean',
+            },
+            table: {
+                category: 'props',
+                type: {
+                    summary: 'boolean',
+                },
+                defaultValue: {
+                    summary: false,
+                },
+            },
+            options: [null],
+        },
     },
 }
 
@@ -671,11 +930,15 @@ export const Default = {
     args: {
         zoom: 2,
         interval: 'hour',
-        start: '2021-02-01T00:00:00Z',
-        end: '2021-02-03T00:00:00Z',
-        playhead: '2021-02-01T04:00:00Z',
+        start: '2025-02-01T00:00:00Z',
+        end: '2025-02-03T00:00:00Z',
+        playhead: '2025-02-01T04:00:00Z',
         timezone: 'America/New_York',
         hasPlayedIndicator: false,
+        rulerPosition: 'bottom',
+        showSecondaryRuler: false,
+        showGrid: false,
+        hideJDay: false,
     },
 }
 
@@ -707,6 +970,18 @@ export const ShowStartOfDay = {
 export const Minutes = {
     render: MinutesExample.bind(),
     name: 'Minutes',
+
+    args: {
+        start: '2025-02-01T00:00:00Z',
+        end: '2025-02-01T01:00:00Z',
+        interval: 'minute',
+        zoom: '2',
+        showGrid: false,
+        rulerPosition: 'both',
+        showSecondaryRuler: false,
+        timezone: 'UTC',
+        hideJDay: false,
+    },
 }
 
 export const MonthsWeeks = {
@@ -721,5 +996,65 @@ export const MonthsWeeks = {
         playhead: '2024-02-15T07:00:00Z',
         timezone: 'UTC',
         hasPlayedIndicator: false,
+        rulerPosition: 'both',
+        showSecondaryRuler: false,
+        showGrid: false,
+    },
+}
+
+export const RulerPosition = {
+    render: RulerPositionExample.bind(),
+    name: 'Ruler Position',
+
+    args: {
+        zoom: 2,
+        interval: 'hour',
+        start: '2025-02-01T00:00:00Z',
+        end: '2025-02-03T00:00:00Z',
+        playhead: '2025-02-01T04:00:00Z',
+        timezone: 'America/New_York',
+        hasPlayedIndicator: false,
+        rulerPosition: 'both',
+        showSecondaryRuler: false,
+        showGrid: false,
+        hideJDay: false,
+    },
+}
+
+export const ShowSecondaryRuler = {
+    render: ShowSecondaryRulerExample.bind(),
+    name: 'Show Secondary Ruler',
+
+    args: {
+        zoom: 2,
+        interval: 'hour',
+        start: '2025-02-01T00:00:00Z',
+        end: '2025-02-03T00:00:00Z',
+        playhead: '2025-02-01T04:00:00Z',
+        timezone: 'America/New_York',
+        hasPlayedIndicator: false,
+        rulerPosition: 'both',
+        showSecondaryRuler: true,
+        showGrid: false,
+        hideJDay: false,
+    },
+}
+
+export const ShowGrid = {
+    render: ShowGridExample.bind(),
+    name: 'Show Grid',
+
+    args: {
+        zoom: 2,
+        interval: 'hour',
+        start: '2025-02-01T00:00:00Z',
+        end: '2025-02-03T00:00:00Z',
+        playhead: '2025-02-01T04:00:00Z',
+        timezone: 'America/New_York',
+        hasPlayedIndicator: false,
+        rulerPosition: 'both',
+        showSecondaryRuler: true,
+        showGrid: true,
+        hideJDay: false,
     },
 }

@@ -19774,9 +19774,14 @@ export namespace Components {
     }
     interface RuxRuler {
         "end": string;
+        "hideJDay": boolean;
         "interval": any;
+        "isSecondary": boolean;
+        "rulerPosition": 'top' | 'bottom' | 'both';
+        "showSecondaryRuler"?: boolean | undefined;
         /**
-          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
+          * @deprecated This property is deprecated and will be removed in the next major release. Please use the `show-secondary-ruler` property on the rux-timeline component instead.
          */
         "showStartOfDay"?: boolean | undefined;
         "start": string;
@@ -20087,6 +20092,10 @@ export namespace Components {
          */
         "hasPlayedIndicator": boolean;
         /**
+          * Hides the J-Day display when show-secondary-ruler is true.
+         */
+        "hideJDay": boolean;
+        /**
           * The timeline's date time interval
          */
         "interval": 'month' | 'week' | 'hour' | 'day' | 'minute';
@@ -20094,6 +20103,20 @@ export namespace Components {
           * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "playhead"?: string;
+        /**
+          * Controls the position of the ruler. Either top, bottom or both.
+         */
+        "rulerPosition": | 'top'
+        | 'bottom'
+        | 'both';
+        /**
+          * Controls the display of grid lines
+         */
+        "showGrid": boolean;
+        /**
+          * Controls whether or not the attached rux-ruler displays the secondary date portion.
+         */
+        "showSecondaryRuler": boolean;
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
@@ -55356,9 +55379,14 @@ declare namespace LocalJSX {
     }
     interface RuxRuler {
         "end"?: string;
+        "hideJDay"?: boolean;
         "interval"?: any;
+        "isSecondary"?: boolean;
+        "rulerPosition"?: 'top' | 'bottom' | 'both';
+        "showSecondaryRuler"?: boolean | undefined;
         /**
-          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour'.
+          * Display the day (MM/DD) at 00:00. Only works when Timeline interval is set to 'hour' or 'minutes'.
+          * @deprecated This property is deprecated and will be removed in the next major release. Please use the `show-secondary-ruler` property on the rux-timeline component instead.
          */
         "showStartOfDay"?: boolean | undefined;
         "start"?: string;
@@ -55722,6 +55750,10 @@ declare namespace LocalJSX {
          */
         "hasPlayedIndicator"?: boolean;
         /**
+          * Hides the J-Day display when show-secondary-ruler is true.
+         */
+        "hideJDay"?: boolean;
+        /**
           * The timeline's date time interval
          */
         "interval"?: 'month' | 'week' | 'hour' | 'day' | 'minute';
@@ -55729,6 +55761,20 @@ declare namespace LocalJSX {
           * The timeline's playhead date time. Must be an ISO string "2021-02-02T05:00:00Z"
          */
         "playhead"?: string;
+        /**
+          * Controls the position of the ruler. Either top, bottom or both.
+         */
+        "rulerPosition"?: | 'top'
+        | 'bottom'
+        | 'both';
+        /**
+          * Controls the display of grid lines
+         */
+        "showGrid"?: boolean;
+        /**
+          * Controls whether or not the attached rux-ruler displays the secondary date portion.
+         */
+        "showSecondaryRuler"?: boolean;
         /**
           * The timeline's start date. Must be an ISO string "2021-02-02T05:00:00Z"
          */
