@@ -1,0 +1,173 @@
+:host {
+    display: block;
+}
+.control {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: var(--spacing-2);
+    --quad-width: 41.76px;
+    --triple-width: 31.32px;
+    --double-width: 20.88px;
+    --single-width: 10.44.88px;
+
+    > label.required::after {
+        content: ' *';
+    }
+
+    .hidden-input {
+        visibility: hidden;
+        position: absolute;
+        left: -600px;
+    }
+
+    .input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        border-radius: var(--input-radius);
+        box-shadow: 0 0 0 1px var(--input-color-border-default) inset;
+        background-color: var(--input-color-background-default);
+        color: var(--color-text-primary);
+        padding-inline: var(--spacing-2);
+
+        &:hover {
+            box-shadow: 0 0 0 1px var(--input-color-border-hover) inset;
+        }
+
+        &:focus-within {
+            outline: 1px solid var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
+        }
+
+        &[data-disabled] {
+            opacity: var(--opacity-disabled);
+            pointer-events: none;
+        }
+
+        .part {
+            all: unset;
+            font-family: monospace;
+            z-index: 1;
+            color: transparent;
+            caret-color: var(--color-text-primary);
+
+            &.year {
+                width: var(--quad-width);
+            }
+
+            &.month,
+            &.day,
+            &.hour,
+            &.min,
+            &.sec {
+                width: var(--double-width);
+            }
+
+            &.ms {
+                width: var(--triple-width);
+            }
+        }
+
+        .part:focus {
+            background-color: var(--color-background-surface-selected);
+            outline: none;
+            z-index: 0;
+        }
+
+        .display {
+            position: absolute;
+            font-family: monospace;
+            width: var(--double-width);
+            --padding-left: 0.5rem;
+
+            &.year {
+                left: var(--padding-left);
+                width: var(--quad-width);
+            }
+
+            &.month {
+                left: calc(var(--padding-left) + 3.2652rem);
+            }
+
+            &.day {
+                left: calc(var(--padding-left) + 5.22rem);
+            }
+
+            &.hour {
+                left: calc(var(--padding-left) + 7.1775rem);
+            }
+
+            &.min {
+                left: calc(var(--padding-left) + 9.135rem);
+            }
+
+            &.sec {
+                left: calc(var(--padding-left) + 11.0925rem);
+            }
+
+            &.ms {
+                left: calc(var(--padding-left) + 13.05rem);
+                width: var(--triple-width);
+            }
+        }
+
+        .mask {
+            background-color: transparent;
+            font-family: monospace;
+            width: var(--single-width);
+            display: flex;
+            justify-content: center;
+            line-height: 1.25rem;
+        }
+
+        .space {
+            color: transparent;
+        }
+
+        .calendar-btn {
+            all: unset;
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: var(--color-background-interactive-default);
+            margin-inline-start: auto;
+            cursor: pointer;
+
+            &:focus {
+                background-color: var(--color-background-surface-selected);
+                outline: 1px solid var(--color-border-focus-default);
+                outline-offset: var(--spacing-focus-default);
+                border-radius: var(--radius-base);
+            }
+        }
+    }
+
+    .small {
+        padding-block: var(--spacing-1);
+    }
+
+    .medium {
+        padding-block: var(--spacing-2);
+    }
+
+    .large {
+        padding-block: var(--spacing-3);
+    }
+
+    .invalid {
+        box-shadow: 0 0 0 1px var(--input-color-border-invalid) inset;
+    }
+
+    .error {
+        display: flex;
+        align-items: center;
+        color: var(--color-text-error);
+        gap: var(--spacing-1);
+
+        > svg {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: var(--color-text-error);
+        }
+    }
+}

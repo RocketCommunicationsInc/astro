@@ -1,0 +1,26 @@
+# rux-datetime-picker
+
+
+
+<!-- Auto Generated Below -->
+
+
+## Properties
+
+| Property    | Attribute    | Description | Type                             | Default     |
+| ----------- | ------------ | ----------- | -------------------------------- | ----------- |
+| `disabled`  | `disabled`   |             | `boolean`                        | `false`     |
+| `errorText` | `error-text` |             | `string \| undefined`            | `undefined` |
+| `helpText`  | `help-text`  |             | `string \| undefined`            | `undefined` |
+| `invalid`   | `invalid`    |             | `boolean`                        | `false`     |
+| `label`     | `label`      |             | `string \| undefined`            | `undefined` |
+| `name`      | `name`       |             | `string \| undefined`            | `undefined` |
+| `precision` | `precision`  |             | `"min" \| "ms" \| "sec"`         | `'min'`     |
+| `required`  | `required`   |             | `boolean`                        | `false`     |
+| `size`      | `size`       |             | `"large" \| "medium" \| "small"` | `'medium'`  |
+| `value`     | `value`      |             | `string \| undefined`            | `undefined` |
+
+
+----------------------------------------------
+
+*Built with [StencilJS](https://stenciljs.com/)*

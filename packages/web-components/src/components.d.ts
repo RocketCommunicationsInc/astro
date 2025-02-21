@@ -6,12 +6,14 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+import { Precision } from "./components/rux-datetime-picker/utils/types";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 import { Status as Status1 } from "./components";
 import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
 export { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+export { Precision } from "./components/rux-datetime-picker/utils/types";
 export { LogRow } from "./components/rux-log/rux-log.model";
 export { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 export { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
@@ -247,6 +249,19 @@ export namespace Components {
           * Format options for year
          */
         "year"?: 'numeric' | '2-digit';
+    }
+    interface RuxDatetimePicker {
+        "disabled": boolean;
+        "errorText"?: string;
+        "helpText"?: string;
+        "invalid": boolean;
+        "isChanged": boolean;
+        "label"?: string;
+        "name"?: string;
+        "precision": Precision;
+        "required": boolean;
+        "size": 'small' | 'medium' | 'large';
+        "value"?: string;
     }
     interface RuxDialog {
         /**
@@ -20410,6 +20425,12 @@ declare global {
         prototype: HTMLRuxDatetimeElement;
         new (): HTMLRuxDatetimeElement;
     };
+    interface HTMLRuxDatetimePickerElement extends Components.RuxDatetimePicker, HTMLStencilElement {
+    }
+    var HTMLRuxDatetimePickerElement: {
+        prototype: HTMLRuxDatetimePickerElement;
+        new (): HTMLRuxDatetimePickerElement;
+    };
     interface HTMLRuxDialogElement extends Components.RuxDialog, HTMLStencilElement {
     }
     var HTMLRuxDialogElement: {
@@ -34464,6 +34485,7 @@ declare global {
         "rux-clock": HTMLRuxClockElement;
         "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
+        "rux-datetime-picker": HTMLRuxDatetimePickerElement;
         "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
@@ -35824,6 +35846,19 @@ declare namespace LocalJSX {
           * Format options for year
          */
         "year"?: 'numeric' | '2-digit';
+    }
+    interface RuxDatetimePicker {
+        "disabled"?: boolean;
+        "errorText"?: string;
+        "helpText"?: string;
+        "invalid"?: boolean;
+        "isChanged"?: boolean;
+        "label"?: string;
+        "name"?: string;
+        "precision"?: Precision;
+        "required"?: boolean;
+        "size"?: 'small' | 'medium' | 'large';
+        "value"?: string;
     }
     interface RuxDialog {
         /**
@@ -55908,6 +55943,7 @@ declare namespace LocalJSX {
         "rux-clock": RuxClock;
         "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
+        "rux-datetime-picker": RuxDatetimePicker;
         "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
@@ -57035,6 +57071,7 @@ declare module "@stencil/core" {
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
+            "rux-datetime-picker": LocalJSX.RuxDatetimePicker & JSXBase.HTMLAttributes<HTMLRuxDatetimePickerElement>;
             "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;
