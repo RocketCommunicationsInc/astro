@@ -1,5 +1,11 @@
 # astro-angular
 
+## 0.5.0
+
+### Minor Changes
+
+- 95904ef7: Added several new props to rux-timeline. `show-secondary-ruler`, `ruler-position`, `show-grid`, and `hide-j-day`.
+
 ## 0.4.0
 
 ### Minor Changes

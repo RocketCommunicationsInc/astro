@@ -1,5 +1,18 @@
 # astro-vue
 
+## 0.5.0
+
+### Minor Changes
+
+- 95904ef7: Added several new props to rux-timeline. `show-secondary-ruler`, `ruler-position`, `show-grid`, and `hide-j-day`.
+
+### Patch Changes
+
+- Updated dependencies [95904ef7]
+  - @astrouxds/tokens@1.14.0
+- Updated dependencies [30b16057]
+  - @astrouxds/astro-web-components@7.25.0
+
 ## 0.4.0
 
 ### Minor Changes
