@@ -1,12 +1,25 @@
 # @astrouxds/angular
 
+## 7.25.0
+
+### Minor Changes
+
+- 95904ef7: Added several new props to rux-timeline. `show-secondary-ruler`, `ruler-position`, `show-grid`, and `hide-j-day`.
+
+### Patch Changes
+
+- Updated dependencies [95904ef7]
+  - @astrouxds/tokens@1.14.0
+- Updated dependencies [30b16057]
+  - @astrouxds/astro-web-components@7.25.0
+
 ## 7.24.1
 
 ### Patch Changes
 
 #### Accordion
 
--   CSS fix for accordion-item for Chrome version 131.0.6778.70.
+- CSS fix for accordion-item for Chrome version 131.0.6778.70.
 
 ## 7.24.0
 
@@ -14,7 +27,7 @@
 
 #### Input
 
--   Added minlength and maxlength props
+- Added minlength and maxlength props
 
 ## 7.23.0
 
