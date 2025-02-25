@@ -28,11 +28,22 @@
                 flex-direction: column;
             "
         >
+            <span>2025-01-25T17:25:24.211Z</span>
+            <rux-textarea></rux-textarea>
             <rux-datetime-picker
                 label="Default (no given value)"
                 help-text="Help Text"
                 precision="ms"
             ></rux-datetime-picker>
+            <div>
+                <rux-radio-group label="Precision" name="precision" value="MS">
+                    <rux-radio value="sec" name="precision">Seconds</rux-radio>
+                    <rux-radio value="ms" name="precision"
+                        >Milliseconds</rux-radio
+                    >
+                    <rux-radio value="min" name="precision">Minutes</rux-radio>
+                </rux-radio-group>
+            </div>
             <rux-datetime-picker
                 label="Min"
                 value="2025-01-25T17:25:24.211Z"
@@ -49,4 +60,12 @@
             ></rux-datetime-picker>
         </div>
     </body>
+    <script>
+        const radioGroup = document.querySelector('rux-radio-group')
+        const datetimePicker = document.querySelector('rux-datetime-picker')
+
+        radioGroup.addEventListener('ruxchange', (e) => {
+            datetimePicker.setAttribute('precision', e.target.value)
+        })
+    </script>
 </html>

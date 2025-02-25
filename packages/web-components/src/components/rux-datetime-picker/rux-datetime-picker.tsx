@@ -75,7 +75,12 @@ export class RuxDatetimePicker {
 
     @Watch('parts')
     handlePartsChange() {
-        console.log('parts changed. Curr value: ', this.parts)
+        // console.log('parts changed. Curr value: ', this.parts)
+    }
+
+    @Watch('precision')
+    handlePrecisionChange() {
+        this.handleInitialValue(this.value)
     }
 
     handleInitialValue(value?: string) {
@@ -133,7 +138,6 @@ export class RuxDatetimePicker {
         // If type is month, only allow values of 1-12. If the first digit is between 2-9, pad the digit with a 0 and move to the next input.
         if (type === 'month' && value.length === 1 && parseInt(value) > 1) {
             value = `0${value}`
-            console.log(setDisplay[type](value), 'look month')
             inputRefs['day']?.focus()
         }
 
@@ -190,12 +194,10 @@ export class RuxDatetimePicker {
     }
 
     handleChange(event: InputEvent, type: PartKey, inputRefs: InputRefs) {
-        console.log('handle change run')
         const target = event.target as HTMLInputElement
         let value = target.value
         const isValid = /^(\s*|\d+)$/.test(value)
         if (!isValid) {
-            console.log(`Value is not valid: ${value}. Should return.`)
             target.value = this.previousValue // Set the input value back to the previous valid value
             return
         }
@@ -268,6 +270,17 @@ export class RuxDatetimePicker {
         }
     }
 
+    handlePaste = (e: ClipboardEvent) => {
+        e.preventDefault()
+        const pastedValue = e.clipboardData!.getData('text/plain')
+        this.handleInitialValue(pastedValue.trim())
+    }
+
+    handleCopy = (e: ClipboardEvent) => {
+        e.preventDefault()
+        e.clipboardData!.setData('text/plain', this.iso)
+    }
+
     render() {
         const {
             disabled,
@@ -281,11 +294,17 @@ export class RuxDatetimePicker {
             toggleCalendar,
             isCalendarOpen,
             determineMinMax,
+            handleCopy,
+            handlePaste,
         } = this
         return (
             <Host>
                 <div ref={(el) => (this.wrapperRef = el)}>
-                    <div class={{ control: true }}>
+                    <div
+                        class={{ control: true }}
+                        onPaste={handlePaste}
+                        onCopy={handleCopy}
+                    >
                         {label && <label>{label}</label>}
                         <input
                             tabIndex={-1}
