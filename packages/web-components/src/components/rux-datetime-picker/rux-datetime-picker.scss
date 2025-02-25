@@ -1,6 +1,17 @@
 :host {
     display: block;
 }
+/* Hide the spinners in Chrome, Safari, Edge, and Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide the spinners in Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
 .control {
     width: 100%;
     display: flex;
@@ -99,15 +110,15 @@
             }
 
             &.min {
-                left: calc(var(--padding-left) + 9.135rem);
+                left: calc(var(--padding-left) + 9rem);
             }
 
             &.sec {
-                left: calc(var(--padding-left) + 11.0925rem);
+                left: calc(var(--padding-left) + 10.85rem);
             }
 
             &.ms {
-                left: calc(var(--padding-left) + 13.05rem);
+                left: calc(var(--padding-left) + 12.75rem);
                 width: var(--triple-width);
             }
         }
@@ -118,7 +129,7 @@
             width: var(--single-width);
             display: flex;
             justify-content: center;
-            line-height: 1.25rem;
+            /* line-height: 1.25rem; */
         }
 
         .space {

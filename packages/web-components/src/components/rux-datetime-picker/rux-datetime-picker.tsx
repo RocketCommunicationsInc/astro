@@ -1,5 +1,14 @@
 /* eslint-disable react/jsx-no-bind */
-import { Component, Fragment, Host, Prop, State, Watch, h } from '@stencil/core'
+import {
+    Component,
+    Fragment,
+    Host,
+    Listen,
+    Prop,
+    State,
+    Watch,
+    h,
+} from '@stencil/core'
 import { InputRefs, Part, PartKey, Precision } from './utils/types'
 import {
     initialParts,
@@ -48,6 +57,13 @@ export class RuxDatetimePicker {
     @State() iso: string = ''
     @State() parts: Part[] = []
     @State() previousValue: string = ''
+    @State() isCalendarOpen: boolean = false
+
+    //Need to @Listen for ruxpopupclose event to close calendar
+    @Listen('ruxpopupclose')
+    handlePopupClose() {
+        this.isCalendarOpen = false
+    }
 
     connectedCallback() {
         this.handleChange = this.handleChange.bind(this)
@@ -104,23 +120,88 @@ export class RuxDatetimePicker {
         this.parts = initial
     }
 
+    /**
+     * Takes in an input value and validates it based on the type of input, adhering it to the min and max of that type
+     * @param value
+     * @param type
+     * @param inputRefs
+     * @returns Input value validated based on type
+     */
+    validateInput(value: string, type: PartKey, inputRefs: InputRefs): string {
+        const [min, max] = this.determineMinMax(type)
+
+        // If type is month, only allow values of 1-12. If the first digit is between 2-9, pad the digit with a 0 and move to the next input.
+        if (type === 'month' && value.length === 1 && parseInt(value) > 1) {
+            value = `0${value}`
+            console.log(setDisplay[type](value), 'look month')
+            inputRefs['day']?.focus()
+        }
+
+        // If entered month is higher than max of 12, revert value to be 12
+        if (type === 'month' && parseInt(value) > max) {
+            value = `${max}`
+        }
+
+        // Based on the month, the day should be limited to the number of days in that month
+        if (type === 'day') {
+            const month = parseInt(inputRefs['month']?.value || '')
+            const daysInMonth = new Date(
+                parseInt(inputRefs['year']?.value || ''),
+                month,
+                0
+            ).getDate()
+            if (parseInt(value) > daysInMonth) {
+                value = `${daysInMonth}`
+            }
+            // If the day is 0, set it to 1
+            if (parseInt(value) === 0 && value.length === 2) {
+                value = '01'
+            }
+        }
+
+        // If year value is greater than max, revert value to be max
+        if (type === 'year' && parseInt(value) > max) {
+            value = `${max}`
+        }
+
+        // If year value is less than min, revert value to be min but only after the entire year has been entered
+        if (type === 'year' && parseInt(value) < min && value.length === 4) {
+            value = `${min}`
+        }
+
+        // If hour value is greater than max, revert value to be max
+        if (type === 'hour' && parseInt(value) > max) {
+            value = `${max}`
+        }
+        // if minute value is greater than max, revert value to be max
+        if (type === 'min' && parseInt(value) > max) {
+            value = `${max}`
+        }
+        // if second value is greater than max, revert value to be max
+        if (type === 'sec' && parseInt(value) > max) {
+            value = `${max}`
+        }
+        // if millisecond value is greater than max, revert value to be max
+        if (type === 'ms' && parseInt(value) > max) {
+            value = `${max}`
+        }
+
+        return value
+    }
+
     handleChange(event: InputEvent, type: PartKey, inputRefs: InputRefs) {
+        console.log('handle change run')
         const target = event.target as HTMLInputElement
-        const value = target.value
-        console.log('value: ', value)
+        let value = target.value
         const isValid = /^(\s*|\d+)$/.test(value)
         if (!isValid) {
             console.log(`Value is not valid: ${value}. Should return.`)
             target.value = this.previousValue // Set the input value back to the previous valid value
-            console.log(
-                'setting value: ',
-                value,
-                ' back to : ',
-                this.previousValue
-            )
             return
         }
-        console.log('isValid: ', isValid)
+
+        value = this.validateInput(value, type, inputRefs)
+
         const sanitized = value.replace(/ /g, '')
         const updatedParts = setPart[type](sanitized, this.parts, inputRefs)
         this.parts = updatedParts
@@ -165,7 +246,26 @@ export class RuxDatetimePicker {
     }
 
     toggleCalendar() {
-        console.log('Need to implement toggleCalendar still')
+        this.isCalendarOpen = !this.isCalendarOpen
+    }
+
+    determineMinMax(type: PartKey) {
+        switch (type) {
+            case 'year':
+                return [1800, 2400]
+            case 'month':
+                return [1, 12]
+            case 'day':
+                return [1, 31]
+            case 'hour':
+                return [0, 23]
+            case 'min':
+                return [0, 59]
+            case 'sec':
+                return [0, 59]
+            case 'ms':
+                return [0, 999]
+        }
     }
 
     render() {
@@ -179,6 +279,8 @@ export class RuxDatetimePicker {
             errorText,
             helpText,
             toggleCalendar,
+            isCalendarOpen,
+            determineMinMax,
         } = this
         return (
             <Host>
@@ -226,13 +328,15 @@ export class RuxDatetimePicker {
                                                 sec: type === 'sec',
                                                 ms: type === 'ms',
                                             }}
-                                            value={value}
                                             disabled={disabled}
                                             ref={(el) => (this.refs[type] = el)}
                                             onInput={(e: InputEvent) =>
                                                 handleChange(e, type, refs)
                                             }
                                             maxLength={setMaxLength[type]}
+                                            max={determineMinMax(type)[1]}
+                                            min={determineMinMax(type)[0]}
+                                            value={value}
                                         />
                                         <span
                                             class={{
@@ -251,19 +355,27 @@ export class RuxDatetimePicker {
                                     </Fragment>
                                 )
                             )}
-                            <button
-                                type="button"
-                                disabled={disabled}
+                            <rux-pop-up
+                                open={isCalendarOpen}
+                                placement="bottom"
                                 class="calendar-btn"
-                                onClick={toggleCalendar}
                             >
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
+                                <button
+                                    type="button"
+                                    disabled={disabled}
+                                    class="calendar-btn"
+                                    onClick={toggleCalendar}
+                                    slot="trigger"
                                 >
-                                    <path d="M19 3h1c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h1V2c0-.55.45-1 1-1s1 .45 1 1v1h10V2c0-.55.45-1 1-1s1 .45 1 1v1ZM5 21h14c.55 0 1-.45 1-1V8H4v12c0 .55.45 1 1 1Z" />
-                                </svg>
-                            </button>
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M19 3h1c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h1V2c0-.55.45-1 1-1s1 .45 1 1v1h10V2c0-.55.45-1 1-1s1 .45 1 1v1ZM5 21h14c.55 0 1-.45 1-1V8H4v12c0 .55.45 1 1 1Z" />
+                                    </svg>
+                                </button>
+                                <rux-calendar></rux-calendar>
+                            </rux-pop-up>
                         </div>
 
                         {helpText && (

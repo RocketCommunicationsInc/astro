@@ -13,6 +13,7 @@
 | `errorText` | `error-text` |             | `string \| undefined`            | `undefined` |
 | `helpText`  | `help-text`  |             | `string \| undefined`            | `undefined` |
 | `invalid`   | `invalid`    |             | `boolean`                        | `false`     |
+| `isChanged` | `is-changed` |             | `boolean`                        | `false`     |
 | `label`     | `label`      |             | `string \| undefined`            | `undefined` |
 | `name`      | `name`       |             | `string \| undefined`            | `undefined` |
 | `precision` | `precision`  |             | `"min" \| "ms" \| "sec"`         | `'min'`     |
@@ -20,6 +21,21 @@
 | `size`      | `size`       |             | `"large" \| "medium" \| "small"` | `'medium'`  |
 | `value`     | `value`      |             | `string \| undefined`            | `undefined` |
 
+
+## Dependencies
+
+### Depends on
+
+- [rux-pop-up](../rux-pop-up)
+- [rux-calendar](../rux-calendar)
+
+### Graph
+```mermaid
+graph TD;
+  rux-datetime-picker --> rux-pop-up
+  rux-datetime-picker --> rux-calendar
+  style rux-datetime-picker fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 

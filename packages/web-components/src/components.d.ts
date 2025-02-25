@@ -88,6 +88,8 @@ export namespace Components {
          */
         "hAlign": 'left' | 'center' | 'right';
     }
+    interface RuxCalendar {
+    }
     interface RuxCard {
     }
     interface RuxCheckbox {
@@ -20383,6 +20385,12 @@ declare global {
         prototype: HTMLRuxButtonGroupElement;
         new (): HTMLRuxButtonGroupElement;
     };
+    interface HTMLRuxCalendarElement extends Components.RuxCalendar, HTMLStencilElement {
+    }
+    var HTMLRuxCalendarElement: {
+        prototype: HTMLRuxCalendarElement;
+        new (): HTMLRuxCalendarElement;
+    };
     interface HTMLRuxCardElement extends Components.RuxCard, HTMLStencilElement {
     }
     var HTMLRuxCardElement: {
@@ -34478,6 +34486,7 @@ declare global {
         "rux-breadcrumb-item": HTMLRuxBreadcrumbItemElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
+        "rux-calendar": HTMLRuxCalendarElement;
         "rux-card": HTMLRuxCardElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
@@ -35668,6 +35677,8 @@ declare namespace LocalJSX {
           * The horizontal alignment of buttons within the group
          */
         "hAlign"?: 'left' | 'center' | 'right';
+    }
+    interface RuxCalendar {
     }
     interface RuxCard {
     }
@@ -55936,6 +55947,7 @@ declare namespace LocalJSX {
         "rux-breadcrumb-item": RuxBreadcrumbItem;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
+        "rux-calendar": RuxCalendar;
         "rux-card": RuxCard;
         "rux-checkbox": RuxCheckbox;
         "rux-checkbox-group": RuxCheckboxGroup;
@@ -57064,6 +57076,7 @@ declare module "@stencil/core" {
              * Instead, you should use `flex` or `grid` in combination with our spacing design tokens.
              */
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
+            "rux-calendar": LocalJSX.RuxCalendar & JSXBase.HTMLAttributes<HTMLRuxCalendarElement>;
             "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
