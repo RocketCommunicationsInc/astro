@@ -250,11 +250,6 @@ const WithAllVariants = () => {
 export default {
     title: 'Components/Button',
     component: 'rux-button',
-
-    subcomponents: {
-        RuxButtonGroup: 'rux-button-group',
-    },
-
     argTypes: extractArgTypes('rux-button'),
 }
 
