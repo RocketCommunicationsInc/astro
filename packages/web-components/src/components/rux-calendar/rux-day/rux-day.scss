@@ -1,0 +1,32 @@
+:host {
+    display: block;
+}
+.rux-day {
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-interactive-default);
+    border-radius: var(--radius-base);
+    &:hover {
+        background: var(--color-background-surface-hover);
+    }
+}
+.rux-day.rux-day--past-future {
+    color: var(--color-text-placeholder);
+}
+.rux-day.rux-day--today {
+    background: var(--color-background-surface-selected);
+    border: 1px solid var(--color-border-interactive-default);
+    border-radius: var(--radius-base);
+    color: var(--color-text-white);
+}
+.rux-day__today-indicator {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-background-interactive-default);
+    transform: translateY(200%);
+}

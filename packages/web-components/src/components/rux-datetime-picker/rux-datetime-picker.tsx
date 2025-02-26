@@ -53,6 +53,8 @@ export class RuxDatetimePicker {
     @Prop() value?: string
     @Prop() precision: Precision = 'min'
     @Prop() isChanged: boolean = false
+    @Prop({ attribute: 'min-year' }) minYear: number = 1900
+    @Prop({ attribute: 'max-year' }) maxYear: number = 2100
 
     @State() iso: string = ''
     @State() parts: Part[] = []
@@ -199,6 +201,7 @@ export class RuxDatetimePicker {
         const isValid = /^(\s*|\d+)$/.test(value)
         if (!isValid) {
             target.value = this.previousValue // Set the input value back to the previous valid value
+            //? Maybe emit a custom event here with the error message? That way the dev can receive an error and display error text if they need to
             return
         }
 
@@ -273,11 +276,13 @@ export class RuxDatetimePicker {
     handlePaste = (e: ClipboardEvent) => {
         e.preventDefault()
         const pastedValue = e.clipboardData!.getData('text/plain')
+        console.log(pastedValue, 'pastedValue')
         this.handleInitialValue(pastedValue.trim())
     }
 
     handleCopy = (e: ClipboardEvent) => {
         e.preventDefault()
+        // This overrides the default copy behavior and returns the iso value instead
         e.clipboardData!.setData('text/plain', this.iso)
     }
 
@@ -393,7 +398,12 @@ export class RuxDatetimePicker {
                                         <path d="M19 3h1c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h1V2c0-.55.45-1 1-1s1 .45 1 1v1h10V2c0-.55.45-1 1-1s1 .45 1 1v1ZM5 21h14c.55 0 1-.45 1-1V8H4v12c0 .55.45 1 1 1Z" />
                                     </svg>
                                 </button>
-                                <rux-calendar></rux-calendar>
+                                <rux-calendar
+                                    iso={this.iso}
+                                    //? Update min max years as needed- defaulting to +- 50 years here
+                                    minYear={this.minYear}
+                                    maxYear={this.maxYear}
+                                ></rux-calendar>
                             </rux-pop-up>
                         </div>
 

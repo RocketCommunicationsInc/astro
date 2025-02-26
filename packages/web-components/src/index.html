@@ -34,6 +34,8 @@
                 label="Default (no given value)"
                 help-text="Help Text"
                 precision="ms"
+                min-year="2000"
+                max-year="2040"
             ></rux-datetime-picker>
             <div>
                 <rux-radio-group label="Precision" name="precision" value="MS">
@@ -44,7 +46,7 @@
                     <rux-radio value="min" name="precision">Minutes</rux-radio>
                 </rux-radio-group>
             </div>
-            <rux-datetime-picker
+            <!-- <rux-datetime-picker
                 label="Min"
                 value="2025-01-25T17:25:24.211Z"
             ></rux-datetime-picker>
@@ -57,7 +59,7 @@
                 label="MS"
                 value="2025-01-25T17:25:24.211Z"
                 precision="ms"
-            ></rux-datetime-picker>
+            ></rux-datetime-picker> -->
         </div>
     </body>
     <script>

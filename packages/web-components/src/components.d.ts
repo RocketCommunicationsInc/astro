@@ -89,6 +89,9 @@ export namespace Components {
         "hAlign": 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
+        "iso": string;
+        "maxYear": number;
+        "minYear": number;
     }
     interface RuxCard {
     }
@@ -259,11 +262,18 @@ export namespace Components {
         "invalid": boolean;
         "isChanged": boolean;
         "label"?: string;
+        "maxYear": number;
+        "minYear": number;
         "name"?: string;
         "precision": Precision;
         "required": boolean;
         "size": 'small' | 'medium' | 'large';
         "value"?: string;
+    }
+    interface RuxDay {
+        "dayNumber": string;
+        "isPastFutureDay": boolean;
+        "isToday": boolean;
     }
     interface RuxDialog {
         /**
@@ -20439,6 +20449,12 @@ declare global {
         prototype: HTMLRuxDatetimePickerElement;
         new (): HTMLRuxDatetimePickerElement;
     };
+    interface HTMLRuxDayElement extends Components.RuxDay, HTMLStencilElement {
+    }
+    var HTMLRuxDayElement: {
+        prototype: HTMLRuxDayElement;
+        new (): HTMLRuxDayElement;
+    };
     interface HTMLRuxDialogElement extends Components.RuxDialog, HTMLStencilElement {
     }
     var HTMLRuxDialogElement: {
@@ -34495,6 +34511,7 @@ declare global {
         "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
         "rux-datetime-picker": HTMLRuxDatetimePickerElement;
+        "rux-day": HTMLRuxDayElement;
         "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
@@ -35679,6 +35696,9 @@ declare namespace LocalJSX {
         "hAlign"?: 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
+        "iso"?: string;
+        "maxYear"?: number;
+        "minYear"?: number;
     }
     interface RuxCard {
     }
@@ -35865,11 +35885,18 @@ declare namespace LocalJSX {
         "invalid"?: boolean;
         "isChanged"?: boolean;
         "label"?: string;
+        "maxYear"?: number;
+        "minYear"?: number;
         "name"?: string;
         "precision"?: Precision;
         "required"?: boolean;
         "size"?: 'small' | 'medium' | 'large';
         "value"?: string;
+    }
+    interface RuxDay {
+        "dayNumber"?: string;
+        "isPastFutureDay"?: boolean;
+        "isToday"?: boolean;
     }
     interface RuxDialog {
         /**
@@ -55956,6 +55983,7 @@ declare namespace LocalJSX {
         "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
         "rux-datetime-picker": RuxDatetimePicker;
+        "rux-day": RuxDay;
         "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
@@ -57085,6 +57113,7 @@ declare module "@stencil/core" {
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
             "rux-datetime-picker": LocalJSX.RuxDatetimePicker & JSXBase.HTMLAttributes<HTMLRuxDatetimePickerElement>;
+            "rux-day": LocalJSX.RuxDay & JSXBase.HTMLAttributes<HTMLRuxDayElement>;
             "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;

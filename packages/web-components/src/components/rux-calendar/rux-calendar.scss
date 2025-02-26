@@ -1,3 +1,36 @@
 :host {
     display: block;
 }
+.rux-calendar {
+    /* width: 364px; */
+    /* height: 444px; */
+    background: var(--color-background-surface-default);
+    font-family: var(--font-body-2-font-family);
+}
+
+.rux-calendar-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-1);
+    .select-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.rux-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    height: 20px;
+    span {
+        text-align: center;
+    }
+}
+.rux-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
