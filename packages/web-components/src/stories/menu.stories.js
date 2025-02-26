@@ -1,5 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
 import { html } from 'lit-html';
+import { withActions } from '@storybook/addon-actions/decorator';
 
 const Base = () => {
     return html`
@@ -16,7 +17,6 @@ export default {
     component: 'rux-menu',
 
     subcomponents: {
-        RuxPopUp: 'rux-pop-up',
         RuxMenuItem: 'rux-menu-item',
         RuxMenuItemDivider: 'rux-menu-item-divider',
     },
@@ -28,6 +28,7 @@ export default {
             handles: ['ruxmenuselected', 'rux-menu'],
         },
     },
+    decorators: [withActions],
 }
 
 export const Default = {

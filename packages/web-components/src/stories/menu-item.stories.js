@@ -18,12 +18,6 @@ const Base = (args) => {
 export default {
     title: 'Components/Pop Up/Menu Item',
     component: 'rux-menu-item',
-
-    subcomponents: {
-        RuxPopUp: 'rux-pop-up',
-        RuxMenu: 'rux-menu',
-    },
-
     argTypes: extractArgTypes('rux-menu-item'),
 }
 

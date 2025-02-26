@@ -1,5 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
 import { html } from 'lit-html';
+import { withActions } from '@storybook/addon-actions/decorator';
 
 const Base = (args) => {
     return html`
@@ -59,18 +60,13 @@ const AllVariantsExample = () => html`
 export default {
     title: 'Beta/Toast [BETA]',
     component: 'rux-toast',
-
-    subcomponents: {
-        RuxToastStack: 'rux-toast-stack',
-    },
-
     argTypes: extractArgTypes('rux-toast'),
-
     parameters: {
         actions: {
             handles: ['ruxtoastopen rux-toast', 'ruxtoastclosed rux-toast'],
         },
     },
+    decorators: [withActions],
 }
 
 export const Default = {

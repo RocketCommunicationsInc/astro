@@ -1,0 +1,41 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as OptionStories from './option.stories';
+
+<Meta of={OptionStories} />
+
+# Option
+
+Option belongs to the Select Menu Component
+
+## Guidelines
+
+* [Astro UXDS: Select Menu](https://astrouxds.com/components/select/)
+* [Astro UXDS: Form and Input Validation](https://www.astrouxds.com/ui-components/validation)
+
+<Canvas of={OptionStories.Default} />
+
+## API
+
+<Controls />
+
+## Usage
+
+> Select **requires** the use of the `<rux-option>` component instead of the native `<option>`. Make sure to set the label using the `label` property instead of a slot like you would with the native `<option>`
+
+### Selecting Options
+
+The `value` property will sync the currently selected option value property
+
+### Grouping
+
+For Grouping, make sure to use the Astro `<rux-option-group>` component instead of the native `<optgroup>`.
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxOption } from '@astrouxds/astro-web-components/dist/components/rux-option'
+
+customElements.define('rux-option', RuxOption)
+```
