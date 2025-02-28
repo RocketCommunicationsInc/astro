@@ -403,6 +403,7 @@ export class RuxDatetimePicker {
                                     //? Update min max years as needed- defaulting to +- 50 years here
                                     minYear={this.minYear}
                                     maxYear={this.maxYear}
+                                    precision={this.precision}
                                 ></rux-calendar>
                             </rux-pop-up>
                         </div>

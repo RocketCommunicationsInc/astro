@@ -141,6 +141,11 @@ export const months = [
     { label: 'December', value: '12' },
 ]
 
+export const getMonthValueByName = (monthName: string): string | undefined => {
+    const month = months.find((m) => m.label === monthName)
+    return month ? month.value : undefined
+}
+
 export const getUTCYear = () => {
     const d = new Date()
     return d.getUTCFullYear().toString()

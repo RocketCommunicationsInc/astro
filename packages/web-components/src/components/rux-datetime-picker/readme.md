@@ -15,6 +15,8 @@
 | `invalid`   | `invalid`    |             | `boolean`                        | `false`     |
 | `isChanged` | `is-changed` |             | `boolean`                        | `false`     |
 | `label`     | `label`      |             | `string \| undefined`            | `undefined` |
+| `maxYear`   | `max-year`   |             | `number`                         | `2100`      |
+| `minYear`   | `min-year`   |             | `number`                         | `1900`      |
 | `name`      | `name`       |             | `string \| undefined`            | `undefined` |
 | `precision` | `precision`  |             | `"min" \| "ms" \| "sec"`         | `'min'`     |
 | `required`  | `required`   |             | `boolean`                        | `false`     |
@@ -34,6 +36,11 @@
 graph TD;
   rux-datetime-picker --> rux-pop-up
   rux-datetime-picker --> rux-calendar
+  rux-calendar --> rux-button
+  rux-calendar --> rux-select
+  rux-calendar --> rux-option
+  rux-calendar --> rux-day
+  rux-button --> rux-icon
   style rux-datetime-picker fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

@@ -1,6 +1,17 @@
-import { Component, Host, Prop, State, Watch, h } from '@stencil/core'
+/* eslint-disable react/jsx-no-bind */
+import {
+    Component,
+    Element,
+    Host,
+    Listen,
+    Prop,
+    State,
+    Watch,
+    h,
+} from '@stencil/core'
+import { getMonthValueByName, months } from '../rux-datetime-picker/utils'
 
-import { months } from '../rux-datetime-picker/utils'
+import { Precision } from '../rux-datetime-picker/utils/types'
 
 @Component({
     tag: 'rux-calendar',
@@ -8,9 +19,15 @@ import { months } from '../rux-datetime-picker/utils'
     shadow: true,
 })
 export class RuxCalendar {
+    @Element() el!: HTMLRuxCalendarElement
     @Prop() iso: string = ''
     @Prop() minYear: number = 1900
     @Prop() maxYear: number = 2100
+    /**
+     * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from
+     * the datepicker component.
+     */
+    @Prop() precision: Precision = 'min'
 
     @State() month: string = ''
     @State() year: string = ''
@@ -34,6 +51,22 @@ export class RuxCalendar {
     @Watch('days')
     handleDatesChange() {
         // console.log('dates change')
+    }
+
+    @Listen('ruxdayselected')
+    handleDaySelected(event: CustomEvent) {
+        console.log('ruxdayselected heard')
+        console.log(event.detail, 'detail')
+        //get all rux-day's associated with this element
+        const days = this.el.shadowRoot?.querySelectorAll('rux-day')
+        //loop through the days and set the selected attribute to true for the day that was clicked
+        days?.forEach((day) => {
+            if (day !== event.detail.element) {
+                day.selected = false
+            } else {
+                day.selected = true
+            }
+        })
     }
 
     connectedCallback() {
@@ -104,6 +137,7 @@ export class RuxCalendar {
             month: 'long',
             timeZone: 'UTC',
         })
+        console.log(this.month, 'month')
         this.year = year.toString()
         this.setYears()
     }
@@ -122,14 +156,41 @@ export class RuxCalendar {
         console.log('iso before: ', this.iso)
         this.iso = date.toISOString()
         console.log('iso after: ', this.iso)
-        // this.setDates()
     }
     handleBackwardMonth = () => {
         console.log('handle backward month')
         const date = new Date(this.iso)
         date.setUTCMonth(date.getUTCMonth() - 1)
         this.iso = date.toISOString()
-        // this.setDates()
+    }
+
+    handleMonthChange = (event: CustomEvent) => {
+        const target = event.target as HTMLRuxSelectElement
+        const month = months.find((month) => month.value === target.value)
+        if (month) {
+            const date = new Date(this.iso)
+            date.setUTCMonth(parseInt(month.value) - 1)
+            this.iso = date.toISOString()
+        }
+    }
+    handleYearChange = (event: CustomEvent) => {
+        const target = event.target as HTMLRuxSelectElement
+        //We know value will be of type string because we're not using a multiselect for year
+        const value = target.value as string
+        const date = new Date(this.iso)
+        date.setUTCFullYear(parseInt(value))
+        this.iso = date.toISOString()
+    }
+
+    determineIfDateIsPastOrFuture(date: Date) {
+        const dateToWorkWith = new Date(this.iso)
+        if (dateToWorkWith < date) {
+            return 'future'
+        } else if (dateToWorkWith > date) {
+            return 'past'
+        } else {
+            return 'present'
+        }
     }
 
     render() {
@@ -145,7 +206,13 @@ export class RuxCalendar {
                             onClick={handleBackwardMonth}
                         ></rux-button>
                         <div class="select-wrapper">
-                            <rux-select value={this.month} inline>
+                            <rux-select
+                                value={getMonthValueByName(this.month)}
+                                inline
+                                onRuxchange={(e: CustomEvent) =>
+                                    this.handleMonthChange(e)
+                                }
+                            >
                                 {months.map((month) => (
                                     <rux-option
                                         value={month.value}
@@ -153,7 +220,13 @@ export class RuxCalendar {
                                     ></rux-option>
                                 ))}
                             </rux-select>
-                            <rux-select value={this.year} inline>
+                            <rux-select
+                                value={this.year}
+                                inline
+                                onRuxchange={(e: CustomEvent) =>
+                                    this.handleYearChange(e)
+                                }
+                            >
                                 {this.years.map((year) => (
                                     <rux-option
                                         value={year.toString()}
@@ -185,8 +258,75 @@ export class RuxCalendar {
                                 dayNumber={day.day}
                                 isPastFutureDay={!day.currentMonth}
                                 isToday={day.isToday}
+                                isPastDay={
+                                    this.determineIfDateIsPastOrFuture(
+                                        new Date(
+                                            parseInt(this.year),
+                                            parseInt(
+                                                getMonthValueByName(this.month)!
+                                            ) - 1,
+                                            parseInt(day.day)
+                                        )
+                                    ) === 'past'
+                                }
+                                isFutureDay={
+                                    this.determineIfDateIsPastOrFuture(
+                                        new Date(
+                                            parseInt(this.year),
+                                            parseInt(
+                                                getMonthValueByName(this.month)!
+                                            ) - 1,
+                                            parseInt(day.day)
+                                        )
+                                    ) === 'future'
+                                }
                             ></rux-day>
                         ))}
+                    </div>
+                    <div class="rux-calendar-timepicker">
+                        <div class="timepicker-hours">
+                            <rux-input
+                                type="number"
+                                min="0"
+                                max="23"
+                                placeholder="hh"
+                            />
+                            <span>:</span>
+                        </div>
+                        <div class="timepicker-min">
+                            <rux-input
+                                type="number"
+                                min="0"
+                                max="59"
+                                placeholder="mm"
+                            />
+                            <span>:</span>
+                        </div>
+                        {
+                            //only show if precision is set to seconds or miliseconds
+                            this.precision === 'sec' ||
+                                (this.precision === 'ms' && (
+                                    <div class="timepicker-sec">
+                                        <rux-input
+                                            type="number"
+                                            min="0"
+                                            max="59"
+                                            placeholder="ss"
+                                        />
+                                        <span>:</span>
+                                    </div>
+                                ))
+                        }
+                        {this.precision === 'ms' && (
+                            <div class="timepicker-ms">
+                                <rux-input
+                                    type="number"
+                                    min="0"
+                                    max="999"
+                                    placeholder="SSS"
+                                />
+                            </div>
+                        )}
                     </div>
                 </div>
             </Host>

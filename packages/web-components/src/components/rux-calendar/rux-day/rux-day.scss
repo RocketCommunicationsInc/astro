@@ -9,6 +9,7 @@
     align-items: center;
     color: var(--color-text-interactive-default);
     border-radius: var(--radius-base);
+    position: relative;
     &:hover {
         background: var(--color-background-surface-hover);
     }
@@ -17,9 +18,6 @@
     color: var(--color-text-placeholder);
 }
 .rux-day.rux-day--today {
-    background: var(--color-background-surface-selected);
-    border: 1px solid var(--color-border-interactive-default);
-    border-radius: var(--radius-base);
     color: var(--color-text-white);
 }
 .rux-day__today-indicator {
@@ -29,4 +27,10 @@
     border-radius: 50%;
     background: var(--color-background-interactive-default);
     transform: translateY(200%);
+}
+.rux-day.rux-day--selected {
+    background: var(--color-background-surface-selected);
+    box-shadow: 0 0 0 1px var(--color-border-interactive-default);
+    border-radius: var(--radius-base);
+    z-index: 2;
 }

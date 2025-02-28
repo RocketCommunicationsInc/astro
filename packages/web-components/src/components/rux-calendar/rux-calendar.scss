@@ -6,6 +6,17 @@
     /* height: 444px; */
     background: var(--color-background-surface-default);
     font-family: var(--font-body-2-font-family);
+    /* Hide the spinners in Chrome, Safari, Edge, and Opera */
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Hide the spinners in Firefox */
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
 }
 
 .rux-calendar-header {
@@ -33,4 +44,16 @@
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(6, 1fr);
+}
+.rux-calendar-timepicker {
+    border-top: 1px solid var(--color-border-interactive-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-4) var(--spacing-2);
+    div {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-4);
+    }
 }

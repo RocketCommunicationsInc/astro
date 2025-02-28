@@ -109,6 +109,19 @@ Type: `Promise<void>`
 | `"select"`     | The select element                 |
 
 
+## Dependencies
+
+### Used by
+
+ - [rux-calendar](../rux-calendar)
+
+### Graph
+```mermaid
+graph TD;
+  rux-calendar --> rux-select
+  style rux-select fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*

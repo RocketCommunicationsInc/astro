@@ -5,15 +5,17 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 import { Precision } from "./components/rux-datetime-picker/utils/types";
+import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+import { DayInfo } from "./components/rux-calendar/rux-day/rux-day";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 import { Status as Status1 } from "./components";
 import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
-export { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 export { Precision } from "./components/rux-datetime-picker/utils/types";
+export { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+export { DayInfo } from "./components/rux-calendar/rux-day/rux-day";
 export { LogRow } from "./components/rux-log/rux-log.model";
 export { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 export { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
@@ -92,6 +94,10 @@ export namespace Components {
         "iso": string;
         "maxYear": number;
         "minYear": number;
+        /**
+          * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
+         */
+        "precision": Precision;
     }
     interface RuxCard {
     }
@@ -272,8 +278,11 @@ export namespace Components {
     }
     interface RuxDay {
         "dayNumber": string;
+        "isFutureDay": boolean;
+        "isPastDay": boolean;
         "isPastFutureDay": boolean;
         "isToday": boolean;
+        "selected": boolean;
     }
     interface RuxDialog {
         /**
@@ -20266,6 +20275,10 @@ export interface RuxCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxCheckboxElement;
 }
+export interface RuxDayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxDayElement;
+}
 export interface RuxDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxDialogElement;
@@ -35699,6 +35712,10 @@ declare namespace LocalJSX {
         "iso"?: string;
         "maxYear"?: number;
         "minYear"?: number;
+        /**
+          * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
+         */
+        "precision"?: Precision;
     }
     interface RuxCard {
     }
@@ -35895,8 +35912,12 @@ declare namespace LocalJSX {
     }
     interface RuxDay {
         "dayNumber"?: string;
+        "isFutureDay"?: boolean;
+        "isPastDay"?: boolean;
         "isPastFutureDay"?: boolean;
         "isToday"?: boolean;
+        "onRuxdayselected"?: (event: RuxDayCustomEvent<DayInfo>) => void;
+        "selected"?: boolean;
     }
     interface RuxDialog {
         /**
