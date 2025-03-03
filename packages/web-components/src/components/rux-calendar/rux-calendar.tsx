@@ -2,6 +2,8 @@
 import {
     Component,
     Element,
+    Event,
+    EventEmitter,
     Host,
     Listen,
     Prop,
@@ -11,6 +13,7 @@ import {
 } from '@stencil/core'
 import { getMonthValueByName, months } from '../rux-datetime-picker/utils'
 
+import { DayInfo } from './rux-day/rux-day'
 import { Precision } from '../rux-datetime-picker/utils/types'
 
 @Component({
@@ -20,6 +23,10 @@ import { Precision } from '../rux-datetime-picker/utils/types'
 })
 export class RuxCalendar {
     @Element() el!: HTMLRuxCalendarElement
+    private hourInput!: HTMLRuxInputElement
+    private minuteInput!: HTMLRuxInputElement
+    private secondsInput!: HTMLRuxInputElement
+    private millisecondInput!: HTMLRuxInputElement
     @Prop() iso: string = ''
     @Prop() minYear: number = 1900
     @Prop() maxYear: number = 2100
@@ -28,6 +35,8 @@ export class RuxCalendar {
      * the datepicker component.
      */
     @Prop() precision: Precision = 'min'
+    @Event({ eventName: 'ruxcalendardateselected' })
+    ruxCalendarDateSelected!: EventEmitter<{ iso: string }>
 
     @State() month: string = ''
     @State() year: string = ''
@@ -42,7 +51,6 @@ export class RuxCalendar {
 
     @Watch('iso')
     handleIso() {
-        console.log('iso change')
         this.setDates()
     }
 
@@ -55,18 +63,43 @@ export class RuxCalendar {
 
     @Listen('ruxdayselected')
     handleDaySelected(event: CustomEvent) {
-        console.log('ruxdayselected heard')
-        console.log(event.detail, 'detail')
+        const detail: DayInfo = event.detail
         //get all rux-day's associated with this element
         const days = this.el.shadowRoot?.querySelectorAll('rux-day')
         //loop through the days and set the selected attribute to true for the day that was clicked
         days?.forEach((day) => {
-            if (day !== event.detail.element) {
+            if (day !== detail.element) {
                 day.selected = false
             } else {
                 day.selected = true
             }
         })
+        const selectedDay = detail.dayNumber
+        const year = parseInt(this.year)
+        const month = parseInt(getMonthValueByName(this.month)!) - 1 // Convert month name to month number
+        const hours = parseInt(this.hourInput?.value || '0')
+        const minutes = parseInt(this.minuteInput?.value || '0')
+        const seconds = parseInt(this.secondsInput?.value || '0')
+        const milliseconds = parseInt(this.millisecondInput?.value || '0')
+        console.log(hours, 'hours')
+        // Create the date with the time values
+        const date = new Date(
+            Date.UTC(
+                year,
+                month,
+                parseInt(selectedDay),
+                hours,
+                minutes,
+                seconds,
+                milliseconds
+            )
+        )
+        const isoString = date.toISOString()
+        console.log('ISO String:', isoString)
+
+        //TODO: Add time picker values to the isoString
+        // Emit an event with the new ISO string value
+        this.ruxCalendarDateSelected.emit({ iso: isoString })
     }
 
     connectedCallback() {
@@ -74,7 +107,6 @@ export class RuxCalendar {
         this.handleBackwardMonth = this.handleBackwardMonth.bind(this)
         if (!this.iso) {
             this.iso = new Date().toISOString()
-            console.log('setting iso to: ', this.iso)
         }
         //assign the current date in UTC time
         this.currentDay = new Date().toISOString()
@@ -82,7 +114,6 @@ export class RuxCalendar {
     }
 
     setDates() {
-        console.log('running set dates')
         const date = new Date(this.iso)
         const year = date.getUTCFullYear()
         const month = date.getUTCMonth()
@@ -137,7 +168,6 @@ export class RuxCalendar {
             month: 'long',
             timeZone: 'UTC',
         })
-        console.log(this.month, 'month')
         this.year = year.toString()
         this.setYears()
     }
@@ -150,15 +180,11 @@ export class RuxCalendar {
     }
 
     handleForwardMonth = () => {
-        console.log('handle forward month')
         const date = new Date(this.iso)
         date.setUTCMonth(date.getUTCMonth() + 1)
-        console.log('iso before: ', this.iso)
         this.iso = date.toISOString()
-        console.log('iso after: ', this.iso)
     }
     handleBackwardMonth = () => {
-        console.log('handle backward month')
         const date = new Date(this.iso)
         date.setUTCMonth(date.getUTCMonth() - 1)
         this.iso = date.toISOString()
@@ -290,6 +316,9 @@ export class RuxCalendar {
                                 min="0"
                                 max="23"
                                 placeholder="hh"
+                                ref={(el) =>
+                                    (this.hourInput = el as HTMLRuxInputElement)
+                                }
                             />
                             <span>:</span>
                         </div>
@@ -299,6 +328,9 @@ export class RuxCalendar {
                                 min="0"
                                 max="59"
                                 placeholder="mm"
+                                ref={(el) =>
+                                    (this.minuteInput = el as HTMLRuxInputElement)
+                                }
                             />
                             <span>:</span>
                         </div>
@@ -312,6 +344,9 @@ export class RuxCalendar {
                                             min="0"
                                             max="59"
                                             placeholder="ss"
+                                            ref={(el) =>
+                                                (this.secondsInput = el as HTMLRuxInputElement)
+                                            }
                                         />
                                         <span>:</span>
                                     </div>
@@ -324,6 +359,9 @@ export class RuxCalendar {
                                     min="0"
                                     max="999"
                                     placeholder="SSS"
+                                    ref={(el) =>
+                                        (this.millisecondInput = el as HTMLRuxInputElement)
+                                    }
                                 />
                             </div>
                         )}

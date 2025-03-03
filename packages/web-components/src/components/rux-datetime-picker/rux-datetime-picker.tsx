@@ -25,6 +25,7 @@ import {
 })
 export class RuxDatetimePicker {
     private wrapperRef?: HTMLDivElement
+    private popUpRef?: HTMLRuxPopUpElement
     private yearRef?: HTMLInputElement
     private monthRef?: HTMLInputElement
     private dayRef?: HTMLInputElement
@@ -50,7 +51,7 @@ export class RuxDatetimePicker {
     @Prop() name?: string
     @Prop() required: boolean = false
     @Prop() size: 'small' | 'medium' | 'large' = 'medium'
-    @Prop() value?: string
+    @Prop({ reflect: true, mutable: true }) value?: string
     @Prop() precision: Precision = 'min'
     @Prop() isChanged: boolean = false
     @Prop({ attribute: 'min-year' }) minYear: number = 1900
@@ -62,13 +63,25 @@ export class RuxDatetimePicker {
     @State() isCalendarOpen: boolean = false
 
     //Need to @Listen for ruxpopupclose event to close calendar
-    @Listen('ruxpopupclose')
+    @Listen('ruxpopupclosed')
     handlePopupClose() {
         this.isCalendarOpen = false
     }
 
+    /**
+     *
+     * @param event the event emitted from the calendar. Contains {iso: string}
+     */
+    @Listen('ruxcalendardateselected')
+    handleDaySelected(event: CustomEvent) {
+        this.value = event.detail.iso
+        //? Need to decide wether or not to close the calendar on a date selection.
+        // this.toggleCalendar()
+    }
+
     connectedCallback() {
         this.handleChange = this.handleChange.bind(this)
+        this.toggleCalendar = this.toggleCalendar.bind(this)
     }
 
     componentWillLoad() {
@@ -82,6 +95,11 @@ export class RuxDatetimePicker {
 
     @Watch('precision')
     handlePrecisionChange() {
+        this.handleInitialValue(this.value)
+    }
+
+    @Watch('value')
+    handleValueChange() {
         this.handleInitialValue(this.value)
     }
 
@@ -276,7 +294,6 @@ export class RuxDatetimePicker {
     handlePaste = (e: ClipboardEvent) => {
         e.preventDefault()
         const pastedValue = e.clipboardData!.getData('text/plain')
-        console.log(pastedValue, 'pastedValue')
         this.handleInitialValue(pastedValue.trim())
     }
 
@@ -383,6 +400,7 @@ export class RuxDatetimePicker {
                                 open={isCalendarOpen}
                                 placement="bottom"
                                 class="calendar-btn"
+                                ref={(el) => (this.popUpRef = el)}
                             >
                                 <button
                                     type="button"

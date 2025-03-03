@@ -20271,6 +20271,10 @@ export interface RuxAccordionItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxAccordionItemElement;
 }
+export interface RuxCalendarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxCalendarElement;
+}
 export interface RuxCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxCheckboxElement;
@@ -35712,6 +35716,7 @@ declare namespace LocalJSX {
         "iso"?: string;
         "maxYear"?: number;
         "minYear"?: number;
+        "onRuxcalendardateselected"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
         /**
           * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
          */
