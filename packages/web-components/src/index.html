@@ -100,6 +100,7 @@
                         label="Show Secondary Ruler"
                     ></rux-switch>
                     <rux-switch id="hide-j-day" label="Hide J-Day"></rux-switch>
+                    <rux-switch id="toggle-theme" label="Toggle Theme"></rux-switch>
                 </section>
 
                 <rux-timeline
@@ -165,9 +166,13 @@
                 'show-secondary-ruler'
             )
             const hideJDay = document.getElementById('hide-j-day')
+            const toggleTheme = document.getElementById('toggle-theme')
 
             hideJDay.addEventListener('ruxchange', (e) => {
                 timeline.toggleAttribute('hide-j-day')
+            })
+            toggleTheme.addEventListener('ruxchange', () => {
+              document.querySelector('body').classList.toggle('light-theme')
             })
             toggleShowSecondaryRuler.addEventListener('ruxchange', (e) => {
                 timeline.toggleAttribute('show-secondary-ruler')
