@@ -1,5 +1,11 @@
 # @astrouxds/react
 
+## 7.25.1
+
+### Patch Changes
+
+-   05969436: Correcting background value of rux-ruler to be a token so it works in light and dark themes.
+
 ## 7.25.0
 
 ### Minor Changes
