@@ -35,11 +35,6 @@ const IconOnly = (args) => {
 export default {
     title: 'Components/Breadcrumb/Breadcrumb Item',
     component: 'rux-breadcrumb-item',
-
-    subcomponents: {
-        RuxBreadcrumb: 'rux-breadcrumb',
-    },
-
     argTypes: extractArgTypes('rux-breadcrumb-item'),
 }
 

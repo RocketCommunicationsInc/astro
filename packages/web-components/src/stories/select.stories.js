@@ -1,5 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
 import { html } from 'lit-html';
+import { withActions } from '@storybook/addon-actions/decorator';
 
 const Base = (args) => {
     return html`
@@ -254,6 +255,7 @@ export default {
             handles: ['ruxchange rux-select', 'ruxblur rux-select'],
         },
     },
+    decorators: [withActions],
 }
 
 export const Default = {

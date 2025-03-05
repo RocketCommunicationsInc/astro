@@ -30,11 +30,6 @@ const ActionsExample = (args) => {
 export default {
     title: 'Components/Tabs/Tab',
     component: 'rux-tab',
-
-    subcomponents: {
-        'Rux Tabs': 'rux-tabs',
-    },
-
     argTypes: extractArgTypes('rux-tab'),
 }
 
