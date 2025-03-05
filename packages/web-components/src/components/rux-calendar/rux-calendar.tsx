@@ -48,6 +48,8 @@ export class RuxCalendar {
         day: string
         currentMonth: boolean
         isToday: boolean
+        pastDay: boolean
+        futureDay: boolean
     }[] = []
     @State() currentDay: string = ''
 
@@ -68,6 +70,8 @@ export class RuxCalendar {
     @Listen('ruxdayselected')
     handleDaySelected(event: CustomEvent) {
         const detail: DayInfo = event.detail
+        console.log(detail.isFutureDay, 'isFutureDay')
+        console.log(detail.isPastDay, 'isPastDay')
         //get all rux-day's associated with this element
         const days = this.el.shadowRoot?.querySelectorAll('rux-day')
         //loop through the days and set the selected attribute to true for the day that was clicked
@@ -80,7 +84,15 @@ export class RuxCalendar {
         })
         const selectedDay = detail.dayNumber
         const year = parseInt(this.year)
-        const month = parseInt(getMonthValueByName(this.month)!) - 1 // Convert month name to month number
+        let month = parseInt(getMonthValueByName(this.month)!) - 1 // Convert month name to month number
+        if (detail.isFutureDay) {
+            console.log('isFutureDay true - add one to month of: ', month)
+            month = month + 1
+        }
+        if (detail.isPastDay) {
+            month = month - 1
+        }
+        console.log(month, 'month after computations')
         const hours = parseInt(this.hourInput?.value || '0')
         const minutes = parseInt(this.minuteInput?.value || '0')
         const seconds = parseInt(this.secondsInput?.value || '0')
@@ -138,6 +150,8 @@ export class RuxCalendar {
                 day: (daysInPrevMonth - firstDayOfMonth + i + 1).toString(),
                 currentMonth: false,
                 isToday: false,
+                pastDay: true,
+                futureDay: false,
             })
         )
 
@@ -151,6 +165,8 @@ export class RuxCalendar {
                     year === todayYear &&
                     month === todayMonth &&
                     i + 1 === todayDate,
+                pastDay: false,
+                futureDay: false,
             })
         )
 
@@ -162,6 +178,8 @@ export class RuxCalendar {
                 day: (i + 1).toString(),
                 currentMonth: false,
                 isToday: false,
+                futureDay: true,
+                pastDay: false,
             })
         )
 
@@ -238,17 +256,6 @@ export class RuxCalendar {
         //May need to update ISO with new time
     }
 
-    determineIfDateIsPastOrFuture(date: Date) {
-        const dateToWorkWith = new Date(this.iso)
-        if (dateToWorkWith < date) {
-            return 'future'
-        } else if (dateToWorkWith > date) {
-            return 'past'
-        } else {
-            return 'present'
-        }
-    }
-
     render() {
         const {
             handleForwardMonth,
@@ -318,28 +325,8 @@ export class RuxCalendar {
                                 dayNumber={day.day}
                                 isPastFutureDay={!day.currentMonth}
                                 isToday={day.isToday}
-                                isPastDay={
-                                    this.determineIfDateIsPastOrFuture(
-                                        new Date(
-                                            parseInt(this.year),
-                                            parseInt(
-                                                getMonthValueByName(this.month)!
-                                            ) - 1,
-                                            parseInt(day.day)
-                                        )
-                                    ) === 'past'
-                                }
-                                isFutureDay={
-                                    this.determineIfDateIsPastOrFuture(
-                                        new Date(
-                                            parseInt(this.year),
-                                            parseInt(
-                                                getMonthValueByName(this.month)!
-                                            ) - 1,
-                                            parseInt(day.day)
-                                        )
-                                    ) === 'future'
-                                }
+                                isPastDay={day.pastDay}
+                                isFutureDay={day.futureDay}
                             ></rux-day>
                         ))}
                     </div>
@@ -380,6 +367,7 @@ export class RuxCalendar {
                                     }
                                 ></rux-icon>
                             </div>
+                            :
                         </div>
                         <div class="timepicker-min input">
                             <input
@@ -417,6 +405,7 @@ export class RuxCalendar {
                                     }
                                 ></rux-icon>
                             </div>
+                            :
                         </div>
                         {
                             //only show if precision is set to seconds or miliseconds
@@ -458,6 +447,7 @@ export class RuxCalendar {
                                                 }
                                             ></rux-icon>
                                         </div>
+                                        :
                                     </div>
                                 ))
                         }

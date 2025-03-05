@@ -28,6 +28,7 @@
                 flex-direction: column;
             "
         >
+            <h4>Copy/Paste Test</h4>
             <span>2025-01-25T17:25:24.211Z</span>
             <span>2025-02-25T17:25:24.211Z</span>
             <span>2024-02-25T17:25:24.211Z</span>
@@ -40,6 +41,8 @@
                 max-year="2040"
             ></rux-datetime-picker>
             <div>
+                <h4>Change Precision</h4>
+
                 <rux-radio-group label="Precision" name="precision" value="MS">
                     <rux-radio value="sec" name="precision">Seconds</rux-radio>
                     <rux-radio value="ms" name="precision"
@@ -48,25 +51,29 @@
                     <rux-radio value="min" name="precision">Minutes</rux-radio>
                 </rux-radio-group>
             </div>
+            <h4>Precision Examples</h4>
             <rux-datetime-picker
-                label="Min"
+                label="Minutes"
                 value="2025-01-25T17:25:24.211Z"
             ></rux-datetime-picker>
-            <!-- <rux-datetime-picker
+            <rux-datetime-picker
                 label="Seconds"
                 value="2025-01-25T17:25:24.211Z"
                 precision="sec"
-            ></rux-datetime-picker> -->
-            <!-- <rux-datetime-picker label="MS" value="2025-01-25T17:25:24.211Z" precision="ms"></rux-datetime-picker>
-    <div style="width: 300px; margin: 1rem auto"> -->
+            ></rux-datetime-picker>
+            <rux-datetime-picker
+                label="Milliseconds"
+                value="2025-01-25T17:25:24.211Z"
+                precision="ms"
+            ></rux-datetime-picker>
         </div>
-    </body>
-    <script>
-        const radioGroup = document.querySelector('rux-radio-group')
-        const datetimePicker = document.querySelector('rux-datetime-picker')
+        <script>
+            const radioGroup = document.querySelector('rux-radio-group')
+            const datetimePicker = document.querySelector('rux-datetime-picker')
 
-        radioGroup.addEventListener('ruxchange', (e) => {
-            datetimePicker.setAttribute('precision', e.target.value)
-        })
-    </script>
+            radioGroup.addEventListener('ruxchange', (e) => {
+                datetimePicker.setAttribute('precision', e.target.value)
+            })
+        </script>
+    </body>
 </html>
