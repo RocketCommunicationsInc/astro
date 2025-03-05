@@ -71,6 +71,9 @@ export class RuxCalendar {
         } = this
         return (
             <Host onClick={handleDayClick}>
+                {/*
+                ? Consider making rux-day's buttons for auto-focus and tabbing
+              */}
                 <div
                     class={{
                         'rux-day': true,

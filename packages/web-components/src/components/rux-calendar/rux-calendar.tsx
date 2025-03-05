@@ -23,13 +23,17 @@ import { Precision } from '../rux-datetime-picker/utils/types'
 })
 export class RuxCalendar {
     @Element() el!: HTMLRuxCalendarElement
-    private hourInput!: HTMLRuxInputElement
-    private minuteInput!: HTMLRuxInputElement
-    private secondsInput!: HTMLRuxInputElement
-    private millisecondInput!: HTMLRuxInputElement
+    private hourInput!: HTMLInputElement
+    private minuteInput!: HTMLInputElement
+    private secondsInput!: HTMLInputElement
+    private millisecondInput!: HTMLInputElement
     @Prop() iso: string = ''
     @Prop() minYear: number = 1900
     @Prop() maxYear: number = 2100
+    @Prop() initHoursValue: string = ''
+    @Prop() initMinutesValue: string = ''
+    @Prop() initSecondsValue: string = ''
+    @Prop() initMillisecondsValue: string = ''
     /**
      * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from
      * the datepicker component.
@@ -208,6 +212,32 @@ export class RuxCalendar {
         this.iso = date.toISOString()
     }
 
+    handleTimeChange(
+        el: HTMLInputElement,
+        increment?: boolean,
+        decrement?: boolean
+    ) {
+        //connect the rux-icons of the custom spinwheel to the correct input, and increment or decrement accordingly.
+        if (el.value === '') {
+            el.value = '0'
+        }
+
+        if (increment) {
+            el.value = (parseInt(el.value) + 1).toString()
+        }
+        if (decrement) {
+            el.value = (parseInt(el.value) - 1).toString()
+        }
+        //check if the value is within the min and max range
+        if (parseInt(el.value) < parseInt(el.min)) {
+            el.value = el.min
+        }
+        if (parseInt(el.value) > parseInt(el.max)) {
+            el.value = el.max
+        }
+        //May need to update ISO with new time
+    }
+
     determineIfDateIsPastOrFuture(date: Date) {
         const dateToWorkWith = new Date(this.iso)
         if (dateToWorkWith < date) {
@@ -220,7 +250,11 @@ export class RuxCalendar {
     }
 
     render() {
-        const { handleForwardMonth, handleBackwardMonth } = this
+        const {
+            handleForwardMonth,
+            handleBackwardMonth,
+            handleTimeChange,
+        } = this
         return (
             <Host>
                 <div class="rux-calendar">
@@ -310,59 +344,160 @@ export class RuxCalendar {
                         ))}
                     </div>
                     <div class="rux-calendar-timepicker">
-                        <div class="timepicker-hours">
-                            <rux-input
+                        <div class="timepicker-hours input">
+                            <input
                                 type="number"
                                 min="0"
                                 max="23"
                                 placeholder="hh"
                                 ref={(el) =>
-                                    (this.hourInput = el as HTMLRuxInputElement)
+                                    (this.hourInput = el as HTMLInputElement)
                                 }
+                                value={this.initHoursValue}
+                                class="part"
                             />
-                            <span>:</span>
+                            <div class="inc-dec-arrows">
+                                <rux-icon
+                                    icon="arrow-drop-up"
+                                    size="24px"
+                                    onClick={() =>
+                                        handleTimeChange(
+                                            this.hourInput,
+                                            true,
+                                            false
+                                        )
+                                    }
+                                ></rux-icon>
+                                <rux-icon
+                                    icon="arrow-drop-down"
+                                    size="24px"
+                                    onClick={() =>
+                                        handleTimeChange(
+                                            this.hourInput,
+                                            false,
+                                            true
+                                        )
+                                    }
+                                ></rux-icon>
+                            </div>
                         </div>
-                        <div class="timepicker-min">
-                            <rux-input
+                        <div class="timepicker-min input">
+                            <input
                                 type="number"
                                 min="0"
                                 max="59"
                                 placeholder="mm"
                                 ref={(el) =>
-                                    (this.minuteInput = el as HTMLRuxInputElement)
+                                    (this.minuteInput = el as HTMLInputElement)
                                 }
+                                value={this.initMinutesValue}
+                                class="part"
                             />
-                            <span>:</span>
+                            <div class="inc-dec-arrows">
+                                <rux-icon
+                                    icon="arrow-drop-up"
+                                    size="24px"
+                                    onClick={() =>
+                                        handleTimeChange(
+                                            this.minuteInput,
+                                            true,
+                                            false
+                                        )
+                                    }
+                                ></rux-icon>
+                                <rux-icon
+                                    icon="arrow-drop-down"
+                                    size="24px"
+                                    onClick={() =>
+                                        handleTimeChange(
+                                            this.minuteInput,
+                                            false,
+                                            true
+                                        )
+                                    }
+                                ></rux-icon>
+                            </div>
                         </div>
                         {
                             //only show if precision is set to seconds or miliseconds
                             this.precision === 'sec' ||
                                 (this.precision === 'ms' && (
-                                    <div class="timepicker-sec">
-                                        <rux-input
+                                    <div class="timepicker-sec input">
+                                        <input
                                             type="number"
                                             min="0"
                                             max="59"
                                             placeholder="ss"
                                             ref={(el) =>
-                                                (this.secondsInput = el as HTMLRuxInputElement)
+                                                (this.secondsInput = el as HTMLInputElement)
                                             }
+                                            value={this.initSecondsValue}
+                                            class="part"
                                         />
-                                        <span>:</span>
+                                        <div class="inc-dec-arrows">
+                                            <rux-icon
+                                                icon="arrow-drop-up"
+                                                size="24px"
+                                                onClick={() =>
+                                                    handleTimeChange(
+                                                        this.secondsInput,
+                                                        true,
+                                                        false
+                                                    )
+                                                }
+                                            ></rux-icon>
+                                            <rux-icon
+                                                icon="arrow-drop-down"
+                                                size="24px"
+                                                onClick={() =>
+                                                    handleTimeChange(
+                                                        this.secondsInput,
+                                                        false,
+                                                        true
+                                                    )
+                                                }
+                                            ></rux-icon>
+                                        </div>
                                     </div>
                                 ))
                         }
                         {this.precision === 'ms' && (
-                            <div class="timepicker-ms">
-                                <rux-input
+                            <div class="timepicker-ms input">
+                                <input
                                     type="number"
                                     min="0"
                                     max="999"
                                     placeholder="SSS"
                                     ref={(el) =>
-                                        (this.millisecondInput = el as HTMLRuxInputElement)
+                                        (this.millisecondInput = el as HTMLInputElement)
                                     }
+                                    value={this.initMillisecondsValue}
+                                    class="part"
                                 />
+                                <div class="inc-dec-arrows">
+                                    <rux-icon
+                                        icon="arrow-drop-up"
+                                        size="24px"
+                                        onClick={() =>
+                                            handleTimeChange(
+                                                this.millisecondInput,
+                                                true,
+                                                false
+                                            )
+                                        }
+                                    ></rux-icon>
+                                    <rux-icon
+                                        icon="arrow-drop-down"
+                                        size="24px"
+                                        onClick={() =>
+                                            handleTimeChange(
+                                                this.millisecondInput,
+                                                false,
+                                                true
+                                            )
+                                        }
+                                    ></rux-icon>
+                                </div>
                             </div>
                         )}
                     </div>

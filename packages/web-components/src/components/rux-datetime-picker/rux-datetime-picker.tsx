@@ -24,8 +24,8 @@ import {
     shadow: true,
 })
 export class RuxDatetimePicker {
-    private wrapperRef?: HTMLDivElement
-    private popUpRef?: HTMLRuxPopUpElement
+    // private wrapperRef?: HTMLDivElement
+    // private popUpRef?: HTMLRuxPopUpElement
     private yearRef?: HTMLInputElement
     private monthRef?: HTMLInputElement
     private dayRef?: HTMLInputElement
@@ -303,6 +303,33 @@ export class RuxDatetimePicker {
         e.clipboardData!.setData('text/plain', this.iso)
     }
 
+    handleInitTime = (timeType: 'hour' | 'min' | 'sec' | 'ms') => {
+        //based on the timeType, return the value of the timeType from the iso string
+        if (!this.iso) return ''
+        const time = new Date(this.iso).getUTCHours().toString()
+        switch (timeType) {
+            case 'hour':
+                return new Date(this.iso).getUTCHours().toString() === '0'
+                    ? ''
+                    : new Date(this.iso).getUTCHours().toString()
+            case 'min':
+                return new Date(this.iso).getUTCMinutes().toString() === '0'
+                    ? ''
+                    : new Date(this.iso).getUTCMinutes().toString()
+            case 'sec':
+                return new Date(this.iso).getUTCSeconds().toString() === '0'
+                    ? ''
+                    : new Date(this.iso).getUTCSeconds().toString()
+            case 'ms':
+                return new Date(this.iso).getUTCMilliseconds().toString() ===
+                    '0'
+                    ? ''
+                    : new Date(this.iso).getUTCMilliseconds().toString()
+            default:
+                return time
+        }
+    }
+
     render() {
         const {
             disabled,
@@ -318,10 +345,15 @@ export class RuxDatetimePicker {
             determineMinMax,
             handleCopy,
             handlePaste,
+            handleInitTime,
+            iso,
+            minYear,
+            maxYear,
+            precision,
         } = this
         return (
             <Host>
-                <div ref={(el) => (this.wrapperRef = el)}>
+                <div>
                     <div
                         class={{ control: true }}
                         onPaste={handlePaste}
@@ -400,7 +432,6 @@ export class RuxDatetimePicker {
                                 open={isCalendarOpen}
                                 placement="bottom"
                                 class="calendar-btn"
-                                ref={(el) => (this.popUpRef = el)}
                             >
                                 <button
                                     type="button"
@@ -417,11 +448,15 @@ export class RuxDatetimePicker {
                                     </svg>
                                 </button>
                                 <rux-calendar
-                                    iso={this.iso}
+                                    iso={iso}
                                     //? Update min max years as needed- defaulting to +- 50 years here
-                                    minYear={this.minYear}
-                                    maxYear={this.maxYear}
-                                    precision={this.precision}
+                                    minYear={minYear}
+                                    maxYear={maxYear}
+                                    precision={precision}
+                                    initHoursValue={handleInitTime('hour')}
+                                    initMinutesValue={handleInitTime('min')}
+                                    initSecondsValue={handleInitTime('sec')}
+                                    initMillisecondsValue={handleInitTime('ms')}
                                 ></rux-calendar>
                             </rux-pop-up>
                         </div>

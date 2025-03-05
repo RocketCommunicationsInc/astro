@@ -40,6 +40,7 @@ graph TD;
   rux-calendar --> rux-select
   rux-calendar --> rux-option
   rux-calendar --> rux-day
+  rux-calendar --> rux-icon
   rux-button --> rux-icon
   style rux-datetime-picker fill:#f9f,stroke:#333,stroke-width:4px
 ```

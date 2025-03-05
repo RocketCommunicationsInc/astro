@@ -91,6 +91,10 @@ export namespace Components {
         "hAlign": 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
+        "initHoursValue": string;
+        "initMillisecondsValue": string;
+        "initMinutesValue": string;
+        "initSecondsValue": string;
         "iso": string;
         "maxYear": number;
         "minYear": number;
@@ -35713,6 +35717,10 @@ declare namespace LocalJSX {
         "hAlign"?: 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
+        "initHoursValue"?: string;
+        "initMillisecondsValue"?: string;
+        "initMinutesValue"?: string;
+        "initSecondsValue"?: string;
         "iso"?: string;
         "maxYear"?: number;
         "minYear"?: number;
