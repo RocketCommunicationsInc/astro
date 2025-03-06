@@ -129,43 +129,60 @@ export class RuxCalendar {
         this.currentDay = new Date().toISOString()
         this.setDates()
     }
-
-    componentDidLoad() {
-        if (!this.selectedDay) {
-            const ruxDays = this.el.shadowRoot!.querySelectorAll('rux-day')
-            ruxDays.forEach((day) => {
-                if (day.selected) {
-                    this.selectedDay = {
-                        dayNumber: day.dayNumber,
-                        isPastDay: day.isPastDay,
-                        isFutureDay: day.isFutureDay,
-                        element: day,
-                        selected: day.selected,
-                    }
+    private waitForRuxDays(): Promise<NodeListOf<HTMLRuxDayElement>> {
+        return new Promise((resolve) => {
+            const checkRuxDays = () => {
+                const ruxDays = this.el.shadowRoot!.querySelectorAll('rux-day')
+                if (ruxDays.length > 0) {
+                    //return the days in an array
+                    resolve(ruxDays)
                 } else {
-                    //If no day is selected at this point, then the datepicker gave an initial ISO string.
-                    // Need to find the day that matches the day in the ISO string
-                    const date = new Date(this.iso)
-                    const year = date.getUTCFullYear()
-                    const month = date.getUTCMonth()
-                    const day = date.getUTCDate()
-                    const dayNumber = day.toString()
-                    const selectedDay = Array.from(ruxDays).find(
-                        (day) => day.dayNumber === dayNumber
-                    )
-                    if (selectedDay) {
+                    requestAnimationFrame(checkRuxDays)
+                }
+            }
+            checkRuxDays()
+        })
+    }
+
+    componentWillLoad() {
+        // this.waitForRuxDays().then((res) => {
+        //     console.log('rux-days are ready: ', res)
+        // })
+        if (!this.selectedDay) {
+            // const ruxDays = this.waitForRuxDays().then((res) => res)
+            this.waitForRuxDays().then((res) => {
+                const ruxDays = res
+                ruxDays.forEach((day) => {
+                    if (day.selected) {
                         this.selectedDay = {
-                            dayNumber: selectedDay.dayNumber,
-                            isPastDay: selectedDay.isPastDay,
-                            isFutureDay: selectedDay.isFutureDay,
-                            element: selectedDay,
-                            selected: selectedDay.selected,
+                            dayNumber: day.dayNumber,
+                            isPastDay: day.isPastDay,
+                            isFutureDay: day.isFutureDay,
+                            element: day,
+                            selected: day.selected,
+                        }
+                    } else {
+                        //If no day is selected at this point, then the datepicker gave an initial ISO string.
+                        // Need to find the day that matches the day in the ISO string
+                        const date = new Date(this.iso)
+                        const day = date.getUTCDate()
+                        const dayNumber = day.toString()
+                        const selectedDay = Array.from(ruxDays).find(
+                            (day) => day.dayNumber === dayNumber
+                        )
+                        if (selectedDay) {
+                            this.selectedDay = {
+                                dayNumber: selectedDay.dayNumber,
+                                isPastDay: selectedDay.isPastDay,
+                                isFutureDay: selectedDay.isFutureDay,
+                                element: selectedDay,
+                                selected: selectedDay.selected,
+                            }
                         }
                     }
-                }
+                })
             })
         }
-        console.log(this.selectedDay)
     }
 
     setDates() {
