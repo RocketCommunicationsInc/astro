@@ -27,7 +27,7 @@ export class RuxCalendar {
     private minuteInput!: HTMLInputElement
     private secondsInput!: HTMLInputElement
     private millisecondInput!: HTMLInputElement
-    @Prop() iso: string = ''
+    @Prop({ mutable: true }) iso: string = ''
     @Prop() minYear: number = 1900
     @Prop() maxYear: number = 2100
     @Prop() initHoursValue: string = ''
@@ -39,8 +39,10 @@ export class RuxCalendar {
      * the datepicker component.
      */
     @Prop() precision: Precision = 'min'
-    @Event({ eventName: 'ruxcalendardateselected' })
-    ruxCalendarDateSelected!: EventEmitter<{ iso: string }>
+    @Event({ eventName: 'ruxcalendardatetimeupdated' })
+    ruxCalendarDateTimeUpdated!: EventEmitter<{ iso: string }>
+    @Event({ eventName: 'datetimeupdated' })
+    datetimeUpdated!: EventEmitter<{ iso: string }>
 
     @State() month: string = ''
     @State() year: string = ''
@@ -52,6 +54,7 @@ export class RuxCalendar {
         futureDay: boolean
     }[] = []
     @State() currentDay: string = ''
+    @State() selectedDay: DayInfo | null = null
 
     private years: number[] = []
 
@@ -61,17 +64,14 @@ export class RuxCalendar {
     }
 
     @Watch('month')
-    @Watch('year')
-    @Watch('days')
-    handleDatesChange() {
-        // console.log('dates change')
+    handleMonthUpdate() {
+        console.log('month change')
     }
 
     @Listen('ruxdayselected')
     handleDaySelected(event: CustomEvent) {
         const detail: DayInfo = event.detail
-        console.log(detail.isFutureDay, 'isFutureDay')
-        console.log(detail.isPastDay, 'isPastDay')
+        this.selectedDay = detail
         //get all rux-day's associated with this element
         const days = this.el.shadowRoot?.querySelectorAll('rux-day')
         //loop through the days and set the selected attribute to true for the day that was clicked
@@ -82,51 +82,67 @@ export class RuxCalendar {
                 day.selected = true
             }
         })
-        const selectedDay = detail.dayNumber
-        const year = parseInt(this.year)
+
+        const selectedDayNumber = detail.dayNumber
         let month = parseInt(getMonthValueByName(this.month)!) - 1 // Convert month name to month number
         if (detail.isFutureDay) {
-            console.log('isFutureDay true - add one to month of: ', month)
             month = month + 1
         }
         if (detail.isPastDay) {
             month = month - 1
         }
-        console.log(month, 'month after computations')
+        const iso = this.compileIso(month, parseInt(selectedDayNumber))
+        this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
+    }
+
+    private compileIso(month?: number, day?: number) {
+        const year = parseInt(this.year)
         const hours = parseInt(this.hourInput?.value || '0')
         const minutes = parseInt(this.minuteInput?.value || '0')
         const seconds = parseInt(this.secondsInput?.value || '0')
         const milliseconds = parseInt(this.millisecondInput?.value || '0')
-        console.log(hours, 'hours')
-        // Create the date with the time values
         const date = new Date(
             Date.UTC(
                 year,
-                month,
-                parseInt(selectedDay),
+                month || parseInt(getMonthValueByName(this.month)!) - 1,
+                day || parseInt(this.currentDay.split('T')[0].split('-')[2]),
                 hours,
                 minutes,
                 seconds,
                 milliseconds
             )
         )
-        const isoString = date.toISOString()
-        console.log('ISO String:', isoString)
-
-        //TODO: Add time picker values to the isoString
-        // Emit an event with the new ISO string value
-        this.ruxCalendarDateSelected.emit({ iso: isoString })
+        return date.toISOString()
     }
 
     connectedCallback() {
         this.handleForwardMonth = this.handleForwardMonth.bind(this)
         this.handleBackwardMonth = this.handleBackwardMonth.bind(this)
+        this.handleTimeChange = this.handleTimeChange.bind(this)
         if (!this.iso) {
             this.iso = new Date().toISOString()
         }
         //assign the current date in UTC time
         this.currentDay = new Date().toISOString()
         this.setDates()
+    }
+
+    componentDidLoad() {
+        if (!this.selectedDay) {
+            const ruxDays = this.el.shadowRoot!.querySelectorAll('rux-day')
+            ruxDays.forEach((day) => {
+                if (day.selected) {
+                    this.selectedDay = {
+                        dayNumber: day.dayNumber,
+                        isPastDay: day.isPastDay,
+                        isFutureDay: day.isFutureDay,
+                        element: day,
+                        selected: day.selected,
+                    }
+                }
+            })
+            console.log('selectedDay', this.selectedDay)
+        }
     }
 
     setDates() {
@@ -191,6 +207,7 @@ export class RuxCalendar {
             timeZone: 'UTC',
         })
         this.year = year.toString()
+
         this.setYears()
     }
 
@@ -253,7 +270,20 @@ export class RuxCalendar {
         if (parseInt(el.value) > parseInt(el.max)) {
             el.value = el.max
         }
-        //May need to update ISO with new time
+
+        // manually dispatch the change event. This is necessary because the input value is being updated
+        //  programmatically via the arrows, and that doesn't
+        // emit a change event by default.
+        const event = new CustomEvent('change', { bubbles: true })
+        el.dispatchEvent(event)
+        //when the time changes, I need to emit an event that compiles the ISO according to the selected day and
+        // time inputs values
+
+        const iso = this.compileIso(
+            undefined,
+            parseInt(this.selectedDay!.dayNumber!)
+        )
+        this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
     }
 
     render() {
@@ -327,6 +357,7 @@ export class RuxCalendar {
                                 isToday={day.isToday}
                                 isPastDay={day.pastDay}
                                 isFutureDay={day.futureDay}
+                                selected={day.isToday}
                             ></rux-day>
                         ))}
                     </div>
@@ -380,6 +411,7 @@ export class RuxCalendar {
                                 }
                                 value={this.initMinutesValue}
                                 class="part"
+                                onChange={() => console.log('change')}
                             />
                             <div class="inc-dec-arrows">
                                 <rux-icon

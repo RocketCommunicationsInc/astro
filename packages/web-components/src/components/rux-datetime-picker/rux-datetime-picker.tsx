@@ -72,9 +72,10 @@ export class RuxDatetimePicker {
      *
      * @param event the event emitted from the calendar. Contains {iso: string}
      */
-    @Listen('ruxcalendardateselected')
+    @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CustomEvent) {
         this.value = event.detail.iso
+        console.log('event.detail.iso: ', event.detail.iso)
         //? Need to decide wether or not to close the calendar on a date selection.
         // this.toggleCalendar()
     }
@@ -275,7 +276,7 @@ export class RuxDatetimePicker {
     determineMinMax(type: PartKey) {
         switch (type) {
             case 'year':
-                return [1800, 2400]
+                return [1000, 3000]
             case 'month':
                 return [1, 12]
             case 'day':

@@ -12,6 +12,7 @@ export type DayInfo = {
     dayNumber: string
     isPastDay: boolean
     isFutureDay: boolean
+    selected: boolean
     element: HTMLRuxDayElement
 }
 @Component({
@@ -24,7 +25,8 @@ export class RuxCalendar {
 
     @Prop() dayNumber: string = ''
 
-    @Prop({ attribute: 'selected', reflect: true }) selected: boolean = false
+    @Prop({ attribute: 'selected', reflect: true, mutable: true })
+    selected: boolean = false
 
     /**
      * @internal determines if the day is from a past or future month
@@ -52,11 +54,13 @@ export class RuxCalendar {
         //Emitting if the day clicked is part of the previous or next month is important so that
         // the calendar can update the month and year accordingly when displaying the selected day within the
         // datepicker input
+        this.selected = true
         const info: DayInfo = {
             dayNumber: this.dayNumber,
             isPastDay: this.isPastDay,
             isFutureDay: this.isFutureDay,
             element: this.el,
+            selected: this.selected,
         }
         this.ruxDaySelected.emit(info)
     }

@@ -35724,7 +35724,8 @@ declare namespace LocalJSX {
         "iso"?: string;
         "maxYear"?: number;
         "minYear"?: number;
-        "onRuxcalendardateselected"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
+        "onDatetimeupdated"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
+        "onRuxcalendardatetimeupdated"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
         /**
           * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
          */
