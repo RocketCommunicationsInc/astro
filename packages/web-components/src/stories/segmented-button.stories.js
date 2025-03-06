@@ -1,5 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html } from 'lit-html'
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = (args) => {
     document.addEventListener('change', (e) => action('change')(e.target))
@@ -25,6 +26,7 @@ export default {
             handles: ['ruxchange rux-segmented-button'],
         },
     },
+    decorators: [withActions],
 }
 
 export const Default = {

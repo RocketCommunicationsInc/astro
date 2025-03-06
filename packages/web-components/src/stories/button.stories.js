@@ -5,7 +5,7 @@ const Base = (args) => {
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
             <rux-button
-            ?disabled="${args.disabled}"
+                ?disabled="${args.disabled}"
                 ?icon-only="${args.iconOnly}"
                 ?secondary="${args.secondary}"
                 ?borderless="${args.borderless}"
@@ -22,7 +22,7 @@ const SlottedIconButton = (args) => {
     return html`
         <div style="padding: 10%; display: flex; justify-content: center;">
             <rux-button
-            ?disabled="${args.disabled}"
+                ?disabled="${args.disabled}"
                 ?icon-only="${args.iconOnly}"
                 ?secondary="${args.secondary}"
                 ?borderless="${args.borderless}"
@@ -250,11 +250,6 @@ const WithAllVariants = () => {
 export default {
     title: 'Components/Button',
     component: 'rux-button',
-
-    subcomponents: {
-        RuxButtonGroup: 'rux-button-group',
-    },
-
     argTypes: extractArgTypes('rux-button'),
 }
 

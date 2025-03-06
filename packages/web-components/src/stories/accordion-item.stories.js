@@ -1,5 +1,6 @@
 import { html } from 'lit-html'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = (args) => {
     return html`
@@ -33,21 +34,13 @@ const IconSlotted = (args) => {
 export default {
     title: 'Components/Accordion/Accordion Item',
     component: 'rux-accordion-item',
-
-    subcomponents: {
-        RuxAccordion: 'rux-accordion',
-    },
-
     argTypes: extractArgTypes('rux-accordion-item'),
-
     parameters: {
         actions: {
-            handles: [
-                'ruxexpanded rux-accordion-item',
-                'ruxcollapsed rux-accordion-item',
-            ],
+            handles: ['ruxexpanded', 'ruxcollapsed'],
         },
     },
+    decorators: [withActions],
 }
 
 export const Default = {

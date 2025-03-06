@@ -1,5 +1,5 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
-import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { html } from 'lit-html'
 
 const Base = (args) => {
     return html`
@@ -18,12 +18,6 @@ const Base = (args) => {
 export default {
     title: 'Components/Pop Up/Menu Item',
     component: 'rux-menu-item',
-
-    subcomponents: {
-        RuxPopUp: 'rux-pop-up',
-        RuxMenu: 'rux-menu',
-    },
-
     argTypes: extractArgTypes('rux-menu-item'),
 }
 

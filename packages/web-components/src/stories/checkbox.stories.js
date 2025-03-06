@@ -1,5 +1,6 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
-import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { html } from 'lit-html'
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = (args) => {
     return html`
@@ -20,20 +21,17 @@ export default {
     title: 'Forms/Checkbox',
     component: 'rux-checkbox',
     argTypes: extractArgTypes('rux-checkbox'),
-
-    subcomponents: {
-        RuxCheckboxGroup: 'rux-checkbox-group',
-    },
-
     parameters: {
         actions: {
             handles: [
                 'ruxchange rux-checkbox',
                 'ruxinput rux-checkbox',
                 'ruxblur rux-checkbox',
+                'ruxfocus rux-checkbox',
             ],
         },
     },
+    decorators: [withActions],
 }
 
 export const Default = {

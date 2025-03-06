@@ -1,17 +1,18 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html } from 'lit-html'
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = (args) => {
     return html`
-<div style="display: flex; flex-flow: column; justify-content: center;">
-    <rux-dialog
-        ?open="${args.open}"
-        message="${args.message}"
-        header="${args.header}"
-        confirm-text="${args.confirmText}"
-        deny-text="${args.denyText}"
-    ></rux-dialog>
-</div>
+        <div style="display: flex; flex-flow: column; justify-content: center;">
+            <rux-dialog
+                ?open="${args.open}"
+                message="${args.message}"
+                header="${args.header}"
+                confirm-text="${args.confirmText}"
+                deny-text="${args.denyText}"
+            ></rux-dialog>
+        </div>
     `
 }
 
@@ -59,12 +60,10 @@ export default {
 
     parameters: {
         actions: {
-            handles: [
-                'ruxdialogclosed rux-dialog',
-                'ruxdialogopened rux-dialog',
-            ],
+            handles: ['ruxdialogclosed', 'ruxdialogopened'],
         },
     },
+    decorators: [withActions],
 }
 
 export const Dialog = {

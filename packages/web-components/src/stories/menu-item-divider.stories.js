@@ -8,11 +8,6 @@ const Base = (args) => {
 export default {
     title: 'Components/Pop Up/Menu Item Divider',
     component: 'rux-menu-item-divider',
-
-    subcomponents: {
-        RuxPopUp: 'rux-pop-up',
-    },
-
     argTypes: extractArgTypes('rux-menu-item-divider'),
 }
 

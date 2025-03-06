@@ -1,5 +1,5 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
-import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { html } from 'lit-html'
 
 const Base = (args) => {
     return html`
@@ -30,11 +30,6 @@ const ActionsExample = (args) => {
 export default {
     title: 'Components/Tabs/Tab',
     component: 'rux-tab',
-
-    subcomponents: {
-        'Rux Tabs': 'rux-tabs',
-    },
-
     argTypes: extractArgTypes('rux-tab'),
 }
 
