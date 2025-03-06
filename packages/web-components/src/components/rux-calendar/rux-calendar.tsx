@@ -121,6 +121,9 @@ export class RuxCalendar {
         this.handleTimeChange = this.handleTimeChange.bind(this)
         if (!this.iso) {
             this.iso = new Date().toISOString()
+        } else {
+            console.log('iso came in as', this.iso)
+            //determine what the selected day is based on the iso string
         }
         //assign the current date in UTC time
         this.currentDay = new Date().toISOString()
@@ -139,10 +142,30 @@ export class RuxCalendar {
                         element: day,
                         selected: day.selected,
                     }
+                } else {
+                    //If no day is selected at this point, then the datepicker gave an initial ISO string.
+                    // Need to find the day that matches the day in the ISO string
+                    const date = new Date(this.iso)
+                    const year = date.getUTCFullYear()
+                    const month = date.getUTCMonth()
+                    const day = date.getUTCDate()
+                    const dayNumber = day.toString()
+                    const selectedDay = Array.from(ruxDays).find(
+                        (day) => day.dayNumber === dayNumber
+                    )
+                    if (selectedDay) {
+                        this.selectedDay = {
+                            dayNumber: selectedDay.dayNumber,
+                            isPastDay: selectedDay.isPastDay,
+                            isFutureDay: selectedDay.isFutureDay,
+                            element: selectedDay,
+                            selected: selectedDay.selected,
+                        }
+                    }
                 }
             })
-            console.log('selectedDay', this.selectedDay)
         }
+        console.log(this.selectedDay)
     }
 
     setDates() {
@@ -357,7 +380,9 @@ export class RuxCalendar {
                                 isToday={day.isToday}
                                 isPastDay={day.pastDay}
                                 isFutureDay={day.futureDay}
-                                selected={day.isToday}
+                                selected={
+                                    this.selectedDay?.dayNumber === day.day
+                                }
                             ></rux-day>
                         ))}
                     </div>

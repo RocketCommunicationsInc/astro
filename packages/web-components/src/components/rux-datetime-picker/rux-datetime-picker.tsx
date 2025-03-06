@@ -107,6 +107,7 @@ export class RuxDatetimePicker {
     handleInitialValue(value?: string) {
         const initial = initialParts()
         if (value) {
+            console.log('value is defined on init', value)
             try {
                 const d = new Date(value)
                 const iso = d.toISOString()
