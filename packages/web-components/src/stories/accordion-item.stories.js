@@ -1,6 +1,6 @@
 import { html } from 'lit-html'
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = (args) => {
     return html`
@@ -37,10 +37,7 @@ export default {
     argTypes: extractArgTypes('rux-accordion-item'),
     parameters: {
         actions: {
-            handles: [
-                'ruxexpanded',
-                'ruxcollapsed',
-            ],
+            handles: ['ruxexpanded', 'ruxcollapsed'],
         },
     },
     decorators: [withActions],
