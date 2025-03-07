@@ -145,9 +145,6 @@ export class RuxCalendar {
     }
 
     componentWillLoad() {
-        // this.waitForRuxDays().then((res) => {
-        //     console.log('rux-days are ready: ', res)
-        // })
         if (!this.selectedDay) {
             // const ruxDays = this.waitForRuxDays().then((res) => res)
             this.waitForRuxDays().then((res) => {
