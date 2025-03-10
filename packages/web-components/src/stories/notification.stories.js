@@ -1,6 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html } from 'lit-html'
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = (args) => {
     return html`
@@ -287,7 +287,8 @@ export const Small = {
     args: {
         open: true,
         small: true,
-        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
+        message:
+            'This is a notification banner. It won’t disappear until the user dismisses it.',
         status: 'standby',
     },
 }
@@ -300,7 +301,8 @@ export const WithPrefixSlot = {
     args: {
         open: true,
         status: 'standby',
-        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
+        message:
+            'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
@@ -312,7 +314,8 @@ export const WithDefaultSlot = {
     args: {
         open: true,
         status: 'standby',
-        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
+        message:
+            'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
@@ -324,7 +327,8 @@ export const WithActionsSlot = {
     args: {
         open: true,
         status: 'standby',
-        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
+        message:
+            'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
@@ -336,7 +340,8 @@ export const WithSlottedContent = {
     args: {
         open: true,
         status: 'standby',
-        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
+        message:
+            'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 
@@ -348,7 +353,8 @@ export const WithWrappedContent = {
     args: {
         open: true,
         status: 'normal',
-        message: 'This is a notification banner. It won’t disappear until the user dismisses it.',
+        message:
+            'This is a notification banner. It won’t disappear until the user dismisses it.',
     },
 }
 

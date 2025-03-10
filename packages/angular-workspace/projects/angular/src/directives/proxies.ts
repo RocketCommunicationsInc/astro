@@ -149,6 +149,32 @@ export declare interface RuxButtonGroup extends Components.RuxButtonGroup {}
 
 
 @ProxyCmp({
+  inputs: ['initHoursValue', 'initMillisecondsValue', 'initMinutesValue', 'initSecondsValue', 'iso', 'maxYear', 'minYear', 'precision']
+})
+@Component({
+  selector: 'rux-calendar',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['initHoursValue', 'initMillisecondsValue', 'initMinutesValue', 'initSecondsValue', 'iso', 'maxYear', 'minYear', 'precision'],
+})
+export class RuxCalendar {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxcalendardateselected']);
+  }
+}
+
+
+export declare interface RuxCalendar extends Components.RuxCalendar {
+
+  ruxcalendardateselected: EventEmitter<CustomEvent<{ iso: string }>>;
+}
+
+
+@ProxyCmp({
 })
 @Component({
   selector: 'rux-card',
@@ -316,6 +342,56 @@ export class RuxDatetime {
 
 
 export declare interface RuxDatetime extends Components.RuxDatetime {}
+
+
+@ProxyCmp({
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'isChanged', 'label', 'maxYear', 'minYear', 'name', 'precision', 'required', 'size', 'value']
+})
+@Component({
+  selector: 'rux-datetime-picker',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'isChanged', 'label', 'maxYear', 'minYear', 'name', 'precision', 'required', 'size', 'value'],
+})
+export class RuxDatetimePicker {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+  }
+}
+
+
+export declare interface RuxDatetimePicker extends Components.RuxDatetimePicker {}
+
+
+@ProxyCmp({
+  inputs: ['dayNumber', 'selected']
+})
+@Component({
+  selector: 'rux-day',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['dayNumber', 'selected'],
+})
+export class RuxDay {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxdayselected']);
+  }
+}
+
+
+import type { DayInfo as IRuxDayDayInfo } from '@astrouxds/astro-web-components';
+
+export declare interface RuxDay extends Components.RuxDay {
+
+  ruxdayselected: EventEmitter<CustomEvent<IRuxDayDayInfo>>;
+}
 
 
 @ProxyCmp({
