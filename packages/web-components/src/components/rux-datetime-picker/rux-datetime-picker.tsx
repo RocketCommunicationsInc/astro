@@ -75,12 +75,12 @@ export class RuxDatetimePicker {
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CustomEvent) {
         this.value = event.detail.iso
-        console.log('event.detail.iso: ', event.detail.iso)
         //? Need to decide wether or not to close the calendar on a date selection.
         // this.toggleCalendar()
     }
 
     connectedCallback() {
+        console.log('CC on Datepicker')
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
     }
@@ -107,7 +107,6 @@ export class RuxDatetimePicker {
     handleInitialValue(value?: string) {
         const initial = initialParts()
         if (value) {
-            console.log('value is defined on init', value)
             try {
                 const d = new Date(value)
                 const iso = d.toISOString()

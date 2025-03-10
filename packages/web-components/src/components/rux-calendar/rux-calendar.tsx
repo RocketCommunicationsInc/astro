@@ -130,9 +130,6 @@ export class RuxCalendar {
         this.handleTimeChange = this.handleTimeChange.bind(this)
         if (!this.iso) {
             this.iso = new Date().toISOString()
-        } else {
-            console.log('iso came in as', this.iso)
-            //determine what the selected day is based on the iso string
         }
         //assign the current date in UTC time
         this.currentDay = new Date().toISOString()
@@ -333,6 +330,16 @@ export class RuxCalendar {
     }
 
     handleTimeChange(e: Event, max: number, min: number = 0) {
+        //if the incoming value is a letter or symbol, prevent default and return
+        const regex = /^[0-9]+$/
+        if (!regex.test((e.target as HTMLInputElement).value)) {
+            console.log(
+                'did not pass regex, ',
+                (e.target as HTMLInputElement).value
+            )
+            e.preventDefault()
+            return
+        }
         const target = e.target as HTMLInputElement
         if (parseInt(target.value) > max) {
             target.value = max.toString()
@@ -436,7 +443,11 @@ export class RuxCalendar {
                                 }
                                 value={this.initHoursValue}
                                 class="part"
-                                onChange={(e) => this.handleTimeChange(e, 23)}
+                                onInput={(e) => this.handleTimeChange(e, 23)}
+                                onKeyDown={(evt) =>
+                                    ['e', 'E', '+', '-'].includes(evt.key) &&
+                                    evt.preventDefault()
+                                }
                             />
                             <div class="inc-dec-arrows">
                                 <rux-icon
@@ -475,7 +486,11 @@ export class RuxCalendar {
                                 }
                                 value={this.initMinutesValue}
                                 class="part"
-                                onChange={(e) => this.handleTimeChange(e, 59)}
+                                onInput={(e) => this.handleTimeChange(e, 59)}
+                                onKeyDown={(evt) =>
+                                    ['e', 'E', '+', '-'].includes(evt.key) &&
+                                    evt.preventDefault()
+                                }
                             />
                             <div class="inc-dec-arrows">
                                 <rux-icon
@@ -518,8 +533,13 @@ export class RuxCalendar {
                                             }
                                             value={this.initSecondsValue}
                                             class="part"
-                                            onChange={(e) =>
+                                            onInput={(e) =>
                                                 this.handleTimeChange(e, 59)
+                                            }
+                                            onKeyDown={(evt) =>
+                                                ['e', 'E', '+', '-'].includes(
+                                                    evt.key
+                                                ) && evt.preventDefault()
                                             }
                                         />
                                         <div class="inc-dec-arrows">
@@ -562,8 +582,13 @@ export class RuxCalendar {
                                     }
                                     value={this.initMillisecondsValue}
                                     class="part"
-                                    onChange={(e) =>
+                                    onInput={(e) =>
                                         this.handleTimeChange(e, 999)
+                                    }
+                                    onKeyDown={(evt) =>
+                                        ['e', 'E', '+', '-'].includes(
+                                            evt.key
+                                        ) && evt.preventDefault()
                                     }
                                 />
                                 <div class="inc-dec-arrows">
