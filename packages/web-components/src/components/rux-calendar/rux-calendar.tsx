@@ -95,6 +95,12 @@ export class RuxCalendar {
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
     }
 
+    /**
+     *
+     * @param month
+     * @param day
+     * @returns Compiled ISO string using the current values. Uses values from the time inputs.
+     */
     private compileIso(month?: number, day?: number) {
         const year = parseInt(this.year)
         const hours = parseInt(this.hourInput?.value || '0')
@@ -118,6 +124,9 @@ export class RuxCalendar {
     connectedCallback() {
         this.handleForwardMonth = this.handleForwardMonth.bind(this)
         this.handleBackwardMonth = this.handleBackwardMonth.bind(this)
+        this.handleTimeIncrementDecrement = this.handleTimeIncrementDecrement.bind(
+            this
+        )
         this.handleTimeChange = this.handleTimeChange.bind(this)
         if (!this.iso) {
             this.iso = new Date().toISOString()
@@ -284,7 +293,7 @@ export class RuxCalendar {
         this.iso = date.toISOString()
     }
 
-    handleTimeChange(
+    handleTimeIncrementDecrement(
         el: HTMLInputElement,
         increment?: boolean,
         decrement?: boolean
@@ -323,11 +332,26 @@ export class RuxCalendar {
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
     }
 
+    handleTimeChange(e: Event, max: number, min: number = 0) {
+        const target = e.target as HTMLInputElement
+        if (parseInt(target.value) > max) {
+            target.value = max.toString()
+        }
+        if (parseInt(target.value) < min) {
+            target.value = min.toString()
+        }
+        const iso = this.compileIso(
+            undefined,
+            parseInt(this.selectedDay!.dayNumber!)
+        )
+        this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
+    }
+
     render() {
         const {
             handleForwardMonth,
             handleBackwardMonth,
-            handleTimeChange,
+            handleTimeIncrementDecrement,
         } = this
         return (
             <Host>
@@ -412,13 +436,14 @@ export class RuxCalendar {
                                 }
                                 value={this.initHoursValue}
                                 class="part"
+                                onChange={(e) => this.handleTimeChange(e, 23)}
                             />
                             <div class="inc-dec-arrows">
                                 <rux-icon
                                     icon="arrow-drop-up"
                                     size="24px"
                                     onClick={() =>
-                                        handleTimeChange(
+                                        handleTimeIncrementDecrement(
                                             this.hourInput,
                                             true,
                                             false
@@ -429,7 +454,7 @@ export class RuxCalendar {
                                     icon="arrow-drop-down"
                                     size="24px"
                                     onClick={() =>
-                                        handleTimeChange(
+                                        handleTimeIncrementDecrement(
                                             this.hourInput,
                                             false,
                                             true
@@ -450,14 +475,14 @@ export class RuxCalendar {
                                 }
                                 value={this.initMinutesValue}
                                 class="part"
-                                onChange={() => console.log('change')}
+                                onChange={(e) => this.handleTimeChange(e, 59)}
                             />
                             <div class="inc-dec-arrows">
                                 <rux-icon
                                     icon="arrow-drop-up"
                                     size="24px"
                                     onClick={() =>
-                                        handleTimeChange(
+                                        handleTimeIncrementDecrement(
                                             this.minuteInput,
                                             true,
                                             false
@@ -468,7 +493,7 @@ export class RuxCalendar {
                                     icon="arrow-drop-down"
                                     size="24px"
                                     onClick={() =>
-                                        handleTimeChange(
+                                        handleTimeIncrementDecrement(
                                             this.minuteInput,
                                             false,
                                             true
@@ -493,13 +518,16 @@ export class RuxCalendar {
                                             }
                                             value={this.initSecondsValue}
                                             class="part"
+                                            onChange={(e) =>
+                                                this.handleTimeChange(e, 59)
+                                            }
                                         />
                                         <div class="inc-dec-arrows">
                                             <rux-icon
                                                 icon="arrow-drop-up"
                                                 size="24px"
                                                 onClick={() =>
-                                                    handleTimeChange(
+                                                    handleTimeIncrementDecrement(
                                                         this.secondsInput,
                                                         true,
                                                         false
@@ -510,7 +538,7 @@ export class RuxCalendar {
                                                 icon="arrow-drop-down"
                                                 size="24px"
                                                 onClick={() =>
-                                                    handleTimeChange(
+                                                    handleTimeIncrementDecrement(
                                                         this.secondsInput,
                                                         false,
                                                         true
@@ -534,13 +562,16 @@ export class RuxCalendar {
                                     }
                                     value={this.initMillisecondsValue}
                                     class="part"
+                                    onChange={(e) =>
+                                        this.handleTimeChange(e, 999)
+                                    }
                                 />
                                 <div class="inc-dec-arrows">
                                     <rux-icon
                                         icon="arrow-drop-up"
                                         size="24px"
                                         onClick={() =>
-                                            handleTimeChange(
+                                            handleTimeIncrementDecrement(
                                                 this.millisecondInput,
                                                 true,
                                                 false
@@ -551,7 +582,7 @@ export class RuxCalendar {
                                         icon="arrow-drop-down"
                                         size="24px"
                                         onClick={() =>
-                                            handleTimeChange(
+                                            handleTimeIncrementDecrement(
                                                 this.millisecondInput,
                                                 false,
                                                 true
