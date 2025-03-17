@@ -121,6 +121,21 @@ input[type='number'] {
                 left: calc(var(--padding-left) + 12.75rem);
                 width: var(--triple-width);
             }
+            &.isOrdinal.day {
+                left: calc(var(--padding-left) + 3.22rem);
+            }
+            &.isOrdinal.hour {
+                left: calc(var(--padding-left) + 6rem);
+            }
+            &.isOrdinal.min {
+                left: calc(var(--padding-left) + 7.75rem);
+            }
+            &.isOrdinal.sec {
+                left: calc(var(--padding-left) + 9.5rem);
+            }
+            &.isOrdinal.ms {
+                left: calc(var(--padding-left) + 11.5rem);
+            }
         }
 
         .mask {

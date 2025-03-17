@@ -149,28 +149,30 @@ export declare interface RuxButtonGroup extends Components.RuxButtonGroup {}
 
 
 @ProxyCmp({
-  inputs: ['initHoursValue', 'initMillisecondsValue', 'initMinutesValue', 'initSecondsValue', 'iso', 'maxYear', 'minYear', 'precision']
+  inputs: ['incomingDay', 'incomingMonth', 'incomingYear', 'initHoursValue', 'initMillisecondsValue', 'initMinutesValue', 'initSecondsValue', 'isJulian', 'iso', 'maxYear', 'minYear', 'precision']
 })
 @Component({
   selector: 'rux-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['initHoursValue', 'initMillisecondsValue', 'initMinutesValue', 'initSecondsValue', 'iso', 'maxYear', 'minYear', 'precision'],
+  inputs: ['incomingDay', 'incomingMonth', 'incomingYear', 'initHoursValue', 'initMillisecondsValue', 'initMinutesValue', 'initSecondsValue', 'isJulian', 'iso', 'maxYear', 'minYear', 'precision'],
 })
 export class RuxCalendar {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['ruxcalendardateselected']);
+    proxyOutputs(this, this.el, ['ruxcalendardatetimeupdated', 'datetimeupdated']);
   }
 }
 
 
 export declare interface RuxCalendar extends Components.RuxCalendar {
 
-  ruxcalendardateselected: EventEmitter<CustomEvent<{ iso: string }>>;
+  ruxcalendardatetimeupdated: EventEmitter<CustomEvent<{ iso: string }>>;
+
+  datetimeupdated: EventEmitter<CustomEvent<{ iso: string }>>;
 }
 
 
@@ -345,14 +347,14 @@ export declare interface RuxDatetime extends Components.RuxDatetime {}
 
 
 @ProxyCmp({
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'isChanged', 'label', 'maxYear', 'minYear', 'name', 'precision', 'required', 'size', 'value']
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'julianFormat', 'label', 'maxYear', 'minYear', 'name', 'precision', 'required', 'size', 'value']
 })
 @Component({
   selector: 'rux-datetime-picker',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'isChanged', 'label', 'maxYear', 'minYear', 'name', 'precision', 'required', 'size', 'value'],
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'julianFormat', 'label', 'maxYear', 'minYear', 'name', 'precision', 'required', 'size', 'value'],
 })
 export class RuxDatetimePicker {
   protected el: HTMLElement;

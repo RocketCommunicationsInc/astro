@@ -11,10 +11,15 @@ import {
 } from '@stencil/core'
 import { InputRefs, Part, PartKey, Precision } from './utils/types'
 import {
+    formatOrdinalToIso,
+    initialOrdinalParts,
     initialParts,
     setDisplay,
     setIsoPart,
+    setJulianIsoPart,
     setMaxLength,
+    setMaxLengthOrdinal,
+    setOrdinalDisplay,
     setPart,
 } from './utils'
 
@@ -42,6 +47,7 @@ export class RuxDatetimePicker {
         sec: this.secRef,
         ms: this.msRef,
     }
+    private previousValue: string = ''
 
     @Prop() disabled: boolean = false
     @Prop({ attribute: 'error-text' }) errorText?: string
@@ -53,14 +59,18 @@ export class RuxDatetimePicker {
     @Prop() size: 'small' | 'medium' | 'large' = 'medium'
     @Prop({ reflect: true, mutable: true }) value?: string
     @Prop() precision: Precision = 'min'
-    @Prop() isChanged: boolean = false
+    // @Prop() isChanged: boolean = false
     @Prop({ attribute: 'min-year' }) minYear: number = 1900
     @Prop({ attribute: 'max-year' }) maxYear: number = 2100
+    @Prop({ attribute: 'julian-format' }) julianFormat: boolean = false
 
     @State() iso: string = ''
     @State() parts: Part[] = []
-    @State() previousValue: string = ''
+    // @State() previousValue: string = ''
     @State() isCalendarOpen: boolean = false
+    @State() inputtedDay: string = ''
+    @State() inputtedMonth: string = ''
+    @State() inputtedYear: string = ''
 
     //Need to @Listen for ruxpopupclose event to close calendar
     @Listen('ruxpopupclosed')
@@ -75,12 +85,12 @@ export class RuxDatetimePicker {
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CustomEvent) {
         this.value = event.detail.iso
+
         //? Need to decide wether or not to close the calendar on a date selection.
         // this.toggleCalendar()
     }
 
     connectedCallback() {
-        console.log('CC on Datepicker')
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
     }
@@ -91,7 +101,7 @@ export class RuxDatetimePicker {
 
     @Watch('parts')
     handlePartsChange() {
-        // console.log('parts changed. Curr value: ', this.parts)
+        // console.log('parts changed')
     }
 
     @Watch('precision')
@@ -103,19 +113,52 @@ export class RuxDatetimePicker {
     handleValueChange() {
         this.handleInitialValue(this.value)
     }
+    private toOrdinalIsoString(isoString: string): string {
+        const date = new Date(isoString)
+        const year = date.getUTCFullYear()
+        const startOfYear = new Date(Date.UTC(year, 0, 0))
+        const diff = date.getTime() - startOfYear.getTime()
+        const oneDay = 1000 * 60 * 60 * 24
+        const dayOfYear = Math.floor(diff / oneDay)
+
+        // Format the day of the year as a three-digit number
+        const ordinalDay = String(dayOfYear).padStart(3, '0')
+
+        // Extract the time part of the ISO string
+        const timePart = isoString.substring(isoString.indexOf('T'))
+
+        // Construct the Ordinal ISO string
+        return `${year}-${ordinalDay}${timePart}`
+    }
 
     handleInitialValue(value?: string) {
-        const initial = initialParts()
+        const initial = this.julianFormat
+            ? initialOrdinalParts()
+            : initialParts()
         if (value) {
             try {
+                //We need to turn an oridinal formatted string into an equivalent ISO string
+                // in order to store the date. After the date is stored, we need to translate it
+                // back to ordinal format for display
+                const isInOrdinalFormat = value.match(/(\d{4})-(\d{3})T(.*)/)
+                if (isInOrdinalFormat) {
+                    value = formatOrdinalToIso(value)
+                }
                 const d = new Date(value)
-                const iso = d.toISOString()
+                let iso = d.toISOString()
+                if (this.julianFormat) {
+                    iso = this.toOrdinalIsoString(iso)
+                }
                 for (const part of initial) {
                     if (part.type === 'mask') continue
-                    part.value = setIsoPart[part.type](iso)
+                    if (this.julianFormat) {
+                        part.value = setJulianIsoPart[part.type](iso)
+                    } else {
+                        part.value = setIsoPart[part.type](iso)
+                    }
                 }
-
-                this.iso = iso
+                // always want the ISO string passed down the component tree to be actual ISO time, not ordinal
+                this.iso = formatOrdinalToIso(iso)
             } catch (error: any) {
                 const message = error.message || 'Invalid date'
                 this.iso = message
@@ -168,19 +211,42 @@ export class RuxDatetimePicker {
         }
 
         // Based on the month, the day should be limited to the number of days in that month
-        if (type === 'day') {
-            const month = parseInt(inputRefs['month']?.value || '')
-            const daysInMonth = new Date(
-                parseInt(inputRefs['year']?.value || ''),
-                month,
-                0
-            ).getDate()
-            if (parseInt(value) > daysInMonth) {
-                value = `${daysInMonth}`
+        if (!this.julianFormat) {
+            if (type === 'day') {
+                const month = parseInt(inputRefs['month']?.value || '')
+                const daysInMonth = new Date(
+                    parseInt(inputRefs['year']?.value || ''),
+                    month,
+                    0
+                ).getDate()
+                if (parseInt(value) > daysInMonth) {
+                    value = `${daysInMonth}`
+                }
+                // If the day is 0, set it to 1
+                if (parseInt(value) === 0 && value.length === 2) {
+                    value = '01'
+                }
             }
+        } else {
             // If the day is 0, set it to 1
-            if (parseInt(value) === 0 && value.length === 2) {
-                value = '01'
+            if (type === 'day' && parseInt(value) === 0 && value.length === 3) {
+                value = '001'
+            }
+            // if the year isn't a leapyear, the max day is 365
+            if (
+                type === 'day' &&
+                parseInt(inputRefs['year']?.value || '') % 4 !== 0 &&
+                parseInt(value) > 365
+            ) {
+                value = '365'
+            }
+            // if the year is a leapyear, the max day is 366
+            if (
+                type === 'day' &&
+                parseInt(inputRefs['year']?.value || '') % 4 === 0 &&
+                parseInt(value) > 366
+            ) {
+                value = '366'
             }
         }
 
@@ -223,11 +289,15 @@ export class RuxDatetimePicker {
             //? Maybe emit a custom event here with the error message? That way the dev can receive an error and display error text if they need to
             return
         }
-
         value = this.validateInput(value, type, inputRefs)
 
         const sanitized = value.replace(/ /g, '')
-        const updatedParts = setPart[type](sanitized, this.parts, inputRefs)
+        const updatedParts = setPart[type](
+            sanitized,
+            this.parts,
+            inputRefs,
+            this.julianFormat
+        )
         this.parts = updatedParts
         this.previousValue = value // Update the previous valid value
         const hasNoValue = updatedParts.every(({ type, value }) => {
@@ -242,9 +312,29 @@ export class RuxDatetimePicker {
             .map((part) => part.value)
             .join('')
             .split('~')
-        const parsedIso = `${date}T${time}${z}`
+        //have to do this to avoid adding an extra "T". Should probably just add T in to display as well.
+        let parsedIso = !this.julianFormat
+            ? `${date}T${time}${z}`
+            : `${date}${time}${z}`
+        if (this.julianFormat) {
+            parsedIso = formatOrdinalToIso(parsedIso)
+        }
+        //set the inputtedDay, inputtedMonth, and inputtedYear to the current values
+
+        if (type === 'day') this.inputtedDay = target.value || ''
+        if (type === 'month') this.inputtedMonth = target.value || ''
+        if (type === 'year') this.inputtedYear = target.value || ''
+
         try {
+            if (parsedIso.length < 24) {
+                //? Throwing an error here creates console warnings
+                // throw new Error('Invalid date')
+                return
+            }
             const d = new Date(parsedIso)
+            if (isNaN(d.getTime())) {
+                throw new Error('Invalid date')
+            }
             /**
              * If d.toISOString() throws an error, will end up in catch block
              */
@@ -259,13 +349,6 @@ export class RuxDatetimePicker {
              * If error, set iso to message from error
              */
             this.iso = message
-        } finally {
-            /**
-             * Set isChanged to true when the first change made
-             */
-            if (!this.isChanged) {
-                this.isChanged = true
-            }
         }
     }
 
@@ -273,14 +356,14 @@ export class RuxDatetimePicker {
         this.isCalendarOpen = !this.isCalendarOpen
     }
 
-    determineMinMax(type: PartKey) {
+    determineMinMax(type: PartKey, isJulian?: boolean) {
         switch (type) {
             case 'year':
                 return [1000, 3000]
             case 'month':
                 return [1, 12]
             case 'day':
-                return [1, 31]
+                return !isJulian ? [1, 31] : [1, 366]
             case 'hour':
                 return [0, 23]
             case 'min':
@@ -407,14 +490,29 @@ export class RuxDatetimePicker {
                                             onInput={(e: InputEvent) =>
                                                 handleChange(e, type, refs)
                                             }
-                                            maxLength={setMaxLength[type]}
-                                            max={determineMinMax(type)[1]}
-                                            min={determineMinMax(type)[0]}
+                                            maxLength={
+                                                !this.julianFormat
+                                                    ? setMaxLength[type]
+                                                    : setMaxLengthOrdinal[type]
+                                            }
+                                            max={
+                                                determineMinMax(
+                                                    type,
+                                                    this.julianFormat
+                                                )[1]
+                                            }
+                                            min={
+                                                determineMinMax(
+                                                    type,
+                                                    this.julianFormat
+                                                )[0]
+                                            }
                                             value={value}
                                         />
                                         <span
                                             class={{
                                                 display: true,
+                                                isOrdinal: this.julianFormat,
                                                 year: type === 'year',
                                                 month: type === 'month',
                                                 day: type === 'day',
@@ -424,7 +522,11 @@ export class RuxDatetimePicker {
                                                 ms: type === 'ms',
                                             }}
                                         >
-                                            {setDisplay[type](value)}
+                                            {!this.julianFormat
+                                                ? setDisplay[type](value)
+                                                : setOrdinalDisplay[type](
+                                                      value
+                                                  )}
                                         </span>
                                     </Fragment>
                                 )
@@ -449,6 +551,7 @@ export class RuxDatetimePicker {
                                     </svg>
                                 </button>
                                 <rux-calendar
+                                    //* ISO controls the displayed date in the calendar and should only ever be in ISO format, not ordinal
                                     iso={iso}
                                     //? Update min max years as needed- defaulting to +- 50 years here
                                     minYear={minYear}
@@ -458,6 +561,9 @@ export class RuxDatetimePicker {
                                     initMinutesValue={handleInitTime('min')}
                                     initSecondsValue={handleInitTime('sec')}
                                     initMillisecondsValue={handleInitTime('ms')}
+                                    incomingDay={this.inputtedDay}
+                                    incomingMonth={this.inputtedMonth}
+                                    incomingYear={this.inputtedYear}
                                 ></rux-calendar>
                             </rux-pop-up>
                         </div>

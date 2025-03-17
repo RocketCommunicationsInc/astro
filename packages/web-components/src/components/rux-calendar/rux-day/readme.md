@@ -15,9 +15,9 @@
 
 ## Events
 
-| Event            | Description | Type                                                                                                        |
-| ---------------- | ----------- | ----------------------------------------------------------------------------------------------------------- |
-| `ruxdayselected` |             | `CustomEvent<{ dayNumber: string; isPastDay: boolean; isFutureDay: boolean; element: HTMLRuxDayElement; }>` |
+| Event            | Description | Type                                                                                                                           |
+| ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| `ruxdayselected` |             | `CustomEvent<{ dayNumber: string; isPastDay: boolean; isFutureDay: boolean; selected: boolean; element: HTMLRuxDayElement; }>` |
 
 
 ## Dependencies

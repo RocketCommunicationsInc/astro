@@ -9,10 +9,14 @@
 
 | Property                | Attribute                 | Description                                                                                                                                                         | Type                     | Default |
 | ----------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------- |
+| `incomingDay`           | `incoming-day`            |                                                                                                                                                                     | `string`                 | `''`    |
+| `incomingMonth`         | `incoming-month`          |                                                                                                                                                                     | `string`                 | `''`    |
+| `incomingYear`          | `incoming-year`           |                                                                                                                                                                     | `string`                 | `''`    |
 | `initHoursValue`        | `init-hours-value`        |                                                                                                                                                                     | `string`                 | `''`    |
 | `initMillisecondsValue` | `init-milliseconds-value` |                                                                                                                                                                     | `string`                 | `''`    |
 | `initMinutesValue`      | `init-minutes-value`      |                                                                                                                                                                     | `string`                 | `''`    |
 | `initSecondsValue`      | `init-seconds-value`      |                                                                                                                                                                     | `string`                 | `''`    |
+| `isJulian`              | `is-julian`               |                                                                                                                                                                     | `boolean`                | `false` |
 | `iso`                   | `iso`                     |                                                                                                                                                                     | `string`                 | `''`    |
 | `maxYear`               | `max-year`                |                                                                                                                                                                     | `number`                 | `2100`  |
 | `minYear`               | `min-year`                |                                                                                                                                                                     | `number`                 | `1900`  |
@@ -21,9 +25,10 @@
 
 ## Events
 
-| Event                     | Description | Type                            |
-| ------------------------- | ----------- | ------------------------------- |
-| `ruxcalendardateselected` |             | `CustomEvent<{ iso: string; }>` |
+| Event                        | Description | Type                            |
+| ---------------------------- | ----------- | ------------------------------- |
+| `datetimeupdated`            |             | `CustomEvent<{ iso: string; }>` |
+| `ruxcalendardatetimeupdated` |             | `CustomEvent<{ iso: string; }>` |
 
 
 ## Dependencies

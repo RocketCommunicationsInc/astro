@@ -91,10 +91,14 @@ export namespace Components {
         "hAlign": 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
+        "incomingDay": string;
+        "incomingMonth": string;
+        "incomingYear": string;
         "initHoursValue": string;
         "initMillisecondsValue": string;
         "initMinutesValue": string;
         "initSecondsValue": string;
+        "isJulian": boolean;
         "iso": string;
         "maxYear": number;
         "minYear": number;
@@ -270,7 +274,7 @@ export namespace Components {
         "errorText"?: string;
         "helpText"?: string;
         "invalid": boolean;
-        "isChanged": boolean;
+        "julianFormat": boolean;
         "label"?: string;
         "maxYear": number;
         "minYear": number;
@@ -35717,10 +35721,14 @@ declare namespace LocalJSX {
         "hAlign"?: 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
+        "incomingDay"?: string;
+        "incomingMonth"?: string;
+        "incomingYear"?: string;
         "initHoursValue"?: string;
         "initMillisecondsValue"?: string;
         "initMinutesValue"?: string;
         "initSecondsValue"?: string;
+        "isJulian"?: boolean;
         "iso"?: string;
         "maxYear"?: number;
         "minYear"?: number;
@@ -35914,7 +35922,7 @@ declare namespace LocalJSX {
         "errorText"?: string;
         "helpText"?: string;
         "invalid"?: boolean;
-        "isChanged"?: boolean;
+        "julianFormat"?: boolean;
         "label"?: string;
         "maxYear"?: number;
         "minYear"?: number;
