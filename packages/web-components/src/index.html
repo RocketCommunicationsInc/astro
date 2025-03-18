@@ -32,18 +32,9 @@
             <span>2025-01-25T17:25:24.211Z</span>
             <span>2025-02-25T17:25:24.211Z</span>
             <span>2024-02-25T17:25:24.211Z</span>
-            <span>2024-056T17:25:24.211Z</span>
+            <span>2025-056T17:25:24.211Z</span>
             <rux-textarea></rux-textarea>
 
-            <rux-datetime-picker
-                label="Julian"
-                help-text="Help Text"
-                precision="ms"
-                min-year="2000"
-                max-year="2040"
-                julian-format
-            ></rux-datetime-picker>
-            <br />
             <rux-datetime-picker
                 label="Default"
                 help-text="Help Text"
@@ -58,11 +49,26 @@
                 min-year="2000"
                 max-year="2040"
                 julian-format
+            ></rux-datetime-picker>
+            <rux-datetime-picker
+                label="Default With Given Value"
+                help-text="Help Text"
+                precision="ms"
+                min-year="2000"
+                max-year="2040"
+                value="2025-01-25T17:25:24.211Z"
+            ></rux-datetime-picker>
+            <rux-datetime-picker
+                label="Julian With Given Value"
+                help-text="Help Text"
+                precision="ms"
+                min-year="2000"
+                max-year="2040"
+                julian-format
                 value="2024-02-25T17:25:24.211Z"
             ></rux-datetime-picker>
             <div>
                 <h4>Change Precision</h4>
-
                 <rux-radio-group label="Precision" name="precision" value="MS">
                     <rux-radio value="sec" name="precision">Seconds</rux-radio>
                     <rux-radio value="ms" name="precision"
