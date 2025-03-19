@@ -1,5 +1,6 @@
 :host {
     display: block;
+    --timepicker-width: calc(100% / 5); /* Default value */
 }
 .rux-calendar {
     /* width: 364px; */
@@ -41,6 +42,7 @@
     justify-content: space-between;
     align-items: center;
     height: 52px;
+    padding: var(--spacing-050);
     div {
         display: flex;
         align-items: center;
@@ -104,7 +106,12 @@
     .timepicker-sec,
     .timepicker-hours,
     .timepicker-min {
-        width: calc(100% / 6);
+        width: var(--timepicker-width);
         height: 100%;
+        display: flex;
+        justify-content: space-between;
+        input.part {
+            width: 100%;
+        }
     }
 }

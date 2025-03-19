@@ -104,7 +104,6 @@ export class RuxCalendar {
     //? than getting them as props from rux-datepicker.
     @Watch('incomingDay')
     handleIncomingDay() {
-        console.log('incoming day: ', this.incomingDay)
         if (!this.ruxDays) {
             console.warn('no ruxDays found in Incoming Day Watch')
             return
@@ -171,6 +170,27 @@ export class RuxCalendar {
             Number(this.selectedDay.dayNumber)
         )
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
+    }
+
+    /**
+     * Updates the width of the timepicker inputs based on the precision set.
+     */
+    private updateTimepickerWidth() {
+        let width
+        switch (this.precision) {
+            case 'min':
+                width = 'calc(100% / 2.5)'
+                break
+            case 'sec':
+                width = 'calc(100% / 4)'
+                break
+            case 'ms':
+                width = 'calc(100% / 5)'
+                break
+            default:
+                width = 'calc(100% / 5)'
+        }
+        this.el.style.setProperty('--timepicker-width', width)
     }
 
     /**
@@ -265,9 +285,10 @@ export class RuxCalendar {
         this.ruxDays = await this.waitForRuxDays()
     }
     componentWillUpdate() {
-        console.log('CWL from rux-calendar. ISO: ', this.iso)
+        this.updateTimepickerWidth()
     }
     componentWillLoad() {
+        this.updateTimepickerWidth()
         if (!this.selectedDay) {
             this.getRuxDays().then(() => {
                 // this.ruxDays = res;
@@ -408,6 +429,7 @@ export class RuxCalendar {
             date.setUTCMonth(parseInt(month.value) - 1)
             this.iso = date.toISOString()
         }
+        this.ruxCalendarDateTimeUpdated.emit({ iso: this.iso })
     }
     handleYearChange = (event: CustomEvent) => {
         const target = event.target as HTMLRuxSelectElement
@@ -417,6 +439,7 @@ export class RuxCalendar {
         const date = new Date(this.iso)
         date.setUTCFullYear(parseInt(value))
         this.iso = date.toISOString()
+        this.ruxCalendarDateTimeUpdated.emit({ iso: this.iso })
     }
 
     handleTimeIncrementDecrement(
@@ -458,7 +481,7 @@ export class RuxCalendar {
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
     }
 
-    handleTimeChange(e: Event, max: number, min: number = 0) {
+    handleTimeChange(e: Event, max: number, min: number = 0, part: string) {
         //if the incoming value is a letter or symbol, prevent default and return
         const regex = /^[0-9]+$/
         if (!regex.test((e.target as HTMLInputElement).value)) {
@@ -471,6 +494,13 @@ export class RuxCalendar {
         }
         if (parseInt(target.value) < min) {
             target.value = min.toString()
+        }
+        if (target.value.length === 2 && part !== 'ms') {
+            if (part === 'hour') this.minuteInput.focus()
+            if (part === 'min' && this.precision !== 'min')
+                this.secondsInput.focus()
+            if (part === 'sec' && this.precision !== 'sec')
+                this.millisecondInput.focus()
         }
         const iso = this.compileIso(
             undefined,
@@ -589,7 +619,9 @@ export class RuxCalendar {
                                 }
                                 value={this.initHoursValue}
                                 class="part"
-                                onInput={(e) => this.handleTimeChange(e, 23)}
+                                onInput={(e) =>
+                                    this.handleTimeChange(e, 23, 0, 'hour')
+                                }
                                 onKeyDown={(evt) =>
                                     ['e', 'E', '+', '-'].includes(evt.key) &&
                                     evt.preventDefault()
@@ -619,9 +651,9 @@ export class RuxCalendar {
                                     }
                                 ></rux-icon>
                             </div>
-                            :
                         </div>
-                        <div class="timepicker-min input">
+                        <span>:</span>
+                        <div class={'timepicker-min input'}>
                             <input
                                 type="number"
                                 min="0"
@@ -632,7 +664,9 @@ export class RuxCalendar {
                                 }
                                 value={this.initMinutesValue}
                                 class="part"
-                                onInput={(e) => this.handleTimeChange(e, 59)}
+                                onInput={(e) =>
+                                    this.handleTimeChange(e, 59, 0, 'min')
+                                }
                                 onKeyDown={(evt) =>
                                     ['e', 'E', '+', '-'].includes(evt.key) &&
                                     evt.preventDefault()
@@ -662,60 +696,65 @@ export class RuxCalendar {
                                     }
                                 ></rux-icon>
                             </div>
-                            :
                         </div>
+                        {this.precision !== 'min' && <span>:</span>}
                         {
                             //only show if precision is set to seconds or miliseconds
-                            this.precision === 'sec' ||
-                                (this.precision === 'ms' && (
-                                    <div class="timepicker-sec input">
-                                        <input
-                                            type="number"
-                                            min="0"
-                                            max="59"
-                                            placeholder="ss"
-                                            ref={(el) =>
-                                                (this.secondsInput = el as HTMLInputElement)
+                            (this.precision === 'sec' ||
+                                this.precision === 'ms') && (
+                                <div class="timepicker-sec input">
+                                    <input
+                                        type="number"
+                                        min="0"
+                                        max="59"
+                                        placeholder="ss"
+                                        ref={(el) =>
+                                            (this.secondsInput = el as HTMLInputElement)
+                                        }
+                                        value={this.initSecondsValue}
+                                        class="part"
+                                        onInput={(e) =>
+                                            this.handleTimeChange(
+                                                e,
+                                                59,
+                                                0,
+                                                'sec'
+                                            )
+                                        }
+                                        onKeyDown={(evt) =>
+                                            ['e', 'E', '+', '-'].includes(
+                                                evt.key
+                                            ) && evt.preventDefault()
+                                        }
+                                    />
+                                    <div class="inc-dec-arrows">
+                                        <rux-icon
+                                            icon="arrow-drop-up"
+                                            size="24px"
+                                            onClick={() =>
+                                                handleTimeIncrementDecrement(
+                                                    this.secondsInput,
+                                                    true,
+                                                    false
+                                                )
                                             }
-                                            value={this.initSecondsValue}
-                                            class="part"
-                                            onInput={(e) =>
-                                                this.handleTimeChange(e, 59)
+                                        ></rux-icon>
+                                        <rux-icon
+                                            icon="arrow-drop-down"
+                                            size="24px"
+                                            onClick={() =>
+                                                handleTimeIncrementDecrement(
+                                                    this.secondsInput,
+                                                    false,
+                                                    true
+                                                )
                                             }
-                                            onKeyDown={(evt) =>
-                                                ['e', 'E', '+', '-'].includes(
-                                                    evt.key
-                                                ) && evt.preventDefault()
-                                            }
-                                        />
-                                        <div class="inc-dec-arrows">
-                                            <rux-icon
-                                                icon="arrow-drop-up"
-                                                size="24px"
-                                                onClick={() =>
-                                                    handleTimeIncrementDecrement(
-                                                        this.secondsInput,
-                                                        true,
-                                                        false
-                                                    )
-                                                }
-                                            ></rux-icon>
-                                            <rux-icon
-                                                icon="arrow-drop-down"
-                                                size="24px"
-                                                onClick={() =>
-                                                    handleTimeIncrementDecrement(
-                                                        this.secondsInput,
-                                                        false,
-                                                        true
-                                                    )
-                                                }
-                                            ></rux-icon>
-                                        </div>
-                                        :
+                                        ></rux-icon>
                                     </div>
-                                ))
+                                </div>
+                            )
                         }
+                        {this.precision === 'ms' && <span>.</span>}
                         {this.precision === 'ms' && (
                             <div class="timepicker-ms input">
                                 <input
@@ -729,7 +768,7 @@ export class RuxCalendar {
                                     value={this.initMillisecondsValue}
                                     class="part"
                                     onInput={(e) =>
-                                        this.handleTimeChange(e, 999)
+                                        this.handleTimeChange(e, 999, 0, 'ms')
                                     }
                                     onKeyDown={(evt) =>
                                         ['e', 'E', '+', '-'].includes(
