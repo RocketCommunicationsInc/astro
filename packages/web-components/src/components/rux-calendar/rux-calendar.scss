@@ -1,6 +1,6 @@
 :host {
     display: block;
-    --timepicker-width: calc(100% / 5); /* Default value */
+    --timepicker-width: calc(100% / 5.5);
 }
 .rux-calendar {
     /* width: 364px; */
@@ -112,6 +112,11 @@
         justify-content: space-between;
         input.part {
             width: 100%;
+        }
+    }
+    .timepicker-ms {
+        input.part {
+            width: fit-content;
         }
     }
 }

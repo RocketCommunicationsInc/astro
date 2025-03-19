@@ -185,10 +185,10 @@ export class RuxCalendar {
                 width = 'calc(100% / 4)'
                 break
             case 'ms':
-                width = 'calc(100% / 5)'
+                width = 'calc(100% / 5.5)'
                 break
             default:
-                width = 'calc(100% / 5)'
+                width = 'calc(100% / 5.5)'
         }
         this.el.style.setProperty('--timepicker-width', width)
     }
