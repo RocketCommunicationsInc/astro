@@ -147,6 +147,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 
 ### Used by
 
+ - [rux-calendar](../rux-calendar)
  - [rux-dialog](../rux-dialog)
 
 ### Depends on
@@ -157,6 +158,7 @@ For more information about AstroUXDS usage outside of a Web Component environmen
 ```mermaid
 graph TD;
   rux-button --> rux-icon
+  rux-calendar --> rux-button
   rux-dialog --> rux-button
   style rux-button fill:#f9f,stroke:#333,stroke-width:4px
 ```
