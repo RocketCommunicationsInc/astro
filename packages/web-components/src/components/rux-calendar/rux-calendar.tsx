@@ -78,15 +78,9 @@ export class RuxCalendar {
         this.setDates()
     }
 
-    @Watch('month')
-    handleMonth(oldValue: string, newValue: string) {
-        console.log('heard month change from ', oldValue, 'to ', newValue)
-    }
-
     @Watch('incomingYear')
     handleIncomingYear() {
         if (this.incomingYear.length === 4) {
-            this.clearSelectedDays()
             this.year = this.incomingYear
             this.iso = this.compileIso()
         }
@@ -101,10 +95,16 @@ export class RuxCalendar {
             this.month = monthName
         }
     }
-
+    //TODO:
+    //? Having incomingDay, month and year may be excessive. rux-calendar gets a triggered re-render each time this.iso changes,
+    //? and this.iso comes straight from rux-datepicker. When rux-datepicker has it's inputs changed at all,
+    //? it updates it's iso, thus updating rux-calendar. What we could do instead is
+    //? each time iso changes, see if the year/month/day are filled in yet. If they aren't, don't do anything.
+    //? if they are, do the logic that is currently handled by incomingDay/Month/Year but extrapolate the values from the iso string rather
+    //? than getting them as props from rux-datepicker.
     @Watch('incomingDay')
     handleIncomingDay() {
-        this.clearSelectedDays()
+        console.log('incoming day: ', this.incomingDay)
         if (!this.ruxDays) {
             console.warn('no ruxDays found in Incoming Day Watch')
             return
@@ -130,8 +130,6 @@ export class RuxCalendar {
 
     @Listen('ruxdayselected')
     handleDaySelected(event: CustomEvent) {
-        console.log('month at start: ', this.month)
-        this.clearSelectedDays()
         const detail: DayInfo = event.detail
         this.selectedDay = detail
         //get all rux-day's associated with this element
@@ -172,7 +170,6 @@ export class RuxCalendar {
             undefined,
             Number(this.selectedDay.dayNumber)
         )
-        console.log('setting iso to: ', iso)
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
     }
 
@@ -211,7 +208,6 @@ export class RuxCalendar {
         }
         //wait for new ruxDays to be rendered
         await this.getRuxDays()
-        this.clearSelectedDays()
         if (dayNumber) {
             this.ruxDays.forEach((day) => {
                 if (
@@ -268,7 +264,9 @@ export class RuxCalendar {
     private async getRuxDays() {
         this.ruxDays = await this.waitForRuxDays()
     }
-
+    componentWillUpdate() {
+        console.log('CWL from rux-calendar. ISO: ', this.iso)
+    }
     componentWillLoad() {
         if (!this.selectedDay) {
             this.getRuxDays().then(() => {
@@ -394,6 +392,11 @@ export class RuxCalendar {
     handleBackwardMonth = () => {
         const date = new Date(this.iso)
         date.setUTCMonth(date.getUTCMonth() - 1)
+        //if the month is January, then the year should be decremented
+        if (date.getUTCMonth() === 0) {
+            date.setUTCFullYear(date.getUTCFullYear() - 1)
+        }
+
         this.iso = date.toISOString()
     }
 
@@ -410,6 +413,7 @@ export class RuxCalendar {
         const target = event.target as HTMLRuxSelectElement
         //We know value will be of type string because we're not using a multiselect for year
         const value = target.value as string
+        this.year = value
         const date = new Date(this.iso)
         date.setUTCFullYear(parseInt(value))
         this.iso = date.toISOString()
@@ -474,20 +478,6 @@ export class RuxCalendar {
         )
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
     }
-
-    clearSelectedDays() {
-        //clear all selected days
-
-        if (!this.ruxDays) {
-            this.waitForRuxDays().then((res) => {
-                this.ruxDays = res
-            })
-        }
-        this.ruxDays?.forEach((day) => {
-            day.selected = false
-        })
-    }
-
     /**
      *
      * @param dayNum

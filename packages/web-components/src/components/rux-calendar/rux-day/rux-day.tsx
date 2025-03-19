@@ -62,19 +62,7 @@ export class RuxCalendar {
             element: this.el,
             selected: this.selected,
         }
-        console.log('day clicked', info)
         this.ruxDaySelected.emit(info)
-    }
-
-    componentWillRender() {
-        if (this.selected) {
-            console.log(
-                'The rux-day of ',
-                this.el,
-                ' has the selected prop of ',
-                this.selected
-            )
-        }
     }
 
     render() {

@@ -99,11 +99,6 @@ export class RuxDatetimePicker {
         this.handleInitialValue(this.value)
     }
 
-    @Watch('parts')
-    handlePartsChange() {
-        // console.log('parts changed')
-    }
-
     @Watch('precision')
     handlePrecisionChange() {
         this.handleInitialValue(this.value)
@@ -137,7 +132,7 @@ export class RuxDatetimePicker {
             : initialParts()
         if (value) {
             try {
-                //We need to turn an oridinal formatted string into an equivalent ISO string
+                //We need to turn an ordinal formatted string into an equivalent ISO string
                 // in order to store the date. After the date is stored, we need to translate it
                 // back to ordinal format for display
                 const isInOrdinalFormat = value.match(/(\d{4})-(\d{3})T(.*)/)
@@ -379,6 +374,19 @@ export class RuxDatetimePicker {
         e.preventDefault()
         const pastedValue = e.clipboardData!.getData('text/plain')
         this.handleInitialValue(pastedValue.trim())
+        console.log('pasted value: ', pastedValue.trim())
+        console.log('iso set to: ', this.iso)
+        const date = new Date(this.iso)
+        const year = date.getUTCFullYear()
+        const month = (date.getUTCMonth() + 1).toString().padStart(2, '0') // Months are zero-based, so add 1
+        const day = date.getUTCDate().toString().padStart(2, '0')
+        console.log(`Year: ${year}, Month: ${month}, Day: ${day}`)
+        this.inputtedDay = day
+        this.inputtedMonth = month
+        this.inputtedYear = year.toString()
+        // this.inputtedDay = this.iso.slice(8, 2)
+        // this.inputtedMonth = this.iso.slice(5, 2)
+        // this.inputtedYear = this.iso.slice(0, 4)
     }
 
     handleCopy = (e: ClipboardEvent) => {
