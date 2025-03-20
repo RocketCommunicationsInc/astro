@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 7.25.2
+
+### Patch Changes
+
+-   4a5755ea: Backlog of neglected dependabot prs
+
 ## 7.25.1
 
 ### Patch Changes
