@@ -227,6 +227,9 @@ export const getMonthValueByName = (monthName: string): string | undefined => {
  * @returns The month's name based on it's number value. Ie, getMonthValueByNumber('01') returns 'January'
  */
 export const getMonthNameByNumber = (monthNum: string): string | undefined => {
+    if (monthNum.length === 1) {
+        monthNum = monthNum.padStart(2, '0')
+    }
     const month = months.find((m) => m.value === monthNum)
     return month ? month.label : undefined
 }
@@ -319,4 +322,8 @@ export const removeLeadingZero = (value: string) => {
         return value.substring(1)
     }
     return value
+}
+
+export const containsAllNumbers = (substring: string) => {
+    return substring.split('').every((char) => /\d/.test(char))
 }

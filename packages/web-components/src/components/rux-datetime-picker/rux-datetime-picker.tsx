@@ -1,6 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
 import {
     Component,
+    Event,
+    EventEmitter,
     Fragment,
     Host,
     Listen,
@@ -64,6 +66,9 @@ export class RuxDatetimePicker {
     @Prop({ attribute: 'max-year' }) maxYear: number = 2100
     @Prop({ attribute: 'julian-format' }) julianFormat: boolean = false
 
+    @Event({ eventName: 'ruxdatepickerchange' })
+    ruxDatetimePickerChange!: EventEmitter<string>
+
     @State() iso: string = ''
     @State() parts: Part[] = []
     // @State() previousValue: string = ''
@@ -85,9 +90,6 @@ export class RuxDatetimePicker {
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CustomEvent) {
         this.value = event.detail.iso
-
-        //? Need to decide wether or not to close the calendar on a date selection.
-        // this.toggleCalendar()
     }
 
     connectedCallback() {
@@ -97,6 +99,11 @@ export class RuxDatetimePicker {
 
     componentWillLoad() {
         this.handleInitialValue(this.value)
+    }
+
+    @Watch('iso')
+    handleIsoChange(prevValue: string, newValue: string) {
+        // console.log('heard iso change in datepicker: ', prevValue, newValue)
     }
 
     @Watch('precision')
@@ -315,20 +322,22 @@ export class RuxDatetimePicker {
             parsedIso = formatOrdinalToIso(parsedIso)
         }
         //set the inputtedDay, inputtedMonth, and inputtedYear to the current values
-
+        console.log(parsedIso, ': Parsed ISO')
         if (type === 'day') this.inputtedDay = target.value || ''
         if (type === 'month') this.inputtedMonth = target.value || ''
         if (type === 'year') this.inputtedYear = target.value || ''
 
         try {
-            if (parsedIso.length < 24) {
-                //? Throwing an error here creates console warnings
-                // throw new Error('Invalid date')
-                return
-            }
+            // if (parsedIso.length < 24) {
+            //? Throwing an error here creates console warnings
+            // throw new Error('Invalid date')
+            // return
+            // }
             const d = new Date(parsedIso)
             if (isNaN(d.getTime())) {
-                throw new Error('Invalid date')
+                //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
+                this.iso = parsedIso
+                return
             }
             /**
              * If d.toISOString() throws an error, will end up in catch block
@@ -447,13 +456,7 @@ export class RuxDatetimePicker {
                         onCopy={handleCopy}
                     >
                         {label && <label>{label}</label>}
-                        <input
-                            tabIndex={-1}
-                            readOnly
-                            name={name}
-                            disabled={disabled}
-                            class="hidden-input"
-                        ></input>
+
                         <div
                             class={{
                                 input: true,
@@ -564,9 +567,6 @@ export class RuxDatetimePicker {
                                     initMinutesValue={handleInitTime('min')}
                                     initSecondsValue={handleInitTime('sec')}
                                     initMillisecondsValue={handleInitTime('ms')}
-                                    incomingDay={this.inputtedDay}
-                                    incomingMonth={this.inputtedMonth}
-                                    incomingYear={this.inputtedYear}
                                 ></rux-calendar>
                             </rux-pop-up>
                         </div>
