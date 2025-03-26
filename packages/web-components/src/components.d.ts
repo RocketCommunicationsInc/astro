@@ -5,13 +5,17 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Precision } from "./components/rux-datetime-picker/utils/types";
 import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+import { DayInfo } from "./components/rux-calendar/rux-day/rux-day";
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
 import { Status as Status1 } from "./components";
 import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
+export { Precision } from "./components/rux-datetime-picker/utils/types";
 export { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
+export { DayInfo } from "./components/rux-calendar/rux-day/rux-day";
 export { LogRow } from "./components/rux-log/rux-log.model";
 export { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 export { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
@@ -85,6 +89,23 @@ export namespace Components {
           * The horizontal alignment of buttons within the group
          */
         "hAlign": 'left' | 'center' | 'right';
+    }
+    interface RuxCalendar {
+        "incomingDay": string;
+        "incomingMonth": string;
+        "incomingYear": string;
+        "initHoursValue": string;
+        "initMillisecondsValue": string;
+        "initMinutesValue": string;
+        "initSecondsValue": string;
+        "isJulian": boolean;
+        "iso": string;
+        "maxYear": number;
+        "minYear": number;
+        /**
+          * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
+         */
+        "precision": Precision;
     }
     interface RuxCard {
     }
@@ -247,6 +268,29 @@ export namespace Components {
           * Format options for year
          */
         "year"?: 'numeric' | '2-digit';
+    }
+    interface RuxDatetimePicker {
+        "disabled": boolean;
+        "errorText"?: string;
+        "helpText"?: string;
+        "invalid": boolean;
+        "julianFormat": boolean;
+        "label"?: string;
+        "maxYear": number;
+        "minYear": number;
+        "name"?: string;
+        "precision": Precision;
+        "required": boolean;
+        "size": 'small' | 'medium' | 'large';
+        "value"?: string;
+    }
+    interface RuxDay {
+        "dayNumber": string;
+        "isFutureDay": boolean;
+        "isPastDay": boolean;
+        "isPastFutureDay": boolean;
+        "isToday": boolean;
+        "selected": boolean;
     }
     interface RuxDialog {
         /**
@@ -20235,9 +20279,17 @@ export interface RuxAccordionItemCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxAccordionItemElement;
 }
+export interface RuxCalendarCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxCalendarElement;
+}
 export interface RuxCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxCheckboxElement;
+}
+export interface RuxDayCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxDayElement;
 }
 export interface RuxDialogCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -20368,6 +20420,12 @@ declare global {
         prototype: HTMLRuxButtonGroupElement;
         new (): HTMLRuxButtonGroupElement;
     };
+    interface HTMLRuxCalendarElement extends Components.RuxCalendar, HTMLStencilElement {
+    }
+    var HTMLRuxCalendarElement: {
+        prototype: HTMLRuxCalendarElement;
+        new (): HTMLRuxCalendarElement;
+    };
     interface HTMLRuxCardElement extends Components.RuxCard, HTMLStencilElement {
     }
     var HTMLRuxCardElement: {
@@ -20409,6 +20467,18 @@ declare global {
     var HTMLRuxDatetimeElement: {
         prototype: HTMLRuxDatetimeElement;
         new (): HTMLRuxDatetimeElement;
+    };
+    interface HTMLRuxDatetimePickerElement extends Components.RuxDatetimePicker, HTMLStencilElement {
+    }
+    var HTMLRuxDatetimePickerElement: {
+        prototype: HTMLRuxDatetimePickerElement;
+        new (): HTMLRuxDatetimePickerElement;
+    };
+    interface HTMLRuxDayElement extends Components.RuxDay, HTMLStencilElement {
+    }
+    var HTMLRuxDayElement: {
+        prototype: HTMLRuxDayElement;
+        new (): HTMLRuxDayElement;
     };
     interface HTMLRuxDialogElement extends Components.RuxDialog, HTMLStencilElement {
     }
@@ -34457,6 +34527,7 @@ declare global {
         "rux-breadcrumb-item": HTMLRuxBreadcrumbItemElement;
         "rux-button": HTMLRuxButtonElement;
         "rux-button-group": HTMLRuxButtonGroupElement;
+        "rux-calendar": HTMLRuxCalendarElement;
         "rux-card": HTMLRuxCardElement;
         "rux-checkbox": HTMLRuxCheckboxElement;
         "rux-checkbox-group": HTMLRuxCheckboxGroupElement;
@@ -34464,6 +34535,8 @@ declare global {
         "rux-clock": HTMLRuxClockElement;
         "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
+        "rux-datetime-picker": HTMLRuxDatetimePickerElement;
+        "rux-day": HTMLRuxDayElement;
         "rux-dialog": HTMLRuxDialogElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
@@ -35647,6 +35720,25 @@ declare namespace LocalJSX {
          */
         "hAlign"?: 'left' | 'center' | 'right';
     }
+    interface RuxCalendar {
+        "incomingDay"?: string;
+        "incomingMonth"?: string;
+        "incomingYear"?: string;
+        "initHoursValue"?: string;
+        "initMillisecondsValue"?: string;
+        "initMinutesValue"?: string;
+        "initSecondsValue"?: string;
+        "isJulian"?: boolean;
+        "iso"?: string;
+        "maxYear"?: number;
+        "minYear"?: number;
+        "onDatetimeupdated"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
+        "onRuxcalendardatetimeupdated"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
+        /**
+          * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
+         */
+        "precision"?: Precision;
+    }
     interface RuxCard {
     }
     interface RuxCheckbox {
@@ -35824,6 +35916,30 @@ declare namespace LocalJSX {
           * Format options for year
          */
         "year"?: 'numeric' | '2-digit';
+    }
+    interface RuxDatetimePicker {
+        "disabled"?: boolean;
+        "errorText"?: string;
+        "helpText"?: string;
+        "invalid"?: boolean;
+        "julianFormat"?: boolean;
+        "label"?: string;
+        "maxYear"?: number;
+        "minYear"?: number;
+        "name"?: string;
+        "precision"?: Precision;
+        "required"?: boolean;
+        "size"?: 'small' | 'medium' | 'large';
+        "value"?: string;
+    }
+    interface RuxDay {
+        "dayNumber"?: string;
+        "isFutureDay"?: boolean;
+        "isPastDay"?: boolean;
+        "isPastFutureDay"?: boolean;
+        "isToday"?: boolean;
+        "onRuxdayselected"?: (event: RuxDayCustomEvent<DayInfo>) => void;
+        "selected"?: boolean;
     }
     interface RuxDialog {
         /**
@@ -55901,6 +56017,7 @@ declare namespace LocalJSX {
         "rux-breadcrumb-item": RuxBreadcrumbItem;
         "rux-button": RuxButton;
         "rux-button-group": RuxButtonGroup;
+        "rux-calendar": RuxCalendar;
         "rux-card": RuxCard;
         "rux-checkbox": RuxCheckbox;
         "rux-checkbox-group": RuxCheckboxGroup;
@@ -55908,6 +56025,8 @@ declare namespace LocalJSX {
         "rux-clock": RuxClock;
         "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
+        "rux-datetime-picker": RuxDatetimePicker;
+        "rux-day": RuxDay;
         "rux-dialog": RuxDialog;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
@@ -57028,6 +57147,7 @@ declare module "@stencil/core" {
              * Instead, you should use `flex` or `grid` in combination with our spacing design tokens.
              */
             "rux-button-group": LocalJSX.RuxButtonGroup & JSXBase.HTMLAttributes<HTMLRuxButtonGroupElement>;
+            "rux-calendar": LocalJSX.RuxCalendar & JSXBase.HTMLAttributes<HTMLRuxCalendarElement>;
             "rux-card": LocalJSX.RuxCard & JSXBase.HTMLAttributes<HTMLRuxCardElement>;
             "rux-checkbox": LocalJSX.RuxCheckbox & JSXBase.HTMLAttributes<HTMLRuxCheckboxElement>;
             "rux-checkbox-group": LocalJSX.RuxCheckboxGroup & JSXBase.HTMLAttributes<HTMLRuxCheckboxGroupElement>;
@@ -57035,6 +57155,8 @@ declare module "@stencil/core" {
             "rux-clock": LocalJSX.RuxClock & JSXBase.HTMLAttributes<HTMLRuxClockElement>;
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
+            "rux-datetime-picker": LocalJSX.RuxDatetimePicker & JSXBase.HTMLAttributes<HTMLRuxDatetimePickerElement>;
+            "rux-day": LocalJSX.RuxDay & JSXBase.HTMLAttributes<HTMLRuxDayElement>;
             "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;
