@@ -75,16 +75,32 @@ export class RuxCalendar {
     @Watch('iso')
     handleIso(newISO: string) {
         if (!newISO) return
+
         let lastValidYear = this.year
-        const regex = /^(\d{0,4})?-?(\d{0,2})?-?(\d{0,2})?T?.*$/
+        const regex = /^(\d{0,4})?-?(\d{0,3})?-?(\d{0,2})?T?.*$/ // Updated regex to handle 3-digit day
         const matches = newISO.match(regex)
 
         if (matches) {
             let year = matches[1] ? matches[1] : ''
-            let month = matches[2]
-                ? matches[2]
-                : getMonthValueByName(this.month)
-            let day = matches[3] ? parseInt(matches[3], 10) : this.day
+            let month: string | undefined
+            let day: number | string | undefined
+
+            // Check if the day is a 3-digit Julian day
+            if (matches[2] && matches[2].length === 3) {
+                const julianDay = parseInt(matches[2], 10)
+                const date = new Date(
+                    Date.UTC(parseInt(year || lastValidYear), 0, julianDay)
+                ) // Convert Julian day to Gregorian date
+                month = (date.getUTCMonth() + 1).toString().padStart(2, '0') // Get zero-padded month
+                day = date.getUTCDate() // Get day of the month
+            } else {
+                month = matches[2]
+                    ? matches[2]
+                    : getMonthValueByName(this.month)
+                day = matches[3] ? parseInt(matches[3], 10) : this.day
+            }
+
+            console.log('month in handleISO matches: ', month)
 
             // Ensure year is exactly 4 digits long
             if (year.length === 4) {
@@ -93,6 +109,7 @@ export class RuxCalendar {
             } else {
                 this.year = lastValidYear // Keep last known valid year
             }
+
             this.month = getMonthNameByNumber(month!.toString())!
             this.day = day.toString().padStart(2, '0')
             this.setSelectedDay(this.day)
@@ -246,10 +263,12 @@ export class RuxCalendar {
             console.warn('Invalid date in CC:', date)
             return
         }
+        console.log('iso before setting year, month and day in CC: ', this.iso)
         this.year = date.getUTCFullYear().toString()
         this.month = getMonthNameByNumber(
             (date.getUTCMonth() + 1).toString().padStart(2, '0')
         )!
+        console.log('setting month to: ', this.month)
         this.day = date.getUTCDate().toString().padStart(2, '0')
         // this.initHoursValue = date.getUTCHours().toString()
         // this.initMinutesValue = date.getUTCMinutes().toString()
@@ -648,7 +667,11 @@ export class RuxCalendar {
                             <rux-day
                                 dayNumber={day.day}
                                 isPastFutureDay={!day.currentMonth}
-                                isToday={day.isToday}
+                                isToday={
+                                    day.isToday &&
+                                    !day.pastDay &&
+                                    !day.futureDay
+                                }
                                 isPastDay={day.pastDay}
                                 isFutureDay={day.futureDay}
                                 selected={this.determineSelected(

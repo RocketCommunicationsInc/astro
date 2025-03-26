@@ -328,15 +328,14 @@ export class RuxDatetimePicker {
         if (type === 'year') this.inputtedYear = target.value || ''
 
         try {
-            // if (parsedIso.length < 24) {
-            //? Throwing an error here creates console warnings
-            // throw new Error('Invalid date')
-            // return
-            // }
             const d = new Date(parsedIso)
             if (isNaN(d.getTime())) {
                 //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
                 this.iso = parsedIso
+                console.log(
+                    'parsedISO is not a valid date - should do calcs on cal: ',
+                    this.iso
+                )
                 return
             }
             /**
@@ -563,6 +562,7 @@ export class RuxDatetimePicker {
                                     minYear={minYear}
                                     maxYear={maxYear}
                                     precision={precision}
+                                    isJulian={this.julianFormat}
                                     initHoursValue={handleInitTime('hour')}
                                     initMinutesValue={handleInitTime('min')}
                                     initSecondsValue={handleInitTime('sec')}
