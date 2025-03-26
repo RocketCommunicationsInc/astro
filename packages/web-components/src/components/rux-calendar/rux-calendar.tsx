@@ -12,11 +12,9 @@ import {
     h,
 } from '@stencil/core'
 import {
-    containsAllNumbers,
     getMonthNameByNumber,
     getMonthValueByName,
     months,
-    ordinalDayToDate,
     removeLeadingZero,
 } from '../rux-datetime-picker/utils'
 
@@ -75,7 +73,16 @@ export class RuxCalendar {
     @Watch('iso')
     handleIso(newISO: string) {
         if (!newISO) return
-
+        // console.log('incoming ISO: ', this.iso)
+        if (
+            !this.hourInput ||
+            !this.minuteInput ||
+            !this.secondsInput ||
+            !this.millisecondInput
+        ) {
+            console.warn('Inputs are not yet defined. Skipping time update.')
+            return
+        }
         let lastValidYear = this.year
         const regex = /^(\d{0,4})?-?(\d{0,3})?-?(\d{0,2})?T?.*$/ // Updated regex to handle 3-digit day
         const matches = newISO.match(regex)
@@ -99,8 +106,48 @@ export class RuxCalendar {
                     : getMonthValueByName(this.month)
                 day = matches[3] ? parseInt(matches[3], 10) : this.day
             }
+            //set initHours, initMinutes, initSeconds and initMiliseconds if they are in the ISO
+            // const timeMatches = newISO.match(/T(\d{2}):(\d{2}):(\d{2})(\.\d+)?/)
+            const timeMatches = newISO.match(
+                /T(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?(?:\.(\d+))?/
+            )
 
-            console.log('month in handleISO matches: ', month)
+            if (timeMatches) {
+                // console.log('Time matches:', timeMatches)
+
+                // Update hours input
+                if (timeMatches[1]) {
+                    this.hourInput.value = timeMatches[1].padStart(2, '0')
+                    console.log(
+                        'Should update this.hourInput.value to be: ',
+                        timeMatches[1].padStart(2, '0'),
+                        'which is type of: ',
+                        typeof timeMatches[1]
+                    )
+                    console.log(
+                        'the hour inptu of: ',
+                        this.hourInput,
+                        ' has had its value updated to: ',
+                        this.hourInput.value
+                    )
+                }
+
+                // Update minutes input
+                if (timeMatches[2]) {
+                    this.minuteInput.value = timeMatches[2].padStart(2, '0')
+                }
+
+                // Update seconds input
+                if (timeMatches[3]) {
+                    this.secondsInput.value = timeMatches[3].padStart(2, '0')
+                    console.log('secondsInput should be: ', timeMatches[3])
+                }
+
+                // Update milliseconds input
+                if (timeMatches[4]) {
+                    this.millisecondInput.value = timeMatches[4]
+                }
+            }
 
             // Ensure year is exactly 4 digits long
             if (year.length === 4) {
@@ -242,7 +289,7 @@ export class RuxCalendar {
     }
 
     connectedCallback() {
-        console.log('ISO in CC: ', this.iso)
+        // console.log('ISO in CC: ', this.iso)
         this.handleForwardMonth = this.handleForwardMonth.bind(this)
         this.handleBackwardMonth = this.handleBackwardMonth.bind(this)
         this.handleTimeIncrementDecrement = this.handleTimeIncrementDecrement.bind(
@@ -251,8 +298,7 @@ export class RuxCalendar {
         this.handleTimeChange = this.handleTimeChange.bind(this)
         //If ISO isn't passed down from datepicker, then datepicker is rendered in a default state so there is no ISO. We set one here to
         //render the current date in the calendar.
-        //! There should only be 2 scenarios here: a datepicker with no given (placeholder) value, and a datepicker with a valid placeholder value.
-        //TODO:  Need to write logic on datepicker to only allow valid ISO strings or none at all.
+        //* There should only be 2 scenarios here: a datepicker with no given (placeholder) value, and a datepicker with a valid placeholder value.
         if (!this.iso) {
             this.iso = new Date().toISOString()
         }
@@ -263,25 +309,18 @@ export class RuxCalendar {
             console.warn('Invalid date in CC:', date)
             return
         }
-        console.log('iso before setting year, month and day in CC: ', this.iso)
+        // console.log('iso before setting year, month and day in CC: ', this.iso)
         this.year = date.getUTCFullYear().toString()
         this.month = getMonthNameByNumber(
             (date.getUTCMonth() + 1).toString().padStart(2, '0')
         )!
-        console.log('setting month to: ', this.month)
+        // console.log('setting month to: ', this.month)
         this.day = date.getUTCDate().toString().padStart(2, '0')
-        // this.initHoursValue = date.getUTCHours().toString()
-        // this.initMinutesValue = date.getUTCMinutes().toString()
-        // this.initSecondsValue = date.getUTCSeconds().toString()
-        // this.initMillisecondsValue = date.getUTCMilliseconds().toString()
-        console.log(
-            'year: ',
-            this.year,
-            ' month: ',
-            this.month,
-            ' day: ',
-            this.day
-        )
+        //this sets the timepicker inputs to the default ISO values
+        this.initHoursValue = date.getUTCHours().toString()
+        this.initMinutesValue = date.getUTCMinutes().toString()
+        this.initSecondsValue = date.getUTCSeconds().toString()
+        this.initMillisecondsValue = date.getUTCMilliseconds().toString()
         //assign the current date in UTC time
         this.currentDay = new Date().toISOString()
         this.setDates()
@@ -306,6 +345,13 @@ export class RuxCalendar {
     }
     componentWillUpdate() {
         this.updateTimepickerWidth()
+        console.log('CWU initSecondsInput: ', this.initSecondsValue)
+        console.log('CWU initMin: ', this.initMinutesValue)
+        this.initHoursValue = this.initHoursValue.padStart(2, '0')
+        this.initMinutesValue = this.initMinutesValue.padStart(2, '0')
+        this.initSecondsValue = this.initSecondsValue.padStart(2, '0')
+        //3 for MS, but will change in future
+        this.initMillisecondsValue = this.initMillisecondsValue.padStart(3, '0')
     }
     componentWillLoad() {
         this.updateTimepickerWidth()
@@ -351,30 +397,7 @@ export class RuxCalendar {
             })
         }
     }
-
-    // private getTimesFromIso() {
-    //     const date = new Date(this.iso)
-    //     if (date.getUTCHours())
-    //         this.initHoursValue = date.getUTCHours().toString()
-    //     if (date.getUTCMinutes())
-    //         this.initMinutesValue = date.getUTCMinutes().toString()
-    //     if (date.getUTCSeconds())
-    //         this.initSecondsValue = date.getUTCSeconds().toString()
-    //     if (date.getUTCMilliseconds())
-    //         this.initMillisecondsValue = date.getUTCMilliseconds().toString()
-    // }
-
     setDates() {
-        // const date = new Date(this.iso)
-        //make a new date from this.year, this.month and this.day
-        console.log(
-            'gonna make new date from year ',
-            this.year,
-            ' month: ',
-            parseInt(getMonthValueByName(this.month)!) - 1,
-            ' day: ',
-            this.day
-        )
         const date = new Date(
             Date.UTC(
                 parseInt(this.year),

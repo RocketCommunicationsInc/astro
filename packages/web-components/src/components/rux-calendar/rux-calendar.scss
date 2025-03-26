@@ -7,7 +7,14 @@
     /* height: 444px; */
     background: var(--color-background-surface-default);
     font-family: var(--font-body-2-font-family);
+    cursor: default;
     /* Hide the spinners in Chrome, Safari, Edge, and Opera */
+    span {
+        cursor: default;
+    }
+    rux-select::part(select) {
+        cursor: pointer;
+    }
 }
 
 .rux-calendar-header {
@@ -46,7 +53,10 @@
     div {
         display: flex;
         align-items: center;
-        gap: var(--spacing-4);
+        // gap: var(--spacing-4);
+    }
+    span {
+        user-select: none;
     }
     .input {
         display: flex;
@@ -73,7 +83,6 @@
         .part {
             all: unset;
             font-family: monospace;
-            z-index: 1;
             caret-color: var(--color-text-primary);
         }
         input[type='number']::-webkit-inner-spin-button,
@@ -93,6 +102,8 @@
             align-items: center;
             cursor: pointer;
             color: var(--color-text-primary);
+            position: absolute;
+            right: 0;
             gap: 0;
             rux-icon:hover {
                 color: var(--color-background-interactive-hover);
@@ -109,10 +120,13 @@
         width: var(--timepicker-width);
         height: 100%;
         display: flex;
-        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
         input.part {
             width: 100%;
         }
+        cursor: pointer;
     }
     .timepicker-ms {
         input.part {

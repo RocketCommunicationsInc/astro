@@ -327,3 +327,25 @@ export const removeLeadingZero = (value: string) => {
 export const containsAllNumbers = (substring: string) => {
     return substring.split('').every((char) => /\d/.test(char))
 }
+
+export const createSyntheticEvent = (
+    inputElement: HTMLInputElement,
+    value: string
+): Event => {
+    // Create a new Event
+    const syntheticEvent = new Event('input', {
+        bubbles: true,
+        cancelable: true,
+    })
+
+    // Set the value of the input element
+    inputElement.value = value
+
+    // Mock the `target` property to point to the input element
+    Object.defineProperty(syntheticEvent, 'target', {
+        value: inputElement,
+        writable: false,
+    })
+
+    return syntheticEvent
+}

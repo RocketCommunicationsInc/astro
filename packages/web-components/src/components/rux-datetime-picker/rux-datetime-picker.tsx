@@ -284,7 +284,9 @@ export class RuxDatetimePicker {
 
     handleChange(event: InputEvent, type: PartKey, inputRefs: InputRefs) {
         const target = event.target as HTMLInputElement
+        console.log(target, ' target from handleChange in DP')
         let value = target.value
+        console.log(value, ' value from handleChange in DP')
         const isValid = /^(\s*|\d+)$/.test(value)
         if (!isValid) {
             target.value = this.previousValue // Set the input value back to the previous valid value
@@ -292,14 +294,16 @@ export class RuxDatetimePicker {
             return
         }
         value = this.validateInput(value, type, inputRefs)
-
+        console.log('value after validate Input: ', value)
         const sanitized = value.replace(/ /g, '')
+        console.log('sanitized: ', sanitized)
         const updatedParts = setPart[type](
             sanitized,
             this.parts,
             inputRefs,
             this.julianFormat
         )
+        console.log('updatedParts: ', updatedParts)
         this.parts = updatedParts
         this.previousValue = value // Update the previous valid value
         const hasNoValue = updatedParts.every(({ type, value }) => {
@@ -326,7 +330,7 @@ export class RuxDatetimePicker {
         if (type === 'day') this.inputtedDay = target.value || ''
         if (type === 'month') this.inputtedMonth = target.value || ''
         if (type === 'year') this.inputtedYear = target.value || ''
-
+        console.log('value at the end: ', value)
         try {
             const d = new Date(parsedIso)
             if (isNaN(d.getTime())) {
@@ -401,25 +405,30 @@ export class RuxDatetimePicker {
     handleInitTime = (timeType: 'hour' | 'min' | 'sec' | 'ms') => {
         //based on the timeType, return the value of the timeType from the iso string
         if (!this.iso) return ''
-        const time = new Date(this.iso).getUTCHours().toString()
+        const date = new Date(this.iso)
+        //if date is not valid, return
+        if (isNaN(date.getTime())) {
+            console.log('date is not valid in handleInitTime')
+            return ''
+        }
+        const time = date.getUTCHours().toString()
         switch (timeType) {
             case 'hour':
-                return new Date(this.iso).getUTCHours().toString() === '0'
+                return date.getUTCHours().toString() === '00'
                     ? ''
-                    : new Date(this.iso).getUTCHours().toString()
+                    : date.getUTCHours().toString().padStart(2, '0')
             case 'min':
-                return new Date(this.iso).getUTCMinutes().toString() === '0'
+                return date.getUTCMinutes().toString() === '00'
                     ? ''
-                    : new Date(this.iso).getUTCMinutes().toString()
+                    : date.getUTCMinutes().toString().padStart(2, '0')
             case 'sec':
-                return new Date(this.iso).getUTCSeconds().toString() === '0'
+                return date.getUTCSeconds().toString() === '00'
                     ? ''
-                    : new Date(this.iso).getUTCSeconds().toString()
+                    : date.getUTCSeconds().toString().padStart(2, '0')
             case 'ms':
-                return new Date(this.iso).getUTCMilliseconds().toString() ===
-                    '0'
+                return date.getUTCMilliseconds().toString() === '000'
                     ? ''
-                    : new Date(this.iso).getUTCMilliseconds().toString()
+                    : date.getUTCMilliseconds().toString().padStart(2, '0')
             default:
                 return time
         }
@@ -429,7 +438,6 @@ export class RuxDatetimePicker {
         const {
             disabled,
             label,
-            name,
             size,
             refs,
             handleChange,
@@ -562,7 +570,6 @@ export class RuxDatetimePicker {
                                     minYear={minYear}
                                     maxYear={maxYear}
                                     precision={precision}
-                                    isJulian={this.julianFormat}
                                     initHoursValue={handleInitTime('hour')}
                                     initMinutesValue={handleInitTime('min')}
                                     initSecondsValue={handleInitTime('sec')}
