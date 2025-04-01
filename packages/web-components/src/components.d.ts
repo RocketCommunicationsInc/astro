@@ -91,9 +91,6 @@ export namespace Components {
         "hAlign": 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
-        "incomingDay": string;
-        "incomingMonth": string;
-        "incomingYear": string;
         "initHoursValue": string;
         "initMillisecondsValue": string;
         "initMinutesValue": string;
@@ -20287,6 +20284,10 @@ export interface RuxCheckboxCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxCheckboxElement;
 }
+export interface RuxDatetimePickerCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxDatetimePickerElement;
+}
 export interface RuxDayCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxDayElement;
@@ -35721,9 +35722,6 @@ declare namespace LocalJSX {
         "hAlign"?: 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
-        "incomingDay"?: string;
-        "incomingMonth"?: string;
-        "incomingYear"?: string;
         "initHoursValue"?: string;
         "initMillisecondsValue"?: string;
         "initMinutesValue"?: string;
@@ -35927,6 +35925,7 @@ declare namespace LocalJSX {
         "maxYear"?: number;
         "minYear"?: number;
         "name"?: string;
+        "onRuxdatepickerchange"?: (event: RuxDatetimePickerCustomEvent<string>) => void;
         "precision"?: Precision;
         "required"?: boolean;
         "size"?: 'small' | 'medium' | 'large';

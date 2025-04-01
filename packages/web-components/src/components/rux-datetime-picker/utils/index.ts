@@ -301,7 +301,7 @@ export const formatOrdinalToIso = (ordinalISO: string) => {
 export const ordinalDayToDate = (ordinalDay: string, year: string) => {
     const dayOfYear = parseInt(ordinalDay)
     const yearInt = parseInt(year)
-
+    console.log('using these for conversion: ', dayOfYear, yearInt)
     // Create a date object for the start of the year
     const startOfYear = new Date(Date.UTC(yearInt, 0, 0))
 
@@ -317,35 +317,43 @@ export const ordinalDayToDate = (ordinalDay: string, year: string) => {
     return `${year}-${month}-${day}`
 }
 
-export const removeLeadingZero = (value: string) => {
-    if (value.length > 1 && value.startsWith('0')) {
-        return value.substring(1)
+export const julianToGregorianDay = (julianDay: string, year: string) => {
+    // Parse the Julian day and year as integers
+    const dayOfYear = parseInt(julianDay, 10)
+    const yearInt = parseInt(year, 10)
+
+    // Create a Date object starting from January 1st of the given year
+    const date = new Date(Date.UTC(yearInt, 0, dayOfYear))
+
+    // Extract the Gregorian day
+    const gregorianDay = date.getUTCDate().toString()
+
+    return gregorianDay
+}
+
+export const removeLeadingZero = (value: string): string => {
+    // Use a regular expression to remove only the first leading zero
+    return value.replace(/^0+/, '')
+}
+
+export const getDayOfYearFromIso = (isoString: string): string => {
+    // Parse the ISO string into a Date object
+    const date = new Date(isoString)
+
+    // Ensure the date is valid
+    if (isNaN(date.getTime())) {
+        throw new Error('Invalid ISO string')
     }
-    return value
-}
 
-export const containsAllNumbers = (substring: string) => {
-    return substring.split('').every((char) => /\d/.test(char))
-}
+    // Get the start of the year for the given date
+    const startOfYear = new Date(Date.UTC(date.getUTCFullYear(), 0, 1))
 
-export const createSyntheticEvent = (
-    inputElement: HTMLInputElement,
-    value: string
-): Event => {
-    // Create a new Event
-    const syntheticEvent = new Event('input', {
-        bubbles: true,
-        cancelable: true,
-    })
+    // Calculate the difference in milliseconds between the date and the start of the year
+    const diffInMs = date.getTime() - startOfYear.getTime()
 
-    // Set the value of the input element
-    inputElement.value = value
+    // Convert the difference to days and add 1 (since Jan 1 is day 1)
+    const dayOfYear = Math.floor(diffInMs / (24 * 60 * 60 * 1000)) + 1
 
-    // Mock the `target` property to point to the input element
-    Object.defineProperty(syntheticEvent, 'target', {
-        value: inputElement,
-        writable: false,
-    })
-
-    return syntheticEvent
+    // Return the day of the year as a zero-padded string
+    return dayOfYear.toString().padStart(3, '0')
 }

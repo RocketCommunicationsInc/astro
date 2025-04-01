@@ -284,9 +284,7 @@ export class RuxDatetimePicker {
 
     handleChange(event: InputEvent, type: PartKey, inputRefs: InputRefs) {
         const target = event.target as HTMLInputElement
-        console.log(target, ' target from handleChange in DP')
         let value = target.value
-        console.log(value, ' value from handleChange in DP')
         const isValid = /^(\s*|\d+)$/.test(value)
         if (!isValid) {
             target.value = this.previousValue // Set the input value back to the previous valid value
@@ -294,16 +292,13 @@ export class RuxDatetimePicker {
             return
         }
         value = this.validateInput(value, type, inputRefs)
-        console.log('value after validate Input: ', value)
         const sanitized = value.replace(/ /g, '')
-        console.log('sanitized: ', sanitized)
         const updatedParts = setPart[type](
             sanitized,
             this.parts,
             inputRefs,
             this.julianFormat
         )
-        console.log('updatedParts: ', updatedParts)
         this.parts = updatedParts
         this.previousValue = value // Update the previous valid value
         const hasNoValue = updatedParts.every(({ type, value }) => {
@@ -313,6 +308,9 @@ export class RuxDatetimePicker {
         if (hasNoValue) {
             this.iso = ''
             return
+        }
+        if (type === 'hour') {
+            console.log('heard hour input change in datepicker: ', value)
         }
         const [date, time, z] = updatedParts
             .map((part) => part.value)
@@ -326,20 +324,15 @@ export class RuxDatetimePicker {
             parsedIso = formatOrdinalToIso(parsedIso)
         }
         //set the inputtedDay, inputtedMonth, and inputtedYear to the current values
-        console.log(parsedIso, ': Parsed ISO')
-        if (type === 'day') this.inputtedDay = target.value || ''
-        if (type === 'month') this.inputtedMonth = target.value || ''
-        if (type === 'year') this.inputtedYear = target.value || ''
-        console.log('value at the end: ', value)
+        // if (type === 'day') this.inputtedDay = target.value || ''
+        // if (type === 'month') this.inputtedMonth = target.value || ''
+        // if (type === 'year') this.inputtedYear = target.value || ''
         try {
             const d = new Date(parsedIso)
             if (isNaN(d.getTime())) {
                 //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
                 this.iso = parsedIso
-                console.log(
-                    'parsedISO is not a valid date - should do calcs on cal: ',
-                    this.iso
-                )
+
                 return
             }
             /**
@@ -402,37 +395,11 @@ export class RuxDatetimePicker {
         //TODO: figure out if we need to preserve the iso as a JulianISO if in julian mode.
     }
 
-    handleInitTime = (timeType: 'hour' | 'min' | 'sec' | 'ms') => {
-        //based on the timeType, return the value of the timeType from the iso string
-        if (!this.iso) return ''
-        const date = new Date(this.iso)
-        //if date is not valid, return
-        if (isNaN(date.getTime())) {
-            console.log('date is not valid in handleInitTime')
-            return ''
-        }
-        const time = date.getUTCHours().toString()
-        switch (timeType) {
-            case 'hour':
-                return date.getUTCHours().toString() === '00'
-                    ? ''
-                    : date.getUTCHours().toString().padStart(2, '0')
-            case 'min':
-                return date.getUTCMinutes().toString() === '00'
-                    ? ''
-                    : date.getUTCMinutes().toString().padStart(2, '0')
-            case 'sec':
-                return date.getUTCSeconds().toString() === '00'
-                    ? ''
-                    : date.getUTCSeconds().toString().padStart(2, '0')
-            case 'ms':
-                return date.getUTCMilliseconds().toString() === '000'
-                    ? ''
-                    : date.getUTCMilliseconds().toString().padStart(2, '0')
-            default:
-                return time
-        }
-    }
+    // handleInitTime = (timeType: 'hour' | 'min' | 'sec' | 'ms') => {
+    //     //based on the timeType, return the value of the timeType from the iso string
+    //     // console.log('handleInitTime iso: ', this.iso)
+    //     return '00'
+    // }
 
     render() {
         const {
@@ -448,7 +415,7 @@ export class RuxDatetimePicker {
             determineMinMax,
             handleCopy,
             handlePaste,
-            handleInitTime,
+            // handleInitTime,
             iso,
             minYear,
             maxYear,
@@ -570,10 +537,11 @@ export class RuxDatetimePicker {
                                     minYear={minYear}
                                     maxYear={maxYear}
                                     precision={precision}
-                                    initHoursValue={handleInitTime('hour')}
-                                    initMinutesValue={handleInitTime('min')}
-                                    initSecondsValue={handleInitTime('sec')}
-                                    initMillisecondsValue={handleInitTime('ms')}
+                                    initHoursValue={'00'}
+                                    initMinutesValue={'00'}
+                                    initSecondsValue={'00'}
+                                    initMillisecondsValue={'000'}
+                                    isJulian={this.julianFormat}
                                 ></rux-calendar>
                             </rux-pop-up>
                         </div>

@@ -12,8 +12,10 @@ import {
     h,
 } from '@stencil/core'
 import {
+    getDayOfYearFromIso,
     getMonthNameByNumber,
     getMonthValueByName,
+    julianToGregorianDay,
     months,
     removeLeadingZero,
 } from '../rux-datetime-picker/utils'
@@ -73,18 +75,9 @@ export class RuxCalendar {
     @Watch('iso')
     handleIso(newISO: string) {
         if (!newISO) return
-        // console.log('incoming ISO: ', this.iso)
-        if (
-            !this.hourInput ||
-            !this.minuteInput ||
-            !this.secondsInput ||
-            !this.millisecondInput
-        ) {
-            console.warn('Inputs are not yet defined. Skipping time update.')
-            return
-        }
+        console.log('incoming ISO: ', this.iso)
         let lastValidYear = this.year
-        const regex = /^(\d{0,4})?-?(\d{0,3})?-?(\d{0,2})?T?.*$/ // Updated regex to handle 3-digit day
+        const regex = /^(\d{0,4})?-?(\d{0,3})?-?(\d{0,2})?T?.*$/
         const matches = newISO.match(regex)
 
         if (matches) {
@@ -106,48 +99,6 @@ export class RuxCalendar {
                     : getMonthValueByName(this.month)
                 day = matches[3] ? parseInt(matches[3], 10) : this.day
             }
-            //set initHours, initMinutes, initSeconds and initMiliseconds if they are in the ISO
-            // const timeMatches = newISO.match(/T(\d{2}):(\d{2}):(\d{2})(\.\d+)?/)
-            const timeMatches = newISO.match(
-                /T(\d{1,2})?:?(\d{1,2})?:?(\d{1,2})?(?:\.(\d+))?/
-            )
-
-            if (timeMatches) {
-                // console.log('Time matches:', timeMatches)
-
-                // Update hours input
-                if (timeMatches[1]) {
-                    this.hourInput.value = timeMatches[1].padStart(2, '0')
-                    console.log(
-                        'Should update this.hourInput.value to be: ',
-                        timeMatches[1].padStart(2, '0'),
-                        'which is type of: ',
-                        typeof timeMatches[1]
-                    )
-                    console.log(
-                        'the hour inptu of: ',
-                        this.hourInput,
-                        ' has had its value updated to: ',
-                        this.hourInput.value
-                    )
-                }
-
-                // Update minutes input
-                if (timeMatches[2]) {
-                    this.minuteInput.value = timeMatches[2].padStart(2, '0')
-                }
-
-                // Update seconds input
-                if (timeMatches[3]) {
-                    this.secondsInput.value = timeMatches[3].padStart(2, '0')
-                    console.log('secondsInput should be: ', timeMatches[3])
-                }
-
-                // Update milliseconds input
-                if (timeMatches[4]) {
-                    this.millisecondInput.value = timeMatches[4]
-                }
-            }
 
             // Ensure year is exactly 4 digits long
             if (year.length === 4) {
@@ -159,7 +110,26 @@ export class RuxCalendar {
 
             this.month = getMonthNameByNumber(month!.toString())!
             this.day = day.toString().padStart(2, '0')
-            this.setSelectedDay(this.day)
+        }
+        const hourRegex = /T(\d{2})/
+        const minuteRegex = /:(\d{2})/
+        const secondRegex = /:(\d{2})\.\d{3}/
+        const milisecondRegex = /\.(\d{3})/
+        const hourMatch = newISO.match(hourRegex)
+        const minuteMatch = newISO.match(minuteRegex)
+        const secondMatch = newISO.match(secondRegex)
+        const milisecondMatch = newISO.match(milisecondRegex)
+        if (hourMatch) {
+            this.initHoursValue = hourMatch[1]
+        }
+        if (minuteMatch) {
+            this.initMinutesValue = minuteMatch[1]
+        }
+        if (secondMatch) {
+            this.initSecondsValue = secondMatch[1]
+        }
+        if (milisecondMatch) {
+            this.initMillisecondsValue = milisecondMatch[1]
         }
         this.setDates()
     }
@@ -201,11 +171,18 @@ export class RuxCalendar {
                 )!
             }
         }
-
-        const iso = this.compileIso(
-            undefined,
-            Number(this.selectedDay.dayNumber)
-        )
+        let iso
+        if (!this.isJulian) {
+            iso = this.compileIso(undefined, Number(this.selectedDay.dayNumber))
+        } else {
+            //selected day in this case will be a 3 digit Julian date. Need to convert that back to a regular date.
+            iso = this.compileIso(
+                undefined,
+                parseInt(
+                    julianToGregorianDay(this.selectedDay.dayNumber, this.year)
+                )
+            )
+        }
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
     }
 
@@ -260,26 +237,31 @@ export class RuxCalendar {
 
     private async setSelectedDay(dayNumber?: string) {
         if (!this.ruxDays) {
+            console.warn('No rux days found in setSelectedDay call.')
             return
         }
         //wait for new ruxDays to be rendered
         await this.getRuxDays()
         if (dayNumber) {
+            //If in gregorian mode, the day number has no leading 0's. Need to remove those in order to match.
+            if (!this.isJulian) {
+                dayNumber = removeLeadingZero(dayNumber)
+            }
+
             this.ruxDays.forEach((day) => {
                 if (
-                    day.dayNumber === removeLeadingZero(dayNumber) &&
+                    day.dayNumber === dayNumber &&
                     !day.isFutureDay &&
                     !day.isPastDay
                 ) {
-                    day.selected = true
                     this.selectedDay = {
                         dayNumber: day.dayNumber,
                         isPastDay: day.isPastDay,
                         isFutureDay: day.isFutureDay,
                         element: day,
-                        selected: day.selected,
+                        selected: true,
                     }
-
+                    day.selected = true
                     return
                 } else {
                     day.selected = false
@@ -289,7 +271,6 @@ export class RuxCalendar {
     }
 
     connectedCallback() {
-        // console.log('ISO in CC: ', this.iso)
         this.handleForwardMonth = this.handleForwardMonth.bind(this)
         this.handleBackwardMonth = this.handleBackwardMonth.bind(this)
         this.handleTimeIncrementDecrement = this.handleTimeIncrementDecrement.bind(
@@ -309,18 +290,18 @@ export class RuxCalendar {
             console.warn('Invalid date in CC:', date)
             return
         }
-        // console.log('iso before setting year, month and day in CC: ', this.iso)
         this.year = date.getUTCFullYear().toString()
         this.month = getMonthNameByNumber(
             (date.getUTCMonth() + 1).toString().padStart(2, '0')
         )!
-        // console.log('setting month to: ', this.month)
         this.day = date.getUTCDate().toString().padStart(2, '0')
+        if (this.isJulian) this.day = getDayOfYearFromIso(this.iso)
+
         //this sets the timepicker inputs to the default ISO values
-        this.initHoursValue = date.getUTCHours().toString()
-        this.initMinutesValue = date.getUTCMinutes().toString()
-        this.initSecondsValue = date.getUTCSeconds().toString()
-        this.initMillisecondsValue = date.getUTCMilliseconds().toString()
+        this.initHoursValue = '00'
+        this.initMinutesValue = '00'
+        this.initSecondsValue = '00'
+        this.initMillisecondsValue = '000'
         //assign the current date in UTC time
         this.currentDay = new Date().toISOString()
         this.setDates()
@@ -345,8 +326,6 @@ export class RuxCalendar {
     }
     componentWillUpdate() {
         this.updateTimepickerWidth()
-        console.log('CWU initSecondsInput: ', this.initSecondsValue)
-        console.log('CWU initMin: ', this.initMinutesValue)
         this.initHoursValue = this.initHoursValue.padStart(2, '0')
         this.initMinutesValue = this.initMinutesValue.padStart(2, '0')
         this.initSecondsValue = this.initSecondsValue.padStart(2, '0')
@@ -395,6 +374,11 @@ export class RuxCalendar {
                     }
                 })
             })
+        }
+    }
+    componentDidLoad() {
+        if (this.day && !this.selectedDay) {
+            this.setSelectedDay(this.day)
         }
     }
     setDates() {
@@ -484,13 +468,53 @@ export class RuxCalendar {
 
         // Combine all days to display
         this.days = [...prevMonthDays, ...currentMonthDays, ...nextMonthDays]
+        if (this.isJulian) {
+            //convert all days in this.days to be the day-of-the-year number, rather than just 1-31
+            this.days = this.days.map((day) => {
+                if (day.currentMonth) {
+                    const date = new Date(
+                        Date.UTC(year, month, parseInt(day.day))
+                    ).toISOString()
 
-        this.month = date.toLocaleString('default', {
-            month: 'long',
-            timeZone: 'UTC',
-        })
+                    const jday = getDayOfYearFromIso(date)
+                    return {
+                        ...day,
+                        day: jday,
+                    }
+                }
+                if (day.futureDay) {
+                    const date = new Date(
+                        Date.UTC(year, month + 1, parseInt(day.day))
+                    ).toISOString()
+                    const jday = getDayOfYearFromIso(date)
+
+                    return {
+                        ...day,
+                        day: jday,
+                    }
+                }
+                if (day.pastDay) {
+                    const date = new Date(
+                        Date.UTC(year, month - 1, parseInt(day.day))
+                    ).toISOString()
+                    const jday = getDayOfYearFromIso(date)
+
+                    return {
+                        ...day,
+                        day: jday,
+                    }
+                }
+                return {
+                    ...day,
+                    day: day.day.toString().padStart(3, '0'),
+                }
+            })
+        }
+
         this.year = year.toString()
-
+        if (this.day && !this.selectedDay) {
+            this.setSelectedDay(this.day)
+        }
         this.setYears()
     }
 
@@ -510,9 +534,9 @@ export class RuxCalendar {
         const date = new Date(this.iso)
         date.setUTCMonth(date.getUTCMonth() - 1)
         //if the month is January, then the year should be decremented
-        if (date.getUTCMonth() === 0) {
-            date.setUTCFullYear(date.getUTCFullYear() - 1)
-        }
+        // if (date.getUTCMonth() === 0) {
+        //     date.setUTCFullYear(date.getUTCFullYear() - 1)
+        // }
 
         this.iso = date.toISOString()
     }
