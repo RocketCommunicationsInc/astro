@@ -75,7 +75,6 @@ export class RuxCalendar {
     @Watch('iso')
     handleIso(newISO: string) {
         if (!newISO) return
-        console.log('incoming ISO: ', this.iso)
         let lastValidYear = this.year
         const regex = /^(\d{0,4})?-?(\d{0,3})?-?(\d{0,2})?T?.*$/
         const matches = newISO.match(regex)
@@ -120,7 +119,6 @@ export class RuxCalendar {
         const secondMatch = newISO.match(secondRegex)
         const milisecondMatch = newISO.match(milisecondRegex)
         if (hourMatch) {
-            console.log('hour match found: ', hourMatch[1])
             this.initHoursValue = hourMatch[1]
         }
         if (minuteMatch) {
@@ -603,10 +601,6 @@ export class RuxCalendar {
         //when the time changes, I need to emit an event that compiles the ISO according to the selected day and
         // time inputs values
 
-        console.log(
-            'will run compile iso with day of: ',
-            this.selectedDay!.dayNumber
-        )
         const iso = this.compileIso(
             undefined,
             parseInt(this.selectedDay!.dayNumber!)
@@ -628,7 +622,6 @@ export class RuxCalendar {
         if (parseInt(target.value) < min) {
             target.value = min.toString()
         }
-        console.log(target.value, ' :Value', target.value.length, ' :LENGTH')
         if (removeLeadingZero(target.value).length === 2 && part !== 'ms') {
             if (part === 'hour') this.minuteInput.focus()
             if (part === 'min' && this.precision !== 'min')
