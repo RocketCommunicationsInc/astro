@@ -120,6 +120,7 @@ export class RuxCalendar {
         const secondMatch = newISO.match(secondRegex)
         const milisecondMatch = newISO.match(milisecondRegex)
         if (hourMatch) {
+            console.log('hour match found: ', hourMatch[1])
             this.initHoursValue = hourMatch[1]
         }
         if (minuteMatch) {
@@ -220,7 +221,18 @@ export class RuxCalendar {
         const minutes = parseInt(this.minuteInput?.value || '0')
         const seconds = parseInt(this.secondsInput?.value || '0')
         const milliseconds = parseInt(this.millisecondInput?.value || '0')
-
+        if (this.isJulian) {
+            //convert julian day, if given, to gregorian day
+            if (!day) {
+                //if no day is passed in, use the selectedDay's dayNumber
+                day = parseInt(
+                    julianToGregorianDay(this.selectedDay!.dayNumber, this.year)
+                )
+            } else {
+                //if a day was passed in, use that instead
+                day = parseInt(julianToGregorianDay(day.toString(), this.year))
+            }
+        }
         const date = new Date(
             Date.UTC(
                 year,
@@ -297,7 +309,6 @@ export class RuxCalendar {
         this.day = date.getUTCDate().toString().padStart(2, '0')
         if (this.isJulian) this.day = getDayOfYearFromIso(this.iso)
 
-        //this sets the timepicker inputs to the default ISO values
         this.initHoursValue = '00'
         this.initMinutesValue = '00'
         this.initSecondsValue = '00'
@@ -592,6 +603,10 @@ export class RuxCalendar {
         //when the time changes, I need to emit an event that compiles the ISO according to the selected day and
         // time inputs values
 
+        console.log(
+            'will run compile iso with day of: ',
+            this.selectedDay!.dayNumber
+        )
         const iso = this.compileIso(
             undefined,
             parseInt(this.selectedDay!.dayNumber!)
@@ -613,7 +628,8 @@ export class RuxCalendar {
         if (parseInt(target.value) < min) {
             target.value = min.toString()
         }
-        if (target.value.length === 2 && part !== 'ms') {
+        console.log(target.value, ' :Value', target.value.length, ' :LENGTH')
+        if (removeLeadingZero(target.value).length === 2 && part !== 'ms') {
             if (part === 'hour') this.minuteInput.focus()
             if (part === 'min' && this.precision !== 'min')
                 this.secondsInput.focus()
@@ -730,6 +746,7 @@ export class RuxCalendar {
                         ))}
                     </div>
                     <div class="rux-calendar-timepicker">
+                        <span style={{ paddingLeft: '2px' }}>T</span>
                         <div class="timepicker-hours input">
                             <input
                                 type="number"
@@ -876,6 +893,7 @@ export class RuxCalendar {
                                 </div>
                             )
                         }
+                        {this.precision !== 'ms' && <span class="Z">Z</span>}
                         {this.precision === 'ms' && <span>.</span>}
                         {this.precision === 'ms' && (
                             <div class="timepicker-ms input">
@@ -924,6 +942,7 @@ export class RuxCalendar {
                                 </div>
                             </div>
                         )}
+                        {this.precision === 'ms' && <span class="Z">Z</span>}
                     </div>
                 </div>
             </Host>

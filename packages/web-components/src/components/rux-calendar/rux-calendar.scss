@@ -58,6 +58,12 @@
     span {
         user-select: none;
     }
+    .Z {
+        padding-right: var(--spacing-2);
+    }
+    .T {
+        padding-left: var(--spacing-2);
+    }
     .input {
         display: flex;
         align-items: center;
