@@ -101,10 +101,10 @@ export class RuxDatetimePicker {
         this.handleInitialValue(this.value)
     }
 
-    @Watch('iso')
-    handleIsoChange(prevValue: string, newValue: string) {
-        // console.log('heard iso change in datepicker: ', prevValue, newValue)
-    }
+    // @Watch('iso')
+    // handleIsoChange(prevValue: string, newValue: string) {
+    //     // console.log('heard iso change in datepicker: ', prevValue, newValue)
+    // }
 
     @Watch('precision')
     handlePrecisionChange() {

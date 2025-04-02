@@ -24,6 +24,13 @@
 | `value`        | `value`         |             | `string \| undefined`            | `undefined` |
 
 
+## Events
+
+| Event                 | Description | Type                  |
+| --------------------- | ----------- | --------------------- |
+| `ruxdatepickerchange` |             | `CustomEvent<string>` |
+
+
 ## Dependencies
 
 ### Depends on
