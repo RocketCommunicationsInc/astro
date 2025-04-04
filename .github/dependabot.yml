@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "npm" # TypeScript, JavaScript, and other Node.js dependencies
+    directory: "/" # Location of the package manifests
+    schedule:
+      interval: "weekly" # Run once a week
+    ignore:
+      - dependency-name: "*" # All dependencies
+        update-types: ["version-update:semver-patch"] # Ignore patch updates
+  - package-ecosystem: "github-actions" # GitHub Actions dependencies
+    directory: "/" # Location of the GitHub Actions workflows
+    schedule:
+      interval: "weekly" # Run once a week
