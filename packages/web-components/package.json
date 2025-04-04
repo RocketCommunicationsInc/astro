@@ -14,7 +14,7 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "collection:main": "dist/collection/index.js",
-  "unpkg": "dist/astro-web-components/astro-web-components.esm.js",
+  "jsdelivr": "dist/astro-web-components/astro-web-components.esm.js",
   "files": [
     "dist/",
     "loader/"
