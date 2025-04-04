@@ -15,6 +15,7 @@ import {
     getDayOfYearFromIso,
     getMonthNameByNumber,
     getMonthValueByName,
+    getTimeFromIso,
     julianToGregorianDay,
     months,
     removeLeadingZero,
@@ -38,10 +39,6 @@ export class RuxCalendar {
     @Prop({ mutable: true }) iso: string = ''
     @Prop() minYear: number = 1900
     @Prop() maxYear: number = 2100
-    @Prop({ mutable: true }) initHoursValue: string = ''
-    @Prop({ mutable: true }) initMinutesValue: string = ''
-    @Prop({ mutable: true }) initSecondsValue: string = ''
-    @Prop({ mutable: true }) initMillisecondsValue: string = ''
     /**
      * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from
      * the datepicker component.
@@ -54,6 +51,10 @@ export class RuxCalendar {
     @Event({ eventName: 'datetimeupdated' })
     datetimeUpdated!: EventEmitter<{ iso: string }>
 
+    @State() initMinutesValue: string = ''
+    @State() initSecondsValue: string = ''
+    @State() initMillisecondsValue: string = ''
+    @State() initHoursValue: string = ''
     /**
      * month is stored as the month's name. ie, January, February, etc.
      */
@@ -214,6 +215,7 @@ export class RuxCalendar {
      * @returns Compiled ISO string using the current values. Uses values from the time inputs. Should be called when calendar changes the ISO, not when datepicker does.
      */
     private compileIso(month?: number, day?: number) {
+        console.log('compileISO call')
         const monthValue = getMonthValueByName(this.month)
         const year = parseInt(this.year)
         const hours = parseInt(this.hourInput?.value || '0')
@@ -232,6 +234,15 @@ export class RuxCalendar {
                 day = parseInt(julianToGregorianDay(day.toString(), this.year))
             }
         }
+        console.log('creating new ISO with values: ', {
+            year,
+            month: month || parseInt(monthValue!), // if month is passed in, use it, otherwise use the current month
+            day: day || parseInt(this.day), // if day is passed in, use it, otherwise use the current day
+            hours,
+            minutes,
+            seconds,
+            milliseconds,
+        })
         const date = new Date(
             Date.UTC(
                 year,
@@ -282,6 +293,7 @@ export class RuxCalendar {
     }
 
     connectedCallback() {
+        console.log('CC rux-calendar iso: ', this.iso)
         this.handleForwardMonth = this.handleForwardMonth.bind(this)
         this.handleBackwardMonth = this.handleBackwardMonth.bind(this)
         this.handleTimeIncrementDecrement = this.handleTimeIncrementDecrement.bind(
@@ -293,6 +305,21 @@ export class RuxCalendar {
         //* There should only be 2 scenarios here: a datepicker with no given (placeholder) value, and a datepicker with a valid placeholder value.
         if (!this.iso) {
             this.iso = new Date().toISOString()
+            console.log(
+                'no iso was present, setting to current date:',
+                this.iso
+            )
+            this.initHoursValue = '00'
+            this.initMinutesValue = '00'
+            this.initSecondsValue = '00'
+            this.initMillisecondsValue = '000'
+        } else {
+            //get the init hours, min, sec, and ms from the given iso. On this connected callback call, there will either be no iso (handled above) or a valid default iso.
+            const timeRes = getTimeFromIso(this.iso)
+            this.initHoursValue = timeRes.hours.padStart(2, '0') // ensure 2 digits
+            this.initMinutesValue = timeRes.minutes.padStart(2, '0') // ensure 2 digits
+            this.initSecondsValue = timeRes.seconds.padStart(2, '0') // ensure 2 digits
+            this.initMillisecondsValue = timeRes.milliseconds.padStart(3, '0') // ensure 3 digits
         }
         //get the month, day and year from the ISO string
         const date = new Date(this.iso)
@@ -308,10 +335,6 @@ export class RuxCalendar {
         this.day = date.getUTCDate().toString().padStart(2, '0')
         if (this.isJulian) this.day = getDayOfYearFromIso(this.iso)
 
-        this.initHoursValue = '00'
-        this.initMinutesValue = '00'
-        this.initSecondsValue = '00'
-        this.initMillisecondsValue = '000'
         //assign the current date in UTC time
         this.currentDay = new Date().toISOString()
         this.setDates()
@@ -536,22 +559,37 @@ export class RuxCalendar {
     }
 
     handleForwardMonth = () => {
-        const date = new Date(this.iso)
-        date.setUTCMonth(date.getUTCMonth() + 1)
-        this.iso = date.toISOString()
+        const monthNum = getMonthValueByName(this.month)
+        const actual = parseInt(monthNum!) + 1
+        if (actual > 12) {
+            // if the month is greater than 12, then it should be January of next year
+            this.month = getMonthNameByNumber('01')!
+            this.year = (parseInt(this.year) + 1).toString()
+        } else {
+            this.month = getMonthNameByNumber(
+                actual.toString().padStart(2, '0')
+            )!
+        }
+        this.iso = this.compileIso()
     }
     handleBackwardMonth = () => {
-        const date = new Date(this.iso)
-        date.setUTCMonth(date.getUTCMonth() - 1)
-        //if the month is January, then the year should be decremented
-        // if (date.getUTCMonth() === 0) {
-        //     date.setUTCFullYear(date.getUTCFullYear() - 1)
-        // }
-
-        this.iso = date.toISOString()
+        const monthNum = getMonthValueByName(this.month)
+        const actual = parseInt(monthNum!) - 1
+        if (actual < 1) {
+            // if the month is less than 1, then it should be December of the previous year
+            this.month = getMonthNameByNumber('12')!
+            this.year = (parseInt(this.year) - 1).toString()
+        } else {
+            // otherwise just use the month number
+            this.month = getMonthNameByNumber(
+                actual.toString().padStart(2, '0')
+            )!
+        }
+        this.iso = this.compileIso()
     }
 
     handleMonthChange = (event: CustomEvent) => {
+        console.log('handle month call')
         const target = event.target as HTMLRuxSelectElement
         const month = months.find((month) => month.value === target.value)
         if (month) {

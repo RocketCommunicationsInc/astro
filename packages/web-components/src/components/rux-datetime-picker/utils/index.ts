@@ -357,3 +357,24 @@ export const getDayOfYearFromIso = (isoString: string): string => {
     // Return the day of the year as a zero-padded string
     return dayOfYear.toString().padStart(3, '0')
 }
+
+export const getTimeFromIso = (isoString: string) => {
+    // Regular expressions to extract hours, minutes, seconds, and milliseconds
+    const hourRegex = /T(\d{2}):/ // Matches hours after 'T' and before ':'
+    const minuteRegex = /:(\d{2}):/ // Matches minutes between two colons
+    const secondRegex = /:(\d{2})\./ // Matches seconds between ':' and '.'
+    const millisecondRegex = /\.(\d{3})/ // Matches milliseconds after '.'
+
+    // Extract matches
+    const hours = isoString.match(hourRegex)?.[1] || '00'
+    const minutes = isoString.match(minuteRegex)?.[1] || '00'
+    const seconds = isoString.match(secondRegex)?.[1] || '00'
+    const milliseconds = isoString.match(millisecondRegex)?.[1] || '000'
+
+    return {
+        hours,
+        minutes,
+        seconds,
+        milliseconds,
+    }
+}

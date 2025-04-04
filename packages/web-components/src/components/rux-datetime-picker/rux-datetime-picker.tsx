@@ -537,10 +537,6 @@ export class RuxDatetimePicker {
                                     minYear={minYear}
                                     maxYear={maxYear}
                                     precision={precision}
-                                    initHoursValue={'00'}
-                                    initMinutesValue={'00'}
-                                    initSecondsValue={'00'}
-                                    initMillisecondsValue={'000'}
                                     isJulian={this.julianFormat}
                                 ></rux-calendar>
                             </rux-pop-up>
