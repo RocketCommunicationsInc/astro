@@ -1,4 +1,3 @@
-// @ts-nocheck
 
 import * as d from './proxies';
 
@@ -9,6 +8,7 @@ export const DIRECTIVES = [
   d.RuxBreadcrumbItem,
   d.RuxButton,
   d.RuxButtonGroup,
+  d.RuxCalendar,
   d.RuxCard,
   d.RuxCheckbox,
   d.RuxCheckboxGroup,
@@ -16,6 +16,8 @@ export const DIRECTIVES = [
   d.RuxClock,
   d.RuxContainer,
   d.RuxDatetime,
+  d.RuxDatetimePicker,
+  d.RuxDay,
   d.RuxDialog,
   d.RuxGlobalStatusBar,
   d.RuxIcon,
