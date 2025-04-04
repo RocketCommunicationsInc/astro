@@ -34,6 +34,7 @@ export class RuxCalendar {
     private minuteInput!: HTMLInputElement
     private secondsInput!: HTMLInputElement
     private millisecondInput!: HTMLInputElement
+    private arrowKeyPressed: boolean = false // used to track if an arrow key was pressed on the time inputs
     @Prop({ mutable: true }) iso: string = ''
     @Prop() minYear: number = 1900
     @Prop() maxYear: number = 2100
@@ -574,6 +575,7 @@ export class RuxCalendar {
         increment?: boolean,
         decrement?: boolean
     ) {
+        console.log('handleTimeIncrementDecrement called with')
         //connect the rux-icons of the custom spinwheel to the correct input, and increment or decrement accordingly.
         if (el.value === '') {
             el.value = '0'
@@ -609,6 +611,7 @@ export class RuxCalendar {
     }
 
     handleTimeChange(e: Event, max: number, min: number = 0, part: string) {
+        console.log('heard time change with incoming part: ', part)
         //if the incoming value is a letter or symbol, prevent default and return
         const regex = /^[0-9]+$/
         if (!regex.test((e.target as HTMLInputElement).value)) {
@@ -622,13 +625,36 @@ export class RuxCalendar {
         if (parseInt(target.value) < min) {
             target.value = min.toString()
         }
-        if (removeLeadingZero(target.value).length === 2 && part !== 'ms') {
+        if (part !== 'ms') {
+            if (target.value.length > 2 && !(parseInt(target.value) > 0)) {
+                target.value = '00'
+                target.value = target.value.replace(/^0+/, '') || '0'
+            }
+        } else {
+            console.log('part is ms, and value is: ', parseInt(target.value))
+            if (target.value.length > 3 && !(parseInt(target.value) > 0)) {
+                // if the value is greater than 3 digits and not greater than 0, reset to 000
+                target.value = '000'
+            }
+        }
+        if (target.value.startsWith('0') && parseInt(target.value) > 0) {
+            console.log('in if with leading zero', target.value)
+            // if the value starts with a leading zero and is greater than 0, remove the leading zero
+            target.value = target.value.replace(/^0+/, '') || '0'
+        }
+        if (
+            !this.arrowKeyPressed &&
+            target.value.length === 2 &&
+            part !== 'ms'
+        ) {
+            console.log('length is 2, moving focus. Value: ', target.value)
             if (part === 'hour') this.minuteInput.focus()
             if (part === 'min' && this.precision !== 'min')
                 this.secondsInput.focus()
             if (part === 'sec' && this.precision !== 'sec')
                 this.millisecondInput.focus()
         }
+        this.arrowKeyPressed = false
         const iso = this.compileIso(
             undefined,
             parseInt(this.selectedDay!.dayNumber!)
@@ -739,12 +765,13 @@ export class RuxCalendar {
                         ))}
                     </div>
                     <div class="rux-calendar-timepicker">
-                        <span style={{ paddingLeft: '2px' }}>T</span>
+                        <span class="T">T</span>
                         <div class="timepicker-hours input">
                             <input
                                 type="number"
                                 min="0"
                                 max="23"
+                                maxLength={2}
                                 placeholder="hh"
                                 ref={(el) =>
                                     (this.hourInput = el as HTMLInputElement)
@@ -754,10 +781,22 @@ export class RuxCalendar {
                                 onInput={(e) =>
                                     this.handleTimeChange(e, 23, 0, 'hour')
                                 }
-                                onKeyDown={(evt) =>
-                                    ['e', 'E', '+', '-'].includes(evt.key) &&
-                                    evt.preventDefault()
-                                }
+                                onKeyDown={(evt) => {
+                                    if (
+                                        ['ArrowUp', 'ArrowDown'].includes(
+                                            evt.key
+                                        )
+                                    ) {
+                                        this.arrowKeyPressed = true
+                                    }
+                                    if (
+                                        ['e', 'E', '+', '-', '.'].includes(
+                                            evt.key
+                                        )
+                                    ) {
+                                        evt.preventDefault()
+                                    }
+                                }}
                             />
                             <div class="inc-dec-arrows">
                                 <rux-icon
@@ -790,6 +829,7 @@ export class RuxCalendar {
                                 type="number"
                                 min="0"
                                 max="59"
+                                maxLength={2}
                                 placeholder="mm"
                                 ref={(el) =>
                                     (this.minuteInput = el as HTMLInputElement)
@@ -799,10 +839,22 @@ export class RuxCalendar {
                                 onInput={(e) =>
                                     this.handleTimeChange(e, 59, 0, 'min')
                                 }
-                                onKeyDown={(evt) =>
-                                    ['e', 'E', '+', '-'].includes(evt.key) &&
-                                    evt.preventDefault()
-                                }
+                                onKeyDown={(evt) => {
+                                    if (
+                                        ['ArrowUp', 'ArrowDown'].includes(
+                                            evt.key
+                                        )
+                                    ) {
+                                        this.arrowKeyPressed = true
+                                    }
+                                    if (
+                                        ['e', 'E', '+', '-', '.'].includes(
+                                            evt.key
+                                        )
+                                    ) {
+                                        evt.preventDefault()
+                                    }
+                                }}
                             />
                             <div class="inc-dec-arrows">
                                 <rux-icon
@@ -839,6 +891,7 @@ export class RuxCalendar {
                                         type="number"
                                         min="0"
                                         max="59"
+                                        maxLength={2}
                                         placeholder="ss"
                                         ref={(el) =>
                                             (this.secondsInput = el as HTMLInputElement)
@@ -853,11 +906,27 @@ export class RuxCalendar {
                                                 'sec'
                                             )
                                         }
-                                        onKeyDown={(evt) =>
-                                            ['e', 'E', '+', '-'].includes(
-                                                evt.key
-                                            ) && evt.preventDefault()
-                                        }
+                                        onKeyDown={(evt) => {
+                                            if (
+                                                [
+                                                    'ArrowUp',
+                                                    'ArrowDown',
+                                                ].includes(evt.key)
+                                            ) {
+                                                this.arrowKeyPressed = true
+                                            }
+                                            if (
+                                                [
+                                                    'e',
+                                                    'E',
+                                                    '+',
+                                                    '-',
+                                                    '.',
+                                                ].includes(evt.key)
+                                            ) {
+                                                evt.preventDefault()
+                                            }
+                                        }}
                                     />
                                     <div class="inc-dec-arrows">
                                         <rux-icon
@@ -894,6 +963,7 @@ export class RuxCalendar {
                                     type="number"
                                     min="0"
                                     max="999"
+                                    maxLength={3}
                                     placeholder="SSS"
                                     ref={(el) =>
                                         (this.millisecondInput = el as HTMLInputElement)
@@ -903,11 +973,22 @@ export class RuxCalendar {
                                     onInput={(e) =>
                                         this.handleTimeChange(e, 999, 0, 'ms')
                                     }
-                                    onKeyDown={(evt) =>
-                                        ['e', 'E', '+', '-'].includes(
-                                            evt.key
-                                        ) && evt.preventDefault()
-                                    }
+                                    onKeyDown={(evt) => {
+                                        if (
+                                            ['ArrowUp', 'ArrowDown'].includes(
+                                                evt.key
+                                            )
+                                        ) {
+                                            this.arrowKeyPressed = true
+                                        }
+                                        if (
+                                            ['e', 'E', '+', '-', '.'].includes(
+                                                evt.key
+                                            )
+                                        ) {
+                                            evt.preventDefault()
+                                        }
+                                    }}
                                 />
                                 <div class="inc-dec-arrows">
                                     <rux-icon
