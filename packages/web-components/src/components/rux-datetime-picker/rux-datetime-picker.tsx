@@ -31,8 +31,6 @@ import {
     shadow: true,
 })
 export class RuxDatetimePicker {
-    // private wrapperRef?: HTMLDivElement
-    // private popUpRef?: HTMLRuxPopUpElement
     private yearRef?: HTMLInputElement
     private monthRef?: HTMLInputElement
     private dayRef?: HTMLInputElement
@@ -61,7 +59,6 @@ export class RuxDatetimePicker {
     @Prop() size: 'small' | 'medium' | 'large' = 'medium'
     @Prop({ reflect: true, mutable: true }) value?: string
     @Prop() precision: Precision = 'min'
-    // @Prop() isChanged: boolean = false
     @Prop({ attribute: 'min-year' }) minYear: number = 1900
     @Prop({ attribute: 'max-year' }) maxYear: number = 2100
     @Prop({ attribute: 'julian-format' }) julianFormat: boolean = false
@@ -71,20 +68,17 @@ export class RuxDatetimePicker {
 
     @State() iso: string = ''
     @State() parts: Part[] = []
-    // @State() previousValue: string = ''
     @State() isCalendarOpen: boolean = false
     @State() inputtedDay: string = ''
     @State() inputtedMonth: string = ''
     @State() inputtedYear: string = ''
 
-    //Need to @Listen for ruxpopupclose event to close calendar
     @Listen('ruxpopupclosed')
     handlePopupClose() {
         this.isCalendarOpen = false
     }
 
     /**
-     *
      * @param event the event emitted from the calendar. Contains {iso: string}
      */
     @Listen('ruxcalendardatetimeupdated')
@@ -95,16 +89,16 @@ export class RuxDatetimePicker {
     connectedCallback() {
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
+        if (this.value && !this.isValidIso8601(this.value)) {
+            console.warn(
+                `rux-datepicker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ`
+            )
+        }
     }
 
     componentWillLoad() {
         this.handleInitialValue(this.value)
     }
-
-    // @Watch('iso')
-    // handleIsoChange(prevValue: string, newValue: string) {
-    //     // console.log('heard iso change in datepicker: ', prevValue, newValue)
-    // }
 
     @Watch('precision')
     handlePrecisionChange() {
@@ -112,9 +106,35 @@ export class RuxDatetimePicker {
     }
 
     @Watch('value')
-    handleValueChange() {
+    handleValueChange(newValue: string) {
+        if (!this.isValidIso8601(newValue)) {
+            console.warn(
+                `[my-datepicker] Invalid ISO 8601 partial format: "${newValue}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ`
+            )
+        }
         this.handleInitialValue(this.value)
     }
+
+    /**
+     * Validates if a string is in ISO 8601 format. Valid formats include:
+     * - YYYY
+     * - YYYY-MM
+     * - YYYY-MM-DD
+     * - YYYY-MM-DDTHHZ (hour only)
+     * - YYYY-MM-DDTHH:mmZ (hour and minute)
+     * - YYYY-MM-DDTHH:mm:ssZ (hour, minute, and second)
+     * - YYYY-MM-DDTHH:mm:ss.sssZ (hour, minute, second, and milliseconds)
+     */
+    private isValidIso8601(value: string): boolean {
+        const partialIso8601Regex = /^(\d{4})(-(\d{2})(-(\d{2})(T(\d{2})(:(\d{2})(:(\d{2})(\.\d{1,3})?)?)?Z)?)?)?$/
+        return partialIso8601Regex.test(value)
+    }
+
+    /**
+     *
+     * @param isoString An ISO string to convert to ordinal format
+     * @returns An ISO string converted to an ordinal format string such as YYYY-DDDTHH:mm:ss.sssZ
+     */
     private toOrdinalIsoString(isoString: string): string {
         const date = new Date(isoString)
         const year = date.getUTCFullYear()
@@ -323,10 +343,7 @@ export class RuxDatetimePicker {
         if (this.julianFormat) {
             parsedIso = formatOrdinalToIso(parsedIso)
         }
-        //set the inputtedDay, inputtedMonth, and inputtedYear to the current values
-        // if (type === 'day') this.inputtedDay = target.value || ''
-        // if (type === 'month') this.inputtedMonth = target.value || ''
-        // if (type === 'year') this.inputtedYear = target.value || ''
+
         try {
             const d = new Date(parsedIso)
             if (isNaN(d.getTime())) {
@@ -395,12 +412,6 @@ export class RuxDatetimePicker {
         //TODO: figure out if we need to preserve the iso as a JulianISO if in julian mode.
     }
 
-    // handleInitTime = (timeType: 'hour' | 'min' | 'sec' | 'ms') => {
-    //     //based on the timeType, return the value of the timeType from the iso string
-    //     // console.log('handleInitTime iso: ', this.iso)
-    //     return '00'
-    // }
-
     render() {
         const {
             disabled,
@@ -415,7 +426,6 @@ export class RuxDatetimePicker {
             determineMinMax,
             handleCopy,
             handlePaste,
-            // handleInitTime,
             iso,
             minYear,
             maxYear,
