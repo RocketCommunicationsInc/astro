@@ -93,6 +93,8 @@ export class RuxDatetimePicker {
             console.warn(
                 `rux-datepicker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ`
             )
+            this.iso = ''
+            this.value = undefined
         }
     }
 
@@ -107,10 +109,13 @@ export class RuxDatetimePicker {
 
     @Watch('value')
     handleValueChange(newValue: string) {
-        if (!this.isValidIso8601(newValue)) {
-            console.warn(
-                `[my-datepicker] Invalid ISO 8601 partial format: "${newValue}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ`
-            )
+        if (newValue) {
+            if (!this.isValidIso8601(newValue)) {
+                console.warn(
+                    `rux-datepicker: Invalid ISO 8601 partial format: "${newValue}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ`
+                )
+                return
+            }
         }
         this.handleInitialValue(this.value)
     }
@@ -124,10 +129,17 @@ export class RuxDatetimePicker {
      * - YYYY-MM-DDTHH:mmZ (hour and minute)
      * - YYYY-MM-DDTHH:mm:ssZ (hour, minute, and second)
      * - YYYY-MM-DDTHH:mm:ss.sssZ (hour, minute, second, and milliseconds)
+     * Oridnal Formats:
+     * - YYYY
+     * - YYYY-DDD
+     * - YYYY-DDDTHH:mmZ
+     * - YYYY-DDDTHH:mm:ssZ
+     * - YYYY-DDDTHHZ:mm:ss.SSSZ
+     * -
      */
-    private isValidIso8601(value: string): boolean {
-        const partialIso8601Regex = /^(\d{4})(-(\d{2})(-(\d{2})(T(\d{2})(:(\d{2})(:(\d{2})(\.\d{1,3})?)?)?Z)?)?)?$/
-        return partialIso8601Regex.test(value)
+    isValidIso8601(value: string): boolean {
+        const iso8601Regex = /^(\d{4})((-\d{2}){0,2}|-\d{3})(T\d{2}(:\d{2}(:\d{2}(\.\d{1,3})?)?)?Z)?$/
+        return iso8601Regex.test(value)
     }
 
     /**
