@@ -341,9 +341,7 @@ export class RuxDatetimePicker {
             this.iso = ''
             return
         }
-        if (type === 'hour') {
-            console.log('heard hour input change in datepicker: ', value)
-        }
+
         const [date, time, z] = updatedParts
             .map((part) => part.value)
             .join('')
@@ -357,11 +355,16 @@ export class RuxDatetimePicker {
         }
 
         try {
+            if (!this.isValidIso8601(parsedIso)) {
+                //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
+                this.iso = parsedIso
+                return
+            }
             const d = new Date(parsedIso)
+            // console.log('date from parsed ISO: ', d)
             if (isNaN(d.getTime())) {
                 //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
                 this.iso = parsedIso
-
                 return
             }
             /**
