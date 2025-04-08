@@ -91,7 +91,7 @@ export class RuxDatetimePicker {
         this.toggleCalendar = this.toggleCalendar.bind(this)
         if (this.value && !this.isValidIso8601(this.value)) {
             console.warn(
-                `rux-datepicker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ`
+                `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
             )
             this.iso = ''
             this.value = undefined
@@ -112,7 +112,7 @@ export class RuxDatetimePicker {
         if (newValue) {
             if (!this.isValidIso8601(newValue)) {
                 console.warn(
-                    `rux-datepicker: Invalid ISO 8601 partial format: "${newValue}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ`
+                    `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
                 )
                 return
             }
