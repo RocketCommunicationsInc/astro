@@ -25,6 +25,16 @@ import {
     setPart,
 } from './utils'
 
+type CalendarDateTimeUpdatedEvent = CustomEvent<{
+    iso: string
+    source:
+        | 'monthChange'
+        | 'yearChange'
+        | 'timeChange'
+        | 'daySelected'
+        | undefined
+}>
+
 @Component({
     tag: 'rux-datetime-picker',
     styleUrl: 'rux-datetime-picker.scss',
@@ -66,6 +76,12 @@ export class RuxDatetimePicker {
     @Event({ eventName: 'ruxdatepickerchange' })
     ruxDatetimePickerChange!: EventEmitter<string>
 
+    @Event({ eventName: 'ruxchange' })
+    ruxChange!: EventEmitter
+
+    @Event({ eventName: 'ruxinput' })
+    ruxInput!: EventEmitter
+
     @State() iso: string = ''
     @State() parts: Part[] = []
     @State() isCalendarOpen: boolean = false
@@ -82,8 +98,16 @@ export class RuxDatetimePicker {
      * @param event the event emitted from the calendar. Contains {iso: string}
      */
     @Listen('ruxcalendardatetimeupdated')
-    handleDaySelected(event: CustomEvent) {
+    handleDaySelected(event: CalendarDateTimeUpdatedEvent) {
         this.value = event.detail.iso
+        console.log(event.detail.source)
+        if (event.detail.source !== 'timeChange') {
+            console.log('should emit change event')
+            this.ruxChange.emit()
+        } else {
+            console.log('should emit input event')
+            this.ruxInput.emit()
+        }
     }
 
     connectedCallback() {
@@ -544,7 +568,7 @@ export class RuxDatetimePicker {
                                 <button
                                     type="button"
                                     disabled={disabled}
-                                    class="calendar-btn"
+                                    class="calendar-btn calendar-icon"
                                     onClick={toggleCalendar}
                                     slot="trigger"
                                 >

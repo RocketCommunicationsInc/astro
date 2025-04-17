@@ -24,6 +24,13 @@ import {
 import { DayInfo } from './rux-day/rux-day'
 import { Precision } from '../rux-datetime-picker/utils/types'
 
+type EventSource =
+    | 'monthChange'
+    | 'yearChange'
+    | 'timeChange'
+    | 'daySelected'
+    | undefined
+
 @Component({
     tag: 'rux-calendar',
     styleUrl: 'rux-calendar.scss',
@@ -47,7 +54,10 @@ export class RuxCalendar {
 
     @Prop() isJulian: boolean = false
     @Event({ eventName: 'ruxcalendardatetimeupdated' })
-    ruxCalendarDateTimeUpdated!: EventEmitter<{ iso: string }>
+    ruxCalendarDateTimeUpdated!: EventEmitter<{
+        iso: string
+        source: EventSource
+    }>
     @Event({ eventName: 'datetimeupdated' })
     datetimeUpdated!: EventEmitter<{ iso: string }>
 
@@ -183,7 +193,10 @@ export class RuxCalendar {
                 )
             )
         }
-        this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
+        this.ruxCalendarDateTimeUpdated.emit({
+            iso: iso,
+            source: 'daySelected',
+        })
     }
 
     /**
@@ -576,7 +589,10 @@ export class RuxCalendar {
             this.month = month.label
             this.iso = this.compileIso(parseInt(month.value))
         }
-        this.ruxCalendarDateTimeUpdated.emit({ iso: this.iso })
+        this.ruxCalendarDateTimeUpdated.emit({
+            iso: this.iso,
+            source: 'monthChange',
+        })
     }
     handleYearChange = (event: CustomEvent) => {
         const target = event.target as HTMLRuxSelectElement
@@ -585,7 +601,10 @@ export class RuxCalendar {
         this.year = value
 
         this.iso = this.compileIso()
-        this.ruxCalendarDateTimeUpdated.emit({ iso: this.iso })
+        this.ruxCalendarDateTimeUpdated.emit({
+            iso: this.iso,
+            source: 'yearChange',
+        })
     }
 
     handleTimeIncrementDecrement(
@@ -624,7 +643,7 @@ export class RuxCalendar {
             undefined,
             parseInt(this.selectedDay!.dayNumber!)
         )
-        this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
+        this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
     }
 
     handleTimeChange(e: Event, max: number, min: number = 0, part: string) {
@@ -673,7 +692,7 @@ export class RuxCalendar {
             undefined,
             parseInt(this.selectedDay!.dayNumber!)
         )
-        this.ruxCalendarDateTimeUpdated.emit({ iso: iso })
+        this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
     }
     /**
      *
