@@ -197,6 +197,7 @@ export class RuxCalendar {
             iso: iso,
             source: 'daySelected',
         })
+        console.log('emit rcdtu from handleDaySelected')
     }
 
     /**
@@ -583,6 +584,7 @@ export class RuxCalendar {
     }
 
     handleMonthChange = (event: CustomEvent) => {
+        console.log('handleMonthChange start')
         const target = event.target as HTMLRuxSelectElement
         const month = months.find((month) => month.value === target.value)
         if (month) {
@@ -734,9 +736,10 @@ export class RuxCalendar {
                             <rux-select
                                 value={getMonthValueByName(this.month)}
                                 inline
-                                onRuxchange={(e: CustomEvent) =>
+                                onRuxchange={(e: CustomEvent) => {
+                                    e.stopPropagation()
                                     this.handleMonthChange(e)
-                                }
+                                }}
                             >
                                 {months.map((month) => (
                                     <rux-option
@@ -748,9 +751,10 @@ export class RuxCalendar {
                             <rux-select
                                 value={this.year}
                                 inline
-                                onRuxchange={(e: CustomEvent) =>
+                                onRuxchange={(e: CustomEvent) => {
+                                    e.stopPropagation()
                                     this.handleYearChange(e)
-                                }
+                                }}
                             >
                                 {this.years.map((year) => (
                                     <rux-option
@@ -842,6 +846,7 @@ export class RuxCalendar {
                                             false
                                         )
                                     }
+                                    class="inc-arrow"
                                 ></rux-icon>
                                 <rux-icon
                                     icon="arrow-drop-down"
@@ -853,6 +858,7 @@ export class RuxCalendar {
                                             true
                                         )
                                     }
+                                    class="dec-arrow"
                                 ></rux-icon>
                             </div>
                         </div>
@@ -900,6 +906,7 @@ export class RuxCalendar {
                                             false
                                         )
                                     }
+                                    class="inc-arrow"
                                 ></rux-icon>
                                 <rux-icon
                                     icon="arrow-drop-down"
@@ -911,6 +918,7 @@ export class RuxCalendar {
                                             true
                                         )
                                     }
+                                    class="dec-arrow"
                                 ></rux-icon>
                             </div>
                         </div>
@@ -972,6 +980,7 @@ export class RuxCalendar {
                                                     false
                                                 )
                                             }
+                                            class="inc-arrow"
                                         ></rux-icon>
                                         <rux-icon
                                             icon="arrow-drop-down"
@@ -983,6 +992,7 @@ export class RuxCalendar {
                                                     true
                                                 )
                                             }
+                                            class="dec-arrow"
                                         ></rux-icon>
                                     </div>
                                 </div>
@@ -1034,6 +1044,7 @@ export class RuxCalendar {
                                                 false
                                             )
                                         }
+                                        class="inc-arrow"
                                     ></rux-icon>
                                     <rux-icon
                                         icon="arrow-drop-down"
@@ -1045,6 +1056,7 @@ export class RuxCalendar {
                                                 true
                                             )
                                         }
+                                        class="dec-arrow"
                                     ></rux-icon>
                                 </div>
                             </div>

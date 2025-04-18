@@ -7,25 +7,21 @@
 
 ## Properties
 
-| Property                | Attribute                 | Description                                                                                                                                                         | Type                     | Default |
-| ----------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------- |
-| `initHoursValue`        | `init-hours-value`        |                                                                                                                                                                     | `string`                 | `''`    |
-| `initMillisecondsValue` | `init-milliseconds-value` |                                                                                                                                                                     | `string`                 | `''`    |
-| `initMinutesValue`      | `init-minutes-value`      |                                                                                                                                                                     | `string`                 | `''`    |
-| `initSecondsValue`      | `init-seconds-value`      |                                                                                                                                                                     | `string`                 | `''`    |
-| `isJulian`              | `is-julian`               |                                                                                                                                                                     | `boolean`                | `false` |
-| `iso`                   | `iso`                     |                                                                                                                                                                     | `string`                 | `''`    |
-| `maxYear`               | `max-year`                |                                                                                                                                                                     | `number`                 | `2100`  |
-| `minYear`               | `min-year`                |                                                                                                                                                                     | `number`                 | `1900`  |
-| `precision`             | `precision`               | Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component. | `"min" \| "ms" \| "sec"` | `'min'` |
+| Property    | Attribute   | Description                                                                                                                                                         | Type                     | Default |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------- |
+| `isJulian`  | `is-julian` |                                                                                                                                                                     | `boolean`                | `false` |
+| `iso`       | `iso`       |                                                                                                                                                                     | `string`                 | `''`    |
+| `maxYear`   | `max-year`  |                                                                                                                                                                     | `number`                 | `2100`  |
+| `minYear`   | `min-year`  |                                                                                                                                                                     | `number`                 | `1900`  |
+| `precision` | `precision` | Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component. | `"min" \| "ms" \| "sec"` | `'min'` |
 
 
 ## Events
 
-| Event                        | Description | Type                            |
-| ---------------------------- | ----------- | ------------------------------- |
-| `datetimeupdated`            |             | `CustomEvent<{ iso: string; }>` |
-| `ruxcalendardatetimeupdated` |             | `CustomEvent<{ iso: string; }>` |
+| Event                        | Description | Type                                                 |
+| ---------------------------- | ----------- | ---------------------------------------------------- |
+| `datetimeupdated`            |             | `CustomEvent<{ iso: string; }>`                      |
+| `ruxcalendardatetimeupdated` |             | `CustomEvent<{ iso: string; source: EventSource; }>` |
 
 
 ## Dependencies

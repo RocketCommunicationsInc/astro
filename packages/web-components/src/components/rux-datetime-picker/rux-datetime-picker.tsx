@@ -99,15 +99,14 @@ export class RuxDatetimePicker {
      */
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CalendarDateTimeUpdatedEvent) {
+        console.log('incoming event')
         this.value = event.detail.iso
-        console.log(event.detail.source)
         if (event.detail.source !== 'timeChange') {
-            console.log('should emit change event')
             this.ruxChange.emit()
         } else {
-            console.log('should emit input event')
             this.ruxInput.emit()
         }
+        console.log('@Listen end')
     }
 
     connectedCallback() {

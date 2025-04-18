@@ -28,7 +28,9 @@
 
 | Event                 | Description | Type                  |
 | --------------------- | ----------- | --------------------- |
+| `ruxchange`           |             | `CustomEvent<any>`    |
 | `ruxdatepickerchange` |             | `CustomEvent<string>` |
+| `ruxinput`            |             | `CustomEvent<any>`    |
 
 
 ## Dependencies

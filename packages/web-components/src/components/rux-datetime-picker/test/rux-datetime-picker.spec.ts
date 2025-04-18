@@ -125,12 +125,8 @@ test.describe('Datepicker event emissions', () => {
       max-year="2040" data-testid="default"></rux-datetime-picker>
       <rux-datetime-picker label="Given Value" help-text="Help Text" precision="ms" min-year="2000"
       max-year="2040" data-testid="given-value" value="2025-04-15T12:12:12.222"></rux-datetime-picker>
-            <rux-datetime-picker label="Julian Default" help-text="Help Text" precision="ms" min-year="2000"
-      max-year="2040" data-testid="julian-default" julian-format data-testid="julian-default"></rux-datetime-picker>
-                  <rux-datetime-picker label="Julian Default" help-text="Help Text" precision="ms" min-year="2000"
-      max-year="2040" data-testid="julian-value" julian-format value="2025-123T12:12:12.222" data-testid="julian-value"></rux-datetime-picker>
-    `
 
+    `
         await page.setContent(template)
     })
     test('Default datepicker emits single ruxchange event on clicking a day', async ({
@@ -159,5 +155,83 @@ test.describe('Datepicker event emissions', () => {
         await openCalendar(page, 'given-value', true)
         await defaultDp.locator('select').last().selectOption('2024')
         expect(changeEvent).toHaveReceivedEventTimes(1)
+    })
+    test('Datepicker emits single ruxInput event on time change via arrows', async ({
+        page,
+    }) => {
+        const inputEvent = await page.spyOnEvent('ruxinput')
+        const dp = page.getByTestId('default')
+        await openCalendar(page, 'default', true)
+
+        //Test up arrow click on seconds input
+        const secInput = dp.locator('.timepicker-sec input')
+        const secArrowInc = dp.locator('.timepicker-sec .inc-arrow')
+        await secInput.hover()
+        await secArrowInc.click()
+        expect(inputEvent).toHaveReceivedEventTimes(1)
+    })
+})
+test.describe('Timepicker functionality', () => {
+    test.beforeEach(async ({ page }) => {
+        const template = `
+<div style="
+width: 350px;
+margin: 1rem auto;
+display: flex;
+gap: 1rem;
+flex-direction: column;
+">
+<rux-datetime-picker data-testid="default"></rux-datetime-picker>
+<rux-datetime-picker
+data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker>
+</div>
+`
+        await page.setContent(template)
+    })
+    test.describe('Hour Input', () => {
+        test('Hour input can have its time incremented via the up arrow icon', async ({
+            page,
+        }) => {
+            const dp = page.locator('rux-datetime-picker').first()
+            await openCalendar(page, 'default', true)
+            const hourInput = dp.locator('.timepicker-hours input')
+            const hourArrowInc = dp.locator('.timepicker-hours .inc-arrow')
+            await expect(hourInput).toHaveValue('00')
+            await hourInput.hover()
+            await hourArrowInc.click()
+            await expect(hourInput).toHaveValue('01')
+        })
+        test('Hour input can have its time decremented via the down arrow icon', async ({
+            page,
+        }) => {
+            //need to use given value datepicker here since decrementing a 0 value won't do anything
+            // given value is 2025-04-15T12:12:12.222
+            const dp = page.getByTestId('given-value')
+            await openCalendar(page, 'given-value', true)
+            const hourInput = dp.locator('.timepicker-hours input')
+            const hourArrowDec = dp.locator('.timepicker-hours .dec-arrow')
+            await expect(hourInput).toHaveValue('12')
+            await hourInput.hover()
+            await hourArrowDec.click()
+            await expect(hourInput).toHaveValue('11')
+        })
+        //TODO: Typing into hour input
+        //TODO: typing invalid characters (letters, -, +, E)
+        //TODO: entering values above max should revert it to max
+        //TODO: Programmatically changing value?
+    })
+    test.describe('Minute Input', () => {
+        test('Minute input can have its time incremented via the up arrow icon', async ({
+            page,
+        }) => {
+            const dp = page.locator('rux-datetime-picker').first()
+            await openCalendar(page, 'default', true)
+            const minInput = dp.locator('.timepicker-min input')
+            const minArrowInc = dp.locator('.timepicker-min .inc-arrow')
+            await expect(minInput).toHaveValue('00')
+            await minInput.hover()
+            await minArrowInc.click()
+            await expect(minInput).toHaveValue('01')
+        })
     })
 })
