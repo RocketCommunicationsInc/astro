@@ -614,24 +614,43 @@ export class RuxCalendar {
         increment?: boolean,
         decrement?: boolean
     ) {
+        const isMs = el.getAttribute('maxlength') === '3'
         //connect the rux-icons of the custom spinwheel to the correct input, and increment or decrement accordingly.
         if (el.value === '') {
-            el.value = '0'
+            isMs ? (el.value = '000') : (el.value = '00')
         }
 
         if (increment) {
-            el.value = (parseInt(el.value) + 1).toString()
+            const nextValue = parseInt(el.value) + 1
+            if (!isMs) {
+                el.value = Math.min(nextValue, parseInt(el.max))
+                    .toString()
+                    .padStart(2, '0')
+            } else {
+                el.value = Math.min(nextValue, parseInt(el.max))
+                    .toString()
+                    .padStart(3, '0')
+            }
         }
         if (decrement) {
-            el.value = (parseInt(el.value) - 1).toString()
+            const nextValue = parseInt(el.value) - 1
+            if (isMs) {
+                el.value = Math.max(nextValue, parseInt(el.min))
+                    .toString()
+                    .padStart(3, '0')
+            } else {
+                el.value = Math.max(nextValue, parseInt(el.min))
+                    .toString()
+                    .padStart(2, '0')
+            }
         }
         //check if the value is within the min and max range
-        if (parseInt(el.value) < parseInt(el.min)) {
-            el.value = el.min
-        }
-        if (parseInt(el.value) > parseInt(el.max)) {
-            el.value = el.max
-        }
+        // if (parseInt(el.value) < parseInt(el.min)) {
+        //     el.value = el.min
+        // }
+        // if (parseInt(el.value) > parseInt(el.max)) {
+        //     el.value = el.max
+        // }
 
         // manually dispatch the change event. This is necessary because the input value is being updated
         //  programmatically via the arrows, and that doesn't

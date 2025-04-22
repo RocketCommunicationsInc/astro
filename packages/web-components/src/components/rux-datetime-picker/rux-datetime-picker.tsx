@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import {
     Component,
+    Element,
     Event,
     EventEmitter,
     Fragment,
@@ -59,6 +60,8 @@ export class RuxDatetimePicker {
     }
     private previousValue: string = ''
 
+    @Element() el!: HTMLRuxDatetimePickerElement
+
     @Prop() disabled: boolean = false
     @Prop({ attribute: 'error-text' }) errorText?: string
     @Prop({ attribute: 'help-text' }) helpText?: string
@@ -81,6 +84,9 @@ export class RuxDatetimePicker {
 
     @Event({ eventName: 'ruxinput' })
     ruxInput!: EventEmitter
+
+    @Event({ eventName: 'ruxblur' })
+    ruxBlur!: EventEmitter
 
     @State() iso: string = ''
     @State() parts: Part[] = []
@@ -449,6 +455,18 @@ export class RuxDatetimePicker {
         e.clipboardData!.setData('text/plain', this.iso)
         //TODO: figure out if we need to preserve the iso as a JulianISO if in julian mode.
     }
+    private _onBlur = (event: FocusEvent) => {
+        const path = event.composedPath() as HTMLElement[]
+
+        // Check if any element in the composed path is within the rux-datetime-picker
+        if (path.some((el) => this.el.contains(el))) {
+            return // Do nothing if focus is still within the component or its children
+        }
+
+        // Emit the blur event if focus has left the component
+        this.ruxBlur.emit()
+        // this.ruxChange.emit();
+    }
 
     render() {
         const {
@@ -470,7 +488,7 @@ export class RuxDatetimePicker {
             precision,
         } = this
         return (
-            <Host>
+            <Host onBlur={this._onBlur}>
                 <div>
                     <div
                         class={{ control: true }}
