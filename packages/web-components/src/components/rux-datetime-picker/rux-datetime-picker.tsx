@@ -60,6 +60,8 @@ export class RuxDatetimePicker {
         ms: this.msRef,
     }
     private previousValue: string = ''
+    private popUpRef?: HTMLRuxPopUpElement
+    private calRef?: HTMLRuxCalendarElement
 
     @Element() el!: HTMLRuxDatetimePickerElement
 
@@ -146,23 +148,22 @@ export class RuxDatetimePicker {
         this.handleInitialValue(this.value)
     }
 
-    @Watch('value')
-    handleValueChange(newValue: string) {
-        console.log('value change: ', this.value)
-        // if (newValue) {
-        //     if (!this.isValidIso8601(newValue)) {
-        //         console.warn(
-        //             `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
-        //         )
-        //         return
-        //     }
-        // }
-        // this.handleInitialValue(this.value)
-    }
+    // @Watch('value')
+    // handleValueChange(newValue: string) {
+    //     console.log('value change: ', this.value)
+    //     // if (newValue) {
+    //     //     if (!this.isValidIso8601(newValue)) {
+    //     //         console.warn(
+    //     //             `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
+    //     //         )
+    //     //         return
+    //     //     }
+    //     // }
+    //     // this.handleInitialValue(this.value)
+    // }
 
     @Watch('iso')
     handleIsoChange() {
-        console.log('heard iso change: ', this.iso)
         const isoToValue = combineToISO(
             this.refs['year']?.value,
             this.refs['month']?.value,
@@ -173,7 +174,6 @@ export class RuxDatetimePicker {
             this.refs['ms']?.value,
             this.julianFormat
         )
-        console.log(isoToValue, 'this is what I would set value to')
         // this.realValue = isoToValue
         this.value = isoToValue
         // this.ruxInput.emit() //? This emits correctly, but when changing time via the time picker it emits twice
@@ -487,17 +487,8 @@ export class RuxDatetimePicker {
         e.clipboardData!.setData('text/plain', this.iso)
         //TODO: figure out if we need to preserve the iso as a JulianISO if in julian mode.
     }
-
-    private _onFocusOut = () => {
-        // delay lets document.activeElement update
-        setTimeout(() => {
-            const active = document.activeElement
-            const isInside = this.el.contains(active)
-            if (!isInside) {
-                this.ruxBlur.emit()
-                this.ruxChange.emit()
-            }
-        }, 0)
+    private _onFocusOut = (e: FocusEvent) => {
+        this.ruxBlur.emit()
     }
 
     render() {
@@ -613,6 +604,7 @@ export class RuxDatetimePicker {
                                 open={isCalendarOpen}
                                 placement="bottom"
                                 class="calendar-btn"
+                                ref={(el) => (this.popUpRef = el)}
                             >
                                 <button
                                     type="button"
@@ -636,6 +628,7 @@ export class RuxDatetimePicker {
                                     maxYear={maxYear}
                                     precision={precision}
                                     isJulian={this.julianFormat}
+                                    ref={(el) => (this.calRef = el)}
                                 ></rux-calendar>
                             </rux-pop-up>
                         </div>
