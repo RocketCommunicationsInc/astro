@@ -644,13 +644,6 @@ export class RuxCalendar {
                     .padStart(2, '0')
             }
         }
-        //check if the value is within the min and max range
-        // if (parseInt(el.value) < parseInt(el.min)) {
-        //     el.value = el.min
-        // }
-        // if (parseInt(el.value) > parseInt(el.max)) {
-        //     el.value = el.max
-        // }
 
         // manually dispatch the change event. This is necessary because the input value is being updated
         //  programmatically via the arrows, and that doesn't

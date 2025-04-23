@@ -14,6 +14,7 @@ import {
 } from '@stencil/core'
 import { InputRefs, Part, PartKey, Precision } from './utils/types'
 import {
+    combineToISO,
     formatOrdinalToIso,
     initialOrdinalParts,
     initialParts,
@@ -94,6 +95,7 @@ export class RuxDatetimePicker {
     @State() inputtedDay: string = ''
     @State() inputtedMonth: string = ''
     @State() inputtedYear: string = ''
+    @State() realValue: string = ''
 
     @Listen('ruxpopupclosed')
     handlePopupClose() {
@@ -105,14 +107,15 @@ export class RuxDatetimePicker {
      */
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CalendarDateTimeUpdatedEvent) {
-        console.log('incoming event')
-        this.value = event.detail.iso
+        if (this.julianFormat)
+            this.value = this.toOrdinalIsoString(event.detail.iso)
+        else this.value = event.detail.iso
         if (event.detail.source !== 'timeChange') {
             this.ruxChange.emit()
         } else {
             this.ruxInput.emit()
         }
-        console.log('@Listen end')
+        this.handleInitialValue(this.value)
     }
 
     connectedCallback() {
@@ -131,6 +134,13 @@ export class RuxDatetimePicker {
         this.handleInitialValue(this.value)
     }
 
+    componentDidLoad() {
+        this.el.addEventListener('focusout', this._onFocusOut)
+    }
+    disconnectedCallback() {
+        this.el.removeEventListener('focusout', this._onFocusOut)
+    }
+
     @Watch('precision')
     handlePrecisionChange() {
         this.handleInitialValue(this.value)
@@ -138,15 +148,35 @@ export class RuxDatetimePicker {
 
     @Watch('value')
     handleValueChange(newValue: string) {
-        if (newValue) {
-            if (!this.isValidIso8601(newValue)) {
-                console.warn(
-                    `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
-                )
-                return
-            }
-        }
-        this.handleInitialValue(this.value)
+        console.log('value change: ', this.value)
+        // if (newValue) {
+        //     if (!this.isValidIso8601(newValue)) {
+        //         console.warn(
+        //             `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
+        //         )
+        //         return
+        //     }
+        // }
+        // this.handleInitialValue(this.value)
+    }
+
+    @Watch('iso')
+    handleIsoChange() {
+        console.log('heard iso change: ', this.iso)
+        const isoToValue = combineToISO(
+            this.refs['year']?.value,
+            this.refs['month']?.value,
+            this.refs['day']?.value,
+            this.refs['hour']?.value,
+            this.refs['min']?.value,
+            this.refs['sec']?.value,
+            this.refs['ms']?.value,
+            this.julianFormat
+        )
+        console.log(isoToValue, 'this is what I would set value to')
+        // this.realValue = isoToValue
+        this.value = isoToValue
+        // this.ruxInput.emit() //? This emits correctly, but when changing time via the time picker it emits twice
     }
 
     /**
@@ -387,6 +417,7 @@ export class RuxDatetimePicker {
             if (!this.isValidIso8601(parsedIso)) {
                 //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
                 this.iso = parsedIso
+                this.ruxInput.emit()
                 return
             }
             const d = new Date(parsedIso)
@@ -404,6 +435,7 @@ export class RuxDatetimePicker {
              * If parsedIso is valid iso string, set updated iso
              */
             this.iso = iso
+            this.ruxInput.emit()
         } catch (error: any) {
             const message = error.message || 'Invalid date'
             /**
@@ -455,17 +487,17 @@ export class RuxDatetimePicker {
         e.clipboardData!.setData('text/plain', this.iso)
         //TODO: figure out if we need to preserve the iso as a JulianISO if in julian mode.
     }
-    private _onBlur = (event: FocusEvent) => {
-        const path = event.composedPath() as HTMLElement[]
 
-        // Check if any element in the composed path is within the rux-datetime-picker
-        if (path.some((el) => this.el.contains(el))) {
-            return // Do nothing if focus is still within the component or its children
-        }
-
-        // Emit the blur event if focus has left the component
-        this.ruxBlur.emit()
-        // this.ruxChange.emit();
+    private _onFocusOut = () => {
+        // delay lets document.activeElement update
+        setTimeout(() => {
+            const active = document.activeElement
+            const isInside = this.el.contains(active)
+            if (!isInside) {
+                this.ruxBlur.emit()
+                this.ruxChange.emit()
+            }
+        }, 0)
     }
 
     render() {
@@ -488,7 +520,7 @@ export class RuxDatetimePicker {
             precision,
         } = this
         return (
-            <Host onBlur={this._onBlur}>
+            <Host>
                 <div>
                     <div
                         class={{ control: true }}

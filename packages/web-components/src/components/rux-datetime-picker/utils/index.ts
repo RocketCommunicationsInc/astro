@@ -378,3 +378,53 @@ export const getTimeFromIso = (isoString: string) => {
         milliseconds,
     }
 }
+
+/**
+ *
+ * @param yearValue
+ * @param monthValue
+ * @param dayValue
+ * @param hourValue
+ * @param minValue
+ * @param secondValue
+ * @param msValue
+ * @param isOrdinal
+ * @returns The concatanated value of the parameters if said parameter has a non empty value.
+ * Also adds in correct symbols (-, T, Z) for constructing an ISO string if those symbols are needed
+ */
+export const combineToISO = (
+    yearValue?: string,
+    monthValue?: string,
+    dayValue?: string,
+    hourValue?: string,
+    minValue?: string,
+    secondValue?: string,
+    msValue?: string,
+    isOrdinal: boolean = false
+): string => {
+    const dateParts: string[] = []
+
+    if (yearValue) dateParts.push(yearValue)
+
+    if (isOrdinal) {
+        if (dayValue) dateParts.push(dayValue) // YYYY-DDD
+    } else {
+        if (monthValue) dateParts.push(monthValue) // YYYY-MM-DD
+        if (dayValue) dateParts.push(dayValue)
+    }
+
+    let time = ''
+    if (hourValue || minValue || secondValue || msValue) {
+        const timeParts: string[] = []
+        if (hourValue) timeParts.push(hourValue)
+        if (minValue) timeParts.push(minValue)
+        if (secondValue) {
+            let seconds = secondValue
+            if (msValue) seconds += `.${msValue}`
+            timeParts.push(seconds)
+        }
+        time = `T${timeParts.join(':')}Z`
+    }
+
+    return dateParts.join('-') + time
+}
