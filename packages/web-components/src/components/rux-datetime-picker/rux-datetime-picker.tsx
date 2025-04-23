@@ -27,6 +27,8 @@ import {
     setPart,
 } from './utils'
 
+import { renderHiddenInput } from '../../utils/utils'
+
 type CalendarDateTimeUpdatedEvent = CustomEvent<{
     iso: string
     source:
@@ -60,8 +62,6 @@ export class RuxDatetimePicker {
         ms: this.msRef,
     }
     private previousValue: string = ''
-    private popUpRef?: HTMLRuxPopUpElement
-    private calRef?: HTMLRuxCalendarElement
 
     @Element() el!: HTMLRuxDatetimePickerElement
 
@@ -70,11 +70,11 @@ export class RuxDatetimePicker {
     @Prop({ attribute: 'help-text' }) helpText?: string
     @Prop() invalid: boolean = false
     @Prop() label?: string
-    @Prop() name?: string
+    @Prop() name: string = ''
     @Prop() required: boolean = false
     @Prop() size: 'small' | 'medium' | 'large' = 'medium'
-    @Prop({ reflect: true, mutable: true }) value?: string
-    @Prop() precision: Precision = 'min'
+    @Prop({ reflect: true, mutable: true }) value: string = ''
+    @Prop() precision: Precision = 'ms'
     @Prop({ attribute: 'min-year' }) minYear: number = 1900
     @Prop({ attribute: 'max-year' }) maxYear: number = 2100
     @Prop({ attribute: 'julian-format' }) julianFormat: boolean = false
@@ -105,7 +105,7 @@ export class RuxDatetimePicker {
     }
 
     /**
-     * @param event the event emitted from the calendar. Contains {iso: string}
+     * @param event the event emitted from the calendar. Contains {iso: string, source: string}
      */
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CalendarDateTimeUpdatedEvent) {
@@ -128,7 +128,7 @@ export class RuxDatetimePicker {
                 `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
             )
             this.iso = ''
-            this.value = undefined
+            this.value = ''
         }
     }
 
@@ -146,37 +146,6 @@ export class RuxDatetimePicker {
     @Watch('precision')
     handlePrecisionChange() {
         this.handleInitialValue(this.value)
-    }
-
-    // @Watch('value')
-    // handleValueChange(newValue: string) {
-    //     console.log('value change: ', this.value)
-    //     // if (newValue) {
-    //     //     if (!this.isValidIso8601(newValue)) {
-    //     //         console.warn(
-    //     //             `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
-    //     //         )
-    //     //         return
-    //     //     }
-    //     // }
-    //     // this.handleInitialValue(this.value)
-    // }
-
-    @Watch('iso')
-    handleIsoChange() {
-        const isoToValue = combineToISO(
-            this.refs['year']?.value,
-            this.refs['month']?.value,
-            this.refs['day']?.value,
-            this.refs['hour']?.value,
-            this.refs['min']?.value,
-            this.refs['sec']?.value,
-            this.refs['ms']?.value,
-            this.julianFormat
-        )
-        // this.realValue = isoToValue
-        this.value = isoToValue
-        // this.ruxInput.emit() //? This emits correctly, but when changing time via the time picker it emits twice
     }
 
     /**
@@ -229,6 +198,11 @@ export class RuxDatetimePicker {
             ? initialOrdinalParts()
             : initialParts()
         if (value) {
+            console.log(
+                'handleInitialValue called with a value of ',
+                value,
+                '. Now in try block'
+            )
             try {
                 //We need to turn an ordinal formatted string into an equivalent ISO string
                 // in order to store the date. After the date is stored, we need to translate it
@@ -405,42 +379,52 @@ export class RuxDatetimePicker {
             .map((part) => part.value)
             .join('')
             .split('~')
-        //have to do this to avoid adding an extra "T". Should probably just add T in to display as well.
         let parsedIso = !this.julianFormat
             ? `${date}T${time}${z}`
             : `${date}${time}${z}`
+
         if (this.julianFormat) {
             parsedIso = formatOrdinalToIso(parsedIso)
         }
 
         try {
             if (!this.isValidIso8601(parsedIso)) {
-                //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
                 this.iso = parsedIso
+                this.value = combineToISO(
+                    this.refs['year']?.value,
+                    this.refs['month']?.value,
+                    this.refs['day']?.value,
+                    this.refs['hour']?.value,
+                    this.refs['min']?.value,
+                    this.refs['sec']?.value,
+                    this.refs['ms']?.value,
+                    this.julianFormat
+                )
                 this.ruxInput.emit()
                 return
             }
+
             const d = new Date(parsedIso)
-            // console.log('date from parsed ISO: ', d)
             if (isNaN(d.getTime())) {
-                //this.iso doesn't need to be a valid date. we will do calcs on the calendar side.
                 this.iso = parsedIso
                 return
             }
-            /**
-             * If d.toISOString() throws an error, will end up in catch block
-             */
+
             const iso = d.toISOString()
-            /**
-             * If parsedIso is valid iso string, set updated iso
-             */
             this.iso = iso
+            this.value = combineToISO(
+                this.refs['year']?.value,
+                this.refs['month']?.value,
+                this.refs['day']?.value,
+                this.refs['hour']?.value,
+                this.refs['min']?.value,
+                this.refs['sec']?.value,
+                this.refs['ms']?.value,
+                this.julianFormat
+            )
             this.ruxInput.emit()
         } catch (error: any) {
             const message = error.message || 'Invalid date'
-            /**
-             * If error, set iso to message from error
-             */
             this.iso = message
         }
     }
@@ -510,6 +494,7 @@ export class RuxDatetimePicker {
             maxYear,
             precision,
         } = this
+        renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
         return (
             <Host>
                 <div>
@@ -604,7 +589,6 @@ export class RuxDatetimePicker {
                                 open={isCalendarOpen}
                                 placement="bottom"
                                 class="calendar-btn"
-                                ref={(el) => (this.popUpRef = el)}
                             >
                                 <button
                                     type="button"
@@ -628,7 +612,6 @@ export class RuxDatetimePicker {
                                     maxYear={maxYear}
                                     precision={precision}
                                     isJulian={this.julianFormat}
-                                    ref={(el) => (this.calRef = el)}
                                 ></rux-calendar>
                             </rux-pop-up>
                         </div>
