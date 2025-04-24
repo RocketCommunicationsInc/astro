@@ -5,21 +5,6 @@
 <!-- Auto Generated Below -->
 
 
-## Properties
-
-| Property    | Attribute    | Description | Type      | Default |
-| ----------- | ------------ | ----------- | --------- | ------- |
-| `dayNumber` | `day-number` |             | `string`  | `''`    |
-| `selected`  | `selected`   |             | `boolean` | `false` |
-
-
-## Events
-
-| Event            | Description | Type                                                                                                                           |
-| ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `ruxdayselected` |             | `CustomEvent<{ dayNumber: string; isPastDay: boolean; isFutureDay: boolean; selected: boolean; element: HTMLRuxDayElement; }>` |
-
-
 ## Dependencies
 
 ### Used by

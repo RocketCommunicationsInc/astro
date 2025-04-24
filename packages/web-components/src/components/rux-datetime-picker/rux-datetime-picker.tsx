@@ -65,39 +65,87 @@ export class RuxDatetimePicker {
 
     @Element() el!: HTMLRuxDatetimePickerElement
 
+    /**
+     * Disables the datetime-picker via HTML disabled attribute. Datetime-picker takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+     */
     @Prop() disabled: boolean = false
+    /**
+     * The validation error text
+     */
     @Prop({ attribute: 'error-text' }) errorText?: string
+    /**
+     * The help or explanation text
+     */
     @Prop({ attribute: 'help-text' }) helpText?: string
+    /**
+     * Presentational only. Renders the Input Field as invalid
+     */
     @Prop() invalid: boolean = false
+    /**
+     * The datetime-picker label text
+     */
     @Prop() label?: string
+    /**
+     * The datetime-picker name
+     */
     @Prop() name: string = ''
+    /**
+     * Presentational only. Sets the datetime-picker as required
+     */
     @Prop() required: boolean = false
+    /**
+     * Control the padding around the input field
+     */
     @Prop() size: 'small' | 'medium' | 'large' = 'medium'
+    /**
+     * The value of the datetime-picker
+     */
     @Prop({ reflect: true, mutable: true }) value: string = ''
+    /**
+     * Controls the precision to which the time is displayed on the datetime-picker
+     */
     @Prop() precision: Precision = 'ms'
+    /**
+     * Sets the minimum year the datetime-picker can use
+     */
     @Prop({ attribute: 'min-year' }) minYear: number = 1900
+    /**
+     * Sets the maximum year the datetime-picker can use
+     */
     @Prop({ attribute: 'max-year' }) maxYear: number = 2100
+    /**
+     * Controls whether the datetime-picker should be used in Julian format, ie YYYY-DDDThh:mm:ss.SSSZ
+     */
     @Prop({ attribute: 'julian-format' }) julianFormat: boolean = false
 
+    /**
+     * @internal
+     * Fired when the datetime-picker's input value updates. Calendar listens for this event in order to sync values.
+     */
     @Event({ eventName: 'ruxdatepickerchange' })
     ruxDatetimePickerChange!: EventEmitter<string>
-
+    /**
+     * Fired when the value of the datetime-picker changes and is committed by the user
+     */
     @Event({ eventName: 'ruxchange' })
     ruxChange!: EventEmitter
-
+    /**
+     * Fired when the value of the datetime-picker changes
+     */
     @Event({ eventName: 'ruxinput' })
     ruxInput!: EventEmitter
-
+    /**
+     * Fired when the datetime-picker loses focus
+     */
     @Event({ eventName: 'ruxblur' })
     ruxBlur!: EventEmitter
 
     @State() iso: string = ''
     @State() parts: Part[] = []
     @State() isCalendarOpen: boolean = false
-    @State() inputtedDay: string = ''
-    @State() inputtedMonth: string = ''
-    @State() inputtedYear: string = ''
-    @State() realValue: string = ''
+    // @State() inputtedDay: string = ''
+    // @State() inputtedMonth: string = ''
+    // @State() inputtedYear: string = ''
 
     @Listen('ruxpopupclosed')
     handlePopupClose() {
@@ -198,11 +246,6 @@ export class RuxDatetimePicker {
             ? initialOrdinalParts()
             : initialParts()
         if (value) {
-            console.log(
-                'handleInitialValue called with a value of ',
-                value,
-                '. Now in try block'
-            )
             try {
                 //We need to turn an ordinal formatted string into an equivalent ISO string
                 // in order to store the date. After the date is stored, we need to translate it
@@ -456,13 +499,6 @@ export class RuxDatetimePicker {
         e.preventDefault()
         const pastedValue = e.clipboardData!.getData('text/plain')
         this.handleInitialValue(pastedValue.trim())
-        const date = new Date(this.iso)
-        const year = date.getUTCFullYear()
-        const month = (date.getUTCMonth() + 1).toString().padStart(2, '0') // Months are zero-based, so add 1
-        const day = date.getUTCDate().toString().padStart(2, '0')
-        this.inputtedDay = day
-        this.inputtedMonth = month
-        this.inputtedYear = year.toString()
     }
 
     handleCopy = (e: ClipboardEvent) => {
@@ -471,7 +507,7 @@ export class RuxDatetimePicker {
         e.clipboardData!.setData('text/plain', this.iso)
         //TODO: figure out if we need to preserve the iso as a JulianISO if in julian mode.
     }
-    private _onFocusOut = (e: FocusEvent) => {
+    private _onFocusOut = () => {
         this.ruxBlur.emit()
     }
 

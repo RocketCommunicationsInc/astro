@@ -301,7 +301,6 @@ export const formatOrdinalToIso = (ordinalISO: string) => {
 export const ordinalDayToDate = (ordinalDay: string, year: string) => {
     const dayOfYear = parseInt(ordinalDay)
     const yearInt = parseInt(year)
-    console.log('using these for conversion: ', dayOfYear, yearInt)
     // Create a date object for the start of the year
     const startOfYear = new Date(Date.UTC(yearInt, 0, 0))
 

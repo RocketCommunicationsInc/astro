@@ -23,8 +23,16 @@ export type DayInfo = {
 export class RuxCalendar {
     @Element() el!: HTMLRuxDayElement
 
+    /**
+     * @internal
+     * Sets the displayed day number
+     */
     @Prop() dayNumber: string = ''
 
+    /**
+     * @internal
+     * sets the day as selected and adds relevant styling
+     */
     @Prop({ attribute: 'selected', reflect: true, mutable: true })
     selected: boolean = false
 
@@ -47,6 +55,10 @@ export class RuxCalendar {
      */
     @Prop() isToday: boolean = false
 
+    /**
+     * @internal
+     * Emitted when a rux-day is selected. This event is listened for by the calendar in order to sync values.
+     */
     @Event({ eventName: 'ruxdayselected' })
     ruxDaySelected!: EventEmitter<DayInfo>
 

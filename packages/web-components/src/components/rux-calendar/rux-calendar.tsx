@@ -43,8 +43,17 @@ export class RuxCalendar {
     private secondsInput!: HTMLInputElement
     private millisecondInput!: HTMLInputElement
     private arrowKeyPressed: boolean = false // used to track if an arrow key was pressed on the time inputs
+    /**
+     * The iso string to be used to display the date in the calendar
+     */
     @Prop({ mutable: true }) iso: string = ''
+    /**
+     * The minimum year the calendar can use
+     */
     @Prop() minYear: number = 1900
+    /**
+     * The maximum year the calendar can use
+     */
     @Prop() maxYear: number = 2100
     /**
      * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from
@@ -52,14 +61,20 @@ export class RuxCalendar {
      */
     @Prop() precision: Precision = 'min'
 
+    /**
+     * Controls whether or not the calendar displays dates in Julian
+     */
     @Prop() isJulian: boolean = false
+    /**
+     * @internal
+     * Emits the iso and the source of the change. This event is listened to by rux-datetime-picker in order to
+     * sync values.
+     */
     @Event({ eventName: 'ruxcalendardatetimeupdated' })
     ruxCalendarDateTimeUpdated!: EventEmitter<{
         iso: string
         source: EventSource
     }>
-    @Event({ eventName: 'datetimeupdated' })
-    datetimeUpdated!: EventEmitter<{ iso: string }>
 
     @State() initMinutesValue: string = ''
     @State() initSecondsValue: string = ''
@@ -197,7 +212,6 @@ export class RuxCalendar {
             iso: iso,
             source: 'daySelected',
         })
-        console.log('emit rcdtu from handleDaySelected')
     }
 
     /**
@@ -410,38 +424,6 @@ export class RuxCalendar {
         }
     }
     setDates() {
-        // const date = new Date(
-        //     Date.UTC(
-        //         parseInt(this.year),
-        //         parseInt(getMonthValueByName(this.month)!) - 1,
-        //         parseInt(this.day),
-        //         parseInt(this.initHoursValue)
-        //             ? parseInt(this.initHoursValue)
-        //             : 0,
-        //         parseInt(this.initMinutesValue)
-        //             ? parseInt(this.initMinutesValue)
-        //             : 0,
-        //         parseInt(this.initSecondsValue)
-        //             ? parseInt(this.initSecondsValue)
-        //             : 0,
-        //         parseInt(this.initMillisecondsValue)
-        //             ? parseInt(this.initMillisecondsValue)
-        //             : 0
-        //     )
-        // )
-        // if (isNaN(date.getTime())) {
-        //     console.warn('Invalid date:', date)
-        //     console.warn('Everything used to try and make this date: ', {
-        //         year: parseInt(this.year),
-        //         month: parseInt(getMonthValueByName(this.month)!) - 1,
-        //         day: parseInt(this.day),
-        //         hours: parseInt(this.initHoursValue),
-        //         minutes: parseInt(this.initMinutesValue),
-        //         seconds: parseInt(this.initSecondsValue),
-        //         milliseconds: parseInt(this.initMillisecondsValue),
-        //     })
-        //     return
-        // }
         const year = parseInt(this.year)
         const month = parseInt(getMonthValueByName(this.month)!) - 1
         const firstDayOfMonth = new Date(Date.UTC(year, month, 1)).getUTCDay()
@@ -584,7 +566,6 @@ export class RuxCalendar {
     }
 
     handleMonthChange = (event: CustomEvent) => {
-        console.log('handleMonthChange start')
         const target = event.target as HTMLRuxSelectElement
         const month = months.find((month) => month.value === target.value)
         if (month) {
