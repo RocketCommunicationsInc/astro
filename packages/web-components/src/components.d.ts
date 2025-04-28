@@ -91,13 +91,21 @@ export namespace Components {
         "hAlign": 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
-        "initHoursValue": string;
-        "initMillisecondsValue": string;
-        "initMinutesValue": string;
-        "initSecondsValue": string;
+        /**
+          * Controls whether or not the calendar displays dates in Julian
+         */
         "isJulian": boolean;
+        /**
+          * The iso string to be used to display the date in the calendar
+         */
         "iso": string;
+        /**
+          * The maximum year the calendar can use
+         */
         "maxYear": number;
+        /**
+          * The minimum year the calendar can use
+         */
         "minYear": number;
         /**
           * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
@@ -267,19 +275,58 @@ export namespace Components {
         "year"?: 'numeric' | '2-digit';
     }
     interface RuxDatetimePicker {
+        /**
+          * Disables the datetime-picker via HTML disabled attribute. Datetime-picker takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+         */
         "disabled": boolean;
+        /**
+          * The validation error text
+         */
         "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
         "helpText"?: string;
+        /**
+          * Presentational only. Renders the Input Field as invalid
+         */
         "invalid": boolean;
+        /**
+          * Controls whether the datetime-picker should be used in Julian format, ie YYYY-DDDThh:mm:ss.SSSZ
+         */
         "julianFormat": boolean;
+        /**
+          * The datetime-picker label text
+         */
         "label"?: string;
+        /**
+          * Sets the maximum year the datetime-picker can use
+         */
         "maxYear": number;
+        /**
+          * Sets the minimum year the datetime-picker can use
+         */
         "minYear": number;
-        "name"?: string;
+        /**
+          * The datetime-picker name
+         */
+        "name": string;
+        /**
+          * Controls the precision to which the time is displayed on the datetime-picker
+         */
         "precision": Precision;
+        /**
+          * Presentational only. Sets the datetime-picker as required
+         */
         "required": boolean;
+        /**
+          * Control the padding around the input field
+         */
         "size": 'small' | 'medium' | 'large';
-        "value"?: string;
+        /**
+          * The value of the datetime-picker
+         */
+        "value": string;
     }
     interface RuxDay {
         "dayNumber": string;
@@ -19428,7 +19475,7 @@ export namespace Components {
          */
         "autocomplete": string;
         /**
-          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+          * Disables the input via HTML disabled attribute. Input takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled": boolean;
         /**
@@ -35722,16 +35769,26 @@ declare namespace LocalJSX {
         "hAlign"?: 'left' | 'center' | 'right';
     }
     interface RuxCalendar {
-        "initHoursValue"?: string;
-        "initMillisecondsValue"?: string;
-        "initMinutesValue"?: string;
-        "initSecondsValue"?: string;
+        /**
+          * Controls whether or not the calendar displays dates in Julian
+         */
         "isJulian"?: boolean;
+        /**
+          * The iso string to be used to display the date in the calendar
+         */
         "iso"?: string;
+        /**
+          * The maximum year the calendar can use
+         */
         "maxYear"?: number;
+        /**
+          * The minimum year the calendar can use
+         */
         "minYear"?: number;
-        "onDatetimeupdated"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
-        "onRuxcalendardatetimeupdated"?: (event: RuxCalendarCustomEvent<{ iso: string }>) => void;
+        "onRuxcalendardatetimeupdated"?: (event: RuxCalendarCustomEvent<{
+        iso: string
+        source: EventSource
+    }>) => void;
         /**
           * Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component.
          */
@@ -35916,19 +35973,70 @@ declare namespace LocalJSX {
         "year"?: 'numeric' | '2-digit';
     }
     interface RuxDatetimePicker {
+        /**
+          * Disables the datetime-picker via HTML disabled attribute. Datetime-picker takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+         */
         "disabled"?: boolean;
+        /**
+          * The validation error text
+         */
         "errorText"?: string;
+        /**
+          * The help or explanation text
+         */
         "helpText"?: string;
+        /**
+          * Presentational only. Renders the Input Field as invalid
+         */
         "invalid"?: boolean;
+        /**
+          * Controls whether the datetime-picker should be used in Julian format, ie YYYY-DDDThh:mm:ss.SSSZ
+         */
         "julianFormat"?: boolean;
+        /**
+          * The datetime-picker label text
+         */
         "label"?: string;
+        /**
+          * Sets the maximum year the datetime-picker can use
+         */
         "maxYear"?: number;
+        /**
+          * Sets the minimum year the datetime-picker can use
+         */
         "minYear"?: number;
+        /**
+          * The datetime-picker name
+         */
         "name"?: string;
+        /**
+          * Fired when the datetime-picker loses focus
+         */
+        "onRuxblur"?: (event: RuxDatetimePickerCustomEvent<any>) => void;
+        /**
+          * Fired when the value of the datetime-picker changes and is committed by the user
+         */
+        "onRuxchange"?: (event: RuxDatetimePickerCustomEvent<any>) => void;
         "onRuxdatepickerchange"?: (event: RuxDatetimePickerCustomEvent<string>) => void;
+        /**
+          * Fired when the value of the datetime-picker changes
+         */
+        "onRuxinput"?: (event: RuxDatetimePickerCustomEvent<any>) => void;
+        /**
+          * Controls the precision to which the time is displayed on the datetime-picker
+         */
         "precision"?: Precision;
+        /**
+          * Presentational only. Sets the datetime-picker as required
+         */
         "required"?: boolean;
+        /**
+          * Control the padding around the input field
+         */
         "size"?: 'small' | 'medium' | 'large';
+        /**
+          * The value of the datetime-picker
+         */
         "value"?: string;
     }
     interface RuxDay {
@@ -55075,7 +55183,7 @@ declare namespace LocalJSX {
          */
         "autocomplete"?: string;
         /**
-          * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+          * Disables the input via HTML disabled attribute. Input takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
          */
         "disabled"?: boolean;
         /**
