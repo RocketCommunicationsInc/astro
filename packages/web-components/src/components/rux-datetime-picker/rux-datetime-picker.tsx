@@ -27,6 +27,7 @@ import {
     setPart,
 } from './utils'
 
+import { getDaysInMonth } from 'date-fns'
 import { renderHiddenInput } from '../../utils/utils'
 
 type CalendarDateTimeUpdatedEvent = CustomEvent<{
@@ -52,7 +53,7 @@ export class RuxDatetimePicker {
     private minRef?: HTMLInputElement
     private secRef?: HTMLInputElement
     private msRef?: HTMLInputElement
-    private refs: InputRefs = {
+    @State() refs: InputRefs = {
         year: this.yearRef,
         month: this.monthRef,
         day: this.dayRef,
@@ -308,6 +309,8 @@ export class RuxDatetimePicker {
      */
     validateInput(value: string, type: PartKey, inputRefs: InputRefs): string {
         const [min, max] = this.determineMinMax(type)
+        const dayPart = this.parts.find((part) => part.type == 'day')
+        const yearPart = this.parts.find((part) => part.type === 'year')
 
         // If type is month, only allow values of 1-12. If the first digit is between 2-9, pad the digit with a 0 and move to the next input.
         if (type === 'month' && value.length === 1 && parseInt(value) > 1) {
@@ -320,17 +323,54 @@ export class RuxDatetimePicker {
             value = `${max}`
         }
 
+        // // if type is month, check day input to see if it has a value. If it has a value outside of the days of the month, update it.
+
+        if (type === 'month' && dayPart?.value) {
+            console.log('made it')
+            //need year to accuractley determine how many days are in the month
+            const year = yearPart?.value || new Date().getFullYear()
+            //get the month from the input
+            // get the days in the month. Months in this context is 0-indexed, hence the -1
+            const daysInMonth = getDaysInMonth(
+                new Date(Number(year), Number(value) - 1)
+            )
+            //check day input to see if it's value needs updated to be the highest day in the month
+            if (Number(dayPart.value) > daysInMonth) {
+                console.log(
+                    'should update day ref value to be: ',
+                    daysInMonth.toString()
+                )
+                dayPart.value = daysInMonth.toString()
+            }
+        }
+
         // Based on the month, the day should be limited to the number of days in that month
         if (!this.julianFormat) {
             if (type === 'day') {
-                const month = parseInt(inputRefs['month']?.value || '')
-                const daysInMonth = new Date(
-                    parseInt(inputRefs['year']?.value || ''),
-                    month,
-                    0
-                ).getDate()
-                if (parseInt(value) > daysInMonth) {
-                    value = `${daysInMonth}`
+                const monthPart = this.parts.find(
+                    (part) => part.type === 'month'
+                )
+                const month = monthPart?.value || ''
+                if (month) {
+                    console.log('Month exisits: ', month)
+                    const year = yearPart?.value || new Date().getFullYear()
+                    console.log('year is: ', year)
+                    //get the month from the input
+                    // get the days in the month. Months in this context is 0-indexed, hence the -1
+                    const daysInMonth = getDaysInMonth(
+                        new Date(Number(year), Number(month) - 1)
+                    )
+                    console.log('daysInMonth: ', daysInMonth)
+                    if (parseInt(value) > daysInMonth) {
+                        value = `${daysInMonth}`
+
+                        if (dayPart) dayPart.value = value
+                    }
+                } else {
+                    if (parseInt(value) > 31) {
+                        value = '31'
+                        if (dayPart) dayPart.value = value
+                    }
                 }
                 // If the day is 0, set it to 1
                 if (parseInt(value) === 0 && value.length === 2) {
@@ -345,7 +385,7 @@ export class RuxDatetimePicker {
             // if the year isn't a leapyear, the max day is 365
             if (
                 type === 'day' &&
-                parseInt(inputRefs['year']?.value || '') % 4 !== 0 &&
+                parseInt(yearPart?.value || '') % 4 !== 0 &&
                 parseInt(value) > 365
             ) {
                 value = '365'
@@ -353,7 +393,7 @@ export class RuxDatetimePicker {
             // if the year is a leapyear, the max day is 366
             if (
                 type === 'day' &&
-                parseInt(inputRefs['year']?.value || '') % 4 === 0 &&
+                parseInt(yearPart?.value || '') % 4 === 0 &&
                 parseInt(value) > 366
             ) {
                 value = '366'
@@ -434,13 +474,13 @@ export class RuxDatetimePicker {
             if (!this.isValidIso8601(parsedIso)) {
                 this.iso = parsedIso
                 this.value = combineToISO(
-                    this.refs['year']?.value,
-                    this.refs['month']?.value,
-                    this.refs['day']?.value,
-                    this.refs['hour']?.value,
-                    this.refs['min']?.value,
-                    this.refs['sec']?.value,
-                    this.refs['ms']?.value,
+                    this.parts.find((part) => part.type === 'year')?.value,
+                    this.parts.find((part) => part.type === 'month')?.value,
+                    this.parts.find((part) => part.type === 'day')?.value,
+                    this.parts.find((part) => part.type === 'hour')?.value,
+                    this.parts.find((part) => part.type === 'min')?.value,
+                    this.parts.find((part) => part.type === 'sec')?.value,
+                    this.parts.find((part) => part.type === 'ms')?.value,
                     this.julianFormat
                 )
                 this.ruxInput.emit()
@@ -456,13 +496,13 @@ export class RuxDatetimePicker {
             const iso = d.toISOString()
             this.iso = iso
             this.value = combineToISO(
-                this.refs['year']?.value,
-                this.refs['month']?.value,
-                this.refs['day']?.value,
-                this.refs['hour']?.value,
-                this.refs['min']?.value,
-                this.refs['sec']?.value,
-                this.refs['ms']?.value,
+                this.parts.find((part) => part.type === 'year')?.value,
+                this.parts.find((part) => part.type === 'month')?.value,
+                this.parts.find((part) => part.type === 'day')?.value,
+                this.parts.find((part) => part.type === 'hour')?.value,
+                this.parts.find((part) => part.type === 'min')?.value,
+                this.parts.find((part) => part.type === 'sec')?.value,
+                this.parts.find((part) => part.type === 'ms')?.value,
                 this.julianFormat
             )
             this.ruxInput.emit()
