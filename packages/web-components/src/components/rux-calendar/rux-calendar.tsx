@@ -522,9 +522,7 @@ export class RuxCalendar {
         }
 
         this.year = year.toString()
-        if (this.day && !this.selectedDay) {
-            this.setSelectedDay(this.day)
-        }
+        this.setSelectedDay(this.day)
         this.setYears()
     }
 
