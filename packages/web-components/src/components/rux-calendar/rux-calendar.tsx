@@ -524,11 +524,13 @@ export class RuxCalendar {
         this.year = year.toString()
         if (this.isJulian) {
             const date = new Date(
-                Date.UTC(year, month, parseInt(this.day))
+                Date.UTC(
+                    year,
+                    month,
+                    parseInt(julianToGregorianDay(this.day, this.year))
+                )
             ).toISOString()
-            console.log('iso string to make jday from: ', date)
             const jday = getDayOfYearFromIso(date)
-            console.log('jday? : ', jday)
             this.setSelectedDay(jday)
         } else {
             this.setSelectedDay(this.day)
