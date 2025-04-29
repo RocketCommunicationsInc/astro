@@ -326,7 +326,6 @@ export class RuxDatetimePicker {
         // // if type is month, check day input to see if it has a value. If it has a value outside of the days of the month, update it.
 
         if (type === 'month' && dayPart?.value) {
-            console.log('made it')
             //need year to accuractley determine how many days are in the month
             const year = yearPart?.value || new Date().getFullYear()
             //get the month from the input
@@ -336,10 +335,6 @@ export class RuxDatetimePicker {
             )
             //check day input to see if it's value needs updated to be the highest day in the month
             if (Number(dayPart.value) > daysInMonth) {
-                console.log(
-                    'should update day ref value to be: ',
-                    daysInMonth.toString()
-                )
                 dayPart.value = daysInMonth.toString()
             }
         }
@@ -352,15 +347,12 @@ export class RuxDatetimePicker {
                 )
                 const month = monthPart?.value || ''
                 if (month) {
-                    console.log('Month exisits: ', month)
                     const year = yearPart?.value || new Date().getFullYear()
-                    console.log('year is: ', year)
                     //get the month from the input
                     // get the days in the month. Months in this context is 0-indexed, hence the -1
                     const daysInMonth = getDaysInMonth(
                         new Date(Number(year), Number(month) - 1)
                     )
-                    console.log('daysInMonth: ', daysInMonth)
                     if (parseInt(value) > daysInMonth) {
                         value = `${daysInMonth}`
 
