@@ -53,15 +53,6 @@ export class RuxDatetimePicker {
     private minRef?: HTMLInputElement
     private secRef?: HTMLInputElement
     private msRef?: HTMLInputElement
-    @State() refs: InputRefs = {
-        year: this.yearRef,
-        month: this.monthRef,
-        day: this.dayRef,
-        hour: this.hourRef,
-        min: this.minRef,
-        sec: this.secRef,
-        ms: this.msRef,
-    }
     private previousValue: string = ''
 
     @Element() el!: HTMLRuxDatetimePickerElement
@@ -144,9 +135,15 @@ export class RuxDatetimePicker {
     @State() iso: string = ''
     @State() parts: Part[] = []
     @State() isCalendarOpen: boolean = false
-    // @State() inputtedDay: string = ''
-    // @State() inputtedMonth: string = ''
-    // @State() inputtedYear: string = ''
+    @State() refs: InputRefs = {
+        year: this.yearRef,
+        month: this.monthRef,
+        day: this.dayRef,
+        hour: this.hourRef,
+        min: this.minRef,
+        sec: this.secRef,
+        ms: this.msRef,
+    }
 
     @Listen('ruxpopupclosed')
     handlePopupClose() {
@@ -161,6 +158,7 @@ export class RuxDatetimePicker {
         if (this.julianFormat)
             this.value = this.toOrdinalIsoString(event.detail.iso)
         else this.value = event.detail.iso
+        //Based on the event's source, emit the relevant event
         if (event.detail.source !== 'timeChange') {
             this.ruxChange.emit()
         } else {
@@ -172,6 +170,7 @@ export class RuxDatetimePicker {
     connectedCallback() {
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
+        //Emit a warning if the datepicker is rendered with the value prop filled but invalid
         if (this.value && !this.isValidIso8601(this.value)) {
             console.warn(
                 `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
@@ -422,6 +421,12 @@ export class RuxDatetimePicker {
         return value
     }
 
+    /**
+     * Handles value change on the inputs. Updates this.parts and this.iso.
+     * @param event The InputEvent
+     * @param type The PartKey of the input (ie year, month, day, ect)
+     * @param inputRefs The references to each input
+     */
     handleChange(event: InputEvent, type: PartKey, inputRefs: InputRefs) {
         const target = event.target as HTMLInputElement
         let value = target.value
@@ -542,6 +547,16 @@ export class RuxDatetimePicker {
     private _onFocusOut = () => {
         this.ruxBlur.emit()
     }
+    /**
+     *
+     * @param e A focus event
+     * This makes it so when an input is clicked, the contents get selected so that typing into it
+     * is a better experience.
+     */
+    private _highlightInput = (e: FocusEvent) => {
+        const target = e.target as HTMLInputElement
+        target.select()
+    }
 
     render() {
         const {
@@ -630,6 +645,9 @@ export class RuxDatetimePicker {
                                                 )[0]
                                             }
                                             value={value}
+                                            onFocus={(e: FocusEvent) =>
+                                                this._highlightInput(e)
+                                            }
                                         />
                                         <span
                                             class={{

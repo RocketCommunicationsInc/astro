@@ -170,6 +170,66 @@ test.describe('Datepicker event emissions', () => {
         await secArrowInc.click()
         expect(inputEvent).toHaveReceivedEventTimes(1)
     })
+    test.describe('onInput', () => {
+        test('datepicker emits onInput event when datepicker inputs are typed into', async ({
+            page,
+        }) => {
+            const template = `<rux-datetime-picker></rux-datetime-picker>`
+            await page.setContent(template)
+            const inputEvent = await page.spyOnEvent('ruxinput')
+            const dp = page.locator('rux-datetime-picker')
+            const yearInput = dp.locator('input.year')
+            const monthInput = dp.locator('input.month')
+            const dayInput = dp.locator('input.day')
+            const hourInput = dp.locator('input.hour')
+            const minInput = dp.locator('input.min')
+            const secInput = dp.locator('input.sec')
+            const msInput = dp.locator('input.ms')
+            await yearInput.type('2025')
+            await expect(inputEvent).toHaveReceivedEventTimes(4)
+            await expect(dp).toHaveAttribute('value', '2025')
+            await monthInput.type('12')
+            await expect(inputEvent).toHaveReceivedEventTimes(6)
+            await expect(dp).toHaveAttribute('value', '2025-12')
+            await dayInput.type('12')
+            await expect(inputEvent).toHaveReceivedEventTimes(8)
+            await expect(dp).toHaveAttribute('value', '2025-12-12')
+            await hourInput.type('12')
+            await expect(inputEvent).toHaveReceivedEventTimes(10)
+            await expect(dp).toHaveAttribute('value', '2025-12-12T12Z')
+            await minInput.type('12')
+            await expect(inputEvent).toHaveReceivedEventTimes(12)
+            await expect(dp).toHaveAttribute('value', '2025-12-12T12:12Z')
+            await secInput.type('12')
+            await expect(inputEvent).toHaveReceivedEventTimes(14)
+            await expect(dp).toHaveAttribute('value', '2025-12-12T12:12:12Z')
+            await msInput.type('333')
+            await expect(inputEvent).toHaveReceivedEventTimes(17)
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-12-12T12:12:12.333Z'
+            )
+        })
+        test('datepicker emits onInput event when time inputs are typed into', async ({
+            page,
+        }) => {
+            await page.setContent(
+                `<rux-datetime-picker value="2025-10-05T00:00:00.000Z" data-testid="default"></rux-datetime-picker>`
+            )
+            const dp = await page.locator('rux-datetime-picker')
+            const inputEvent = await page.spyOnEvent('ruxinput')
+
+            await openCalendar(page, 'default', true)
+            //get hour input in time picker, type into it
+            const hourInput = await dp.locator('.timepicker-hours input')
+            await hourInput.type('12')
+            await expect(inputEvent).toHaveReceivedEventTimes(2)
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-10-05T12:00:00.000Z'
+            )
+        })
+    })
 })
 test.describe('Timepicker functionality', () => {
     test.beforeEach(async ({ page }) => {

@@ -275,6 +275,11 @@ export class RuxCalendar {
         return date.toISOString()
     }
 
+    /**
+     *
+     * @param dayNumber the number of day to be selected
+     * Loops through ruxDays and sets the given day number match to be selected.
+     */
     private async setSelectedDay(dayNumber?: string) {
         if (!this.ruxDays) {
             return
@@ -350,6 +355,11 @@ export class RuxCalendar {
         this.currentDay = new Date().toISOString()
         this.setDates()
     }
+
+    /**
+     * @returns A node list of rux-day elements
+     * An async method for getting all rux-day elements associated with this calendar.
+     */
     private waitForRuxDays(): Promise<NodeListOf<HTMLRuxDayElement>> {
         return new Promise((resolve) => {
             const checkRuxDays = () => {
@@ -365,6 +375,9 @@ export class RuxCalendar {
         })
     }
 
+    /**
+     * Async helper method for getting ruxDays
+     */
     private async getRuxDays() {
         this.ruxDays = await this.waitForRuxDays()
     }
@@ -423,6 +436,10 @@ export class RuxCalendar {
             this.setSelectedDay(this.day)
         }
     }
+
+    /**
+     * Sets date state and fills in the calendar with the correct number of days. Also sets selected day if necessary.
+     */
     setDates() {
         const year = parseInt(this.year)
         const month = parseInt(getMonthValueByName(this.month)!) - 1
@@ -538,6 +555,9 @@ export class RuxCalendar {
         this.setYears()
     }
 
+    /**
+     * Fills in this.years with valid years based on minYear and maxYear
+     */
     setYears() {
         this.years = Array.from(
             { length: this.maxYear - this.minYear + 1 },
@@ -545,6 +565,9 @@ export class RuxCalendar {
         )
     }
 
+    /**
+     * Logic for moving forward one month via the month arrow
+     */
     handleForwardMonth = () => {
         const monthNum = getMonthValueByName(this.month)
         const actual = parseInt(monthNum!) + 1
@@ -559,6 +582,10 @@ export class RuxCalendar {
         }
         this.iso = this.compileIso()
     }
+
+    /**
+     * Logic for moving backward one month via the month arrow
+     */
     handleBackwardMonth = () => {
         const monthNum = getMonthValueByName(this.month)
         const actual = parseInt(monthNum!) - 1
@@ -575,6 +602,10 @@ export class RuxCalendar {
         this.iso = this.compileIso()
     }
 
+    /**
+     * @param event HTMLRuxSelect ruxchange event
+     * Handles changing the month via the month select menu. Emits a `ruxCalendarDateTimeUpdated` event.
+     */
     handleMonthChange = (event: CustomEvent) => {
         const target = event.target as HTMLRuxSelectElement
         const month = months.find((month) => month.value === target.value)
@@ -587,6 +618,11 @@ export class RuxCalendar {
             source: 'monthChange',
         })
     }
+
+    /**
+     * @param event HTMLRuxSelect ruxchange event
+     * Handles changing the year via the year select menu. Emits a `ruxCalendarDateTimeUpdated` event.
+     */
     handleYearChange = (event: CustomEvent) => {
         const target = event.target as HTMLRuxSelectElement
         //We know value will be of type string because we're not using a multiselect for year
@@ -600,6 +636,13 @@ export class RuxCalendar {
         })
     }
 
+    /**
+     * @param el The input element being interacted with
+     * @param increment True if adding value
+     * @param decrement True if subtracting value
+     * Logic for incrementing or decrementing the given input's value using the arrow icons.
+     * Emits a `ruxCalendarDateTimeUpdated` event.
+     */
     handleTimeIncrementDecrement(
         el: HTMLInputElement,
         increment?: boolean,
@@ -651,6 +694,13 @@ export class RuxCalendar {
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
     }
 
+    /**
+     * @param e The input's change event
+     * @param max The max amount of the input
+     * @param min The min amount of the input
+     * @param part The time part of the input - hour, min, sec, ms
+     * Handles changes in the time inputs via user typing.
+     */
     handleTimeChange(e: Event, max: number, min: number = 0, part: string) {
         //if the incoming value is a letter or symbol, prevent default and return
         const regex = /^[0-9]+$/
@@ -717,6 +767,17 @@ export class RuxCalendar {
         if (dayNum === this.selectedDay.dayNumber && !futureDay && !pastDay) {
             return true
         } else return false
+    }
+
+    /**
+     *
+     * @param e A focus event
+     * This makes it so when an input is clicked, the contents get selected so that typing into it
+     * is a better experience.
+     */
+    private _highlightInput = (e: FocusEvent) => {
+        const target = e.target as HTMLInputElement
+        target.select()
     }
 
     render() {
@@ -821,6 +882,9 @@ export class RuxCalendar {
                                 onInput={(e) =>
                                     this.handleTimeChange(e, 23, 0, 'hour')
                                 }
+                                onFocus={(e: FocusEvent) =>
+                                    this._highlightInput(e)
+                                }
                                 onKeyDown={(evt) => {
                                     if (
                                         ['ArrowUp', 'ArrowDown'].includes(
@@ -880,6 +944,9 @@ export class RuxCalendar {
                                 class="part"
                                 onInput={(e) =>
                                     this.handleTimeChange(e, 59, 0, 'min')
+                                }
+                                onFocus={(e: FocusEvent) =>
+                                    this._highlightInput(e)
                                 }
                                 onKeyDown={(evt) => {
                                     if (
@@ -950,6 +1017,9 @@ export class RuxCalendar {
                                                 'sec'
                                             )
                                         }
+                                        onFocus={(e: FocusEvent) =>
+                                            this._highlightInput(e)
+                                        }
                                         onKeyDown={(evt) => {
                                             if (
                                                 [
@@ -1018,6 +1088,9 @@ export class RuxCalendar {
                                     class="part"
                                     onInput={(e) =>
                                         this.handleTimeChange(e, 999, 0, 'ms')
+                                    }
+                                    onFocus={(e: FocusEvent) =>
+                                        this._highlightInput(e)
                                     }
                                     onKeyDown={(evt) => {
                                         if (
