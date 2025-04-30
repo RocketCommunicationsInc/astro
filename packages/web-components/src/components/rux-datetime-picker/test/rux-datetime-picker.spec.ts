@@ -275,10 +275,30 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
             await hourArrowDec.click()
             await expect(hourInput).toHaveValue('11')
         })
-        //TODO: Typing into hour input
-        //TODO: typing invalid characters (letters, -, +, E)
-        //TODO: entering values above max should revert it to max
-        //TODO: Programmatically changing value?
+        test('Hour input only accepts valid characters', async ({ page }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const hourInput = dp.locator('.timepicker-hours input')
+            await hourInput.type('E')
+            await expect(hourInput).toHaveValue('00')
+            await hourInput.type('-')
+            await expect(hourInput).toHaveValue('00')
+            await hourInput.type('+')
+            await expect(hourInput).toHaveValue('00')
+            await hourInput.type('e')
+            await expect(hourInput).toHaveValue('00')
+            await hourInput.type('1')
+            await expect(hourInput).toHaveValue('01')
+        })
+        test('Hour input will reset value to 23 if given value is > 23', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const hourInput = dp.locator('.timepicker-hours input')
+            await hourInput.type('99')
+            await expect(hourInput).toHaveValue('23')
+        })
     })
     test.describe('Minute Input', () => {
         test('Minute input can have its time incremented via the up arrow icon', async ({
@@ -292,6 +312,42 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
             await minInput.hover()
             await minArrowInc.click()
             await expect(minInput).toHaveValue('01')
+        })
+        test('Minute input can have its time decremented via the up arrow icon', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('given-value')
+            await openCalendar(page, 'given-value', true)
+            const minInput = dp.locator('.timepicker-min input')
+            const minArrowDec = dp.locator('.timepicker-min .dec-arrow')
+            await expect(minInput).toHaveValue('12')
+            await minInput.hover()
+            await minArrowDec.click()
+            await expect(minInput).toHaveValue('11')
+        })
+        test('Min input only accepts valid characters', async ({ page }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const minInput = dp.locator('.timepicker-min input')
+            await minInput.type('E')
+            await expect(minInput).toHaveValue('00')
+            await minInput.type('-')
+            await expect(minInput).toHaveValue('00')
+            await minInput.type('+')
+            await expect(minInput).toHaveValue('00')
+            await minInput.type('e')
+            await expect(minInput).toHaveValue('00')
+            await minInput.type('1')
+            await expect(minInput).toHaveValue('01')
+        })
+        test('Min input will reset value to 59 if given value is > 59', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const minInput = dp.locator('.timepicker-min input')
+            await minInput.type('99')
+            await expect(minInput).toHaveValue('59')
         })
     })
 })

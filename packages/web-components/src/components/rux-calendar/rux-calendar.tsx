@@ -712,8 +712,9 @@ export class RuxCalendar {
         if (parseInt(target.value) > max) {
             target.value = max.toString()
         }
-        if (parseInt(target.value) < min) {
-            target.value = min.toString()
+        if (parseInt(target.value) <= min) {
+            if (part !== 'ms') target.value = min.toString().padStart(2, '0')
+            else target.value = min.toString().padStart(3, '0')
         }
         if (part !== 'ms') {
             if (target.value.length > 2 && !(parseInt(target.value) > 0)) {

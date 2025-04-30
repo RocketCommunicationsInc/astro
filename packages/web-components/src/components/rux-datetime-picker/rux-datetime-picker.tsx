@@ -170,7 +170,7 @@ export class RuxDatetimePicker {
     connectedCallback() {
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
-        //Emit a warning if the datepicker is rendered with the value prop filled but invalid
+        //Emit a warning if the datepicker is rendered with the value prop filled but with an invalid value.
         if (this.value && !this.isValidIso8601(this.value)) {
             console.warn(
                 `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
