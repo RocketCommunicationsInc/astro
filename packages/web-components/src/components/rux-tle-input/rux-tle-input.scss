@@ -1,0 +1,154 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    display: block;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+textarea {
+    /* Scrollbars */
+    scrollbar-color: var(--color-border-interactive-muted)
+        var(--color-background-surface-default);
+    &::-webkit-scrollbar {
+        width: var(--spacing-4);
+        height: var(--spacing-4);
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(
+            --color-border-interactive-muted,
+            rgb(43, 101, 155)
+        );
+        border-radius: var(--spacing-2);
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    &::-webkit-scrollbar-thumb:vertical {
+        border-left-width: var(--border-width-lg);
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: var(--border-width-lg);
+    }
+
+    &::-webkit-scrollbar-thumb:active,
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(
+            --color-background-interactive-default,
+            rgb(58, 129, 191)
+        );
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(
+            --color-background-surface-default,
+            rgb(27, 45, 62)
+        );
+
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: var(
+            --color-background-surface-default,
+            rgb(27, 45, 62)
+        );
+    }
+
+    &::-webkit-scrollbar-track:vertical {
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    &::-webkit-scrollbar-track:horizontal {
+        box-shadow: var(--scrollbar-shadow-inner-horizontal);
+    }
+}
+
+.rux-tle-input {
+    box-sizing: border-box;
+    /* Use monospace font for fixed-width characters */
+    font-family: var(--font-monospace-1-font-family);
+    // font-size: var(--font-monospace-1-font-size); TODO: --font-monospace-1-font-size is 1.75 rem, which is too large for the input field
+    font-size: var(--font-size-base);
+    letter-spacing: var(--font-monospace-1-letter-spacing);
+    font-weight: var(--font-monospace-1-font-weight);
+    line-height: var(--font-monospace-1-line-height);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-base-default);
+    /* Fixed height for exactly 2 lines */
+    height: calc(2 * var(--font-monospace-1-line-height) + var(--spacing-4));
+    min-height: calc(
+        2 * var(--font-monospace-1-line-height) + var(--spacing-4)
+    );
+    max-height: calc(
+        2 * var(--font-monospace-1-line-height) + var(--spacing-4)
+    );
+    width: 100%;
+    padding: var(--spacing-2);
+    margin: var(--spacing-0);
+    border: 1px solid var(--color-border-interactive-muted);
+    border-radius: var(--radius-base);
+    resize: none; /* Prevent resizing since we want exactly 2 lines */
+    white-space: pre; /* Preserve whitespace and line breaks */
+
+    &--invalid {
+        border: 1px solid var(--color-text-error);
+    }
+    &--disabled {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+    }
+
+    &:focus-visible {
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+    &:hover {
+        border-color: var(--color-background-interactive-hover);
+        outline: none;
+    }
+    &--disabled:hover {
+        border: 1px solid var(--color-border-interactive-muted);
+        color: var(--color-text-primary);
+    }
+    &--invalid:hover {
+        border: 1px solid var(--color-text-error);
+    }
+    &::placeholder {
+        color: var(--color-text-placeholder);
+    }
+}
+
+.rux-tle-input-field {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-primary);
+}
+
+.rux-tle-input-label {
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    margin-bottom: var(--spacing-2);
+    text-align: left;
+    &__asterisk {
+        margin-left: var(--spacing-1);
+    }
+}
+
+.rux-tle-examples {
+    margin-top: var(--spacing-2);
+}
+
+::selection {
+    background-color: var(--color-palette-brightblue-400);
+}

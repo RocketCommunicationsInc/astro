@@ -20130,6 +20130,65 @@ export namespace Components {
          */
         "zoom": number;
     }
+    interface RuxTleInput {
+        "checkValidity": () => Promise<boolean>;
+        /**
+          * Sets the input as disabled
+         */
+        "disabled": boolean;
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help text
+         */
+        "helpText"?: string;
+        /**
+          * Presentational only. Renders the TLE input as invalid.
+         */
+        "invalid": boolean;
+        /**
+          * The TLE input label text. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
+        /**
+          * The input name
+         */
+        "name": string;
+        /**
+          * The TLE input placeholder text
+         */
+        "placeholder"?: string;
+        /**
+          * Sets the input as readonly
+         */
+        "readonly": boolean;
+        /**
+          * For form validation with constraint validation API
+         */
+        "reportValidity": () => Promise<boolean>;
+        /**
+          * Sets the input as required
+         */
+        "required": boolean;
+        /**
+          * Selects all text
+         */
+        "selectAll": () => Promise<void>;
+        /**
+          * Sets element as focused
+         */
+        "setFocus": (options?: FocusOptions) => Promise<void>;
+        /**
+          * Validates the TLE format
+         */
+        "validateTle": () => Promise<boolean>;
+        /**
+          * The input value
+         */
+        "value": string;
+    }
     interface RuxToast {
         /**
           * If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
@@ -20314,6 +20373,10 @@ export interface RuxTextareaCustomEvent<T> extends CustomEvent<T> {
 export interface RuxTimeRegionCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLRuxTimeRegionElement;
+}
+export interface RuxTleInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLRuxTleInputElement;
 }
 export interface RuxToastCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -34414,6 +34477,12 @@ declare global {
         prototype: HTMLRuxTimelineElement;
         new (): HTMLRuxTimelineElement;
     };
+    interface HTMLRuxTleInputElement extends Components.RuxTleInput, HTMLStencilElement {
+    }
+    var HTMLRuxTleInputElement: {
+        prototype: HTMLRuxTleInputElement;
+        new (): HTMLRuxTleInputElement;
+    };
     interface HTMLRuxToastElement extends Components.RuxToast, HTMLStencilElement {
     }
     var HTMLRuxToastElement: {
@@ -35562,6 +35631,7 @@ declare global {
         "rux-textarea": HTMLRuxTextareaElement;
         "rux-time-region": HTMLRuxTimeRegionElement;
         "rux-timeline": HTMLRuxTimelineElement;
+        "rux-tle-input": HTMLRuxTleInputElement;
         "rux-toast": HTMLRuxToastElement;
         "rux-toast-stack": HTMLRuxToastStackElement;
         "rux-tooltip": HTMLRuxTooltipElement;
@@ -55788,6 +55858,64 @@ declare namespace LocalJSX {
          */
         "zoom"?: number;
     }
+    interface RuxTleInput {
+        /**
+          * Sets the input as disabled
+         */
+        "disabled"?: boolean;
+        /**
+          * The validation error text
+         */
+        "errorText"?: string;
+        /**
+          * The help text
+         */
+        "helpText"?: string;
+        /**
+          * Presentational only. Renders the TLE input as invalid.
+         */
+        "invalid"?: boolean;
+        /**
+          * The TLE input label text. For HTML content, use the `label` slot instead.
+         */
+        "label"?: string;
+        /**
+          * The input name
+         */
+        "name"?: string;
+        /**
+          * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+         */
+        "onRuxblur"?: (event: RuxTleInputCustomEvent<any>) => void;
+        /**
+          * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+         */
+        "onRuxchange"?: (event: RuxTleInputCustomEvent<any>) => void;
+        /**
+          * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+         */
+        "onRuxinput"?: (event: RuxTleInputCustomEvent<any>) => void;
+        /**
+          * Fired when a TLE is validated - returns true if valid, false if invalid
+         */
+        "onRuxtlevalidated"?: (event: RuxTleInputCustomEvent<boolean>) => void;
+        /**
+          * The TLE input placeholder text
+         */
+        "placeholder"?: string;
+        /**
+          * Sets the input as readonly
+         */
+        "readonly"?: boolean;
+        /**
+          * Sets the input as required
+         */
+        "required"?: boolean;
+        /**
+          * The input value
+         */
+        "value"?: string;
+    }
     interface RuxToast {
         /**
           * If provided, the toast will automatically close after this amount of time. Accepts value either in milliseconds or seconds (which will be converted to milliseconds internally), between `2000` and `10000`, or `2` and `10`, respectively. Any number provided outside of the `2000`-`10000` range will be ignored in favor of the default 2000ms delay. <br>If `closeAfter` is not passed or if it is given an undefined or `null` value, the toast will stay open until the user closes it.
@@ -57006,6 +57134,7 @@ declare namespace LocalJSX {
         "rux-textarea": RuxTextarea;
         "rux-time-region": RuxTimeRegion;
         "rux-timeline": RuxTimeline;
+        "rux-tle-input": RuxTleInput;
         "rux-toast": RuxToast;
         "rux-toast-stack": RuxToastStack;
         "rux-tooltip": RuxTooltip;
@@ -65549,6 +65678,7 @@ declare module "@stencil/core" {
             "rux-textarea": LocalJSX.RuxTextarea & JSXBase.HTMLAttributes<HTMLRuxTextareaElement>;
             "rux-time-region": LocalJSX.RuxTimeRegion & JSXBase.HTMLAttributes<HTMLRuxTimeRegionElement>;
             "rux-timeline": LocalJSX.RuxTimeline & JSXBase.HTMLAttributes<HTMLRuxTimelineElement>;
+            "rux-tle-input": LocalJSX.RuxTleInput & JSXBase.HTMLAttributes<HTMLRuxTleInputElement>;
             "rux-toast": LocalJSX.RuxToast & JSXBase.HTMLAttributes<HTMLRuxToastElement>;
             "rux-toast-stack": LocalJSX.RuxToastStack & JSXBase.HTMLAttributes<HTMLRuxToastStackElement>;
             "rux-tooltip": LocalJSX.RuxTooltip & JSXBase.HTMLAttributes<HTMLRuxTooltipElement>;

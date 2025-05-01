@@ -1,0 +1,88 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as TleInputStories from './tle-input.stories';
+
+<Meta of={TleInputStories} />
+
+# TLE Input
+
+## Guidelines
+
+The TLE Input component allows users to input and validate Two-Line Element (TLE) data, which is a standardized format for representing orbital elements of Earth-orbiting objects.
+
+* TLE Input is fundamentally similar to a standard text area, but optimized for the specific format of TLE data
+* Uses a monospace font to ensure proper alignment of TLE characters
+* Validates the input against a standardized TLE format pattern
+* Automatically selects all text when the user clicks in the field to simplify copy/paste operations
+* Supports readonly mode for when TLEs need to be displayed but not edited
+
+<Canvas of={TleInputStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### With Valid TLE
+
+When a valid TLE is input, the satellite identification information is extracted and displayed in the label.
+
+<Canvas of={TleInputStories.WithValidTLE} />
+
+### Invalid
+
+If the TLE format is invalid, an error message will be displayed to alert the user.
+
+<Canvas of={TleInputStories.Invalid} />
+
+### Read Only
+
+Supports readonly mode where content can still be selected for copying.
+
+<Canvas of={TleInputStories.ReadOnly} />
+
+### Required
+
+<Canvas of={TleInputStories.Required} />
+
+### Disabled
+
+<Canvas of={TleInputStories.Disabled} />
+
+### With Slots
+
+The component provides several slots for customization, including a special slot for TLE examples.
+
+<Canvas of={TleInputStories.WithSlots} />
+
+## Customization
+
+### Horizontal Labels
+
+You can utilize the `form-field` and `label` Shadow Parts to have full control over label placement. For example:
+
+```css
+rux-tle-input::part(form-field) {
+    flex-direction: row;
+}
+rux-tle-input::part(label) {
+    margin-right: var(--spacing-2);
+}
+```
+
+<Canvas of={TleInputStories.HorizontalLabel} />
+
+### All Features
+
+This example shows all variants of the TLE Input component side by side for comparison.
+
+<Canvas of={TleInputStories.AllFeatures} />
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxTleInput } from '@astrouxds/astro-web-components/dist/components/rux-tle-input.js'
+customElements.define('rux-tle-input', RuxTleInput)
+```
