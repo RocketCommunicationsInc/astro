@@ -24617,6 +24617,47 @@ export declare interface RuxTimeline extends Components.RuxTimeline {}
 
 
 @ProxyCmp({
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'name', 'placeholder', 'readonly', 'required', 'value'],
+  methods: ['setFocus', 'selectAll', 'validateTle']
+})
+@Component({
+  selector: 'rux-tle-input',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  template: '<ng-content></ng-content>',
+  // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
+  inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'name', 'placeholder', 'readonly', 'required', 'value'],
+})
+export class RuxTleInput {
+  protected el: HTMLElement;
+  constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
+    c.detach();
+    this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['ruxchange', 'ruxinput', 'ruxblur', 'ruxtlevalidated']);
+  }
+}
+
+
+export declare interface RuxTleInput extends Components.RuxTleInput {
+  /**
+   * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
+   */
+  ruxchange: EventEmitter<CustomEvent<any>>;
+  /**
+   * Fired when an alteration to the input's value is committed by the user - [HTMLElement/change_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event)
+   */
+  ruxinput: EventEmitter<CustomEvent<any>>;
+  /**
+   * Fired when an element has lost focus - [HTMLElement/blur_event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+   */
+  ruxblur: EventEmitter<CustomEvent<any>>;
+  /**
+   * Fired when a TLE is validated - returns true if valid, false if invalid
+   */
+  ruxtlevalidated: EventEmitter<CustomEvent<boolean>>;
+}
+
+
+@ProxyCmp({
   inputs: ['closeAfter', 'hideClose', 'message', 'status']
 })
 @Component({

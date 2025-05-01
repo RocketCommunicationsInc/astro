@@ -1119,6 +1119,7 @@ export const RuxTag = /*@__PURE__*/createReactComponent<JSX.RuxTag, HTMLRuxTagEl
 export const RuxTextarea = /*@__PURE__*/createReactComponent<JSX.RuxTextarea, HTMLRuxTextareaElement>('rux-textarea');
 export const RuxTimeRegion = /*@__PURE__*/createReactComponent<JSX.RuxTimeRegion, HTMLRuxTimeRegionElement>('rux-time-region');
 export const RuxTimeline = /*@__PURE__*/createReactComponent<JSX.RuxTimeline, HTMLRuxTimelineElement>('rux-timeline');
+export const RuxTleInput = /*@__PURE__*/createReactComponent<JSX.RuxTleInput, HTMLRuxTleInputElement>('rux-tle-input');
 export const RuxToast = /*@__PURE__*/createReactComponent<JSX.RuxToast, HTMLRuxToastElement>('rux-toast');
 export const RuxToastStack = /*@__PURE__*/createReactComponent<JSX.RuxToastStack, HTMLRuxToastStackElement>('rux-toast-stack');
 export const RuxTooltip = /*@__PURE__*/createReactComponent<JSX.RuxTooltip, HTMLRuxTooltipElement>('rux-tooltip');
