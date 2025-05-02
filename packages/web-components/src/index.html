@@ -48,7 +48,7 @@
         </style>
     </head>
 
-    <body>
+    <body class="light-theme">
         <rux-classification-marking classification="unclassified">
             <rux-global-status-bar
                 app-domain="DOMAIN"
@@ -66,7 +66,22 @@
                         icon="zoom-out"
                         onclick="zoom(-1)"
                     ></rux-button>
-                    <rux-input readonly></rux-input>
+                    <rux-input type="date"></rux-input>
+                    <rux-input
+                        label="Password Input"
+                        type="password"
+                        placeholder="Reindeer Flotilla"
+                    ></rux-input>
+                    <rux-input
+                        label="Search"
+                        type="search"
+                        placeholder="Enter search term"
+                    ></rux-input>
+                    <rux-input
+                        label="Datetime-local"
+                        type="datetime-local"
+                    ></rux-input>
+                    <rux-input label="Time" type="time"></rux-input>
                     <rux-input id="interval-level" readonly></rux-input>
                     <rux-button
                         id="add"
@@ -100,7 +115,10 @@
                         label="Show Secondary Ruler"
                     ></rux-switch>
                     <rux-switch id="hide-j-day" label="Hide J-Day"></rux-switch>
-                    <rux-switch id="toggle-theme" label="Toggle Theme"></rux-switch>
+                    <rux-switch
+                        id="toggle-theme"
+                        label="Toggle Theme"
+                    ></rux-switch>
                 </section>
 
                 <rux-timeline
@@ -172,7 +190,7 @@
                 timeline.toggleAttribute('hide-j-day')
             })
             toggleTheme.addEventListener('ruxchange', () => {
-              document.querySelector('body').classList.toggle('light-theme')
+                document.querySelector('body').classList.toggle('light-theme')
             })
             toggleShowSecondaryRuler.addEventListener('ruxchange', (e) => {
                 timeline.toggleAttribute('show-secondary-ruler')
