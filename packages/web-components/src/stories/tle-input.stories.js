@@ -4,8 +4,9 @@ import { withActions } from '@storybook/addon-actions/decorator'
 
 // Sample valid TLE for demonstration
 const VALID_TLE =
+    '1 25544U 98067A   08264.51782528 -.00002182  00000-0 -11606-4 0  2927\n2 25544  51.6416 247.4627 0006703 130.5360 325.0288 15.72125391563537'
+const INVALID_TLE =
     '1 25544U 98067A   23212.48826229  .00015266  00000-0  28485-3 0  9990\n2 25544  51.6462  39.4487 0001320  84.1403  23.1898 15.49760304407907'
-const INVALID_TLE = 'This is not a valid TLE format'
 
 const Base = (args) => {
     return html`
@@ -66,12 +67,20 @@ const WithSlotsExample = () => {
                 </h4>
                 <div style="display: flex; flex-direction: column; gap: 8px;">
                     <button
-                        onclick="document.querySelector('rux-tle-input').value = '1 25544U 98067A   23212.48826229  .00015266  00000-0  28485-3 0  9990\\n2 25544  51.6462  39.4487 0001320  84.1403  23.1898 15.49760304407907'"
+                        @click=${() => {
+                            document.querySelector(
+                                'rux-tle-input'
+                            ).value = VALID_TLE
+                        }}
                     >
-                        ISS (ZARYA)
+                        ISS ZARA
                     </button>
                     <button
-                        onclick="document.querySelector('rux-tle-input').value = '1 48274U 21035D   23213.15018113  .00000782  00000-0  33169-4 0  9990\\n2 48274  41.4772 220.4163 0006529 332.7085  27.3453 15.08913070118343'"
+                        @click=${() => {
+                            document.querySelector(
+                                'rux-tle-input'
+                            ).value = INVALID_TLE
+                        }}
                     >
                         TIANHE
                     </button>

@@ -12,6 +12,7 @@ import {
 } from '@stencil/core'
 import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot } from '../../utils/utils'
+import { TLEValidator, TLEValidationResult } from '../../utils/tle-validator'
 
 let id = 0
 
@@ -19,7 +20,6 @@ let id = 0
  * @slot label - The TLE input label
  * @slot help-text - The help text
  * @slot error-text - The error text
- * @slot tle-examples - Use this slot to provide example TLEs that users can select
  * @part error-text - The error text element
  * @part form-field - The form-field wrapper container
  * @part help-text - The help text element
@@ -42,12 +42,7 @@ export class RuxTleInput implements FormFieldInterface {
     @State() hasLabelSlot = false
     @State() hasHelpSlot = false
     @State() hasErrorSlot = false
-    @State() hasExamplesSlot = false
-    @State() isValid = true
-    @State() extractedTitle: string | null = null
-
-    // TLE validation pattern
-    private tlePattern = /^1\s(?<satnum1>\d{5})(?<classification>[A-Z])\s(?<intl_desig_year>\d{2})(?<intl_desig_launch>\d{3})(?<intl_desig_piece>[A-Z0-9 ]{1,3})\s+(?<epoch_year>\d{2})(?<epoch_day>\d{3}\.\d{8})\s+(?<first_deriv>[ \+\-.\d]{10})\s+(?<sec_deriv>[ \+\-]\d{5}[ \+\-]\d)\s+(?<bstar>[ \+\-]\d{5}[ \+\-]\d)\s+(?<ephem_type>\d)\s+(?<elem_set>[ \d]{4})(?<checksum1>\d)\r?\n2\s(?<satnum2>\d{5})(?:\.)?\s+(?<inclination>[ \+\-.\d]{7,8})\s+(?<raan>[ \+\-.\d]{7,8})\s+(?<eccentricity>\d{7})\s+(?<arg_perigee>[ \+\-.\d]{7,8})\s+(?<mean_anomaly>[ \+\-.\d]{7,8})\s+(?<mean_motion>[ \+\-.\d]{11})\s*(?<rev_num>\d{4,5})(?<checksum2>\d)$/
+    @State() validationResult: TLEValidationResult | null = null
 
     /**
      * The TLE input label text. For HTML content, use the `label` slot instead.
@@ -101,6 +96,11 @@ export class RuxTleInput implements FormFieldInterface {
     @Prop() readonly = false
 
     /**
+     * Enable checksum validation for the TLE
+     */
+    @Prop() validateChecksum: boolean = true
+
+    /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
      */
     @Event({ eventName: 'ruxchange' }) ruxChange!: EventEmitter
@@ -116,10 +116,10 @@ export class RuxTleInput implements FormFieldInterface {
     @Event({ eventName: 'ruxblur' }) ruxBlur!: EventEmitter
 
     /**
-     * Fired when a TLE is validated - returns true if valid, false if invalid
+     * Fired when a TLE is validated - returns the validation result with details
      */
     @Event({ eventName: 'ruxtlevalidated' })
-    ruxTleValidated!: EventEmitter<boolean>
+    ruxTleValidated!: EventEmitter<TLEValidationResult>
 
     @Element() el!: HTMLRuxTleInputElement
 
@@ -143,7 +143,7 @@ export class RuxTleInput implements FormFieldInterface {
      * Validates the TLE format
      */
     @Method()
-    async validateTle(): Promise<boolean> {
+    async validateTle(): Promise<TLEValidationResult> {
         return this.validateTleFormat(this.value)
     }
 
@@ -155,7 +155,7 @@ export class RuxTleInput implements FormFieldInterface {
         if (this._internals) {
             return this._internals.checkValidity()
         }
-        return !this.invalid && this.isValid
+        return !this.invalid && (this.validationResult?.valid ?? true)
     }
 
     /**
@@ -166,7 +166,7 @@ export class RuxTleInput implements FormFieldInterface {
         if (this._internals) {
             return this._internals.reportValidity()
         }
-        return !this.invalid && this.isValid
+        return !this.invalid && (this.validationResult?.valid ?? true)
     }
 
     @Watch('label')
@@ -177,7 +177,6 @@ export class RuxTleInput implements FormFieldInterface {
     @Watch('value')
     handleValueChange() {
         this.validateTleFormat(this.value)
-        this.extractSatelliteTitle(this.value)
         if (this._internals) {
             this._internals.setFormValue(this.value)
         }
@@ -222,7 +221,6 @@ export class RuxTleInput implements FormFieldInterface {
         this._handleSlotChange()
         if (this.value) {
             this.validateTleFormat(this.value)
-            this.extractSatelliteTitle(this.value)
             if (this._internals) {
                 this._internals.setFormValue(this.value)
             }
@@ -294,10 +292,14 @@ export class RuxTleInput implements FormFieldInterface {
             return
         }
 
-        if (this.value && !this.isValid) {
+        if (
+            this.value &&
+            this.validationResult &&
+            !this.validationResult.valid
+        ) {
             this._internals.setValidity(
                 { patternMismatch: true },
-                'This TLE may not be valid, please verify'
+                this.getErrorMessage()
             )
             return
         }
@@ -314,63 +316,60 @@ export class RuxTleInput implements FormFieldInterface {
         this.hasLabelSlot = hasSlot(this.el, 'label')
         this.hasErrorSlot = hasSlot(this.el, 'error-text')
         this.hasHelpSlot = hasSlot(this.el, 'help-text')
-        this.hasExamplesSlot = hasSlot(this.el, 'tle-examples')
     }
 
     /**
-     * Extract satellite title from TLE if available
-     * The satellite name is usually contained in a 0th line (line preceding the TLE)
-     * However, our component only handles the 2-line TLE format, so we extract
-     * information from the TLE itself.
+     * Get a consolidated error message with issue details
      */
-    private extractSatelliteTitle(tle: string): void {
-        if (!tle || tle.trim().length === 0) {
-            this.extractedTitle = null
-            return
+    private getErrorMessage(): string {
+        if (!this.validationResult || this.validationResult.valid) {
+            return this.errorText || ''
         }
 
-        const match = tle.match(this.tlePattern)
-        if (match && match.groups) {
-            // Extract satellite number and international designator as a basic identifier
-            const satNum = match.groups.satnum1
-            const intlYear = match.groups.intl_desig_year
-            const intlLaunch = match.groups.intl_desig_launch
-            const intlPiece = match.groups.intl_desig_piece?.trim()
+        // Start with the base validation message
+        let message = this.validationResult.message
 
-            if (satNum) {
-                this.extractedTitle = `Satellite #${satNum}`
-                if (intlYear && intlLaunch && intlPiece) {
-                    this.extractedTitle += ` (${intlYear}-${intlLaunch}${intlPiece})`
-                }
-            } else {
-                this.extractedTitle = null
-            }
-        } else {
-            this.extractedTitle = null
+        // Add first issue information if available
+        if (
+            this.validationResult.issues &&
+            this.validationResult.issues.length > 0
+        ) {
+            const firstIssue = this.validationResult.issues[0]
+            message += `. ${firstIssue.message}.`
         }
+
+        return message
     }
 
-    private validateTleFormat(tle: string): boolean {
+    private validateTleFormat(tle: string): TLEValidationResult {
         if (!tle || tle.trim().length === 0) {
-            this.isValid = true
-            return true
+            const emptyResult: TLEValidationResult = {
+                valid: true,
+                message: '',
+            }
+            this.validationResult = emptyResult
+            return emptyResult
         }
 
-        const isValidFormat = this.tlePattern.test(tle)
-        this.isValid = isValidFormat
-        this.ruxTleValidated.emit(isValidFormat)
+        // Use the TLEValidator to validate the TLE
+        const result = TLEValidator.validate(tle)
+
+        // Store the validation result
+        this.validationResult = result
+
+        // Emit the validation event
+        this.ruxTleValidated.emit(result)
 
         // Update form validity when validation state changes
         this.updateValidity()
 
-        return isValidFormat
+        return result
     }
 
     private _onChange(e: Event) {
         const target = e.target as HTMLTextAreaElement
         this.value = target.value
         this.validateTleFormat(this.value)
-        this.extractSatelliteTitle(this.value)
         if (this._internals) {
             this._internals.setFormValue(this.value)
         }
@@ -381,7 +380,6 @@ export class RuxTleInput implements FormFieldInterface {
         const target = e.target as HTMLTextAreaElement
         this.value = target.value
         this.validateTleFormat(this.value)
-        this.extractSatelliteTitle(this.value)
         if (this._internals) {
             this._internals.setFormValue(this.value)
         }
@@ -426,9 +424,8 @@ export class RuxTleInput implements FormFieldInterface {
                 })
         }
 
-        const labelText = this.extractedTitle
-            ? `${this.label || ''} (${this.extractedTitle})`
-            : this.label
+        const isValid = this.validationResult?.valid ?? true
+        const errorMessage = this.getErrorMessage()
 
         return (
             <Host>
@@ -447,7 +444,7 @@ export class RuxTleInput implements FormFieldInterface {
                                     onSlotchange={this._handleSlotChange}
                                     name="label"
                                 >
-                                    {labelText}
+                                    {this.label}
                                     {this.required && (
                                         <span
                                             part="required"
@@ -465,7 +462,7 @@ export class RuxTleInput implements FormFieldInterface {
                         name={this.name}
                         disabled={this.disabled}
                         aria-invalid={
-                            this.invalid || !this.isValid ? 'true' : 'false'
+                            this.invalid || !isValid ? 'true' : 'false'
                         }
                         placeholder={this.placeholder}
                         required={this.required}
@@ -474,8 +471,7 @@ export class RuxTleInput implements FormFieldInterface {
                         class={{
                             'rux-tle-input': true,
                             'rux-tle-input--disabled': this.disabled,
-                            'rux-tle-input--invalid':
-                                this.invalid || !this.isValid,
+                            'rux-tle-input--invalid': this.invalid || !isValid,
                         }}
                         id={this.inputId}
                         rows={2}
@@ -488,76 +484,48 @@ export class RuxTleInput implements FormFieldInterface {
                 </div>
 
                 {/* Error message for invalid TLE format */}
-                <div
-                    class={{
-                        'rux-error-text':
-                            !this.isValid ||
-                            !!this.errorText ||
-                            this.hasErrorSlot,
-                        hidden:
-                            this.isValid &&
-                            !this.errorText &&
-                            !this.hasErrorSlot,
-                    }}
-                    part="error-text validation-message"
-                >
-                    <svg
-                        fill="none"
-                        width="14"
-                        height="14"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 14 14"
+                {(!isValid || this.invalid || this.hasErrorSlot) && (
+                    <div
+                        class="rux-error-text"
+                        part="error-text validation-message"
                     >
-                        <path
-                            fill-rule="evenodd"
-                            clip-rule="evenodd"
-                            d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
-                            fill="currentColor"
-                        />
-                    </svg>
-                    <slot
-                        name="error-text"
-                        onSlotchange={this._handleSlotChange}
-                    >
-                        {this.isValid
-                            ? this.errorText
-                            : 'This TLE may not be valid, please verify'}
-                    </slot>
-                </div>
-
-                {/* Help text */}
-                <div
-                    class={{
-                        'rux-help-text':
-                            (!!this.helpText || this.hasHelpSlot) &&
-                            this.isValid &&
-                            !this.errorText &&
-                            !this.hasErrorSlot,
-                        hidden:
-                            (!this.helpText && !this.hasHelpSlot) ||
-                            !this.isValid ||
-                            !!this.errorText ||
-                            this.hasErrorSlot,
-                    }}
-                    part="help-text"
-                >
-                    <slot
-                        name="help-text"
-                        onSlotchange={this._handleSlotChange}
-                    >
-                        {this.helpText}
-                    </slot>
-                </div>
-
-                {/* TLE examples slot if provided */}
-                {this.hasExamplesSlot && (
-                    <div class="rux-tle-examples" part="tle-examples">
+                        <svg
+                            fill="none"
+                            width="14"
+                            height="14"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 14 14"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                clip-rule="evenodd"
+                                d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
+                                fill="currentColor"
+                            />
+                        </svg>
                         <slot
-                            name="tle-examples"
+                            name="error-text"
                             onSlotchange={this._handleSlotChange}
-                        ></slot>
+                        >
+                            {errorMessage}
+                        </slot>
                     </div>
                 )}
+
+                {/* Help text */}
+                {(this.helpText || this.hasHelpSlot) &&
+                    isValid &&
+                    !this.invalid &&
+                    !this.hasErrorSlot && (
+                        <div class="rux-help-text" part="help-text">
+                            <slot
+                                name="help-text"
+                                onSlotchange={this._handleSlotChange}
+                            >
+                                {this.helpText}
+                            </slot>
+                        </div>
+                    )}
             </Host>
         )
     }

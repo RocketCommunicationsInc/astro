@@ -9,12 +9,14 @@ import { Classification, ExtendedPlacement, Status, StatusTags } from "./common/
 import { LogRow } from "./components/rux-log/rux-log.model";
 import { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 import { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
+import { TLEValidationResult } from "./utils/tle-validator";
 import { Status as Status1 } from "./components";
 import { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
 export { Classification, ExtendedPlacement, Status, StatusTags } from "./common/commonTypes.module";
 export { LogRow } from "./components/rux-log/rux-log.model";
 export { RangeItem } from "./components/rux-monitoring-progress-icon/rux-monitoring-progress-icon";
 export { SegmentedButton } from "./components/rux-segmented-button/rux-segmented-button.model";
+export { TLEValidationResult } from "./utils/tle-validator";
 export { Status as Status1 } from "./components";
 export { ToastStackPosition } from "./components/rux-toast-stack/rux-toast-stack";
 export namespace Components {
@@ -20181,9 +20183,13 @@ export namespace Components {
          */
         "setFocus": (options?: FocusOptions) => Promise<void>;
         /**
+          * Enable checksum validation for the TLE
+         */
+        "validateChecksum": boolean;
+        /**
           * Validates the TLE format
          */
-        "validateTle": () => Promise<boolean>;
+        "validateTle": () => Promise<TLEValidationResult>;
         /**
           * The input value
          */
@@ -55896,9 +55902,9 @@ declare namespace LocalJSX {
          */
         "onRuxinput"?: (event: RuxTleInputCustomEvent<any>) => void;
         /**
-          * Fired when a TLE is validated - returns true if valid, false if invalid
+          * Fired when a TLE is validated - returns the validation result with details
          */
-        "onRuxtlevalidated"?: (event: RuxTleInputCustomEvent<boolean>) => void;
+        "onRuxtlevalidated"?: (event: RuxTleInputCustomEvent<TLEValidationResult>) => void;
         /**
           * The TLE input placeholder text
          */
@@ -55911,6 +55917,10 @@ declare namespace LocalJSX {
           * Sets the input as required
          */
         "required"?: boolean;
+        /**
+          * Enable checksum validation for the TLE
+         */
+        "validateChecksum"?: boolean;
         /**
           * The input value
          */
