@@ -279,11 +279,14 @@ export class RuxDatetimePicker {
          */
         switch (this.precision) {
             case 'min':
-                initial.splice(9, 4)
+                !this.julianFormat ? initial.splice(9, 4) : initial.splice(8, 4)
+
                 break
 
             case 'sec':
-                initial.splice(11, 2)
+                !this.julianFormat
+                    ? initial.splice(11, 2)
+                    : initial.splice(10, 2)
                 break
 
             case 'ms':
@@ -297,6 +300,7 @@ export class RuxDatetimePicker {
          * Sets the initial parts
          */
         this.parts = initial
+        console.log('set parts to: ', initial)
     }
 
     /**

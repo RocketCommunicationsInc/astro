@@ -350,4 +350,95 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
             await expect(minInput).toHaveValue('59')
         })
     })
+    test.describe('Seconds input', () => {
+        test('Sec input can have its time incremented via the arrow icon', async ({
+            page,
+        }) => {
+            const dp = page.locator('rux-datetime-picker').first()
+            await openCalendar(page, 'default', true)
+            const secInput = dp.locator('.timepicker-sec input')
+            const secArrowInc = dp.locator('.timepicker-sec .inc-arrow')
+            await expect(secInput).toHaveValue('00')
+            await secInput.hover()
+            await secArrowInc.click()
+            await expect(secInput).toHaveValue('01')
+        })
+        test('Sec input can have its time decremented via the up arrow icon', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('given-value')
+            await openCalendar(page, 'given-value', true)
+            const secInput = dp.locator('.timepicker-sec input')
+            const secArrowDec = dp.locator('.timepicker-sec .dec-arrow')
+            await expect(secInput).toHaveValue('12')
+            await secInput.hover()
+            await secArrowDec.click()
+            await expect(secInput).toHaveValue('11')
+        })
+        test('Sec input only accepts valid characters', async ({ page }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const secInput = dp.locator('.timepicker-sec input')
+            await secInput.type('E')
+            await expect(secInput).toHaveValue('00')
+            await secInput.type('-')
+            await expect(secInput).toHaveValue('00')
+            await secInput.type('+')
+            await expect(secInput).toHaveValue('00')
+            await secInput.type('e')
+            await expect(secInput).toHaveValue('00')
+            await secInput.type('1')
+            await expect(secInput).toHaveValue('01')
+        })
+        test('Sec input will reset value to 59 if given value is > 59', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const secInput = dp.locator('.timepicker-sec input')
+            await secInput.type('99')
+            await expect(secInput).toHaveValue('59')
+        })
+    })
+    test.describe('Ms input', () => {
+        test('MS input can have its time incremented via the arrow icon', async ({
+            page,
+        }) => {
+            const dp = page.locator('rux-datetime-picker').first()
+            await openCalendar(page, 'default', true)
+            const msInput = dp.locator('.timepicker-ms input')
+            const msArrowInc = dp.locator('.timepicker-ms .inc-arrow')
+            await expect(msInput).toHaveValue('00')
+            await msInput.hover()
+            await msArrowInc.click()
+            await expect(msInput).toHaveValue('01')
+        })
+        test('Ms input can have its time decremented via the up arrow icon', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('given-value')
+            await openCalendar(page, 'given-value', true)
+            const msInput = dp.locator('.timepicker-ms input')
+            const msArrowDec = dp.locator('.timepicker-ms .dec-arrow')
+            await expect(msInput).toHaveValue('12')
+            await msInput.hover()
+            await msArrowDec.click()
+            await expect(msInput).toHaveValue('11')
+        })
+        test('Ms input only accepts valid characters', async ({ page }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const msInput = dp.locator('.timepicker-ms input')
+            await msInput.type('E')
+            await expect(msInput).toHaveValue('00')
+            await msInput.type('-')
+            await expect(msInput).toHaveValue('00')
+            await msInput.type('+')
+            await expect(msInput).toHaveValue('00')
+            await msInput.type('e')
+            await expect(msInput).toHaveValue('00')
+            await msInput.type('1')
+            await expect(msInput).toHaveValue('01')
+        })
+    })
 })
