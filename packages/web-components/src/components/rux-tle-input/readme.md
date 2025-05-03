@@ -1,25 +1,35 @@
 # rux-tle-input
 
+The `rux-tle-input` component allows users to input and validate TLE (Two-Line Element) data for orbital objects. The component now supports both standard TLE format and the Alpha-5 extension format.
 
+## Alpha-5 Extension Support
+
+The TLE input now supports the Alpha-5 extension format introduced by the U.S. Space Force (via space-track.org) to expand the five-digit satellite catalog number limit in TLEs. 
+
+In the Alpha-5 format:
+- A letter (A-Z) replaces the first digit of the satellite number
+- A0001 represents satellite number 100001
+- B0001 represents satellite number 200001, and so on
+
+This extension allows catalog numbers up to 2,599,999, providing a temporary solution until a full migration to a more robust format like OMM.
 
 <!-- Auto Generated Below -->
 
 
 ## Properties
 
-| Property           | Attribute           | Description                                                               | Type                  | Default                                      |
-| ------------------ | ------------------- | ------------------------------------------------------------------------- | --------------------- | -------------------------------------------- |
-| `disabled`         | `disabled`          | Sets the input as disabled                                                | `boolean`             | `false`                                      |
-| `errorText`        | `error-text`        | The validation error text                                                 | `string \| undefined` | `'This TLE may not be valid, please verify'` |
-| `helpText`         | `help-text`         | The help text                                                             | `string \| undefined` | `undefined`                                  |
-| `invalid`          | `invalid`           | Presentational only. Renders the TLE input as invalid.                    | `boolean`             | `false`                                      |
-| `label`            | `label`             | The TLE input label text. For HTML content, use the `label` slot instead. | `string \| undefined` | `undefined`                                  |
-| `name`             | `name`              | The input name                                                            | `string`              | `''`                                         |
-| `placeholder`      | `placeholder`       | The TLE input placeholder text                                            | `string \| undefined` | `'Paste a valid TLE here...'`                |
-| `readonly`         | `readonly`          | Sets the input as readonly                                                | `boolean`             | `false`                                      |
-| `required`         | `required`          | Sets the input as required                                                | `boolean`             | `false`                                      |
-| `validateChecksum` | `validate-checksum` | Enable checksum validation for the TLE                                    | `boolean`             | `true`                                       |
-| `value`            | `value`             | The input value                                                           | `string`              | `''`                                         |
+| Property      | Attribute     | Description                                                               | Type                  | Default                                      |
+| ------------- | ------------- | ------------------------------------------------------------------------- | --------------------- | -------------------------------------------- |
+| `disabled`    | `disabled`    | Sets the input as disabled                                                | `boolean`             | `false`                                      |
+| `errorText`   | `error-text`  | The validation error text                                                 | `string \| undefined` | `'This TLE may not be valid, please verify'` |
+| `helpText`    | `help-text`   | The help text                                                             | `string \| undefined` | `undefined`                                  |
+| `invalid`     | `invalid`     | Presentational only. Renders the TLE input as invalid.                    | `boolean`             | `false`                                      |
+| `label`       | `label`       | The TLE input label text. For HTML content, use the `label` slot instead. | `string \| undefined` | `undefined`                                  |
+| `name`        | `name`        | The input name                                                            | `string`              | `''`                                         |
+| `placeholder` | `placeholder` | The TLE input placeholder text                                            | `string \| undefined` | `'Paste a valid TLE here...'`                |
+| `readonly`    | `readonly`    | Sets the input as readonly                                                | `boolean`             | `false`                                      |
+| `required`    | `required`    | Sets the input as required                                                | `boolean`             | `false`                                      |
+| `value`       | `value`       | The input value                                                           | `string`              | `''`                                         |
 
 
 ## Events

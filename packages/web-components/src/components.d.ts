@@ -20183,10 +20183,6 @@ export namespace Components {
          */
         "setFocus": (options?: FocusOptions) => Promise<void>;
         /**
-          * Enable checksum validation for the TLE
-         */
-        "validateChecksum": boolean;
-        /**
           * Validates the TLE format
          */
         "validateTle": () => Promise<TLEValidationResult>;
@@ -55917,10 +55913,6 @@ declare namespace LocalJSX {
           * Sets the input as required
          */
         "required"?: boolean;
-        /**
-          * Enable checksum validation for the TLE
-         */
-        "validateChecksum"?: boolean;
         /**
           * The input value
          */

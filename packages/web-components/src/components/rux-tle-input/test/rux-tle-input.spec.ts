@@ -6,6 +6,10 @@ describe('rux-tle-input', () => {
     const validTLE =
         '1 25544U 98067A   23212.48826229  .00015266  00000-0  28485-3 0  9990\n2 25544  51.6462  39.4487 0001320  84.1403  23.1898 15.49760304407907'
 
+    // Example Alpha-5 format TLE
+    const alpha5TLE =
+        '1 A0001U 22001A   23220.12345678  .00000000  00000-0  10000-4 0  9990\n2 A0001  51.6400  30.0000 0000000   0.0000 360.0000 15.50000000    10'
+
     it('builds', async () => {
         const page = await newSpecPage({
             components: [RuxTleInput],
@@ -65,6 +69,42 @@ describe('rux-tle-input', () => {
         // Check that the validation state is also updated internally
         // @ts-ignore - accessing private state
         expect(component.isValid).toBe(true)
+    })
+
+    it('validates an Alpha-5 format TLE', async () => {
+        const page = await newSpecPage({
+            components: [RuxTleInput],
+            html: `<rux-tle-input></rux-tle-input>`,
+        })
+
+        // Directly call the component method
+        const component = page.rootInstance as RuxTleInput
+        component.value = alpha5TLE
+
+        // Force rerender
+        await page.waitForChanges()
+
+        // Use the exposed method to validate
+        const validationResult = await component.validateTle()
+        expect(validationResult.valid).toBe(true)
+
+        // Check that the validation state is also updated internally
+        // @ts-ignore - accessing private state
+        expect(component.isValid).toBe(true)
+    })
+
+    it('extracts satellite info from Alpha-5 format TLE', async () => {
+        const page = await newSpecPage({
+            components: [RuxTleInput],
+            html: `<rux-tle-input label="Extended Catalog TLE" value="${alpha5TLE}"></rux-tle-input>`,
+        })
+
+        // Allow time for extraction to occur
+        await page.waitForChanges()
+
+        const label = page.root?.shadowRoot?.querySelector('label span slot')
+        expect(label?.textContent).toContain('Extended Catalog TLE')
+        expect(label?.textContent).toContain('Satellite #A0001')
     })
 
     it('invalidates incorrect TLE formats', async () => {

@@ -7,6 +7,9 @@ const VALID_TLE =
     '1 25544U 98067A   08264.51782528 -.00002182  00000-0 -11606-4 0  2927\n2 25544  51.6416 247.4627 0006703 130.5360 325.0288 15.72125391563537'
 const INVALID_TLE =
     '1 25544U 98067A   23212.48826229  .00015266  00000-0  28485-3 0  9990\n2 25544  51.6462  39.4487 0001320  84.1403  23.1898 15.49760304407907'
+// Example Alpha-5 format TLE
+const ALPHA5_TLE =
+    '1 A0001U 23001A   24123.45678901  .00012345  00000-0  00000-0 0 00018\n2 A0001  51.6000 247.0000 0001234 130.0000 325.0000 15.50000000 10004'
 
 const Base = (args) => {
     return html`
@@ -84,6 +87,15 @@ const WithSlotsExample = () => {
                     >
                         TIANHE
                     </button>
+                    <button
+                        @click=${() => {
+                            document.querySelector(
+                                'rux-tle-input'
+                            ).value = ALPHA5_TLE
+                        }}
+                    >
+                        Alpha-5 Example
+                    </button>
                 </div>
             </div>
         </rux-tle-input>
@@ -117,6 +129,15 @@ const AllFeaturesExample = () => {
                     label="ISS TLE"
                     help-text="International Space Station TLE data"
                     value="${VALID_TLE}"
+                ></rux-tle-input>
+            </div>
+
+            <div>
+                <h4>Alpha-5 Format</h4>
+                <rux-tle-input
+                    label="Extended Catalog Number"
+                    help-text="Example with Alpha-5 satellite number"
+                    value="${ALPHA5_TLE}"
                 ></rux-tle-input>
             </div>
 
@@ -218,6 +239,22 @@ export const WithValidTLE = {
     },
 }
 
+export const Alpha5Format = {
+    render: Base.bind(),
+    name: 'Alpha-5 Format',
+
+    args: {
+        label: 'Alpha-5 Extended TLE',
+        helpText:
+            'Example of a TLE with Alpha-5 format satellite number (A0001 = 100001)',
+        value: ALPHA5_TLE,
+        invalid: false,
+        disabled: false,
+        required: false,
+        readonly: false,
+    },
+}
+
 export const Invalid = {
     render: Base.bind(),
     name: 'Invalid',
@@ -275,19 +312,6 @@ export const Disabled = {
         required: false,
         readonly: false,
         invalid: false,
-    },
-}
-
-export const WithSlots = {
-    render: WithSlotsExample.bind(),
-    name: 'With Slots',
-    parameters: {
-        docs: {
-            description: {
-                story:
-                    'The component provides several slots for customization, including a slot for TLE examples.',
-            },
-        },
     },
 }
 

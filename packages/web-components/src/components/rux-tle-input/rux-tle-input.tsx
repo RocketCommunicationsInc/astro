@@ -14,6 +14,17 @@ import { FormFieldInterface } from '../../common/interfaces.module'
 import { hasSlot } from '../../utils/utils'
 import { TLEValidator, TLEValidationResult } from '../../utils/tle-validator'
 
+/* TODO
+
+  - Research - how often does copy paste data have the optional title?
+  - Research - how often does submitted data include the optional title?
+  - Research - are there times when multiple TLEs are needed in a single field
+  - Research - what are other formats for this kind of data, does it make sense for a single text area type or multiple?
+  - Feature - drag and drop for files based TLE (should it strip out title)
+  - Feature - support new TLE format
+
+*/
+
 let id = 0
 
 /**
@@ -94,11 +105,6 @@ export class RuxTleInput implements FormFieldInterface {
      * Sets the input as readonly
      */
     @Prop() readonly = false
-
-    /**
-     * Enable checksum validation for the TLE
-     */
-    @Prop() validateChecksum: boolean = true
 
     /**
      * Fired when the value of the input changes - [HTMLElement/input_event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event)
@@ -424,7 +430,7 @@ export class RuxTleInput implements FormFieldInterface {
                 })
         }
 
-        const isValid = this.validationResult?.valid ?? true
+        const isValid: boolean = this.validationResult?.valid ?? true
         const errorMessage = this.getErrorMessage()
 
         return (
@@ -484,48 +490,59 @@ export class RuxTleInput implements FormFieldInterface {
                 </div>
 
                 {/* Error message for invalid TLE format */}
-                {(!isValid || this.invalid || this.hasErrorSlot) && (
-                    <div
-                        class="rux-error-text"
-                        part="error-text validation-message"
+                <div
+                    class={{
+                        'rux-error-text':
+                            !isValid || this.invalid || this.hasErrorSlot,
+                        hidden: isValid && !this.invalid && !this.hasErrorSlot,
+                    }}
+                    part="error-text validation-message"
+                >
+                    <svg
+                        fill="none"
+                        width="14"
+                        height="14"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 14 14"
                     >
-                        <svg
-                            fill="none"
-                            width="14"
-                            height="14"
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 14 14"
-                        >
-                            <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
-                                d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
-                                fill="currentColor"
-                            />
-                        </svg>
-                        <slot
-                            name="error-text"
-                            onSlotchange={this._handleSlotChange}
-                        >
-                            {errorMessage}
-                        </slot>
-                    </div>
-                )}
+                        <path
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M11.393 12.25c.898 0 1.458-.974 1.009-1.75L8.009 2.91a1.166 1.166 0 0 0-2.018 0L1.598 10.5c-.449.776.111 1.75 1.01 1.75h8.784ZM7 8.167a.585.585 0 0 1-.583-.584V6.417c0-.321.262-.584.583-.584.32 0 .583.263.583.584v1.166c0 .321-.262.584-.583.584Zm-.583 1.166V10.5h1.166V9.333H6.417Z"
+                            fill="currentColor"
+                        />
+                    </svg>
+                    <slot
+                        name="error-text"
+                        onSlotchange={this._handleSlotChange}
+                    >
+                        {errorMessage}
+                    </slot>
+                </div>
 
                 {/* Help text */}
-                {(this.helpText || this.hasHelpSlot) &&
-                    isValid &&
-                    !this.invalid &&
-                    !this.hasErrorSlot && (
-                        <div class="rux-help-text" part="help-text">
-                            <slot
-                                name="help-text"
-                                onSlotchange={this._handleSlotChange}
-                            >
-                                {this.helpText}
-                            </slot>
-                        </div>
-                    )}
+                <div
+                    class={{
+                        'rux-help-text':
+                            (!!this.helpText || this.hasHelpSlot) &&
+                            isValid &&
+                            !this.invalid &&
+                            !this.hasErrorSlot,
+                        hidden:
+                            (!this.helpText && !this.hasHelpSlot) ||
+                            !isValid ||
+                            !!this.invalid ||
+                            !!this.hasErrorSlot,
+                    }}
+                    part="help-text"
+                >
+                    <slot
+                        name="help-text"
+                        onSlotchange={this._handleSlotChange}
+                    >
+                        {this.helpText}
+                    </slot>
+                </div>
             </Host>
         )
     }

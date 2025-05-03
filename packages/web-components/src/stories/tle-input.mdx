@@ -1,25 +1,44 @@
 import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
-import * as TleInputStories from './tle-input.stories';
+import * as TleInputStories from './tle-input.stories.js';
 
 <Meta of={TleInputStories} />
-
 # TLE Input
 
 ## Guidelines
 
 The TLE Input component allows users to input and validate Two-Line Element (TLE) data, which is a standardized format for representing orbital elements of Earth-orbiting objects.
 
-* TLE Input is fundamentally similar to a standard text area, but optimized for the specific format of TLE data
 * Uses a monospace font to ensure proper alignment of TLE characters
 * Validates the input against a standardized TLE format pattern
 * Automatically selects all text when the user clicks in the field to simplify copy/paste operations
 * Supports readonly mode for when TLEs need to be displayed but not edited
+* Supports the Alpha-5 extension format for satellite catalog numbers beyond the 5-digit limit
 
 <Canvas of={TleInputStories.Default} />
 
 ## API
 
 <Controls />
+
+## Alpha-5 Extension Support
+
+<StyledDiv>
+  <div>Warning: Alpha-5 support is experimental</div>
+
+  <p class="banner-text">
+    At the time of this writing there are no known objects with Alpha-5 designations. The TLE used in this example is fabricated and the the checksum algorythm have not been validated against real data.
+  </p>
+</StyledDiv>
+
+The TLE Input component supports the Alpha-5 extension format introduced by the U.S. Space Force (via space-track.org), which extends the traditional 5-digit satellite catalog number limit:
+
+* Traditional TLEs only support catalog numbers up to 99,999
+* Alpha-5 format replaces the first digit with a letter (A-Z)
+* A0001 represents satellite number 100001
+* B0001 represents 200001, and so on
+* This allows catalog numbers up to 2,599,999
+
+<Canvas of={TleInputStories.Alpha5Format} />
 
 ## Variants
 
@@ -29,7 +48,7 @@ When a valid TLE is input, the satellite identification information is extracted
 
 <Canvas of={TleInputStories.WithValidTLE} />
 
-### Invalid
+### Invalid TLE
 
 If the TLE format is invalid, an error message will be displayed to alert the user.
 
@@ -49,11 +68,6 @@ Supports readonly mode where content can still be selected for copying.
 
 <Canvas of={TleInputStories.Disabled} />
 
-### With Slots
-
-The component provides several slots for customization, including a special slot for TLE examples.
-
-<Canvas of={TleInputStories.WithSlots} />
 
 ## Customization
 

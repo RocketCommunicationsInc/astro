@@ -22,10 +22,12 @@ export interface TLEIssue {
 
 export class TLEValidator {
     // Standard TLE pattern with named capture groups for parsing
-    private static standardPattern = /^1\s(?<satnum1>\d{5})(?<classification>[A-Z])\s(?<intl_desig_year>\d{2})(?<intl_desig_launch>\d{3})(?<intl_desig_piece>[A-Z0-9 ]{1,3})\s+(?<epoch_year>\d{2})(?<epoch_day>\d{3}\.\d{8})\s+(?<first_deriv>[-+. \d]{10})\s+(?<sec_deriv>[-+ ]\d{5}[-+]\d)\s+(?<bstar>[-+ ]\d{5}[-+]\d)\s+(?<ephem_type>\d)\s+(?<elem_set>[ \d]{4})(?<checksum1>\d)\r?\n2\s(?<satnum2>\d{5})\s+(?<inclination>[ \d]{3}\.\d{4})\s+(?<raan>[ \d]{3}\.\d{4})\s+(?<eccentricity>\d{7})\s+(?<arg_perigee>[ \d]{3}\.\d{4})\s+(?<mean_anomaly>[ \d]{3}\.\d{4})\s+(?<mean_motion>[ \d]{2}\.\d{8,13}) *(?<rev_num>\d{1,5})(?<checksum2>\d)$/
+    // Supports both traditional numeric (00001-99999) and Alpha-5 format (A0001-Z9999 for 100001-2599999)
+    private static standardPattern = /^1\s(?<satnum1>(?:\d{5}|[A-Z]\d{4}))(?<classification>[A-Z])\s(?<intl_desig_year>\d{2})(?<intl_desig_launch>\d{3})(?<intl_desig_piece>[A-Z0-9 ]{1,3})\s+(?<epoch_year>\d{2})(?<epoch_day>\d{3}\.\d{8})\s+(?<first_deriv>[-+. \d]{10})\s+(?<sec_deriv>[-+ ]\d{5}[-+]\d)\s+(?<bstar>[-+ ]\d{5}[-+]\d)\s+(?<ephem_type>\d)\s+(?<elem_set>[ \d]{4})(?<checksum1>\d)\r?\n2\s(?<satnum2>(?:\d{5}|[A-Z]\d{4}))\s+(?<inclination>[ \d]{3}\.\d{4})\s+(?<raan>[ \d]{3}\.\d{4})\s+(?<eccentricity>\d{7})\s+(?<arg_perigee>[ \d]{3}\.\d{4})\s+(?<mean_anomaly>[ \d]{3}\.\d{4})\s+(?<mean_motion>[ \d]{2}\.\d{8,13}) *(?<rev_num>\d{1,5})(?<checksum2>\d)$/
 
     // More flexible pattern allowing blank international designators and other variations
-    private static flexiblePattern = /^1\s(?<satnum1>\d{5})(?<classification>[A-Z])\s(?<intl_desig>[ ]{8}|(?<intl_desig_year>\d{2})(?<intl_desig_launch>\d{3})(?<intl_desig_piece>[A-Z0-9 ]{1,3}))\s+(?<epoch_year>\d{2})(?<epoch_day>\d{3}\.\d{8})\s+(?<first_deriv>[-+. \d]{10})\s+(?<sec_deriv>[-+ ]\d{5}[-+]\d)\s+(?<bstar>[-+ ]\d{5}[-+]\d)\s+(?<ephem_type>\d)\s+(?<elem_set>[ \d]{4})(?<checksum1>\d)\r?\n2\s(?<satnum2>\d{5})\s+(?<inclination>[ \d]{3}\.\d{4})\s+(?<raan>[ \d]{3}\.\d{4})\s+(?<eccentricity>\d{7})\s+(?<arg_perigee>[ \d]{3}\.\d{4})\s+(?<mean_anomaly>[ \d]{3}\.\d{4})\s+(?<mean_motion>[ \d]{1,2}\.\d{8,13}) *(?<rev_num>\d{1,5})(?<checksum2>\d)$/
+    // Also supports Alpha-5 format satellite numbers
+    private static flexiblePattern = /^1\s(?<satnum1>(?:\d{5}|[A-Z]\d{4}))(?<classification>[A-Z])\s(?<intl_desig>[ ]{8}|(?<intl_desig_year>\d{2})(?<intl_desig_launch>\d{3})(?<intl_desig_piece>[A-Z0-9 ]{1,3}))\s+(?<epoch_year>\d{2})(?<epoch_day>\d{3}\.\d{8})\s+(?<first_deriv>[-+. \d]{10})\s+(?<sec_deriv>[-+ ]\d{5}[-+]\d)\s+(?<bstar>[-+ ]\d{5}[-+]\d)\s+(?<ephem_type>\d)\s+(?<elem_set>[ \d]{4})(?<checksum1>\d)\r?\n2\s(?<satnum2>(?:\d{5}|[A-Z]\d{4}))\s+(?<inclination>[ \d]{3}\.\d{4})\s+(?<raan>[ \d]{3}\.\d{4})\s+(?<eccentricity>\d{7})\s+(?<arg_perigee>[ \d]{3}\.\d{4})\s+(?<mean_anomaly>[ \d]{3}\.\d{4})\s+(?<mean_motion>[ \d]{1,2}\.\d{8,13}) *(?<rev_num>\d{1,5})(?<checksum2>\d)$/
 
     /**
      * Verify the checksum of a TLE line
@@ -33,27 +35,31 @@ export class TLEValidator {
      * @return {boolean} Whether the checksum is valid
      */
     public static verifyChecksum(line: string): boolean {
-        if (!line || line.length < 1) return false
+        if (!line || line.length < 69) return false
 
-        // Extract the expected checksum (last character)
-        const expectedChecksum = parseInt(line.charAt(line.length - 1), 10)
-
-        // Calculate the actual checksum
+        const expected = parseInt(line.charAt(68), 10)
         let sum = 0
-        for (let i = 0; i < line.length - 1; i++) {
-            const char = line.charAt(i)
-            if (char >= '0' && char <= '9') {
-                // Digits count as their value
-                sum += parseInt(char, 10)
-            } else if (char === '-') {
-                // Minus signs count as 1
+
+        for (let i = 0; i < 68; i++) {
+            const ch = line.charAt(i)
+
+            // 1) Digits always add their numeric value
+            if (ch >= '0' && ch <= '9') {
+                sum += parseInt(ch, 10)
+
+                // 2) Minus sign counts as 1
+            } else if (ch === '-') {
                 sum += 1
+
+                // 3) Alpha-5 letter in the first satnum column (index 2) counts A=10…Z=35
+            } else if (i === 2 && ch >= 'A' && ch <= 'Z') {
+                sum += ch.charCodeAt(0) - 'A'.charCodeAt(0) + 10
+
+                // 4) Everything else (letters elsewhere, spaces, periods, plus) still counts 0
             }
-            // Letters, blanks, periods, plus signs count as 0 (no action needed)
         }
 
-        const calculatedChecksum = sum % 10
-        return calculatedChecksum === expectedChecksum
+        return sum % 10 === expected
     }
 
     /**
