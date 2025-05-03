@@ -76,17 +76,18 @@ textarea {
     box-sizing: border-box;
     /* Use monospace font for fixed-width characters */
     /* font-family: var(--font-monospace-1-font-family); */
-    font-family: ui-monospace, system-ui, -apple-system, BlinkMacSystemFont,
-        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans',
-        'Helvetica Neue', sans-serif;
     // font-size: var(--font-monospace-1-font-size); TODO: --font-monospace-1-font-size is 1.75 rem, which is too large for the input field
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        'Liberation Mono', 'Courier New', monospace;
+    font-variant-numeric: slashed-zero;
+
     font-size: var(--font-size-base);
     letter-spacing: var(--font-monospace-1-letter-spacing);
     font-weight: var(--font-monospace-1-font-weight);
     line-height: var(--font-monospace-1-line-height);
     color: var(--color-text-primary);
     background-color: var(--color-background-base-default);
-    font-variant-numeric: tabular-nums slashed-zero;
+
     /* Fixed height for exactly 2 lines */
     height: calc(2 * var(--font-monospace-1-line-height) + var(--spacing-4));
     min-height: calc(
