@@ -501,8 +501,6 @@ test.describe('Browser added input types', () => {
             return calendarIcon
         })
 
-        console.log('Date input --calendar-icon value:', dateIconStyle)
-
         expect(dateIconStyle).toContain("fill='%23005a8f")
     })
 })
