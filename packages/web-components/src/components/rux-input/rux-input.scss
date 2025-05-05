@@ -202,12 +202,6 @@
     --search-icon: var(--search-icon-light);
 }
 
-:host-context(.dark-theme) {
-    --calendar-icon: var(--calendar-icon-dark);
-    --time-icon: var(--time-icon-dark);
-    --search-icon: var(--search-icon-dark);
-}
-
 .pw-button::part(container) {
     display: flex;
     flex-direction: column;
