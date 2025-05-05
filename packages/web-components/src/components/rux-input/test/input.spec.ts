@@ -472,3 +472,37 @@ test.describe('Min and max length', () => {
         expect(inputValue.length).toBe(3) // Input should only contain '123'
     })
 })
+
+test.describe('Browser added input types', () => {
+    test('changes icon styles when light theme is applied', async ({
+        page,
+    }) => {
+        const template = `
+        <div class="light-theme">
+            <rux-input type="date" id="date-input"></rux-input>
+            <rux-input type="time" id="time-input"></rux-input>
+            <rux-input type="search" id="search-input"></rux-input>
+        </div>
+    `
+        await page.setContent(template)
+
+        // Wait for styles to be applied
+        await page.waitForTimeout(100)
+
+        // Verify the components have the light theme class applied
+        const dateIconStyle = await page.evaluate(() => {
+            // Check the CSS variable values
+            const style = getComputedStyle(
+                document.querySelector('#date-input') as HTMLElement
+            )
+            const calendarIcon = style
+                .getPropertyValue('--calendar-icon')
+                .trim()
+            return calendarIcon
+        })
+
+        console.log('Date input --calendar-icon value:', dateIconStyle)
+
+        expect(dateIconStyle).toContain("fill='%23005a8f")
+    })
+})
