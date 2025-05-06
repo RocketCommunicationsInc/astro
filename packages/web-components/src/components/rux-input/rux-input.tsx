@@ -125,7 +125,7 @@ export class RuxInput implements FormFieldInterface {
     @Prop() minlength?: string
 
     /**
-     * Disables the button via HTML disabled attribute. Button takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
+     * Disables the input via HTML disabled attribute. Input takes on a distinct visual state. Cursor uses the not-allowed system replacement and all keyboard and mouse events are ignored.
      */
     @Prop({ reflect: true }) disabled = false
 
