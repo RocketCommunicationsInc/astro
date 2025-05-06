@@ -496,11 +496,35 @@ test.describe('Browser added input types', () => {
                 document.querySelector('#date-input') as HTMLElement
             )
             const calendarIcon = style
-                .getPropertyValue('--calendar-icon')
+                .getPropertyValue('--rux-input-calendar-icon')
                 .trim()
             return calendarIcon
         })
 
+        const timeIconStyle = await page.evaluate(() => {
+            // Check the CSS variable values
+            const style = getComputedStyle(
+                document.querySelector('#time-input') as HTMLElement
+            )
+            const clockIcon = style
+                .getPropertyValue('--rux-input-time-icon')
+                .trim()
+            return clockIcon
+        })
+
+        const searchIconStyle = await page.evaluate(() => {
+            // Check the CSS variable values
+            const style = getComputedStyle(
+                document.querySelector('#search-input') as HTMLElement
+            )
+            const searchIcon = style
+                .getPropertyValue('--rux-input-search-icon')
+                .trim()
+            return searchIcon
+        })
+
         expect(dateIconStyle).toContain("fill='%23005a8f")
+        expect(timeIconStyle).toContain("fill='%23005a8f")
+        expect(searchIconStyle).toContain("fill='%23005a8f")
     })
 })
