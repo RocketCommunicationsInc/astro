@@ -23,6 +23,7 @@ import {
 
 import { DayInfo } from './rux-day/rux-day'
 import { Precision } from '../rux-datetime-picker/utils/types'
+import { getDaysInMonth } from 'date-fns'
 
 type EventSource =
     | 'monthChange'
@@ -248,24 +249,37 @@ export class RuxCalendar {
         const minutes = parseInt(this.minuteInput?.value || '0')
         const seconds = parseInt(this.secondsInput?.value || '0')
         const milliseconds = parseInt(this.millisecondInput?.value || '0')
-        if (this.isJulian) {
-            //convert julian day, if given, to gregorian day
-            if (!day) {
-                //if no day is passed in, use the selectedDay's dayNumber
-                day = parseInt(
-                    julianToGregorianDay(this.selectedDay!.dayNumber, this.year)
-                )
+        // if (this.isJulian) {
+        //     //convert julian day, if given, to gregorian day
+        //     if (!day) {
+        //         //if no day is passed in, use the selectedDay's dayNumber
+        //         day = parseInt(
+        //             julianToGregorianDay(this.selectedDay!.dayNumber, this.year)
+        //         )
+        //     } else {
+        //         //if a day was passed in, use that instead
+        //         day = parseInt(julianToGregorianDay(day.toString(), this.year))
+        //     }
+        // }
+        const daysInMonth = getDaysInMonth(
+            new Date(Date.UTC(year, parseInt(monthValue!) - 1))
+        )
+        let dayToUse
+        if (this.selectedDay) {
+            if (parseInt(this.selectedDay.dayNumber) > daysInMonth) {
+                dayToUse = 1
             } else {
-                //if a day was passed in, use that instead
-                day = parseInt(julianToGregorianDay(day.toString(), this.year))
+                dayToUse = parseInt(this.selectedDay.dayNumber)
             }
+        } else {
+            dayToUse = 1
         }
 
         const date = new Date(
             Date.UTC(
                 year,
                 (month || parseInt(monthValue!)) - 1,
-                day || parseInt(this.currentDay.split('T')[0].split('-')[2]),
+                dayToUse,
                 hours,
                 minutes,
                 seconds,
