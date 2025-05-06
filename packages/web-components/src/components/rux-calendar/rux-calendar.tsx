@@ -197,18 +197,7 @@ export class RuxCalendar {
                 )!
             }
         }
-        let iso
-        if (!this.isJulian) {
-            iso = this.compileIso(undefined, Number(this.selectedDay.dayNumber))
-        } else {
-            //selected day in this case will be a 3 digit Julian date. Need to convert that back to a regular date.
-            iso = this.compileIso(
-                undefined,
-                parseInt(
-                    julianToGregorianDay(this.selectedDay.dayNumber, this.year)
-                )
-            )
-        }
+        const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({
             iso: iso,
             source: 'daySelected',
@@ -242,33 +231,24 @@ export class RuxCalendar {
      * @param day
      * @returns Compiled ISO string using the current values. Uses values from the time inputs. Should be called when calendar changes the ISO, not when datepicker does.
      */
-    private compileIso(month?: number, day?: number) {
+    private compileIso(month?: number) {
         const monthValue = getMonthValueByName(this.month)
         const year = parseInt(this.year)
         const hours = parseInt(this.hourInput?.value || '0')
         const minutes = parseInt(this.minuteInput?.value || '0')
         const seconds = parseInt(this.secondsInput?.value || '0')
         const milliseconds = parseInt(this.millisecondInput?.value || '0')
-        // if (this.isJulian) {
-        //     //convert julian day, if given, to gregorian day
-        //     if (!day) {
-        //         //if no day is passed in, use the selectedDay's dayNumber
-        //         day = parseInt(
-        //             julianToGregorianDay(this.selectedDay!.dayNumber, this.year)
-        //         )
-        //     } else {
-        //         //if a day was passed in, use that instead
-        //         day = parseInt(julianToGregorianDay(day.toString(), this.year))
-        //     }
-        // }
-        const daysInMonth = getDaysInMonth(
-            new Date(Date.UTC(year, parseInt(monthValue!) - 1))
-        )
+
+        const nextMonth = new Date(Date.UTC(year, parseInt(monthValue!), 0))
+        const daysInMonth = nextMonth.getUTCDate()
+
         let dayToUse
         if (this.selectedDay) {
             if (parseInt(this.selectedDay.dayNumber) > daysInMonth) {
+                console.log('day is outside of daysInMonth, set dayToUse to 1')
                 dayToUse = 1
             } else {
+                console.log('going to use selected days value')
                 dayToUse = parseInt(this.selectedDay.dayNumber)
             }
         } else {
@@ -286,6 +266,11 @@ export class RuxCalendar {
                 milliseconds
             )
         )
+        console.log('Made the date with: ', {
+            year: year,
+            month: (month || parseInt(monthValue!)) - 1,
+            day: dayToUse,
+        })
         return date.toISOString()
     }
 
@@ -394,6 +379,7 @@ export class RuxCalendar {
      */
     private async getRuxDays() {
         this.ruxDays = await this.waitForRuxDays()
+        //clear selected on all days
     }
     componentWillUpdate() {
         this.updateTimepickerWidth()
@@ -701,10 +687,7 @@ export class RuxCalendar {
         //when the time changes, I need to emit an event that compiles the ISO according to the selected day and
         // time inputs values
 
-        const iso = this.compileIso(
-            undefined,
-            parseInt(this.selectedDay!.dayNumber!)
-        )
+        const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
     }
 
@@ -758,10 +741,7 @@ export class RuxCalendar {
         }
         this.arrowKeyPressed = false
 
-        const iso = this.compileIso(
-            undefined,
-            parseInt(this.selectedDay!.dayNumber!)
-        )
+        const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
     }
     /**

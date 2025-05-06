@@ -300,7 +300,6 @@ export class RuxDatetimePicker {
          * Sets the initial parts
          */
         this.parts = initial
-        console.log('set parts to: ', initial)
     }
 
     /**
