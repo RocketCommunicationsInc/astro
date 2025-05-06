@@ -66,7 +66,6 @@
                         icon="zoom-out"
                         onclick="zoom(-1)"
                     ></rux-button>
-                    <rux-input readonly></rux-input>
                     <rux-input id="interval-level" readonly></rux-input>
                     <rux-button
                         id="add"
@@ -100,7 +99,10 @@
                         label="Show Secondary Ruler"
                     ></rux-switch>
                     <rux-switch id="hide-j-day" label="Hide J-Day"></rux-switch>
-                    <rux-switch id="toggle-theme" label="Toggle Theme"></rux-switch>
+                    <rux-switch
+                        id="toggle-theme"
+                        label="Toggle Theme"
+                    ></rux-switch>
                 </section>
 
                 <rux-timeline
@@ -172,7 +174,7 @@
                 timeline.toggleAttribute('hide-j-day')
             })
             toggleTheme.addEventListener('ruxchange', () => {
-              document.querySelector('body').classList.toggle('light-theme')
+                document.querySelector('body').classList.toggle('light-theme')
             })
             toggleShowSecondaryRuler.addEventListener('ruxchange', (e) => {
                 timeline.toggleAttribute('show-secondary-ruler')
