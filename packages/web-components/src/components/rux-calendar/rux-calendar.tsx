@@ -44,6 +44,7 @@ export class RuxCalendar {
     private secondsInput!: HTMLInputElement
     private millisecondInput!: HTMLInputElement
     private arrowKeyPressed: boolean = false // used to track if an arrow key was pressed on the time inputs
+    private lastSelectedDay?: DayInfo & { originMonth?: string }
     /**
      * The iso string to be used to display the date in the calendar
      */
@@ -93,6 +94,7 @@ export class RuxCalendar {
         isToday: boolean
         pastDay: boolean
         futureDay: boolean
+        selected?: boolean
     }[] = []
     @State() currentDay: string = ''
     @State() selectedDay: DayInfo | null = null
@@ -161,28 +163,44 @@ export class RuxCalendar {
         this.setDates()
     }
 
+    @Watch('month')
+    handleMonthWatch(newMonth: string, oldMonth: string) {
+        console.log('newMonth: ', newMonth, ' oldMonth: ', oldMonth)
+        if (newMonth === oldMonth) return
+        if (newMonth !== oldMonth) {
+            if (this.selectedDay) {
+                this.lastSelectedDay = this.selectedDay
+                this.lastSelectedDay.originMonth = oldMonth
+                console.log(
+                    'just set lastSelectedDay to: ',
+                    this.lastSelectedDay
+                )
+            }
+            if (newMonth === this.lastSelectedDay?.originMonth) {
+                console.log('should set selected day back to lastSelectedDay')
+                this.setSelectedDay(this.lastSelectedDay.dayNumber, true)
+            }
+            this.selectedDay = null
+        }
+    }
+
     @Listen('ruxdayselected')
     handleDaySelected(event: CustomEvent) {
         const detail: DayInfo = event.detail
         this.selectedDay = detail
-        //get all rux-day's associated with this element
-        // const days = this.el.shadowRoot?.querySelectorAll('rux-day')
-        //loop through the days and set the selected attribute to true for the day that was clicked
-        if (!this.ruxDays) {
-            return
-        }
-        this.setSelectedDay(detail.dayNumber)
         //update the month based on isFuture or isPast
         if (detail.isFutureDay) {
             //if the month is December, then the month should be January and year should be incremented
             if (this.month === 'December') {
                 this.month = getMonthNameByNumber('01')!
                 this.year = (parseInt(this.year) + 1).toString()
+                // this.setSelectedDay(detail.dayNumber)
             } else {
                 const plus1 = Number(getMonthValueByName(this.month)) + 1
                 this.month = getMonthNameByNumber(
                     plus1.toString().padStart(2, '0')
                 )!
+                // this.setSelectedDay(detail.dayNumber)
             }
         }
         if (detail.isPastDay) {
@@ -197,6 +215,7 @@ export class RuxCalendar {
                 )!
             }
         }
+        this.setSelectedDay(detail.dayNumber)
         const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({
             iso: iso,
@@ -252,7 +271,16 @@ export class RuxCalendar {
                 dayToUse = parseInt(this.selectedDay.dayNumber)
             }
         } else {
-            dayToUse = 1
+            //there is no selected day. Try lastSelected.
+            if (this.lastSelectedDay?.dayNumber) {
+                if (parseInt(this.lastSelectedDay.dayNumber) > daysInMonth) {
+                    dayToUse = 1
+                } else {
+                    dayToUse = parseInt(this.lastSelectedDay.dayNumber)
+                }
+            } else {
+                dayToUse = 1
+            }
         }
 
         const date = new Date(
@@ -279,38 +307,42 @@ export class RuxCalendar {
      * @param dayNumber the number of day to be selected
      * Loops through ruxDays and sets the given day number match to be selected.
      */
-    private async setSelectedDay(dayNumber?: string) {
-        if (!this.ruxDays) {
-            return
-        }
-        //wait for new ruxDays to be rendered
-        await this.getRuxDays()
-        if (dayNumber) {
-            //If in gregorian mode, the day number has no leading 0's. Need to remove those in order to match.
-            if (!this.isJulian) {
-                dayNumber = removeLeadingZero(dayNumber)
-            }
-
-            this.ruxDays.forEach((day) => {
-                if (
-                    day.dayNumber === dayNumber &&
-                    !day.isFutureDay &&
-                    !day.isPastDay
-                ) {
+    private setSelectedDay(dayNumber?: string, bypass: boolean = false) {
+        console.log('setSelectedDay call with: ', dayNumber)
+        this.days.forEach((day) => {
+            if (bypass) {
+                if (dayNumber === day.day) {
                     this.selectedDay = {
-                        dayNumber: day.dayNumber,
-                        isPastDay: day.isPastDay,
-                        isFutureDay: day.isFutureDay,
-                        element: day,
+                        dayNumber: day.day,
+                        isPastDay: day.pastDay,
+                        isFutureDay: day.futureDay,
                         selected: true,
                     }
                     day.selected = true
-                    return
-                } else {
-                    day.selected = false
+                    console.log(
+                        'BYPASS -> Just set this.selectedDay to be: ',
+                        this.selectedDay
+                    )
                 }
-            })
-        }
+            } else {
+                if (dayNumber === day.day && !day.futureDay && !day.pastDay) {
+                    this.selectedDay = {
+                        dayNumber: day.day,
+                        isPastDay: day.pastDay,
+                        isFutureDay: day.futureDay,
+                        selected: true,
+                    }
+                    day.selected = true
+                } else if (dayNumber === day.day) {
+                    console.log(
+                        'I think it is a past/future day? futureDay: ',
+                        day.futureDay,
+                        ' pastDay: ',
+                        day.pastDay
+                    )
+                }
+            }
+        })
     }
 
     connectedCallback() {
@@ -355,32 +387,6 @@ export class RuxCalendar {
         this.setDates()
     }
 
-    /**
-     * @returns A node list of rux-day elements
-     * An async method for getting all rux-day elements associated with this calendar.
-     */
-    private waitForRuxDays(): Promise<NodeListOf<HTMLRuxDayElement>> {
-        return new Promise((resolve) => {
-            const checkRuxDays = () => {
-                const ruxDays = this.el.shadowRoot!.querySelectorAll('rux-day')
-                if (ruxDays.length > 0) {
-                    //return the days in an array
-                    resolve(ruxDays)
-                } else {
-                    requestAnimationFrame(checkRuxDays)
-                }
-            }
-            checkRuxDays()
-        })
-    }
-
-    /**
-     * Async helper method for getting ruxDays
-     */
-    private async getRuxDays() {
-        this.ruxDays = await this.waitForRuxDays()
-        //clear selected on all days
-    }
     componentWillUpdate() {
         this.updateTimepickerWidth()
         this.initHoursValue = this.initHoursValue.padStart(2, '0')
@@ -391,52 +397,10 @@ export class RuxCalendar {
     }
     componentWillLoad() {
         this.updateTimepickerWidth()
-        if (!this.selectedDay) {
-            this.getRuxDays().then(() => {
-                if (!this.ruxDays) {
-                    return
-                }
-                this.ruxDays.forEach((day) => {
-                    if (day.selected) {
-                        this.selectedDay = {
-                            dayNumber: day.dayNumber,
-                            isPastDay: day.isPastDay,
-                            isFutureDay: day.isFutureDay,
-                            element: day,
-                            selected: day.selected,
-                        }
-                    } else {
-                        // If no day is selected at this point, then the datepicker gave an initial ISO string.
-                        // Need to find the day that matches the day in the ISO string
-                        const date = new Date(this.iso)
-                        const day = date.getUTCDate()
-                        const dayNumber = day.toString()
-                        const selectedDay = Array.from(this.ruxDays!).find(
-                            (day) =>
-                                day.dayNumber === dayNumber &&
-                                !day.isFutureDay &&
-                                !day.isPastDay
-                        )
-                        if (selectedDay) {
-                            this.selectedDay = {
-                                dayNumber: selectedDay.dayNumber,
-                                isPastDay: selectedDay.isPastDay,
-                                isFutureDay: selectedDay.isFutureDay,
-                                element: selectedDay,
-                                selected: selectedDay.selected,
-                            }
-                        }
-                    }
-                })
-            })
-        }
-    }
-    componentDidLoad() {
         if (this.day && !this.selectedDay) {
             this.setSelectedDay(this.day)
         }
     }
-
     /**
      * Sets date state and fills in the calendar with the correct number of days. Also sets selected day if necessary.
      */
@@ -539,19 +503,20 @@ export class RuxCalendar {
         }
 
         this.year = year.toString()
-        if (this.isJulian) {
-            const date = new Date(
-                Date.UTC(
-                    year,
-                    month,
-                    parseInt(julianToGregorianDay(this.day, this.year))
-                )
-            ).toISOString()
-            const jday = getDayOfYearFromIso(date)
-            this.setSelectedDay(jday)
-        } else {
-            this.setSelectedDay(this.day)
-        }
+        // if (this.isJulian) {
+        //     const date = new Date(
+        //         Date.UTC(
+        //             year,
+        //             month,
+        //             parseInt(julianToGregorianDay(this.day, this.year))
+        //         )
+        //     ).toISOString()
+        //     const jday = getDayOfYearFromIso(date)
+        //     this.setSelectedDay(jday)
+        // } else {
+        //     console.log('SetSelectedDay from setDates()')
+        //     this.setSelectedDay(this.day)
+        // }
         this.setYears()
     }
 
