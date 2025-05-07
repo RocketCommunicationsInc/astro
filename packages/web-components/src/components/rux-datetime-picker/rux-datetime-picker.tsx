@@ -511,7 +511,6 @@ export class RuxDatetimePicker {
             const message = error.message || 'Invalid date'
             this.iso = message
         }
-        console.log('gonna emit')
         this.ruxDatetimePickerChange.emit(
             this.parts.find((part) => part.type === 'day')?.value
         )

@@ -223,10 +223,12 @@ export class RuxCalendar {
         })
     }
 
+    /**
+     *
+     * @param e The Event listened for
+     */
     @Listen('ruxdatepickerchange', { target: 'document' })
     handleDtpChange(e: CustomEvent) {
-        console.log('heard!')
-        console.log(e.detail, 'DETAIL')
         this.day = e.detail
         this.setSelectedDay(this.day)
     }
