@@ -45,6 +45,7 @@ export class RuxCalendar {
     private millisecondInput!: HTMLInputElement
     private arrowKeyPressed: boolean = false // used to track if an arrow key was pressed on the time inputs
     private lastSelectedDay?: DayInfo & { originMonth?: string }
+    private pendingDayNumber: string | null = null
     /**
      * The iso string to be used to display the date in the calendar
      */
@@ -104,6 +105,7 @@ export class RuxCalendar {
 
     @Watch('iso')
     handleIso(newISO: string) {
+        console.log('iso change')
         if (!newISO) return
         let lastValidYear = this.year
         const regex = /^(\d{0,4})?-?(\d{0,3})?-?(\d{0,2})?T?.*$/
@@ -161,26 +163,23 @@ export class RuxCalendar {
             this.initMillisecondsValue = millisecondMatch[1]
         }
         this.setDates()
+        //! Can't run it here, becuase ISO changes on month shift as well.
+        // this.setSelectedDay(this.day)
     }
 
     @Watch('month')
     handleMonthWatch(newMonth: string, oldMonth: string) {
-        console.log('newMonth: ', newMonth, ' oldMonth: ', oldMonth)
         if (newMonth === oldMonth) return
         if (newMonth !== oldMonth) {
             if (this.selectedDay) {
                 this.lastSelectedDay = this.selectedDay
                 this.lastSelectedDay.originMonth = oldMonth
-                console.log(
-                    'just set lastSelectedDay to: ',
-                    this.lastSelectedDay
-                )
+
+                this.selectedDay = null
             }
             if (newMonth === this.lastSelectedDay?.originMonth) {
-                console.log('should set selected day back to lastSelectedDay')
                 this.setSelectedDay(this.lastSelectedDay.dayNumber, true)
             }
-            this.selectedDay = null
         }
     }
 
@@ -215,12 +214,21 @@ export class RuxCalendar {
                 )!
             }
         }
+        console.log('setSelectedDay from 219')
         this.setSelectedDay(detail.dayNumber)
         const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({
             iso: iso,
             source: 'daySelected',
         })
+    }
+
+    @Listen('ruxdatepickerchange', { target: 'document' })
+    handleDtpChange(e: CustomEvent) {
+        console.log('heard!')
+        console.log(e.detail, 'DETAIL')
+        this.day = e.detail
+        this.setSelectedDay(this.day)
     }
 
     /**
@@ -264,23 +272,12 @@ export class RuxCalendar {
         let dayToUse
         if (this.selectedDay) {
             if (parseInt(this.selectedDay.dayNumber) > daysInMonth) {
-                console.log('day is outside of daysInMonth, set dayToUse to 1')
-                dayToUse = 1
+                dayToUse = daysInMonth
             } else {
-                console.log('going to use selected days value')
                 dayToUse = parseInt(this.selectedDay.dayNumber)
             }
         } else {
-            //there is no selected day. Try lastSelected.
-            if (this.lastSelectedDay?.dayNumber) {
-                if (parseInt(this.lastSelectedDay.dayNumber) > daysInMonth) {
-                    dayToUse = 1
-                } else {
-                    dayToUse = parseInt(this.lastSelectedDay.dayNumber)
-                }
-            } else {
-                dayToUse = 1
-            }
+            dayToUse = daysInMonth
         }
 
         const date = new Date(
@@ -307,8 +304,9 @@ export class RuxCalendar {
      * @param dayNumber the number of day to be selected
      * Loops through ruxDays and sets the given day number match to be selected.
      */
-    private setSelectedDay(dayNumber?: string, bypass: boolean = false) {
+    private setSelectedDay(dayNumber: string, bypass: boolean = false) {
         console.log('setSelectedDay call with: ', dayNumber)
+        this.pendingDayNumber = dayNumber
         this.days.forEach((day) => {
             if (bypass) {
                 if (dayNumber === day.day) {
@@ -319,10 +317,6 @@ export class RuxCalendar {
                         selected: true,
                     }
                     day.selected = true
-                    console.log(
-                        'BYPASS -> Just set this.selectedDay to be: ',
-                        this.selectedDay
-                    )
                 }
             } else {
                 if (dayNumber === day.day && !day.futureDay && !day.pastDay) {
@@ -333,13 +327,6 @@ export class RuxCalendar {
                         selected: true,
                     }
                     day.selected = true
-                } else if (dayNumber === day.day) {
-                    console.log(
-                        'I think it is a past/future day? futureDay: ',
-                        day.futureDay,
-                        ' pastDay: ',
-                        day.pastDay
-                    )
                 }
             }
         })
@@ -398,7 +385,16 @@ export class RuxCalendar {
     componentWillLoad() {
         this.updateTimepickerWidth()
         if (this.day && !this.selectedDay) {
+            console.log('setSelectedDay from CWL, 403')
             this.setSelectedDay(this.day)
+        }
+    }
+    componentWillRender() {
+        //if there's a pending day to select, select it.
+        if (this.pendingDayNumber) {
+            console.log('Running setSelectedDay after render')
+            this.setSelectedDay(this.pendingDayNumber, true)
+            this.pendingDayNumber = null // Clear the pending day
         }
     }
     /**
@@ -503,6 +499,11 @@ export class RuxCalendar {
         }
 
         this.year = year.toString()
+        //! This is setting the selected day when typing into
+        //! the datepicker. But if it's here, then it will also overwrite
+        //! everything with the lastSelectedDay logic.
+        //! Need to move this, probably to wherever an event is heard from
+        //! datepicker itself.
         // if (this.isJulian) {
         //     const date = new Date(
         //         Date.UTC(

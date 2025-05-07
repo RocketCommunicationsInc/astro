@@ -114,7 +114,7 @@ export class RuxDatetimePicker {
      * @internal
      * Fired when the datetime-picker's input value updates. Calendar listens for this event in order to sync values.
      */
-    @Event({ eventName: 'ruxdatepickerchange' })
+    @Event({ eventName: 'ruxdatepickerchange', bubbles: true, composed: true })
     ruxDatetimePickerChange!: EventEmitter<string>
     /**
      * Fired when the value of the datetime-picker changes and is committed by the user
@@ -511,6 +511,10 @@ export class RuxDatetimePicker {
             const message = error.message || 'Invalid date'
             this.iso = message
         }
+        console.log('gonna emit')
+        this.ruxDatetimePickerChange.emit(
+            this.parts.find((part) => part.type === 'day')?.value
+        )
     }
 
     toggleCalendar() {
