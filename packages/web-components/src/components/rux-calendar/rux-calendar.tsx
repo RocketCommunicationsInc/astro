@@ -44,7 +44,10 @@ export class RuxCalendar {
     private secondsInput!: HTMLInputElement
     private millisecondInput!: HTMLInputElement
     private arrowKeyPressed: boolean = false // used to track if an arrow key was pressed on the time inputs
-    private lastSelectedDay?: DayInfo & { originMonth?: string }
+    private lastSelectedDay?: DayInfo & {
+        originMonth?: string
+        originYear?: string
+    }
     private pendingDayNumber: string | null = null
     /**
      * The iso string to be used to display the date in the calendar
@@ -169,17 +172,30 @@ export class RuxCalendar {
 
     @Watch('month')
     handleMonthWatch(newMonth: string, oldMonth: string) {
-        if (newMonth === oldMonth) return
         if (newMonth !== oldMonth) {
             if (this.selectedDay) {
-                this.lastSelectedDay = this.selectedDay
-                this.lastSelectedDay.originMonth = oldMonth
-
                 this.selectedDay = null
             }
-            if (newMonth === this.lastSelectedDay?.originMonth) {
+            if (
+                newMonth === this.lastSelectedDay?.originMonth &&
+                this.lastSelectedDay.originYear === this.year
+            ) {
                 this.setSelectedDay(this.lastSelectedDay.dayNumber, true)
             }
+        }
+    }
+
+    @Watch('year')
+    handleYearWatch(newYear: string, oldYear: string) {
+        if (newYear === oldYear) return
+        if (newYear !== oldYear) {
+            this.selectedDay = null
+        }
+        if (
+            newYear === this.lastSelectedDay?.originYear &&
+            this.month === this.lastSelectedDay.originMonth
+        ) {
+            this.setSelectedDay(this.lastSelectedDay.dayNumber, true)
         }
     }
 
@@ -332,6 +348,16 @@ export class RuxCalendar {
                 }
             }
         })
+        if (!this.selectedDay) {
+            console.warn(
+                'No day was selected in setSelectedDay. Remove this msg before prod! '
+            )
+            return
+        } else {
+            this.lastSelectedDay = this.selectedDay
+            this.lastSelectedDay.originMonth = this.month
+            this.lastSelectedDay.originYear = this.year
+        }
     }
 
     connectedCallback() {
@@ -389,6 +415,13 @@ export class RuxCalendar {
         if (this.day && !this.selectedDay) {
             console.log('setSelectedDay from CWL, 403')
             this.setSelectedDay(this.day)
+            // if (this.selectedDay) {
+            //     this.lastSelectedDay = this.selectedDay
+            //     //@ts-ignore
+            //     this.lastSelectedDay.originYear = this.year
+            //     //@ts-ignore
+            //     console.log(this.lastSelectedDay.originYear)
+            // }
         }
     }
     componentWillRender() {
@@ -501,25 +534,6 @@ export class RuxCalendar {
         }
 
         this.year = year.toString()
-        //! This is setting the selected day when typing into
-        //! the datepicker. But if it's here, then it will also overwrite
-        //! everything with the lastSelectedDay logic.
-        //! Need to move this, probably to wherever an event is heard from
-        //! datepicker itself.
-        // if (this.isJulian) {
-        //     const date = new Date(
-        //         Date.UTC(
-        //             year,
-        //             month,
-        //             parseInt(julianToGregorianDay(this.day, this.year))
-        //         )
-        //     ).toISOString()
-        //     const jday = getDayOfYearFromIso(date)
-        //     this.setSelectedDay(jday)
-        // } else {
-        //     console.log('SetSelectedDay from setDates()')
-        //     this.setSelectedDay(this.day)
-        // }
         this.setYears()
     }
 
