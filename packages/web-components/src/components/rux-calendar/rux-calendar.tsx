@@ -16,14 +16,11 @@ import {
     getMonthNameByNumber,
     getMonthValueByName,
     getTimeFromIso,
-    julianToGregorianDay,
     months,
-    removeLeadingZero,
 } from '../rux-datetime-picker/utils'
 
 import { DayInfo } from './rux-day/rux-day'
 import { Precision } from '../rux-datetime-picker/utils/types'
-import { getDaysInMonth } from 'date-fns'
 
 type EventSource =
     | 'monthChange'
@@ -108,7 +105,6 @@ export class RuxCalendar {
 
     @Watch('iso')
     handleIso(newISO: string) {
-        console.log('iso change')
         if (!newISO) return
         let lastValidYear = this.year
         const regex = /^(\d{0,4})?-?(\d{0,3})?-?(\d{0,2})?T?.*$/
@@ -230,7 +226,6 @@ export class RuxCalendar {
                 )!
             }
         }
-        console.log('setSelectedDay from 219')
         this.setSelectedDay(detail.dayNumber)
         const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({
@@ -309,11 +304,7 @@ export class RuxCalendar {
                 milliseconds
             )
         )
-        console.log('Made the date with: ', {
-            year: year,
-            month: (month || parseInt(monthValue!)) - 1,
-            day: dayToUse,
-        })
+
         return date.toISOString()
     }
 
@@ -323,7 +314,6 @@ export class RuxCalendar {
      * Loops through ruxDays and sets the given day number match to be selected.
      */
     private setSelectedDay(dayNumber: string, bypass: boolean = false) {
-        console.log('setSelectedDay call with: ', dayNumber)
         this.pendingDayNumber = dayNumber
         this.days.forEach((day) => {
             if (bypass) {
@@ -413,21 +403,12 @@ export class RuxCalendar {
     componentWillLoad() {
         this.updateTimepickerWidth()
         if (this.day && !this.selectedDay) {
-            console.log('setSelectedDay from CWL, 403')
             this.setSelectedDay(this.day)
-            // if (this.selectedDay) {
-            //     this.lastSelectedDay = this.selectedDay
-            //     //@ts-ignore
-            //     this.lastSelectedDay.originYear = this.year
-            //     //@ts-ignore
-            //     console.log(this.lastSelectedDay.originYear)
-            // }
         }
     }
     componentWillRender() {
         //if there's a pending day to select, select it.
         if (this.pendingDayNumber) {
-            console.log('Running setSelectedDay after render')
             this.setSelectedDay(this.pendingDayNumber, true)
             this.pendingDayNumber = null // Clear the pending day
         }
