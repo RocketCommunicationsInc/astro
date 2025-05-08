@@ -196,6 +196,11 @@ export class RuxDatetimePicker {
         this.handleInitialValue(this.value)
     }
 
+    @Watch('iso')
+    handleIsoWatch() {
+        console.log('heard DTP ISO change')
+    }
+
     /**
      * Validates if a string is in ISO 8601 format. Valid formats include:
      * - YYYY
@@ -300,6 +305,7 @@ export class RuxDatetimePicker {
          * Sets the initial parts
          */
         this.parts = initial
+        this.value = this.iso
     }
 
     /**
@@ -541,7 +547,20 @@ export class RuxDatetimePicker {
     handlePaste = (e: ClipboardEvent) => {
         e.preventDefault()
         const pastedValue = e.clipboardData!.getData('text/plain')
+        //TODO: Verify/modify the pasted value to be correct enough to be used.
+        // Working values;
+        // 2025
+        // 2025-01
+        // 2025-01-01
+        // 2025-01-01T12Z ----> The Z is important. It needs to be there when time is there or else the ISO gets localized.
+        // 2025-01-01T12:12Z
+        // 2025-01-01T12:12:12Z
+        // 2025-01-01T12:12:12.123Z
+        //julian values in the same formats should be valid - they aren't working right now.
         this.handleInitialValue(pastedValue.trim())
+        this.ruxDatetimePickerChange.emit(
+            this.parts.find((part) => part.type === 'day')?.value
+        )
     }
 
     handleCopy = (e: ClipboardEvent) => {
