@@ -625,10 +625,14 @@ export class RuxCalendar {
             if (!isMs) {
                 if (nextValue > parseInt(el.max)) {
                     el.value = el.min.padStart(2, '0')
+                } else {
+                    el.value = nextValue.toString().padStart(2, '0')
                 }
             } else {
                 if (nextValue > parseInt(el.max)) {
                     el.value = el.min.padStart(3, '0')
+                } else {
+                    el.value = nextValue.toString().padStart(3, '0')
                 }
             }
         }
@@ -637,10 +641,14 @@ export class RuxCalendar {
             if (isMs) {
                 if (nextValue < parseInt(el.min)) {
                     el.value = el.max.padStart(2, '0')
+                } else {
+                    el.value = nextValue.toString().padStart(2, '0')
                 }
             } else {
                 if (nextValue < parseInt(el.min)) {
                     el.value = el.max.padStart(3, '0')
+                } else {
+                    el.value = nextValue.toString().padStart(3, '0')
                 }
             }
         }
