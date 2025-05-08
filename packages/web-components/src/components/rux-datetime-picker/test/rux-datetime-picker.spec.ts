@@ -401,6 +401,7 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
         })
     })
     test.describe('Ms input', () => {
+        //2025-04-15T12:12:12.222Z
         test('MS input can have its time incremented via the arrow icon', async ({
             page,
         }) => {
@@ -408,10 +409,10 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
             await openCalendar(page, 'default', true)
             const msInput = dp.locator('.timepicker-ms input')
             const msArrowInc = dp.locator('.timepicker-ms .inc-arrow')
-            await expect(msInput).toHaveValue('00')
+            await expect(msInput).toHaveValue('000')
             await msInput.hover()
             await msArrowInc.click()
-            await expect(msInput).toHaveValue('01')
+            await expect(msInput).toHaveValue('001')
         })
         test('Ms input can have its time decremented via the up arrow icon', async ({
             page,
@@ -420,25 +421,25 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
             await openCalendar(page, 'given-value', true)
             const msInput = dp.locator('.timepicker-ms input')
             const msArrowDec = dp.locator('.timepicker-ms .dec-arrow')
-            await expect(msInput).toHaveValue('12')
+            await expect(msInput).toHaveValue('222')
             await msInput.hover()
             await msArrowDec.click()
-            await expect(msInput).toHaveValue('11')
+            await expect(msInput).toHaveValue('221')
         })
         test('Ms input only accepts valid characters', async ({ page }) => {
             const dp = page.getByTestId('default')
             await openCalendar(page, 'default', true)
             const msInput = dp.locator('.timepicker-ms input')
             await msInput.type('E')
-            await expect(msInput).toHaveValue('00')
+            await expect(msInput).toHaveValue('000')
             await msInput.type('-')
-            await expect(msInput).toHaveValue('00')
+            await expect(msInput).toHaveValue('000')
             await msInput.type('+')
-            await expect(msInput).toHaveValue('00')
+            await expect(msInput).toHaveValue('000')
             await msInput.type('e')
-            await expect(msInput).toHaveValue('00')
+            await expect(msInput).toHaveValue('000')
             await msInput.type('1')
-            await expect(msInput).toHaveValue('01')
+            await expect(msInput).toHaveValue('001')
         })
     })
 })
