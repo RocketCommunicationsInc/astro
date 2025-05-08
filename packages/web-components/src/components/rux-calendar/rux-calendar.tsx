@@ -171,7 +171,6 @@ export class RuxCalendar {
     handleMonthWatch(newMonth: string, oldMonth: string) {
         if (newMonth !== oldMonth) {
             if (this.selectedDay) {
-                console.log('Setting selected day to null line 173')
                 this.selectedDay = null
             }
             if (
@@ -187,7 +186,6 @@ export class RuxCalendar {
     handleYearWatch(newYear: string, oldYear: string) {
         if (newYear === oldYear) return
         if (newYear !== oldYear) {
-            console.log('Setting selected day to null line 189')
             this.selectedDay = null
         }
         if (
@@ -214,7 +212,6 @@ export class RuxCalendar {
                 this.month = getMonthNameByNumber(
                     plus1.toString().padStart(2, '0')
                 )!
-                // this.setSelectedDay(detail.dayNumber)
             }
         }
         if (detail.isPastDay) {
@@ -358,7 +355,6 @@ export class RuxCalendar {
             this.lastSelectedDay.originMonth = this.month
             this.lastSelectedDay.originYear = this.year
         }
-        console.log('selectedDay at end of SSD call: ', this.selectedDay)
     }
 
     connectedCallback() {
@@ -414,17 +410,12 @@ export class RuxCalendar {
     componentWillLoad() {
         this.updateTimepickerWidth()
         if (this.day && !this.selectedDay) {
-            console.log('CWL setSelectedDay call with: ', this.day)
             this.setSelectedDay(this.day)
         }
     }
     componentWillRender() {
         //if there's a pending day to select, select it.
         if (this.pendingDayNumber) {
-            console.log(
-                'SSD call from CWR line 416 with value: ',
-                this.pendingDayNumber
-            )
             this.setSelectedDay(this.pendingDayNumber, true)
             this.pendingDayNumber = null // Clear the pending day
         }

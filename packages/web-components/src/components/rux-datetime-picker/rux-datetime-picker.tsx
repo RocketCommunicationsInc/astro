@@ -196,11 +196,6 @@ export class RuxDatetimePicker {
         this.handleInitialValue(this.value)
     }
 
-    @Watch('iso')
-    handleIsoWatch() {
-        console.log('heard DTP ISO change')
-    }
-
     /**
      * Validates if a string is in ISO 8601 format. Valid formats include:
      * - YYYY
