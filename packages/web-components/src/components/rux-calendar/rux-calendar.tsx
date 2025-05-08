@@ -618,37 +618,38 @@ export class RuxCalendar {
         }
 
         if (increment) {
+            // Wrap between min and max values.
+            // Incrementing from the max of an input should move the value
+            // of that input to the min, and vice versa.
             const nextValue = parseInt(el.value) + 1
             if (!isMs) {
-                el.value = Math.min(nextValue, parseInt(el.max))
-                    .toString()
-                    .padStart(2, '0')
+                if (nextValue > parseInt(el.max)) {
+                    el.value = el.min.padStart(2, '0')
+                }
             } else {
-                el.value = Math.min(nextValue, parseInt(el.max))
-                    .toString()
-                    .padStart(3, '0')
+                if (nextValue > parseInt(el.max)) {
+                    el.value = el.min.padStart(3, '0')
+                }
             }
         }
         if (decrement) {
             const nextValue = parseInt(el.value) - 1
             if (isMs) {
-                el.value = Math.max(nextValue, parseInt(el.min))
-                    .toString()
-                    .padStart(3, '0')
+                if (nextValue < parseInt(el.min)) {
+                    el.value = el.max.padStart(2, '0')
+                }
             } else {
-                el.value = Math.max(nextValue, parseInt(el.min))
-                    .toString()
-                    .padStart(2, '0')
+                if (nextValue < parseInt(el.min)) {
+                    el.value = el.max.padStart(3, '0')
+                }
             }
         }
 
         // manually dispatch the change event. This is necessary because the input value is being updated
-        //  programmatically via the arrows, and that doesn't
+        // programmatically via the arrows, and that doesn't
         // emit a change event by default.
         const event = new CustomEvent('change', { bubbles: true })
         el.dispatchEvent(event)
-        //when the time changes, I need to emit an event that compiles the ISO according to the selected day and
-        // time inputs values
 
         const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
@@ -683,7 +684,7 @@ export class RuxCalendar {
             }
         } else {
             if (target.value.length > 3 && !(parseInt(target.value) > 0)) {
-                // if the value is greater than 3 digits and not greater than 0, reset to 000
+                // if the value is longer than 3 digits and not greater than 0, reset to 000
                 target.value = '000'
             }
         }
