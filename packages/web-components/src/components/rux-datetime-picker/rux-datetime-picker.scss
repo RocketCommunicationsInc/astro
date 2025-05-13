@@ -75,6 +75,10 @@ input[type='number'] {
                 width: var(--double-width);
             }
 
+            &.day.ordinal-day {
+                width: var(--triple-width);
+            }
+
             &.ms {
                 width: var(--triple-width);
             }

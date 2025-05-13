@@ -25,6 +25,7 @@ import {
     setMaxLengthOrdinal,
     setOrdinalDisplay,
     setPart,
+    toOrdinalIsoString,
 } from './utils'
 
 import { getDaysInMonth } from 'date-fns'
@@ -155,9 +156,14 @@ export class RuxDatetimePicker {
      */
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CalendarDateTimeUpdatedEvent) {
-        if (this.julianFormat)
-            this.value = this.toOrdinalIsoString(event.detail.iso)
-        else this.value = event.detail.iso
+        console.log('heard CDTUE. Detail: ', event.detail.iso)
+        if (this.julianFormat) {
+            console.log(
+                'heard event, set value to: ',
+                toOrdinalIsoString(event.detail.iso)
+            )
+            this.value = toOrdinalIsoString(event.detail.iso)
+        } else this.value = event.detail.iso
         //Based on the event's source, emit the relevant event
         if (event.detail.source !== 'timeChange') {
             this.ruxChange.emit()
@@ -218,29 +224,6 @@ export class RuxDatetimePicker {
         return iso8601Regex.test(value)
     }
 
-    /**
-     *
-     * @param isoString An ISO string to convert to ordinal format
-     * @returns An ISO string converted to an ordinal format string such as YYYY-DDDTHH:mm:ss.sssZ
-     */
-    private toOrdinalIsoString(isoString: string): string {
-        const date = new Date(isoString)
-        const year = date.getUTCFullYear()
-        const startOfYear = new Date(Date.UTC(year, 0, 0))
-        const diff = date.getTime() - startOfYear.getTime()
-        const oneDay = 1000 * 60 * 60 * 24
-        const dayOfYear = Math.floor(diff / oneDay)
-
-        // Format the day of the year as a three-digit number
-        const ordinalDay = String(dayOfYear).padStart(3, '0')
-
-        // Extract the time part of the ISO string
-        const timePart = isoString.substring(isoString.indexOf('T'))
-
-        // Construct the Ordinal ISO string
-        return `${year}-${ordinalDay}${timePart}`
-    }
-
     handleInitialValue(value?: string) {
         const initial = this.julianFormat
             ? initialOrdinalParts()
@@ -257,7 +240,7 @@ export class RuxDatetimePicker {
                 const d = new Date(value)
                 let iso = d.toISOString()
                 if (this.julianFormat) {
-                    iso = this.toOrdinalIsoString(iso)
+                    iso = toOrdinalIsoString(iso)
                 }
                 for (const part of initial) {
                     if (part.type === 'mask') continue
@@ -641,6 +624,9 @@ export class RuxDatetimePicker {
                                                 min: type === 'min',
                                                 sec: type === 'sec',
                                                 ms: type === 'ms',
+                                                'ordinal-day':
+                                                    type === 'day' &&
+                                                    this.julianFormat,
                                             }}
                                             disabled={disabled}
                                             ref={(el) => (this.refs[type] = el)}

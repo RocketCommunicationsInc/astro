@@ -6,24 +6,6 @@ export const initialParts = (): Part[] => [
     { type: 'month', value: '' },
     { type: 'mask', value: '-' },
     { type: 'day', value: '' },
-    { type: 'mask', value: '~' },
-    { type: 'hour', value: '' },
-    { type: 'mask', value: ':' },
-    { type: 'min', value: '' },
-    { type: 'mask', value: ':' },
-    { type: 'sec', value: '' },
-    { type: 'mask', value: '.' },
-    { type: 'ms', value: '' },
-    { type: 'mask', value: '~' },
-    { type: 'mask', value: 'Z' },
-]
-
-//For Julian date mode - YYYY-DDDThh:mm:ss.sss
-export const initialOrdinalParts = (): Part[] => [
-    { type: 'year', value: '' },
-    { type: 'mask', value: '-' },
-    { type: 'day', value: '' },
-    { type: 'mask', value: '~' },
     { type: 'mask', value: 'T' },
     { type: 'hour', value: '' },
     { type: 'mask', value: ':' },
@@ -32,7 +14,22 @@ export const initialOrdinalParts = (): Part[] => [
     { type: 'sec', value: '' },
     { type: 'mask', value: '.' },
     { type: 'ms', value: '' },
-    { type: 'mask', value: '~' },
+    { type: 'mask', value: 'Z' },
+]
+
+//For Julian date mode - YYYY-DDDThh:mm:ss.sss
+export const initialOrdinalParts = (): Part[] => [
+    { type: 'year', value: '' },
+    { type: 'mask', value: '-' },
+    { type: 'day', value: '' },
+    { type: 'mask', value: 'T' },
+    { type: 'hour', value: '' },
+    { type: 'mask', value: ':' },
+    { type: 'min', value: '' },
+    { type: 'mask', value: ':' },
+    { type: 'sec', value: '' },
+    { type: 'mask', value: '.' },
+    { type: 'ms', value: '' },
     { type: 'mask', value: 'Z' },
 ]
 
@@ -426,4 +423,27 @@ export const combineToISO = (
     }
 
     return dateParts.join('-') + time
+}
+
+/**
+ *
+ * @param isoString An ISO string to convert to ordinal format
+ * @returns An ISO string converted to an ordinal format string such as YYYY-DDDTHH:mm:ss.sssZ
+ */
+export const toOrdinalIsoString = (isoString: string) => {
+    const date = new Date(isoString)
+    const year = date.getUTCFullYear()
+    const startOfYear = new Date(Date.UTC(year, 0, 0))
+    const diff = date.getTime() - startOfYear.getTime()
+    const oneDay = 1000 * 60 * 60 * 24
+    const dayOfYear = Math.floor(diff / oneDay)
+
+    // Format the day of the year as a three-digit number
+    const ordinalDay = String(dayOfYear).padStart(3, '0')
+
+    // Extract the time part of the ISO string
+    const timePart = isoString.substring(isoString.indexOf('T'))
+
+    // Construct the Ordinal ISO string
+    return `${year}-${ordinalDay}${timePart}`
 }
