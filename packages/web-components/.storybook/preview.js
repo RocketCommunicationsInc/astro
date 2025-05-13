@@ -50,30 +50,6 @@ export const parameters = {
     a11y: {
         element: '#root',
     },
-    globalTypes: {
-      theme: {
-        description: 'Global theme for components',
-        toolbar: {
-          // The label to show for this toolbar item
-          title: 'Theme',
-          icon: 'circlehollow',
-          // Array of plain string values or MenuItem shape (see below)
-          items: ['light', 'dark'],
-          // Change title based on selected value
-          dynamicTitle: true,
-        },
-      },
-    },
-    initialGlobals: {
-      theme: 'dark',
-    },
-    themes: {
-        default: 'Dark Theme',
-        list: [
-            { name: 'Light Theme', class: 'light-theme', color: '#eceff4' },
-            { name: 'Dark Theme', class: 'dark-theme', color: '#192635' },
-        ],
-    },
     readme: {
         codeTheme: 'duotone-sea',
         theme: {
@@ -109,4 +85,32 @@ export const parameters = {
         },
     },
 }
-export const tags = ['autodocs'];
+
+export const tags = ['autodocs']
+
+export const globalTypes = {
+    theme: {
+        name: 'Theme',
+        description: 'Global theme for components',
+        defaultValue: 'dark',
+        toolbar: {
+            icon: 'circlehollow',
+            items: [
+                { value: 'light', icon: 'sun', title: 'Light Theme' },
+                { value: 'dark', icon: 'moon', title: 'Dark Theme' },
+            ],
+            showName: true,
+        },
+    },
+}
+
+// Add a decorator to apply the theme class
+export const decorators = [
+    (Story, context) => {
+        // Apply the selected theme class
+        const theme = context.globals.theme
+        document.body.className =
+            theme === 'light' ? 'light-theme' : 'dark-theme'
+        return Story()
+    },
+]
