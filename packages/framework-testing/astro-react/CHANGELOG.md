@@ -1,5 +1,11 @@
 # astro-react
 
+## 0.5.1
+
+### Patch Changes
+
+- 4a5755ea: Backlog of neglected dependabot prs
+
 ## 0.5.0
 
 ### Minor Changes

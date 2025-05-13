@@ -1,5 +1,14 @@
 # astro-vue
 
+## 0.5.1
+
+### Patch Changes
+
+- 4a5755ea: Backlog of neglected dependabot prs
+- Updated dependencies [22836c53]
+- Updated dependencies [4a5755ea]
+  - @astrouxds/astro-web-components@7.25.2
+
 ## 0.5.0
 
 ### Minor Changes
