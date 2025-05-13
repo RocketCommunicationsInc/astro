@@ -140,7 +140,7 @@ export class RuxCalendar {
             } else {
                 this.year = lastValidYear // Keep last known valid year
             }
-
+            console.log('setting month from 143, handleIso')
             this.month = getMonthNameByNumber(month!.toString())!
             this.day = day.toString().padStart(2, '0')
         }
@@ -172,6 +172,12 @@ export class RuxCalendar {
     @Watch('month')
     handleMonthWatch(newMonth: string, oldMonth: string) {
         if (newMonth !== oldMonth) {
+            console.log(
+                'heard month change. oldmonth: ',
+                oldMonth,
+                ' new month: ',
+                newMonth
+            )
             if (this.selectedDay) {
                 this.selectedDay = null
             }
@@ -179,6 +185,7 @@ export class RuxCalendar {
                 newMonth === this.lastSelectedDay?.originMonth &&
                 this.lastSelectedDay.originYear === this.year
             ) {
+                console.log('setSelectedCall from 182')
                 this.setSelectedDay(this.lastSelectedDay.dayNumber, true)
             }
         }
@@ -229,6 +236,7 @@ export class RuxCalendar {
                 )!
             }
         }
+        console.log('setSelectedCall from 232')
         this.setSelectedDay(detail.dayNumber)
         const iso = this.compileIso()
         console.log('compiled iso: ', iso)
@@ -245,7 +253,13 @@ export class RuxCalendar {
      */
     @Listen('ruxdatepickerchange', { target: 'document' })
     handleDtpChange(e: CustomEvent) {
+        console.log('RDPC heard by cal with deatil: ', e.detail)
+        if (this.isJulian && e.detail.length < 3) {
+            console.log('should early return ')
+            return
+        }
         this.day = e.detail
+        console.log('setSelectedCall from 252, handleDTPChange')
         this.setSelectedDay(this.day)
     }
 
@@ -437,12 +451,14 @@ export class RuxCalendar {
     componentWillLoad() {
         this.updateTimepickerWidth()
         if (this.day && !this.selectedDay) {
+            console.log('setSelectedCall from 443')
             this.setSelectedDay(this.day)
         }
     }
     componentWillRender() {
         //if there's a pending day to select, select it.
         if (this.pendingDayNumber) {
+            console.log('setSelectedCall from 449')
             this.setSelectedDay(this.pendingDayNumber, true)
             this.pendingDayNumber = null // Clear the pending day
         }
@@ -578,10 +594,10 @@ export class RuxCalendar {
             )!
         }
         this.iso = this.compileIso()
-        this.ruxCalendarDateTimeUpdated.emit({
-            iso: this.iso,
-            source: 'monthChange',
-        })
+        // this.ruxCalendarDateTimeUpdated.emit({
+        //     iso: this.iso,
+        //     source: 'monthChange',
+        // })
     }
 
     /**
@@ -601,10 +617,10 @@ export class RuxCalendar {
             )!
         }
         this.iso = this.compileIso()
-        this.ruxCalendarDateTimeUpdated.emit({
-            iso: this.iso,
-            source: 'monthChange',
-        })
+        // this.ruxCalendarDateTimeUpdated.emit({
+        //     iso: this.iso,
+        //     source: 'monthChange',
+        // })
     }
 
     /**
@@ -618,10 +634,10 @@ export class RuxCalendar {
             this.month = month.label
             this.iso = this.compileIso(parseInt(month.value))
         }
-        this.ruxCalendarDateTimeUpdated.emit({
-            iso: this.iso,
-            source: 'monthChange',
-        })
+        // this.ruxCalendarDateTimeUpdated.emit({
+        //     iso: this.iso,
+        //     source: 'monthChange',
+        // })
     }
 
     /**
@@ -635,10 +651,10 @@ export class RuxCalendar {
         this.year = value
 
         this.iso = this.compileIso()
-        this.ruxCalendarDateTimeUpdated.emit({
-            iso: this.iso,
-            source: 'yearChange',
-        })
+        // this.ruxCalendarDateTimeUpdated.emit({
+        //     iso: this.iso,
+        //     source: 'yearChange',
+        // })
     }
 
     /**

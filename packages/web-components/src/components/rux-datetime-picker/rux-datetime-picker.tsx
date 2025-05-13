@@ -156,12 +156,7 @@ export class RuxDatetimePicker {
      */
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CalendarDateTimeUpdatedEvent) {
-        console.log('heard CDTUE. Detail: ', event.detail.iso)
         if (this.julianFormat) {
-            console.log(
-                'heard event, set value to: ',
-                toOrdinalIsoString(event.detail.iso)
-            )
             this.value = toOrdinalIsoString(event.detail.iso)
         } else this.value = event.detail.iso
         //Based on the event's source, emit the relevant event
@@ -468,6 +463,9 @@ export class RuxDatetimePicker {
                     this.julianFormat
                 )
                 this.ruxInput.emit()
+                this.ruxDatetimePickerChange.emit(
+                    this.parts.find((part) => part.type === 'day')?.value
+                )
                 return
             }
 

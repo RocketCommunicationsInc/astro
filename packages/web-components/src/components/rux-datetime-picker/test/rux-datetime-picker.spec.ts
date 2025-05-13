@@ -138,24 +138,26 @@ test.describe('Datepicker event emissions', () => {
         await defaultDp.locator('rux-day').first().click()
         expect(changeEvent).toHaveReceivedEventTimes(1)
     })
-    test('Datepicker emits single ruxChange event when changing month via the select menu', async ({
-        page,
-    }) => {
-        const defaultDp = page.getByTestId('given-value')
-        const changeEvent = await page.spyOnEvent('ruxchange')
-        await openCalendar(page, 'given-value', true)
-        await defaultDp.locator('select').first().selectOption('October')
-        expect(changeEvent).toHaveReceivedEventTimes(1)
-    })
-    test('Datepicker emits single ruxChange event when changing year via the select menu', async ({
-        page,
-    }) => {
-        const defaultDp = page.getByTestId('given-value')
-        const changeEvent = await page.spyOnEvent('ruxchange')
-        await openCalendar(page, 'given-value', true)
-        await defaultDp.locator('select').last().selectOption('2024')
-        expect(changeEvent).toHaveReceivedEventTimes(1)
-    })
+    //* Commenting out ruxChange event tests for select menus - current design guidance dictates that
+    //* The value does not change until a user selects a day.
+    // test('Datepicker emits single ruxChange event when changing month via the select menu', async ({
+    //     page,
+    // }) => {
+    //     const defaultDp = page.getByTestId('given-value')
+    //     const changeEvent = await page.spyOnEvent('ruxchange')
+    //     await openCalendar(page, 'given-value', true)
+    //     await defaultDp.locator('select').first().selectOption('October')
+    //     expect(changeEvent).toHaveReceivedEventTimes(1)
+    // })
+    // test('Datepicker emits single ruxChange event when changing year via the select menu', async ({
+    //     page,
+    // }) => {
+    //     const defaultDp = page.getByTestId('given-value')
+    //     const changeEvent = await page.spyOnEvent('ruxchange')
+    //     await openCalendar(page, 'given-value', true)
+    //     await defaultDp.locator('select').last().selectOption('2024')
+    //     expect(changeEvent).toHaveReceivedEventTimes(1)
+    // })
     test('Datepicker emits single ruxInput event on time change via arrows', async ({
         page,
     }) => {
