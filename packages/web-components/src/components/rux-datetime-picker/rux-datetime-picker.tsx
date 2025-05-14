@@ -291,6 +291,7 @@ export class RuxDatetimePicker {
     validateInput(value: string, type: PartKey, inputRefs: InputRefs): string {
         const [min, max] = this.determineMinMax(type)
         const dayPart = this.parts.find((part) => part.type == 'day')
+        const monthPart = this.parts.find((part) => part.type === 'month')
         const yearPart = this.parts.find((part) => part.type === 'year')
 
         // If type is month, only allow values of 1-12. If the first digit is between 2-9, pad the digit with a 0 and move to the next input.
@@ -323,9 +324,6 @@ export class RuxDatetimePicker {
         // Based on the month, the day should be limited to the number of days in that month
         if (!this.julianFormat) {
             if (type === 'day') {
-                const monthPart = this.parts.find(
-                    (part) => part.type === 'month'
-                )
                 const month = monthPart?.value || ''
                 if (month) {
                     const year = yearPart?.value || new Date().getFullYear()
@@ -381,6 +379,21 @@ export class RuxDatetimePicker {
         // If year value is less than min, revert value to be min but only after the entire year has been entered
         if (type === 'year' && parseInt(value) < min && value.length === 4) {
             value = `${min}`
+        }
+
+        //! MICAH WRITE A TEST FOR THIS
+        // If the year is not a leap year, ensure that the max day for Feb is 28.
+        // This solves the edge case of typing into the datepicker a leap year date like 2024-02-29,
+        // and then changing the year in the input to a non-leap year.
+        if (type === 'year' && monthPart && dayPart && value.length === 4) {
+            if (
+                parseInt(value) % 4 !== 0 &&
+                monthPart.value === '02' &&
+                dayPart.value > '28'
+            ) {
+                // we are not in a leap year, so the max day for feb is 28.
+                dayPart.value = '28'
+            }
         }
 
         // If hour value is greater than max, revert value to be max
@@ -451,7 +464,6 @@ export class RuxDatetimePicker {
 
         try {
             if (!this.isValidIso8601(parsedIso)) {
-                this.iso = parsedIso
                 this.value = combineToISO(
                     this.parts.find((part) => part.type === 'year')?.value,
                     this.parts.find((part) => part.type === 'month')?.value,
@@ -466,6 +478,9 @@ export class RuxDatetimePicker {
                 this.ruxDatetimePickerChange.emit(
                     this.parts.find((part) => part.type === 'day')?.value
                 )
+                // if the is isn't valid, we don't want to send gibberish to the calendar. Instead, send
+                // the result of the combineToISO method.
+                this.iso = this.value
                 return
             }
 
