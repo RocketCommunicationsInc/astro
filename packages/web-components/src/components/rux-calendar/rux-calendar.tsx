@@ -13,13 +13,13 @@ import {
 } from '@stencil/core'
 import {
     getDayOfYearFromIso,
+    getMonthFromDayOfYear,
     getMonthNameByNumber,
     getMonthValueByName,
     getTimeFromIso,
     julianToGregorianDay,
     months,
     removeLeadingZero,
-    toOrdinalIsoString,
 } from '../rux-datetime-picker/utils'
 
 import { DayInfo } from './rux-day/rux-day'
@@ -247,6 +247,7 @@ export class RuxCalendar {
             return
         }
         this.day = e.detail
+        console.log('RDPC heard with value: ', e.detail)
         this.setSelectedDay(this.day)
     }
 
@@ -331,15 +332,20 @@ export class RuxCalendar {
     private setSelectedDay(dayNumber: string, bypass: boolean = false) {
         //if in julian, make sure it's padded to 3 digits.
         //if not in julian, make sure it has no leading 0s.
+
         if (this.isJulian) {
             dayNumber = dayNumber.padStart(3, '0')
+            this.month = getMonthFromDayOfYear(dayNumber, parseInt(this.year))
+            console.log('just set month to: ', this.month)
         } else {
             dayNumber = removeLeadingZero(dayNumber)
         }
+        console.log('setSelectedDay with dayNum: ', dayNumber)
         this.pendingDayNumber = dayNumber
         this.days.forEach((day) => {
             if (bypass) {
                 if (dayNumber === day.day) {
+                    console.log('match')
                     this.selectedDay = {
                         dayNumber: day.day,
                         isPastDay: day.pastDay,
@@ -440,6 +446,7 @@ export class RuxCalendar {
      * Sets date state and fills in the calendar with the correct number of days. Also sets selected day if necessary.
      */
     setDates() {
+        console.log('setDates call')
         const year = parseInt(this.year)
         const month = parseInt(getMonthValueByName(this.month)!) - 1
         const firstDayOfMonth = new Date(Date.UTC(year, month, 1)).getUTCDay()
@@ -539,6 +546,9 @@ export class RuxCalendar {
 
         this.year = year.toString()
         this.setYears()
+        console.log('at end of setdates(): ', {
+            month: this.month,
+        })
     }
 
     /**
@@ -567,10 +577,6 @@ export class RuxCalendar {
             )!
         }
         this.iso = this.compileIso()
-        // this.ruxCalendarDateTimeUpdated.emit({
-        //     iso: this.iso,
-        //     source: 'monthChange',
-        // })
     }
 
     /**
@@ -590,10 +596,6 @@ export class RuxCalendar {
             )!
         }
         this.iso = this.compileIso()
-        // this.ruxCalendarDateTimeUpdated.emit({
-        //     iso: this.iso,
-        //     source: 'monthChange',
-        // })
     }
 
     /**
@@ -607,10 +609,6 @@ export class RuxCalendar {
             this.month = month.label
             this.iso = this.compileIso(parseInt(month.value))
         }
-        // this.ruxCalendarDateTimeUpdated.emit({
-        //     iso: this.iso,
-        //     source: 'monthChange',
-        // })
     }
 
     /**
@@ -624,10 +622,6 @@ export class RuxCalendar {
         this.year = value
 
         this.iso = this.compileIso()
-        // this.ruxCalendarDateTimeUpdated.emit({
-        //     iso: this.iso,
-        //     source: 'yearChange',
-        // })
     }
 
     /**

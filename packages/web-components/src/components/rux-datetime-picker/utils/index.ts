@@ -447,3 +447,48 @@ export const toOrdinalIsoString = (isoString: string) => {
     // Construct the Ordinal ISO string
     return `${year}-${ordinalDay}${timePart}`
 }
+
+export const getMonthFromDayOfYear = (dayOfYear: string, year: number) => {
+    // Convert the zero-padded day-of-year string to a number
+    const dayOfYearNumber = parseInt(dayOfYear, 10)
+
+    // Array of days in each month for a non-leap year
+    const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+    // Check if the year is a leap year and adjust February's days
+    const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+    if (isLeapYear) {
+        daysInMonths[1] = 29 // February has 29 days in a leap year
+    }
+
+    // Iterate through the months to find where the day-of-year falls
+    let cumulativeDays = 0
+    for (let i = 0; i < daysInMonths.length; i++) {
+        cumulativeDays += daysInMonths[i]
+        if (dayOfYearNumber <= cumulativeDays) {
+            // Return the month name
+            return getMonthNameByIndex(i)
+        }
+    }
+
+    throw new Error('Invalid day-of-year or year provided.')
+}
+
+// Helper function to get the month name by its index (0 = January, 11 = December)
+function getMonthNameByIndex(index: number): string {
+    const monthNames = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ]
+    return monthNames[index]
+}

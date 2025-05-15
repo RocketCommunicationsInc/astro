@@ -305,8 +305,6 @@ export class RuxDatetimePicker {
             value = `${max}`
         }
 
-        // // if type is month, check day input to see if it has a value. If it has a value outside of the days of the month, update it.
-
         if (type === 'month' && dayPart?.value) {
             //need year to accuractley determine how many days are in the month
             const year = yearPart?.value || new Date().getFullYear()
