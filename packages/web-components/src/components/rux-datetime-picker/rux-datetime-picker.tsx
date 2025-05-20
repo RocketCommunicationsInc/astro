@@ -301,6 +301,10 @@ export class RuxDatetimePicker {
             value = `0${value}`
             inputRefs['day']?.focus()
         }
+        //Month can't be 00
+        if (type === 'month' && value === '00') {
+            value = '01'
+        }
 
         // If entered month is higher than max of 12, revert value to be 12
         if (type === 'month' && parseInt(value) > max) {

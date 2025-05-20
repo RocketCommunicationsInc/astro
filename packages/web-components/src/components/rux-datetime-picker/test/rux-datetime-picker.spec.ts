@@ -82,6 +82,158 @@ test.describe('Datepicker', () => {
                 await expect(yearInput).toHaveValue('2000')
             })
         })
+        test.describe('Month input', () => {
+            test.beforeEach(async ({ page }) => {
+                const template = `<rux-datetime-picker max-year="3000" min-year="2000"></rux-datetime-picker>`
+                await page.setContent(template)
+            })
+            test('Month input only accepts valid characters', async ({
+                page,
+            }) => {
+                const monthInput = page.locator(
+                    'rux-datetime-picker input.month'
+                )
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('E')
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('+ab-')
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('03')
+                await expect(monthInput).toHaveValue('03')
+            })
+            test('Month input cannot be greater than 12', async ({ page }) => {
+                const monthInput = page.locator(
+                    'rux-datetime-picker input.month'
+                )
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('13')
+                await expect(monthInput).toHaveValue('12')
+            })
+            test('Month input cannot be 0', async ({ page }) => {
+                const monthInput = page.locator(
+                    'rux-datetime-picker input.month'
+                )
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('00')
+                await expect(monthInput).toHaveValue('01')
+            })
+            test('Month input auto completes when the first digit typed in is > 1', async ({
+                page,
+            }) => {
+                //When typing in a num > 1 into the month input, the only valid number the month could be is
+                //the num typed in with a padded 0. ie, 02, 03, ect.
+                const monthInput = page.locator(
+                    'rux-datetime-picker input.month'
+                )
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('2')
+                await expect(monthInput).toHaveValue('02')
+                await monthInput.clear()
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('9')
+                await expect(monthInput).toHaveValue('09')
+            })
+        })
+        test.describe('Day Input', () => {
+            test.beforeEach(async ({ page }) => {
+                const template = `<rux-datetime-picker></rux-datetime-picker>`
+                await page.setContent(template)
+            })
+            test('Day input only accepts valid characters', async ({
+                page,
+            }) => {
+                const dayInput = page.locator('rux-datetime-picker input.day')
+                await expect(dayInput).toHaveValue('')
+                await dayInput.type('E')
+                await expect(dayInput).toHaveValue('')
+                await dayInput.type('+-ejHo')
+                await expect(dayInput).toHaveValue('')
+                await dayInput.type('12')
+                await expect(dayInput).toHaveValue('12')
+            })
+            test('Day input value cannot exceed 31 if the month input does not have a value', async ({
+                page,
+            }) => {
+                const dayInput = page.locator('rux-datetime-picker input.day')
+                await dayInput.type('32')
+                await expect(dayInput).toHaveValue('31')
+            })
+            test('Day input cannot exceed the amount of days in the month of the months input value', async ({
+                page,
+            }) => {
+                const monthInput = page.locator(
+                    'rux-datetime-picker input.month'
+                )
+                const dayInput = page.locator('rux-datetime-picker input.day')
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('04')
+                await expect(dayInput).toHaveValue('')
+                await dayInput.type('31')
+                await expect(dayInput).toHaveValue('30')
+            })
+            test('Day inputs max accounts for leap years', async ({ page }) => {
+                const monthInput = page.locator(
+                    'rux-datetime-picker input.month'
+                )
+                const dayInput = page.locator('rux-datetime-picker input.day')
+                const yearInput = page.locator('rux-datetime-picker input.year')
+                await expect(yearInput).toHaveValue('')
+                await yearInput.type('2024')
+                await expect(yearInput).toHaveValue('2024')
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('02')
+                await expect(monthInput).toHaveValue('02')
+                await expect(dayInput).toHaveValue('')
+                await dayInput.type('30')
+                await expect(dayInput).toHaveValue('29')
+            })
+            test('Day inputs max accounts for non-leap years', async ({
+                page,
+            }) => {
+                const monthInput = page.locator(
+                    'rux-datetime-picker input.month'
+                )
+                const dayInput = page.locator('rux-datetime-picker input.day')
+                const yearInput = page.locator('rux-datetime-picker input.year')
+                await expect(yearInput).toHaveValue('')
+                await yearInput.type('2025')
+                await expect(yearInput).toHaveValue('2025')
+                await expect(monthInput).toHaveValue('')
+                await monthInput.type('02')
+                await expect(monthInput).toHaveValue('02')
+                await expect(dayInput).toHaveValue('')
+                await dayInput.type('30')
+                await expect(dayInput).toHaveValue('28')
+            })
+            test('Day input cannot be 00', async ({ page }) => {
+                const dayInput = page.locator('rux-datetime-picker input.day')
+                await expect(dayInput).toHaveValue('')
+                await dayInput.type('00')
+                await expect(dayInput).toHaveValue('01')
+            })
+        })
+        test.describe('Hour input', () => {
+            test.beforeEach(async ({ page }) => {
+                const template = `<rux-datetime-picker></rux-datetime-picker>`
+                await page.setContent(template)
+            })
+            test('Hour input accepts only valid characters', async ({
+                page,
+            }) => {
+                const hourInput = page.locator('rux-datetime-picker input.hour')
+                await expect(hourInput).toHaveValue('')
+                await hourInput.type('Eda+-_')
+                await expect(hourInput).toHaveValue('')
+                await hourInput.type('12')
+                await expect(hourInput).toHaveValue('12')
+            })
+            test('Hour input cannot exceed 23', async ({ page }) => {
+                const hourInput = page.locator('rux-datetime-picker input.hour')
+                await expect(hourInput).toHaveValue('')
+                await hourInput.type('24')
+                await expect(hourInput).toHaveValue('23')
+            })
+        })
     })
 })
 test.describe('Datepicker methods', () => {
@@ -858,5 +1010,6 @@ test.describe('Calendar month, year, days and selection', () => {
         }
     )
 
-    //TODO: a completely default datepicker (<rux-datetime-picker>) will render day correctly
+    //TODO: a completely default datepicker (<rux-datetime-picker>) will render selected day correctly
+    //TODO: precision prop tests
 })
