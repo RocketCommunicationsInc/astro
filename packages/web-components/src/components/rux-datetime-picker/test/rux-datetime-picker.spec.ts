@@ -43,6 +43,46 @@ test.describe('Datepicker', () => {
         const calendarPopup = await openCalendar(page)
         await expect(calendarPopup).toBeVisible()
     })
+    test.describe('datepicker inputs', () => {
+        test.describe('year input', () => {
+            test.beforeEach(async ({ page }) => {
+                const template = `<rux-datetime-picker max-year="3000" min-year="2000"></rux-datetime-picker>`
+                await page.setContent(template)
+            })
+            test('Year input only accepts valid values', async ({ page }) => {
+                //Year input should only accept number characters.
+                const dp = page.locator('rux-datetime-picker')
+                const yearInput = dp.locator('input.year')
+                await expect(yearInput).toHaveValue('')
+                await yearInput.type('E')
+                await expect(yearInput).toHaveValue('')
+                await yearInput.type('+')
+                await expect(yearInput).toHaveValue('')
+                await yearInput.type('2')
+                await expect(yearInput).toHaveValue('2')
+                await yearInput.type('025')
+                await expect(yearInput).toHaveValue('2025')
+            })
+            test('Year input does not exceed max-year prop', async ({
+                page,
+            }) => {
+                const dp = page.locator('rux-datetime-picker')
+                const yearInput = dp.locator('input.year')
+                await expect(yearInput).toHaveValue('')
+                await yearInput.type('4000')
+                await expect(yearInput).toHaveValue('3000')
+            })
+            test('Year input does not go below min-year prop', async ({
+                page,
+            }) => {
+                const dp = page.locator('rux-datetime-picker')
+                const yearInput = dp.locator('input.year')
+                await expect(yearInput).toHaveValue('')
+                await yearInput.type('1000')
+                await expect(yearInput).toHaveValue('2000')
+            })
+        })
+    })
 })
 test.describe('Datepicker methods', () => {
     test('should log a warning for invalid ISO strings', async ({ page }) => {
@@ -246,6 +286,7 @@ flex-direction: column;
 <rux-datetime-picker data-testid="default"></rux-datetime-picker>
 <rux-datetime-picker
 data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker>
+<rux-datetime-picker data-testid="cycle-up" value="2025-01-05T23:59:59.999Z"></rux-datetime-picker>
 </div>
 `
         await page.setContent(template)
@@ -266,7 +307,6 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
         test('Hour input can have its time decremented via the down arrow icon', async ({
             page,
         }) => {
-            //need to use given value datepicker here since decrementing a 0 value won't do anything
             // given value is 2025-04-15T12:12:12.222
             const dp = page.getByTestId('given-value')
             await openCalendar(page, 'given-value', true)
@@ -299,6 +339,34 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
             await openCalendar(page, 'default', true)
             const hourInput = dp.locator('.timepicker-hours input')
             await hourInput.type('99')
+            await expect(hourInput).toHaveValue('23')
+        })
+        test('Hour input will cycle to 0 from 23 when using the increment arrow', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('cycle-up')
+            await openCalendar(page, 'cycle-up', true)
+            const hourInput = dp.locator('.timepicker-hours input')
+            const hourArrowInc = dp.locator('.timepicker-hours .inc-arrow')
+            await expect(hourInput).toHaveValue('23')
+            //need to hover over the input because the arrows only appear on hover.
+            await hourInput.hover()
+            //increment using the arrow icon, hour value should become 0.
+            await hourArrowInc.click()
+            await expect(hourInput).toHaveValue('00')
+        })
+        test('Hour input will cycle to 23 from 0 when using the decrement arrow', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await openCalendar(page, 'default', true)
+            const hourInput = dp.locator('.timepicker-hours input')
+            const hourArrowDec = dp.locator('.timepicker-hours .dec-arrow')
+            await expect(hourInput).toHaveValue('00')
+            //need to hover over the input because the arrows only appear on hover.
+            await hourInput.hover()
+            //increment using the arrow icon, hour value should become 0.
+            await hourArrowDec.click()
             await expect(hourInput).toHaveValue('23')
         })
     })
@@ -653,50 +721,142 @@ test.describe('Calendar month, year, days and selection', () => {
                 .locator('.select-wrapper rux-select')
                 .first()
                 .locator('select')
+            const yearSelect = dp
+                .locator('.select-wrapper rux-select')
+                .last()
+                .locator('select')
             await expect(monthSelect).toHaveValue('01')
+            await expect(yearSelect).toHaveValue('2026')
+
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('12')
+            await expect(yearSelect).toHaveValue('2025')
             selectedDay = dp.locator('rux-day[selected] div')
             await expect(selectedDay).toHaveText('362')
         })
+        test('A datepicker with a given value in Dec will correctly swap month, year and selected day when choosing a day from the next Jan month', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default-forward-year-change')
+            await openCalendar(page, 'default-forward-year-change', true)
+            let selectedDay = dp.locator('rux-day[selected] div')
+            await expect(selectedDay).toHaveText('25')
+            const dayToClick = dp.locator('rux-day').nth(41)
+            const monthSelect = dp
+                .locator('.select-wrapper rux-select')
+                .first()
+                .locator('select')
+            await expect(monthSelect).toHaveValue('12')
+            await dayToClick.click()
+            await expect(monthSelect).toHaveValue('01')
+            selectedDay = dp.locator('rux-day[selected] div')
+            await expect(selectedDay).toHaveText('9')
+        })
     })
-    //!Fix on monday
-    // test('A datepicker with a given value in Dec will correctly swap month, year and selected day when choosing a day from the next Jan month', async ({
-    //     page,
-    // }) => {
-    //     const dp = page.getByTestId('default-forward-year-change')
-    //     await openCalendar(page, 'default-forward-year-change', true)
-    //     let selectedDay = dp.locator('rux-day[selected] div')
-    //     await expect(selectedDay).toHaveText('25')
-    //     const dayToClick = dp.locator('rux-day').nth(41)
-    //     const monthSelect = dp
-    //         .locator('.select-wrapper rux-select')
-    //         .first()
-    //         .locator('select')
-    //     await expect(monthSelect).toHaveValue('12')
-    //     await dayToClick.click()
-    //     await expect(monthSelect).toHaveValue('01')
-    //     selectedDay = dp.locator('rux-day[selected] div')
-    //     await expect(selectedDay).toHaveText('10')
-    // })
-    //TODO: test selected day stays inside the month and year it was selected in
-    // test.describe(
-    //     'Selected day stays relegated to the month and year it is selected in',
-    //     () => {
-    //         test.beforeEach(async ({ page }) => {
-    //             const template = `<rux-datetime-picker data-testid="default" value="2025-10-05T00:00:00.000Z"></rux-datetime-picker>
-    //             <rux-datetime-picker julian-format data-testid="default-julian" value="2025-278T00:00:00.000Z"></rux-datetime-picker>
-    //   `
-    //             await page.setContent(template)
-    //         })
-    //         test('Default', async ({ page }) => {
-    //             const dp = page.locator('rux-datetime-picker').first()
-    //             await openCalendar(page, 'default', true)
-    //             // value given is Oct 5, assert that is selected
-    //             // const selectedDay = dp.locator('rux-day.rux-day--selected')
-    //             const selectedDay = dp.locator('rux-day[selected] div')
-    //             await expect(selectedDay).toHaveText('5')
-    //         })
-    //     }
-    // )
+    test.describe(
+        'A selected day remains in the given month and year until a new day is selected',
+        () => {
+            test('A default datepicker with a given day will retain its selected day on a forward month change', async ({
+                page,
+            }) => {
+                const template = `<rux-datetime-picker value="2025-10-05T00:00:00.000Z"></rux-datetime-picker>`
+                await page.setContent(template)
+                await openCalendar(page)
+                const dp = page.locator('rux-datetime-picker')
+                const selectedDay = dp.locator('rux-day[selected] div')
+                await expect(selectedDay).toHaveText('5')
+                const forwardMonthArrow = dp
+                    .locator('.rux-calendar-header rux-button')
+                    .last()
+                //move forward a month, there should be no selected day
+                await forwardMonthArrow.click()
+                const selectedDayAfterMonthChange = dp.locator(
+                    'rux-day[selected] div'
+                )
+                //ensure that no rux-day element was selected
+                await expect(selectedDayAfterMonthChange).toHaveCount(0)
+                //click backward month to go back to where the selected day should be
+                const backwardMonthArrow = dp
+                    .locator('.rux-calendar-header rux-button')
+                    .first()
+                await backwardMonthArrow.click()
+                const selectedDayAfterComingBack = dp.locator(
+                    'rux-day[selected] div'
+                )
+                await expect(selectedDayAfterComingBack).toHaveText('5')
+            })
+            test('A default datepicker with a given day will retain its selected day on a backward month change', async ({
+                page,
+            }) => {
+                const template = `<rux-datetime-picker value="2025-10-05T00:00:00.000Z"></rux-datetime-picker>`
+                await page.setContent(template)
+                await openCalendar(page)
+                const dp = page.locator('rux-datetime-picker')
+                const selectedDay = dp.locator('rux-day[selected] div')
+                await expect(selectedDay).toHaveText('5')
+
+                //move back a month, there should be no selected day
+                const backwardMonthArrow = dp
+                    .locator('.rux-calendar-header rux-button')
+                    .first()
+                await backwardMonthArrow.click()
+                const selectedDayAfterMonthChange = dp.locator(
+                    'rux-day[selected] div'
+                )
+                //ensure that no rux-day element was selected
+                await expect(selectedDayAfterMonthChange).toHaveCount(0)
+                //click forward month to go back to where the selected day should be
+                const forwardMonthArrow = dp
+                    .locator('.rux-calendar-header rux-button')
+                    .last()
+                await forwardMonthArrow.click()
+                const selectedDayAfterComingBack = dp.locator(
+                    'rux-day[selected] div'
+                )
+                await expect(selectedDayAfterComingBack).toHaveText('5')
+            })
+            test('A julian datepicker with a given day will retain its selected day on month change', async ({
+                page,
+            }) => {
+                const template = `<rux-datetime-picker julian-format value="2025-278T00:00:00.000Z"></rux-datetime-picker>`
+                await page.setContent(template)
+                await openCalendar(page)
+                const dp = page.locator('rux-datetime-picker')
+                const selectedDay = dp.locator('rux-day[selected] div')
+                await expect(selectedDay).toHaveText('278')
+
+                //move back a month, there should be no selected day
+                const backwardMonthArrow = dp
+                    .locator('.rux-calendar-header rux-button')
+                    .first()
+                await backwardMonthArrow.click()
+                let selectedDayAfterMonthChange = dp.locator(
+                    'rux-day[selected] div'
+                )
+                //ensure that no rux-day element was selected
+                await expect(selectedDayAfterMonthChange).toHaveCount(0)
+                //click forward month to go back to where the selected day should be
+                const forwardMonthArrow = dp
+                    .locator('.rux-calendar-header rux-button')
+                    .last()
+                await forwardMonthArrow.click()
+                let selectedDayAfterComingBack = dp.locator(
+                    'rux-day[selected] div'
+                )
+                await expect(selectedDayAfterComingBack).toHaveText('278')
+                //test going forward a month and then coming back
+                await forwardMonthArrow.click()
+                selectedDayAfterMonthChange = dp.locator(
+                    'rux-day[selected] div'
+                )
+                await expect(selectedDayAfterMonthChange).toHaveCount(0)
+                //go back to oct, ensure 278 still selected
+                await backwardMonthArrow.click()
+                selectedDayAfterComingBack = dp.locator('rux-day[selected] div')
+                await expect(selectedDayAfterComingBack).toHaveText('278')
+            })
+        }
+    )
+
+    //TODO: a completely default datepicker (<rux-datetime-picker>) will render day correctly
 })

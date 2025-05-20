@@ -169,6 +169,8 @@ export class RuxDatetimePicker {
     }
 
     connectedCallback() {
+        console.log('minYear and maxYear: ', this.minYear, this.maxYear)
+
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
         //Emit a warning if the datepicker is rendered with the value prop filled but with an invalid value.
@@ -517,7 +519,7 @@ export class RuxDatetimePicker {
     determineMinMax(type: PartKey, isJulian?: boolean) {
         switch (type) {
             case 'year':
-                return [1000, 3000]
+                return [this.minYear, this.maxYear]
             case 'month':
                 return [1, 12]
             case 'day':
@@ -583,12 +585,9 @@ export class RuxDatetimePicker {
             helpText,
             toggleCalendar,
             isCalendarOpen,
-            determineMinMax,
             handleCopy,
             handlePaste,
             iso,
-            minYear,
-            maxYear,
             precision,
         } = this
         renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
@@ -650,13 +649,13 @@ export class RuxDatetimePicker {
                                                     : setMaxLengthOrdinal[type]
                                             }
                                             max={
-                                                determineMinMax(
+                                                this.determineMinMax(
                                                     type,
                                                     this.julianFormat
                                                 )[1]
                                             }
                                             min={
-                                                determineMinMax(
+                                                this.determineMinMax(
                                                     type,
                                                     this.julianFormat
                                                 )[0]
@@ -711,8 +710,8 @@ export class RuxDatetimePicker {
                                     //* ISO controls the displayed date in the calendar and should only ever be in ISO format, not ordinal
                                     iso={iso}
                                     //? Update min max years as needed- defaulting to +- 50 years here
-                                    minYear={minYear}
-                                    maxYear={maxYear}
+                                    minYear={this.minYear}
+                                    maxYear={this.maxYear}
                                     precision={precision}
                                     isJulian={this.julianFormat}
                                 ></rux-calendar>
