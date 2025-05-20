@@ -1,19 +1,22 @@
 import {
+    Component,
+    Element,
     Event,
-    Watch,
     EventEmitter,
     Prop,
-    Element,
-    Component,
+    Watch,
     h,
 } from '@stencil/core'
+
 import { SegmentedButton } from './rux-segmented-button.model'
 
 // Used to give each segmented button element a unique name, which allows for proper tabbing.
 let name = 0
 
 /**
- * @part label - the label of rux-segmented-button
+ * @part ul - The unordered list element of the rux-segmented-button
+ * @part li - The list item element of the rux-segmented-button
+ * @part label - The label of rux-segmented-button
  */
 @Component({
     tag: 'rux-segmented-button',
@@ -139,9 +142,10 @@ export class RuxSegmentedButton {
                     'rux-segmented-button--small': this.size === 'small',
                     'rux-segmented-button--large': this.size === 'large',
                 }}
+                part="ul"
             >
                 {this.data.map((item) => (
-                    <li class="rux-segmented-button__segment">
+                    <li class="rux-segmented-button__segment" part="li">
                         <input
                             type="radio"
                             name={this.segBtnName}
