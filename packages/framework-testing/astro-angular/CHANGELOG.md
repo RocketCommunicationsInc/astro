@@ -1,5 +1,12 @@
 # astro-angular
 
+## 0.5.1
+
+### Patch Changes
+
+- 4a5755ea: Backlog of neglected dependabot prs
+- d633ea5b: Add li and ul parts to segmented buttons
+
 ## 0.5.0
 
 ### Minor Changes

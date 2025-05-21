@@ -1,23 +1,27 @@
 # @astrouxds/react
 
+## 7.25.2
+
+### Patch Changes
+
+#### Segmented Button
+
+- Added shadow parts to ul and li elements of segmented button to allow for better styling of the component
+
 ## 7.25.1
 
 ### Patch Changes
 
--   05969436: Correcting background value of rux-ruler to be a token so it works in light and dark themes.
+#### Ruler
+
+- Correcting background value of rux-ruler to be a token so it works in light and dark themes.
 
 ## 7.25.0
 
 ### Minor Changes
 
-- 95904ef7: Added several new props to rux-timeline. `show-secondary-ruler`, `ruler-position`, `show-grid`, and `hide-j-day`.
+- Added several new props to rux-timeline. `show-secondary-ruler`, `ruler-position`, `show-grid`, and `hide-j-day`.
 
-### Patch Changes
-
-- Updated dependencies [95904ef7]
-  - @astrouxds/tokens@1.14.0
-- Updated dependencies [30b16057]
-  - @astrouxds/astro-web-components@7.25.0
 
 ## 7.24.1
 

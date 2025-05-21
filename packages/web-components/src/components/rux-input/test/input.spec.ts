@@ -472,3 +472,59 @@ test.describe('Min and max length', () => {
         expect(inputValue.length).toBe(3) // Input should only contain '123'
     })
 })
+
+test.describe('Browser added input types', () => {
+    test('changes icon styles when light theme is applied', async ({
+        page,
+    }) => {
+        const template = `
+        <div class="light-theme">
+            <rux-input type="date" id="date-input"></rux-input>
+            <rux-input type="time" id="time-input"></rux-input>
+            <rux-input type="search" id="search-input"></rux-input>
+        </div>
+    `
+        await page.setContent(template)
+
+        // Wait for styles to be applied
+        await page.waitForTimeout(100)
+
+        // Verify the components have the light theme class applied
+        const dateIconStyle = await page.evaluate(() => {
+            // Check the CSS variable values
+            const style = getComputedStyle(
+                document.querySelector('#date-input') as HTMLElement
+            )
+            const calendarIcon = style
+                .getPropertyValue('--rux-input-calendar-icon')
+                .trim()
+            return calendarIcon
+        })
+
+        const timeIconStyle = await page.evaluate(() => {
+            // Check the CSS variable values
+            const style = getComputedStyle(
+                document.querySelector('#time-input') as HTMLElement
+            )
+            const clockIcon = style
+                .getPropertyValue('--rux-input-time-icon')
+                .trim()
+            return clockIcon
+        })
+
+        const searchIconStyle = await page.evaluate(() => {
+            // Check the CSS variable values
+            const style = getComputedStyle(
+                document.querySelector('#search-input') as HTMLElement
+            )
+            const searchIcon = style
+                .getPropertyValue('--rux-input-search-icon')
+                .trim()
+            return searchIcon
+        })
+
+        expect(dateIconStyle).toContain("fill='%23005a8f")
+        expect(timeIconStyle).toContain("fill='%23005a8f")
+        expect(searchIconStyle).toContain("fill='%23005a8f")
+    })
+})
