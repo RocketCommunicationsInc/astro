@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.25.2
+
+### Patch Changes
+
+-   22836c53: Apply light theme color to input icons that are added by the browser
+-   4a5755ea: Backlog of neglected dependabot prs
+-   d633ea5b: Add li and ul parts to segmented buttons
+
 ## 7.25.1
 
 ### Patch Changes

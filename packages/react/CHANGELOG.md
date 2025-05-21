@@ -1,10 +1,20 @@
 # @astrouxds/react
 
+## 7.25.2
+
+### Patch Changes
+
+- d633ea5b: Add li and ul parts to segmented buttons
+- Updated dependencies [22836c53]
+- Updated dependencies [4a5755ea]
+- Updated dependencies [d633ea5b]
+  - @astrouxds/astro-web-components@7.25.2
+
 ## 7.25.1
 
 ### Patch Changes
 
--   05969436: Correcting background value of rux-ruler to be a token so it works in light and dark themes.
+- 05969436: Correcting background value of rux-ruler to be a token so it works in light and dark themes.
 
 ## 7.25.0
 
