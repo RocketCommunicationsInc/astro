@@ -1,10 +1,20 @@
 # @astrouxds/angular
 
+## 7.25.2
+
+### Patch Changes
+
+#### Segmented Button
+
+-   Added shadow parts to ul and li elements of segmented button to allow for better styling of the component
+
 ## 7.25.1
 
 ### Patch Changes
 
--   05969436: Correcting background value of rux-ruler to be a token so it works in light and dark themes.
+#### Ruler
+
+-   Correcting background value of rux-ruler to be a token so it works in light and dark themes.
 
 ## 7.25.0
 
