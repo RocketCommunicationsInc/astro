@@ -63,9 +63,11 @@ document.addEventListener('change', (e) =>
 
 ## Shadow Parts
 
-| Part      | Description                       |
-| --------- | --------------------------------- |
-| `"label"` | the label of rux-segmented-button |
+| Part      | Description                                            |
+| --------- | ------------------------------------------------------ |
+| `"label"` | the label of rux-segmented-button                      |
+| `"li"`    | the list item element of the rux-segmented-button      |
+| `"ul"`    | the unordered list element of the rux-segmented-button |
 
 
 ----------------------------------------------
