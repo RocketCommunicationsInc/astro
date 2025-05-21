@@ -65,9 +65,9 @@ document.addEventListener('change', (e) =>
 
 | Part      | Description                                            |
 | --------- | ------------------------------------------------------ |
-| `"label"` | the label of rux-segmented-button                      |
-| `"li"`    | the list item element of the rux-segmented-button      |
-| `"ul"`    | the unordered list element of the rux-segmented-button |
+| `"label"` | The label of rux-segmented-button                      |
+| `"li"`    | The list item element of the rux-segmented-button      |
+| `"ul"`    | The unordered list element of the rux-segmented-button |
 
 
 ----------------------------------------------
