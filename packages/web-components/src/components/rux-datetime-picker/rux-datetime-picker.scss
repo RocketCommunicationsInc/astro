@@ -22,9 +22,16 @@ input[type='number'] {
     --double-width: 20.88px;
     --single-width: 10.44.88px;
 
+    .rux-datetime-picker-label__asterisk {
+        margin-left: var(--spacing-1);
+    }
+
     .disabled {
         opacity: var(--opacity-disabled);
         cursor: not-allowed;
+    }
+    .invalid {
+        box-shadow: var(--color-border-error) 0 0 0 1px inset;
     }
 
     > label.required::after {
@@ -166,7 +173,7 @@ input[type='number'] {
             height: 1.25rem;
             fill: var(--color-background-interactive-default);
             margin-inline-start: auto;
-
+            cursor: pointer;
             &:focus {
                 background-color: var(--color-background-surface-selected);
                 outline: 1px solid var(--color-border-focus-default);
@@ -178,6 +185,14 @@ input[type='number'] {
     .input.disabled {
         &:hover {
             box-shadow: 0 0 0 1px var(--input-color-border-default) inset;
+        }
+        .calendar-btn {
+            cursor: not-allowed;
+        }
+    }
+    .input.invalid {
+        &:hover {
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
         }
     }
 

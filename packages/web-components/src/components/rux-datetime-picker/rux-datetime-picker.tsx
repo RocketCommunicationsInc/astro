@@ -385,7 +385,6 @@ export class RuxDatetimePicker {
             value = `${min}`
         }
 
-        //! MICAH WRITE A TEST FOR THIS
         // If the year is not a leap year, ensure that the max day for Feb is 28.
         // This solves the edge case of typing into the datepicker a leap year date like 2024-02-29,
         // and then changing the year in the input to a non-leap year.
@@ -603,7 +602,19 @@ export class RuxDatetimePicker {
                         onPaste={handlePaste}
                         onCopy={handleCopy}
                     >
-                        {label && <label>{label}</label>}
+                        {label && (
+                            <label>
+                                {label}
+                                {this.required && (
+                                    <span
+                                        part="required"
+                                        class="rux-datetime-picker-label__asterisk"
+                                    >
+                                        &#42;
+                                    </span>
+                                )}
+                            </label>
+                        )}
 
                         <div
                             class={{
@@ -613,6 +624,7 @@ export class RuxDatetimePicker {
                                 medium: size === 'medium',
                                 large: size === 'large',
                                 disabled: this.disabled,
+                                invalid: this.invalid,
                             }}
                         >
                             {this.parts.map(({ type, value }, i) =>
