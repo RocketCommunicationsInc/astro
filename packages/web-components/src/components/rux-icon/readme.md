@@ -134,6 +134,7 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 ### Used by
 
  - [rux-button](../rux-button)
+ - [rux-calendar](../rux-calendar)
  - [rux-global-status-bar](../rux-global-status-bar)
  - [rux-input](../rux-input)
  - [rux-monitoring-icon](../rux-monitoring-icon)
@@ -145,6 +146,7 @@ In Astro 4.0, these groups have been flattened, and each icon is now imported di
 ```mermaid
 graph TD;
   rux-button --> rux-icon
+  rux-calendar --> rux-icon
   rux-global-status-bar --> rux-icon
   rux-input --> rux-icon
   rux-monitoring-icon --> rux-icon

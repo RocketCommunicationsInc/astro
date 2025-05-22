@@ -1,5 +1,10 @@
 import "./App.css";
-import { RuxContainer, RuxGlobalStatusBar } from "@astrouxds/react";
+
+import {
+  RuxContainer,
+  RuxDatetimePicker,
+  RuxGlobalStatusBar,
+} from "@astrouxds/react";
 
 function App() {
   return (
@@ -12,6 +17,9 @@ function App() {
 
         <RuxContainer className="lg:col-span-10">
           <header slot="header">Header</header>
+          <div className="w-1/4 m-auto">
+            <RuxDatetimePicker></RuxDatetimePicker>
+          </div>
         </RuxContainer>
       </main>
     </>
