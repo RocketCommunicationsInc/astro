@@ -238,4 +238,13 @@ input[type='number'] {
         cursor: default;
         fill: var(--color-text-error);
     }
+    .rux-help-text {
+        color: var(--color-text-secondary);
+        font-size: var(--font-body-2-font-size);
+        font-family: var(--font-body-2-font-family);
+        font-weight: var(--font-body-2-font-weight);
+        letter-spacing: var(--font-body-2-letter-spacing);
+        line-height: var(--font-body-2-line-height);
+        text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+    }
 }

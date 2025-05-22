@@ -734,8 +734,8 @@ export class RuxDatetimePicker {
                             </rux-pop-up>
                         </div>
 
-                        {helpText && (
-                            <small class="rux-body-2">{helpText}</small>
+                        {helpText && !errorText && (
+                            <small class="rux-help-text">{helpText}</small>
                         )}
 
                         {errorText && (
