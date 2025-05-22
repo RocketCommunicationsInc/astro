@@ -234,6 +234,94 @@ test.describe('Datepicker', () => {
                 await expect(hourInput).toHaveValue('23')
             })
         })
+        test.describe('Minute input', () => {
+            test.beforeEach(async ({ page }) => {
+                const template = `<rux-datetime-picker></rux-datetime-picker>`
+                await page.setContent(template)
+            })
+            test('min input accepts only valid characters', async ({
+                page,
+            }) => {
+                const minInput = page.locator('rux-datetime-picker input.min')
+                await expect(minInput).toHaveValue('')
+                await minInput.type('Eda+-_')
+                await expect(minInput).toHaveValue('')
+                await minInput.type('12')
+                await expect(minInput).toHaveValue('12')
+            })
+            test('min input cannot exceed 59', async ({ page }) => {
+                const minInput = page.locator('rux-datetime-picker input.min')
+                await expect(minInput).toHaveValue('')
+                await minInput.type('60')
+                await expect(minInput).toHaveValue('59')
+            })
+            test('min input is auto focused after hour input value is filled', async ({
+                page,
+            }) => {
+                const hourInput = page.locator('rux-datetime-picker input.hour')
+                const minInput = page.locator('rux-datetime-picker input.min')
+                await expect(minInput).toHaveValue('')
+                await expect(hourInput).toHaveValue('')
+                await hourInput.type('13')
+                await expect(minInput).toBeFocused()
+            })
+        })
+        test.describe('Seconds input', () => {
+            test.beforeEach(async ({ page }) => {
+                const template = `<rux-datetime-picker></rux-datetime-picker>`
+                await page.setContent(template)
+            })
+            test('sec input accepts only valid characters', async ({
+                page,
+            }) => {
+                const secInput = page.locator('rux-datetime-picker input.sec')
+                await expect(secInput).toHaveValue('')
+                await secInput.type('Eda+-_')
+                await expect(secInput).toHaveValue('')
+                await secInput.type('12')
+                await expect(secInput).toHaveValue('12')
+            })
+            test('sec input cannot exceed 59', async ({ page }) => {
+                const secInput = page.locator('rux-datetime-picker input.sec')
+                await expect(secInput).toHaveValue('')
+                await secInput.type('60')
+                await expect(secInput).toHaveValue('59')
+            })
+            test('sec input is auto focused after minute input value is filled', async ({
+                page,
+            }) => {
+                const minInput = page.locator('rux-datetime-picker input.min')
+                const secInput = page.locator('rux-datetime-picker input.sec')
+                await expect(secInput).toHaveValue('')
+                await expect(minInput).toHaveValue('')
+                await minInput.type('13')
+                await expect(secInput).toBeFocused()
+            })
+        })
+        test.describe('Ms input', () => {
+            test.beforeEach(async ({ page }) => {
+                const template = `<rux-datetime-picker></rux-datetime-picker>`
+                await page.setContent(template)
+            })
+            test('ms input accepts only valid characters', async ({ page }) => {
+                const msInput = page.locator('rux-datetime-picker input.ms')
+                await expect(msInput).toHaveValue('')
+                await msInput.type('Eda+-_')
+                await expect(msInput).toHaveValue('')
+                await msInput.type('123')
+                await expect(msInput).toHaveValue('123')
+            })
+            test('ms input is auto focused after seconds input value is filled', async ({
+                page,
+            }) => {
+                const secInput = page.locator('rux-datetime-picker input.sec')
+                const msInput = page.locator('rux-datetime-picker input.ms')
+                await expect(msInput).toHaveValue('')
+                await expect(secInput).toHaveValue('')
+                await secInput.type('13')
+                await expect(msInput).toBeFocused()
+            })
+        })
     })
 })
 test.describe('Datepicker methods', () => {
