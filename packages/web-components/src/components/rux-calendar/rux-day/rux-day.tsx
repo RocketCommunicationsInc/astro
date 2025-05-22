@@ -95,6 +95,7 @@ export class RuxCalendar {
                         'rux-day--today': isToday,
                     }}
                     tabIndex={0}
+                    role="button"
                 >
                     {dayNumber}
                     {isToday && <span class="rux-day__today-indicator"></span>}
