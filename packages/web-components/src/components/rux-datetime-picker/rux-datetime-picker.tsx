@@ -431,7 +431,6 @@ export class RuxDatetimePicker {
         const isValid = /^(\s*|\d+)$/.test(value)
         if (!isValid) {
             target.value = this.previousValue // Set the input value back to the previous valid value
-            //? Maybe emit a custom event here with the error message? That way the dev can receive an error and display error text if they need to
             return
         }
         value = this.validateInput(value, type, inputRefs)
@@ -550,7 +549,7 @@ export class RuxDatetimePicker {
         // 2025-01-01T12:12Z
         // 2025-01-01T12:12:12Z
         // 2025-01-01T12:12:12.123Z
-        //julian values in the same formats should be valid - they aren't working right now.
+        // julian values in the same formats should be valid - they aren't working right now.
         this.handleInitialValue(pastedValue.trim())
         this.ruxDatetimePickerChange.emit(
             this.parts.find((part) => part.type === 'day')?.value
@@ -561,7 +560,6 @@ export class RuxDatetimePicker {
         e.preventDefault()
         // This overrides the default copy behavior and returns the iso value instead
         e.clipboardData!.setData('text/plain', this.iso)
-        //TODO: figure out if we need to preserve the iso as a JulianISO if in julian mode.
     }
     private _onFocusOut = () => {
         this.ruxBlur.emit()

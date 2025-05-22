@@ -164,7 +164,6 @@ export class RuxCalendar {
             this.initMillisecondsValue = millisecondMatch[1]
         }
 
-        //! IF THERE ARE BUGS LIKE CALENDAR NOT UPDATING MAYBE ITS HERE
         if (this.month && this.day) {
             this.setDates()
         }
@@ -435,7 +434,6 @@ export class RuxCalendar {
         if (this.pendingDayNumber) {
             this.setSelectedDay(this.pendingDayNumber, true)
             this.pendingDayNumber = null // Clear the pending day
-            // this.iso = this.compileIso()
         }
     }
     /**
