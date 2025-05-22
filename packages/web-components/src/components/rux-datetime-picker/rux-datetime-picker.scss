@@ -22,6 +22,11 @@ input[type='number'] {
     --double-width: 20.88px;
     --single-width: 10.44.88px;
 
+    .disabled {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+    }
+
     > label.required::after {
         content: ' *';
     }
@@ -161,7 +166,6 @@ input[type='number'] {
             height: 1.25rem;
             fill: var(--color-background-interactive-default);
             margin-inline-start: auto;
-            cursor: pointer;
 
             &:focus {
                 background-color: var(--color-background-surface-selected);
@@ -169,6 +173,11 @@ input[type='number'] {
                 outline-offset: var(--spacing-focus-default);
                 border-radius: var(--radius-base);
             }
+        }
+    }
+    .input.disabled {
+        &:hover {
+            box-shadow: 0 0 0 1px var(--input-color-border-default) inset;
         }
     }
 

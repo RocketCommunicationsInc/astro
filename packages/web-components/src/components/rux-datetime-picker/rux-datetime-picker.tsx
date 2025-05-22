@@ -612,6 +612,7 @@ export class RuxDatetimePicker {
                                 small: size === 'small',
                                 medium: size === 'medium',
                                 large: size === 'large',
+                                disabled: this.disabled,
                             }}
                         >
                             {this.parts.map(({ type, value }, i) =>
