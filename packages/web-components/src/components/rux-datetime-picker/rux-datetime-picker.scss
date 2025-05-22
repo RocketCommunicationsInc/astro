@@ -212,16 +212,30 @@ input[type='number'] {
         box-shadow: 0 0 0 1px var(--input-color-border-invalid) inset;
     }
 
-    .error {
+    .rux-error-text {
         display: flex;
         align-items: center;
+        text-align: left;
+        width: fit-content;
+        -webkit-order: 3;
+        order: 3;
+        display: flex;
+        margin-top: var(--spacing-2);
         color: var(--color-text-error);
-        gap: var(--spacing-1);
+        font-size: var(--font-body-2-bold-font-size);
+        font-family: var(--font-body-2-bold-font-family);
+        font-weight: var(--font-body-2-bold-font-weight);
+        letter-spacing: var(--font-body-2-bold-letter-spacing);
+        line-height: var(--font-body-2-bold-line-height);
+        text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+    }
 
-        > svg {
-            width: 1.25rem;
-            height: 1.25rem;
-            fill: var(--color-text-error);
-        }
+    .rux-error-text svg {
+        width: calc(var(--spacing-4) + var(--spacing-1)); //20
+        height: calc(var(--spacing-4) + var(--spacing-1)); //20;
+        color: var(--color-text-error);
+        margin-right: var(--spacing-2); //8
+        cursor: default;
+        fill: var(--color-text-error);
     }
 }

@@ -726,7 +726,6 @@ export class RuxDatetimePicker {
                                 <rux-calendar
                                     //* ISO controls the displayed date in the calendar and should only ever be in ISO format, not ordinal
                                     iso={iso}
-                                    //? Update min max years as needed- defaulting to +- 50 years here
                                     minYear={this.minYear}
                                     maxYear={this.maxYear}
                                     precision={precision}
@@ -740,7 +739,7 @@ export class RuxDatetimePicker {
                         )}
 
                         {errorText && (
-                            <small class="rux-body-2 error">
+                            <small class="rux-error-text">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 24 24"
