@@ -87,17 +87,18 @@ export class RuxCalendar {
         } = this
         return (
             <Host onClick={handleDayClick}>
-                <div
+                <button
                     class={{
                         'rux-day': true,
                         'rux-day--past-future': isPastFutureDay,
                         'rux-day--selected': isSelected,
                         'rux-day--today': isToday,
                     }}
+                    tabIndex={0}
                 >
                     {dayNumber}
                     {isToday && <span class="rux-day__today-indicator"></span>}
-                </div>
+                </button>
             </Host>
         )
     }

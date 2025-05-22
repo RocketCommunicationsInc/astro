@@ -1,6 +1,17 @@
 :host {
     display: block;
 }
+button {
+    all: unset;
+    /* Optionally, set display to block or inline-block if needed */
+    box-sizing: border-box;
+    cursor: pointer;
+}
+button:focus {
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
+}
 .rux-day {
     cursor: pointer;
     width: 52px;
