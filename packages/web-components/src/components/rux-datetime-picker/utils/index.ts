@@ -315,6 +315,8 @@ export const ordinalDayToDate = (ordinalDay: string, year: string) => {
 
 export const julianToGregorianDay = (julianDay: string, year: string) => {
     // Parse the Julian day and year as integers
+    console.log('yearToUse: ', year)
+    console.log('jDay to use: ', julianDay)
     const dayOfYear = parseInt(julianDay, 10)
     const yearInt = parseInt(year, 10)
 

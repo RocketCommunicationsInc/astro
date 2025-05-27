@@ -16,8 +16,11 @@ import { InputRefs, Part, PartKey, Precision } from './utils/types'
 import {
     combineToISO,
     formatOrdinalToIso,
+    getMonthFromDayOfYear,
+    getMonthValueByName,
     initialOrdinalParts,
     initialParts,
+    julianToGregorianDay,
     setDisplay,
     setIsoPart,
     setJulianIsoPart,
@@ -169,8 +172,6 @@ export class RuxDatetimePicker {
     }
 
     connectedCallback() {
-        console.log('minYear and maxYear: ', this.minYear, this.maxYear)
-
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
         //Emit a warning if the datepicker is rendered with the value prop filled but with an invalid value.
@@ -227,14 +228,28 @@ export class RuxDatetimePicker {
             : initialParts()
         if (value) {
             try {
-                //We need to turn an ordinal formatted string into an equivalent ISO string
-                // in order to store the date. After the date is stored, we need to translate it
-                // back to ordinal format for display
-                const isInOrdinalFormat = value.match(/(\d{4})-(\d{3})T(.*)/)
+                const isInOrdinalFormat = value.match(
+                    /^(\d{4})-(\d{3})(?:T(\d{2})(?::(\d{2}))?(?::(\d{2})(?:\.(\d{1,3}))?)?Z?)?$/
+                )
+                let d: Date
                 if (isInOrdinalFormat) {
-                    value = formatOrdinalToIso(value)
+                    const year = isInOrdinalFormat[1]
+                    const jday = isInOrdinalFormat[2]
+                    const hour = isInOrdinalFormat[3] || '00'
+                    const minute = isInOrdinalFormat[4] || '00'
+                    const sec = isInOrdinalFormat[5] || '00'
+                    const ms = isInOrdinalFormat[6] || '000'
+                    const gregDay = julianToGregorianDay(jday, year)
+                    const month = getMonthValueByName(
+                        getMonthFromDayOfYear(jday, parseInt(year))
+                    )
+
+                    d = new Date(
+                        `${year}-${month}-${gregDay}T${hour}:${minute}:${sec}.${ms}Z`
+                    )
+                } else {
+                    d = new Date(value)
                 }
-                const d = new Date(value)
                 let iso = d.toISOString()
                 if (this.julianFormat) {
                     iso = toOrdinalIsoString(iso)
@@ -539,17 +554,12 @@ export class RuxDatetimePicker {
 
     handlePaste = (e: ClipboardEvent) => {
         e.preventDefault()
-        const pastedValue = e.clipboardData!.getData('text/plain')
-        //TODO: Verify/modify the pasted value to be correct enough to be used.
-        // Working values;
-        // 2025
-        // 2025-01
-        // 2025-01-01
-        // 2025-01-01T12Z ----> The Z is important. It needs to be there when time is there or else the ISO gets localized.
-        // 2025-01-01T12:12Z
-        // 2025-01-01T12:12:12Z
-        // 2025-01-01T12:12:12.123Z
-        // julian values in the same formats should be valid - they aren't working right now.
+        let pastedValue = e.clipboardData!.getData('text/plain')
+
+        // If there's a time portion (T...), ensure it ends with Z
+        if (/T\d{2}/.test(pastedValue) && !pastedValue.endsWith('Z')) {
+            pastedValue += 'Z'
+        }
         this.handleInitialValue(pastedValue.trim())
         this.ruxDatetimePickerChange.emit(
             this.parts.find((part) => part.type === 'day')?.value

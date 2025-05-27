@@ -362,9 +362,6 @@ export class RuxCalendar {
             }
         })
         if (!this.selectedDay) {
-            console.warn(
-                'No day was selected in setSelectedDay. Remove this msg before prod! '
-            )
             return
         } else {
             this.lastSelectedDay = this.selectedDay
