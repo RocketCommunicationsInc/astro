@@ -43,6 +43,39 @@ test.describe('Datepicker', () => {
         const calendarPopup = await openCalendar(page)
         await expect(calendarPopup).toBeVisible()
     })
+    test.describe('Copying and Pasting', () => {
+        test.beforeEach(async ({ page }) => {
+            const template = `
+                <rux-datetime-picker data-testid="default"></rux-datetime-picker>
+                <textarea data-testid="textarea"></textarea>
+                <rux-datetime-picker data-testid="julian"></rux-datetime-picker>`
+            await page.setContent(template)
+        })
+        test('Pasting in complete ISO strings works on default datepicker', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await expect(dp).toHaveAttribute('value', '')
+            // Set clipboard data in the browser context
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="default"]')
+                const clipboardData = new DataTransfer()
+                clipboardData.setData('text/plain', '2025-10-05T01:02:03.123Z')
+                const pasteEvent = new ClipboardEvent('paste', {
+                    bubbles: true,
+                    cancelable: true,
+                    clipboardData,
+                })
+                dp!.dispatchEvent(pasteEvent)
+            })
+
+            // Now assert the value
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-10-05T01:02:03.123Z'
+            )
+        })
+    })
     test.describe('datepicker inputs', () => {
         test.describe('year input', () => {
             test.beforeEach(async ({ page }) => {
@@ -808,7 +841,7 @@ test.describe('Calendar month, year, days and selection', () => {
             const dp = page.locator('rux-datetime-picker').first()
             await openCalendar(page, 'default', true)
             // value given is Oct 5, assert that is selected
-            const selectedDay = dp.locator('rux-day[selected] div')
+            const selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('5')
         })
         test('A julian datepicker with a given value selects the correct day by default', async ({
@@ -817,8 +850,7 @@ test.describe('Calendar month, year, days and selection', () => {
             const dp = page.locator('rux-datetime-picker').last()
             await openCalendar(page, 'default-julian', true)
             // value given is Oct 5, assert that is selected. In j-day of a non-leap year, that's the 278th day.
-            // const selectedDay = dp.locator('rux-day.rux-day--selected')
-            const selectedDay = dp.locator('rux-day[selected] div')
+            const selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('278')
         })
         test('A datepicker with a given value changes selected day to a day clicked within the same month', async ({
@@ -827,12 +859,12 @@ test.describe('Calendar month, year, days and selection', () => {
             const dp = page.locator('rux-datetime-picker').first()
             await openCalendar(page, 'default', true)
             // value given is Oct 5, assert that is selected
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('5')
             // clicking a day far enough in the month that it won't be a day belonging to the last month
             const dayToClick = dp.locator('rux-day').nth(13)
             await dayToClick.click()
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('11')
         })
         test('A juilan datepicker with a given value changes selected day to a day clicked within the same month', async ({
@@ -841,11 +873,11 @@ test.describe('Calendar month, year, days and selection', () => {
             const dp = page.locator('rux-datetime-picker').last()
             await openCalendar(page, 'default-julian', true)
             // value given is Oct 5, assert that is selected
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('278')
             const dayToClick = dp.locator('rux-day').nth(13)
             await dayToClick.click()
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('284')
         })
         test('A datepicker with a given value will correctly shift months and selected day when selecting a day from a previous month', async ({
@@ -853,7 +885,7 @@ test.describe('Calendar month, year, days and selection', () => {
         }) => {
             const dp = page.locator('rux-datetime-picker').first()
             await openCalendar(page, 'default', true)
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('5')
             const dayToClick = dp.locator('rux-day').nth(0) //this would be the 28th of Sep
             //get month
@@ -864,7 +896,7 @@ test.describe('Calendar month, year, days and selection', () => {
             await expect(monthSelect).toHaveValue('10')
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('09')
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('28')
         })
         test('A julian datepicker with a given value will correctly shift months and selected day when selecting a day from a previous month', async ({
@@ -872,7 +904,7 @@ test.describe('Calendar month, year, days and selection', () => {
         }) => {
             const dp = page.locator('rux-datetime-picker').last()
             await openCalendar(page, 'default-julian', true)
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('278')
             const dayToClick = dp.locator('rux-day').nth(0) //this would be the 28th of Sep
             //get month
@@ -883,7 +915,7 @@ test.describe('Calendar month, year, days and selection', () => {
             await expect(monthSelect).toHaveValue('10')
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('09')
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('271')
         })
         test('A datepicker with a given value will correctly shift months and selected day when selecting a day from a future month', async ({
@@ -891,7 +923,7 @@ test.describe('Calendar month, year, days and selection', () => {
         }) => {
             const dp = page.locator('rux-datetime-picker').first()
             await openCalendar(page, 'default', true)
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('5')
             const dayToClick = dp.locator('rux-day').nth(41) //each month has 42 rux-days, 41 selects the last accounting for 0 index.
             //get month
@@ -902,7 +934,7 @@ test.describe('Calendar month, year, days and selection', () => {
             await expect(monthSelect).toHaveValue('10')
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('11')
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('8')
         })
         test('A julian datepicker with a given value will correctly shift months and selected day when selecting a day from a future month', async ({
@@ -910,7 +942,7 @@ test.describe('Calendar month, year, days and selection', () => {
         }) => {
             const dp = page.locator('rux-datetime-picker').last()
             await openCalendar(page, 'default-julian', true)
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('278')
             const dayToClick = dp.locator('rux-day').nth(41)
             //get month
@@ -921,7 +953,7 @@ test.describe('Calendar month, year, days and selection', () => {
             await expect(monthSelect).toHaveValue('10')
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('11')
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('312')
         })
         test('A datepicker with a given value in Jan will correctly swap month, year and selected day when choosing a day from the previous Dec month', async ({
@@ -929,7 +961,7 @@ test.describe('Calendar month, year, days and selection', () => {
         }) => {
             const dp = page.getByTestId('default-backward-year-change')
             await openCalendar(page, 'default-backward-year-change', true)
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('5')
             const dayToClick = dp.locator('rux-day').nth(0)
             const monthSelect = dp
@@ -946,7 +978,7 @@ test.describe('Calendar month, year, days and selection', () => {
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('12')
             await expect(yearSelect).toHaveValue('2025')
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('28')
         })
         test('A julian datepicker with a given value in Jan will correctly swap month, year and selected day when choosing a day from the previous Dec month', async ({
@@ -954,7 +986,7 @@ test.describe('Calendar month, year, days and selection', () => {
         }) => {
             const dp = page.getByTestId('julian-backward-year-change')
             await openCalendar(page, 'julian-backward-year-change', true)
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('005')
             const dayToClick = dp.locator('rux-day').nth(0)
             const monthSelect = dp
@@ -971,7 +1003,7 @@ test.describe('Calendar month, year, days and selection', () => {
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('12')
             await expect(yearSelect).toHaveValue('2025')
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('362')
         })
         test('A datepicker with a given value in Dec will correctly swap month, year and selected day when choosing a day from the next Jan month', async ({
@@ -979,7 +1011,7 @@ test.describe('Calendar month, year, days and selection', () => {
         }) => {
             const dp = page.getByTestId('default-forward-year-change')
             await openCalendar(page, 'default-forward-year-change', true)
-            let selectedDay = dp.locator('rux-day[selected] div')
+            let selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('25')
             const dayToClick = dp.locator('rux-day').nth(41)
             const monthSelect = dp
@@ -989,7 +1021,7 @@ test.describe('Calendar month, year, days and selection', () => {
             await expect(monthSelect).toHaveValue('12')
             await dayToClick.click()
             await expect(monthSelect).toHaveValue('01')
-            selectedDay = dp.locator('rux-day[selected] div')
+            selectedDay = dp.locator('rux-day[selected] button')
             await expect(selectedDay).toHaveText('9')
         })
     })
@@ -1003,7 +1035,7 @@ test.describe('Calendar month, year, days and selection', () => {
                 await page.setContent(template)
                 await openCalendar(page)
                 const dp = page.locator('rux-datetime-picker')
-                const selectedDay = dp.locator('rux-day[selected] div')
+                const selectedDay = dp.locator('rux-day[selected] button')
                 await expect(selectedDay).toHaveText('5')
                 const forwardMonthArrow = dp
                     .locator('.rux-calendar-header rux-button')
@@ -1011,7 +1043,7 @@ test.describe('Calendar month, year, days and selection', () => {
                 //move forward a month, there should be no selected day
                 await forwardMonthArrow.click()
                 const selectedDayAfterMonthChange = dp.locator(
-                    'rux-day[selected] div'
+                    'rux-day[selected] button'
                 )
                 //ensure that no rux-day element was selected
                 await expect(selectedDayAfterMonthChange).toHaveCount(0)
@@ -1021,7 +1053,7 @@ test.describe('Calendar month, year, days and selection', () => {
                     .first()
                 await backwardMonthArrow.click()
                 const selectedDayAfterComingBack = dp.locator(
-                    'rux-day[selected] div'
+                    'rux-day[selected] button'
                 )
                 await expect(selectedDayAfterComingBack).toHaveText('5')
             })
@@ -1032,7 +1064,7 @@ test.describe('Calendar month, year, days and selection', () => {
                 await page.setContent(template)
                 await openCalendar(page)
                 const dp = page.locator('rux-datetime-picker')
-                const selectedDay = dp.locator('rux-day[selected] div')
+                const selectedDay = dp.locator('rux-day[selected] button')
                 await expect(selectedDay).toHaveText('5')
 
                 //move back a month, there should be no selected day
@@ -1041,7 +1073,7 @@ test.describe('Calendar month, year, days and selection', () => {
                     .first()
                 await backwardMonthArrow.click()
                 const selectedDayAfterMonthChange = dp.locator(
-                    'rux-day[selected] div'
+                    'rux-day[selected] button'
                 )
                 //ensure that no rux-day element was selected
                 await expect(selectedDayAfterMonthChange).toHaveCount(0)
@@ -1051,7 +1083,7 @@ test.describe('Calendar month, year, days and selection', () => {
                     .last()
                 await forwardMonthArrow.click()
                 const selectedDayAfterComingBack = dp.locator(
-                    'rux-day[selected] div'
+                    'rux-day[selected] button'
                 )
                 await expect(selectedDayAfterComingBack).toHaveText('5')
             })
@@ -1062,7 +1094,7 @@ test.describe('Calendar month, year, days and selection', () => {
                 await page.setContent(template)
                 await openCalendar(page)
                 const dp = page.locator('rux-datetime-picker')
-                const selectedDay = dp.locator('rux-day[selected] div')
+                const selectedDay = dp.locator('rux-day[selected] button')
                 await expect(selectedDay).toHaveText('278')
 
                 //move back a month, there should be no selected day
@@ -1071,7 +1103,7 @@ test.describe('Calendar month, year, days and selection', () => {
                     .first()
                 await backwardMonthArrow.click()
                 let selectedDayAfterMonthChange = dp.locator(
-                    'rux-day[selected] div'
+                    'rux-day[selected] button'
                 )
                 //ensure that no rux-day element was selected
                 await expect(selectedDayAfterMonthChange).toHaveCount(0)
@@ -1081,18 +1113,20 @@ test.describe('Calendar month, year, days and selection', () => {
                     .last()
                 await forwardMonthArrow.click()
                 let selectedDayAfterComingBack = dp.locator(
-                    'rux-day[selected] div'
+                    'rux-day[selected] button'
                 )
                 await expect(selectedDayAfterComingBack).toHaveText('278')
                 //test going forward a month and then coming back
                 await forwardMonthArrow.click()
                 selectedDayAfterMonthChange = dp.locator(
-                    'rux-day[selected] div'
+                    'rux-day[selected] button'
                 )
                 await expect(selectedDayAfterMonthChange).toHaveCount(0)
                 //go back to oct, ensure 278 still selected
                 await backwardMonthArrow.click()
-                selectedDayAfterComingBack = dp.locator('rux-day[selected] div')
+                selectedDayAfterComingBack = dp.locator(
+                    'rux-day[selected] button'
+                )
                 await expect(selectedDayAfterComingBack).toHaveText('278')
             })
         }

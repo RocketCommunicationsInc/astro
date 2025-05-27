@@ -239,11 +239,13 @@ export class RuxDatetimePicker {
                     const minute = isInOrdinalFormat[4] || '00'
                     const sec = isInOrdinalFormat[5] || '00'
                     const ms = isInOrdinalFormat[6] || '000'
-                    const gregDay = julianToGregorianDay(jday, year)
+                    const gregDay = julianToGregorianDay(jday, year).padStart(
+                        2,
+                        '0'
+                    )
                     const month = getMonthValueByName(
                         getMonthFromDayOfYear(jday, parseInt(year))
                     )
-
                     d = new Date(
                         `${year}-${month}-${gregDay}T${hour}:${minute}:${sec}.${ms}Z`
                     )
