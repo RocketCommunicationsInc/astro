@@ -56,17 +56,30 @@ test.describe('Datepicker', () => {
         }) => {
             const dp = page.getByTestId('default')
             await expect(dp).toHaveAttribute('value', '')
-            // Set clipboard data in the browser context
+            // Find the year input inside the datepicker
+            const yearInput = await dp.locator('input.year')
+            // Focus the year input to ensure it is ready for paste
+            await yearInput.focus()
+            // Simulate a paste event with clipboard data only if the input exists
             await page.evaluate(() => {
                 const dp = document.querySelector('[data-testid="default"]')
-                const clipboardData = new DataTransfer()
-                clipboardData.setData('text/plain', '2025-10-05T01:02:03.123Z')
-                const pasteEvent = new ClipboardEvent('paste', {
-                    bubbles: true,
-                    cancelable: true,
-                    clipboardData,
-                })
-                dp!.dispatchEvent(pasteEvent)
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData(
+                        'text/plain',
+                        '2025-10-05T01:02:03.123Z'
+                    )
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
             })
 
             // Now assert the value
@@ -74,6 +87,35 @@ test.describe('Datepicker', () => {
                 'value',
                 '2025-10-05T01:02:03.123Z'
             )
+        })
+        test('Pasting in complete ISO strings works in Julian datepicker', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="default"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData(
+                        'text/plain',
+                        '2025-278T01:02:03.123Z'
+                    )
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute('value', '2025-278T01:02:03.123Z')
         })
     })
     test.describe('datepicker inputs', () => {

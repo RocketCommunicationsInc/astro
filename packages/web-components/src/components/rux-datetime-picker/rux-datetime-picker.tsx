@@ -29,6 +29,8 @@ import {
     setOrdinalDisplay,
     setPart,
     toOrdinalIsoString,
+    toPartialOrdinalIsoString,
+    toPartialRegularIsoString,
 } from './utils'
 
 import { getDaysInMonth } from 'date-fns'
@@ -58,6 +60,14 @@ export class RuxDatetimePicker {
     private secRef?: HTMLInputElement
     private msRef?: HTMLInputElement
     private previousValue: string = ''
+    /**
+     *Holds the current value, but parsed to a julian ISO.
+     */
+    private _julianValue: string = ''
+    /**
+     * Holds the current value as a gregorian, ISO value.
+     */
+    private _gregorianValue: string = ''
 
     @Element() el!: HTMLRuxDatetimePickerElement
 
@@ -149,6 +159,14 @@ export class RuxDatetimePicker {
         ms: this.msRef,
     }
 
+    get julianValue(): string {
+        return this._julianValue
+    }
+
+    get gregorianValue(): string {
+        return this._gregorianValue
+    }
+
     @Listen('ruxpopupclosed')
     handlePopupClose() {
         this.isCalendarOpen = false
@@ -198,6 +216,19 @@ export class RuxDatetimePicker {
     @Watch('precision')
     handlePrecisionChange() {
         this.handleInitialValue(this.value)
+    }
+
+    @Watch('value')
+    handleValueChange() {
+        if (this.julianFormat) {
+            this._julianValue = this.value
+            this._gregorianValue = toPartialRegularIsoString(this.value)
+        } else {
+            this._julianValue = toPartialOrdinalIsoString(this.value)
+            this._gregorianValue = this.value
+        }
+        this.el.setAttribute('julian-value', this._julianValue)
+        this.el.setAttribute('gregorian-value', this._gregorianValue)
     }
 
     /**
