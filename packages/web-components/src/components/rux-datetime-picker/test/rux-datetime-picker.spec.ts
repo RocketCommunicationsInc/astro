@@ -48,7 +48,7 @@ test.describe('Datepicker', () => {
             const template = `
                 <rux-datetime-picker data-testid="default"></rux-datetime-picker>
                 <textarea data-testid="textarea"></textarea>
-                <rux-datetime-picker data-testid="julian"></rux-datetime-picker>`
+                <rux-datetime-picker data-testid="julian" julian-format></rux-datetime-picker>`
             await page.setContent(template)
         })
         test('Pasting in complete ISO strings works on default datepicker', async ({
@@ -96,7 +96,7 @@ test.describe('Datepicker', () => {
             const yearInput = await dp.locator('input.year')
             await yearInput.focus()
             await page.evaluate(() => {
-                const dp = document.querySelector('[data-testid="default"]')
+                const dp = document.querySelector('[data-testid="julian"]')
                 const input =
                     dp &&
                     dp.shadowRoot &&
@@ -116,6 +116,233 @@ test.describe('Datepicker', () => {
                 }
             })
             await expect(dp).toHaveAttribute('value', '2025-278T01:02:03.123Z')
+        })
+        test('Pasting partial ISO strings works in default datepicker - YYYY', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="default"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '2025')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-01-01T00:00:00.000Z'
+            )
+        })
+        test('Pasting partial ISO strings works in julian datepicker - YYYY', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="julian"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '2025')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute('value', '2025-001T00:00:00.000Z')
+        })
+        test('Pasting partial ISO strings works in julian datepicker - DDD', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="julian"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '278')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            //so that these tests don't break in 2026
+            const currentYear = new Date().getUTCFullYear()
+            await expect(dp).toHaveAttribute(
+                'value',
+                `${currentYear}-278T00:00:00.000Z`
+            )
+        })
+        test('Pasting partial ISO strings works in default datepicker - DD', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="default"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '05')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            //so that these tests don't break in 2026
+            const currentYear = new Date().getUTCFullYear()
+            await expect(dp).toHaveAttribute(
+                'value',
+                `${currentYear}-05-01T00:00:00.000Z`
+            )
+        })
+        test('Pasting partial ISO strings works in default datepicker - YYYY-DD', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="default"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '2025-05')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute(
+                'value',
+                `2025-05-01T00:00:00.000Z`
+            )
+        })
+        test('Pasting partial ISO strings works in julian datepicker - YYYY-DDD', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="julian"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '2025-278')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute('value', `2025-278T00:00:00.000Z`)
+        })
+        test('Pasting partial ISO strings works in julian datepicker - YYYY-DD', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="julian"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '2025-05')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute('value', `2025-005T00:00:00.000Z`)
+        })
+        test('Pasting partial Julian ISO strings works in default datepicker - YYYY-DDD', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('default')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="default"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData('text/plain', '2025-056')
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute(
+                'value',
+                `2025-02-25T00:00:00.000Z`
+            )
         })
     })
     test.describe('datepicker inputs', () => {

@@ -20,6 +20,7 @@ import {
     getMonthValueByName,
     initialOrdinalParts,
     initialParts,
+    isLeapYear,
     julianToGregorianDay,
     setDisplay,
     setIsoPart,
@@ -254,81 +255,120 @@ export class RuxDatetimePicker {
     }
 
     handleInitialValue(value?: string) {
+        // Choose initial parts based on format
         const initial = this.julianFormat
             ? initialOrdinalParts()
             : initialParts()
+
         if (value) {
             try {
-                const isInOrdinalFormat = value.match(
-                    /^(\d{4})-(\d{3})(?:T(\d{2})(?::(\d{2}))?(?::(\d{2})(?:\.(\d{1,3}))?)?Z?)?$/
+                // Handle 3-digit Julian day input (e.g., "056" for day-of-year)
+                if (this.julianFormat && value.length === 3) {
+                    const currentYear = new Date().getUTCFullYear()
+                    value = `${currentYear}-${value}`
+                }
+
+                // Regex for ordinal (Julian) ISO: YYYY-DDD or YYYY-DDDTHH:mm:ss.sssZ
+                const ordinalFormatMatch = value.match(
+                    /^([0-9]{4})(?:-([0-9]{1,3}))?(?:T([0-9]{2})(?::([0-9]{2}))?(?::([0-9]{2})(?:\.([0-9]{1,3}))?)?Z?)?$/
                 )
-                let d: Date
-                if (isInOrdinalFormat) {
-                    const year = isInOrdinalFormat[1]
-                    const jday = isInOrdinalFormat[2]
-                    const hour = isInOrdinalFormat[3] || '00'
-                    const minute = isInOrdinalFormat[4] || '00'
-                    const sec = isInOrdinalFormat[5] || '00'
-                    const ms = isInOrdinalFormat[6] || '000'
+
+                let d: Date | undefined = undefined
+
+                if (ordinalFormatMatch && this.julianFormat) {
+                    // Parse year and day-of-year
+                    const year =
+                        ordinalFormatMatch[1] ||
+                        new Date().getUTCFullYear().toString()
+                    let jdayNum = parseInt(ordinalFormatMatch[2] || '1', 10)
+                    if (isNaN(jdayNum) || jdayNum < 1) jdayNum = 1
+
+                    const yearNum = parseInt(year, 10)
+                    const maxDay = isLeapYear(yearNum) ? 366 : 365
+                    if (jdayNum > maxDay) jdayNum = maxDay
+
+                    const jday = jdayNum.toString().padStart(3, '0')
+                    const hour = ordinalFormatMatch[3] || '00'
+                    const minute = ordinalFormatMatch[4] || '00'
+                    const sec = ordinalFormatMatch[5] || '00'
+                    const ms = ordinalFormatMatch[6] || '000'
                     const gregDay = julianToGregorianDay(jday, year).padStart(
                         2,
                         '0'
                     )
                     const month = getMonthValueByName(
-                        getMonthFromDayOfYear(jday, parseInt(year))
+                        getMonthFromDayOfYear(jday, yearNum)!
                     )
                     d = new Date(
                         `${year}-${month}-${gregDay}T${hour}:${minute}:${sec}.${ms}Z`
                     )
                 } else {
-                    d = new Date(value)
+                    // Special case: 2-digit value as month (01-12)
+                    if (
+                        value.length === 2 &&
+                        /^\d{2}$/.test(value) &&
+                        parseInt(value, 10) >= 1 &&
+                        parseInt(value, 10) <= 12
+                    ) {
+                        // Treat as month, default year to current year
+                        const currentYear = new Date().getUTCFullYear()
+                        d = new Date(`${currentYear}-${value}`)
+                    } else {
+                        // Try to parse as a direct date first
+                        d = new Date(value)
+                        if (isNaN(d.getTime())) {
+                            // Fallback: try to parse as partial ISO
+                            const iso = toPartialRegularIsoString(value)
+                            d = new Date(iso)
+                        }
+                    }
                 }
+
+                if (!d || isNaN(d.getTime())) throw new Error('Invalid date')
+
+                // Always get ISO string (Gregorian)
                 let iso = d.toISOString()
                 if (this.julianFormat) {
                     iso = toOrdinalIsoString(iso)
                 }
+
+                // Set initial part values from ISO string
                 for (const part of initial) {
                     if (part.type === 'mask') continue
-                    if (this.julianFormat) {
-                        part.value = setJulianIsoPart[part.type](iso)
-                    } else {
-                        part.value = setIsoPart[part.type](iso)
-                    }
+                    part.value = this.julianFormat
+                        ? setJulianIsoPart[part.type](iso)
+                        : setIsoPart[part.type](iso)
                 }
-                // always want the ISO string passed down the component tree to be actual ISO time, not ordinal
+
+                // Always pass down Gregorian ISO to calendar
                 this.iso = formatOrdinalToIso(iso)
             } catch (error: any) {
-                const message = error.message || 'Invalid date'
-                this.iso = message
+                this.iso = error.message || 'Invalid date'
             }
         }
-        /**
-         * Handles the length of initial parts based on precision
-         */
+
+        // Adjust parts array length based on precision
         switch (this.precision) {
             case 'min':
                 !this.julianFormat ? initial.splice(9, 4) : initial.splice(8, 4)
-
                 break
-
             case 'sec':
                 !this.julianFormat
                     ? initial.splice(11, 2)
                     : initial.splice(10, 2)
                 break
-
             case 'ms':
                 break
-
             default:
                 initial.splice(9, 4)
                 break
         }
-        /**
-         * Sets the initial parts
-         */
+
+        // Set parts and value for display
         this.parts = initial
-        this.value = this.iso
+        this.value = this.julianFormat
+            ? toPartialOrdinalIsoString(this.iso)
+            : this.iso
     }
 
     /**
@@ -588,7 +628,6 @@ export class RuxDatetimePicker {
     handlePaste = (e: ClipboardEvent) => {
         e.preventDefault()
         let pastedValue = e.clipboardData!.getData('text/plain')
-
         // If there's a time portion (T...), ensure it ends with Z
         if (/T\d{2}/.test(pastedValue) && !pastedValue.endsWith('Z')) {
             pastedValue += 'Z'

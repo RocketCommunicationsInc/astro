@@ -487,10 +487,11 @@ export const toPartialRegularIsoString = (input: string): string => {
     else if (month) result += `-${month}`
     // else just year
 
+    // Always output full time if any time part is present
     if (hour || min || sec || ms) {
         result += `T${paddedHour || '00'}`
-        if (min || sec || ms) result += `:${paddedMin || '00'}`
-        if (sec || ms) result += `:${paddedSec || '00'}`
+        result += `:${paddedMin || '00'}`
+        result += `:${paddedSec || '00'}`
         if (ms) result += `.${paddedMs}`
         result += 'Z'
     }
@@ -568,6 +569,10 @@ export const toPartialOrdinalIsoString = (input: string): string => {
     return result
 }
 
+export const isLeapYear = (year: number) => {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
+}
+
 export const getMonthFromDayOfYear = (dayOfYear: string, year: number) => {
     // Convert the zero-padded day-of-year string to a number
     const dayOfYearNumber = parseInt(dayOfYear, 10)
@@ -576,8 +581,8 @@ export const getMonthFromDayOfYear = (dayOfYear: string, year: number) => {
     const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
     // Check if the year is a leap year and adjust February's days
-    const isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0
-    if (isLeapYear) {
+    const isLeap = isLeapYear(year)
+    if (isLeap) {
         daysInMonths[1] = 29 // February has 29 days in a leap year
     }
 
@@ -591,7 +596,7 @@ export const getMonthFromDayOfYear = (dayOfYear: string, year: number) => {
         }
     }
 
-    throw new Error('Invalid day-of-year or year provided.')
+    // throw new Error('Invalid day-of-year or year provided.')
 }
 
 // Helper function to get the month name by its index (0 = January, 11 = December)

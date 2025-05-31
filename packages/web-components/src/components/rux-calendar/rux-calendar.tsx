@@ -17,6 +17,7 @@ import {
     getMonthNameByNumber,
     getMonthValueByName,
     getTimeFromIso,
+    isLeapYear,
     julianToGregorianDay,
     months,
     removeLeadingZero,
@@ -333,7 +334,18 @@ export class RuxCalendar {
 
         if (this.isJulian) {
             dayNumber = dayNumber.padStart(3, '0')
-            this.month = getMonthFromDayOfYear(dayNumber, parseInt(this.year))
+            const dayNum = parseInt(dayNumber)
+            const isLeap = isLeapYear(parseInt(this.year))
+            if (isLeap && dayNum > 366) {
+                dayNumber = '366'
+            }
+            if (!isLeap && dayNum > 365) {
+                dayNumber = '365'
+            }
+            if (dayNum < 1) {
+                dayNumber = '001'
+            }
+            this.month = getMonthFromDayOfYear(dayNumber, parseInt(this.year))!
         } else {
             dayNumber = removeLeadingZero(dayNumber)
         }
@@ -417,7 +429,6 @@ export class RuxCalendar {
         this.initHoursValue = this.initHoursValue.padStart(2, '0')
         this.initMinutesValue = this.initMinutesValue.padStart(2, '0')
         this.initSecondsValue = this.initSecondsValue.padStart(2, '0')
-        //3 for MS, but will change in future
         this.initMillisecondsValue = this.initMillisecondsValue.padStart(3, '0')
     }
     componentWillLoad() {
