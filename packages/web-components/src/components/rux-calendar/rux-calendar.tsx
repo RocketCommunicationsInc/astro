@@ -172,6 +172,7 @@ export class RuxCalendar {
 
     @Watch('month')
     handleMonthWatch(newMonth: string, oldMonth: string) {
+        console.log('month watch fire')
         if (newMonth !== oldMonth) {
             if (this.selectedDay) {
                 this.selectedDay = null
@@ -201,9 +202,12 @@ export class RuxCalendar {
 
     @Listen('ruxdayselected')
     handleDaySelected(event: CustomEvent) {
+        console.log('ruxdayselected Listen')
         const detail: DayInfo = event.detail
+
         this.selectedDay = detail
         //update the month based on isFuture or isPast
+
         if (detail.isFutureDay) {
             //if the month is December, then the month should be January and year should be incremented
             if (this.month === 'December') {
@@ -438,11 +442,30 @@ export class RuxCalendar {
         }
     }
     componentWillRender() {
+        console.log('Comp WIll Render fire')
         //if there's a pending day to select, select it.
         if (this.pendingDayNumber) {
             this.setSelectedDay(this.pendingDayNumber, true)
             this.pendingDayNumber = null // Clear the pending day
         }
+        const allDays = this.el.shadowRoot?.querySelectorAll('rux-day') || []
+        allDays.forEach((day) => {
+            console.log('day to blur: ', day)
+            day.shadowRoot?.querySelector('button')?.blur()
+        })
+        // This solves an issue where selecting a rux-day from a previous or next month (a grayed out day) would
+        // correctly select it and shift month and year (if needed), but would set focus on the wrong rux-day el.
+        setTimeout(() => {
+            allDays.forEach((day) => {
+                if (
+                    day.shadowRoot
+                        ?.querySelector('button')
+                        ?.classList.contains('rux-day--selected')
+                ) {
+                    day.shadowRoot?.querySelector('button')?.focus()
+                }
+            })
+        }, 0)
     }
     /**
      * Sets date state and fills in the calendar with the correct number of days. Also sets selected day if necessary.

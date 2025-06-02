@@ -645,6 +645,7 @@ export class RuxDatetimePicker {
     }
     private _onFocusOut = () => {
         this.ruxBlur.emit()
+        this.ruxChange.emit()
     }
     /**
      *
