@@ -204,6 +204,7 @@ export class RuxDatetimePicker {
     }
 
     componentWillLoad() {
+        // this._adjustPartWidth()
         this.handleInitialValue(this.value)
     }
 
@@ -348,14 +349,23 @@ export class RuxDatetimePicker {
         }
 
         // Adjust parts array length based on precision
+        // console.log('Initial: ', initial.splice(5, 8))
         switch (this.precision) {
+            case 'day':
+                // Remove all time parts for day precision
+                !this.julianFormat ? initial.splice(5, 9) : initial.splice(3, 9)
+                break
+            case 'hour':
+                // Keep only up to hour
+                !this.julianFormat ? initial.splice(7, 6) : initial.splice(5, 6)
+                break
             case 'min':
-                !this.julianFormat ? initial.splice(9, 4) : initial.splice(8, 4)
+                !this.julianFormat ? initial.splice(9, 4) : initial.splice(7, 4)
                 break
             case 'sec':
                 !this.julianFormat
                     ? initial.splice(11, 2)
-                    : initial.splice(10, 2)
+                    : initial.splice(9, 2)
                 break
             case 'ms':
                 break
@@ -658,6 +668,60 @@ export class RuxDatetimePicker {
         target.select()
     }
 
+    private _adjustPartWidth = () => {
+        console.log('run')
+        let single = '10.44px'
+        let double = '20.88px'
+        let triple = '31.32px'
+        let quad = '40px'
+        if (this.julianFormat) {
+            switch (this.precision) {
+                case 'hour':
+                    double = '25px'
+                    break
+                // case 'min':
+                //     width = 'calc(100% / 2.5)'
+                //     break
+                case 'sec':
+                    // single = '10px'
+                    double = '20px'
+                    break
+                // case 'ms':
+                //     width = 'calc(100% / 5.5)'
+                //     break
+                default:
+                    single = `10.44px;`
+                    double = '20.88px'
+                    triple = '31.32px'
+                    quad = '41.76px'
+            }
+        } else {
+            switch (this.precision) {
+                // case 'hour':
+                //     double = '25px'
+                //     break
+                // case 'min':
+                //     width = 'calc(100% / 2.5)'
+                //     break
+                // case 'sec':
+                //     width = 'calc(100% / 4)'
+                //     break
+                // case 'ms':
+                //     width = 'calc(100% / 5.5)'
+                //     break
+                default:
+                    single = `10.44px;`
+                    double = '20.88px'
+                    triple = '31.32px'
+                    quad = '41.76px'
+            }
+        }
+        this.el.style.setProperty('--single-width', single)
+        this.el.style.setProperty('--double-width', double)
+        this.el.style.setProperty('--triple-width', triple)
+        this.el.style.setProperty('--quad-width', quad)
+    }
+
     render() {
         const {
             disabled,
@@ -732,7 +796,7 @@ export class RuxDatetimePicker {
                                                 min: type === 'min',
                                                 sec: type === 'sec',
                                                 ms: type === 'ms',
-                                                'ordinal-day':
+                                                ordinalDay:
                                                     type === 'day' &&
                                                     this.julianFormat,
                                             }}
