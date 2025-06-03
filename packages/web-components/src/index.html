@@ -55,10 +55,10 @@
                 ></span>
                 <h4>Change Precision</h4>
                 <rux-radio-group label="Precision" name="precision" value="MS">
-                    <rux-radio value="sec" name="precision">Seconds</rux-radio>
                     <rux-radio value="ms" name="precision"
                         >Milliseconds</rux-radio
                     >
+                    <rux-radio value="sec" name="precision">Seconds</rux-radio>
                     <rux-radio value="min" name="precision">Minutes</rux-radio>
                     <rux-radio value="hour" name="precision">Hour</rux-radio>
                     <rux-radio value="day" name="precision">Day</rux-radio>
@@ -70,10 +70,31 @@
                     margin: auto;
                     display: flex;
                     flex-direction: column;
-                    border: 1px solid #4dcaff;
                     padding: 1rem;
                 "
             >
+                <h4>Grab Values</h4>
+                <div
+                    style="
+                        width: 400px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                    "
+                >
+                    <rux-datetime-picker
+                        id="values-test"
+                        value="2025-10-05T01:02:03.123Z"
+                    ></rux-datetime-picker>
+                    <span
+                        >julian-value:
+                        <span id="julian-value" style="color: #4dcaff"></span
+                    ></span>
+                    <span
+                        >gregorian-value:
+                        <span id="gregorian-value" style="color: #4dcaff"></span
+                    ></span>
+                </div>
                 <h4>Form Test</h4>
                 <form
                     id="test-form"
@@ -166,6 +187,37 @@
                 submittedJDatetime.textContent = formData.get('j-datetime')
                 submittedRuxInput.textContent = formData.get('ruxinput')
                 submittedNativeInput.textContent = formData.get('nativeinput')
+            })
+
+            const valuesTest = document.getElementById('values-test')
+            const julianValue = document.getElementById('julian-value')
+            const gregorianValue = document.getElementById('gregorian-value')
+            window.addEventListener('load', () => {
+                console.log('DOM CONTENT LOAD')
+                setTimeout(() => {
+                    gregorianValue.textContent = valuesTest.getAttribute(
+                        'gregorian-value'
+                    )
+                    julianValue.textContent = valuesTest.getAttribute(
+                        'julian-value'
+                    )
+                }, 500)
+            })
+            valuesTest.addEventListener('ruxinput', () => {
+                julianValue.textContent = valuesTest.getAttribute(
+                    'julian-value'
+                )
+                gregorianValue.textContent = valuesTest.getAttribute(
+                    'gregorian-value'
+                )
+            })
+            valuesTest.addEventListener('ruxchange', () => {
+                julianValue.textContent = valuesTest.getAttribute(
+                    'julian-value'
+                )
+                gregorianValue.textContent = valuesTest.getAttribute(
+                    'gregorian-value'
+                )
             })
         </script>
     </body>

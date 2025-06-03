@@ -202,10 +202,20 @@ export class RuxDatetimePicker {
             this.iso = ''
             this.value = ''
         }
+        //If value exists on init, need to set the julian-value and gregorian-value attributes accordingly
+        if (this.value && this.julianFormat) {
+            this._julianValue = this.value
+            this._gregorianValue = toPartialRegularIsoString(this.value)
+        }
+        if (this.value && !this.julianFormat) {
+            this._gregorianValue = this.value
+            this._julianValue = toPartialOrdinalIsoString(this.value)
+        }
+        this.el.setAttribute('julian-value', this._julianValue)
+        this.el.setAttribute('gregorian-value', this._gregorianValue)
     }
 
     componentWillLoad() {
-        // this._adjustPartWidth()
         this.handleInitialValue(this.value)
     }
 

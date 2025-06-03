@@ -7,13 +7,13 @@
 
 ## Properties
 
-| Property    | Attribute   | Description                                                                                                                                                         | Type                     | Default |
-| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ | ------- |
-| `isJulian`  | `is-julian` | Controls whether or not the calendar displays dates in Julian                                                                                                       | `boolean`                | `false` |
-| `iso`       | `iso`       | The iso string to be used to display the date in the calendar                                                                                                       | `string`                 | `''`    |
-| `maxYear`   | `max-year`  | The maximum year the calendar can use                                                                                                                               | `number`                 | `2100`  |
-| `minYear`   | `min-year`  | The minimum year the calendar can use                                                                                                                               | `number`                 | `1900`  |
-| `precision` | `precision` | Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component. | `"min" \| "ms" \| "sec"` | `'min'` |
+| Property    | Attribute   | Description                                                                                                                                                         | Type                                        | Default |
+| ----------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------- | ------- |
+| `isJulian`  | `is-julian` | Controls whether or not the calendar displays dates in Julian                                                                                                       | `boolean`                                   | `false` |
+| `iso`       | `iso`       | The iso string to be used to display the date in the calendar                                                                                                       | `string`                                    | `''`    |
+| `maxYear`   | `max-year`  | The maximum year the calendar can use                                                                                                                               | `number`                                    | `2100`  |
+| `minYear`   | `min-year`  | The minimum year the calendar can use                                                                                                                               | `number`                                    | `1900`  |
+| `precision` | `precision` | Determines the precision of the time picker down to milliseconds. When the calendar is within a rux-datepicker, the precision is set from the datepicker component. | `"day" \| "hour" \| "min" \| "ms" \| "sec"` | `'min'` |
 
 
 ## Dependencies
