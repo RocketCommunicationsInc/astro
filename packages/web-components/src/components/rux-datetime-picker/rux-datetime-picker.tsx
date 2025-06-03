@@ -234,11 +234,6 @@ export class RuxDatetimePicker {
         this.el.setAttribute('gregorian-value', this._gregorianValue)
     }
 
-    @Watch('iso')
-    handleIsoWatch() {
-        console.log('heard iso change: ', this.iso)
-    }
-
     /**
      * Validates if a string is in ISO 8601 format. Valid formats include:
      * - YYYY
@@ -355,7 +350,6 @@ export class RuxDatetimePicker {
         }
 
         // Adjust parts array length based on precision
-        // console.log('Initial: ', initial.splice(5, 8))
         switch (this.precision) {
             case 'day':
                 // Remove all time parts for day precision
@@ -664,10 +658,6 @@ export class RuxDatetimePicker {
             //partialOrdinalIsoString func expects a valid ISO string to convert.
             if (isIsoString(this.iso)) {
                 returnIso = toPartialOrdinalIsoString(this.iso)
-                console.log(
-                    'this.isValidIso passed - convert valid ISO to ordinal iso of: ',
-                    returnIso
-                )
             } else {
                 //if it's not a valid iso string, we're getting back an ordinal value already.
                 returnIso = this.iso
@@ -676,8 +666,6 @@ export class RuxDatetimePicker {
             returnIso = this.iso
         }
 
-        console.log('this.iso: ', this.iso)
-        console.log('return ISO: ', returnIso)
         e.clipboardData!.setData('text/plain', returnIso)
     }
     private _onFocusOut = () => {

@@ -134,18 +134,12 @@
                 datetimePicker.setAttribute('precision', e.target.value)
             })
             datetimePicker.addEventListener('ruxchange', (e) => {
-                console.log(
-                    'heard ruxchange event with value: ',
-                    e.target.value
-                )
                 onchange.textContent = e.target.value
             })
             datetimePicker.addEventListener('ruxinput', (e) => {
-                console.log('heard ruxinput event with value: ', e.target.value)
                 oninput.textContent = e.target.value
             })
             datetimePicker.addEventListener('ruxblur', () => {
-                console.log('heard blur. value is: ', datetimePicker.value)
                 onblur.textContent = datetimePicker.value
             })
 

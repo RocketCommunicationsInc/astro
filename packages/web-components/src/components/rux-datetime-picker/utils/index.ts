@@ -462,7 +462,6 @@ export const toPartialRegularIsoString = (input: string): string => {
         min = '',
         sec = '',
         ms = '',
-        z = '',
     ] = match
 
     // Convert ordinal to month and day if present
@@ -514,7 +513,6 @@ export const toPartialOrdinalIsoString = (input: string): string => {
         min = '',
         sec = '',
         ms = '',
-        z = '',
     ] = match
 
     // If we have a day, convert YYYY-MM-DD to YYYY-DDD
