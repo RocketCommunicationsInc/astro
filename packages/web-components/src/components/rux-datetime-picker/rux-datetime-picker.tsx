@@ -20,6 +20,7 @@ import {
     getMonthValueByName,
     initialOrdinalParts,
     initialParts,
+    isIsoString,
     isLeapYear,
     julianToGregorianDay,
     setDisplay,
@@ -231,6 +232,11 @@ export class RuxDatetimePicker {
         }
         this.el.setAttribute('julian-value', this._julianValue)
         this.el.setAttribute('gregorian-value', this._gregorianValue)
+    }
+
+    @Watch('iso')
+    handleIsoWatch() {
+        console.log('heard iso change: ', this.iso)
     }
 
     /**
@@ -646,12 +652,33 @@ export class RuxDatetimePicker {
         this.ruxDatetimePickerChange.emit(
             this.parts.find((part) => part.type === 'day')?.value
         )
+        this.ruxInput.emit()
     }
 
     handleCopy = (e: ClipboardEvent) => {
         e.preventDefault()
         // This overrides the default copy behavior and returns the iso value instead
-        e.clipboardData!.setData('text/plain', this.iso)
+        //if we're in julianFormat, we want the julian ISO.
+        let returnIso
+        if (this.julianFormat) {
+            //partialOrdinalIsoString func expects a valid ISO string to convert.
+            if (isIsoString(this.iso)) {
+                returnIso = toPartialOrdinalIsoString(this.iso)
+                console.log(
+                    'this.isValidIso passed - convert valid ISO to ordinal iso of: ',
+                    returnIso
+                )
+            } else {
+                //if it's not a valid iso string, we're getting back an ordinal value already.
+                returnIso = this.iso
+            }
+        } else {
+            returnIso = this.iso
+        }
+
+        console.log('this.iso: ', this.iso)
+        console.log('return ISO: ', returnIso)
+        e.clipboardData!.setData('text/plain', returnIso)
     }
     private _onFocusOut = () => {
         this.ruxBlur.emit()
@@ -666,60 +693,6 @@ export class RuxDatetimePicker {
     private _highlightInput = (e: FocusEvent) => {
         const target = e.target as HTMLInputElement
         target.select()
-    }
-
-    private _adjustPartWidth = () => {
-        console.log('run')
-        let single = '10.44px'
-        let double = '20.88px'
-        let triple = '31.32px'
-        let quad = '40px'
-        if (this.julianFormat) {
-            switch (this.precision) {
-                case 'hour':
-                    double = '25px'
-                    break
-                // case 'min':
-                //     width = 'calc(100% / 2.5)'
-                //     break
-                case 'sec':
-                    // single = '10px'
-                    double = '20px'
-                    break
-                // case 'ms':
-                //     width = 'calc(100% / 5.5)'
-                //     break
-                default:
-                    single = `10.44px;`
-                    double = '20.88px'
-                    triple = '31.32px'
-                    quad = '41.76px'
-            }
-        } else {
-            switch (this.precision) {
-                // case 'hour':
-                //     double = '25px'
-                //     break
-                // case 'min':
-                //     width = 'calc(100% / 2.5)'
-                //     break
-                // case 'sec':
-                //     width = 'calc(100% / 4)'
-                //     break
-                // case 'ms':
-                //     width = 'calc(100% / 5.5)'
-                //     break
-                default:
-                    single = `10.44px;`
-                    double = '20.88px'
-                    triple = '31.32px'
-                    quad = '41.76px'
-            }
-        }
-        this.el.style.setProperty('--single-width', single)
-        this.el.style.setProperty('--double-width', double)
-        this.el.style.setProperty('--triple-width', triple)
-        this.el.style.setProperty('--quad-width', quad)
     }
 
     render() {

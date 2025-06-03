@@ -19,10 +19,10 @@
     </head>
 
     <body>
-        <div style="width: 1000px; margin: 1rem auto; display: flex; gap: 1rem">
+        <div style="width: 1500px; margin: 1rem auto; display: flex; gap: 1rem">
             <div
                 style="
-                    width: 350px;
+                    width: 500px;
                     margin: auto;
                     display: flex;
                     flex-direction: column;
@@ -35,16 +35,24 @@
                 <span>2025-056T17:25:24.211Z</span>
                 <rux-textarea></rux-textarea>
                 <h3>Event tests</h3>
-                <rux-datetime-picker
-                    label="Default"
-                    help-text="Help Text"
-                    precision="ms"
-                ></rux-datetime-picker>
+                <div style="width: 350px">
+                    <rux-datetime-picker
+                        label="Default"
+                        help-text="Help Text"
+                        precision="ms"
+                    ></rux-datetime-picker>
+                </div>
                 <br />
-                <span>On change: <span id="onchange"></span></span>
-                <span>On input: </span><span id="oninput"></span>
-                <span>On blur: </span><span id="onblur"></span>
-                <br />
+                <span
+                    >On change:
+                    <span id="onchange" style="color: #4dcaff"></span
+                ></span>
+                <span
+                    >On input: <span id="oninput" style="color: #4dcaff"></span
+                ></span>
+                <span
+                    >On blur: <span id="onblur" style="color: #4dcaff"></span
+                ></span>
                 <h4>Change Precision</h4>
                 <rux-radio-group label="Precision" name="precision" value="MS">
                     <rux-radio value="sec" name="precision">Seconds</rux-radio>
@@ -52,85 +60,65 @@
                         >Milliseconds</rux-radio
                     >
                     <rux-radio value="min" name="precision">Minutes</rux-radio>
+                    <rux-radio value="hour" name="precision">Hour</rux-radio>
+                    <rux-radio value="day" name="precision">Day</rux-radio>
                 </rux-radio-group>
             </div>
             <div
                 style="
-                    width: 350px;
+                    width: 500px;
                     margin: auto;
                     display: flex;
                     flex-direction: column;
+                    border: 1px solid #4dcaff;
+                    padding: 1rem;
                 "
             >
-                <rux-datetime-picker
-                    label="Julian"
-                    help-text="Help Text"
-                    precision="ms"
-                    min-year="2000"
-                    max-year="2040"
-                    julian-format
-                ></rux-datetime-picker>
-                <rux-datetime-picker
-                    label="Default With Given Value"
-                    help-text="Help Text"
-                    precision="ms"
-                    min-year="2000"
-                    max-year="2040"
-                    value="2025-01-25T17:25:24.211Z"
-                ></rux-datetime-picker>
-                <rux-datetime-picker
-                    label="Julian With Given Value"
-                    help-text="Help Text"
-                    precision="ms"
-                    min-year="2000"
-                    max-year="2040"
-                    julian-format
-                    value="2024-02-25T17:25:24.211Z"
-                ></rux-datetime-picker>
-
-                <h4>Precision Examples</h4>
-                <rux-datetime-picker
-                    label="Minutes"
-                    value="2025-01-25T17:25:24.211Z"
-                ></rux-datetime-picker>
-                <rux-datetime-picker
-                    label="Seconds"
-                    value="2024-10-05T17:25:24.211Z"
-                    precision="sec"
-                ></rux-datetime-picker>
-                <rux-datetime-picker
-                    label="Milliseconds"
-                    value="2024-02-10T17:25:24.211Z"
-                    precision="ms"
-                ></rux-datetime-picker>
-
-                <form id="test-form" style="width: 400px; margin: 1rem auto">
+                <h4>Form Test</h4>
+                <form
+                    id="test-form"
+                    style="
+                        width: 400px;
+                        margin: 1rem auto;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                    "
+                >
                     <rux-datetime-picker
                         name="datetime"
                         label="Datetime Picker"
+                        value="2025-10-05T01:03:13.013Z"
                     ></rux-datetime-picker>
-                    <div>
-                        Submitted Datetime:
-                        <span id="submitted-datetime"></span>
-                    </div>
-
+                    <rux-datetime-picker
+                        name="j-datetime"
+                        julian-format
+                        label="Julian Datetime Picker"
+                        value="2025-278T01:03:13.013Z"
+                    ></rux-datetime-picker>
                     <rux-input name="ruxinput" label="Rux Input"></rux-input>
-                    <div>
-                        Submitted Rux Input:
-                        <span id="submitted-ruxinput"></span>
-                    </div>
-
                     <input
                         type="text"
                         name="nativeinput"
                         placeholder="Native Input"
                     />
                     <div>
+                        Submitted Datetime:
+                        <span id="submitted-datetime"></span>
+                    </div>
+                    <div>
+                        Submitted Julian Datetime:
+                        <span id="submitted-j-datetime"></span>
+                    </div>
+                    <div>
+                        Submitted Rux Input:
+                        <span id="submitted-ruxinput"></span>
+                    </div>
+                    <div>
                         Submitted Native Input:
                         <span id="submitted-nativeinput"></span>
                     </div>
-
-                    <button type="submit">Submit</button>
+                    <rux-button size="small" type="submit">Submit</rux-button>
                 </form>
             </div>
         </div>
@@ -165,6 +153,9 @@
             const submittedDatetime = document.getElementById(
                 'submitted-datetime'
             )
+            const submittedJDatetime = document.getElementById(
+                'submitted-j-datetime'
+            )
             const submittedRuxInput = document.getElementById(
                 'submitted-ruxinput'
             )
@@ -178,6 +169,7 @@
                 const formData = new FormData(form)
 
                 submittedDatetime.textContent = formData.get('datetime')
+                submittedJDatetime.textContent = formData.get('j-datetime')
                 submittedRuxInput.textContent = formData.get('ruxinput')
                 submittedNativeInput.textContent = formData.get('nativeinput')
             })
