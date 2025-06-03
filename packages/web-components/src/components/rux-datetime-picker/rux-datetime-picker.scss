@@ -1,5 +1,13 @@
 :host {
     display: block;
+    // --quad-width: 41.76px;
+    // --triple-width: 31.32px;
+    // --double-width: 20.88px;
+    // --single-width: 10.44px;
+    --quad-width: 40px;
+    --triple-width: 30px;
+    --double-width: 20px;
+    --single-width: 10px;
 }
 /* Hide the spinners in Chrome, Safari, Edge, and Opera */
 input[type='number']::-webkit-outer-spin-button,
@@ -17,10 +25,6 @@ input[type='number'] {
     display: flex;
     flex-flow: column;
     gap: var(--spacing-2);
-    --quad-width: 41.76px;
-    --triple-width: 31.32px;
-    --double-width: 20.88px;
-    --single-width: 10.44.88px;
 
     .rux-datetime-picker-label__asterisk {
         margin-left: var(--spacing-1);
@@ -87,7 +91,7 @@ input[type='number'] {
                 width: var(--double-width);
             }
 
-            &.day.ordinal-day {
+            &.day.ordinalDay {
                 width: var(--triple-width);
             }
 
@@ -106,7 +110,7 @@ input[type='number'] {
             position: absolute;
             font-family: monospace;
             width: var(--double-width);
-            --padding-left: 0.5rem;
+            --padding-left: 0.5rem; // ~8px if root font-size is 16px
 
             &.year {
                 left: var(--padding-left);
@@ -114,43 +118,44 @@ input[type='number'] {
             }
 
             &.month {
-                left: calc(var(--padding-left) + 3.2652rem);
+                left: calc(var(--padding-left) + 3.15rem); // ~60px
             }
 
             &.day {
-                left: calc(var(--padding-left) + 5.22rem);
+                left: calc(var(--padding-left) + 5rem); // ~92px
             }
 
             &.hour {
-                left: calc(var(--padding-left) + 7.1775rem);
+                left: calc(var(--padding-left) + 6.9rem); // ~115px
             }
 
             &.min {
-                left: calc(var(--padding-left) + 9rem);
+                left: calc(var(--padding-left) + 8.75rem); // ~152px
             }
 
             &.sec {
-                left: calc(var(--padding-left) + 10.85rem);
+                left: calc(var(--padding-left) + 10.65rem); // ~173px
             }
 
             &.ms {
-                left: calc(var(--padding-left) + 12.75rem);
+                left: calc(var(--padding-left) + 12.5rem); // ~204px
                 width: var(--triple-width);
             }
             &.isOrdinal.day {
-                left: calc(var(--padding-left) + 3.22rem);
+                left: calc(var(--padding-left) + 3.12rem); // ~60px
+                width: var(--triple-width);
             }
             &.isOrdinal.hour {
-                left: calc(var(--padding-left) + 6rem);
+                left: calc(var(--padding-left) + 5.65rem); // ~104px
             }
             &.isOrdinal.min {
-                left: calc(var(--padding-left) + 7.75rem);
+                left: calc(var(--padding-left) + 7.5rem); // ~124px
             }
             &.isOrdinal.sec {
-                left: calc(var(--padding-left) + 9.5rem);
+                left: calc(var(--padding-left) + 9.4rem); // ~152px
             }
             &.isOrdinal.ms {
-                left: calc(var(--padding-left) + 11.5rem);
+                left: calc(var(--padding-left) + 11.25rem); // ~184px
             }
         }
 
