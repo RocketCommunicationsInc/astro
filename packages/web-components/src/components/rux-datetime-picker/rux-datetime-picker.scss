@@ -1,9 +1,5 @@
 :host {
     display: block;
-    // --quad-width: 41.76px;
-    // --triple-width: 31.32px;
-    // --double-width: 20.88px;
-    // --single-width: 10.44px;
     --quad-width: 40px;
     --triple-width: 30px;
     --double-width: 20px;
@@ -118,44 +114,44 @@ input[type='number'] {
             }
 
             &.month {
-                left: calc(var(--padding-left) + 3.15rem); // ~60px
+                left: calc(var(--padding-left) + 3.15rem); // ~58px
             }
 
             &.day {
-                left: calc(var(--padding-left) + 5rem); // ~92px
+                left: calc(var(--padding-left) + 5rem); // ~88px
             }
 
             &.hour {
-                left: calc(var(--padding-left) + 6.9rem); // ~115px
+                left: calc(var(--padding-left) + 6.9rem); // ~119px
             }
 
             &.min {
-                left: calc(var(--padding-left) + 8.75rem); // ~152px
+                left: calc(var(--padding-left) + 8.75rem); // ~148px
             }
 
             &.sec {
-                left: calc(var(--padding-left) + 10.65rem); // ~173px
+                left: calc(var(--padding-left) + 10.65rem); // ~178px
             }
 
             &.ms {
-                left: calc(var(--padding-left) + 12.5rem); // ~204px
+                left: calc(var(--padding-left) + 12.5rem); // ~208px
                 width: var(--triple-width);
             }
             &.isOrdinal.day {
-                left: calc(var(--padding-left) + 3.12rem); // ~60px
+                left: calc(var(--padding-left) + 3.12rem); // ~58px
                 width: var(--triple-width);
             }
             &.isOrdinal.hour {
-                left: calc(var(--padding-left) + 5.65rem); // ~104px
+                left: calc(var(--padding-left) + 5.65rem); // ~99px
             }
             &.isOrdinal.min {
-                left: calc(var(--padding-left) + 7.5rem); // ~124px
+                left: calc(var(--padding-left) + 7.5rem); // ~128px
             }
             &.isOrdinal.sec {
-                left: calc(var(--padding-left) + 9.4rem); // ~152px
+                left: calc(var(--padding-left) + 9.4rem); // ~159px
             }
             &.isOrdinal.ms {
-                left: calc(var(--padding-left) + 11.25rem); // ~184px
+                left: calc(var(--padding-left) + 11.25rem); // ~188px
             }
         }
 
@@ -165,7 +161,9 @@ input[type='number'] {
             width: var(--single-width);
             display: flex;
             justify-content: center;
-            /* line-height: 1.25rem; */
+        }
+        .tz {
+            color: var(--color-text-placeholder);
         }
 
         .space {

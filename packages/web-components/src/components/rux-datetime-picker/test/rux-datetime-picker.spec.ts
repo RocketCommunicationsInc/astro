@@ -43,6 +43,100 @@ test.describe('Datepicker', () => {
         const calendarPopup = await openCalendar(page)
         await expect(calendarPopup).toBeVisible()
     })
+    test.describe('Value attributes', () => {
+        test.beforeEach(async ({ page }) => {
+            const template = `
+                <rux-datetime-picker data-testid="default" value="2025-10-05T12:12:12.123Z"></rux-datetime-picker>
+                <rux-datetime-picker data-testid="type-into"></rux-datetime-picker>
+                <rux-datetime-picker data-testid="julian" julian-format value="2025-278T12:12:12.123Z"></rux-datetime-picker>`
+            await page.setContent(template)
+        })
+        test('A datepicker with a given value has a julian-value and a gregorian-value on load', async ({
+            page,
+        }) => {
+            const dp = page.locator('rux-datetime-picker').first()
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-10-05T12:12:12.123Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T12:12:12.123Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'julian-value',
+                '2025-278T12:12:12.123Z'
+            )
+        })
+        test('A julian datepicker with a given value has a julian-value and a gregorian-value on load', async ({
+            page,
+        }) => {
+            const dp = page.locator('rux-datetime-picker').last()
+            await expect(dp).toHaveAttribute('value', '2025-278T12:12:12.123Z')
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T12:12:12.123Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'julian-value',
+                '2025-278T12:12:12.123Z'
+            )
+        })
+        test('A datepickers julian-value and gregorian-value update according to inputted value', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('type-into')
+            // need to grab the inputs to type into due to how dp is built
+            const yearInput = dp.locator('input.year')
+            const monthInput = dp.locator('input.month')
+            const dayInput = dp.locator('input.day')
+            const hourInput = dp.locator('input.hour')
+            const minInput = dp.locator('input.min')
+            const secInput = dp.locator('input.sec')
+            const msInput = dp.locator('input.ms')
+
+            //as the input is typed into, the julian-value and gregorian-value should update accordingly
+            await yearInput.type('2025')
+            await expect(dp).toHaveAttribute('julian-value', '2025')
+            await expect(dp).toHaveAttribute('gregorian-value', '2025')
+            await monthInput.type('10') //dp is now at 2025-10
+            await expect(dp).toHaveAttribute('julian-value', '2025-274') //julian has no month, so if given a greg date with only year and month it will default to first day in that month
+            await expect(dp).toHaveAttribute('gregorian-value', '2025-10')
+            await dayInput.type('05') // 2025-10-05
+            await expect(dp).toHaveAttribute('julian-value', '2025-278')
+            await expect(dp).toHaveAttribute('gregorian-value', '2025-10-05')
+            await hourInput.type('01') //2025-10-05T01Z
+            await expect(dp).toHaveAttribute('julian-value', '2025-278T01Z')
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T01Z'
+            )
+            await minInput.type('03') //2025-10-05T01:03Z
+            await expect(dp).toHaveAttribute('julian-value', '2025-278T01:03Z')
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T01:03Z'
+            )
+            await secInput.type('13') //2025-10-05T01:03:13Z
+            await expect(dp).toHaveAttribute(
+                'julian-value',
+                '2025-278T01:03:13Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T01:03:13Z'
+            )
+            await msInput.type('123') //2025-10-05T01:03:13.123Z
+            await expect(dp).toHaveAttribute(
+                'julian-value',
+                '2025-278T01:03:13.123Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T01:03:13.123Z'
+            )
+        })
+    })
     test.describe('Copying and Pasting', () => {
         test.beforeEach(async ({ page }) => {
             const template = `
