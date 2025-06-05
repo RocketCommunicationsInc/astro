@@ -33,24 +33,32 @@ export const initialOrdinalParts = (): Part[] => [
     { type: 'mask', value: 'Z' },
 ]
 
-export const setIsoPart: Record<PartKey, (iso: string) => string> = {
+export const setIsoPart: Record<
+    PartKey,
+    (iso: string, usingMicro: boolean) => string
+> = {
     year: (iso) => iso.substring(0, 4),
     month: (iso) => iso.substring(5, 7),
     day: (iso) => iso.substring(8, 10),
     hour: (iso) => iso.substring(11, 13),
     min: (iso) => iso.substring(14, 16),
     sec: (iso) => iso.substring(17, 19),
-    ms: (iso) => iso.substring(20, 23),
+    ms: (iso, usingMicro) =>
+        usingMicro ? iso.substring(20, 26) : iso.substring(20, 23),
 }
 
-export const setJulianIsoPart: Record<PartKey, (iso: string) => string> = {
+export const setJulianIsoPart: Record<
+    PartKey,
+    (iso: string, usingMicro: boolean) => string
+> = {
     year: (iso) => iso.substring(0, 4),
     month: () => '', // Julian date does not have a month part
     day: (iso) => iso.substring(5, 8),
     hour: (iso) => iso.substring(9, 11),
     min: (iso) => iso.substring(12, 14),
     sec: (iso) => iso.substring(15, 17),
-    ms: (iso) => iso.substring(18, 21),
+    ms: (iso, usingMicro) =>
+        usingMicro ? iso.substring(18, 24) : iso.substring(18, 21),
 }
 
 export const setPart: Record<
@@ -65,7 +73,7 @@ export const setPart: Record<
     year: (value, prev, inputRefs, isOrdinal) => {
         if (!isOrdinal) {
             const month = inputRefs['month']
-            if (month && value.length === setMaxLength['year']) {
+            if (month && value.length === setMaxLength()['year']) {
                 month.focus()
             }
 
@@ -75,7 +83,7 @@ export const setPart: Record<
             })
         } else {
             const day = inputRefs['day']
-            if (day && value.length === setMaxLengthOrdinal['year']) {
+            if (day && value.length === setMaxLengthOrdinal()['year']) {
                 day.focus()
             }
 
@@ -87,7 +95,7 @@ export const setPart: Record<
     },
     month: (value, prev, inputRefs) => {
         const day = inputRefs['day']
-        if (day && value.length === setMaxLength['month']) {
+        if (day && value.length === setMaxLength()['month']) {
             day.focus()
         }
 
@@ -102,7 +110,9 @@ export const setPart: Record<
         if (
             hour &&
             value.length ===
-                (!isOrdinal ? setMaxLength['day'] : setMaxLengthOrdinal['day'])
+                (!isOrdinal
+                    ? setMaxLength()['day']
+                    : setMaxLengthOrdinal()['day'])
         ) {
             hour.focus()
         }
@@ -114,7 +124,7 @@ export const setPart: Record<
     },
     hour: (value, prev, inputRefs) => {
         const min = inputRefs['min']
-        if (min && value.length === setMaxLength['hour']) {
+        if (min && value.length === setMaxLength()['hour']) {
             min.focus()
         }
 
@@ -125,7 +135,7 @@ export const setPart: Record<
     },
     min: (value, prev, inputRefs) => {
         const sec = inputRefs['sec']
-        if (sec && value.length === setMaxLength['min']) {
+        if (sec && value.length === setMaxLength()['min']) {
             sec.focus()
         }
 
@@ -136,7 +146,7 @@ export const setPart: Record<
     },
     sec: (value, prev, inputRefs) => {
         const ms = inputRefs['ms']
-        if (ms && value.length === setMaxLength['sec']) {
+        if (ms && value.length === setMaxLength()['sec']) {
             ms.focus()
         }
 
@@ -153,46 +163,57 @@ export const setPart: Record<
     },
 }
 
-export const setDisplay: Record<PartKey, (value: string) => string> = {
+export const setDisplay: Record<
+    PartKey,
+    (value: string, isMicro: boolean) => string
+> = {
     year: (value) => value.padEnd(4, 'Y'),
     month: (value) => value.padEnd(2, 'M'),
     day: (value) => value.padEnd(2, 'D'),
     hour: (value) => value.padEnd(2, 'h'),
     min: (value) => value.padEnd(2, 'm'),
     sec: (value) => value.padEnd(2, 's'),
-    ms: (value) => value.padEnd(3, 'S'),
+    ms: (value, isMicro) =>
+        isMicro ? value.padEnd(6, 'S') : value.padEnd(3, 'S'),
 }
 
-export const setOrdinalDisplay: Record<PartKey, (value: string) => string> = {
+export const setOrdinalDisplay: Record<
+    PartKey,
+    (value: string, isMicro: boolean) => string
+> = {
     year: (value) => value.padEnd(4, 'Y'),
     month: () => '', // Julian date does not have a month part
     day: (value) => value.padEnd(3, 'D'),
     hour: (value) => value.padEnd(2, 'h'),
     min: (value) => value.padEnd(2, 'm'),
     sec: (value) => value.padEnd(2, 's'),
-    ms: (value) => value.padEnd(3, 'S'),
+    ms: (value, isMicro) =>
+        isMicro ? value.padEnd(6, 'S') : value.padEnd(3, 'S'),
 }
 
-export const setMaxLength: Record<PartKey, number> = {
+export const setMaxLength = (
+    isMicro: boolean = false
+): Record<PartKey, number> => ({
     year: 4,
     month: 2,
     day: 2,
     hour: 2,
     min: 2,
     sec: 2,
-    ms: 3,
-}
+    ms: isMicro ? 6 : 3,
+})
 
-export const setMaxLengthOrdinal: Record<PartKey, number> = {
+export const setMaxLengthOrdinal = (
+    isMicro: boolean = false
+): Record<PartKey, number> => ({
     year: 4,
     month: 2,
     day: 3,
     hour: 2,
     min: 2,
     sec: 2,
-    ms: 3,
-}
-
+    ms: isMicro ? 6 : 3,
+})
 export const months = [
     { label: 'January', value: '01' },
     { label: 'February', value: '02' },

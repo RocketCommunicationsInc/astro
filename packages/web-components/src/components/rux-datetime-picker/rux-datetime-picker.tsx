@@ -222,6 +222,7 @@ export class RuxDatetimePicker {
     componentDidLoad() {
         this.el.addEventListener('focusout', this._onFocusOut)
     }
+
     disconnectedCallback() {
         this.el.removeEventListener('focusout', this._onFocusOut)
     }
@@ -262,7 +263,7 @@ export class RuxDatetimePicker {
      * -
      */
     isValidIso8601(value: string): boolean {
-        const iso8601Regex = /^(\d{4})((-\d{2}){0,2}|-\d{3})(T\d{2}(:\d{2}(:\d{2}(\.\d{1,3})?)?)?Z)?$/
+        const iso8601Regex = /^(\d{4})((-\d{2}){0,2}|-\d{3})(T\d{2}(:\d{2}(:\d{2}(\.\d{1,6})?)?)?Z)?$/
         return iso8601Regex.test(value)
     }
 
@@ -348,8 +349,11 @@ export class RuxDatetimePicker {
                 for (const part of initial) {
                     if (part.type === 'mask') continue
                     part.value = this.julianFormat
-                        ? setJulianIsoPart[part.type](iso)
-                        : setIsoPart[part.type](iso)
+                        ? setJulianIsoPart[part.type](
+                              iso,
+                              this.precision === 'us'
+                          )
+                        : setIsoPart[part.type](iso, this.precision === 'us')
                 }
 
                 // Always pass down Gregorian ISO to calendar
@@ -379,6 +383,8 @@ export class RuxDatetimePicker {
                 break
             case 'ms':
                 break
+            case 'us':
+                break
             default:
                 initial.splice(9, 4)
                 break
@@ -386,6 +392,7 @@ export class RuxDatetimePicker {
 
         // Set parts and value for display
         this.parts = initial
+
         this.value = this.julianFormat
             ? toPartialOrdinalIsoString(this.iso)
             : this.iso
@@ -399,7 +406,7 @@ export class RuxDatetimePicker {
      * @returns Input value validated based on type
      */
     validateInput(value: string, type: PartKey, inputRefs: InputRefs): string {
-        const [min, max] = this.determineMinMax(type)
+        const [min, max] = this.determineMinMax(type, this.precision === 'us')
         const dayPart = this.parts.find((part) => part.type == 'day')
         const monthPart = this.parts.find((part) => part.type === 'month')
         const yearPart = this.parts.find((part) => part.type === 'year')
@@ -626,7 +633,7 @@ export class RuxDatetimePicker {
         this.isCalendarOpen = !this.isCalendarOpen
     }
 
-    determineMinMax(type: PartKey, isJulian?: boolean) {
+    determineMinMax(type: PartKey, isMicro: boolean, isJulian?: boolean) {
         switch (type) {
             case 'year':
                 return [this.minYear, this.maxYear]
@@ -641,7 +648,7 @@ export class RuxDatetimePicker {
             case 'sec':
                 return [0, 59]
             case 'ms':
-                return [0, 999]
+                return isMicro ? [0, 999999] : [0, 999]
         }
     }
 
@@ -768,6 +775,7 @@ export class RuxDatetimePicker {
                                                 min: type === 'min',
                                                 sec: type === 'sec',
                                                 ms: type === 'ms',
+                                                us: this.precision === 'us',
                                                 ordinalDay:
                                                     type === 'day' &&
                                                     this.julianFormat,
@@ -779,18 +787,26 @@ export class RuxDatetimePicker {
                                             }
                                             maxLength={
                                                 !this.julianFormat
-                                                    ? setMaxLength[type]
-                                                    : setMaxLengthOrdinal[type]
+                                                    ? setMaxLength(
+                                                          this.precision ===
+                                                              'us'
+                                                      )[type]
+                                                    : setMaxLengthOrdinal(
+                                                          this.precision ===
+                                                              'us'
+                                                      )[type]
                                             }
                                             max={
                                                 this.determineMinMax(
                                                     type,
+                                                    this.precision === 'us',
                                                     this.julianFormat
                                                 )[1]
                                             }
                                             min={
                                                 this.determineMinMax(
                                                     type,
+                                                    this.precision === 'us',
                                                     this.julianFormat
                                                 )[0]
                                             }
@@ -813,9 +829,13 @@ export class RuxDatetimePicker {
                                             }}
                                         >
                                             {!this.julianFormat
-                                                ? setDisplay[type](value)
+                                                ? setDisplay[type](
+                                                      value,
+                                                      this.precision === 'us'
+                                                  )
                                                 : setOrdinalDisplay[type](
-                                                      value
+                                                      value,
+                                                      this.precision === 'us'
                                                   )}
                                         </span>
                                     </Fragment>

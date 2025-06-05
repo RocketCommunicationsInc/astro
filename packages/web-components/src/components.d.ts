@@ -312,7 +312,7 @@ export namespace Components {
          */
         "name": string;
         /**
-          * Controls the precision to which the time is displayed on the datetime-picker
+          * Controls the precision to which the date-time is displayed on the datetime-picker. This ranges from day to microseconds (microseconds is represented by `us`).
          */
         "precision": Precision;
         /**
@@ -36023,7 +36023,7 @@ declare namespace LocalJSX {
          */
         "onRuxinput"?: (event: RuxDatetimePickerCustomEvent<any>) => void;
         /**
-          * Controls the precision to which the time is displayed on the datetime-picker
+          * Controls the precision to which the date-time is displayed on the datetime-picker. This ranges from day to microseconds (microseconds is represented by `us`).
          */
         "precision"?: Precision;
         /**

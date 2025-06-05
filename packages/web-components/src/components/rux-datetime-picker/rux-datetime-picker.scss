@@ -1,5 +1,6 @@
 :host {
     display: block;
+    --sextuple-width: 60px;
     --quad-width: 40px;
     --triple-width: 30px;
     --double-width: 20px;
@@ -93,6 +94,9 @@ input[type='number'] {
 
             &.ms {
                 width: var(--triple-width);
+            }
+            &.ms.us {
+                width: var(--sextuple-width);
             }
         }
 
