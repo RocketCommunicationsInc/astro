@@ -1,0 +1,47 @@
+:host {
+    display: block;
+}
+button {
+    all: unset;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+button:focus {
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
+}
+.rux-day {
+    cursor: pointer;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text-interactive-default);
+    border-radius: var(--radius-base);
+    position: relative;
+    &:hover {
+        background: var(--color-background-surface-hover);
+    }
+}
+.rux-day.rux-day--past-future {
+    color: var(--color-text-placeholder);
+}
+.rux-day.rux-day--today {
+    color: var(--color-text-white);
+}
+.rux-day__today-indicator {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-background-interactive-default);
+    transform: translateY(200%);
+}
+.rux-day.rux-day--selected {
+    background: var(--color-background-surface-selected);
+    box-shadow: 0 0 0 1px var(--color-border-interactive-default);
+    border-radius: var(--radius-base);
+    z-index: 2;
+}
