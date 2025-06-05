@@ -13,7 +13,7 @@ export type Part = {
     value: string
 }
 
-export type Precision = 'day' | 'hour' | 'min' | 'sec' | 'ms'
+export type Precision = 'day' | 'hour' | 'min' | 'sec' | 'ms' | 'us'
 
 export type PartKey = 'year' | 'month' | 'day' | 'hour' | 'min' | 'sec' | 'ms'
 

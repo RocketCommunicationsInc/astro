@@ -110,7 +110,7 @@ export class RuxDatetimePicker {
      */
     @Prop({ reflect: true, mutable: true }) value: string = ''
     /**
-     * Controls the precision to which the time is displayed on the datetime-picker
+     * Controls the precision to which the date-time is displayed on the datetime-picker. This ranges from day to microseconds (microseconds is represented by `us`).
      */
     @Prop() precision: Precision = 'ms'
     /**
