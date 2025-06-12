@@ -672,3 +672,31 @@ export function buildMicroIsoString({
     const us = micro.padEnd(6, '0').slice(0, 6)
     return `${YYYY}-${MM}-${DD}T${HH}:${mm}:${ss}.${us}Z`
 }
+
+/**
+ * Constructs an ordinal ISO string with 6-digit microseconds, e.g. 2025-056T12:34:56.123456Z
+ * Pads all parts as needed. Does not validate ranges.
+ */
+export function buildMicroOrdinalIsoString({
+    year,
+    jday,
+    hour = '00',
+    min = '00',
+    sec = '00',
+    micro = '000000',
+}: {
+    year: string
+    jday: string // ordinal day (DDD)
+    hour?: string
+    min?: string
+    sec?: string
+    micro?: string
+}): string {
+    const YYYY = year.padStart(4, '0')
+    const DDD = jday.padStart(3, '0')
+    const HH = hour.padStart(2, '0')
+    const mm = min.padStart(2, '0')
+    const ss = sec.padStart(2, '0')
+    const us = micro.padEnd(6, '0').slice(0, 6)
+    return `${YYYY}-${DDD}T${HH}:${mm}:${ss}.${us}Z`
+}
