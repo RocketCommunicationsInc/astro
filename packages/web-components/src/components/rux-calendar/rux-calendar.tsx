@@ -762,6 +762,9 @@ export class RuxCalendar {
 
         const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
+        setTimeout(() => {
+            this.skipDayFocus = false
+        }, 0)
     }
 
     /**
