@@ -641,3 +641,34 @@ export function isIsoString(value: string): boolean {
     const isoRegex = /^\d{4}(-\d{2}){0,2}(T\d{2}:\d{2}(:\d{2}(\.\d{1,3})?)?Z?)?$/
     return isoRegex.test(value)
 }
+
+/**
+ * Constructs an ISO string with 6-digit microseconds, e.g. 2025-06-11T12:34:56.123456Z
+ * Pads all parts as needed. Does not validate ranges.
+ */
+export function buildMicroIsoString({
+    year,
+    month,
+    day,
+    hour = '00',
+    min = '00',
+    sec = '00',
+    micro = '000000',
+}: {
+    year: string
+    month: string
+    day: string
+    hour?: string
+    min?: string
+    sec?: string
+    micro?: string
+}): string {
+    const YYYY = year.padStart(4, '0')
+    const MM = month.padStart(2, '0')
+    const DD = day.padStart(2, '0')
+    const HH = hour.padStart(2, '0')
+    const mm = min.padStart(2, '0')
+    const ss = sec.padStart(2, '0')
+    const us = micro.padEnd(6, '0').slice(0, 6)
+    return `${YYYY}-${MM}-${DD}T${HH}:${mm}:${ss}.${us}Z`
+}

@@ -50,6 +50,8 @@ export class RuxCalendar {
         originYear?: string
     }
     private pendingDayNumber: string | null = null
+    private skipDayFocus: boolean = false
+    private focusTimeout: number | undefined
     /**
      * The iso string to be used to display the date in the calendar
      */
@@ -147,7 +149,8 @@ export class RuxCalendar {
         const hourRegex = /T(\d{2})/
         const minuteRegex = /:(\d{2})\:/
         const secondRegex = /:([0-9]{2})(?:\.|Z)/
-        const millisecondRegex = /\.(\d{3})/
+        const msDigits = this.precision === 'us' ? 6 : 3
+        const millisecondRegex = new RegExp(`\\.(\\d{1,${msDigits}})`)
         const hourMatch = newISO.match(hourRegex)
         const minuteMatch = newISO.match(minuteRegex)
         const secondMatch = newISO.match(secondRegex)
@@ -162,7 +165,11 @@ export class RuxCalendar {
             this.initSecondsValue = secondMatch[1]
         }
         if (millisecondMatch) {
-            this.initMillisecondsValue = millisecondMatch[1]
+            // Pad to correct length for display
+            this.initMillisecondsValue = millisecondMatch[1].padEnd(
+                msDigits,
+                '0'
+            )
         }
 
         if (this.month && this.day) {
@@ -288,8 +295,8 @@ export class RuxCalendar {
         const hours = parseInt(this.hourInput?.value || '0')
         const minutes = parseInt(this.minuteInput?.value || '0')
         const seconds = parseInt(this.secondsInput?.value || '0')
-        const milliseconds = parseInt(this.millisecondInput?.value || '0')
-
+        const msInput = this.millisecondInput?.value || '0'
+        const milliseconds = parseInt(msInput)
         const nextMonth = new Date(Date.UTC(year, parseInt(monthValue!), 0))
         const daysInMonth = nextMonth.getUTCDate()
         let dayToUse: number
@@ -301,8 +308,6 @@ export class RuxCalendar {
                     dayToUse = parseInt(this.selectedDay.dayNumber)
                 }
             } else {
-                //we're using julian, so selected day is 3 digits. Prev logic wont work.
-                // need to convert the julian day to whatever greg value it is, and then use that for logic.
                 const gregDay = julianToGregorianDay(
                     this.selectedDay.dayNumber,
                     year.toString()
@@ -313,19 +318,32 @@ export class RuxCalendar {
             dayToUse = daysInMonth
         }
 
-        const date = new Date(
-            Date.UTC(
-                year,
-                (month || parseInt(monthValue!)) - 1,
-                dayToUse,
-                hours,
-                minutes,
-                seconds,
-                milliseconds
+        // If not microsecond precision, use native Date
+        if (this.precision !== 'us') {
+            const date = new Date(
+                Date.UTC(
+                    year,
+                    (month || parseInt(monthValue!)) - 1,
+                    dayToUse,
+                    hours,
+                    minutes,
+                    seconds,
+                    milliseconds
+                )
             )
-        )
+            return date.toISOString()
+        }
 
-        return date.toISOString()
+        // If microsecond precision, manually build ISO string
+        // Pad all values to correct length
+        const MM = (month || parseInt(monthValue!)).toString().padStart(2, '0')
+        const DD = dayToUse.toString().padStart(2, '0')
+        const HH = hours.toString().padStart(2, '0')
+        const mm = minutes.toString().padStart(2, '0')
+        const ss = seconds.toString().padStart(2, '0')
+        const us = msInput.padStart(6, '0') // microseconds, always 6 digits
+
+        return `${year}-${MM}-${DD}T${HH}:${mm}:${ss}.${us}Z`
     }
 
     /**
@@ -402,14 +420,18 @@ export class RuxCalendar {
             this.initHoursValue = '00'
             this.initMinutesValue = '00'
             this.initSecondsValue = '00'
-            this.initMillisecondsValue = '000'
+            this.initMillisecondsValue =
+                this.precision === 'us' ? '000000' : '000'
         } else {
             //get the init hours, min, sec, and ms from the given iso. On this connected callback call, there will either be no iso (handled above) or a valid default iso.
             const timeRes = getTimeFromIso(this.iso)
             this.initHoursValue = timeRes.hours.padStart(2, '0') // ensure 2 digits
             this.initMinutesValue = timeRes.minutes.padStart(2, '0') // ensure 2 digits
             this.initSecondsValue = timeRes.seconds.padStart(2, '0') // ensure 2 digits
-            this.initMillisecondsValue = timeRes.milliseconds.padStart(3, '0') // ensure 3 digits
+            this.initMillisecondsValue =
+                this.precision === 'us'
+                    ? timeRes.milliseconds.padStart(6, '0')
+                    : timeRes.milliseconds.padStart(3, '0') // ensure 3 digits
         }
         //get the month, day and year from the ISO string
         const date = new Date(this.iso)
@@ -434,7 +456,10 @@ export class RuxCalendar {
         this.initHoursValue = this.initHoursValue.padStart(2, '0')
         this.initMinutesValue = this.initMinutesValue.padStart(2, '0')
         this.initSecondsValue = this.initSecondsValue.padStart(2, '0')
-        this.initMillisecondsValue = this.initMillisecondsValue.padStart(3, '0')
+        this.initMillisecondsValue =
+            this.precision === 'us'
+                ? this.initMillisecondsValue.padStart(6, '0')
+                : this.initMillisecondsValue.padStart(3, '0')
     }
     componentWillLoad() {
         this.updateTimepickerWidth()
@@ -452,9 +477,26 @@ export class RuxCalendar {
         allDays.forEach((day) => {
             day.shadowRoot?.querySelector('button')?.blur()
         })
+        if (this.focusTimeout) {
+            clearTimeout(this.focusTimeout)
+            this.focusTimeout = undefined
+        }
+        // Don't want to shift focus to rux-day if just typing into timepicker inputs.
+        if (this.skipDayFocus) {
+            // this.skipDayFocus = false
+            return
+        }
         // This solves an issue where selecting a rux-day from a previous or next month (a grayed out day) would
         // correctly select it and shift month and year (if needed), but would set focus on the wrong rux-day el.
-        setTimeout(() => {
+        this.focusTimeout = window.setTimeout(() => {
+            // If skipDayFocus was set after scheduling, don't proceed
+            if (this.skipDayFocus) {
+                console.log('early return, skipDayFocus is true')
+                return
+            }
+            console.log('Timeout to set focus')
+            const allDays =
+                this.el.shadowRoot?.querySelectorAll('rux-day') || []
             allDays.forEach((day) => {
                 if (
                     day.shadowRoot
@@ -656,10 +698,16 @@ export class RuxCalendar {
         increment?: boolean,
         decrement?: boolean
     ) {
-        const isMs = el.getAttribute('maxlength') === '3'
+        this.skipDayFocus = true
+        const isMs =
+            el.getAttribute('maxlength') === '3' ||
+            el.getAttribute('maxlength') === '6'
+
+        const isUs = this.precision === 'us'
         //connect the rux-icons of the custom spinwheel to the correct input, and increment or decrement accordingly.
         if (el.value === '') {
-            isMs ? (el.value = '000') : (el.value = '00')
+            isMs && !isUs ? (el.value = '000') : (el.value = '00')
+            if (isUs) el.value = '000000'
         }
 
         if (increment) {
@@ -675,15 +723,19 @@ export class RuxCalendar {
                 }
             } else {
                 if (nextValue > parseInt(el.max)) {
-                    el.value = el.min.padStart(3, '0')
+                    el.value = isUs
+                        ? el.min.padStart(6, '0')
+                        : el.min.padStart(3, '0')
                 } else {
-                    el.value = nextValue.toString().padStart(3, '0')
+                    el.value = isUs
+                        ? nextValue.toString().padStart(6, '0')
+                        : nextValue.toString().padStart(3, '0')
                 }
             }
         }
         if (decrement) {
             const nextValue = parseInt(el.value) - 1
-            if (isMs) {
+            if (!isMs) {
                 if (nextValue < parseInt(el.min)) {
                     el.value = el.max.padStart(2, '0')
                 } else {
@@ -691,9 +743,13 @@ export class RuxCalendar {
                 }
             } else {
                 if (nextValue < parseInt(el.min)) {
-                    el.value = el.max.padStart(3, '0')
+                    el.value = isUs
+                        ? el.max.padStart(6, '0')
+                        : el.max.padStart(3, '0')
                 } else {
-                    el.value = nextValue.toString().padStart(3, '0')
+                    el.value = isUs
+                        ? nextValue.toString().padStart(6, '0')
+                        : nextValue.toString().padStart(3, '0')
                 }
             }
         }
@@ -722,13 +778,19 @@ export class RuxCalendar {
             e.preventDefault()
             return
         }
+        this.skipDayFocus = true
         const target = e.target as HTMLInputElement
         if (parseInt(target.value) > max) {
             target.value = max.toString()
         }
         if (parseInt(target.value) <= min) {
             if (part !== 'ms') target.value = min.toString().padStart(2, '0')
-            else target.value = min.toString().padStart(3, '0')
+            else {
+                target.value =
+                    this.precision === 'ms'
+                        ? min.toString().padStart(3, '0')
+                        : min.toString().padStart(6, '0')
+            }
         }
         if (part !== 'ms') {
             if (target.value.length > 2 && !(parseInt(target.value) > 0)) {
@@ -736,7 +798,12 @@ export class RuxCalendar {
                 target.value = target.value.replace(/^0+/, '') || '0'
             }
         } else {
-            if (target.value.length > 3 && !(parseInt(target.value) > 0)) {
+            if (
+                part === 'ms' &&
+                this.precision !== 'us' &&
+                target.value.length > 3 &&
+                !(parseInt(target.value) > 0)
+            ) {
                 // if the value is longer than 3 digits and not greater than 0, reset to 000
                 target.value = '000'
             }
@@ -750,16 +817,21 @@ export class RuxCalendar {
             target.value.length === 2 &&
             part !== 'ms'
         ) {
-            if (part === 'hour') this.minuteInput.focus()
+            if (part === 'hour') {
+                this.minuteInput.focus()
+            }
             if (part === 'min' && this.precision !== 'min')
                 this.secondsInput.focus()
             if (part === 'sec' && this.precision !== 'sec')
                 this.millisecondInput.focus()
         }
         this.arrowKeyPressed = false
-
         const iso = this.compileIso()
         this.ruxCalendarDateTimeUpdated.emit({ iso: iso, source: 'timeChange' })
+        // We need skipDayFocus to be false after the render cycle as to not reintroduce the focus bug with rux-day clicking.
+        setTimeout(() => {
+            this.skipDayFocus = false
+        }, 0)
     }
     /**
      *
@@ -1022,7 +1094,8 @@ export class RuxCalendar {
                             {
                                 //only show if precision is set to seconds or miliseconds
                                 (this.precision === 'sec' ||
-                                    this.precision === 'ms') && (
+                                    this.precision === 'ms' ||
+                                    this.precision === 'us') && (
                                     <div class="timepicker-sec input">
                                         <input
                                             type="number"
@@ -1097,18 +1170,27 @@ export class RuxCalendar {
                                     </div>
                                 )
                             }
-                            {this.precision !== 'ms' && (
-                                <span class="Z">Z</span>
-                            )}
-                            {this.precision === 'ms' && <span>.</span>}
-                            {this.precision === 'ms' && (
+                            {(this.precision === 'ms' ||
+                                this.precision === 'us') && <span>.</span>}
+                            {(this.precision === 'ms' ||
+                                this.precision === 'us') && (
                                 <div class="timepicker-ms input">
                                     <input
                                         type="number"
                                         min="0"
-                                        max="999"
-                                        maxLength={3}
-                                        placeholder="SSS"
+                                        max={
+                                            this.precision === 'us'
+                                                ? '999999'
+                                                : '999'
+                                        }
+                                        maxLength={
+                                            this.precision === 'us' ? 6 : 3
+                                        }
+                                        placeholder={
+                                            this.precision === 'us'
+                                                ? 'SSSSSS'
+                                                : 'SSS'
+                                        }
                                         ref={(el) =>
                                             (this.millisecondInput = el as HTMLInputElement)
                                         }
@@ -1117,7 +1199,9 @@ export class RuxCalendar {
                                         onInput={(e) =>
                                             this.handleTimeChange(
                                                 e,
-                                                999,
+                                                this.precision === 'us'
+                                                    ? 999999
+                                                    : 999,
                                                 0,
                                                 'ms'
                                             )
@@ -1175,9 +1259,7 @@ export class RuxCalendar {
                                     </div>
                                 </div>
                             )}
-                            {this.precision === 'ms' && (
-                                <span class="Z">Z</span>
-                            )}
+                            <span class="Z">Z</span>
                         </div>
                     )}
                 </div>

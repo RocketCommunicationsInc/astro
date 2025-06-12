@@ -35,6 +35,7 @@ import {
     toPartialRegularIsoString,
 } from './utils'
 
+import { buildMicroIsoString } from './utils/index'
 import { getDaysInMonth } from 'date-fns'
 import { renderHiddenInput } from '../../utils/utils'
 
@@ -236,6 +237,7 @@ export class RuxDatetimePicker {
     handleValueChange() {
         if (this.julianFormat) {
             this._julianValue = this.value
+            //! Will likely need to refactor toPartial method's to handle 'us'
             this._gregorianValue = toPartialRegularIsoString(this.value)
         } else {
             this._julianValue = toPartialOrdinalIsoString(this.value)
@@ -268,18 +270,84 @@ export class RuxDatetimePicker {
     }
 
     handleInitialValue(value?: string) {
-        // Choose initial parts based on format
         const initial = this.julianFormat
             ? initialOrdinalParts()
             : initialParts()
-
+        const isMicro = this.precision === 'us'
         if (value) {
             try {
-                // Handle 3-digit Julian day input (e.g., "056" for day-of-year)
                 if (this.julianFormat && value.length === 3) {
                     const currentYear = new Date().getUTCFullYear()
                     value = `${currentYear}-${value}`
                 }
+
+                // --- MICROSECOND HANDLING ---
+                if (this.precision === 'us') {
+                    // Try to extract all parts from the value (ISO or partial ISO)
+                    // Accepts both YYYY-MM-DDTHH:mm:ss.SSSSSSZ and partials
+                    const regex = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.(\d{1,6})Z?$/
+                    const match = value.match(regex)
+                    let iso = ''
+                    if (match) {
+                        const [
+                            ,
+                            year,
+                            month,
+                            day,
+                            hour,
+                            min,
+                            sec,
+                            micro,
+                        ] = match
+                        iso = buildMicroIsoString({
+                            year,
+                            month,
+                            day,
+                            hour,
+                            min,
+                            sec,
+                            micro,
+                        })
+                    } else {
+                        // Fallback: try to parse as much as possible
+                        // Use getTimeFromIso with isMicro
+                        const msDigits = 6
+                        const partial = value.match(
+                            new RegExp(
+                                `^(\d{4})-(\d{2})-(\d{2})(?:T(\d{2}))?(?::(\d{2}))?(?::(\d{2}))?(?:\.(\d{1,${msDigits}}))?Z?$`
+                            )
+                        )
+                        const [
+                            ,
+                            year = '0000',
+                            month = '01',
+                            day = '01',
+                            hour = '00',
+                            min = '00',
+                            sec = '00',
+                            micro = '000000',
+                        ] = partial || []
+                        iso = buildMicroIsoString({
+                            year,
+                            month,
+                            day,
+                            hour,
+                            min,
+                            sec,
+                            micro,
+                        })
+                    }
+                    // Set initial part values from ISO string
+                    for (const part of initial) {
+                        if (part.type === 'mask') continue
+                        part.value = setIsoPart[part.type](iso, true)
+                    }
+                    this.iso = iso
+                    this.value = iso
+                    this.parts = initial
+                    return
+                }
+                // --- END MICROSECOND HANDLING ---
 
                 // Regex for ordinal (Julian) ISO: YYYY-DDD or YYYY-DDDTHH:mm:ss.sssZ
                 const ordinalFormatMatch = value.match(
@@ -349,11 +417,8 @@ export class RuxDatetimePicker {
                 for (const part of initial) {
                     if (part.type === 'mask') continue
                     part.value = this.julianFormat
-                        ? setJulianIsoPart[part.type](
-                              iso,
-                              this.precision === 'us'
-                          )
-                        : setIsoPart[part.type](iso, this.precision === 'us')
+                        ? setJulianIsoPart[part.type](iso, isMicro)
+                        : setIsoPart[part.type](iso, isMicro)
                 }
 
                 // Always pass down Gregorian ISO to calendar
@@ -390,9 +455,7 @@ export class RuxDatetimePicker {
                 break
         }
 
-        // Set parts and value for display
         this.parts = initial
-
         this.value = this.julianFormat
             ? toPartialOrdinalIsoString(this.iso)
             : this.iso
@@ -595,7 +658,7 @@ export class RuxDatetimePicker {
                 this.ruxDatetimePickerChange.emit(
                     this.parts.find((part) => part.type === 'day')?.value
                 )
-                // if the is isn't valid, we don't want to send gibberish to the calendar. Instead, send
+                // if the iso isn't valid, we don't want to send gibberish to the calendar. Instead, send
                 // the result of the combineToISO method.
                 this.iso = this.value
                 return
