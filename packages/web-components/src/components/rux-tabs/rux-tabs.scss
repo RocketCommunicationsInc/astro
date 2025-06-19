@@ -18,3 +18,10 @@
 :host([hidden]) {
     display: none;
 }
+:host([compact]) {
+    align-items: end;
+    // background-color: var(--color-background-base-header);
+    box-shadow: inset 0px -1px var(--color-background-interactive-muted);
+    padding: 0 16px;
+    gap: 4px;
+}

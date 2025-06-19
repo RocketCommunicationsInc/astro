@@ -87,6 +87,9 @@
     background: var(--color-background-surface-header);
     padding: 0 var(--spacing-4) calc(var(--spacing-1) + 2px) var(--spacing-4); //0 16px 6px 16px
 }
+.rux-container__tab-bar-compact {
+    padding: 0;
+}
 
 .rux-container__toolbar {
     background: var(--color-background-surface-header);

@@ -19983,6 +19983,10 @@ export namespace Components {
     }
     interface RuxTabs {
         /**
+          * Changes the style of the tabs and decreases their overall size
+         */
+        "compact": boolean;
+        /**
           * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
          */
         "small"?: boolean;
@@ -55627,6 +55631,10 @@ declare namespace LocalJSX {
         "selected"?: boolean;
     }
     interface RuxTabs {
+        /**
+          * Changes the style of the tabs and decreases their overall size
+         */
+        "compact"?: boolean;
         /**
           * Fires whenever a new tab is selected, and emits the selected tab on the event.detail.
          */
