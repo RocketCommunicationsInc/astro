@@ -1,5 +1,12 @@
 # @astrouxds/astro-web-components
 
+## 7.26.0
+
+### Minor Changes
+
+-   0016be82: Add compact property to rux-tabs
+-   1a4c9735: Add compact prop to global status bar
+
 ## 7.25.2
 
 ### Patch Changes
