@@ -1,5 +1,17 @@
 # @astrouxds/astro-web-components
 
+## 7.26.0
+
+### Minor Changes
+
+#### Global Status Bar
+
+-   Added a new `compact` prop to allow for a more condensed layout
+
+#### Tabs
+
+-   Added a new `compact` prop to allow for a more condensed tab layout
+
 ## 7.25.2
 
 ### Patch Changes

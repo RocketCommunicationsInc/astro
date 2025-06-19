@@ -17,10 +17,11 @@
     "removeComments": false,
     "sourceMap": true,
     "jsx": "react",
-    "target": "es2015"
+    "target": "es2015",
+    "types": ["jest", "node"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx"],
-  "exclude": ["**/__tests__/**"],
+  "exclude": ["**/__tests__/**", "node_modules/@types/mocha"],
   "compileOnSave": false,
   "buildOnSave": false
 }

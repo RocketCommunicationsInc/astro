@@ -352,14 +352,14 @@ export declare interface RuxDialog extends Components.RuxDialog {
 
 
 @ProxyCmp({
-  inputs: ['appDomain', 'appName', 'appState', 'appStateColor', 'appVersion', 'includeIcon', 'menuIcon', 'username']
+  inputs: ['appDomain', 'appName', 'appState', 'appStateColor', 'appVersion', 'compact', 'includeIcon', 'menuIcon', 'username']
 })
 @Component({
   selector: 'rux-global-status-bar',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['appDomain', 'appName', 'appState', 'appStateColor', 'appVersion', 'includeIcon', 'menuIcon', 'username'],
+  inputs: ['appDomain', 'appName', 'appState', 'appStateColor', 'appVersion', 'compact', 'includeIcon', 'menuIcon', 'username'],
 })
 export class RuxGlobalStatusBar {
   protected el: HTMLElement;
@@ -24486,14 +24486,14 @@ export declare interface RuxTableRow extends Components.RuxTableRow {}
 
 
 @ProxyCmp({
-  inputs: ['small']
+  inputs: ['compact', 'small']
 })
 @Component({
   selector: 'rux-tabs',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
-  inputs: ['small'],
+  inputs: ['compact', 'small'],
 })
 export class RuxTabs {
   protected el: HTMLElement;

@@ -1,5 +1,18 @@
 # astro-vue
 
+## 0.6.0
+
+### Minor Changes
+
+- 0016be82: Add compact property to rux-tabs
+- 1a4c9735: Add compact prop to global status bar
+
+### Patch Changes
+
+- Updated dependencies [0016be82]
+- Updated dependencies [1a4c9735]
+  - @astrouxds/astro-web-components@7.26.0
+
 ## 0.5.1
 
 ### Patch Changes
