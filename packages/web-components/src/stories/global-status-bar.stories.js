@@ -84,6 +84,43 @@ const GlobalStatusBarWithTabs = (args) => {
     `
 }
 
+const GlobalStatusBarCompact = (args) => {
+    return html`
+        <div style="display: flex; justify-content: center;">
+            <rux-global-status-bar
+                include-icon="${args.includeIcon}"
+                app-state="${args.appState}"
+                app-state-color="${args.appStateColor}"
+                username="${args.username}"
+                app-domain="${args.appDomain}"
+                app-name="${args.appName}"
+                app-version="${args.appVersion}"
+                menu-icon="${args.menuIcon}"
+                compact="${args.compact}"
+            >
+                <rux-clock hide-labels></rux-clock>
+                <div slot="right-side" style="display: flex; gap: 0.5rem;">
+                    <rux-icon
+                        icon="satellite-transmit"
+                        style="color: var(--color-status-normal)"
+                        size="32px"
+                    ></rux-icon>
+                    <rux-icon
+                        icon="satellite-receive"
+                        style="color: var(--color-status-caution)"
+                        size="32px"
+                    ></rux-icon>
+                    <rux-icon
+                        icon="satellite-off"
+                        style="color: var(--color-status-critical)"
+                        size="32px"
+                    ></rux-icon>
+                </div>
+            </rux-global-status-bar>
+        </div>
+    `
+}
+
 const OtherVariants = () => {
     return html`
         <style>
@@ -247,6 +284,21 @@ export const WithTabs = {
     },
 
     name: 'With Tabs',
+}
+
+export const Compact = {
+    render: GlobalStatusBarCompact.bind(),
+
+    args: {
+        appDomain: 'Astro',
+        appName: 'Dashboard',
+        appVersion: '4.0 Alpha',
+        menuIcon: 'apps',
+        includeIcon: true,
+        compact: true,
+    },
+
+    name: 'Compact',
 }
 
 export const WithOtherVariants = {

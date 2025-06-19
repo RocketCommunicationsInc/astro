@@ -1,4 +1,5 @@
-import { Prop, Component, Host, h } from '@stencil/core'
+import { Component, Host, Prop, h } from '@stencil/core'
+
 import { AppMeta } from './appMeta/appMeta'
 
 /**
@@ -74,6 +75,11 @@ export class RuxGlobalStatusBar {
      */
     @Prop({ attribute: 'menu-icon', reflect: true })
     menuIcon: string = 'apps'
+
+    /**
+     * Reduces the height of the global status bar
+     */
+    @Prop({ attribute: 'compact', reflect: true }) compact: boolean = false
 
     render() {
         return (

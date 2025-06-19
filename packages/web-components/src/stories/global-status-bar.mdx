@@ -31,6 +31,13 @@ The Global Status Bar is a full-width view across the top of an application — 
 
 <Canvas of={GlobalStatusBarStories.WithTabs} />
 
+## Compact
+
+The Compact version of Global Status Bar provides a smaller GSB when screen space is scarce. It is important to keep this in mind when
+slotting content into a Compact GSB. For example, hide the labels on any `<rux-clock>` slotted inside a Compact GSB.
+
+<Canvas of={GlobalStatusBarStories.Compact} />
+
 ### Other Variants
 
 <Canvas of={GlobalStatusBarStories.WithOtherVariants} />
