@@ -308,6 +308,10 @@ export namespace Components {
          */
         "appVersion"?: string;
         /**
+          * Reduces the height of the global status bar
+         */
+        "compact": boolean;
+        /**
           * Declares whether the menu-icon will be shown in the left-side slot
          */
         "includeIcon": boolean;
@@ -35880,6 +35884,10 @@ declare namespace LocalJSX {
           * Sets the version of the application to be displayed in the app-meta element
          */
         "appVersion"?: string;
+        /**
+          * Reduces the height of the global status bar
+         */
+        "compact"?: boolean;
         /**
           * Declares whether the menu-icon will be shown in the left-side slot
          */

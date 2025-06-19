@@ -71,6 +71,21 @@
 :host([hidden]) {
     display: none;
 }
+:host([compact]) {
+    min-height: var(--spacing-14);
+    height: var(--spacing-14);
+    --font-heading-1-bold-font-size: 1.5rem;
+    --font-heading-1-font-size: 1.5rem;
+    --font-heading-6-font-size: 1rem;
+
+    ::slotted(rux-clock) {
+        --font-monospace-1-font-size: 1.5rem;
+    }
+}
+
+:host::part(app-meta) {
+    --spacing-10: auto;
+}
 
 header {
     display: flex;
