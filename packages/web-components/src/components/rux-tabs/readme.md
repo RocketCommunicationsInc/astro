@@ -103,9 +103,10 @@ Astro UXDS Tab (child) properties are passed as simple attributes on the individ
 
 ## Properties
 
-| Property | Attribute | Description                                                                                      | Type                   | Default     |
-| -------- | --------- | ------------------------------------------------------------------------------------------------ | ---------------------- | ----------- |
-| `small`  | `small`   | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses. | `boolean \| undefined` | `undefined` |
+| Property  | Attribute | Description                                                                                      | Type                   | Default     |
+| --------- | --------- | ------------------------------------------------------------------------------------------------ | ---------------------- | ----------- |
+| `compact` | `compact` | Changes the style of the tabs and decreases their overall size                                   | `boolean`              | `false`     |
+| `small`   | `small`   | If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses. | `boolean \| undefined` | `undefined` |
 
 
 ## Events

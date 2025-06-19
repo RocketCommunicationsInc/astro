@@ -37,6 +37,9 @@ export class RuxTabs {
      */
     @Prop() small?: boolean
 
+    /**
+     * Changes the style of the tabs and decreases their overall size
+     */
     @Prop() compact: boolean = false
 
     // This allows us to hear the selected prop change on tab.
