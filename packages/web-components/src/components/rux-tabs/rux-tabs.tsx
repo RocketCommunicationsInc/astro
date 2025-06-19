@@ -1,15 +1,16 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
+
 import {
     Component,
-    Host,
-    h,
-    State,
-    Prop,
     Element,
-    Listen,
     Event,
     EventEmitter,
+    Host,
+    Listen,
+    Prop,
+    State,
     Watch,
+    h,
 } from '@stencil/core'
 
 /**
@@ -35,6 +36,8 @@ export class RuxTabs {
      * If passed or set to true, displays the tabs in a smaller style, suitable for limited-space uses.
      */
     @Prop() small?: boolean
+
+    @Prop() compact: boolean = false
 
     // This allows us to hear the selected prop change on tab.
     // Once we hear it, we need to update the related panels visibilty accordingly.
@@ -88,6 +91,15 @@ export class RuxTabs {
         }
     }
 
+    @Watch('compact')
+    handleCompact() {
+        if (this._tabs) {
+            this._tabs.forEach((tab: HTMLRuxTabElement) =>
+                tab.setAttribute('compact', '')
+            )
+        }
+    }
+
     @Listen('keydown')
     onKeydown(e: any) {
         // Get all tabs inside of the tab group and then
@@ -128,6 +140,11 @@ export class RuxTabs {
 
     connectedCallback() {
         this._addTabs()
+        if (this._tabs && this.compact) {
+            this._tabs.forEach((tab: HTMLRuxTabElement) =>
+                tab.setAttribute('compact', '')
+            )
+        }
     }
 
     componentWillUpdate() {

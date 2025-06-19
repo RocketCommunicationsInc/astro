@@ -1,4 +1,5 @@
-import { State, Component, Host, h, Element } from '@stencil/core'
+import { Component, Element, Host, State, h } from '@stencil/core'
+
 import { hasSlot } from '../../utils/utils'
 
 /**
@@ -23,6 +24,8 @@ import { hasSlot } from '../../utils/utils'
 export class RuxContainer {
     @Element() el!: HTMLRuxContainerElement
 
+    private hasCompactTabs: boolean = false
+
     @State() activeSlots = {
         header: false,
         'tab-bar': false,
@@ -39,6 +42,13 @@ export class RuxContainer {
     ) {
         const show = hasSlot(this.el, slotName)
         this.activeSlots = { ...this.activeSlots, [slotName]: show }
+        console.log(this.activeSlots, 'active slots')
+        if (this.activeSlots['tab-bar']) {
+            const tabs = this.el.querySelector('rux-tabs')
+            if (tabs?.hasAttribute('compact')) {
+                this.hasCompactTabs = true
+            }
+        }
     }
     render() {
         return (
@@ -62,6 +72,8 @@ export class RuxContainer {
                         class={{
                             'rux-container__tab-bar': true,
                             hidden: !this.activeSlots['tab-bar'],
+                            'rux-container__tab-bar-compact': this
+                                .hasCompactTabs,
                         }}
                         part="tab-bar"
                     >
