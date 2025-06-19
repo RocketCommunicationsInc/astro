@@ -1,5 +1,11 @@
 # astro-react
 
+## 0.6.0
+
+### Minor Changes
+
+- 0016be82: Add compact property to rux-tabs
+
 ## 0.5.1
 
 ### Patch Changes

@@ -1,12 +1,23 @@
 # @astrouxds/angular
 
+## 7.26.0
+
+### Minor Changes
+
+- 0016be82: Add compact property to rux-tabs
+
+### Patch Changes
+
+- Updated dependencies [0016be82]
+  - @astrouxds/astro-web-components@7.26.0
+
 ## 7.25.2
 
 ### Patch Changes
 
 #### Segmented Button
 
--   Added shadow parts to ul and li elements of segmented button to allow for better styling of the component
+- Added shadow parts to ul and li elements of segmented button to allow for better styling of the component
 
 ## 7.25.1
 
@@ -14,7 +25,8 @@
 
 #### Ruler
 
--   Correcting background value of rux-ruler to be a token so it works in light and dark themes.
+- Correcting background value of rux-ruler to be a token so it works in light and dark themes.
+
 ## 7.25.0
 
 ### Minor Changes
