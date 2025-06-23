@@ -469,9 +469,14 @@ export const toOrdinalIsoString = (isoString: string) => {
     return `${year}-${ordinalDay}${timePart}`
 }
 
-export const toPartialRegularIsoString = (input: string): string => {
+export const toPartialRegularIsoString = (
+    input: string,
+    isMicro: boolean = false
+): string => {
     // Regex to match partial ordinal ISO: YYYY, YYYY-DDD, YYYY-DDDTHH, etc.
-    const regex = /^(\d{1,4})(?:-(\d{1,3}))?(?:T(\d{2}))?(?::(\d{2}))?(?::(\d{2}))?(?:\.(\d{1,3}))?(Z)?$/
+    const regex = isMicro
+        ? /^(\d{1,4})(?:-(\d{1,3}))?(?:T(\d{2}))?(?::(\d{2}))?(?::(\d{2}))?(?:\.(\d{1,6}))?(Z)?$/
+        : /^(\d{1,4})(?:-(\d{1,3}))?(?:T(\d{2}))?(?::(\d{2}))?(?::(\d{2}))?(?:\.(\d{1,3}))?(Z)?$/
     const match = input.match(regex)
     if (!match) return ''
 
@@ -489,17 +494,33 @@ export const toPartialRegularIsoString = (input: string): string => {
     let month = ''
     let day = ''
     if (year && ordinal) {
-        const date = new Date(Date.UTC(Number(year), 0, 1))
-        date.setUTCDate(Number(ordinal))
-        month = (date.getUTCMonth() + 1).toString().padStart(2, '0')
-        day = date.getUTCDate().toString().padStart(2, '0')
+        // Manual calculation to avoid Date object for microseconds
+        const y = Number(year)
+        const o = Number(ordinal)
+        let daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        if ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0)
+            daysInMonths[1] = 29
+        let m = 0,
+            d = o
+        while (m < 12 && d > daysInMonths[m]) {
+            d -= daysInMonths[m]
+            m++
+        }
+        month = (m + 1).toString().padStart(2, '0')
+        day = d.toString().padStart(2, '0')
     }
 
     // Pad time parts
     const paddedHour = hour ? hour.padStart(2, '0') : ''
     const paddedMin = min ? min.padStart(2, '0') : ''
     const paddedSec = sec ? sec.padStart(2, '0') : ''
-    const paddedMs = ms ? ms.padEnd(3, '0') : ''
+    const paddedMs = isMicro
+        ? ms
+            ? ms.padEnd(6, '0').slice(0, 6)
+            : ''
+        : ms
+        ? ms.padEnd(3, '0').slice(0, 3)
+        : ''
 
     // Build result
     let result = year
@@ -519,9 +540,14 @@ export const toPartialRegularIsoString = (input: string): string => {
     return result
 }
 
-export const toPartialOrdinalIsoString = (input: string): string => {
+export const toPartialOrdinalIsoString = (
+    input: string,
+    isMicro: boolean = false
+): string => {
     // Regex to match partial ISO: YYYY, YYYY-MM, YYYY-MM-DD, YYYY-MM-DDTHH, etc.
-    const regex = /^(\d{1,4})(?:-(\d{1,2}))?(?:-(\d{2}))?(?:T(\d{2}))?(?::(\d{2}))?(?::(\d{2}))?(?:\.(\d{1,3}))?(Z)?$/
+    const regex = isMicro
+        ? /^(\d{1,4})(?:-(\d{1,2}))?(?:-(\d{2}))?(?:T(\d{2}))?(?::(\d{2}))?(?::(\d{2}))?(?:\.(\d{1,6}))?(Z)?$/
+        : /^(\d{1,4})(?:-(\d{1,2}))?(?:-(\d{2}))?(?:T(\d{2}))?(?::(\d{2}))?(?::(\d{2}))?(?:\.(\d{1,3}))?(Z)?$/
     const match = input.match(regex)
     if (!match) return ''
 
@@ -539,25 +565,28 @@ export const toPartialOrdinalIsoString = (input: string): string => {
     // If we have a day, convert YYYY-MM-DD to YYYY-DDD
     let ordinal = ''
     if (year && month && day) {
-        // Calculate day of year
-        const date = new Date(
-            Date.UTC(Number(year), Number(month) - 1, Number(day))
-        )
-        const start = new Date(Date.UTC(Number(year), 0, 0))
-        const diff = date.getTime() - start.getTime()
-        ordinal = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(
-            3,
-            '0'
-        )
+        // Manual calculation to avoid Date object for microseconds
+        const y = Number(year)
+        const m = Number(month)
+        const d = Number(day)
+        let daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        if ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0)
+            daysInMonths[1] = 29
+        let ordinalDay = 0
+        for (let i = 0; i < m - 1; i++) ordinalDay += daysInMonths[i]
+        ordinalDay += d
+        ordinal = String(ordinalDay).padStart(3, '0')
     } else if (year && month && !day) {
         // Only year and month, treat as first day of month
-        const date = new Date(Date.UTC(Number(year), Number(month) - 1, 1))
-        const start = new Date(Date.UTC(Number(year), 0, 0))
-        const diff = date.getTime() - start.getTime()
-        ordinal = String(Math.floor(diff / (1000 * 60 * 60 * 24))).padStart(
-            3,
-            '0'
-        )
+        const y = Number(year)
+        const m = Number(month)
+        let daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+        if ((y % 4 === 0 && y % 100 !== 0) || y % 400 === 0)
+            daysInMonths[1] = 29
+        let ordinalDay = 0
+        for (let i = 0; i < m - 1; i++) ordinalDay += daysInMonths[i]
+        ordinalDay += 1
+        ordinal = String(ordinalDay).padStart(3, '0')
     } else if (year && !month && !day) {
         // Only year
         ordinal = ''
@@ -572,7 +601,13 @@ export const toPartialOrdinalIsoString = (input: string): string => {
     const paddedHour = hour ? hour.padStart(2, '0') : ''
     const paddedMin = min ? min.padStart(2, '0') : ''
     const paddedSec = sec ? sec.padStart(2, '0') : ''
-    const paddedMs = ms ? ms.padEnd(3, '0') : ''
+    const paddedMs = isMicro
+        ? ms
+            ? ms.padEnd(6, '0').slice(0, 6)
+            : ''
+        : ms
+        ? ms.padEnd(3, '0').slice(0, 3)
+        : ''
 
     // Build result
     let result = year

@@ -207,11 +207,17 @@ export class RuxDatetimePicker {
         //If value exists on init, need to set the julian-value and gregorian-value attributes accordingly
         if (this.value && this.julianFormat) {
             this._julianValue = this.value
-            this._gregorianValue = toPartialRegularIsoString(this.value)
+            this._gregorianValue = toPartialRegularIsoString(
+                this.value,
+                this.precision === 'us'
+            )
         }
         if (this.value && !this.julianFormat) {
             this._gregorianValue = this.value
-            this._julianValue = toPartialOrdinalIsoString(this.value)
+            this._julianValue = toPartialOrdinalIsoString(
+                this.value,
+                this.precision === 'us'
+            )
         }
         this.el.setAttribute('julian-value', this._julianValue)
         this.el.setAttribute('gregorian-value', this._gregorianValue)
@@ -239,9 +245,15 @@ export class RuxDatetimePicker {
         if (this.julianFormat) {
             this._julianValue = this.value
             //! Will likely need to refactor toPartial method's to handle 'us'
-            this._gregorianValue = toPartialRegularIsoString(this.value)
+            this._gregorianValue = toPartialRegularIsoString(
+                this.value,
+                this.precision === 'us'
+            )
         } else {
-            this._julianValue = toPartialOrdinalIsoString(this.value)
+            this._julianValue = toPartialOrdinalIsoString(
+                this.value,
+                this.precision === 'us'
+            )
             this._gregorianValue = this.value
         }
         this.el.setAttribute('julian-value', this._julianValue)
@@ -271,11 +283,6 @@ export class RuxDatetimePicker {
     }
 
     handleInitialValue(value?: string) {
-        console.log(
-            '*********** handleInitialValue start with value of: ',
-            value,
-            '************'
-        )
         const initial = this.julianFormat
             ? initialOrdinalParts()
             : initialParts()
@@ -289,8 +296,43 @@ export class RuxDatetimePicker {
 
                 // --- MICROSECOND HANDLING ---
                 if (isMicro && !this.julianFormat) {
+                    //check if incoming value is in an Oridnal ISO format. If so, convert it to gregorian since we're not in julianFormat.
+                    const ordinalFormatMatch = value.match(
+                        /^([0-9]{4})(?:-([0-9]{1,3}))?(?:T([0-9]{2})(?::([0-9]{2}))?(?::([0-9]{2})(?:\.([0-9]{1,6}))?)?Z?)?$/
+                    )
+                    if (ordinalFormatMatch) {
+                        // Extract year, ordinal day, hour, min, sec, micro
+                        const year = ordinalFormatMatch[1] || '0000'
+                        const ordinal = ordinalFormatMatch[2] || '001'
+                        const hour = ordinalFormatMatch[3] || '00'
+                        const min = ordinalFormatMatch[4] || '00'
+                        const sec = ordinalFormatMatch[5] || '00'
+                        const micro = ordinalFormatMatch[6] || '000000'
+
+                        // Convert ordinal day to month and day
+                        const date = new Date(Date.UTC(Number(year), 0, 1))
+                        date.setUTCDate(Number(ordinal))
+                        const month = (date.getUTCMonth() + 1)
+                            .toString()
+                            .padStart(2, '0')
+                        const day = date
+                            .getUTCDate()
+                            .toString()
+                            .padStart(2, '0')
+
+                        value = buildMicroIsoString({
+                            year,
+                            month,
+                            day,
+                            hour,
+                            min,
+                            sec,
+                            micro,
+                        })
+                    }
                     // Try to extract all parts from the value (ISO or partial ISO)
                     // Accepts both YYYY-MM-DDTHH:mm:ss.SSSSSSZ and partials
+
                     const regex = /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.(\d{1,6})Z?$/
                     const match = value.match(regex)
                     let iso = ''
@@ -351,9 +393,44 @@ export class RuxDatetimePicker {
                     this.parts = initial
                     return
                 }
+                if (this.julianFormat && isMicro) {
+                    const match = value.match(
+                        /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})\.(\d{1,6})Z$/
+                    )
+                    if (match) {
+                        const [
+                            ,
+                            year,
+                            month,
+                            day,
+                            hour,
+                            min,
+                            sec,
+                            micro,
+                        ] = match
+                        // Calculate ordinal day
+                        const date = new Date(
+                            `${year}-${month}-${day}T00:00:00Z`
+                        )
+                        const start = new Date(Date.UTC(Number(year), 0, 0))
+                        const ordinalDay = String(
+                            Math.floor(
+                                (date.getTime() - start.getTime()) /
+                                    (1000 * 60 * 60 * 24)
+                            )
+                        ).padStart(3, '0')
+                        value = buildMicroOrdinalIsoString({
+                            year,
+                            jday: ordinalDay,
+                            hour,
+                            min,
+                            sec,
+                            micro,
+                        })
+                    }
+                }
                 // --- END MICROSECOND HANDLING ---
 
-                // Regex for ordinal (Julian) ISO: YYYY-DDD or YYYY-DDDTHH:mm:ss.sssZ
                 const ordinalFormatMatch = value.match(
                     /^([0-9]{4})(?:-([0-9]{1,3}))?(?:T([0-9]{2})(?::([0-9]{2}))?(?::([0-9]{2})(?:\.([0-9]{1,6}))?)?Z?)?$/
                 )
@@ -361,7 +438,6 @@ export class RuxDatetimePicker {
                 let d: Date | undefined | string = undefined
 
                 if (ordinalFormatMatch && this.julianFormat) {
-                    console.log('OrdinalFormatMatch && this.julianFormat')
                     // Parse year and day-of-year
                     const year =
                         ordinalFormatMatch[1] ||
@@ -381,14 +457,6 @@ export class RuxDatetimePicker {
                         : isMicro
                         ? '000000'
                         : '000'
-                    console.log(
-                        '381: ms was just set to: ',
-                        ms,
-                        ' but value at this point is: ',
-                        value,
-                        ' ordinalMatch[6] is: ',
-                        ordinalFormatMatch[6]
-                    )
                     const gregDay = julianToGregorianDay(jday, year).padStart(
                         2,
                         '0'
@@ -401,17 +469,6 @@ export class RuxDatetimePicker {
                             `${year}-${month}-${gregDay}T${hour}:${minute}:${sec}.${ms}Z`
                         )
                     } else {
-                        console.log(
-                            'buildMicroOrdinalIsoString with these values: ',
-                            {
-                                year: year,
-                                jday: jday,
-                                hour: hour,
-                                min: minute,
-                                sec: sec,
-                                micro: ms,
-                            }
-                        )
                         d = buildMicroOrdinalIsoString({
                             year,
                             jday,
@@ -420,7 +477,6 @@ export class RuxDatetimePicker {
                             sec,
                             micro: ms,
                         })
-                        console.log('401: d = ', d)
                     }
                 } else {
                     // Special case: 2-digit value as month (01-12)
@@ -503,7 +559,6 @@ export class RuxDatetimePicker {
         this.value = this.julianFormat
             ? toPartialOrdinalIsoString(this.iso)
             : this.iso
-        console.log('*********** handleInitialValue end ************')
     }
 
     /**
@@ -764,9 +819,10 @@ export class RuxDatetimePicker {
         e.preventDefault()
         let pastedValue = e.clipboardData!.getData('text/plain')
         // If there's a time portion (T...), ensure it ends with Z
-        if (/T\d{2}/.test(pastedValue) && !pastedValue.endsWith('Z')) {
+        if (/T\d{2}/.test(pastedValue) && !pastedValue.trim().endsWith('Z')) {
             pastedValue += 'Z'
         }
+
         this.handleInitialValue(pastedValue.trim())
         this.ruxDatetimePickerChange.emit(
             this.parts.find((part) => part.type === 'day')?.value

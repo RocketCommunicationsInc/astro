@@ -28,7 +28,10 @@
                     flex-direction: column;
                 "
             >
+                <br />
                 <h4>Copy/Paste Test</h4>
+                <span>2025-02-05T01:03:13.123456Z</span>
+                <span>2025-036T01:03:13.123456Z</span>
                 <span>2025-01-25T17:25:24.211Z</span>
                 <span>2025-02-25T17:25:24.211Z</span>
                 <span>2024-02-25T17:25:24.211Z</span>
@@ -91,7 +94,8 @@
                 >
                     <rux-datetime-picker
                         id="values-test"
-                        value="2025-10-05T01:02:03.123Z"
+                        value="2025-10-05T01:02:03.123456Z"
+                        precision="us"
                     ></rux-datetime-picker>
                     <span
                         >julian-value:
@@ -200,7 +204,6 @@
             const julianValue = document.getElementById('julian-value')
             const gregorianValue = document.getElementById('gregorian-value')
             window.addEventListener('load', () => {
-                console.log('DOM CONTENT LOAD')
                 setTimeout(() => {
                     gregorianValue.textContent = valuesTest.getAttribute(
                         'gregorian-value'
