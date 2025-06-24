@@ -375,27 +375,39 @@ export const getDayOfYearFromIso = (isoString: string): string => {
     return dayOfYear.toString().padStart(3, '0')
 }
 
-export const getTimeFromIso = (isoString: string) => {
-    // Regular expressions to extract hours, minutes, seconds, and milliseconds
+export const getTimeFromIso = (isoString: string, isMicro: boolean = false) => {
+    // Regular expressions to extract hours, minutes, seconds, and milliseconds/microseconds
     const hourRegex = /T(\d{2}):/ // Matches hours after 'T' and before ':'
     const minuteRegex = /:(\d{2}):/ // Matches minutes between two colons
     const secondRegex = /:(\d{2})\./ // Matches seconds between ':' and '.'
-    const millisecondRegex = /\.(\d{3})/ // Matches milliseconds after '.'
+
+    // Use different regex based on precision
+    const msRegex = isMicro
+        ? /\.(\d{1,6})/ // Match up to 6 digits for microseconds
+        : /\.(\d{1,3})/ // Match up to 3 digits for milliseconds
 
     // Extract matches
     const hours = isoString.match(hourRegex)?.[1] || '00'
     const minutes = isoString.match(minuteRegex)?.[1] || '00'
     const seconds = isoString.match(secondRegex)?.[1] || '00'
-    const milliseconds = isoString.match(millisecondRegex)?.[1] || '000'
+
+    // Handle microseconds or milliseconds based on precision
+    let ms = isoString.match(msRegex)?.[1] || (isMicro ? '000000' : '000')
+
+    // Ensure correct padding based on precision
+    if (isMicro) {
+        ms = ms.padEnd(6, '0').slice(0, 6) // Always 6 digits for microseconds
+    } else {
+        ms = ms.padEnd(3, '0').slice(0, 3) // Always 3 digits for milliseconds
+    }
 
     return {
         hours,
         minutes,
         seconds,
-        milliseconds,
+        milliseconds: ms,
     }
 }
-
 /**
  *
  * @param yearValue

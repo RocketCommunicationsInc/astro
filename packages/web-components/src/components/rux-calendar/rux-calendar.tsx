@@ -424,7 +424,7 @@ export class RuxCalendar {
                 this.precision === 'us' ? '000000' : '000'
         } else {
             //get the init hours, min, sec, and ms from the given iso. On this connected callback call, there will either be no iso (handled above) or a valid default iso.
-            const timeRes = getTimeFromIso(this.iso)
+            const timeRes = getTimeFromIso(this.iso, this.precision === 'us')
             this.initHoursValue = timeRes.hours.padStart(2, '0') // ensure 2 digits
             this.initMinutesValue = timeRes.minutes.padStart(2, '0') // ensure 2 digits
             this.initSecondsValue = timeRes.seconds.padStart(2, '0') // ensure 2 digits
@@ -433,6 +433,7 @@ export class RuxCalendar {
                     ? timeRes.milliseconds.padStart(6, '0')
                     : timeRes.milliseconds.padStart(3, '0') // ensure 3 digits
         }
+
         //get the month, day and year from the ISO string
         const date = new Date(this.iso)
         //if date isn't valid, log a warning
@@ -491,10 +492,8 @@ export class RuxCalendar {
         this.focusTimeout = window.setTimeout(() => {
             // If skipDayFocus was set after scheduling, don't proceed
             if (this.skipDayFocus) {
-                console.log('early return, skipDayFocus is true')
                 return
             }
-            console.log('Timeout to set focus')
             const allDays =
                 this.el.shadowRoot?.querySelectorAll('rux-day') || []
             allDays.forEach((day) => {

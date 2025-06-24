@@ -244,7 +244,6 @@ export class RuxDatetimePicker {
     handleValueChange() {
         if (this.julianFormat) {
             this._julianValue = this.value
-            //! Will likely need to refactor toPartial method's to handle 'us'
             this._gregorianValue = toPartialRegularIsoString(
                 this.value,
                 this.precision === 'us'
