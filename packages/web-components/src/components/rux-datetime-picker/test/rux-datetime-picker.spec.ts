@@ -47,9 +47,29 @@ test.describe('Datepicker', () => {
         test.beforeEach(async ({ page }) => {
             const template = `
                 <rux-datetime-picker data-testid="default" value="2025-10-05T12:12:12.123Z"></rux-datetime-picker>
+                <rux-datetime-picker data-testid="no-z" value="2025-10-05T12:12:12.123"></rux-datetime-picker>
                 <rux-datetime-picker data-testid="type-into"></rux-datetime-picker>
+                <rux-datetime-picker data-testid="julian-ms-check" precision="us" value="2025-278T01:02:03.123Z" julian-format></rux-datetime-picker>
+                <rux-datetime-picker data-testid="greg-ms-check" precision="us" value="2025-10-05T01:02:03.123Z"></rux-datetime-picker>
                 <rux-datetime-picker data-testid="julian" julian-format value="2025-278T12:12:12.123Z"></rux-datetime-picker>`
             await page.setContent(template)
+        })
+        test('A datepicker given a value without the Z will add it correctly', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('no-z')
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-10-05T12:12:12.123Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T12:12:12.123Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'julian-value',
+                '2025-278T12:12:12.123Z'
+            )
         })
         test('A datepicker with a given value has a julian-value and a gregorian-value on load', async ({
             page,
@@ -136,12 +156,49 @@ test.describe('Datepicker', () => {
                 '2025-10-05T01:03:13.123Z'
             )
         })
+        //* ie, <rux-datetime-picker julian-format precision="us" value="2025-278T01:02:03.123"> should have a value of `2025-278T01:02:03.123000`
+        test('A julian datepickers value attributes are correct when the given initial value prop contains a precision that differs from the precision attr', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian-ms-check')
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-278T01:02:03.123000Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'julian-value',
+                '2025-278T01:02:03.123000Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T01:02:03.123000Z'
+            )
+        })
+        test('A gregorian datepickers value attributes are correct when the given initial value prop contains a precision that differs from the precision attr', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('greg-ms-check')
+            await expect(dp).toHaveAttribute(
+                'value',
+                '2025-10-05T01:02:03.123000Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'julian-value',
+                '2025-278T01:02:03.123000Z'
+            )
+            await expect(dp).toHaveAttribute(
+                'gregorian-value',
+                '2025-10-05T01:02:03.123000Z'
+            )
+        })
     })
     test.describe('Copying and Pasting', () => {
         test.beforeEach(async ({ page }) => {
             const template = `
                 <rux-datetime-picker data-testid="default"></rux-datetime-picker>
                 <textarea data-testid="textarea"></textarea>
+                <rux-datetime-picker data-testid="greg-micro" precision="us"></rux-datetime-picker>
+                <rux-datetime-picker data-testid="julian-micro" julian-format precision="us"></rux-datetime-picker>
                 <rux-datetime-picker data-testid="julian" julian-format></rux-datetime-picker>`
             await page.setContent(template)
         })
@@ -438,6 +495,139 @@ test.describe('Datepicker', () => {
                 `2025-02-25T00:00:00.000Z`
             )
         })
+        //microseconds
+        test('Pasting a gregorian ISO into a Gregorian DP with microseconds shows up correctly', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('greg-micro')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="greg-micro"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData(
+                        'text/plain',
+                        '2025-10-05T01:02:03.123456Z'
+                    )
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute(
+                'value',
+                `2025-10-05T01:02:03.123456Z`
+            )
+        })
+        test('Pasting a julian ISO into a julian DP with microseconds shows up correctly', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian-micro')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector(
+                    '[data-testid="julian-micro"]'
+                )
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData(
+                        'text/plain',
+                        '2025-278T01:02:03.123456Z'
+                    )
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute(
+                'value',
+                `2025-278T01:02:03.123456Z`
+            )
+        })
+        test('Pasting a gregorian ISO into a Julian DP with microseconds shows up correctly', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('julian-micro')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector(
+                    '[data-testid="julian-micro"]'
+                )
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData(
+                        'text/plain',
+                        '2025-10-05T01:02:03.123456Z'
+                    )
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute(
+                'value',
+                `2025-278T01:02:03.123456Z`
+            )
+        })
+        test('Pasting a julian ISO into a Gregorian DP with microseconds shows up correctly', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('greg-micro')
+            await expect(dp).toHaveAttribute('value', '')
+            const yearInput = await dp.locator('input.year')
+            await yearInput.focus()
+            await page.evaluate(() => {
+                const dp = document.querySelector('[data-testid="greg-micro"]')
+                const input =
+                    dp &&
+                    dp.shadowRoot &&
+                    dp.shadowRoot.querySelector('input.year')
+                if (input) {
+                    const clipboardData = new DataTransfer()
+                    clipboardData.setData(
+                        'text/plain',
+                        '2025-278T01:02:03.123456Z'
+                    )
+                    const pasteEvent = new ClipboardEvent('paste', {
+                        bubbles: true,
+                        cancelable: true,
+                        clipboardData,
+                    })
+                    input.dispatchEvent(pasteEvent)
+                }
+            })
+            await expect(dp).toHaveAttribute(
+                'value',
+                `2025-10-05T01:02:03.123456Z`
+            )
+        })
     })
     test.describe('datepicker inputs', () => {
         test.describe('year input', () => {
@@ -696,11 +886,15 @@ test.describe('Datepicker', () => {
         })
         test.describe('Ms input', () => {
             test.beforeEach(async ({ page }) => {
-                const template = `<rux-datetime-picker></rux-datetime-picker>`
+                const template = `<rux-datetime-picker></rux-datetime-picker>
+                  <rux-datetime-picker precision="us"></rux-datetime-picker>
+                `
                 await page.setContent(template)
             })
             test('ms input accepts only valid characters', async ({ page }) => {
-                const msInput = page.locator('rux-datetime-picker input.ms')
+                const msInput = page
+                    .locator('rux-datetime-picker input.ms')
+                    .first()
                 await expect(msInput).toHaveValue('')
                 await msInput.type('Eda+-_')
                 await expect(msInput).toHaveValue('')
@@ -710,12 +904,30 @@ test.describe('Datepicker', () => {
             test('ms input is auto focused after seconds input value is filled', async ({
                 page,
             }) => {
-                const secInput = page.locator('rux-datetime-picker input.sec')
-                const msInput = page.locator('rux-datetime-picker input.ms')
+                const secInput = page
+                    .locator('rux-datetime-picker input.sec')
+                    .first()
+                const msInput = page
+                    .locator('rux-datetime-picker input.ms')
+                    .first()
                 await expect(msInput).toHaveValue('')
                 await expect(secInput).toHaveValue('')
                 await secInput.type('13')
                 await expect(msInput).toBeFocused()
+            })
+            //* The ms input also handles microseconds when precision === 'us'
+            test('ms input accepts valid characters when in microseconds', async ({
+                page,
+            }) => {
+                const msInput = page
+                    .locator('rux-datetime-picker')
+                    .last()
+                    .locator('input.ms')
+                await expect(msInput).toHaveValue('')
+                await msInput.type('Eda+-_')
+                await expect(msInput).toHaveValue('')
+                await msInput.type('123456')
+                await expect(msInput).toHaveValue('123456')
             })
         })
     })
@@ -927,6 +1139,7 @@ flex-direction: column;
 <rux-datetime-picker data-testid="default"></rux-datetime-picker>
 <rux-datetime-picker
 data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker>
+<rux-datetime-picker precision="us" data-testid="micro"></rux-datetime-picker>
 <rux-datetime-picker data-testid="cycle-up" value="2025-01-05T23:59:59.999Z"></rux-datetime-picker>
 </div>
 `
@@ -1140,7 +1353,7 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
         test('Ms input only accepts valid characters', async ({ page }) => {
             const dp = page.getByTestId('default')
             await openCalendar(page, 'default', true)
-            const msInput = dp.locator('.timepicker-ms input')
+            const msInput = dp.locator('.timepicker-ms input').first()
             await msInput.type('E')
             await expect(msInput).toHaveValue('000')
             await msInput.type('-')
@@ -1151,6 +1364,31 @@ data-testid="given-value" value="2025-04-15T12:12:12.222Z"></rux-datetime-picker
             await expect(msInput).toHaveValue('000')
             await msInput.type('1')
             await expect(msInput).toHaveValue('001')
+        })
+        //* Microseconds
+        test('Ms input can have its time incremented via the arrow icon when in microseconds', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('micro')
+            await openCalendar(page, 'micro', true)
+            const msInput = dp.locator('.timepicker-ms input')
+            const msArrowInc = dp.locator('.timepicker-ms .inc-arrow')
+            await expect(msInput).toHaveValue('000000')
+            await msInput.hover()
+            await msArrowInc.click()
+            await expect(msInput).toHaveValue('000001')
+        })
+        test('Ms input can have its time decremented via the arrow icon when in microseconds', async ({
+            page,
+        }) => {
+            const dp = page.getByTestId('micro')
+            await openCalendar(page, 'micro', true)
+            const msInput = dp.locator('.timepicker-ms input')
+            const msArrowInc = dp.locator('.timepicker-ms .dec-arrow')
+            await expect(msInput).toHaveValue('000000')
+            await msInput.hover()
+            await msArrowInc.click()
+            await expect(msInput).toHaveValue('999999')
         })
     })
 })

@@ -196,6 +196,15 @@ export class RuxDatetimePicker {
     connectedCallback() {
         this.handleChange = this.handleChange.bind(this)
         this.toggleCalendar = this.toggleCalendar.bind(this)
+        //add Z if a dp is given a value without it
+        if (
+            this.value &&
+            /T\d{2}/.test(this.value) &&
+            !this.value.endsWith('Z')
+        ) {
+            this.value += 'Z'
+        }
+
         //Emit a warning if the datepicker is rendered with the value prop filled but with an invalid value.
         if (this.value && !this.isValidIso8601(this.value)) {
             console.warn(
@@ -253,6 +262,7 @@ export class RuxDatetimePicker {
                 this.value,
                 this.precision === 'us'
             )
+            console.log('this._julianValue === ', this._julianValue)
             this._gregorianValue = this.value
         }
         this.el.setAttribute('julian-value', this._julianValue)
@@ -555,9 +565,11 @@ export class RuxDatetimePicker {
         }
 
         this.parts = initial
+        console.log('this.iso Before this.value assignment: ', this.iso)
         this.value = this.julianFormat
-            ? toPartialOrdinalIsoString(this.iso)
+            ? toPartialOrdinalIsoString(this.iso, isMicro)
             : this.iso
+        console.log('End of HIV value: ', this.value)
     }
 
     /**
@@ -821,7 +833,7 @@ export class RuxDatetimePicker {
         if (/T\d{2}/.test(pastedValue) && !pastedValue.trim().endsWith('Z')) {
             pastedValue += 'Z'
         }
-
+        console.log(`handleInitialValue(${pastedValue.trim()})`)
         this.handleInitialValue(pastedValue.trim())
         this.ruxDatetimePickerChange.emit(
             this.parts.find((part) => part.type === 'day')?.value
