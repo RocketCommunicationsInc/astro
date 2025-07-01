@@ -1,13 +1,12 @@
 :host {
     display: block;
-    --sextuple-width: 64px;
-    --quad-width: 44px;
-    --triple-width: 34px;
-    --double-width: 22px;
-    --single-width: 12px;
+    --sextuple-width: calc(6ch + 2px);
+    --quad-width: calc(4ch + 2px);
+    --triple-width: calc(3ch + 2px);
+    --double-width: calc(2ch + 2px);
+    --single-width: calc(1ch + 2px);
     --mask-spacing: 4px;
-    --datetime-font-family: var(--font-monospace-1-font-family);
-    // font-size: var(--font-size-lg);
+    --datetime-font-family: monospace;
 }
 /* Hide the spinners in Chrome, Safari, Edge, and Opera */
 input[type='number']::-webkit-outer-spin-button,
@@ -75,7 +74,8 @@ input[type='number'] {
         .part {
             all: unset;
             font-family: var(--datetime-font-family);
-            font-variant-numeric: tabular-nums;
+            // font-variant-numeric: tabular-nums;
+            // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
             z-index: 1;
             color: transparent;
             caret-color: var(--color-text-primary);
@@ -116,7 +116,8 @@ input[type='number'] {
         .display {
             position: absolute;
             font-family: var(--datetime-font-family);
-            font-variant-numeric: tabular-nums;
+            // font-variant-numeric: tabular-nums;
+            // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
             --padding-left: 0.5rem;
             text-align: center;
             &.year {
@@ -248,7 +249,8 @@ input[type='number'] {
         .mask {
             background-color: transparent;
             font-family: var(--datetime-font-family);
-            font-variant-numeric: tabular-nums;
+            // font-variant-numeric: tabular-nums;
+            // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
             width: var(--single-width);
             display: flex;
             justify-content: center;
@@ -257,17 +259,12 @@ input[type='number'] {
         }
         .tz {
             color: var(--color-text-placeholder);
-            padding-left: calc(var(--mask-spacing) * 2);
+            // padding-left: calc(var(--mask-spacing) * 2);
         }
         .tz.z {
-            width: 0;
-            padding: 0;
+            // width: 0;
+            // padding: 0 var(--mask-spacing);
         }
-        //! Ask Amalya about this
-        // .dash,
-        // .colon {
-        //     opacity: 0.8;
-        // }
         .space {
             color: transparent;
             width: calc(var(--single-width) / 2);

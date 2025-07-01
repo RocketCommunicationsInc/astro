@@ -1004,6 +1004,7 @@ export class RuxDatetimePicker {
                                                 min: type === 'min',
                                                 sec: type === 'sec',
                                                 ms: type === 'ms',
+                                                us: this.precision === 'us',
                                             }}
                                         >
                                             {!this.julianFormat
