@@ -1,10 +1,13 @@
 :host {
     display: block;
-    --sextuple-width: 60px;
-    --quad-width: 40px;
-    --triple-width: 30px;
-    --double-width: 20px;
-    --single-width: 10px;
+    --sextuple-width: 64px;
+    --quad-width: 44px;
+    --triple-width: 34px;
+    --double-width: 22px;
+    --single-width: 12px;
+    --mask-spacing: 4px;
+    --datetime-font-family: var(--font-monospace-1-font-family);
+    // font-size: var(--font-size-lg);
 }
 /* Hide the spinners in Chrome, Safari, Edge, and Opera */
 input[type='number']::-webkit-outer-spin-button,
@@ -71,10 +74,14 @@ input[type='number'] {
 
         .part {
             all: unset;
-            font-family: monospace;
+            font-family: var(--datetime-font-family);
+            font-variant-numeric: tabular-nums;
             z-index: 1;
             color: transparent;
             caret-color: var(--color-text-primary);
+            box-sizing: border-box;
+            padding: 0 2px;
+            text-align: center;
 
             &.year {
                 width: var(--quad-width);
@@ -108,70 +115,162 @@ input[type='number'] {
 
         .display {
             position: absolute;
-            font-family: monospace;
-            width: var(--double-width);
-            --padding-left: 0.5rem; // ~8px if root font-size is 16px
-
+            font-family: var(--datetime-font-family);
+            font-variant-numeric: tabular-nums;
+            --padding-left: 0.5rem;
+            text-align: center;
             &.year {
                 left: var(--padding-left);
                 width: var(--quad-width);
             }
 
             &.month {
-                left: calc(var(--padding-left) + 3.15rem); // ~58px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
 
             &.day {
-                left: calc(var(--padding-left) + 5rem); // ~88px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
 
             &.hour {
-                left: calc(var(--padding-left) + 6.9rem); // ~119px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
 
             &.min {
-                left: calc(var(--padding-left) + 8.75rem); // ~148px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
 
             &.sec {
-                left: calc(var(--padding-left) + 10.65rem); // ~178px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
 
             &.ms {
-                left: calc(var(--padding-left) + 12.5rem); // ~208px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
                 width: var(--triple-width);
             }
+            *.ms.us {
+                width: var(--sextuple-width);
+            }
+            /* Ordinal format positions */
             &.isOrdinal.day {
-                left: calc(var(--padding-left) + 3.12rem); // ~58px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width)
+                );
                 width: var(--triple-width);
             }
+
             &.isOrdinal.hour {
-                left: calc(var(--padding-left) + 5.65rem); // ~99px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
+
             &.isOrdinal.min {
-                left: calc(var(--padding-left) + 7.5rem); // ~128px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
+
             &.isOrdinal.sec {
-                left: calc(var(--padding-left) + 9.4rem); // ~159px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
             }
+
             &.isOrdinal.ms {
-                left: calc(var(--padding-left) + 11.25rem); // ~188px
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--triple-width);
+            }
+
+            &.isOrdinal.ms.us {
+                width: var(--sextuple-width);
             }
         }
 
         .mask {
             background-color: transparent;
-            font-family: monospace;
+            font-family: var(--datetime-font-family);
+            font-variant-numeric: tabular-nums;
             width: var(--single-width);
             display: flex;
             justify-content: center;
+            padding: 0 var(--mask-spacing);
+            box-sizing: border-box;
         }
         .tz {
             color: var(--color-text-placeholder);
+            padding-left: calc(var(--mask-spacing) * 2);
         }
-
+        .tz.z {
+            width: 0;
+            padding: 0;
+        }
+        //! Ask Amalya about this
+        // .dash,
+        // .colon {
+        //     opacity: 0.8;
+        // }
         .space {
             color: transparent;
+            width: calc(var(--single-width) / 2);
         }
 
         .calendar-btn {

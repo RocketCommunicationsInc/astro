@@ -932,6 +932,9 @@ export class RuxDatetimePicker {
                                             mask: true,
                                             space: value === '~',
                                             tz: value === 'T' || value === 'Z',
+                                            z: value === 'Z',
+                                            dash: value === '-',
+                                            colon: value === ':',
                                         }}
                                         key={i}
                                     >
