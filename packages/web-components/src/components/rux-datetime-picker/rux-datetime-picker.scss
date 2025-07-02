@@ -6,10 +6,11 @@
     --double-width: calc(2ch + 2px);
     --single-width: calc(1ch + 2px);
     --mask-spacing: 4px;
-    --datetime-font-family: var(--font-monospace-1-font-family);
-    // --datetime-font-family: monospace;
+    // --datetime-font-family: var(--font-monospace-1-font-family);
+    // --datetime-font-family: 'Roboto Mono', -apple-system, BlinkMacSystemFont,
+    //     'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 
-    // font-size: var(--font-size-lg);
+    --datetime-font-family: monospace;
 }
 /* Hide the spinners in Chrome, Safari, Edge, and Opera */
 input[type='number']::-webkit-outer-spin-button,
@@ -77,8 +78,8 @@ input[type='number'] {
         .part {
             all: unset;
             font-family: var(--datetime-font-family);
-            // font-variant-numeric: tabular-nums;
-            // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
+            font-feature-settings: 'zero' 0;
+            font-variant-numeric: tabular-nums;
             z-index: 1;
             color: transparent;
             caret-color: var(--color-text-primary);
@@ -119,6 +120,8 @@ input[type='number'] {
         .display {
             position: absolute;
             font-family: var(--datetime-font-family);
+            font-feature-settings: 'zero' 0;
+            font-variant-numeric: tabular-nums;
             // font-variant-numeric: tabular-nums;
             // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
             --padding-left: 0.5rem;
@@ -252,7 +255,8 @@ input[type='number'] {
         .mask {
             background-color: transparent;
             font-family: var(--datetime-font-family);
-            // font-variant-numeric: tabular-nums;
+            font-feature-settings: 'zero' 0;
+            font-variant-numeric: tabular-nums;
             // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
             width: var(--single-width);
             display: flex;
