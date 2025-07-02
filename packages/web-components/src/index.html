@@ -16,218 +16,219 @@
         <script type="module" src="/build/astro-web-components.esm.js"></script>
         <script nomodule src="/build/astro-web-components.js"></script>
         <link rel="stylesheet" href="/build/astro-web-components.css" />
-        <style>
-            body {
-                min-height: 100vh;
-            }
-
-            rux-classification-marking {
-                display: flex;
-                flex-direction: column;
-                min-height: 100vh;
-
-                &::part(header),
-                &::part(footer) {
-                    max-height: 1.5rem;
-                }
-            }
-
-            main {
-                flex-grow: 1;
-            }
-
-            .zoomSelector {
-                display: flex;
-                align-items: center;
-                padding: 1rem;
-
-                & > span {
-                    margin-right: var(--spacing-2);
-                }
-            }
-        </style>
     </head>
 
     <body>
-        <rux-classification-marking classification="unclassified">
-            <rux-global-status-bar
-                app-domain="DOMAIN"
-                app-state="state"
-                username="username"
+        <div style="width: 1500px; margin: 1rem auto; display: flex; gap: 1rem">
+            <div
+                style="
+                    width: 500px;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                "
             >
-                <rux-clock></rux-clock>
-            </rux-global-status-bar>
-            <main>
-                <section class="zoomSelector">
-                    <span>Current Zoom:</span>
-                    <rux-button
-                        id="sub"
-                        icon-only
-                        icon="zoom-out"
-                        onclick="zoom(-1)"
-                    ></rux-button>
-                    <rux-input id="interval-level" readonly></rux-input>
-                    <rux-button
-                        id="add"
-                        icon-only
-                        icon="zoom-in"
-                        onclick="zoom(1)"
-                    ></rux-button>
-                    <rux-button secondary onclick="togglegrid()"
-                        >Toggle Grid</rux-button
+                <br />
+                <h4>Copy/Paste Test</h4>
+                <span>2025-02-05T01:03:13.123456Z</span>
+                <span>2025-036T01:03:13.123456Z</span>
+                <span>2025-01-25T17:25:24.211Z</span>
+                <span>2025-02-25T17:25:24.211Z</span>
+                <span>2024-02-25T17:25:24.211Z</span>
+                <span>2025-056T17:25:24.211Z</span>
+                <rux-textarea></rux-textarea>
+                <h3>Event tests</h3>
+                <div style="width: 350px">
+                    <rux-datetime-picker
+                        label="Default"
+                        help-text="Help Text"
+                        precision="ms"
+                    ></rux-datetime-picker>
+                </div>
+                <br />
+                <span
+                    >On change:
+                    <span id="onchange" style="color: #4dcaff"></span
+                ></span>
+                <span
+                    >On input: <span id="oninput" style="color: #4dcaff"></span
+                ></span>
+                <span
+                    >On blur: <span id="onblur" style="color: #4dcaff"></span
+                ></span>
+                <h4>Change Precision</h4>
+                <rux-radio-group label="Precision" name="precision" value="MS">
+                    <rux-radio value="ms" name="precision"
+                        >Milliseconds</rux-radio
                     >
-                    <rux-button
-                        id="timezone"
-                        secondary
-                        onclick="toggleTimezone()"
-                        >Toggle Timezone</rux-button
-                    ><span id="currentTimezone"></span>
-                    <rux-radio-group
-                        name="radios"
-                        label="Set Ruler Position"
-                        id="set-ruler-position"
-                        value="both"
-                    >
-                        <rux-radio value="top" name="radios">Top</rux-radio>
-                        <rux-radio value="both" name="radios">Both</rux-radio>
-                        <rux-radio value="bottom" name="radios"
-                            >Bottom</rux-radio
-                        >
-                    </rux-radio-group>
-                    <rux-switch
-                        id="show-secondary-ruler"
-                        label="Show Secondary Ruler"
-                    ></rux-switch>
-                    <rux-switch id="hide-j-day" label="Hide J-Day"></rux-switch>
-                    <rux-switch
-                        id="toggle-theme"
-                        label="Toggle Theme"
-                    ></rux-switch>
-                </section>
-
-                <rux-timeline
-                    id="first"
-                    has-played-indicator="false"
-                    timezone="America/New_York"
-                    start="2021-01-01T00:00:00.000Z"
-                    end="2021-03-02T01:00:00.000Z"
-                    playhead="2021-01-02T00:00:00.000Z"
-                    interval="hour"
-                    zoom="4"
-                    show-grid
-                    show-secondary-ruler
-                    show-start-of-day
-                    show-grid
+                    <rux-radio value="sec" name="precision">Seconds</rux-radio>
+                    <rux-radio value="min" name="precision">Minutes</rux-radio>
+                    <rux-radio value="hour" name="precision">Hour</rux-radio>
+                    <rux-radio value="day" name="precision">Day</rux-radio>
+                </rux-radio-group>
+                <br />
+                <div style="width: 350px">
+                    <rux-datetime-picker
+                        label="Microseconds"
+                        precision="us"
+                    ></rux-datetime-picker>
+                </div>
+            </div>
+            <div
+                style="
+                    width: 500px;
+                    margin: auto;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1rem;
+                "
+            >
+                <h4>Grab Values</h4>
+                <div
+                    style="
+                        width: 400px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                    "
                 >
-                    <rux-track>
-                        <div slot="label">Region 1</div>
-                        <rux-time-region
-                            start="2021-01-01T03:00:00.000Z"
-                            end="2021-01-02T02:00:00Z"
-                            status="serious"
-                        >
-                            Event 1.2
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 2</div>
-                        <rux-time-region
-                            start="2021-01-10T01:00:00Z"
-                            end="2021-01-12T02:00:00Z"
-                            status="serious"
-                        >
-                            Event 1.2
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track>
-                        <div slot="label">Region 3</div>
-                        <rux-time-region
-                            start="2021-02-25T01:00:00Z"
-                            end="2021-02-27T02:00:00Z"
-                            status="serious"
-                        >
-                            Event 3.2
-                        </rux-time-region>
-                    </rux-track>
-                    <rux-track slot="ruler">
-                        <rux-ruler></rux-ruler>
-                    </rux-track>
-                </rux-timeline>
-            </main>
-        </rux-classification-marking>
+                    <rux-datetime-picker
+                        id="values-test"
+                        value="2025-10-05T01:02:03.654321Z"
+                        precision="us"
+                    ></rux-datetime-picker>
+                    <span
+                        >julian-value:
+                        <span id="julian-value" style="color: #4dcaff"></span
+                    ></span>
+                    <span
+                        >gregorian-value:
+                        <span id="gregorian-value" style="color: #4dcaff"></span
+                    ></span>
+                </div>
+                <h4>Form Test</h4>
+                <form
+                    id="test-form"
+                    style="
+                        width: 400px;
+                        margin: 1rem auto;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1rem;
+                    "
+                >
+                    <rux-datetime-picker
+                        name="datetime"
+                        label="Datetime Picker"
+                        value="2025-10-05T01:03:13.013Z"
+                    ></rux-datetime-picker>
+                    <rux-datetime-picker
+                        name="j-datetime"
+                        julian-format
+                        label="Julian Datetime Picker"
+                        value="2025-278T01:03:13.013Z"
+                    ></rux-datetime-picker>
+                    <rux-input name="ruxinput" label="Rux Input"></rux-input>
+                    <input
+                        type="text"
+                        name="nativeinput"
+                        placeholder="Native Input"
+                    />
+                    <div>
+                        Submitted Datetime:
+                        <span id="submitted-datetime"></span>
+                    </div>
+                    <div>
+                        Submitted Julian Datetime:
+                        <span id="submitted-j-datetime"></span>
+                    </div>
+                    <div>
+                        Submitted Rux Input:
+                        <span id="submitted-ruxinput"></span>
+                    </div>
+                    <div>
+                        Submitted Native Input:
+                        <span id="submitted-nativeinput"></span>
+                    </div>
+                    <rux-button size="small" type="submit">Submit</rux-button>
+                </form>
+            </div>
+        </div>
+
         <script>
-            const timeline = document.querySelector('rux-timeline')
-            const input = document.querySelector('rux-input')
-            const interval = document.getElementById('interval-level')
-            const currenttz = document.querySelector('#currentTimezone')
-            currenttz.textContent = timeline.getAttribute('timezone')
-            const setRulerPosition = document.getElementById(
-                'set-ruler-position'
+            const radioGroup = document.querySelector('rux-radio-group')
+            const datetimePicker = document.querySelector('rux-datetime-picker')
+            const onchange = document.getElementById('onchange')
+            const oninput = document.getElementById('oninput')
+            const onblur = document.getElementById('onblur')
+
+            radioGroup.addEventListener('ruxchange', (e) => {
+                datetimePicker.setAttribute('precision', e.target.value)
+            })
+            datetimePicker.addEventListener('ruxchange', (e) => {
+                onchange.textContent = e.target.value
+            })
+            datetimePicker.addEventListener('ruxinput', (e) => {
+                oninput.textContent = e.target.value
+            })
+            datetimePicker.addEventListener('ruxblur', () => {
+                onblur.textContent = datetimePicker.value
+            })
+
+            const form = document.getElementById('test-form')
+            const submittedDatetime = document.getElementById(
+                'submitted-datetime'
             )
-            const toggleShowSecondaryRuler = document.getElementById(
-                'show-secondary-ruler'
+            const submittedJDatetime = document.getElementById(
+                'submitted-j-datetime'
             )
-            const hideJDay = document.getElementById('hide-j-day')
-            const toggleTheme = document.getElementById('toggle-theme')
+            const submittedRuxInput = document.getElementById(
+                'submitted-ruxinput'
+            )
+            const submittedNativeInput = document.getElementById(
+                'submitted-nativeinput'
+            )
 
-            hideJDay.addEventListener('ruxchange', (e) => {
-                timeline.toggleAttribute('hide-j-day')
+            form.addEventListener('submit', (e) => {
+                e.preventDefault()
+
+                const formData = new FormData(form)
+
+                submittedDatetime.textContent = formData.get('datetime')
+                submittedJDatetime.textContent = formData.get('j-datetime')
+                submittedRuxInput.textContent = formData.get('ruxinput')
+                submittedNativeInput.textContent = formData.get('nativeinput')
             })
-            toggleTheme.addEventListener('ruxchange', () => {
-                document.querySelector('body').classList.toggle('light-theme')
+
+            const valuesTest = document.getElementById('values-test')
+            const julianValue = document.getElementById('julian-value')
+            const gregorianValue = document.getElementById('gregorian-value')
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    gregorianValue.textContent = valuesTest.getAttribute(
+                        'gregorian-value'
+                    )
+                    julianValue.textContent = valuesTest.getAttribute(
+                        'julian-value'
+                    )
+                }, 500)
             })
-            toggleShowSecondaryRuler.addEventListener('ruxchange', (e) => {
-                timeline.toggleAttribute('show-secondary-ruler')
+            valuesTest.addEventListener('ruxinput', () => {
+                julianValue.textContent = valuesTest.getAttribute(
+                    'julian-value'
+                )
+                gregorianValue.textContent = valuesTest.getAttribute(
+                    'gregorian-value'
+                )
             })
-            setRulerPosition.addEventListener('ruxchange', (e) => {
-                timeline.setAttribute('ruler-position', e.target.value)
+            valuesTest.addEventListener('ruxchange', () => {
+                julianValue.textContent = valuesTest.getAttribute(
+                    'julian-value'
+                )
+                gregorianValue.textContent = valuesTest.getAttribute(
+                    'gregorian-value'
+                )
             })
-
-            let zoomLevel = 4
-            input.value = zoomLevel
-            interval.value = timeline.getAttribute('interval')
-            function zoom(number) {
-                zoomLevel = zoomLevel + number
-                input.value = zoomLevel
-                setZoomInterval(zoomLevel)
-                timeline.setAttribute('zoom', zoomLevel)
-            }
-
-            const togglegrid = () => {
-                timeline.toggleAttribute('show-grid')
-            }
-
-            const toggleTimezone = () => {
-                const current = timeline.timezone
-
-                const newTz =
-                    current === 'America/New_York' ? 'UTC' : 'America/New_York'
-                timeline.timezone = newTz
-                currenttz.textContent = newTz
-            }
-
-            function setZoomInterval(zoomLevel) {
-                if (zoomLevel === 1) {
-                    timeline.setAttribute('interval', 'month')
-                    interval.value = 'month'
-                }
-                if (zoomLevel === 2) {
-                    timeline.setAttribute('interval', 'week')
-                    interval.value = 'week'
-                }
-                if (zoomLevel === 3) {
-                    timeline.setAttribute('interval', 'day')
-                    interval.value = 'day'
-                }
-                if (zoomLevel === 4) {
-                    timeline.setAttribute('interval', 'hour')
-                    interval.value = 'hour'
-                }
-                if (zoomLevel >= 5) {
-                    timeline.setAttribute('interval', 'minute')
-                    interval.value = 'minute'
-                }
-            }
         </script>
     </body>
 </html>

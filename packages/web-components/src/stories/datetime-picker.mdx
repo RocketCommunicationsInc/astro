@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as DPStories from './datetime-picker.stories';
+
+<Meta of={DPStories} />
+
+# Datetime Picker
+
+The Datetime Picker allows users to select specific dates from a calendar display for the purpose of minimizing data entry errors. Dates used are in [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) format and also include Julian ISO capability.
+
+## Guidelines
+
+* [Astro UXDS: Date Picker](https://www.astrouxds.com/components/date-picker)
+
+<Canvas of={DPStories.Default} />
+
+## API
+
+<Controls />
+
+## Variants
+
+### Julian Format
+
+<Canvas of={DPStories.JulianFormat} />

@@ -1,0 +1,360 @@
+:host {
+    display: block;
+    --sextuple-width: calc(6ch + 2px);
+    --quad-width: calc(4ch + 2px);
+    --triple-width: calc(3ch + 2px);
+    --double-width: calc(2ch + 2px);
+    --single-width: calc(1ch + 2px);
+    --mask-spacing: 4px;
+    // --datetime-font-family: var(--font-monospace-1-font-family);
+    // --datetime-font-family: 'Roboto Mono', -apple-system, BlinkMacSystemFont,
+    //     'Segoe UI', Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+
+    --datetime-font-family: monospace;
+}
+/* Hide the spinners in Chrome, Safari, Edge, and Opera */
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Hide the spinners in Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+.control {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    gap: var(--spacing-2);
+
+    .rux-datetime-picker-label__asterisk {
+        margin-left: var(--spacing-1);
+    }
+
+    .disabled {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+    }
+    .invalid {
+        box-shadow: var(--color-border-error) 0 0 0 1px inset;
+    }
+
+    > label.required::after {
+        content: ' *';
+    }
+
+    .hidden-input {
+        visibility: hidden;
+        position: absolute;
+        left: -600px;
+    }
+
+    .input {
+        display: flex;
+        align-items: center;
+        position: relative;
+        border-radius: var(--input-radius);
+        box-shadow: 0 0 0 1px var(--input-color-border-default) inset;
+        background-color: var(--input-color-background-default);
+        color: var(--color-text-primary);
+        padding-inline: var(--spacing-2);
+
+        &:hover {
+            box-shadow: 0 0 0 1px var(--input-color-border-hover) inset;
+        }
+
+        &:focus-within {
+            outline: 1px solid var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
+        }
+
+        &[data-disabled] {
+            opacity: var(--opacity-disabled);
+            pointer-events: none;
+        }
+
+        .part {
+            all: unset;
+            font-family: var(--datetime-font-family);
+            font-feature-settings: 'zero' 0;
+            font-variant-numeric: tabular-nums;
+            z-index: 1;
+            color: transparent;
+            caret-color: var(--color-text-primary);
+            box-sizing: border-box;
+            padding: 0 2px;
+            text-align: center;
+
+            &.year {
+                width: var(--quad-width);
+            }
+
+            &.month,
+            &.day,
+            &.hour,
+            &.min,
+            &.sec {
+                width: var(--double-width);
+            }
+
+            &.day.ordinalDay {
+                width: var(--triple-width);
+            }
+
+            &.ms {
+                width: var(--triple-width);
+            }
+            &.ms.us {
+                width: var(--sextuple-width);
+            }
+        }
+
+        .part:focus {
+            background-color: var(--color-background-surface-selected);
+            outline: none;
+            z-index: 0;
+        }
+
+        .display {
+            position: absolute;
+            font-family: var(--datetime-font-family);
+            font-feature-settings: 'zero' 0;
+            font-variant-numeric: tabular-nums;
+            // font-variant-numeric: tabular-nums;
+            // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
+            --padding-left: 0.5rem;
+            text-align: center;
+            &.year {
+                left: var(--padding-left);
+                width: var(--quad-width);
+            }
+
+            &.month {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.day {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.hour {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.min {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.sec {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.ms {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--triple-width);
+            }
+            *.ms.us {
+                width: var(--sextuple-width);
+            }
+            /* Ordinal format positions */
+            &.isOrdinal.day {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width)
+                );
+                width: var(--triple-width);
+            }
+
+            &.isOrdinal.hour {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.isOrdinal.min {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.isOrdinal.sec {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--double-width);
+            }
+
+            &.isOrdinal.ms {
+                left: calc(
+                    var(--padding-left) + var(--quad-width) +
+                        var(--single-width) + var(--triple-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width) + var(--double-width) +
+                        var(--single-width)
+                );
+                width: var(--triple-width);
+            }
+
+            &.isOrdinal.ms.us {
+                width: var(--sextuple-width);
+            }
+        }
+
+        .mask {
+            background-color: transparent;
+            font-family: var(--datetime-font-family);
+            font-feature-settings: 'zero' 0;
+            font-variant-numeric: tabular-nums;
+            // font-feature-settings: 'tnum' 1; // Ensure tabular numbers
+            width: var(--single-width);
+            display: flex;
+            justify-content: center;
+            padding: 0 var(--mask-spacing);
+            box-sizing: border-box;
+        }
+        .tz {
+            color: var(--color-text-placeholder);
+            // padding-left: calc(var(--mask-spacing) * 2);
+        }
+        .tz.z {
+            // width: 0;
+            // padding: 0 var(--mask-spacing);
+        }
+        .space {
+            color: transparent;
+            width: calc(var(--single-width) / 2);
+        }
+
+        .calendar-btn {
+            all: unset;
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: var(--color-background-interactive-default);
+            margin-inline-start: auto;
+            cursor: pointer;
+            &:focus {
+                background-color: var(--color-background-surface-selected);
+                outline: 1px solid var(--color-border-focus-default);
+                outline-offset: var(--spacing-focus-default);
+                border-radius: var(--radius-base);
+            }
+        }
+    }
+    .input.disabled {
+        &:hover {
+            box-shadow: 0 0 0 1px var(--input-color-border-default) inset;
+        }
+        .calendar-btn {
+            cursor: not-allowed;
+        }
+    }
+    .input.invalid {
+        &:hover {
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
+        }
+    }
+
+    .small {
+        padding-block: var(--spacing-1);
+    }
+
+    .medium {
+        padding-block: var(--spacing-2);
+    }
+
+    .large {
+        padding-block: var(--spacing-3);
+    }
+
+    .invalid {
+        box-shadow: 0 0 0 1px var(--input-color-border-invalid) inset;
+    }
+
+    .rux-error-text {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        width: fit-content;
+        -webkit-order: 3;
+        order: 3;
+        display: flex;
+        margin-top: var(--spacing-2);
+        color: var(--color-text-error);
+        font-size: var(--font-body-2-bold-font-size);
+        font-family: var(--font-body-2-bold-font-family);
+        font-weight: var(--font-body-2-bold-font-weight);
+        letter-spacing: var(--font-body-2-bold-letter-spacing);
+        line-height: var(--font-body-2-bold-line-height);
+        text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+    }
+
+    .rux-error-text svg {
+        width: calc(var(--spacing-4) + var(--spacing-1)); //20
+        height: calc(var(--spacing-4) + var(--spacing-1)); //20;
+        color: var(--color-text-error);
+        margin-right: var(--spacing-2); //8
+        cursor: default;
+        fill: var(--color-text-error);
+    }
+    .rux-help-text {
+        color: var(--color-text-secondary);
+        font-size: var(--font-body-2-font-size);
+        font-family: var(--font-body-2-font-family);
+        font-weight: var(--font-body-2-font-weight);
+        letter-spacing: var(--font-body-2-letter-spacing);
+        line-height: var(--font-body-2-line-height);
+        text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+    }
+}
