@@ -28,6 +28,12 @@ import {
     highlightInput,
 } from './datetime-picker.handlers'
 import {
+    getMaskClasses,
+    getDisplayClasses,
+    getDisplayText,
+    getInputContainerClasses,
+} from './datetime-picker.render'
+import {
     buildMicroOrdinalIsoString,
     combineToISO,
     formatOrdinalToIso,
@@ -38,12 +44,10 @@ import {
     isIsoString,
     isLeapYear,
     julianToGregorianDay,
-    setDisplay,
     setIsoPart,
     setJulianIsoPart,
     setMaxLength,
     setMaxLengthOrdinal,
-    setOrdinalDisplay,
     setPart,
     toOrdinalIsoString,
     toPartialOrdinalIsoString,
@@ -754,29 +758,15 @@ export class RuxDatetimePicker
                         )}
 
                         <div
-                            class={{
-                                input: true,
-                                'rux-body-1': true,
-                                small: size === 'small',
-                                medium: size === 'medium',
-                                large: size === 'large',
-                                disabled: this.disabled,
-                                invalid: this.invalid,
-                            }}
+                            class={getInputContainerClasses(
+                                size,
+                                this.disabled,
+                                this.invalid
+                            )}
                         >
                             {this.parts.map(({ type, value }, i) =>
                                 type === 'mask' ? (
-                                    <span
-                                        class={{
-                                            mask: true,
-                                            space: value === '~',
-                                            tz: value === 'T' || value === 'Z',
-                                            z: value === 'Z',
-                                            dash: value === '-',
-                                            colon: value === ':',
-                                        }}
-                                        key={i}
-                                    >
+                                    <span class={getMaskClasses(value)} key={i}>
                                         {value}
                                     </span>
                                 ) : (
@@ -837,28 +827,18 @@ export class RuxDatetimePicker
                                             }
                                         />
                                         <span
-                                            class={{
-                                                display: true,
-                                                isOrdinal: this.julianFormat,
-                                                year: type === 'year',
-                                                month: type === 'month',
-                                                day: type === 'day',
-                                                hour: type === 'hour',
-                                                min: type === 'min',
-                                                sec: type === 'sec',
-                                                ms: type === 'ms',
-                                                us: this.precision === 'us',
-                                            }}
+                                            class={getDisplayClasses(
+                                                type,
+                                                this.julianFormat,
+                                                this.precision
+                                            )}
                                         >
-                                            {!this.julianFormat
-                                                ? setDisplay[type](
-                                                      value,
-                                                      this.precision === 'us'
-                                                  )
-                                                : setOrdinalDisplay[type](
-                                                      value,
-                                                      this.precision === 'us'
-                                                  )}
+                                            {getDisplayText(
+                                                type,
+                                                value,
+                                                this.julianFormat,
+                                                this.precision
+                                            )}
                                         </span>
                                     </Fragment>
                                 )
