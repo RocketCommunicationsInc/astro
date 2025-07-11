@@ -23,6 +23,11 @@ import {
 import { isValidIso8601, determineMinMax } from './datetime-picker.helpers'
 import { validateInput } from './datetime-picker.validation'
 import {
+    handlePopupClose,
+    toggleCalendar,
+    highlightInput,
+} from './datetime-picker.handlers'
+import {
     buildMicroOrdinalIsoString,
     combineToISO,
     formatOrdinalToIso,
@@ -176,7 +181,7 @@ export class RuxDatetimePicker
 
     @Listen('ruxpopupclosed')
     handlePopupClose() {
-        this.isCalendarOpen = false
+        this.isCalendarOpen = handlePopupClose()
     }
 
     /**
@@ -658,7 +663,7 @@ export class RuxDatetimePicker
     }
 
     toggleCalendar() {
-        this.isCalendarOpen = !this.isCalendarOpen
+        this.isCalendarOpen = toggleCalendar(this.isCalendarOpen)
     }
 
     handlePaste = (e: ClipboardEvent) => {
@@ -706,8 +711,7 @@ export class RuxDatetimePicker
      * is a better experience.
      */
     private _highlightInput = (e: FocusEvent) => {
-        const target = e.target as HTMLInputElement
-        target.select()
+        highlightInput(e)
     }
 
     render() {
