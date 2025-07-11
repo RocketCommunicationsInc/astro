@@ -13,7 +13,10 @@ import {
     h,
 } from '@stencil/core'
 import { InputRefs, Part, PartKey, Precision } from './utils/types'
-import { CalendarDateTimeUpdatedEvent } from './datetime-picker.types'
+import {
+    CalendarDateTimeUpdatedEvent,
+    DatetimePickerProps,
+} from './datetime-picker.types'
 import {
     buildMicroOrdinalIsoString,
     combineToISO,
@@ -46,7 +49,7 @@ import { renderHiddenInput } from '../../utils/utils'
     styleUrl: 'rux-datetime-picker.scss',
     shadow: true,
 })
-export class RuxDatetimePicker {
+export class RuxDatetimePicker implements DatetimePickerProps {
     private yearRef?: HTMLInputElement
     private monthRef?: HTMLInputElement
     private dayRef?: HTMLInputElement
