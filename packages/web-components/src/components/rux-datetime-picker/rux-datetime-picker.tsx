@@ -20,6 +20,7 @@ import {
     DatetimePickerState,
     DatetimePickerRefs,
 } from './datetime-picker.types'
+import { isValidIso8601, determineMinMax } from './datetime-picker.helpers'
 import {
     buildMicroOrdinalIsoString,
     combineToISO,
@@ -208,7 +209,7 @@ export class RuxDatetimePicker
         }
 
         //Emit a warning if the datepicker is rendered with the value prop filled but with an invalid value.
-        if (this.value && !this.isValidIso8601(this.value)) {
+        if (this.value && !isValidIso8601(this.value)) {
             console.warn(
                 `rux-datetime-picker: Invalid value prop format: "${this.value}". Allowed: YYYY, YYYY-MM, YYYY-MM-DD, or with UTC time: YYYY-MM-DDTHHZ to YYYY-MM-DDTHH:mm:ss.sssZ or in Ordinal ISO format: YYYY-DDD to YYYY-DDDTHH:mm:ss.sssZ`
             )
@@ -269,28 +270,6 @@ export class RuxDatetimePicker
         }
         this.el.setAttribute('julian-value', this._julianValue)
         this.el.setAttribute('gregorian-value', this._gregorianValue)
-    }
-
-    /**
-     * Validates if a string is in ISO 8601 format. Valid formats include:
-     * - YYYY
-     * - YYYY-MM
-     * - YYYY-MM-DD
-     * - YYYY-MM-DDTHHZ (hour only)
-     * - YYYY-MM-DDTHH:mmZ (hour and minute)
-     * - YYYY-MM-DDTHH:mm:ssZ (hour, minute, and second)
-     * - YYYY-MM-DDTHH:mm:ss.sssZ (hour, minute, second, and milliseconds)
-     * Oridnal Formats:
-     * - YYYY
-     * - YYYY-DDD
-     * - YYYY-DDDTHH:mmZ
-     * - YYYY-DDDTHH:mm:ssZ
-     * - YYYY-DDDTHHZ:mm:ss.SSSZ
-     * -
-     */
-    isValidIso8601(value: string): boolean {
-        const iso8601Regex = /^(\d{4})((-\d{2}){0,2}|-\d{3})(T\d{2}(:\d{2}(:\d{2}(\.\d{1,6})?)?)?Z)?$/
-        return iso8601Regex.test(value)
     }
 
     handleInitialValue(value?: string) {
@@ -582,7 +561,13 @@ export class RuxDatetimePicker
      * @returns Input value validated based on type
      */
     validateInput(value: string, type: PartKey, inputRefs: InputRefs): string {
-        const [min, max] = this.determineMinMax(type, this.precision === 'us')
+        const [min, max] = determineMinMax(
+            type,
+            this.precision === 'us',
+            this.julianFormat,
+            this.minYear,
+            this.maxYear
+        )
         const dayPart = this.parts.find((part) => part.type == 'day')
         const monthPart = this.parts.find((part) => part.type === 'month')
         const yearPart = this.parts.find((part) => part.type === 'year')
@@ -756,7 +741,7 @@ export class RuxDatetimePicker
         }
 
         try {
-            if (!this.isValidIso8601(parsedIso)) {
+            if (!isValidIso8601(parsedIso)) {
                 this.value = combineToISO(
                     this.parts.find((part) => part.type === 'year')?.value,
                     this.parts.find((part) => part.type === 'month')?.value,
@@ -807,25 +792,6 @@ export class RuxDatetimePicker
 
     toggleCalendar() {
         this.isCalendarOpen = !this.isCalendarOpen
-    }
-
-    determineMinMax(type: PartKey, isMicro: boolean, isJulian?: boolean) {
-        switch (type) {
-            case 'year':
-                return [this.minYear, this.maxYear]
-            case 'month':
-                return [1, 12]
-            case 'day':
-                return !isJulian ? [1, 31] : [1, 366]
-            case 'hour':
-                return [0, 23]
-            case 'min':
-                return [0, 59]
-            case 'sec':
-                return [0, 59]
-            case 'ms':
-                return isMicro ? [0, 999999] : [0, 999]
-        }
     }
 
     handlePaste = (e: ClipboardEvent) => {
@@ -977,17 +943,21 @@ export class RuxDatetimePicker
                                                       )[type]
                                             }
                                             max={
-                                                this.determineMinMax(
+                                                determineMinMax(
                                                     type,
                                                     this.precision === 'us',
-                                                    this.julianFormat
+                                                    this.julianFormat,
+                                                    this.minYear,
+                                                    this.maxYear
                                                 )[1]
                                             }
                                             min={
-                                                this.determineMinMax(
+                                                determineMinMax(
                                                     type,
                                                     this.precision === 'us',
-                                                    this.julianFormat
+                                                    this.julianFormat,
+                                                    this.minYear,
+                                                    this.maxYear
                                                 )[0]
                                             }
                                             value={value}
