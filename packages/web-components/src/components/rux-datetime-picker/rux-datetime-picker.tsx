@@ -16,6 +16,9 @@ import { InputRefs, Part, PartKey, Precision } from './utils/types'
 import {
     CalendarDateTimeUpdatedEvent,
     DatetimePickerProps,
+    DatetimePickerEvents,
+    DatetimePickerState,
+    DatetimePickerRefs,
 } from './datetime-picker.types'
 import {
     buildMicroOrdinalIsoString,
@@ -49,14 +52,19 @@ import { renderHiddenInput } from '../../utils/utils'
     styleUrl: 'rux-datetime-picker.scss',
     shadow: true,
 })
-export class RuxDatetimePicker implements DatetimePickerProps {
-    private yearRef?: HTMLInputElement
-    private monthRef?: HTMLInputElement
-    private dayRef?: HTMLInputElement
-    private hourRef?: HTMLInputElement
-    private minRef?: HTMLInputElement
-    private secRef?: HTMLInputElement
-    private msRef?: HTMLInputElement
+export class RuxDatetimePicker
+    implements
+        DatetimePickerProps,
+        DatetimePickerEvents,
+        DatetimePickerState,
+        DatetimePickerRefs {
+    yearRef?: HTMLInputElement
+    monthRef?: HTMLInputElement
+    dayRef?: HTMLInputElement
+    hourRef?: HTMLInputElement
+    minRef?: HTMLInputElement
+    secRef?: HTMLInputElement
+    msRef?: HTMLInputElement
     private previousValue: string = ''
     /**
      *Holds the current value, but parsed to a julian ISO.
