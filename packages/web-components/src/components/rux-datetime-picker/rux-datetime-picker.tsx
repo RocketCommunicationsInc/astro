@@ -13,6 +13,7 @@ import {
     h,
 } from '@stencil/core'
 import { InputRefs, Part, PartKey, Precision } from './utils/types'
+import { CalendarDateTimeUpdatedEvent } from './datetime-picker.types'
 import {
     buildMicroOrdinalIsoString,
     combineToISO,
@@ -39,16 +40,6 @@ import {
 import { buildMicroIsoString } from './utils/index'
 import { getDaysInMonth } from 'date-fns'
 import { renderHiddenInput } from '../../utils/utils'
-
-type CalendarDateTimeUpdatedEvent = CustomEvent<{
-    iso: string
-    source:
-        | 'monthChange'
-        | 'yearChange'
-        | 'timeChange'
-        | 'daySelected'
-        | undefined
-}>
 
 @Component({
     tag: 'rux-datetime-picker',
