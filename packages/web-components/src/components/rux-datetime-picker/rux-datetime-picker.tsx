@@ -21,13 +21,15 @@ import {
     DatetimePickerRefs,
 } from './datetime-picker.types'
 import { isValidIso8601, determineMinMax } from './datetime-picker.helpers'
-import { validateInput } from './datetime-picker.validation'
 import {
     handlePopupClose,
     toggleCalendar,
     highlightInput,
 } from './datetime-picker.handlers'
-import { handleInitialValue } from './datetime-picker.value-processing'
+import {
+    handleInitialValue,
+    handleChange,
+} from './datetime-picker.value-processing'
 import {
     getMaskClasses,
     getDisplayClasses,
@@ -35,12 +37,9 @@ import {
     getInputContainerClasses,
 } from './datetime-picker.render'
 import {
-    combineToISO,
-    formatOrdinalToIso,
     isIsoString,
     setMaxLength,
     setMaxLengthOrdinal,
-    setPart,
     toOrdinalIsoString,
     toPartialOrdinalIsoString,
     toPartialRegularIsoString,
@@ -291,101 +290,38 @@ export class RuxDatetimePicker
      * @param inputRefs The references to each input
      */
     handleChange(event: InputEvent, type: PartKey, inputRefs: InputRefs) {
-        const target = event.target as HTMLInputElement
-        let value = target.value
-        const isValid = /^(\s*|\d+)$/.test(value)
-        if (!isValid) {
-            target.value = this.previousValue // Set the input value back to the previous valid value
-            return
-        }
-        value = validateInput(
-            value,
+        const result = handleChange(
+            event,
             type,
             inputRefs,
             this.parts,
+            this.previousValue,
             this.precision,
             this.julianFormat,
             this.minYear,
             this.maxYear
         )
-        const sanitized = value.replace(/ /g, '')
-        const updatedParts = setPart[type](
-            sanitized,
-            this.parts,
-            inputRefs,
-            this.julianFormat
-        )
-        this.parts = updatedParts
-        this.previousValue = value // Update the previous valid value
-        const hasNoValue = updatedParts.every(({ type, value }) => {
-            if (type === 'mask') return true
-            return value === ''
-        })
-        if (hasNoValue) {
-            this.iso = ''
+
+        if (result.shouldReturn) {
+            if (result.updatedParts) this.parts = result.updatedParts
+            if (result.newPreviousValue !== undefined)
+                this.previousValue = result.newPreviousValue
+            if (result.iso !== undefined) this.iso = result.iso
+            if (result.value !== undefined) this.value = result.value
+            if (result.emitInput) this.ruxInput.emit()
+            if (result.emitChange)
+                this.ruxDatetimePickerChange.emit(result.dayValue)
             return
         }
 
-        const [date, time, z] = updatedParts
-            .map((part) => part.value)
-            .join('')
-            .split('~')
-        let parsedIso = !this.julianFormat
-            ? `${date}T${time}${z}`
-            : `${date}${time}${z}`
-
-        if (this.julianFormat) {
-            parsedIso = formatOrdinalToIso(parsedIso)
-        }
-
-        try {
-            if (!isValidIso8601(parsedIso)) {
-                this.value = combineToISO(
-                    this.parts.find((part) => part.type === 'year')?.value,
-                    this.parts.find((part) => part.type === 'month')?.value,
-                    this.parts.find((part) => part.type === 'day')?.value,
-                    this.parts.find((part) => part.type === 'hour')?.value,
-                    this.parts.find((part) => part.type === 'min')?.value,
-                    this.parts.find((part) => part.type === 'sec')?.value,
-                    this.parts.find((part) => part.type === 'ms')?.value,
-                    this.julianFormat
-                )
-                this.ruxInput.emit()
-                this.ruxDatetimePickerChange.emit(
-                    this.parts.find((part) => part.type === 'day')?.value
-                )
-                // if the iso isn't valid, we don't want to send gibberish to the calendar. Instead, send
-                // the result of the combineToISO method.
-                this.iso = this.value
-                return
-            }
-
-            const d = new Date(parsedIso)
-            if (isNaN(d.getTime())) {
-                this.iso = parsedIso
-                return
-            }
-
-            const iso = d.toISOString()
-            this.iso = iso
-            this.value = combineToISO(
-                this.parts.find((part) => part.type === 'year')?.value,
-                this.parts.find((part) => part.type === 'month')?.value,
-                this.parts.find((part) => part.type === 'day')?.value,
-                this.parts.find((part) => part.type === 'hour')?.value,
-                this.parts.find((part) => part.type === 'min')?.value,
-                this.parts.find((part) => part.type === 'sec')?.value,
-                this.parts.find((part) => part.type === 'ms')?.value,
-                this.julianFormat
-            )
-            this.ruxInput.emit()
-        } catch (error: any) {
-            const message = error.message || 'Invalid date'
-            this.iso = message
-        }
-        this.ruxDatetimePickerChange.emit(
-            this.parts.find((part) => part.type === 'day')?.value
-        )
+        // Handle the successful case
+        if (result.updatedParts) this.parts = result.updatedParts
+        if (result.newPreviousValue !== undefined)
+            this.previousValue = result.newPreviousValue
+        if (result.iso !== undefined) this.iso = result.iso
+        if (result.value !== undefined) this.value = result.value
+        if (result.emitInput) this.ruxInput.emit()
+        this.ruxDatetimePickerChange.emit(result.dayValue)
     }
 
     toggleCalendar() {

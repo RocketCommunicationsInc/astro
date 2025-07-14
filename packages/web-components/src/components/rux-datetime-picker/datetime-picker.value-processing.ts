@@ -5,7 +5,7 @@
  * handling different formats (Julian/Gregorian), and setting up parts arrays.
  */
 
-import { Part, Precision } from './utils/types'
+import { Part, Precision, PartKey, InputRefs } from './utils/types'
 import {
     buildMicroOrdinalIsoString,
     buildMicroIsoString,
@@ -304,5 +304,166 @@ function adjustPartsForPrecision(
         default:
             parts.splice(9, 4)
             break
+    }
+}
+
+/**
+ * Handles value changes on inputs. Updates parts and ISO string.
+ * @param event The InputEvent
+ * @param type The PartKey of the input (ie year, month, day, etc)
+ * @param inputRefs References to each input
+ * @param currentParts Current parts array
+ * @param previousValue Previous valid value for validation fallback
+ * @param precision Current precision setting
+ * @param julianFormat Whether using Julian format
+ * @param minYear Minimum year value
+ * @param maxYear Maximum year value
+ * @returns Object containing updated state and callbacks to execute
+ */
+export function handleChange(
+    event: InputEvent,
+    type: PartKey,
+    inputRefs: InputRefs,
+    currentParts: Part[],
+    previousValue: string,
+    precision: Precision,
+    julianFormat: boolean,
+    minYear: number,
+    maxYear: number
+): {
+    shouldReturn: boolean
+    updatedParts?: Part[]
+    newPreviousValue?: string
+    iso?: string
+    value?: string
+    emitInput?: boolean
+    emitChange?: boolean
+    dayValue?: string
+} {
+    const target = event.target as HTMLInputElement
+    let value = target.value
+    const isValid = /^(\s*|\d+)$/.test(value)
+    if (!isValid) {
+        target.value = previousValue // Set the input value back to the previous valid value
+        return { shouldReturn: true }
+    }
+
+    // Import validateInput and setPart dynamically to avoid circular dependencies
+    const { validateInput } = require('./datetime-picker.validation')
+    const { setPart } = require('./utils')
+
+    value = validateInput(
+        value,
+        type,
+        inputRefs,
+        currentParts,
+        precision,
+        julianFormat,
+        minYear,
+        maxYear
+    )
+    const sanitized = value.replace(/ /g, '')
+    const updatedParts: Part[] = setPart[type](
+        sanitized,
+        currentParts,
+        inputRefs,
+        julianFormat
+    )
+
+    const newPreviousValue = value // Update the previous valid value
+    const hasNoValue = updatedParts.every(({ type, value }: Part) => {
+        if (type === 'mask') return true
+        return value === ''
+    })
+    if (hasNoValue) {
+        return {
+            shouldReturn: true,
+            updatedParts,
+            newPreviousValue,
+            iso: '',
+        }
+    }
+
+    const [date, time, z] = updatedParts
+        .map((part: Part) => part.value)
+        .join('')
+        .split('~')
+    let parsedIso = !julianFormat ? `${date}T${time}${z}` : `${date}${time}${z}`
+
+    if (julianFormat) {
+        parsedIso = formatOrdinalToIso(parsedIso)
+    }
+
+    const { isValidIso8601 } = require('./datetime-picker.helpers')
+    const { combineToISO } = require('./utils')
+
+    try {
+        if (!isValidIso8601(parsedIso)) {
+            const combinedValue = combineToISO(
+                updatedParts.find((part: Part) => part.type === 'year')?.value,
+                updatedParts.find((part: Part) => part.type === 'month')?.value,
+                updatedParts.find((part: Part) => part.type === 'day')?.value,
+                updatedParts.find((part: Part) => part.type === 'hour')?.value,
+                updatedParts.find((part: Part) => part.type === 'min')?.value,
+                updatedParts.find((part: Part) => part.type === 'sec')?.value,
+                updatedParts.find((part: Part) => part.type === 'ms')?.value,
+                julianFormat
+            )
+
+            return {
+                shouldReturn: true,
+                updatedParts,
+                newPreviousValue,
+                value: combinedValue,
+                iso: combinedValue,
+                emitInput: true,
+                emitChange: true,
+                dayValue: updatedParts.find((part: Part) => part.type === 'day')
+                    ?.value,
+            }
+        }
+
+        const d = new Date(parsedIso)
+        if (isNaN(d.getTime())) {
+            return {
+                shouldReturn: true,
+                updatedParts,
+                newPreviousValue,
+                iso: parsedIso,
+            }
+        }
+
+        const iso = d.toISOString()
+        const combinedValue = combineToISO(
+            updatedParts.find((part: Part) => part.type === 'year')?.value,
+            updatedParts.find((part: Part) => part.type === 'month')?.value,
+            updatedParts.find((part: Part) => part.type === 'day')?.value,
+            updatedParts.find((part: Part) => part.type === 'hour')?.value,
+            updatedParts.find((part: Part) => part.type === 'min')?.value,
+            updatedParts.find((part: Part) => part.type === 'sec')?.value,
+            updatedParts.find((part: Part) => part.type === 'ms')?.value,
+            julianFormat
+        )
+
+        return {
+            shouldReturn: false,
+            updatedParts,
+            newPreviousValue,
+            iso,
+            value: combinedValue,
+            emitInput: true,
+            dayValue: updatedParts.find((part: Part) => part.type === 'day')
+                ?.value,
+        }
+    } catch (error: any) {
+        const message = error.message || 'Invalid date'
+        return {
+            shouldReturn: false,
+            updatedParts,
+            newPreviousValue,
+            iso: message,
+            dayValue: updatedParts.find((part: Part) => part.type === 'day')
+                ?.value,
+        }
     }
 }
