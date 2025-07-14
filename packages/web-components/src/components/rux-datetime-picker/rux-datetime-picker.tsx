@@ -21,8 +21,11 @@ import { isValidIso8601 } from './datetime-picker.helpers'
 import {
     handlePopupClose,
     toggleCalendar,
-    highlightInput,
     handleDaySelected,
+    handlePaste,
+    handleCopy,
+    handleFocusOut,
+    handleHighlightInput,
 } from './datetime-picker.handlers'
 import {
     handleInitialValue,
@@ -32,11 +35,7 @@ import {
 } from './datetime-picker.value-processing'
 
 import { renderDatetimePicker } from './datetime-picker.render-jsx'
-import {
-    isIsoString,
-    toPartialOrdinalIsoString,
-    toPartialRegularIsoString,
-} from './utils'
+import { toPartialOrdinalIsoString, toPartialRegularIsoString } from './utils'
 
 @Component({
     tag: 'rux-datetime-picker',
@@ -322,42 +321,22 @@ export class RuxDatetimePicker
     }
 
     handlePaste = (e: ClipboardEvent) => {
-        e.preventDefault()
-        let pastedValue = e.clipboardData!.getData('text/plain')
-        // If there's a time portion (T...), ensure it ends with Z
-        if (/T\d{2}/.test(pastedValue) && !pastedValue.trim().endsWith('Z')) {
-            pastedValue += 'Z'
-        }
-        console.log(`handleInitialValue(${pastedValue.trim()})`)
-        this.handleInitialValue(pastedValue.trim())
-        this.ruxDatetimePickerChange.emit(
-            this.parts.find((part) => part.type === 'day')?.value
+        const result = handlePaste(
+            e,
+            this.handleInitialValue.bind(this),
+            this.parts
         )
+        this.ruxDatetimePickerChange.emit(result.dayValue)
         this.ruxInput.emit()
     }
 
     handleCopy = (e: ClipboardEvent) => {
-        e.preventDefault()
-        // This overrides the default copy behavior and returns the iso value instead
-        //if we're in julianFormat, we want the julian ISO.
-        let returnIso
-        if (this.julianFormat) {
-            //partialOrdinalIsoString func expects a valid ISO string to convert.
-            if (isIsoString(this.iso)) {
-                returnIso = toPartialOrdinalIsoString(this.iso)
-            } else {
-                //if it's not a valid iso string, we're getting back an ordinal value already.
-                returnIso = this.iso
-            }
-        } else {
-            returnIso = this.iso
-        }
-
-        e.clipboardData!.setData('text/plain', returnIso)
+        handleCopy(e, this.iso, this.julianFormat)
     }
     private _onFocusOut = () => {
-        this.ruxBlur.emit()
-        this.ruxChange.emit()
+        const result = handleFocusOut()
+        if (result.emitBlur) this.ruxBlur.emit()
+        if (result.emitChange) this.ruxChange.emit()
     }
     /**
      *
@@ -366,7 +345,7 @@ export class RuxDatetimePicker
      * is a better experience.
      */
     private _highlightInput = (e: FocusEvent) => {
-        highlightInput(e)
+        handleHighlightInput(e)
     }
 
     render() {

@@ -13,7 +13,12 @@
  */
 
 import { CalendarDateTimeUpdatedEvent } from './datetime-picker.types'
-import { toOrdinalIsoString } from './utils'
+import {
+    toOrdinalIsoString,
+    isIsoString,
+    toPartialOrdinalIsoString,
+} from './utils'
+import { Part } from './utils/types'
 
 /**
  * Handles popup close events
@@ -61,3 +66,73 @@ export function handleDaySelected(
 
     return { value, emitChange, emitInput }
 }
+
+/**
+ * Handles paste events for datetime picker input
+ * @param e The clipboard event
+ * @param handleInitialValue Function to process the pasted value
+ * @param parts Current parts array to find day value
+ * @returns Object containing the day value for emission
+ */
+export function handlePaste(
+    e: ClipboardEvent,
+    handleInitialValue: (value: string) => void,
+    parts: Part[]
+): { dayValue: string | undefined } {
+    e.preventDefault()
+    let pastedValue = e.clipboardData!.getData('text/plain')
+    // If there's a time portion (T...), ensure it ends with Z
+    if (/T\d{2}/.test(pastedValue) && !pastedValue.trim().endsWith('Z')) {
+        pastedValue += 'Z'
+    }
+    console.log(`handleInitialValue(${pastedValue.trim()})`)
+    handleInitialValue(pastedValue.trim())
+
+    return {
+        dayValue: parts.find((part) => part.type === 'day')?.value,
+    }
+}
+
+/**
+ * Handles copy events for datetime picker input
+ * @param e The clipboard event
+ * @param iso Current ISO value
+ * @param julianFormat Whether using Julian format
+ */
+export function handleCopy(
+    e: ClipboardEvent,
+    iso: string,
+    julianFormat: boolean
+): void {
+    e.preventDefault()
+    // This overrides the default copy behavior and returns the iso value instead
+    //if we're in julianFormat, we want the julian ISO.
+    let returnIso
+    if (julianFormat) {
+        //partialOrdinalIsoString func expects a valid ISO string to convert.
+        if (isIsoString(iso)) {
+            returnIso = toPartialOrdinalIsoString(iso)
+        } else {
+            //if it's not a valid iso string, we're getting back an ordinal value already.
+            returnIso = iso
+        }
+    } else {
+        returnIso = iso
+    }
+
+    e.clipboardData!.setData('text/plain', returnIso)
+}
+
+/**
+ * Handles focus out events
+ * @returns Object indicating which events to emit
+ */
+export function handleFocusOut(): { emitBlur: boolean; emitChange: boolean } {
+    return { emitBlur: true, emitChange: true }
+}
+
+/**
+ * Highlights input content on focus - already exists as highlightInput
+ * This is just an alias for consistency
+ */
+export const handleHighlightInput = highlightInput
