@@ -4,13 +4,10 @@ import {
     Element,
     Event,
     EventEmitter,
-    Fragment,
-    Host,
     Listen,
     Prop,
     State,
     Watch,
-    h,
 } from '@stencil/core'
 import { InputRefs, Part, PartKey, Precision } from './utils/types'
 import {
@@ -20,7 +17,7 @@ import {
     DatetimePickerState,
     DatetimePickerRefs,
 } from './datetime-picker.types'
-import { isValidIso8601, determineMinMax } from './datetime-picker.helpers'
+import { isValidIso8601 } from './datetime-picker.helpers'
 import {
     handlePopupClose,
     toggleCalendar,
@@ -33,20 +30,13 @@ import {
     handlePrecisionChange,
     handleValueChange,
 } from './datetime-picker.value-processing'
-import {
-    getMaskClasses,
-    getDisplayClasses,
-    getDisplayText,
-    getInputContainerClasses,
-} from './datetime-picker.render'
+
+import { renderDatetimePicker } from './datetime-picker.render-jsx'
 import {
     isIsoString,
-    setMaxLength,
-    setMaxLengthOrdinal,
     toPartialOrdinalIsoString,
     toPartialRegularIsoString,
 } from './utils'
-import { renderHiddenInput } from '../../utils/utils'
 
 @Component({
     tag: 'rux-datetime-picker',
@@ -380,182 +370,30 @@ export class RuxDatetimePicker
     }
 
     render() {
-        const {
-            disabled,
-            label,
-            size,
-            refs,
-            handleChange,
-            errorText,
-            helpText,
-            toggleCalendar,
-            isCalendarOpen,
-            handleCopy,
-            handlePaste,
-            iso,
-            precision,
-        } = this
-        renderHiddenInput(true, this.el, this.name, this.value, this.disabled)
-        return (
-            <Host>
-                <div>
-                    <div
-                        class={{ control: true }}
-                        onPaste={handlePaste}
-                        onCopy={handleCopy}
-                    >
-                        {label && (
-                            <label>
-                                {label}
-                                {this.required && (
-                                    <span
-                                        part="required"
-                                        class="rux-datetime-picker-label__asterisk"
-                                    >
-                                        &#42;
-                                    </span>
-                                )}
-                            </label>
-                        )}
-
-                        <div
-                            class={getInputContainerClasses(
-                                size,
-                                this.disabled,
-                                this.invalid
-                            )}
-                        >
-                            {this.parts.map(({ type, value }, i) =>
-                                type === 'mask' ? (
-                                    <span class={getMaskClasses(value)} key={i}>
-                                        {value}
-                                    </span>
-                                ) : (
-                                    <Fragment>
-                                        <input
-                                            key={i}
-                                            class={{
-                                                part: true,
-                                                year: type === 'year',
-                                                month: type === 'month',
-                                                day: type === 'day',
-                                                hour: type === 'hour',
-                                                min: type === 'min',
-                                                sec: type === 'sec',
-                                                ms: type === 'ms',
-                                                us: this.precision === 'us',
-                                                ordinalDay:
-                                                    type === 'day' &&
-                                                    this.julianFormat,
-                                            }}
-                                            disabled={disabled}
-                                            ref={(el) => (this.refs[type] = el)}
-                                            onInput={(e: InputEvent) =>
-                                                handleChange(e, type, refs)
-                                            }
-                                            maxLength={
-                                                !this.julianFormat
-                                                    ? setMaxLength(
-                                                          this.precision ===
-                                                              'us'
-                                                      )[type]
-                                                    : setMaxLengthOrdinal(
-                                                          this.precision ===
-                                                              'us'
-                                                      )[type]
-                                            }
-                                            max={
-                                                determineMinMax(
-                                                    type,
-                                                    this.precision === 'us',
-                                                    this.julianFormat,
-                                                    this.minYear,
-                                                    this.maxYear
-                                                )[1]
-                                            }
-                                            min={
-                                                determineMinMax(
-                                                    type,
-                                                    this.precision === 'us',
-                                                    this.julianFormat,
-                                                    this.minYear,
-                                                    this.maxYear
-                                                )[0]
-                                            }
-                                            value={value}
-                                            onFocus={(e: FocusEvent) =>
-                                                this._highlightInput(e)
-                                            }
-                                        />
-                                        <span
-                                            class={getDisplayClasses(
-                                                type,
-                                                this.julianFormat,
-                                                this.precision
-                                            )}
-                                        >
-                                            {getDisplayText(
-                                                type,
-                                                value,
-                                                this.julianFormat,
-                                                this.precision
-                                            )}
-                                        </span>
-                                    </Fragment>
-                                )
-                            )}
-                            <rux-pop-up
-                                open={isCalendarOpen}
-                                placement="bottom"
-                                class="calendar-btn"
-                            >
-                                <button
-                                    type="button"
-                                    disabled={disabled}
-                                    class="calendar-btn calendar-icon"
-                                    onClick={toggleCalendar}
-                                    slot="trigger"
-                                >
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path d="M19 3h1c1.1 0 2 .9 2 2v16c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h1V2c0-.55.45-1 1-1s1 .45 1 1v1h10V2c0-.55.45-1 1-1s1 .45 1 1v1ZM5 21h14c.55 0 1-.45 1-1V8H4v12c0 .55.45 1 1 1Z" />
-                                    </svg>
-                                </button>
-                                <rux-calendar
-                                    //* ISO controls the displayed date in the calendar and should only ever be in ISO format, not ordinal
-                                    iso={iso}
-                                    minYear={this.minYear}
-                                    maxYear={this.maxYear}
-                                    precision={precision}
-                                    isJulian={this.julianFormat}
-                                ></rux-calendar>
-                            </rux-pop-up>
-                        </div>
-
-                        {helpText && !errorText && (
-                            <small class="rux-help-text">{helpText}</small>
-                        )}
-
-                        {errorText && (
-                            <small class="rux-error-text">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        d="M19.53 21c1.54 0 2.5-1.67 1.73-3L13.73 4.99c-.77-1.33-2.69-1.33-3.46 0L2.74 18c-.77 1.33.19 3 1.73 3h15.06ZM12 14c-.55 0-1-.45-1-1v-2c0-.55.45-1 1-1s1 .45 1 1v2c0 .55-.45 1-1 1Zm-1 2v2h2v-2h-2Z"
-                                    />
-                                </svg>
-
-                                {errorText}
-                            </small>
-                        )}
-                    </div>
-                </div>
-            </Host>
-        )
+        return renderDatetimePicker({
+            disabled: this.disabled,
+            label: this.label,
+            size: this.size,
+            refs: this.refs,
+            handleChange: this.handleChange,
+            errorText: this.errorText,
+            helpText: this.helpText,
+            toggleCalendar: this.toggleCalendar,
+            isCalendarOpen: this.isCalendarOpen,
+            handleCopy: this.handleCopy,
+            handlePaste: this.handlePaste,
+            iso: this.iso,
+            precision: this.precision,
+            el: this.el,
+            name: this.name,
+            value: this.value,
+            required: this.required,
+            invalid: this.invalid,
+            parts: this.parts,
+            julianFormat: this.julianFormat,
+            minYear: this.minYear,
+            maxYear: this.maxYear,
+            _highlightInput: this._highlightInput,
+        })
     }
 }
