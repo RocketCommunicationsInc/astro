@@ -467,3 +467,45 @@ export function handleChange(
         }
     }
 }
+
+/**
+ * Handles precision change events - reprocesses the current value with new precision
+ * @param value Current value to reprocess
+ * @param julianFormat Whether using Julian format
+ * @param precision The new precision setting
+ * @returns Object containing the processed ISO string, parts array, and final value
+ */
+export function handlePrecisionChange(
+    value: string,
+    julianFormat: boolean,
+    precision: Precision
+): { iso: string; parts: Part[]; finalValue: string } {
+    return handleInitialValue(value, julianFormat, precision)
+}
+
+/**
+ * Handles value change events - updates Julian and Gregorian values
+ * @param value The new value
+ * @param julianFormat Whether using Julian format
+ * @param precision The precision setting
+ * @returns Object containing the updated Julian and Gregorian values
+ */
+export function handleValueChange(
+    value: string,
+    julianFormat: boolean,
+    precision: Precision
+): { julianValue: string; gregorianValue: string } {
+    let julianValue: string
+    let gregorianValue: string
+
+    if (julianFormat) {
+        julianValue = value
+        gregorianValue = toPartialRegularIsoString(value, precision === 'us')
+    } else {
+        julianValue = toPartialOrdinalIsoString(value, precision === 'us')
+        console.log('this._julianValue === ', julianValue)
+        gregorianValue = value
+    }
+
+    return { julianValue, gregorianValue }
+}

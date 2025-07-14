@@ -25,10 +25,13 @@ import {
     handlePopupClose,
     toggleCalendar,
     highlightInput,
+    handleDaySelected,
 } from './datetime-picker.handlers'
 import {
     handleInitialValue,
     handleChange,
+    handlePrecisionChange,
+    handleValueChange,
 } from './datetime-picker.value-processing'
 import {
     getMaskClasses,
@@ -40,7 +43,6 @@ import {
     isIsoString,
     setMaxLength,
     setMaxLengthOrdinal,
-    toOrdinalIsoString,
     toPartialOrdinalIsoString,
     toPartialRegularIsoString,
 } from './utils'
@@ -182,15 +184,16 @@ export class RuxDatetimePicker
      */
     @Listen('ruxcalendardatetimeupdated')
     handleDaySelected(event: CalendarDateTimeUpdatedEvent) {
-        if (this.julianFormat) {
-            this.value = toOrdinalIsoString(event.detail.iso)
-        } else this.value = event.detail.iso
-        //Based on the event's source, emit the relevant event
-        if (event.detail.source !== 'timeChange') {
+        const result = handleDaySelected(event, this.julianFormat)
+        this.value = result.value
+
+        if (result.emitChange) {
             this.ruxChange.emit()
-        } else {
+        }
+        if (result.emitInput) {
             this.ruxInput.emit()
         }
+
         this.handleInitialValue(this.value)
     }
 
@@ -247,25 +250,25 @@ export class RuxDatetimePicker
 
     @Watch('precision')
     handlePrecisionChange() {
-        this.handleInitialValue(this.value)
+        const result = handlePrecisionChange(
+            this.value,
+            this.julianFormat,
+            this.precision
+        )
+        this.iso = result.iso
+        this.parts = result.parts
+        this.value = result.finalValue
     }
 
     @Watch('value')
     handleValueChange() {
-        if (this.julianFormat) {
-            this._julianValue = this.value
-            this._gregorianValue = toPartialRegularIsoString(
-                this.value,
-                this.precision === 'us'
-            )
-        } else {
-            this._julianValue = toPartialOrdinalIsoString(
-                this.value,
-                this.precision === 'us'
-            )
-            console.log('this._julianValue === ', this._julianValue)
-            this._gregorianValue = this.value
-        }
+        const result = handleValueChange(
+            this.value,
+            this.julianFormat,
+            this.precision
+        )
+        this._julianValue = result.julianValue
+        this._gregorianValue = result.gregorianValue
         this.el.setAttribute('julian-value', this._julianValue)
         this.el.setAttribute('gregorian-value', this._gregorianValue)
     }
