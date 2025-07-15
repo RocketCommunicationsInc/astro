@@ -1,14 +1,10 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
-import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { html } from 'lit-html'
 
 const Base = (args) => {
     return html`
         <div style="width: 200px; margin: 0 auto;">
-                <rux-option
-                    value=""
-                    selected
-                    label="Select an option"
-                ></rux-option>
+            <rux-option value="" selected label="Select an option"></rux-option>
         </div>
     `
 }

@@ -1,0 +1,142 @@
+:host {
+    display: block;
+    --timepicker-width: calc(100% / 5.5);
+}
+.rux-calendar {
+    /* width: 364px; */
+    /* height: 444px; */
+    background: var(--color-background-surface-default);
+    font-family: var(--font-body-2-font-family);
+    cursor: default;
+    /* Hide the spinners in Chrome, Safari, Edge, and Opera */
+    span {
+        cursor: default;
+    }
+    rux-select::part(select) {
+        cursor: pointer;
+    }
+}
+
+.rux-calendar-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-1);
+    .select-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.rux-calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    height: 20px;
+    span {
+        text-align: center;
+    }
+}
+.rux-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+.rux-calendar-timepicker {
+    border-top: 1px solid var(--color-border-interactive-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 52px;
+    padding: var(--spacing-050);
+    div {
+        display: flex;
+        align-items: center;
+        // gap: var(--spacing-4);
+    }
+    span {
+        user-select: none;
+    }
+    .Z {
+        padding-right: var(--spacing-2);
+    }
+    .T {
+        padding-left: var(--spacing-2);
+    }
+    .input {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        background-color: var(--color-background-surface-default);
+        color: var(--color-text-primary);
+        padding-inline: var(--spacing-2);
+
+        &:hover {
+            box-shadow: 0 0 0 1px var(--input-color-border-hover) inset;
+        }
+
+        &:focus-within {
+            outline: 1px solid var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
+        }
+
+        &[data-disabled] {
+            opacity: var(--opacity-disabled);
+            pointer-events: none;
+        }
+        .part {
+            all: unset;
+            font-family: monospace;
+            caret-color: var(--color-text-primary);
+        }
+        input[type='number']::-webkit-inner-spin-button,
+        input[type='number']::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* Hide the spinners in Firefox */
+        input[type='number'] {
+            -moz-appearance: textfield;
+        }
+        .inc-dec-arrows {
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            color: var(--color-text-primary);
+            position: absolute;
+            right: 0;
+            gap: 0;
+            rux-icon:hover {
+                color: var(--color-background-interactive-hover);
+            }
+        }
+        &:hover .inc-dec-arrows {
+            visibility: visible;
+        }
+    }
+    .timepicker-ms,
+    .timepicker-sec,
+    .timepicker-hours,
+    .timepicker-min {
+        width: var(--timepicker-width);
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        input.part {
+            width: 100%;
+        }
+        cursor: pointer;
+    }
+    .timepicker-ms {
+        input.part {
+            width: fit-content;
+        }
+    }
+}

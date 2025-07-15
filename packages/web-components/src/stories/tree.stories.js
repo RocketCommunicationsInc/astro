@@ -1,6 +1,6 @@
 import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
 import { html } from 'lit-html'
-import { withActions } from '@storybook/addon-actions/decorator';
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = () => {
     const treeData = [

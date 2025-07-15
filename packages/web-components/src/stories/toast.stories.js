@@ -1,6 +1,6 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
-import { html } from 'lit-html';
-import { withActions } from '@storybook/addon-actions/decorator';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { html } from 'lit-html'
+import { withActions } from '@storybook/addon-actions/decorator'
 
 const Base = (args) => {
     return html`
@@ -91,8 +91,6 @@ export const AutoClose = {
         message: 'This toast will disappear in 5000 ms.',
         status: '',
     },
-
-
 }
 
 export const HideClose = {

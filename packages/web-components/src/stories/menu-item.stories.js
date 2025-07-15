@@ -1,5 +1,5 @@
-import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil';
-import { html } from 'lit-html';
+import { extractArgTypes } from '@astrouxds/storybook-addon-docs-stencil'
+import { html } from 'lit-html'
 
 const Base = (args) => {
     return html`
