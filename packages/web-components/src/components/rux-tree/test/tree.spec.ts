@@ -76,7 +76,7 @@ test.describe('Tree', () => {
                                 Tree item 1.3.3.3
                             </rux-tree-node>
                         </rux-tree-node>
-                        
+
                     </rux-tree-node>
                     <rux-tree-node slot="node">
                         Tree item 1.4
@@ -148,9 +148,6 @@ test.describe('Tree', () => {
                     <rux-tree-node>
                         Navigation Item 2
                     </rux-tree-node>
-                    <rux-tree-node>
-                        Navigation Item 3
-                    </rux-tree-node>
                 </rux-tree>
 
                 <rux-tree id="tree2">
@@ -159,9 +156,6 @@ test.describe('Tree', () => {
                     </rux-tree-node>
                     <rux-tree-node>
                         File Item 2
-                    </rux-tree-node>
-                    <rux-tree-node>
-                        File Item 3
                     </rux-tree-node>
                 </rux-tree>
             </div>
