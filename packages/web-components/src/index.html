@@ -105,6 +105,99 @@
                     ></rux-switch>
                 </section>
 
+                <section style="display: flex; gap: 2rem; padding: 1rem">
+                    <div style="flex: 1">
+                        <h3>Navigation Tree</h3>
+                        <rux-tree>
+                            <rux-tree-node expanded>
+                                Dashboard
+                                <rux-tree-node slot="node">
+                                    Overview
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Analytics
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Reports
+                                </rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node expanded>
+                                Settings
+                                <rux-tree-node slot="node">
+                                    User Management
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    System Configuration
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Security
+                                </rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node>
+                                Help & Support
+                                <rux-tree-node slot="node">
+                                    Documentation
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Contact Support
+                                </rux-tree-node>
+                                <rux-tree-node slot="node"> FAQ </rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree>
+                    </div>
+
+                    <div style="flex: 1">
+                        <h3>File System Tree</h3>
+                        <rux-tree>
+                            <rux-tree-node expanded>
+                                Documents
+                                <rux-tree-node slot="node" expanded>
+                                    Projects
+                                    <rux-tree-node slot="node">
+                                        Project A
+                                    </rux-tree-node>
+                                    <rux-tree-node slot="node">
+                                        Project B
+                                    </rux-tree-node>
+                                    <rux-tree-node slot="node">
+                                        Project C
+                                    </rux-tree-node>
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Templates
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Archives
+                                </rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node>
+                                Images
+                                <rux-tree-node slot="node">
+                                    Screenshots
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Photos
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Icons
+                                </rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node>
+                                Downloads
+                                <rux-tree-node slot="node">
+                                    Software
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Documents
+                                </rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    Media
+                                </rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree>
+                    </div>
+                </section>
+
                 <rux-timeline
                     id="first"
                     has-played-indicator="false"
