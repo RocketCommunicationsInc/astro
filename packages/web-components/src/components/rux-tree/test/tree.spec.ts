@@ -76,7 +76,7 @@ test.describe('Tree', () => {
                                 Tree item 1.3.3.3
                             </rux-tree-node>
                         </rux-tree-node>
-                        
+
                     </rux-tree-node>
                     <rux-tree-node slot="node">
                         Tree item 1.4
@@ -134,5 +134,72 @@ test.describe('Tree', () => {
 
         await expect(treeNodeNested).not.toHaveAttribute('expanded', '')
         //Assert
+    })
+
+    test('allows independent selections across multiple trees', async ({
+        page,
+    }) => {
+        const template = `
+            <div>
+                <rux-tree id="tree1">
+                    <rux-tree-node>
+                        Navigation Item 1
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        Navigation Item 2
+                    </rux-tree-node>
+                </rux-tree>
+
+                <rux-tree id="tree2">
+                    <rux-tree-node>
+                        File Item 1
+                    </rux-tree-node>
+                    <rux-tree-node>
+                        File Item 2
+                    </rux-tree-node>
+                </rux-tree>
+            </div>
+        `
+        await page.setContent(template)
+
+        // Get references to tree nodes
+        const tree1Node1 = page.locator('#tree1 rux-tree-node').first()
+        const tree1Node2 = page.locator('#tree1 rux-tree-node').nth(1)
+        const tree2Node1 = page.locator('#tree2 rux-tree-node').first()
+        const tree2Node2 = page.locator('#tree2 rux-tree-node').nth(1)
+
+        // Initially, no nodes should be selected
+        await expect(tree1Node1).toHaveAttribute('aria-selected', 'false')
+        await expect(tree1Node2).toHaveAttribute('aria-selected', 'false')
+        await expect(tree2Node1).toHaveAttribute('aria-selected', 'false')
+        await expect(tree2Node2).toHaveAttribute('aria-selected', 'false')
+
+        // Select first node in tree1
+        await tree1Node1.click()
+        await expect(tree1Node1).toHaveAttribute('aria-selected', 'true')
+        await expect(tree1Node2).toHaveAttribute('aria-selected', 'false')
+        await expect(tree2Node1).toHaveAttribute('aria-selected', 'false')
+        await expect(tree2Node2).toHaveAttribute('aria-selected', 'false')
+
+        // Select first node in tree2 - tree1 selection should remain
+        await tree2Node1.click()
+        await expect(tree1Node1).toHaveAttribute('aria-selected', 'true')
+        await expect(tree1Node2).toHaveAttribute('aria-selected', 'false')
+        await expect(tree2Node1).toHaveAttribute('aria-selected', 'true')
+        await expect(tree2Node2).toHaveAttribute('aria-selected', 'false')
+
+        // Select second node in tree1 - should deselect first node in tree1 but keep tree2 selection
+        await tree1Node2.click()
+        await expect(tree1Node1).toHaveAttribute('aria-selected', 'false')
+        await expect(tree1Node2).toHaveAttribute('aria-selected', 'true')
+        await expect(tree2Node1).toHaveAttribute('aria-selected', 'true')
+        await expect(tree2Node2).toHaveAttribute('aria-selected', 'false')
+
+        // Select second node in tree2 - should deselect first node in tree2 but keep tree1 selection
+        await tree2Node2.click()
+        await expect(tree1Node1).toHaveAttribute('aria-selected', 'false')
+        await expect(tree1Node2).toHaveAttribute('aria-selected', 'true')
+        await expect(tree2Node1).toHaveAttribute('aria-selected', 'false')
+        await expect(tree2Node2).toHaveAttribute('aria-selected', 'true')
     })
 })
