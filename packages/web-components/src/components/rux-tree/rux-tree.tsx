@@ -51,7 +51,7 @@ export class RuxTree {
     }
 
     private _handleNodeSelected(e: CustomEvent<string>) {
-        const allNodes = document.querySelectorAll('rux-tree-node')
+        const allNodes = this.el.querySelectorAll('rux-tree-node')
         const previousSelectedNode = Array.from(allNodes).find((node) => {
             return (
                 node.selected &&
