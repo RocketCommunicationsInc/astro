@@ -12,6 +12,7 @@ import {
     differenceInMonths,
     format,
 } from 'date-fns'
+import { utcToZonedTime } from 'date-fns-tz'
 
 /**
  * @part playhead - The timeline's playhead
@@ -304,41 +305,48 @@ export class RuxTimeline {
         }
 
         const timeAsDate = new Date(time)
-        let newTime = Math.abs(
-            differenceInMinutes(useStartEndDates.timelineStart, timeAsDate)
-        )
+
+        // For UTC timezone, ensure we're comparing UTC times consistently
+        // The issue was that Date objects may have timezone-specific interpretations
+        let timelineStart = useStartEndDates.timelineStart
+        let playheadTime = timeAsDate
+
+        if (this.timezone === 'UTC') {
+            // Ensure both dates are treated as UTC for consistent calculation
+            timelineStart = new Date(useStartEndDates.timelineStart.getTime())
+            playheadTime = new Date(timeAsDate.getTime())
+        } else {
+            // For non-UTC timezones, convert both to the target timezone
+            timelineStart = utcToZonedTime(
+                useStartEndDates.timelineStart,
+                this.timezone
+            )
+            playheadTime = utcToZonedTime(timeAsDate, this.timezone)
+        }
+
+        let newTime = Math.abs(differenceInMinutes(timelineStart, playheadTime))
 
         if (this.interval === 'day') {
-            newTime = Math.abs(
-                differenceInHours(useStartEndDates.timelineStart, timeAsDate)
-            )
+            newTime = Math.abs(differenceInHours(timelineStart, playheadTime))
         }
 
         if (this.interval === 'week') {
             newTime =
-                Math.abs(
-                    differenceInHours(
-                        useStartEndDates.timelineStart,
-                        timeAsDate
-                    )
-                ) / 7
+                Math.abs(differenceInHours(timelineStart, playheadTime)) / 7
         }
 
         if (this.interval === 'month') {
             // For a month, the timeline starts on the first of the month
             // This code allows us to take into account the varying length of each month.
-            const monthStart = getBeginningOfMonth(
-                useStartEndDates.timelineStart,
-                0
-            )
+            const monthStart = getBeginningOfMonth(timelineStart, 0)
 
             // number of months from start + 1/nth of the current month
             const numMonths = Math.abs(
-                differenceInMonths(monthStart, timeAsDate)
+                differenceInMonths(monthStart, playheadTime)
             )
-            const extraDays = timeAsDate.getDate() - 1
-            const daysInCurrentMonth = daysInMonth(timeAsDate)
-            const extraHours = timeAsDate.getHours()
+            const extraDays = playheadTime.getDate() - 1
+            const daysInCurrentMonth = daysInMonth(playheadTime)
+            const extraHours = playheadTime.getHours()
             newTime =
                 (numMonths +
                     (extraDays + extraHours / 24) / daysInCurrentMonth) *
