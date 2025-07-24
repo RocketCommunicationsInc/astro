@@ -544,10 +544,6 @@ test.describe('Timeline Playhead Timezone Handling', () => {
         const timelineBox = await timeline.boundingBox()
         expect(timelineBox).not.toBeNull()
 
-        // Calculate expected position (accounting for header offset)
-        const expectedMiddle = timelineBox!.x + timelineBox!.width / 2
-        const playheadCenter = playheadBox!.x + playheadBox!.width / 2
-
         // Verify the playhead is visible and positioned (basic functionality test)
         expect(playheadBox!.x).toBeGreaterThan(200) // Should be past the header area
         expect(playheadBox!.x).toBeLessThan(timelineBox!.width - 200) // Should not be at the far right
