@@ -306,52 +306,84 @@ export class RuxTimeline {
 
         const timeAsDate = new Date(time)
 
-        // For UTC timezone, ensure we're comparing UTC times consistently
-        // The issue was that Date objects may have timezone-specific interpretations
-        let timelineStart = useStartEndDates.timelineStart
-        let playheadTime = timeAsDate
+        // Calculate time difference based on timezone handling
+        let newTime: number
 
         if (this.timezone === 'UTC') {
-            // Ensure both dates are treated as UTC for consistent calculation
-            timelineStart = new Date(useStartEndDates.timelineStart.getTime())
-            playheadTime = new Date(timeAsDate.getTime())
+            // For UTC timezone, use explicit UTC time calculations to avoid any local timezone interference
+            const timelineStartMs = useStartEndDates.timelineStart.getTime()
+            const playheadTimeMs = timeAsDate.getTime()
+            const diffMs = Math.abs(playheadTimeMs - timelineStartMs)
+
+            if (this.interval === 'day') {
+                newTime = diffMs / (1000 * 60 * 60) // Convert to hours
+            } else if (this.interval === 'week') {
+                newTime = diffMs / (1000 * 60 * 60 * 7) // Convert to hours then divide by 7
+            } else {
+                newTime = diffMs / (1000 * 60) // Convert to minutes (default case)
+            }
         } else {
-            // For non-UTC timezones, convert both to the target timezone
-            timelineStart = utcToZonedTime(
+            // For non-UTC timezones, use timezone-aware date-fns functions
+            const timelineStart = utcToZonedTime(
                 useStartEndDates.timelineStart,
                 this.timezone
             )
-            playheadTime = utcToZonedTime(timeAsDate, this.timezone)
-        }
+            const playheadTime = utcToZonedTime(timeAsDate, this.timezone)
 
-        let newTime = Math.abs(differenceInMinutes(timelineStart, playheadTime))
-
-        if (this.interval === 'day') {
-            newTime = Math.abs(differenceInHours(timelineStart, playheadTime))
-        }
-
-        if (this.interval === 'week') {
-            newTime =
-                Math.abs(differenceInHours(timelineStart, playheadTime)) / 7
+            if (this.interval === 'day') {
+                newTime = Math.abs(
+                    differenceInHours(timelineStart, playheadTime)
+                )
+            } else if (this.interval === 'week') {
+                newTime =
+                    Math.abs(differenceInHours(timelineStart, playheadTime)) / 7
+            } else {
+                newTime = Math.abs(
+                    differenceInMinutes(timelineStart, playheadTime)
+                )
+            }
         }
 
         if (this.interval === 'month') {
             // For a month, the timeline starts on the first of the month
             // This code allows us to take into account the varying length of each month.
-            const monthStart = getBeginningOfMonth(timelineStart, 0)
-
-            // number of months from start + 1/nth of the current month
-            const numMonths = Math.abs(
-                differenceInMonths(monthStart, playheadTime)
-            )
-            const extraDays = playheadTime.getDate() - 1
-            const daysInCurrentMonth = daysInMonth(playheadTime)
-            const extraHours = playheadTime.getHours()
-            newTime =
-                (numMonths +
-                    (extraDays + extraHours / 24) / daysInCurrentMonth) *
-                    this.columnWidth +
-                200
+            if (this.timezone === 'UTC') {
+                // For UTC, use the original dates directly
+                const monthStart = getBeginningOfMonth(
+                    useStartEndDates.timelineStart,
+                    0
+                )
+                const numMonths = Math.abs(
+                    differenceInMonths(monthStart, timeAsDate)
+                )
+                const extraDays = timeAsDate.getDate() - 1
+                const daysInCurrentMonth = daysInMonth(timeAsDate)
+                const extraHours = timeAsDate.getHours()
+                newTime =
+                    (numMonths +
+                        (extraDays + extraHours / 24) / daysInCurrentMonth) *
+                        this.columnWidth +
+                    200
+            } else {
+                // For non-UTC timezones, use timezone-converted dates
+                const timelineStart = utcToZonedTime(
+                    useStartEndDates.timelineStart,
+                    this.timezone
+                )
+                const playheadTime = utcToZonedTime(timeAsDate, this.timezone)
+                const monthStart = getBeginningOfMonth(timelineStart, 0)
+                const numMonths = Math.abs(
+                    differenceInMonths(monthStart, playheadTime)
+                )
+                const extraDays = playheadTime.getDate() - 1
+                const daysInCurrentMonth = daysInMonth(playheadTime)
+                const extraHours = playheadTime.getHours()
+                newTime =
+                    (numMonths +
+                        (extraDays + extraHours / 24) / daysInCurrentMonth) *
+                        this.columnWidth +
+                    200
+            }
             return newTime
         }
 
