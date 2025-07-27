@@ -42,7 +42,6 @@ export class RuxContainer {
     ) {
         const show = hasSlot(this.el, slotName)
         this.activeSlots = { ...this.activeSlots, [slotName]: show }
-        console.log(this.activeSlots, 'active slots')
         if (this.activeSlots['tab-bar']) {
             const tabs = this.el.querySelector('rux-tabs')
             if (tabs?.hasAttribute('compact')) {
