@@ -1,5 +1,13 @@
 # @astrouxds/astro-web-components
 
+## 7.26.1
+
+### Patch Changes
+
+#### Container
+
+-   Remove console log
+
 ## 7.26.0
 
 ### Minor Changes

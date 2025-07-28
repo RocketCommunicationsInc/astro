@@ -1,5 +1,11 @@
 # astro-angular
 
+## 0.6.1
+
+### Patch Changes
+
+- Remove console log
+
 ## 0.6.0
 
 ### Minor Changes
