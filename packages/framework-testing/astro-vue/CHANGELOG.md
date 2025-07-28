@@ -1,5 +1,13 @@
 # astro-vue
 
+## 0.6.1
+
+### Patch Changes
+
+- Remove console log
+- Updated dependencies
+  - @astrouxds/astro-web-components@7.26.1
+
 ## 0.6.0
 
 ### Minor Changes
