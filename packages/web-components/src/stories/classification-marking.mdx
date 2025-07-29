@@ -9,8 +9,6 @@ Classification and Control Markings are required for digital products created fo
 
 For the most up-to-date policies, see the [ISOO Training Aids](https://www.archives.gov/isoo/training/training-aids) for classification marking policies and the [CUI Registry](https://www.archives.gov/cui) for control marking policies. In addition to these requirements, each government agency may have their own rules to use for Classification and Control Markings.
 
-> NOTE: 'CUI' and 'Controlled' markings are semantically the same. It is up to your organization's preference to decide which one to use.
-
 ## Guidelines
 
 * [Astro UXDS: Classification Markings](https://astrouxds.com/components/classification-markings/)
@@ -32,7 +30,6 @@ import { Classification } from '@astrouxds/astro-web-components'
 ```
  type Classification =
     | 'cui'
-    | 'controlled'
     | 'confidential'
     | 'secret'
     | 'top-secret'
@@ -61,8 +58,6 @@ When using the Classification Marking component as a wrapper with slotted childr
 ### All Tag Variants
 
 By default Classification Markings are rendered in banner format. Applying the `tag` property attribute sets the marking type. The `tag` attribute property defines the Classification Marking as a Tag.
-
-> NOTE: The 'Controlled' marking will always display as 'CUI' when using the Tag property.
 
 <Canvas of={ClassificationMarkingStories.AllTagVariants} />
 
