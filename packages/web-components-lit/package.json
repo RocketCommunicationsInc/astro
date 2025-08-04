@@ -1,0 +1,29 @@
+{
+  "name": "astro-components-lit",
+  "version": "7.0.0",
+  "description": "Astro Web Components",
+  "author": "Jacob Norton <jacob.norton@rocketcom.com>",
+  "homepage": "https://github.com/RocketCommunicationsInc/astro#readme",
+  "license": "ISC",
+  "main": "lib/astro-components-lit.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RocketCommunicationsInc/astro.git"
+  },
+  "scripts": {
+    "test": "node ./__tests__/astro-components-lit.test.js"
+  },
+  "bugs": {
+    "url": "https://github.com/RocketCommunicationsInc/astro/issues"
+  },
+  "dependencies": {
+    "lit": "^3.3.1"
+  }
+}
