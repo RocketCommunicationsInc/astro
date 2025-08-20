@@ -1,17 +1,6 @@
 [build]
   publish = "packages/web-components/storybook-static"
-  command = "npm run build"
+  command = "npm run build.web-comps && cd packages/web-components && npm run build.storybook"
 
 [build.environment]
   NODE_VERSION = "18"
-  NPM_FLAGS = "--legacy-peer-deps"
-
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-
-[plugins.lighthouse]
-  build_directory = "packages/web-components/storybook-static"
-  performance_tests = false
-  accessibility_tests = false
-  best_practices_tests = false
-  seo_tests = false
