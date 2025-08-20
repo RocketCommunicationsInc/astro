@@ -20,7 +20,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Get branch name
         id: branch-name
-        uses: tj-actions/branch-names@v7.0.7
+        uses: tj-actions/branch-names@v9.0.0
       - name: Cache node modules
         id: cache-node-modules
         uses: actions/cache@v3
@@ -41,7 +41,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get branch name
         id: branch-name
-        uses: tj-actions/branch-names@v7.0.7
+        uses: tj-actions/branch-names@v9.0.0
       - name: Get Cache
         uses: actions/cache@v3
         id: get-cache
@@ -67,7 +67,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Get branch name
         id: branch-name
-        uses: tj-actions/branch-names@v7.0.7
+        uses: tj-actions/branch-names@v9.0.0
       - name: Get Cache
         uses: actions/cache@v3
         id: get-cache
