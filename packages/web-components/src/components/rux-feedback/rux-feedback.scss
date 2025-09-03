@@ -1,0 +1,59 @@
+:host {
+    // Internal private design tokens
+    --feedback-header-padding: var(--spacing-2); //8px
+    --feedback-footer-padding: var(--spacing-2); //8px
+
+    /**
+     * @prop --body-padding: the feedback's body padding
+     */
+    --body-padding: var(--feedback-footer-padding);
+    display: block;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+.rux-feedback {
+    border: 1px solid var(--feedback-color-border);
+    border-radius: var(--radius-base);
+    background: var(--color-background-base-default);
+    box-shadow: var(--shadow-overlay);
+}
+
+.rux-feedback__header {
+    padding: var(--feedback-header-padding);
+    font-family: var(--font-heading-3-font-family);
+    font-size: var(--font-heading-3-font-size);
+    font-weight: var(--font-heading-3-font-weight);
+    letter-spacing: var(--font-heading-3-letter-spacing);
+    line-height: var(--font-heading-3-line-height);
+    box-sizing: border-box;
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+}
+
+.rux-feedback__body {
+    padding: var(--body-padding);
+    box-sizing: border-box;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+}
+
+.rux-feedback__footer {
+    padding-left: var(--feedback-footer-padding);
+    padding-right: var(--feedback-footer-padding);
+    padding-top: var(--feedback-footer-padding);
+    padding-bottom: var(--feedback-footer-padding);
+    box-sizing: border-box;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    line-height: var(--font-body-1-line-height);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+}

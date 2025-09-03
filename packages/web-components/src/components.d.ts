@@ -286,6 +286,8 @@ export namespace Components {
          */
         "toggle": () => Promise<void>;
     }
+    interface RuxFeedback {
+    }
     interface RuxGlobalStatusBar {
         /**
           * Sets the domain of the application to be displayed in the app-meta element
@@ -20424,6 +20426,12 @@ declare global {
         prototype: HTMLRuxDialogElement;
         new (): HTMLRuxDialogElement;
     };
+    interface HTMLRuxFeedbackElement extends Components.RuxFeedback, HTMLStencilElement {
+    }
+    var HTMLRuxFeedbackElement: {
+        prototype: HTMLRuxFeedbackElement;
+        new (): HTMLRuxFeedbackElement;
+    };
     interface HTMLRuxGlobalStatusBarElement extends Components.RuxGlobalStatusBar, HTMLStencilElement {
     }
     var HTMLRuxGlobalStatusBarElement: {
@@ -34473,6 +34481,7 @@ declare global {
         "rux-container": HTMLRuxContainerElement;
         "rux-datetime": HTMLRuxDatetimeElement;
         "rux-dialog": HTMLRuxDialogElement;
+        "rux-feedback": HTMLRuxFeedbackElement;
         "rux-global-status-bar": HTMLRuxGlobalStatusBarElement;
         "rux-icon": HTMLRuxIconElement;
         "rux-icon-360": HTMLRuxIcon360Element;
@@ -35866,6 +35875,8 @@ declare namespace LocalJSX {
           * Shows and hides dialog
          */
         "open"?: boolean;
+    }
+    interface RuxFeedback {
     }
     interface RuxGlobalStatusBar {
         /**
@@ -55925,6 +55936,7 @@ declare namespace LocalJSX {
         "rux-container": RuxContainer;
         "rux-datetime": RuxDatetime;
         "rux-dialog": RuxDialog;
+        "rux-feedback": RuxFeedback;
         "rux-global-status-bar": RuxGlobalStatusBar;
         "rux-icon": RuxIcon;
         "rux-icon-360": RuxIcon360;
@@ -57052,6 +57064,7 @@ declare module "@stencil/core" {
             "rux-container": LocalJSX.RuxContainer & JSXBase.HTMLAttributes<HTMLRuxContainerElement>;
             "rux-datetime": LocalJSX.RuxDatetime & JSXBase.HTMLAttributes<HTMLRuxDatetimeElement>;
             "rux-dialog": LocalJSX.RuxDialog & JSXBase.HTMLAttributes<HTMLRuxDialogElement>;
+            "rux-feedback": LocalJSX.RuxFeedback & JSXBase.HTMLAttributes<HTMLRuxFeedbackElement>;
             "rux-global-status-bar": LocalJSX.RuxGlobalStatusBar & JSXBase.HTMLAttributes<HTMLRuxGlobalStatusBarElement>;
             "rux-icon": LocalJSX.RuxIcon & JSXBase.HTMLAttributes<HTMLRuxIconElement>;
             /**
