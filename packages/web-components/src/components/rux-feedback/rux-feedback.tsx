@@ -20,10 +20,7 @@ import { hasSlot } from '../../utils/utils'
 export class RuxFeedback {
     @Element() el!: HTMLRuxFeedbackElement
 
-    // @State() activeSlots = {
-    //     header: false,
-    //     footer: false,
-    // }
+    @State() activeTopic: 'issue' | 'idea' | 'bug' | 'other' = 'issue'
 
     render() {
         return (
@@ -42,57 +39,74 @@ export class RuxFeedback {
                                 size="large"
                                 icon="error-outline"
                                 secondary
+                                onClick={() => (this.activeTopic = 'issue')}
                             >
                                 Issue
                             </rux-button>
-                            <rux-button size="large" icon="highlight" secondary>
+                            <rux-button
+                                size="large"
+                                icon="highlight"
+                                secondary
+                                onClick={() => (this.activeTopic = 'idea')}
+                            >
                                 Idea
                             </rux-button>
                             <rux-button
                                 size="large"
                                 icon="bug-report"
                                 secondary
+                                onClick={() => (this.activeTopic = 'bug')}
                             >
                                 Bug
                             </rux-button>
-                            <rux-button size="large" icon="textsms" secondary>
+                            <rux-button
+                                size="large"
+                                icon="textsms"
+                                secondary
+                                onClick={() => (this.activeTopic = 'other')}
+                            >
                                 Other
                             </rux-button>
                         </div>
 
-                        <div class="rux-form-topic__issue">
-                            <rux-input
-                                label="What page are you commenting on?"
-                                placeholder="Add URL"
-                                type="url"
-                                size="medium"
-                            ></rux-input>
-                            <rux-textarea label="Describe your issue"></rux-textarea>
-                        </div>
-
-                        <div class="rux-form-topic__idea">
-                            <rux-textarea label="Tell us about your idea"></rux-textarea>
-                        </div>
-
-                        <div class="rux-form-topic__bug">
-                            <rux-input
-                                label="What page is this bug on?"
-                                placeholder="Add URL"
-                                type="url"
-                                size="medium"
-                            ></rux-input>
-                            <rux-input
-                                label="Browser"
-                                type="text"
-                                size="medium"
-                            ></rux-input>
-                            <rux-textarea label="Describe the bug"></rux-textarea>
-                        </div>
-
-                        <div class="rux-form-topic__other">
-                            <h3>Sentiment picker</h3>
-                            <rux-textarea label="Describe your experience using tktk-platform-Acme"></rux-textarea>
-                        </div>
+                        {this.activeTopic === 'issue' && (
+                            <div class="rux-form-topic__issue">
+                                <rux-input
+                                    label="What page are you commenting on?"
+                                    placeholder="Add URL"
+                                    type="url"
+                                    size="medium"
+                                ></rux-input>
+                                <rux-textarea label="Describe your issue"></rux-textarea>
+                            </div>
+                        )}
+                        {this.activeTopic === 'idea' && (
+                            <div class="rux-form-topic__idea">
+                                <rux-textarea label="Tell us about your idea"></rux-textarea>
+                            </div>
+                        )}
+                        {this.activeTopic === 'bug' && (
+                            <div class="rux-form-topic__bug">
+                                <rux-input
+                                    label="What page is this bug on?"
+                                    placeholder="Add URL"
+                                    type="url"
+                                    size="medium"
+                                ></rux-input>
+                                <rux-input
+                                    label="Browser"
+                                    type="text"
+                                    size="medium"
+                                ></rux-input>
+                                <rux-textarea label="Describe the bug"></rux-textarea>
+                            </div>
+                        )}
+                        {this.activeTopic === 'other' && (
+                            <div class="rux-form-topic__other">
+                                <h3>Sentiment picker</h3>
+                                <rux-textarea label="Describe your experience using tktk-platform-Acme"></rux-textarea>
+                            </div>
+                        )}
 
                         <rux-button secondary>Cancel</rux-button>
                         <rux-button>Send</rux-button>
