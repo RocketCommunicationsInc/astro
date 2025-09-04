@@ -1,17 +1,5 @@
 import { Component, Element, Host, State, h } from '@stencil/core'
 
-import { hasSlot } from '../../utils/utils'
-/**
- * @slot (default) - The feedback widget's content
- * @slot header - The feedback widget's header
- * @slot footer - The feedback widget's footer
- * @part container - The feedback widget's outtermost container
- * @part header - The feedback widget's outside header element
- * @part body - The feedback widget's outside body element
- * @part footer - The feedback widget's outside footer element
- *
- */
-
 @Component({
     tag: 'rux-feedback',
     styleUrl: 'rux-feedback.scss',
@@ -22,6 +10,25 @@ export class RuxFeedback {
 
     @State() activeTopic: 'issue' | 'idea' | 'bug' | 'other' | 'success' =
         'issue'
+
+    private paneSwitcher(
+        topic: 'issue' | 'idea' | 'bug' | 'other' | 'success'
+    ) {
+        this.activeTopic = topic
+    }
+
+    private handleIssueClick = () => {
+        this.paneSwitcher('issue')
+    }
+    private handleIdeaClick = () => {
+        this.paneSwitcher('idea')
+    }
+    private handleBugClick = () => {
+        this.paneSwitcher('bug')
+    }
+    private handleOtherClick = () => {
+        this.paneSwitcher('other')
+    }
 
     render() {
         return (
@@ -40,7 +47,7 @@ export class RuxFeedback {
                                     size="large"
                                     icon="error-outline"
                                     secondary
-                                    onClick={() => (this.activeTopic = 'issue')}
+                                    onClick={this.handleIssueClick}
                                 >
                                     Issue
                                 </rux-button>
@@ -48,7 +55,7 @@ export class RuxFeedback {
                                     size="large"
                                     icon="highlight"
                                     secondary
-                                    onClick={() => (this.activeTopic = 'idea')}
+                                    onClick={this.handleIdeaClick}
                                 >
                                     Idea
                                 </rux-button>
@@ -56,7 +63,7 @@ export class RuxFeedback {
                                     size="large"
                                     icon="bug-report"
                                     secondary
-                                    onClick={() => (this.activeTopic = 'bug')}
+                                    onClick={this.handleBugClick}
                                 >
                                     Bug
                                 </rux-button>
@@ -64,7 +71,7 @@ export class RuxFeedback {
                                     size="large"
                                     icon="textsms"
                                     secondary
-                                    onClick={() => (this.activeTopic = 'other')}
+                                    onClick={this.handleOtherClick}
                                 >
                                     Other
                                 </rux-button>
