@@ -1,7 +1,7 @@
 {
   "name": "astro-vue",
   "private": true,
-  "version": "0.6.1",
+  "version": "0.7.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@astrouxds/astro-web-components": "^7.26.1",
+    "@astrouxds/astro-web-components": "^7.27.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {
