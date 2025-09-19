@@ -4,7 +4,7 @@ import { Meta } from '@storybook/blocks'
 
 # Angular (v10+)
 
-For your convienence, we offer a wrapper library for our Angular components. Out of the box, Angular already has [very good support for Custom Elements](https://custom-elements-everywhere.com/libraries/angular/results/results.html).
+For your convenience, we offer a wrapper library for our Angular components. Out of the box, Angular already has [very good support for Custom Elements](https://custom-elements-everywhere.com/libraries/angular/results/results.html).
 Our wrapper library builds on top of that and adds:
 
 1. Support for ngModel
@@ -13,9 +13,14 @@ Our wrapper library builds on top of that and adds:
 
 ## Versions
 
-The `7.0` version of `@astrouxds/angular` is compatabile with Angular 12 and above and includes Ivy compilation. If you're using an older Angular version, you'll want to use `@astrouxds/angular@6.9`.
+The `7.0` version of `@astrouxds/angular` is compatible with Angular 12 and 13. Starting with version `8.0`, we support Angular 20+ with standalone components. If you're using an older Angular version, you'll want to use `@astrouxds/angular@6.9`.
 
 ## Installation
+
+### Requirements
+
+- Node.js 18 or higher
+- Angular 10+ (see Versions section above)
 
 ### Via NPM
 
@@ -23,7 +28,31 @@ The `7.0` version of `@astrouxds/angular` is compatabile with Angular 12 and abo
 
 ## Integration
 
-Import `AstroComponentsModule`
+### Angular 20+ (Standalone Components)
+
+**BREAKING CHANGE:** Starting with Angular 20, `AstroComponentsModule` no longer exports individual components due to standalone component restrictions.
+
+Import components individually:
+
+```js
+// app.component.ts or your component file
+import { RuxButton, RuxIcon, RuxInput } from '@astrouxds/angular'
+
+@Component({
+    selector: 'app-root',
+    standalone: true,
+    imports: [RuxButton, RuxIcon, RuxInput], // Import only the components you need
+    template: `
+        <rux-button>Click me</rux-button>
+        <rux-icon icon="apps"></rux-icon>
+    `
+})
+export class AppComponent {}
+```
+
+### Angular 12-13 (Module-based)
+
+Import `AstroComponentsModule`:
 
 ```js
 // app.module.ts
@@ -41,8 +70,7 @@ import { AppComponent } from './app.component'
 export class AppModule {}
 ```
 
-> NOTE: When using the `@astrouxds/angular` package, components are lazy loaded only when they appear on the page.
-> It is not possible to cherry pick individual components at this time.
+> NOTE: For Angular 20+, components are imported individually as standalone components. For Angular 12-13, when using the `AstroComponentsModule`, components are lazy loaded only when they appear on the page.
 
 Import Astro's CSS custom properties
 
@@ -76,7 +104,7 @@ Our Astro Web Components are powered by our Design Tokens under the hood. These 
 and made available to you when you import `astro-web-components.css` in the form of CSS Custom Properties.
 Our Design Tokens include everything from our color palette to our spacing system.
 
-We also provide our tokens in other formats (SASS, json) for your convienence. For more information,
+We also provide our tokens in other formats (SASS, json) for your convenience. For more information,
 check out our [Design Tokens](https://www.astrouxds.com/design-tokens/installation/) page for a list
 of our available tokens and their intended usage.
 

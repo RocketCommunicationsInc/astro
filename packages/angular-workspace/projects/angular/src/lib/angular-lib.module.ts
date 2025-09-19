@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { DIRECTIVES } from '../directives/proxies-list';
 import { BooleanValueAccessor } from '../directives/boolean-value-accessor';
 import { NumericValueAccessor } from '../directives/number-value-accessor';
@@ -9,19 +10,10 @@ import { defineCustomElements } from '@astrouxds/astro-web-components/loader';
 
 defineCustomElements(window);
 
-const DECLARATIONS = [
-  ...DIRECTIVES,
-  BooleanValueAccessor,
-  NumericValueAccessor,
-  RadioValueAccessor,
-  SelectValueAccessor,
-  TextValueAccessor,
-];
-
 @NgModule({
-  declarations: DECLARATIONS,
-  exports: DECLARATIONS,
-  imports: [],
+  declarations: [],
+  imports: [CommonModule],
+  exports: [],
   providers: [],
 })
 export class AstroComponentsModule {}
