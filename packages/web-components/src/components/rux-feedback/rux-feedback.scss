@@ -10,50 +10,152 @@
     display: block;
 }
 
-.hidden,
-:host([hidden]) {
-    display: none;
-}
+// .hidden,
+// :host([hidden]) {
+//     display: none;
+// }
 
 .rux-feedback {
-    border: 1px solid var(--feedback-color-border);
-    border-radius: var(--radius-base);
+    width: 18.75rem;
+    height: 37.1875rem;
+    position: relative;
+    outline: 1px solid pink;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+:host::part(tab) {
+    display: flex;
+    width: fit-content;
+    min-width: 6.875rem;
+    height: 2.3125rem;
+    flex-direction: row;
+    flex-shrink: 0;
+    position: relative;
+    // right: -100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    border-radius: 0.25rem 0.25rem 0 0;
+    border-top: 1px solid var(--color-text-interactive-default);
+    border-right: 1px solid var(--color-text-interactive-default);
+    border-left: 1px solid var(--color-text-interactive-default);
+    background: var(--color-background-surface-header);
+    align-self: flex-end;
+    margin-right: 0.38rem;
+    margin-right: var(--spacing-2);
+    padding: var(--spacing-2) var(--spacing-4);
+
+    color: var(--color-text-interactive-default);
+    text-align: center;
+
+    /* control/control-body-1 */
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-style: normal;
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+}
+
+:host::part(header) {
+    border-radius: 0.25rem 0.25rem 0 0;
+}
+
+:host::part(title) {
+    background: var(--color-background-surface-hover, #1c3851);
+    color: var(--Light, #ededed);
+    text-align: center;
+    margin-block: 0;
+    padding: var(--spacing-2);
+
+    /* body/body-1-bold */
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-style: normal;
+    font-weight: var(--font-body-1-bold-font-weight);
+    line-height: var(--font-body-1-bold-line-height);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+}
+
+:host::part(form) {
     background: var(--color-background-base-default);
-    box-shadow: var(--shadow-overlay);
+    padding: var(--spacing-6) var(--spacing-4);
 }
 
-.rux-feedback__header {
-    padding: var(--feedback-header-padding);
-    font-family: var(--font-heading-3-font-family);
-    font-size: var(--font-heading-3-font-size);
-    font-weight: var(--font-heading-3-font-weight);
-    letter-spacing: var(--font-heading-3-letter-spacing);
-    line-height: var(--font-heading-3-line-height);
-    box-sizing: border-box;
-    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+:host::part(topic-group) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-4);
 }
 
-.rux-feedback__body {
-    padding: var(--body-padding);
-    box-sizing: border-box;
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    line-height: var(--font-body-1-line-height);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+.rux-form__topic-button {
+    width: 3.6875rem;
+    height: 3.625rem;
+    flex-shrink: 0;
+    border-radius: 0.375rem;
+    border: 1px solid #4dacff;
+    background: var(--color-background-surface-default);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-1);
+    color: var(--color-text-interactive-default);
+    cursor: pointer;
+
+    .topic-button__icon {
+        color: var(--color-text-interactive-default);
+    }
+
+    &.active,
+    &:hover {
+        background: var(--color-background-surface-selected);
+        color: var(--color-text-white);
+        .topic-button__icon {
+            color: var(--color-text-white);
+        }
+    }
 }
 
-.rux-feedback__footer {
-    padding-left: var(--feedback-footer-padding);
-    padding-right: var(--feedback-footer-padding);
-    padding-top: var(--feedback-footer-padding);
-    padding-bottom: var(--feedback-footer-padding);
-    box-sizing: border-box;
-    font-family: var(--font-body-1-font-family);
-    font-size: var(--font-body-1-font-size);
-    font-weight: var(--font-body-1-font-weight);
-    line-height: var(--font-body-1-line-height);
-    letter-spacing: var(--font-body-1-letter-spacing);
-    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
-}
+// .rux-feedback__header {
+//     padding: var(--feedback-header-padding);
+//     font-family: var(--font-heading-3-font-family);
+//     font-size: var(--font-heading-3-font-size);
+//     font-weight: var(--font-heading-3-font-weight);
+//     letter-spacing: var(--font-heading-3-letter-spacing);
+//     line-height: var(--font-heading-3-line-height);
+//     box-sizing: border-box;
+//     text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+// }
+
+// .rux-feedback__body {
+//     padding: var(--body-padding);
+//     box-sizing: border-box;
+//     font-family: var(--font-body-1-font-family);
+//     font-size: var(--font-body-1-font-size);
+//     font-weight: var(--font-body-1-font-weight);
+//     line-height: var(--font-body-1-line-height);
+//     letter-spacing: var(--font-body-1-letter-spacing);
+//     text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+// }
+
+// .rux-feedback__footer {
+//     padding-left: var(--feedback-footer-padding);
+//     padding-right: var(--feedback-footer-padding);
+//     padding-top: var(--feedback-footer-padding);
+//     padding-bottom: var(--feedback-footer-padding);
+//     box-sizing: border-box;
+//     font-family: var(--font-body-1-font-family);
+//     font-size: var(--font-body-1-font-size);
+//     font-weight: var(--font-body-1-font-weight);
+//     line-height: var(--font-body-1-line-height);
+//     letter-spacing: var(--font-body-1-letter-spacing);
+//     text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+// }
