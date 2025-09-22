@@ -1,6 +1,6 @@
 {
   "name": "angular-workspace",
-  "version": "7.26.1",
+  "version": "8.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -24,7 +24,7 @@
     "@angular/platform-browser": "~20.0.0",
     "@angular/platform-browser-dynamic": "~20.0.0",
     "@angular/router": "~20.0.0",
-    "@astrouxds/astro-web-components": "^7.26.1",
+    "@astrouxds/astro-web-components": "^7.27.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.4.1",
     "zone.js": "~0.15.0"
