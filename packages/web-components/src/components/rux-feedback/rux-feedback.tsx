@@ -17,6 +17,18 @@ export class RuxFeedback {
         | 'negative'
         | 'confusing' = 'positive'
 
+    @State() isOpen: boolean = false
+
+    private handleTabClick = () => {
+        this.isOpen = !this.isOpen
+        const feedbackEl = this.el.shadowRoot?.querySelector('.rux-feedback')
+        if (this.isOpen) {
+            feedbackEl?.classList.add('open')
+        } else {
+            feedbackEl?.classList.remove('open')
+        }
+    }
+
     private paneSwitcher(
         topic: 'issue' | 'idea' | 'bug' | 'other' | 'success'
     ) {
@@ -59,12 +71,23 @@ export class RuxFeedback {
         return (
             <Host>
                 <div class="rux-feedback" part="container">
-                    <div class="rux-feedback__tab" part="tab">
+                    <div
+                        class="rux-feedback__tab"
+                        part="tab"
+                        onClick={this.handleTabClick}
+                    >
                         Feedback
-                        <rux-icon
-                            icon="keyboard-arrow-up"
-                            size="small"
-                        ></rux-icon>
+                        {this.isOpen ? (
+                            <rux-icon
+                                icon="keyboard-arrow-down"
+                                size="extra-small"
+                            ></rux-icon>
+                        ) : (
+                            <rux-icon
+                                icon="keyboard-arrow-up"
+                                size="extra-small"
+                            ></rux-icon>
+                        )}
                     </div>
                     <div class="rux-feedback__header" part="header">
                         <rux-classification-marking classification="unclassified"></rux-classification-marking>

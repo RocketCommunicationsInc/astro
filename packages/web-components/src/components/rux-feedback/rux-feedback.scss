@@ -1,40 +1,36 @@
 :host {
     // Internal private design tokens
-    --feedback-header-padding: var(--spacing-2); //8px
-    --feedback-footer-padding: var(--spacing-2); //8px
-
-    /**
-     * @prop --body-padding: the feedback's body padding
-     */
-    --body-padding: var(--feedback-footer-padding);
-    display: block;
+    --widget-width: 18.75rem; //300px
+    --widget-height: 37.1875rem; //595px
+    --tab-height: 2.3125rem; //37px
+    --tab-min-width: 6.875rem; //110px
+    --topic-button-size: 3.6875rem; //59px
+    --sentiment-button-size: 2.625rem; //42px
 }
 
 .rux-feedback {
-    width: 18.75rem;
-    height: 37.1875rem;
+    width: var(--widget-width);
+    height: var(--widget-height);
     position: relative;
-    // outline: 1px solid pink;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     position: fixed;
-    top: calc(100vh - 2.3125rem - 2rem);
-    left: calc(100vw - 18.75rem - 1rem);
-    z-index: 100;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    top: calc(100vh - var(--tab-height));
+    left: calc(100vw - var(--widget-width) - 1rem);
+    z-index: 10000;
+    transition: top 0.3s ease-in-out;
 
     &.open {
-        top: calc(100vh - 37.1875rem - 2rem);
-        transition: top 0.3s ease-in-out;
+        top: calc(100vh - var(--widget-height));
     }
 }
 
 :host::part(tab) {
     display: flex;
     width: fit-content;
-    min-width: 6.875rem;
-    height: 2.3125rem;
+    min-width: var(--tab-min-width);
+    height: var(--tab-height);
     flex-direction: row;
     flex-shrink: 0;
     position: relative;
@@ -49,7 +45,6 @@
     align-self: flex-end;
     margin-right: 0.38rem;
     margin-right: var(--spacing-2);
-    padding: var(--spacing-2) var(--spacing-4);
 
     color: var(--color-text-interactive-default);
     text-align: center;
@@ -120,8 +115,8 @@
 }
 
 .rux-form__topic-button {
-    width: 3.6875rem;
-    height: 3.625rem;
+    width: var(--topic-button-size);
+    height: var(--topic-button-size);
     flex-shrink: 0;
     border-radius: 0.375rem;
     border: 1px solid #4dacff;
@@ -174,8 +169,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 2.625rem;
-        height: 2.625rem;
+        width: var(--sentiment-button-size);
+        height: var(--sentiment-button-size);
         border-radius: 0.25rem;
         border: 1px solid var(--color-text-interactive-default);
         background: var(--color-background-surface-default);
