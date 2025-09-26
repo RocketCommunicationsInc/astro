@@ -1,4 +1,5 @@
-import { Component, Element, Host, State, h } from '@stencil/core'
+import { Component, Element, Host, Prop, State, h } from '@stencil/core'
+import { Classification } from '../../common/commonTypes.module'
 
 @Component({
     tag: 'rux-feedback',
@@ -7,6 +8,8 @@ import { Component, Element, Host, State, h } from '@stencil/core'
 })
 export class RuxFeedback {
     @Element() el!: HTMLRuxFeedbackElement
+
+    @Prop({ reflect: true }) classification?: Classification = undefined
 
     @State() activeTopic: 'issue' | 'idea' | 'bug' | 'other' | 'success' =
         'issue'
@@ -70,7 +73,7 @@ export class RuxFeedback {
     render() {
         return (
             <Host>
-                <div class="rux-feedback" part="container">
+                <div class={`rux-feedback ${this.isOpen ? 'open' : ''}`} part="container">
                     <div
                         class="rux-feedback__tab"
                         part="tab"
@@ -90,7 +93,9 @@ export class RuxFeedback {
                         )}
                     </div>
                     <div class="rux-feedback__header" part="header">
-                        <rux-classification-marking classification="unclassified"></rux-classification-marking>
+                        {this.classification && (
+                            <rux-classification-marking classification={this.classification}></rux-classification-marking>
+                        )}
                         <h3 class="rux-feedback__title" part="title">
                             Send us your feedback
                         </h3>
