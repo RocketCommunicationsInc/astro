@@ -54,17 +54,16 @@ export class RuxFeedback {
         this.activeTopic = topic
     }
 
-    private handleIssueClick = () => {
-        this.paneSwitcher('issue')
-    }
-    private handleIdeaClick = () => {
-        this.paneSwitcher('idea')
-    }
-    private handleBugClick = () => {
-        this.paneSwitcher('bug')
-    }
-    private handleOtherClick = () => {
-        this.paneSwitcher('other')
+    private handleTopicClick = (event: Event) => {
+        const target = event.currentTarget as HTMLElement
+        const topic = target.getAttribute('data-topic') as
+            | 'issue'
+            | 'idea'
+            | 'bug'
+            | 'other'
+        if (topic) {
+            this.paneSwitcher(topic)
+        }
     }
 
     // Switch between sentiment options
@@ -109,24 +108,7 @@ export class RuxFeedback {
                     class={`rux-feedback ${this.isOpen ? 'open' : ''}`}
                     part="container"
                 >
-                    <div
-                        class="rux-feedback__tab"
-                        part="tab"
-                        onClick={this.handleTabClick}
-                    >
-                        Feedback
-                        {this.isOpen ? (
-                            <rux-icon
-                                icon="keyboard-arrow-down"
-                                size="extra-small"
-                            ></rux-icon>
-                        ) : (
-                            <rux-icon
-                                icon="keyboard-arrow-up"
-                                size="extra-small"
-                            ></rux-icon>
-                        )}
-                    </div>
+                    {this.renderFeedbackTab()}
                     <div class="rux-feedback__header" part="header">
                         {this.classification && (
                             <rux-classification-marking
@@ -139,71 +121,7 @@ export class RuxFeedback {
                     </div>
                     {this.activeTopic !== 'success' && (
                         <form class="rux-feedback__form" part="form">
-                            <div
-                                class="rux-form__topic-group"
-                                part="topic-group"
-                            >
-                                <div
-                                    class={`rux-form__topic-button ${
-                                        this.activeTopic === 'issue'
-                                            ? 'active'
-                                            : ''
-                                    }`}
-                                    onClick={this.handleIssueClick}
-                                >
-                                    <rux-icon
-                                        class="topic-button__icon"
-                                        icon="error-outline"
-                                        size="20px"
-                                    ></rux-icon>
-                                    <div class="topic-button__label">Issue</div>
-                                </div>
-                                <div
-                                    class={`rux-form__topic-button ${
-                                        this.activeTopic === 'idea'
-                                            ? 'active'
-                                            : ''
-                                    }`}
-                                    onClick={this.handleIdeaClick}
-                                >
-                                    <rux-icon
-                                        class="topic-button__icon"
-                                        icon="highlight"
-                                        size="20px"
-                                    ></rux-icon>
-                                    <div class="topic-button__label">Idea</div>
-                                </div>
-                                <div
-                                    class={`rux-form__topic-button ${
-                                        this.activeTopic === 'bug'
-                                            ? 'active'
-                                            : ''
-                                    }`}
-                                    onClick={this.handleBugClick}
-                                >
-                                    <rux-icon
-                                        class="topic-button__icon"
-                                        icon="bug-report"
-                                        size="20px"
-                                    ></rux-icon>
-                                    <div class="topic-button__label">Bug</div>
-                                </div>
-                                <div
-                                    class={`rux-form__topic-button ${
-                                        this.activeTopic === 'other'
-                                            ? 'active'
-                                            : ''
-                                    }`}
-                                    onClick={this.handleOtherClick}
-                                >
-                                    <rux-icon
-                                        class="topic-button__icon"
-                                        icon="textsms"
-                                        size="20px"
-                                    ></rux-icon>
-                                    <div class="topic-button__label">Other</div>
-                                </div>
-                            </div>
+                            {this.renderTopicSelector()}
 
                             {this.activeTopic === 'issue' && (
                                 <div
@@ -385,6 +303,60 @@ export class RuxFeedback {
                     )}
                 </div>
             </Host>
+        )
+    }
+
+    private renderFeedbackTab() {
+        console.log('isOpen', this.isOpen)
+        return (
+            <div
+                class="rux-feedback__tab"
+                part="tab"
+                onClick={this.handleTabClick}
+            >
+                Feedback
+                {this.isOpen ? (
+                    <rux-icon
+                        icon="keyboard-arrow-down"
+                        size="extra-small"
+                    ></rux-icon>
+                ) : (
+                    <rux-icon
+                        icon="keyboard-arrow-up"
+                        size="extra-small"
+                    ></rux-icon>
+                )}
+            </div>
+        )
+    }
+
+    private renderTopicSelector() {
+        return (
+            <div class="rux-form__topic-selector" part="topic-selector">
+                {this.renderTopicButton('issue', 'Issue', 'error-outline')}
+                {this.renderTopicButton('idea', 'Idea', 'highlight')}
+                {this.renderTopicButton('bug', 'Bug', 'bug-report')}
+                {this.renderTopicButton('other', 'Other', 'textsms')}
+            </div>
+        )
+    }
+
+    private renderTopicButton(topic: string, label: string, icon: string) {
+        return (
+            <div
+                class={`rux-form__topic-button ${
+                    this.activeTopic === topic ? 'active' : ''
+                }`}
+                data-topic={topic}
+                onClick={this.handleTopicClick}
+            >
+                <rux-icon
+                    class="topic-button__icon"
+                    icon={icon}
+                    size="20px"
+                ></rux-icon>
+                <div class="topic-button__label">{label}</div>
+            </div>
         )
     }
 }

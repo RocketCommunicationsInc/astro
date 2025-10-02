@@ -98,7 +98,7 @@
     letter-spacing: var(--font-body-2-letter-spacing);
 }
 
-:host::part(topic-group),
+:host::part(topic-selector),
 :host::part(sentiment-group) {
     display: flex;
     flex-direction: row;
