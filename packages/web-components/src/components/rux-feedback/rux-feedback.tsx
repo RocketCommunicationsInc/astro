@@ -123,149 +123,17 @@ export class RuxFeedback {
                         <form class="rux-feedback__form" part="form">
                             {this.renderTopicSelector()}
 
-                            {this.activeTopic === 'issue' && (
-                                <div
-                                    class="rux-form-topic__form-container rux-form-topic__issue"
-                                    part="issue"
-                                >
-                                    <rux-input
-                                        label="What page are you commenting on?"
-                                        placeholder="Add URL"
-                                        type="url"
-                                        size="medium"
-                                    ></rux-input>
-                                    <rux-textarea
-                                        label="Describe your issue"
-                                        rows={8}
-                                    ></rux-textarea>
-                                </div>
-                            )}
+                            {this.activeTopic === 'issue' &&
+                                this.renderIssueForm()}
 
-                            {this.activeTopic === 'idea' && (
-                                <div
-                                    class="rux-form-topic__form-container rux-form-topic__idea"
-                                    part="idea"
-                                >
-                                    <rux-textarea
-                                        label="Tell us about your idea"
-                                        rows={12}
-                                    ></rux-textarea>
-                                </div>
-                            )}
+                            {this.activeTopic === 'idea' &&
+                                this.renderIdeaForm()}
 
-                            {this.activeTopic === 'bug' && (
-                                <div
-                                    class="rux-form-topic__form-container rux-form-topic__bug"
-                                    part="bug"
-                                >
-                                    <rux-input
-                                        label="What page is this bug on?"
-                                        placeholder="Add URL"
-                                        type="url"
-                                        size="medium"
-                                    ></rux-input>
-                                    <rux-input
-                                        label="Browser"
-                                        type="text"
-                                        size="medium"
-                                    ></rux-input>
-                                    <rux-textarea
-                                        label="Describe the bug"
-                                        rows={4}
-                                    ></rux-textarea>
-                                </div>
-                            )}
+                            {this.activeTopic === 'bug' &&
+                                this.renderBugReportForm()}
 
-                            {this.activeTopic === 'other' && (
-                                <div
-                                    class="rux-form-topic__form-container rux-form-topic__other"
-                                    part="other"
-                                >
-                                    <label>Sentiment (optional)</label>
-                                    <div
-                                        class="rux-form__sentiment-buttons"
-                                        part="sentiment-group"
-                                    >
-                                        <div
-                                            class={`rux-form__sentiment-button ${
-                                                this.activeSentiment ===
-                                                'positive'
-                                                    ? 'active'
-                                                    : ''
-                                            }`}
-                                            onClick={this.handlePositiveClick}
-                                        >
-                                            <div class="sentiment-button__emoji-wrapper">
-                                                <div class="sentiment-button__emoji">
-                                                    😊
-                                                </div>
-                                            </div>
-                                            <div class="sentiment-button__label">
-                                                Positive
-                                            </div>
-                                        </div>
-                                        <div
-                                            class={`rux-form__sentiment-button ${
-                                                this.activeSentiment ===
-                                                'neutral'
-                                                    ? 'active'
-                                                    : ''
-                                            }`}
-                                            onClick={this.handleNeutralClick}
-                                        >
-                                            <div class="sentiment-button__emoji-wrapper">
-                                                <div class="sentiment-button__emoji">
-                                                    😐
-                                                </div>
-                                            </div>
-                                            <div class="sentiment-button__label">
-                                                Neutral
-                                            </div>
-                                        </div>
-                                        <div
-                                            class={`rux-form__sentiment-button ${
-                                                this.activeSentiment ===
-                                                'negative'
-                                                    ? 'active'
-                                                    : ''
-                                            }`}
-                                            onClick={this.handleNegativeClick}
-                                        >
-                                            <div class="sentiment-button__emoji-wrapper">
-                                                <div class="sentiment-button__emoji">
-                                                    😠
-                                                </div>
-                                            </div>
-                                            <div class="sentiment-button__label">
-                                                Negative
-                                            </div>
-                                        </div>
-                                        <div
-                                            class={`rux-form__sentiment-button ${
-                                                this.activeSentiment ===
-                                                'confusing'
-                                                    ? 'active'
-                                                    : ''
-                                            }`}
-                                            onClick={this.handleConfusingClick}
-                                        >
-                                            <div class="sentiment-button__emoji-wrapper">
-                                                <div class="sentiment-button__emoji">
-                                                    😖
-                                                </div>
-                                            </div>
-                                            <div class="sentiment-button__label">
-                                                Confusing
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <rux-textarea
-                                        label="Describe your experience using tktk-platform-Acme"
-                                        rows={5}
-                                        style={{ resize: 'none' }}
-                                    ></rux-textarea>
-                                </div>
-                            )}
+                            {this.activeTopic === 'other' &&
+                                this.renderOtherFeedbackForm()}
 
                             <div class="rux-form__buttons">
                                 <rux-button secondary>Cancel</rux-button>
@@ -306,6 +174,7 @@ export class RuxFeedback {
         )
     }
 
+    // Feedback tab that toggles the form open/closed
     private renderFeedbackTab() {
         console.log('isOpen', this.isOpen)
         return (
@@ -330,6 +199,7 @@ export class RuxFeedback {
         )
     }
 
+    // Topic selector buttons
     private renderTopicSelector() {
         return (
             <div class="rux-form__topic-selector" part="topic-selector">
@@ -341,6 +211,7 @@ export class RuxFeedback {
         )
     }
 
+    // Individual topic button
     private renderTopicButton(topic: string, label: string, icon: string) {
         return (
             <div
@@ -356,6 +227,128 @@ export class RuxFeedback {
                     size="20px"
                 ></rux-icon>
                 <div class="topic-button__label">{label}</div>
+            </div>
+        )
+    }
+
+    // Form for "Issue" topic
+    private renderIssueForm() {
+        return (
+            <div
+                class="rux-form-topic__form-container rux-form-topic__issue"
+                part="issue"
+            >
+                <rux-input
+                    label="What page are you commenting on?"
+                    placeholder="Add URL"
+                    type="url"
+                    size="medium"
+                ></rux-input>
+                <rux-textarea
+                    label="Describe your issue"
+                    rows={8}
+                ></rux-textarea>
+            </div>
+        )
+    }
+
+    // Form for "Idea" topic
+    private renderIdeaForm() {
+        return (
+            <div
+                class="rux-form-topic__form-container rux-form-topic__idea"
+                part="idea"
+            >
+                <rux-textarea
+                    label="Tell us about your idea"
+                    rows={12}
+                ></rux-textarea>
+            </div>
+        )
+    }
+
+    // Form for "Bug Report" topic
+    private renderBugReportForm() {
+        return (
+            <div
+                class="rux-form-topic__form-container rux-form-topic__bug"
+                part="bug"
+            >
+                <rux-input
+                    label="What page is this bug on?"
+                    placeholder="Add URL"
+                    type="url"
+                    size="medium"
+                ></rux-input>
+                <rux-input
+                    label="Browser"
+                    type="text"
+                    size="medium"
+                ></rux-input>
+                <rux-textarea label="Describe the bug" rows={4}></rux-textarea>
+            </div>
+        )
+    }
+
+    // Form for "Other" topic
+    private renderOtherFeedbackForm() {
+        return (
+            <div
+                class="rux-form-topic__form-container rux-form-topic__other"
+                part="other"
+            >
+                <label>Sentiment (optional)</label>
+                <div class="rux-form__sentiment-buttons" part="sentiment-group">
+                    <div
+                        class={`rux-form__sentiment-button ${
+                            this.activeSentiment === 'positive' ? 'active' : ''
+                        }`}
+                        onClick={this.handlePositiveClick}
+                    >
+                        <div class="sentiment-button__emoji-wrapper">
+                            <div class="sentiment-button__emoji">😊</div>
+                        </div>
+                        <div class="sentiment-button__label">Positive</div>
+                    </div>
+                    <div
+                        class={`rux-form__sentiment-button ${
+                            this.activeSentiment === 'neutral' ? 'active' : ''
+                        }`}
+                        onClick={this.handleNeutralClick}
+                    >
+                        <div class="sentiment-button__emoji-wrapper">
+                            <div class="sentiment-button__emoji">😐</div>
+                        </div>
+                        <div class="sentiment-button__label">Neutral</div>
+                    </div>
+                    <div
+                        class={`rux-form__sentiment-button ${
+                            this.activeSentiment === 'negative' ? 'active' : ''
+                        }`}
+                        onClick={this.handleNegativeClick}
+                    >
+                        <div class="sentiment-button__emoji-wrapper">
+                            <div class="sentiment-button__emoji">😠</div>
+                        </div>
+                        <div class="sentiment-button__label">Negative</div>
+                    </div>
+                    <div
+                        class={`rux-form__sentiment-button ${
+                            this.activeSentiment === 'confusing' ? 'active' : ''
+                        }`}
+                        onClick={this.handleConfusingClick}
+                    >
+                        <div class="sentiment-button__emoji-wrapper">
+                            <div class="sentiment-button__emoji">😖</div>
+                        </div>
+                        <div class="sentiment-button__label">Confusing</div>
+                    </div>
+                </div>
+                <rux-textarea
+                    label="Describe your experience using tktk-platform-Acme"
+                    rows={5}
+                    style={{ resize: 'none' }}
+                ></rux-textarea>
             </div>
         )
     }
