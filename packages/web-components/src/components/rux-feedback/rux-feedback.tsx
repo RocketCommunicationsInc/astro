@@ -48,7 +48,7 @@ export class RuxFeedback {
     @State() activeSentiment: Sentiment = 'positive'
 
     // Is feedback form open or closed
-    @State() isOpen: boolean = true
+    @State() isOpen: boolean = false
 
     // Form data
     @State() formData: FeedbackFormData = {
@@ -198,8 +198,7 @@ export class RuxFeedback {
     // VALIDATION METHODS
 
     // Validate URL format
-    private isValidUrl(url: string): boolean {
-        if (!url.trim()) return true // Optional field
+    private isValidUrl = (url: string): boolean => {
         try {
             new URL(url)
             return true
@@ -209,7 +208,7 @@ export class RuxFeedback {
     }
 
     // Validate form based on active topic
-    private validateForm(): boolean {
+    private validateForm = (): boolean => {
         const errors: FeedbackFormErrors = {}
         let isValid = true
 
@@ -241,6 +240,7 @@ export class RuxFeedback {
         }
 
         this.formErrors = errors
+        console.log('this.formErrors', this.formErrors, isValid)
         return isValid
     }
 
@@ -250,17 +250,13 @@ export class RuxFeedback {
     }
 
     // Update form data
-    private updateFormData(event: Event) {
+    private updateFormData = (event: Event) => {
         const target = event.currentTarget as HTMLInputElement
         const field = target.getAttribute(
             'data-field'
         ) as keyof FeedbackFormData
         const value = target.value
-        console.log('value', value)
-        this.formData = {
-            ...this.formData,
-            [field]: value,
-        }
+        this.formData = { ...this.formData, [field]: value }
         // Clear error for this field when user starts typing
         if (this.formErrors[field as keyof FeedbackFormErrors]) {
             this.formErrors = {
@@ -274,7 +270,6 @@ export class RuxFeedback {
 
     // Feedback tab that toggles the form open/closed
     private renderFeedbackTab() {
-        console.log('isOpen', this.isOpen)
         return (
             <div
                 class="rux-feedback__tab"
@@ -432,7 +427,7 @@ export class RuxFeedback {
                 <rux-textarea
                     onRuxinput={this.updateFormData}
                     data-field="description"
-                    label="Describe your experience using tktk-platform-Acme"
+                    label="Describe your experience using Acme"
                     rows={5}
                     style={{ resize: 'none' }}
                     value={this.formData.description}
