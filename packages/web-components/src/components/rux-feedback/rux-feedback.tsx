@@ -1,5 +1,34 @@
-import { Component, Element, Host, Prop, State, h } from '@stencil/core'
+import {
+    Component,
+    Element,
+    Host,
+    Prop,
+    State,
+    Event,
+    EventEmitter,
+    h,
+} from '@stencil/core'
 import { Classification } from '../../common/commonTypes.module'
+
+// TYPE DEFINITIONS
+
+export type FeedbackTopic = 'issue' | 'idea' | 'bug' | 'other' | 'success'
+
+export type Sentiment = 'positive' | 'neutral' | 'negative' | 'confusing'
+
+export interface FeedbackFormData {
+    topic: FeedbackTopic
+    sentiment?: Sentiment
+    pageUrl?: string
+    browser?: string
+    description: string
+}
+
+export interface FeedbackFormErrors {
+    pageUrl?: string
+    browser?: string
+    description?: string
+}
 
 @Component({
     tag: 'rux-feedback',
@@ -10,25 +39,32 @@ export class RuxFeedback {
     @Element() el!: HTMLRuxFeedbackElement
 
     // Optional classification marking
-    // e.g. U, CUI, SBU, etc.
-    // See rux-classification-marking for full list of options
-    // If no classification is set, no marking will be displayed
-    // (default behavior)
     @Prop({ reflect: true }) classification?: Classification = undefined
 
     // Active feedback topic pane
-    @State() activeTopic: 'issue' | 'idea' | 'bug' | 'other' | 'success' =
-        'issue'
+    @State() activeTopic: FeedbackTopic = 'issue'
 
     // Active sentiment option
-    @State() activeSentiment:
-        | 'positive'
-        | 'neutral'
-        | 'negative'
-        | 'confusing' = 'positive'
+    @State() activeSentiment: Sentiment = 'positive'
 
     // Is feedback form open or closed
     @State() isOpen: boolean = true
+
+    // Form data
+    @State() formData: FeedbackFormData = {
+        topic: 'issue',
+        sentiment: 'positive',
+        pageUrl: '',
+        browser: '',
+        description: '',
+    }
+
+    // Form validation errors
+    @State() formErrors: FeedbackFormErrors = {}
+
+    // Custom event for form submission
+    @Event({ eventName: 'feedback-submitted' })
+    feedbackSubmitted!: EventEmitter<FeedbackFormData>
 
     // METHODS
 
@@ -54,17 +90,34 @@ export class RuxFeedback {
         this.isOpen = false
         const feedbackEl = this.el.shadowRoot?.querySelector('.rux-feedback')
         feedbackEl?.classList.remove('open')
+        this.resetForm()
+    }
+
+    // Reset form to initial state
+    private resetForm() {
         this.paneSwitcher('issue')
         this.sentimentSwitcher('positive')
+        this.formData = {
+            topic: 'issue',
+            sentiment: 'positive',
+            pageUrl: '',
+            browser: '',
+            description: '',
+        }
+        this.clearErrors()
     }
 
     // FORM SWITCHING
 
     // Switch between feedback topic panes
-    private paneSwitcher(
-        topic: 'issue' | 'idea' | 'bug' | 'other' | 'success'
-    ) {
+    private paneSwitcher(topic: FeedbackTopic) {
         this.activeTopic = topic
+        this.formData = {
+            ...this.formData,
+            topic: topic,
+        }
+        // Clear errors when switching topics
+        this.clearErrors()
     }
     // Handle topic button click
     private handleTopicClick = (event: Event) => {
@@ -82,19 +135,17 @@ export class RuxFeedback {
     // SENTIMENT SWITCHING
 
     // Switch between sentiment options
-    private sentimentSwitcher(
-        sentiment: 'positive' | 'neutral' | 'negative' | 'confusing'
-    ) {
+    private sentimentSwitcher(sentiment: Sentiment) {
         this.activeSentiment = sentiment
+        this.formData = {
+            ...this.formData,
+            sentiment: sentiment,
+        }
     }
     // Handle sentiment button click
     private handleSentimentClick = (event: Event) => {
         const target = event.currentTarget as HTMLElement
-        const sentiment = target.getAttribute('data-sentiment') as
-            | 'positive'
-            | 'neutral'
-            | 'negative'
-            | 'confusing'
+        const sentiment = target.getAttribute('data-sentiment') as Sentiment
         if (sentiment) {
             this.sentimentSwitcher(sentiment)
         }
@@ -102,24 +153,121 @@ export class RuxFeedback {
 
     // Handle form submission
     private handleSubmit = (e: Event) => {
-        console.log('e', e)
         e.preventDefault()
+
+        // Validate form
+        if (!this.validateForm()) {
+            console.log('Form validation failed', this.formErrors)
+            return
+        }
+
+        // Prepare submission data
+        const submissionData: FeedbackFormData = {
+            topic: this.activeTopic,
+            description: this.formData.description,
+        }
+
+        // Add optional fields based on topic
+        if (this.activeTopic === 'issue' || this.activeTopic === 'bug') {
+            submissionData.pageUrl = this.formData.pageUrl
+        }
+
+        if (this.activeTopic === 'bug') {
+            submissionData.browser = this.formData.browser
+        }
+
+        if (this.activeTopic === 'other') {
+            submissionData.sentiment = this.activeSentiment
+        }
+
+        console.log('Submitting feedback:', submissionData)
+
+        // Emit custom event with form data
+        this.feedbackSubmitted.emit(submissionData)
+
+        // Show success message
         this.paneSwitcher('success')
-        this.el.dispatchEvent(
-            new CustomEvent('feedback-submitted', {
-                detail: {
-                    topic: this.activeTopic,
-                    sentiment: this.activeSentiment,
-                },
-            })
-        )
     }
 
     // Handle "Send More Feedback" link click
     private handleSendMoreFeedback = (e: Event) => {
         e.preventDefault()
-        this.paneSwitcher('issue')
-        this.sentimentSwitcher('positive')
+        this.resetForm()
+    }
+
+    // VALIDATION METHODS
+
+    // Validate URL format
+    private isValidUrl(url: string): boolean {
+        if (!url.trim()) return true // Optional field
+        try {
+            new URL(url)
+            return true
+        } catch {
+            return false
+        }
+    }
+
+    // Validate form based on active topic
+    private validateForm(): boolean {
+        const errors: FeedbackFormErrors = {}
+        let isValid = true
+
+        // Common validation: description is always required
+        if (!this.formData.description.trim()) {
+            errors.description = 'This field is required'
+            isValid = false
+        } else if (this.formData.description.trim().length < 10) {
+            errors.description = 'Please provide at least 10 characters'
+            isValid = false
+        }
+
+        // Topic-specific validation
+        if (this.activeTopic === 'issue' || this.activeTopic === 'bug') {
+            if (!this.formData.pageUrl?.trim()) {
+                errors.pageUrl = 'Page URL is required'
+                isValid = false
+            } else if (!this.isValidUrl(this.formData.pageUrl)) {
+                errors.pageUrl = 'Please enter a valid URL'
+                isValid = false
+            }
+        }
+
+        if (this.activeTopic === 'bug') {
+            if (!this.formData.browser?.trim()) {
+                errors.browser = 'Browser information is required'
+                isValid = false
+            }
+        }
+
+        this.formErrors = errors
+        return isValid
+    }
+
+    // Clear validation errors
+    private clearErrors() {
+        this.formErrors = {}
+    }
+
+    // Update form data
+    private updateFormData(event: Event) {
+        const target = event.currentTarget as HTMLInputElement
+        const field = target.getAttribute(
+            'data-field'
+        ) as keyof FeedbackFormData
+        const value = target.value
+        console.log('value', value)
+        this.formData = {
+            ...this.formData,
+            [field]: value,
+        }
+        // Clear error for this field when user starts typing
+        if (this.formErrors[field as keyof FeedbackFormErrors]) {
+            this.formErrors = {
+                ...this.formErrors,
+                [field]: undefined,
+            }
+        }
     }
 
     // RENDERERS
@@ -189,14 +337,23 @@ export class RuxFeedback {
                 part="issue"
             >
                 <rux-input
-                    label="What page are you commenting on?"
+                    onRuxinput={this.updateFormData}
+                    data-field="pageUrl"
                     placeholder="Add URL"
                     type="url"
                     size="medium"
+                    value={this.formData.pageUrl}
+                    error-text={this.formErrors.pageUrl}
+                    invalid={!!this.formErrors.pageUrl}
                 ></rux-input>
                 <rux-textarea
+                    onRuxinput={this.updateFormData}
+                    data-field="description"
                     label="Describe your issue"
                     rows={8}
+                    value={this.formData.description}
+                    error-text={this.formErrors.description}
+                    invalid={!!this.formErrors.description}
                 ></rux-textarea>
             </div>
         )
@@ -210,8 +367,13 @@ export class RuxFeedback {
                 part="idea"
             >
                 <rux-textarea
+                    onRuxinput={this.updateFormData}
+                    data-field="description"
                     label="Tell us about your idea"
                     rows={12}
+                    value={this.formData.description}
+                    error-text={this.formErrors.description}
+                    invalid={!!this.formErrors.description}
                 ></rux-textarea>
             </div>
         )
@@ -225,17 +387,35 @@ export class RuxFeedback {
                 part="bug"
             >
                 <rux-input
+                    onRuxinput={this.updateFormData}
+                    data-field="pageUrl"
                     label="What page is this bug on?"
                     placeholder="Add URL"
                     type="url"
                     size="medium"
+                    value={this.formData.pageUrl}
+                    error-text={this.formErrors.pageUrl}
+                    invalid={!!this.formErrors.pageUrl}
                 ></rux-input>
                 <rux-input
+                    onRuxinput={this.updateFormData}
+                    data-field="browser"
                     label="Browser"
                     type="text"
                     size="medium"
+                    value={this.formData.browser}
+                    error-text={this.formErrors.browser}
+                    invalid={!!this.formErrors.browser}
                 ></rux-input>
-                <rux-textarea label="Describe the bug" rows={4}></rux-textarea>
+                <rux-textarea
+                    onRuxinput={this.updateFormData}
+                    data-field="description"
+                    label="Describe the bug"
+                    rows={4}
+                    value={this.formData.description}
+                    error-text={this.formErrors.description}
+                    invalid={!!this.formErrors.description}
+                ></rux-textarea>
             </div>
         )
     }
@@ -250,19 +430,21 @@ export class RuxFeedback {
                 <label>Sentiment (optional)</label>
                 {this.renderSentimentButtons()}
                 <rux-textarea
+                    onRuxinput={this.updateFormData}
+                    data-field="description"
                     label="Describe your experience using tktk-platform-Acme"
                     rows={5}
                     style={{ resize: 'none' }}
+                    value={this.formData.description}
+                    error-text={this.formErrors.description}
+                    invalid={!!this.formErrors.description}
                 ></rux-textarea>
             </div>
         )
     }
 
     // Individual sentiment button
-    private renderSentimentButton(
-        sentiment: 'positive' | 'neutral' | 'negative' | 'confusing',
-        emoji: string
-    ) {
+    private renderSentimentButton(sentiment: Sentiment, emoji: string) {
         return (
             <div
                 class={`rux-form__sentiment-button ${
