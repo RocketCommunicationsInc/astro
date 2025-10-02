@@ -144,31 +144,8 @@ export class RuxFeedback {
                         </form>
                     )}
 
-                    {this.activeTopic === 'success' && (
-                        <div class="rux-feedback__success" part="success">
-                            <div class="rux-feedback__success__message">
-                                <rux-icon
-                                    class="check-icon"
-                                    size="large"
-                                    icon="check"
-                                ></rux-icon>
-                                <h3>Thank you.</h3>
-                                <p>Your feedback was sent.</p>
-                                <a
-                                    class="more-feedback-link"
-                                    href="#"
-                                    onClick={this.handleSendMoreFeedback}
-                                >
-                                    Send More Feedback?
-                                </a>
-                            </div>
-                            <div class="rux-feedback__success__close-button">
-                                <rux-button onClick={this.handleClose}>
-                                    Close
-                                </rux-button>
-                            </div>
-                        </div>
-                    )}
+                    {this.activeTopic === 'success' &&
+                        this.renderSuccessMessage()}
                 </div>
             </Host>
         )
@@ -339,6 +316,33 @@ export class RuxFeedback {
                 {this.renderSentimentButton('neutral', '😐')}
                 {this.renderSentimentButton('negative', '😠')}
                 {this.renderSentimentButton('confusing', '😖')}
+            </div>
+        )
+    }
+
+    // Success message after form submission
+    private renderSuccessMessage() {
+        return (
+            <div class="rux-feedback__success" part="success">
+                <div class="rux-feedback__success__message">
+                    <rux-icon
+                        class="check-icon"
+                        size="large"
+                        icon="check"
+                    ></rux-icon>
+                    <h3>Thank you.</h3>
+                    <p>Your feedback was sent.</p>
+                    <a
+                        class="more-feedback-link"
+                        href="#"
+                        onClick={this.handleSendMoreFeedback}
+                    >
+                        Send More Feedback?
+                    </a>
+                </div>
+                <div class="rux-feedback__success__close-button">
+                    <rux-button onClick={this.handleClose}>Close</rux-button>
+                </div>
             </div>
         )
     }
