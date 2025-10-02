@@ -6,6 +6,7 @@
     --tab-min-width: 6.875rem; //110px
     --topic-button-size: 3.6875rem; //59px
     --sentiment-button-size: 2.625rem; //42px
+    --form-container-height: 20.75rem; //332px
 }
 
 .rux-feedback {
@@ -146,10 +147,12 @@
 }
 
 .rux-form-topic__form-container {
+    max-height: var(--form-container-height);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
     text-align: left;
+    overflow-y: scroll;
 }
 
 .rux-feedback__success {
@@ -198,7 +201,6 @@
     justify-content: flex-end;
     align-items: center;
     gap: var(--spacing-2);
-    // margin-top: var(--spacing-4);
 }
 
 .rux-form__sentiment-button {
