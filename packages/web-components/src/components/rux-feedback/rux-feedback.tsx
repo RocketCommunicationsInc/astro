@@ -73,17 +73,17 @@ export class RuxFeedback {
         this.activeSentiment = sentiment
     }
 
-    private handlePositiveClick = () => {
-        this.sentimentSwitcher('positive')
-    }
-    private handleNeutralClick = () => {
-        this.sentimentSwitcher('neutral')
-    }
-    private handleNegativeClick = () => {
-        this.sentimentSwitcher('negative')
-    }
-    private handleConfusingClick = () => {
-        this.sentimentSwitcher('confusing')
+    // Handle sentiment button click
+    private handleSentimentClick = (event: Event) => {
+        const target = event.currentTarget as HTMLElement
+        const sentiment = target.getAttribute('data-sentiment') as
+            | 'positive'
+            | 'neutral'
+            | 'negative'
+            | 'confusing'
+        if (sentiment) {
+            this.sentimentSwitcher(sentiment)
+        }
     }
 
     // Handle form submission
@@ -298,57 +298,47 @@ export class RuxFeedback {
                 part="other"
             >
                 <label>Sentiment (optional)</label>
-                <div class="rux-form__sentiment-buttons" part="sentiment-group">
-                    <div
-                        class={`rux-form__sentiment-button ${
-                            this.activeSentiment === 'positive' ? 'active' : ''
-                        }`}
-                        onClick={this.handlePositiveClick}
-                    >
-                        <div class="sentiment-button__emoji-wrapper">
-                            <div class="sentiment-button__emoji">😊</div>
-                        </div>
-                        <div class="sentiment-button__label">Positive</div>
-                    </div>
-                    <div
-                        class={`rux-form__sentiment-button ${
-                            this.activeSentiment === 'neutral' ? 'active' : ''
-                        }`}
-                        onClick={this.handleNeutralClick}
-                    >
-                        <div class="sentiment-button__emoji-wrapper">
-                            <div class="sentiment-button__emoji">😐</div>
-                        </div>
-                        <div class="sentiment-button__label">Neutral</div>
-                    </div>
-                    <div
-                        class={`rux-form__sentiment-button ${
-                            this.activeSentiment === 'negative' ? 'active' : ''
-                        }`}
-                        onClick={this.handleNegativeClick}
-                    >
-                        <div class="sentiment-button__emoji-wrapper">
-                            <div class="sentiment-button__emoji">😠</div>
-                        </div>
-                        <div class="sentiment-button__label">Negative</div>
-                    </div>
-                    <div
-                        class={`rux-form__sentiment-button ${
-                            this.activeSentiment === 'confusing' ? 'active' : ''
-                        }`}
-                        onClick={this.handleConfusingClick}
-                    >
-                        <div class="sentiment-button__emoji-wrapper">
-                            <div class="sentiment-button__emoji">😖</div>
-                        </div>
-                        <div class="sentiment-button__label">Confusing</div>
-                    </div>
-                </div>
+                {this.renderSentimentButtons()}
                 <rux-textarea
                     label="Describe your experience using tktk-platform-Acme"
                     rows={5}
                     style={{ resize: 'none' }}
                 ></rux-textarea>
+            </div>
+        )
+    }
+
+    // Individual sentiment button
+    private renderSentimentButton(
+        sentiment: 'positive' | 'neutral' | 'negative' | 'confusing',
+        emoji: string
+    ) {
+        return (
+            <div
+                class={`rux-form__sentiment-button ${
+                    this.activeSentiment === sentiment ? 'active' : ''
+                }`}
+                data-sentiment={sentiment}
+                onClick={this.handleSentimentClick}
+            >
+                <div class="sentiment-button__emoji-wrapper">
+                    <div class="sentiment-button__emoji">{emoji}</div>
+                </div>
+                <div class="sentiment-button__label">
+                    {sentiment.charAt(0).toUpperCase() + sentiment.slice(1)}
+                </div>
+            </div>
+        )
+    }
+
+    // Sentiment buttons container
+    private renderSentimentButtons() {
+        return (
+            <div class="rux-form__sentiment-buttons" part="sentiment-group">
+                {this.renderSentimentButton('positive', '😊')}
+                {this.renderSentimentButton('neutral', '😐')}
+                {this.renderSentimentButton('negative', '😠')}
+                {this.renderSentimentButton('confusing', '😖')}
             </div>
         )
     }

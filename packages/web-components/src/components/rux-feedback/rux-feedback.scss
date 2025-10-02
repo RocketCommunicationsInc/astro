@@ -112,7 +112,7 @@
 :host::part(sentiment-group) {
     margin-bottom: unset;
     gap: var(--spacing-4);
-    // align-self: flex-start;
+    justify-content: flex-start;
 }
 
 .rux-form__topic-button {
@@ -149,6 +149,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
+    text-align: left;
 }
 
 .rux-feedback__success {
