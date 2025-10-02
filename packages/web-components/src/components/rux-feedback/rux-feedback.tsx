@@ -30,7 +30,10 @@ export class RuxFeedback {
     // Is feedback form open or closed
     @State() isOpen: boolean = true
 
+    // METHODS
+
     // PRIMARY UI BUTTONS
+
     // Toggle feedback form open/closed
     private handleTabClick = () => {
         this.isOpen = !this.isOpen
@@ -56,6 +59,7 @@ export class RuxFeedback {
     }
 
     // FORM SWITCHING
+
     // Switch between feedback topic panes
     private paneSwitcher(
         topic: 'issue' | 'idea' | 'bug' | 'other' | 'success'
@@ -76,6 +80,7 @@ export class RuxFeedback {
     }
 
     // SENTIMENT SWITCHING
+
     // Switch between sentiment options
     private sentimentSwitcher(
         sentiment: 'positive' | 'neutral' | 'negative' | 'confusing'
@@ -118,6 +123,7 @@ export class RuxFeedback {
     }
 
     // RENDERERS
+
     // Feedback tab that toggles the form open/closed
     private renderFeedbackTab() {
         console.log('isOpen', this.isOpen)
