@@ -78,7 +78,8 @@
     letter-spacing: var(--font-body-1-bold-letter-spacing);
 }
 
-:host::part(form) {
+:host::part(form),
+.rux-feedback__success {
     background: var(--color-background-base-default);
     padding: var(--spacing-6) var(--spacing-4);
     color: var(--color-text-secondary);
@@ -148,6 +149,46 @@
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
+}
+
+.rux-feedback__success {
+    align-items: center;
+    gap: var(--spacing-2);
+    grid-template-rows: auto min-content;
+
+    &__message {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: inherit;
+    }
+
+    h3,
+    p {
+        margin: 0;
+    }
+
+    .check-icon {
+        color: var(--color-palette-green-400);
+    }
+
+    .more-feedback-link {
+        color: var(--color-text-interactive-default);
+        text-decoration: underline;
+        cursor: pointer;
+
+        /* body/body-2-bold */
+        font-family: var(--font-body-2-bold-font-family);
+        font-size: var(--font-body-2-bold-font-size);
+        font-style: normal;
+        font-weight: var(--font-body-2-bold-font-weight);
+        line-height: var(--font-body-2-bold-line-height);
+        letter-spacing: var(--font-body-2-bold-letter-spacing);
+    }
+
+    &__close-button {
+        justify-self: end;
+    }
 }
 
 .rux-form__buttons {

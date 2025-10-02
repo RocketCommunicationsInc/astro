@@ -20,8 +20,9 @@ export class RuxFeedback {
         | 'negative'
         | 'confusing' = 'positive'
 
-    @State() isOpen: boolean = false
+    @State() isOpen: boolean = true
 
+    // Toggle feedback form open/closed
     private handleTabClick = () => {
         this.isOpen = !this.isOpen
         const feedbackEl = this.el.shadowRoot?.querySelector('.rux-feedback')
@@ -32,6 +33,21 @@ export class RuxFeedback {
         }
     }
 
+    private handleClose = () => {
+        this.isOpen = false
+        const feedbackEl = this.el.shadowRoot?.querySelector('.rux-feedback')
+        feedbackEl?.classList.remove('open')
+        this.paneSwitcher('issue')
+        this.sentimentSwitcher('positive')
+    }
+
+    private handleSendMoreFeedback = (e: Event) => {
+        e.preventDefault()
+        this.paneSwitcher('issue')
+        this.sentimentSwitcher('positive')
+    }
+
+    // Switch between feedback topic panes
     private paneSwitcher(
         topic: 'issue' | 'idea' | 'bug' | 'other' | 'success'
     ) {
@@ -51,6 +67,7 @@ export class RuxFeedback {
         this.paneSwitcher('other')
     }
 
+    // Switch between sentiment options
     private sentimentSwitcher(
         sentiment: 'positive' | 'neutral' | 'negative' | 'confusing'
     ) {
@@ -70,10 +87,28 @@ export class RuxFeedback {
         this.sentimentSwitcher('confusing')
     }
 
+    // Handle form submission
+    private handleSubmit = (e: Event) => {
+        console.log('e', e)
+        e.preventDefault()
+        this.paneSwitcher('success')
+        this.el.dispatchEvent(
+            new CustomEvent('feedback-submitted', {
+                detail: {
+                    topic: this.activeTopic,
+                    sentiment: this.activeSentiment,
+                },
+            })
+        )
+    }
+
     render() {
         return (
             <Host>
-                <div class={`rux-feedback ${this.isOpen ? 'open' : ''}`} part="container">
+                <div
+                    class={`rux-feedback ${this.isOpen ? 'open' : ''}`}
+                    part="container"
+                >
                     <div
                         class="rux-feedback__tab"
                         part="tab"
@@ -94,14 +129,16 @@ export class RuxFeedback {
                     </div>
                     <div class="rux-feedback__header" part="header">
                         {this.classification && (
-                            <rux-classification-marking classification={this.classification}></rux-classification-marking>
+                            <rux-classification-marking
+                                classification={this.classification}
+                            ></rux-classification-marking>
                         )}
                         <h3 class="rux-feedback__title" part="title">
                             Send us your feedback
                         </h3>
                     </div>
                     {this.activeTopic !== 'success' && (
-                        <div class="rux-feedback__form" part="form">
+                        <form class="rux-feedback__form" part="form">
                             <div
                                 class="rux-form__topic-group"
                                 part="topic-group"
@@ -185,6 +222,7 @@ export class RuxFeedback {
                                     ></rux-textarea>
                                 </div>
                             )}
+
                             {this.activeTopic === 'idea' && (
                                 <div
                                     class="rux-form-topic__form-container rux-form-topic__idea"
@@ -196,6 +234,7 @@ export class RuxFeedback {
                                     ></rux-textarea>
                                 </div>
                             )}
+
                             {this.activeTopic === 'bug' && (
                                 <div
                                     class="rux-form-topic__form-container rux-form-topic__bug"
@@ -218,6 +257,7 @@ export class RuxFeedback {
                                     ></rux-textarea>
                                 </div>
                             )}
+
                             {this.activeTopic === 'other' && (
                                 <div
                                     class="rux-form-topic__form-container rux-form-topic__other"
@@ -311,21 +351,36 @@ export class RuxFeedback {
 
                             <div class="rux-form__buttons">
                                 <rux-button secondary>Cancel</rux-button>
-                                <rux-button>Send</rux-button>
+                                <rux-button onClick={this.handleSubmit}>
+                                    Send
+                                </rux-button>
                             </div>
-                        </div>
+                        </form>
                     )}
 
                     {this.activeTopic === 'success' && (
-                        <div
-                            class="rux-form-topic__form-container rux-feedback__success"
-                            part="success"
-                        >
-                            <h3>Thank you.</h3>
-                            <rux-icon size="normal" icon="check"></rux-icon>
-                            <p>Your feedback was sent.</p>
-                            <p>Send More Feedback?</p>
-                            <rux-button>Close</rux-button>
+                        <div class="rux-feedback__success" part="success">
+                            <div class="rux-feedback__success__message">
+                                <rux-icon
+                                    class="check-icon"
+                                    size="large"
+                                    icon="check"
+                                ></rux-icon>
+                                <h3>Thank you.</h3>
+                                <p>Your feedback was sent.</p>
+                                <a
+                                    class="more-feedback-link"
+                                    href="#"
+                                    onClick={this.handleSendMoreFeedback}
+                                >
+                                    Send More Feedback?
+                                </a>
+                            </div>
+                            <div class="rux-feedback__success__close-button">
+                                <rux-button onClick={this.handleClose}>
+                                    Close
+                                </rux-button>
+                            </div>
                         </div>
                     )}
                 </div>
