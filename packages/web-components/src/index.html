@@ -58,17 +58,7 @@
                 <rux-clock></rux-clock>
             </rux-global-status-bar>
             <main>
-                <rux-feedback>
-                    <rux-feedback__header>
-                        <h2>Feedback</h2>
-                    </rux-feedback__header>
-                    <rux-feedback__body>
-                        <p>Your feedback is important to us!</p>
-                    </rux-feedback__body>
-                    <rux-feedback__footer>
-                        <rux-button>Submit</rux-button>
-                    </rux-feedback__footer>
-                </rux-feedback>
+                <rux-feedback classification="unclassified"></rux-feedback>
 
                 <section class="zoomSelector">
                     <span>Current Zoom:</span>
@@ -333,6 +323,17 @@
                     interval.value = 'minute'
                 }
             }
+
+            // Feedback form demo
+            const feedbackComponent = document.querySelector('rux-feedback')
+            console.log('feedbackComponent', feedbackComponent)
+            // Listen for feedback submission
+            feedbackComponent.addEventListener(
+                'feedback-submitted',
+                (event) => {
+                    console.log('Feedback received:', event.detail)
+                }
+            )
         </script>
     </body>
 </html>
