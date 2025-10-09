@@ -19,6 +19,7 @@ export type Sentiment = 'positive' | 'neutral' | 'negative' | 'confusing'
 export interface FeedbackFormData {
     topic: FeedbackTopic
     sentiment?: Sentiment
+    currentPageUrl?: string
     pageUrl?: string
     browser?: string
     description: string
@@ -41,6 +42,15 @@ export class RuxFeedback {
     // Optional classification marking
     @Prop({ reflect: true }) classification?: Classification = undefined
 
+    // Whether to automatically collect the current page URL
+    @Prop({ reflect: true }) disable_url_collection?: boolean = false
+
+    // Whether to display the page URL to the user
+    @Prop({ reflect: true }) disable_display_url?: boolean = false
+
+    // Whether to disable the ability to edit the page URL
+    @Prop({ reflect: true }) disable_edit_url?: boolean = false
+
     // Active feedback topic pane
     @State() activeTopic: FeedbackTopic = 'issue'
 
@@ -54,6 +64,7 @@ export class RuxFeedback {
     @State() formData: FeedbackFormData = {
         topic: 'issue',
         sentiment: 'positive',
+        currentPageUrl: '',
         pageUrl: '',
         browser: '',
         description: '',
@@ -61,6 +72,21 @@ export class RuxFeedback {
 
     // Form validation errors
     @State() formErrors: FeedbackFormErrors = {}
+
+    // Current page URL where the component is used
+    @State() currentPageUrl: string = ''
+    
+    componentWillLoad() {
+        this.currentPageUrl = window.location.href
+        if (!this.disable_url_collection) {
+            this.formData.currentPageUrl = this.currentPageUrl
+            if (!this.disable_display_url) {
+                this.formData.pageUrl = this.currentPageUrl
+            } else {
+                this.formData.pageUrl = ''
+            }
+        }
+    }
 
     // Custom event for form submission
     @Event({ eventName: 'feedback-submitted' })
@@ -335,11 +361,14 @@ export class RuxFeedback {
                     onRuxinput={this.updateFormData}
                     data-field="pageUrl"
                     placeholder="Add URL"
+                    label="What page are you commenting on?"
                     type="url"
                     size="medium"
                     value={this.formData.pageUrl}
                     error-text={this.formErrors.pageUrl}
                     invalid={!!this.formErrors.pageUrl}
+                    readonly={this.disable_edit_url}
+                    disabled={this.disable_edit_url}
                 ></rux-input>
                 <rux-textarea
                     onRuxinput={this.updateFormData}
@@ -391,6 +420,8 @@ export class RuxFeedback {
                     value={this.formData.pageUrl}
                     error-text={this.formErrors.pageUrl}
                     invalid={!!this.formErrors.pageUrl}
+                    readonly={this.disable_edit_url}
+                    disabled={this.disable_edit_url}
                 ></rux-input>
                 <rux-input
                     onRuxinput={this.updateFormData}
