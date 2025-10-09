@@ -23,12 +23,19 @@ export interface FeedbackFormData {
     pageUrl?: string
     browser?: string
     description: string
+    attachments?: FileAttachment[]
+}
+
+export interface FileAttachment {
+    file: File
+    description?: string
 }
 
 export interface FeedbackFormErrors {
     pageUrl?: string
     browser?: string
     description?: string
+    attachments?: string
 }
 
 @Component({
@@ -51,6 +58,18 @@ export class RuxFeedback {
     // Whether to disable the ability to edit the page URL
     @Prop({ reflect: true }) disable_edit_url?: boolean = false
 
+    // Allowed file types for uploads (e.g., "image/*,.pdf" or empty string for all)
+    @Prop({ reflect: true }) allowed_file_types?: string = ''
+
+    // Maximum file size in bytes (e.g., 5242880 for 5MB, 0 for unlimited)
+    @Prop({ reflect: true }) max_file_size?: number = 0
+
+    // Topics that support file uploads (comma-separated, e.g., "bug,issue" or empty for all)
+    @Prop({ reflect: true }) uploadable_topics?: string = ''
+
+    // Whether to show the optional file description field
+    @Prop({ reflect: true }) show_file_description?: boolean = false
+
     // Active feedback topic pane
     @State() activeTopic: FeedbackTopic = 'issue'
 
@@ -58,7 +77,7 @@ export class RuxFeedback {
     @State() activeSentiment: Sentiment = 'positive'
 
     // Is feedback form open or closed
-    @State() isOpen: boolean = false
+    @State() isOpen: boolean = true
 
     // Form data
     @State() formData: FeedbackFormData = {
@@ -75,7 +94,13 @@ export class RuxFeedback {
 
     // Current page URL where the component is used
     @State() currentPageUrl: string = ''
-    
+
+    // Uploaded files state
+    @State() uploadedFiles: FileAttachment[] = []
+
+    // File upload errors
+    @State() fileUploadErrors: string[] = []
+
     componentWillLoad() {
         this.currentPageUrl = window.location.href
         if (!this.disable_url_collection) {
@@ -130,6 +155,8 @@ export class RuxFeedback {
             browser: '',
             description: '',
         }
+        this.uploadedFiles = []
+        this.fileUploadErrors = []
         this.clearErrors()
     }
 
@@ -204,6 +231,11 @@ export class RuxFeedback {
 
         if (this.activeTopic === 'other') {
             submissionData.sentiment = this.activeSentiment
+        }
+
+        // Add attachments if present
+        if (this.uploadedFiles.length > 0) {
+            submissionData.attachments = this.uploadedFiles
         }
 
         console.log('Submitting feedback:', submissionData)
@@ -290,6 +322,242 @@ export class RuxFeedback {
                 [field]: undefined,
             }
         }
+    }
+
+    // Check if uploads are allowed for current topic
+    private isUploadAllowed(): boolean {
+        if (!this.uploadable_topics || this.uploadable_topics.trim() === '') {
+            return true // All topics allow uploads if not restricted
+        }
+        const allowedTopics = this.uploadable_topics
+            .split(',')
+            .map((t) => t.trim())
+        return allowedTopics.includes(this.activeTopic)
+    }
+
+    // Validate file for upload
+    private validateFile(file: File): string | null {
+        // Check file type
+        if (this.allowed_file_types && this.allowed_file_types.trim() !== '') {
+            const allowedTypes = this.allowed_file_types
+                .split(',')
+                .map((t) => t.trim())
+            const fileType = file.type || ''
+            const fileName = file.name
+            const fileExtension = '.' + fileName.split('.').pop()?.toLowerCase()
+
+            const isAllowed = allowedTypes.some((type) => {
+                if (type === '*' || type === '*/*') return true
+                if (type.endsWith('/*')) {
+                    const baseType = type.split('/')[0]
+                    return fileType.startsWith(baseType + '/')
+                }
+                return type === fileType || type === fileExtension
+            })
+
+            if (!isAllowed) {
+                return `File type not allowed. Allowed types: ${this.allowed_file_types}`
+            }
+        }
+
+        // Check file size
+        if (
+            this.max_file_size &&
+            this.max_file_size > 0 &&
+            file.size > this.max_file_size
+        ) {
+            const maxSizeMB = (this.max_file_size / 1024 / 1024).toFixed(2)
+            const fileSizeMB = (file.size / 1024 / 1024).toFixed(2)
+            return `File size (${fileSizeMB}MB) exceeds maximum allowed size (${maxSizeMB}MB)`
+        }
+
+        return null
+    }
+
+    // Handle file upload
+    private handleFileUpload = (event: Event) => {
+        const input = event.target as HTMLInputElement
+        const files = input.files
+
+        if (!files || files.length === 0) return
+
+        const errors: string[] = []
+        const newFiles: FileAttachment[] = []
+
+        Array.from(files).forEach((file) => {
+            const validationError = this.validateFile(file)
+            if (validationError) {
+                errors.push(`${file.name}: ${validationError}`)
+            } else {
+                newFiles.push({ file, description: '' })
+            }
+        })
+
+        this.uploadedFiles = [...this.uploadedFiles, ...newFiles]
+        this.fileUploadErrors = errors
+
+        // Reset input
+        input.value = ''
+    }
+
+    // Handle drag and drop
+    private handleDragOver = (event: DragEvent) => {
+        event.preventDefault()
+        event.stopPropagation()
+        const dropZone = event.currentTarget as HTMLElement
+        dropZone?.classList.add('drag-over')
+    }
+
+    private handleDragLeave = (event: DragEvent) => {
+        event.preventDefault()
+        event.stopPropagation()
+        const dropZone = event.currentTarget as HTMLElement
+        dropZone?.classList.remove('drag-over')
+    }
+
+    private handleDrop = (event: DragEvent) => {
+        event.preventDefault()
+        event.stopPropagation()
+        const dropZone = event.currentTarget as HTMLElement
+        dropZone?.classList.remove('drag-over')
+
+        const files = event.dataTransfer?.files
+        if (!files || files.length === 0) return
+
+        const errors: string[] = []
+        const newFiles: FileAttachment[] = []
+
+        Array.from(files).forEach((file) => {
+            const validationError = this.validateFile(file)
+            if (validationError) {
+                errors.push(`${file.name}: ${validationError}`)
+            } else {
+                newFiles.push({ file, description: '' })
+            }
+        })
+
+        this.uploadedFiles = [...this.uploadedFiles, ...newFiles]
+        this.fileUploadErrors = errors
+    }
+
+    // Remove uploaded file
+    private removeFile = (event: Event) => {
+        const target = event.currentTarget as HTMLElement
+        const indexAttr = target.getAttribute('data-index')
+        const index = indexAttr ? parseInt(indexAttr, 10) : -1
+        this.uploadedFiles = this.uploadedFiles.filter((_, i) => i !== index)
+    }
+
+    // Update file description
+    private updateFileDescription = (index: number, description: string) => {
+        const updatedFiles = [...this.uploadedFiles]
+        if (updatedFiles[index]) {
+            updatedFiles[index].description = description
+        }
+        this.uploadedFiles = updatedFiles
+    }
+
+    private handleFileDescriptionChange = (event: Event) => {
+        const target = event.currentTarget as HTMLRuxTextareaElement
+        const indexAttr = target.getAttribute('data-index')
+        const index = indexAttr ? parseInt(indexAttr, 10) : -1
+        if (index >= 0) {
+            this.updateFileDescription(index, target.value)
+        }
+    }
+
+    // RENDERERS
+
+    // File upload zone renderer
+    private renderFileUploadZone() {
+        if (!this.isUploadAllowed()) {
+            return null
+        }
+
+        return (
+            <div class="rux-file-upload-zone" part="file-upload-zone">
+                <div
+                    class="file-drop-area"
+                    part="file-drop-area"
+                    onDragOver={this.handleDragOver}
+                    onDragLeave={this.handleDragLeave}
+                    onDrop={this.handleDrop}
+                >
+                    <div class="file-drop-text">
+                        <rux-icon icon="cloud-upload" size="large"></rux-icon>
+                        <p>Drag and drop files here or click to browse</p>
+                    </div>
+                    <input
+                        type="file"
+                        class="file-input"
+                        part="file-input"
+                        multiple
+                        accept={this.allowed_file_types}
+                        onChange={this.handleFileUpload}
+                    />
+                </div>
+
+                {this.fileUploadErrors.length > 0 && (
+                    <div class="file-errors" part="file-errors">
+                        {this.fileUploadErrors.map((error) => (
+                            <div class="error-message" key={error}>
+                                {error}
+                            </div>
+                        ))}
+                    </div>
+                )}
+
+                {this.uploadedFiles.length > 0 && (
+                    <div class="uploaded-files" part="uploaded-files">
+                        <h4>Attached Files ({this.uploadedFiles.length})</h4>
+                        {this.uploadedFiles.map((attachment, index) => (
+                            <div
+                                class="file-item"
+                                key={`${attachment.file.name}-${index}`}
+                            >
+                                <div class="file-info">
+                                    <rux-icon
+                                        icon="insert-drive-file"
+                                        size="small"
+                                    ></rux-icon>
+                                    <div class="file-details">
+                                        <div class="file-name">
+                                            {attachment.file.name}
+                                        </div>
+                                        <div class="file-size">
+                                            {(
+                                                attachment.file.size / 1024
+                                            ).toFixed(2)}{' '}
+                                            KB
+                                        </div>
+                                    </div>
+                                </div>
+                                {this.show_file_description && (
+                                    <rux-textarea
+                                        class="file-description"
+                                        placeholder="Optional description"
+                                        rows={2}
+                                        value={attachment.description}
+                                        data-index={index}
+                                        onRuxinput={
+                                            this.handleFileDescriptionChange
+                                        }
+                                    ></rux-textarea>
+                                )}
+                                <rux-button
+                                    class="remove-file-btn"
+                                    icon="delete"
+                                    data-index={index}
+                                    onClick={this.removeFile}
+                                >
+                                    Remove
+                                </rux-button>
+                            </div>
+                        ))}
+                    </div>
+                )}
+            </div>
+        )
     }
 
     // RENDERERS
@@ -379,6 +647,7 @@ export class RuxFeedback {
                     error-text={this.formErrors.description}
                     invalid={!!this.formErrors.description}
                 ></rux-textarea>
+                {this.renderFileUploadZone()}
             </div>
         )
     }
@@ -442,6 +711,7 @@ export class RuxFeedback {
                     error-text={this.formErrors.description}
                     invalid={!!this.formErrors.description}
                 ></rux-textarea>
+                {this.renderFileUploadZone()}
             </div>
         )
     }
