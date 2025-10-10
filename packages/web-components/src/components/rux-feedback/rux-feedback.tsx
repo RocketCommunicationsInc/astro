@@ -46,6 +46,9 @@ export interface FeedbackFormErrors {
 export class RuxFeedback {
     @Element() el!: HTMLRuxFeedbackElement
 
+    // PROPERTIES
+    /////////////////////////////////////////////////////////////////////////
+
     // Optional classification marking
     @Prop({ reflect: true }) classification?: Classification = undefined
 
@@ -58,7 +61,7 @@ export class RuxFeedback {
     // Whether to disable the ability to edit the page URL
     @Prop({ reflect: true }) disable_edit_url?: boolean = false
 
-    // Allowed file types for uploads (e.g., "image/*,.pdf" or empty string for all)
+    // Comma-separated, allowed file types for uploads (e.g., "image/*,.pdf" or empty string for all)
     @Prop({ reflect: true }) allowed_file_types?: string = ''
 
     // Maximum file size in bytes (e.g., 5242880 for 5MB, 0 for unlimited)
@@ -69,6 +72,9 @@ export class RuxFeedback {
 
     // Whether to show the optional file description field
     @Prop({ reflect: true }) show_file_description?: boolean = false
+
+    // STATE
+    /////////////////////////////////////////////////////////////////////////
 
     // Active feedback topic pane
     @State() activeTopic: FeedbackTopic = 'issue'
@@ -101,6 +107,9 @@ export class RuxFeedback {
     // File upload errors
     @State() fileUploadErrors: string[] = []
 
+    // LIFECYCLE
+    /////////////////////////////////////////////////////////////////////////
+
     componentWillLoad() {
         this.currentPageUrl = window.location.href
         if (!this.disable_url_collection) {
@@ -113,11 +122,15 @@ export class RuxFeedback {
         }
     }
 
+    // EVENTS
+    /////////////////////////////////////////////////////////////////////////
+
     // Custom event for form submission
     @Event({ eventName: 'feedback-submitted' })
     feedbackSubmitted!: EventEmitter<FeedbackFormData>
 
     // METHODS
+    /////////////////////////////////////////////////////////////////////////
 
     // PRIMARY UI BUTTONS
 
@@ -161,6 +174,7 @@ export class RuxFeedback {
     }
 
     // FORM SWITCHING
+    /////////////////////////////////////////////////////////////////////////
 
     // Switch between feedback topic panes
     private paneSwitcher(topic: FeedbackTopic) {
@@ -186,7 +200,6 @@ export class RuxFeedback {
     }
 
     // SENTIMENT SWITCHING
-
     // Switch between sentiment options
     private sentimentSwitcher(sentiment: Sentiment) {
         this.activeSentiment = sentiment
@@ -561,6 +574,7 @@ export class RuxFeedback {
     }
 
     // RENDERERS
+    /////////////////////////////////////////////////////////////////////////
 
     // Feedback tab that toggles the form open/closed
     private renderFeedbackTab() {
