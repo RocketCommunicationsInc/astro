@@ -67,7 +67,7 @@ export class RuxFeedback {
     // Maximum file size in bytes (e.g., 5242880 for 5MB, 0 for unlimited)
     @Prop({ reflect: true }) max_file_size?: number = 0
 
-    // Topics that support file uploads (comma-separated, e.g., "bug,issue" or empty for all)
+    // Topics that support file uploads (comma-separated, e.g., "bug,issue", "none" to disable, or empty for all)
     @Prop({ reflect: true }) uploadable_topics?: string = ''
 
     // Whether to show the optional file description field
@@ -632,6 +632,9 @@ export class RuxFeedback {
         )
     }
 
+    // FORMS
+    ////////////////////////////////////////////////////////////////////
+
     // Form for "Issue" topic
     private renderIssueForm() {
         return (
@@ -682,6 +685,7 @@ export class RuxFeedback {
                     error-text={this.formErrors.description}
                     invalid={!!this.formErrors.description}
                 ></rux-textarea>
+                {this.renderFileUploadZone()}
             </div>
         )
     }
@@ -749,6 +753,7 @@ export class RuxFeedback {
                     error-text={this.formErrors.description}
                     invalid={!!this.formErrors.description}
                 ></rux-textarea>
+                {this.renderFileUploadZone()}
             </div>
         )
     }
