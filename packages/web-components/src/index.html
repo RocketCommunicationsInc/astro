@@ -58,7 +58,15 @@
                 <rux-clock></rux-clock>
             </rux-global-status-bar>
             <main>
-                <rux-feedback classification="unclassified"></rux-feedback>
+                <rux-feedback
+                    classification="unclassified"
+                    included-forms="bug,issue"
+                    custom-form='{"id":"support-ticket","label":"Support Ticket"}'
+                    uploadable-topics="support-ticket"
+                    allowed-file-types="image/*,.pdf"
+                    max-file-size="5242880"
+                >
+                </rux-feedback>
 
                 <section class="zoomSelector">
                     <span>Current Zoom:</span>
