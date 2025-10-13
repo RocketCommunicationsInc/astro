@@ -38,6 +38,11 @@ export interface FeedbackFormErrors {
     attachments?: string
 }
 
+export interface CustomForm {
+    id: string
+    label: string
+}
+
 @Component({
     tag: 'rux-feedback',
     styleUrl: 'rux-feedback.scss',
@@ -53,25 +58,31 @@ export class RuxFeedback {
     @Prop({ reflect: true }) classification?: Classification = undefined
 
     // Whether to automatically collect the current page URL
-    @Prop({ reflect: true }) disable_url_collection?: boolean = false
+    @Prop({ reflect: true }) disableUrlCollection?: boolean = false
 
     // Whether to display the page URL to the user
-    @Prop({ reflect: true }) disable_display_url?: boolean = false
+    @Prop({ reflect: true }) disableDisplayUrl?: boolean = false
 
     // Whether to disable the ability to edit the page URL
-    @Prop({ reflect: true }) disable_edit_url?: boolean = false
+    @Prop({ reflect: true }) disableEditUrl?: boolean = false
 
     // Comma-separated, allowed file types for uploads (e.g., "image/*,.pdf" or empty string for all)
-    @Prop({ reflect: true }) allowed_file_types?: string = ''
+    @Prop({ reflect: true }) allowedFileTypes?: string = ''
 
     // Maximum file size in bytes (e.g., 5242880 for 5MB, 0 for unlimited)
-    @Prop({ reflect: true }) max_file_size?: number = 0
+    @Prop({ reflect: true }) maxFileSize?: number = 0
 
     // Topics that support file uploads (comma-separated, e.g., "bug,issue", "none" to disable, or empty for all)
-    @Prop({ reflect: true }) uploadable_topics?: string = ''
+    @Prop({ reflect: true }) uploadableTopics?: string = ''
 
     // Whether to show the optional file description field
-    @Prop({ reflect: true }) show_file_description?: boolean = false
+    @Prop({ reflect: true }) showFileDescription?: boolean = false
+
+    // Comma-separated list of included form topics (e.g., "issue,bug,idea" or empty for all)
+    @Prop({ reflect: true }) includedForms?: string = ''
+
+    // Custom form configuration as JSON string (e.g., '{"id":"feature-request","label":"Feature Request"}')
+    @Prop({ reflect: true }) customForm?: string = ''
 
     // STATE
     /////////////////////////////////////////////////////////////////////////
@@ -107,17 +118,30 @@ export class RuxFeedback {
     // File upload errors
     @State() fileUploadErrors: string[] = []
 
+    // Parsed custom form configuration
+    @State() customFormConfig: CustomForm | null = null
+
     // LIFECYCLE
     /////////////////////////////////////////////////////////////////////////
 
     componentWillLoad() {
         this.currentPageUrl = window.location.href
-        if (!this.disable_url_collection) {
+        if (!this.disableUrlCollection) {
             this.formData.currentPageUrl = this.currentPageUrl
-            if (!this.disable_display_url) {
+            if (!this.disableDisplayUrl) {
                 this.formData.pageUrl = this.currentPageUrl
             } else {
                 this.formData.pageUrl = ''
+            }
+        }
+
+        // Parse custom form configuration
+        if (this.customForm) {
+            try {
+                this.customFormConfig = JSON.parse(this.customForm)
+            } catch (error) {
+                console.error('Failed to parse custom_form JSON:', error)
+                this.customFormConfig = null
             }
         }
     }
@@ -337,12 +361,27 @@ export class RuxFeedback {
         }
     }
 
+    // Check if a form topic should be displayed
+    private isFormIncluded(topic: FeedbackTopic): boolean {
+        console.log('this.included_forms', topic, this.includedForms)
+        if (!this.includedForms || this.includedForms.trim() === '') {
+            return true // All forms included by default
+        }
+        const includedTopics = this.includedForms
+            .split(',')
+            .map((t) => t.trim().toLowerCase())
+        return includedTopics.includes(topic.toLowerCase())
+    }
+
     // Check if uploads are allowed for current topic
     private isUploadAllowed(): boolean {
-        if (!this.uploadable_topics || this.uploadable_topics.trim() === '') {
+        if (!this.uploadableTopics || this.uploadableTopics.trim() === '') {
             return true // All topics allow uploads if not restricted
         }
-        const allowedTopics = this.uploadable_topics
+        if (this.uploadableTopics.toLowerCase() === 'none') {
+            return false // Uploads disabled
+        }
+        const allowedTopics = this.uploadableTopics
             .split(',')
             .map((t) => t.trim())
         return allowedTopics.includes(this.activeTopic)
@@ -351,8 +390,8 @@ export class RuxFeedback {
     // Validate file for upload
     private validateFile(file: File): string | null {
         // Check file type
-        if (this.allowed_file_types && this.allowed_file_types.trim() !== '') {
-            const allowedTypes = this.allowed_file_types
+        if (this.allowedFileTypes && this.allowedFileTypes.trim() !== '') {
+            const allowedTypes = this.allowedFileTypes
                 .split(',')
                 .map((t) => t.trim())
             const fileType = file.type || ''
@@ -369,17 +408,17 @@ export class RuxFeedback {
             })
 
             if (!isAllowed) {
-                return `File type not allowed. Allowed types: ${this.allowed_file_types}`
+                return `File type not allowed. Allowed types: ${this.allowedFileTypes}`
             }
         }
 
         // Check file size
         if (
-            this.max_file_size &&
-            this.max_file_size > 0 &&
-            file.size > this.max_file_size
+            this.maxFileSize &&
+            this.maxFileSize > 0 &&
+            file.size > this.maxFileSize
         ) {
-            const maxSizeMB = (this.max_file_size / 1024 / 1024).toFixed(2)
+            const maxSizeMB = (this.maxFileSize / 1024 / 1024).toFixed(2)
             const fileSizeMB = (file.size / 1024 / 1024).toFixed(2)
             return `File size (${fileSizeMB}MB) exceeds maximum allowed size (${maxSizeMB}MB)`
         }
@@ -505,7 +544,7 @@ export class RuxFeedback {
                         class="file-input"
                         part="file-input"
                         multiple
-                        accept={this.allowed_file_types}
+                        accept={this.allowedFileTypes}
                         onChange={this.handleFileUpload}
                     />
                 </div>
@@ -545,7 +584,7 @@ export class RuxFeedback {
                                         </div>
                                     </div>
                                 </div>
-                                {this.show_file_description && (
+                                {this.showFileDescription && (
                                     <rux-textarea
                                         class="file-description"
                                         placeholder="Optional description"
@@ -602,12 +641,36 @@ export class RuxFeedback {
 
     // Topic selector buttons
     private renderTopicSelector() {
+        const topics: Array<{ id: string; label: string; icon: string }> = []
+
+        // Add standard topics if included
+        if (this.isFormIncluded('issue')) {
+            topics.push({ id: 'issue', label: 'Issue', icon: 'error-outline' })
+        }
+        if (this.isFormIncluded('idea')) {
+            topics.push({ id: 'idea', label: 'Idea', icon: 'highlight' })
+        }
+        if (this.isFormIncluded('bug')) {
+            topics.push({ id: 'bug', label: 'Bug', icon: 'bug-report' })
+        }
+        if (this.isFormIncluded('other')) {
+            topics.push({ id: 'other', label: 'Other', icon: 'textsms' })
+        }
+
+        // Add custom form if configured
+        if (this.customFormConfig) {
+            topics.push({
+                id: this.customFormConfig.id,
+                label: this.customFormConfig.label,
+                icon: 'note-add',
+            })
+        }
+
         return (
             <div class="rux-form__topic-selector" part="topic-selector">
-                {this.renderTopicButton('issue', 'Issue', 'error-outline')}
-                {this.renderTopicButton('idea', 'Idea', 'highlight')}
-                {this.renderTopicButton('bug', 'Bug', 'bug-report')}
-                {this.renderTopicButton('other', 'Other', 'textsms')}
+                {topics.map((topic) =>
+                    this.renderTopicButton(topic.id, topic.label, topic.icon)
+                )}
             </div>
         )
     }
@@ -637,6 +700,10 @@ export class RuxFeedback {
 
     // Form for "Issue" topic
     private renderIssueForm() {
+        if (!this.isFormIncluded('issue')) {
+            return null
+        }
+
         return (
             <div
                 class="rux-form-topic__form-container rux-form-topic__issue"
@@ -652,8 +719,8 @@ export class RuxFeedback {
                     value={this.formData.pageUrl}
                     error-text={this.formErrors.pageUrl}
                     invalid={!!this.formErrors.pageUrl}
-                    readonly={this.disable_edit_url}
-                    disabled={this.disable_edit_url}
+                    readonly={this.disableEditUrl}
+                    disabled={this.disableEditUrl}
                 ></rux-input>
                 <rux-textarea
                     onRuxinput={this.updateFormData}
@@ -671,6 +738,10 @@ export class RuxFeedback {
 
     // Form for "Idea" topic
     private renderIdeaForm() {
+        if (!this.isFormIncluded('idea')) {
+            return null
+        }
+
         return (
             <div
                 class="rux-form-topic__form-container rux-form-topic__idea"
@@ -692,6 +763,10 @@ export class RuxFeedback {
 
     // Form for "Bug Report" topic
     private renderBugReportForm() {
+        if (!this.isFormIncluded('bug')) {
+            return null
+        }
+
         return (
             <div
                 class="rux-form-topic__form-container rux-form-topic__bug"
@@ -707,8 +782,8 @@ export class RuxFeedback {
                     value={this.formData.pageUrl}
                     error-text={this.formErrors.pageUrl}
                     invalid={!!this.formErrors.pageUrl}
-                    readonly={this.disable_edit_url}
-                    disabled={this.disable_edit_url}
+                    readonly={this.disableEditUrl}
+                    disabled={this.disableEditUrl}
                 ></rux-input>
                 <rux-input
                     onRuxinput={this.updateFormData}
@@ -736,6 +811,10 @@ export class RuxFeedback {
 
     // Form for "Other" topic
     private renderOtherFeedbackForm() {
+        if (!this.isFormIncluded('other')) {
+            return null
+        }
+
         return (
             <div
                 class="rux-form-topic__form-container rux-form-topic__other"
@@ -786,6 +865,47 @@ export class RuxFeedback {
                 {this.renderSentimentButton('neutral', '😐')}
                 {this.renderSentimentButton('negative', '😠')}
                 {this.renderSentimentButton('confusing', '😖')}
+            </div>
+        )
+    }
+
+    // Custom form renderer
+    private renderCustomForm() {
+        if (
+            !this.customFormConfig ||
+            this.activeTopic !== this.customFormConfig.id
+        ) {
+            return null
+        }
+
+        return (
+            <div
+                class="rux-form-topic__form-container rux-form-topic__custom"
+                part="custom"
+            >
+                <rux-input
+                    onRuxinput={this.updateFormData}
+                    data-field="pageUrl"
+                    placeholder="Add URL"
+                    label="Page URL"
+                    type="url"
+                    size="medium"
+                    value={this.formData.pageUrl}
+                    error-text={this.formErrors.pageUrl}
+                    invalid={!!this.formErrors.pageUrl}
+                    readonly={this.disableEditUrl}
+                    disabled={this.disableEditUrl}
+                ></rux-input>
+                <rux-textarea
+                    onRuxinput={this.updateFormData}
+                    data-field="description"
+                    label={`Describe your ${this.customFormConfig.label.toLowerCase()}`}
+                    rows={8}
+                    value={this.formData.description}
+                    error-text={this.formErrors.description}
+                    invalid={!!this.formErrors.description}
+                ></rux-textarea>
+                {this.renderFileUploadZone()}
             </div>
         )
     }
@@ -850,6 +970,8 @@ export class RuxFeedback {
 
                             {this.activeTopic === 'other' &&
                                 this.renderOtherFeedbackForm()}
+
+                            {this.renderCustomForm()}
 
                             <div class="rux-form__buttons">
                                 <rux-button
