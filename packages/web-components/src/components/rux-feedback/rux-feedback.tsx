@@ -12,7 +12,13 @@ import { Classification } from '../../common/commonTypes.module'
 
 // TYPE DEFINITIONS
 
-export type FeedbackTopic = 'issue' | 'idea' | 'bug' | 'other' | 'success'
+export type FeedbackTopic =
+    | 'issue'
+    | 'idea'
+    | 'bug'
+    | 'other'
+    | 'custom'
+    | 'success'
 
 export type Sentiment = 'positive' | 'neutral' | 'negative' | 'confusing'
 
@@ -39,7 +45,7 @@ export interface FeedbackFormErrors {
 }
 
 export interface CustomForm {
-    id: string
+    icon: string
     label: string
 }
 
@@ -78,10 +84,10 @@ export class RuxFeedback {
     // Whether to show the optional file description field
     @Prop({ reflect: true }) showFileDescription?: boolean = false
 
-    // Comma-separated list of included form topics (e.g., "issue,bug,idea" or empty for all)
+    // Comma-separated list of included form topics (e.g., "issue,bug,idea" or empty for all, use "custom" to only show custom form)
     @Prop({ reflect: true }) includedForms?: string = ''
 
-    // Custom form configuration as JSON string (e.g., '{"id":"feature-request","label":"Feature Request"}')
+    // Custom form configuration as JSON string (e.g., '{"icon":"help","label":"Feature Request"}')
     @Prop({ reflect: true }) customForm?: string = ''
 
     // STATE
@@ -143,6 +149,27 @@ export class RuxFeedback {
                 console.error('Failed to parse custom_form JSON:', error)
                 this.customFormConfig = null
             }
+        }
+
+        // Set active topic to first included form or to the custom form if specified. Default to 'issue'.
+        const validTopics: FeedbackTopic[] = [
+            'issue',
+            'idea',
+            'bug',
+            'other',
+            'custom',
+            'success',
+        ]
+        const includedTopics: FeedbackTopic[] = (this.includedForms ?? '')
+            .split(',')
+            .map((t) => t.trim().toLowerCase() as FeedbackTopic)
+            .filter((t) => validTopics.includes(t))
+        if (this.customFormConfig) {
+            this.activeTopic = 'custom'
+        } else if (includedTopics.length > 0) {
+            this.activeTopic = includedTopics[0]
+        } else {
+            this.activeTopic = 'issue'
         }
     }
 
@@ -643,6 +670,15 @@ export class RuxFeedback {
     private renderTopicSelector() {
         const topics: Array<{ id: string; label: string; icon: string }> = []
 
+        // Add custom form if configured
+        if (this.customFormConfig) {
+            topics.push({
+                id: 'custom',
+                label: this.customFormConfig.label,
+                icon: this.customFormConfig.icon,
+            })
+        }
+
         // Add standard topics if included
         if (this.isFormIncluded('issue')) {
             topics.push({ id: 'issue', label: 'Issue', icon: 'error-outline' })
@@ -655,15 +691,6 @@ export class RuxFeedback {
         }
         if (this.isFormIncluded('other')) {
             topics.push({ id: 'other', label: 'Other', icon: 'textsms' })
-        }
-
-        // Add custom form if configured
-        if (this.customFormConfig) {
-            topics.push({
-                id: this.customFormConfig.id,
-                label: this.customFormConfig.label,
-                icon: 'note-add',
-            })
         }
 
         return (
@@ -820,7 +847,7 @@ export class RuxFeedback {
                 class="rux-form-topic__form-container rux-form-topic__other"
                 part="other"
             >
-                <label>Sentiment (optional)</label>
+                <label>Sentiment</label>
                 {this.renderSentimentButtons()}
                 <rux-textarea
                     onRuxinput={this.updateFormData}
@@ -871,10 +898,7 @@ export class RuxFeedback {
 
     // Custom form renderer
     private renderCustomForm() {
-        if (
-            !this.customFormConfig ||
-            this.activeTopic !== this.customFormConfig.id
-        ) {
+        if (!this.customFormConfig || this.activeTopic !== 'custom') {
             return null
         }
 
