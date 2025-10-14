@@ -1,6 +1,6 @@
 :host {
     // Internal private design tokens
-    --widget-width: 18.75rem; //300px
+    --widget-width: 22rem; //352px
     --widget-height: 37.1875rem; //595px
     --tab-height: 2.3125rem; //37px
     --tab-min-width: 6.875rem; //110px
@@ -104,9 +104,9 @@
 :host::part(sentiment-group) {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: var(--spacing-2);
     margin-bottom: var(--spacing-4);
 }
