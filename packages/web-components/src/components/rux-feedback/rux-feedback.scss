@@ -1,54 +1,60 @@
 :host {
     // Internal private design tokens
     --widget-width: 22rem; //352px
-    --widget-height: 37.1875rem; //595px
-    --tab-height: 2.3125rem; //37px
+    --tab-height: 2.375rem; //38px
     --tab-min-width: 6.875rem; //110px
     --topic-button-size: 3.6875rem; //59px
     --sentiment-button-size: 2.625rem; //42px
-    --form-container-height: 20.75rem; //332px
 }
 
 .rux-feedback {
-    width: var(--widget-width);
-    height: var(--widget-height);
-    position: relative;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    position: fixed;
-    top: calc(100vh - var(--tab-height));
     left: calc(100vw - var(--widget-width) - 1rem);
+    position: fixed;
+    top: 100vh;
+    margin-top: calc(var(--tab-height) * -1);
+    transition: transform 0.3s ease-in-out, margin 0.3s ease-in-out;
+    transform: translateY(0.25rem);
+    width: var(--widget-width);
     z-index: 10000;
-    transition: top 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(0);
+    }
 
     &.open {
-        top: calc(100vh - var(--widget-height));
+        transform: translateY(-100%);
+        margin-top: 0;
+
+        &:hover {
+            transform: translateY(-100%);
+        }
     }
 }
 
 :host::part(tab) {
+    align-items: center;
+    align-self: flex-end;
+    background: var(--color-background-surface-header);
+    border-left: 1px solid var(--color-text-interactive-default);
+    border-radius: 0.25rem 0.25rem 0 0;
+    border-right: 1px solid var(--color-text-interactive-default);
+    border-top: 1px solid var(--color-text-interactive-default);
+    color: var(--color-text-interactive-default);
+    cursor: pointer;
     display: flex;
-    width: fit-content;
-    min-width: var(--tab-min-width);
-    height: var(--tab-height);
     flex-direction: row;
     flex-shrink: 0;
-    position: relative;
-    align-items: center;
-    justify-content: center;
     flex-wrap: nowrap;
-    border-radius: 0.25rem 0.25rem 0 0;
-    border-top: 1px solid var(--color-text-interactive-default);
-    border-right: 1px solid var(--color-text-interactive-default);
-    border-left: 1px solid var(--color-text-interactive-default);
-    background: var(--color-background-surface-header);
-    align-self: flex-end;
-    margin-right: 0.38rem;
+    height: var(--tab-height);
+    justify-content: center;
     margin-right: var(--spacing-2);
-
-    color: var(--color-text-interactive-default);
+    min-width: var(--tab-min-width);
+    position: relative;
     text-align: center;
+    width: fit-content;
 
     /* control/control-body-1 */
     font-family: var(--font-control-body-1-font-family);
@@ -148,7 +154,6 @@
 }
 
 .rux-form-topic__form-container {
-    max-height: var(--form-container-height);
     display: flex;
     flex-direction: column;
     gap: var(--spacing-4);
