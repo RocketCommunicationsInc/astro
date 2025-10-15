@@ -1,0 +1,47 @@
+:host {
+    display: block;
+}
+
+::slotted(*:focus-visible) {
+    outline: 2px solid transparent;
+}
+a.rux-menu-item,
+a.rux-menu-item:hover {
+    text-decoration: none;
+}
+.rux-menu-item {
+    display: block;
+    position: relative;
+    padding: var(--spacing-2); //8
+    color: var(--color-text-interactive-default);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    cursor: pointer;
+    &:hover {
+        color: var(--color-text-interactive-hover);
+        background: var(--color-background-base-hover);
+    }
+
+    &:focus-visible {
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+
+    &--selected {
+        background: var(--color-background-base-selected);
+        color: var(--color-text-primary);
+    }
+    &--disabled {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+    }
+    &--disabled:hover {
+        background: var(--color-background-base-default);
+        color: var(--color-text-interactive-default);
+    }
+}

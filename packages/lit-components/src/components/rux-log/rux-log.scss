@@ -1,0 +1,57 @@
+:host {
+    display: block;
+    overflow: hidden;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+.rux-log {
+    border: 1px solid var(--log-color-border);
+}
+
+.rux-log__header-event-cell {
+    width: 80%;
+}
+
+.header-event-container {
+    display: flex;
+    align-items: center;
+}
+
+.rux-log__filter {
+    margin-left: auto;
+    width: 170px;
+}
+
+rux-datetime {
+    min-width: calc(var(--spacing-20) - var(--spacing-050)); //78px;
+    display: inline-block;
+}
+
+rux-status {
+    margin: var(--spacing-0) var(--spacing-1);
+}
+
+rux-table-header-cell {
+    width: 1%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--color-background-base-default);
+    height: calc(
+        var(--spacing-10) + var(--spacing-1) - 2px
+    ); //44 height minus border
+}
+
+rux-table-cell {
+    height: calc(var(--spacing-8) - 1px); //32 size - border
+}
+
+.rux-log__notification {
+    width: 2000%;
+    align-content: center;
+    color: var(--color-text-inverse);
+    background-color: var(--color-background-interactive-default);
+    padding: var(--spacing-2); //8
+}

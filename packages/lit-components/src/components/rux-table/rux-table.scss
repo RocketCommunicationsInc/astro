@@ -1,0 +1,15 @@
+:host {
+    display: table;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    color: var(--color-text-primary);
+    border-bottom: 1px solid var(--color-background-base-default);
+    background: var(--color-background-surface-default);
+    text-align: left;
+    overflow: scroll;
+}
+
+:host([hidden]) {
+    display: none;
+}

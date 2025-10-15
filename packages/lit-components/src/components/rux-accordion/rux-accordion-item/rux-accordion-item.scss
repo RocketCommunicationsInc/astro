@@ -1,0 +1,124 @@
+:host {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/*remove default marker*/
+summary {
+    list-style: none;
+}
+/*remove default marker in safari*/
+details > summary::-webkit-details-marker {
+    display: none;
+    width: 0;
+    height: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+summary {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    text-align: left; /*needed to fix problem where parent will override text-align*/
+    align-items: center;
+    border-radius: var(--radius-base);
+    background-color: var(--color-background-surface-header);
+    color: var(--color-text-interactive-default);
+    padding: var(--spacing-1) var(--spacing-2);
+    box-shadow: 0 -1px 0 0 var(--color-background-base-default) inset;
+    cursor: pointer;
+    &:focus-visible {
+        outline: var(--border-width-focus-default) solid var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+}
+
+summary:hover slot[name='prefix']::slotted(*),
+summary:hover .indicator--icon,
+summary:hover .rux-accordion-item--title {
+    color: var(--color-text-interactive-hover);
+}
+
+.rux-accordion-item {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    text-align: left; /*needed to fix problem where parent will override text-align*/
+    color: var(--color-text-primary);
+    padding: var(--spacing-050) var(--spacing-1);
+
+    &--title {
+        padding: var(--spacing-1) var(--spacing-2);
+        box-sizing: border-box;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    &--content {
+        display: block;
+        padding: var(--spacing-4);
+        margin: var(--spacing-0);
+        font-size: var(--font-body-2-font-size);
+        line-height: var(--font-body-2-line-height);
+    }
+
+    /*when disabled*/
+    &--disabled {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+
+        & > summary {
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        & .rux-accordion-item--content {
+            pointer-events: none;
+        }
+    }
+}
+
+:host::part(indicator) {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    padding: var(--spacing-1);
+}
+
+.prefix {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-0) var(--spacing-1);
+    &.prefix--hidden {
+        display: none;
+    }
+}
+
+.indicator {
+    &--icon {
+        &.open {
+            -ms-transform: rotate(-180deg);
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+slot[name='prefix']::slotted(*) {
+    display: flex;
+}
+
+slot[name='prefix']::slotted(rux-icon) {
+    width: calc(var(--spacing-4) + var(--spacing-1)); //20
+    height: calc(var(--spacing-4) + var(--spacing-1)); //20
+}
+
+slot[name='label']::slotted(*) {
+    width: 100%;
+    display: block;
+}

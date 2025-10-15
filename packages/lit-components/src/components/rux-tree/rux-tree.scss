@@ -1,0 +1,16 @@
+:host {
+    display: block;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    color: var(--color-text-primary);
+    user-select: none;
+    width: 100%;
+}
+:host([hidden]) {
+    display: none;
+}

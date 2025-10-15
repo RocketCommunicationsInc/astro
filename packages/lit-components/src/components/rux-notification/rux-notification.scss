@@ -1,0 +1,204 @@
+:host {
+    --notification-banner-color-border: var(--color-border-interactive-default);
+    --notification-banner-color-background: var(
+        --color-background-base-default
+    );
+    //spacing-3 - 1px to account for new border system
+    --notification-banner-border-width-left: calc(
+        var(--spacing-3) - var(--spacing-025)
+    );
+
+    --notification-banner-radius-outer: var(--radius-base);
+    --notification-banner-radius-inner: calc(var(--radius-base) / 3 * 2);
+    --notification-banner-border-width-large: var(--spacing-1); //4
+    --notification-banner-padding: 0 var(--spacing-2) 0 var(--spacing-4); //0 8px 0 16px
+    --notification-banner-border-width-small: var(--spacing-050); //2
+
+    //for the 1px outer border on light theme
+    --notification-banner-border-outer-width: 1px;
+    //defaults to large
+    --notifcation-banner-border-inner-width: 3px;
+
+    /**
+    * @prop --height: the Notification's height
+    */
+    --height: var(--spacing-20); // 80px;
+}
+
+:host([open]) {
+    display: contents;
+}
+:host(:not([open])) {
+    display: none;
+}
+
+.rux-notification-banner {
+    display: flex;
+    align-items: stretch;
+    align-content: center;
+    border-radius: var(--notification-banner-radius-outer);
+    background: var(--notification-banner-color-border);
+    width: 100%;
+    box-sizing: border-box;
+    min-height: var(--height);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+}
+
+.rux-notification-banner__inner {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: var(--notification-banner-radius-inner);
+    background: var(--color-background-base-default);
+    padding: var(--notification-banner-padding);
+    border: var(--notifcation-banner-border-inner-width) solid
+        var(--notification-banner-color-border-inner-default);
+    border-left-width: var(--notification-banner-border-width-left);
+}
+
+.rux-notification-banner__prefix:not(.hidden) {
+    display: flex;
+    align-items: center;
+    margin-right: var(--spacing-4); //16px
+}
+
+.rux-notification-banner__status.rux-notification-banner--hasPrefixLabel {
+    margin-left: var(--spacing-4); //16px
+}
+.rux-notification-banner__status {
+    margin-right: var(--spacing-4); //16px
+}
+.rux-notification-banner__status rux-status {
+    margin: var(--spacing-0);
+} //remove 2px margin around rux-status
+
+.rux-notification-banner__actions {
+    margin-left: auto;
+    display: flex;
+}
+.rux-notification-banner__close {
+    &:focus-visible {
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+}
+
+.rux-notification-banner__close {
+    cursor: pointer;
+}
+
+/* ----- Large ----- */
+.rux-notification-banner--large {
+    border: 1px solid var(--notification-banner-color-border-outer-default);
+    .rux-notification-banner__inner {
+        border-color: var(--notification-banner-color-border);
+    }
+}
+
+.rux-notification-banner__content {
+    padding: 2px 3px 2px 0px;
+}
+.rux-notification-banner--large .rux-notification-banner__content {
+    font-family: var(--font-heading-5-font-family);
+    font-size: var(--font-heading-5-font-size);
+    font-weight: var(--font-heading-5-font-weight);
+    letter-spacing: var(--font-heading-5-letter-spacing);
+    line-height: var(--font-heading-5-line-height);
+}
+
+/* ----- Small ----- */
+.rux-notification-banner--small {
+    min-height: calc(var(--spacing-12) + var(--spacing-1)); // 52px;
+    border: 1px solid var(--notification-banner-color-border-outer-default);
+    --notifcation-banner-border-inner-width: 1px;
+    .rux-notification-banner__inner {
+        border-color: var(--notification-banner-color-border);
+    }
+}
+
+.rux-notification-banner--small .rux-notification-banner__content {
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--font-body-1-line-height);
+}
+
+/* ---- truncated/wrapped --- */
+.rux-notification-banner__content {
+    overflow-x: hidden; //because of this focus doesn't show. need refactor.
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* ----- Status Variants ----- */
+
+.rux-notification-banner--critical {
+    border-color: var(--notification-banner-color-border-outer-critical);
+    background: var(--color-status-critical);
+    .rux-notification-banner__inner {
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-critical);
+        border-left-width: var(--notification-banner-border-width-left);
+    }
+}
+
+.rux-notification-banner--caution {
+    border-color: var(--notification-banner-color-border-outer-caution);
+    background: var(--color-status-caution);
+    .rux-notification-banner__inner {
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-caution);
+        border-left-width: var(--notification-banner-border-width-left);
+    }
+}
+
+.rux-notification-banner--serious {
+    border-color: var(--notification-banner-color-border-outer-serious);
+    background: var(--color-status-serious);
+    .rux-notification-banner__inner {
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-serious);
+        border-left-width: var(--notification-banner-border-width-left);
+    }
+}
+
+.rux-notification-banner--normal {
+    border-color: var(--notification-banner-color-border-outer-normal);
+    background: var(--color-status-normal);
+    .rux-notification-banner__inner {
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-normal);
+        border-left-width: var(--notification-banner-border-width-left);
+    }
+}
+
+.rux-notification-banner--standby {
+    border-color: var(--notification-banner-color-border-outer-standby);
+    background: var(--color-status-standby);
+    .rux-notification-banner__inner {
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-standby);
+        border-left-width: var(--notification-banner-border-width-left);
+    }
+}
+
+.rux-notification-banner--off {
+    border-color: var(--notification-banner-color-border-outer-off);
+    background: var(--color-status-off);
+    .rux-notification-banner__inner {
+        border: var(--notifcation-banner-border-inner-width) solid
+            var(--notification-banner-color-border-inner-off);
+        border-left-width: var(--notification-banner-border-width-left);
+    }
+}

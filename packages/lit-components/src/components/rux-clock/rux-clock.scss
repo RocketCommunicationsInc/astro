@@ -1,0 +1,77 @@
+:host {
+    display: flex;
+    margin: var(--spacing-0);
+    color: var(--color-palette-neutral-000);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+:host(:not([hide-labels])) {
+    height: calc(var(--spacing-8) * 2); //64px
+}
+
+.rux-clock {
+    display: flex;
+    user-select: none;
+    color: var(--clock-text-color);
+}
+
+.rux-clock__segment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rux-clock__segment__value {
+    display: flex;
+    align-items: center;
+    color: var(--gsb-color-text);
+    font-family: var(--font-monospace-1-font-family);
+    font-variant-numeric: tabular-nums;
+    font-weight: var(--font-monospace-1-font-weight);
+    font-size: var(--font-monospace-1-font-size);
+    letter-spacing: var(--font-monospace-1-letter-spacing);
+    box-shadow: var(--gsb-color-background) 0 0 0 1px inset;
+    background-color: var(--clock-datetime-color-background);
+    white-space: nowrap;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    height: var(--spacing-10);
+    padding: var(--spacing-0) var(--spacing-3);
+}
+
+:host([small]) .rux-clock__segment__value {
+    height: var(--spacing-10);
+    padding: var(--spacing-1) var(--spacing-3);
+    font-size: 1.15rem;
+    font-weight: var(--font-weight-medium);
+}
+
+.rux-clock__segment__label {
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
+    color: var(--color-palette-neutral-000);
+    background: var(--gsb-color-background);
+    padding: var(--spacing-0) var(--spacing-3) var(--spacing-0) var(--spacing-3);
+    line-height: var(--font-body-3-line-height);
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+    height: var(--spacing-6);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+}
+
+.rux-clock__aos {
+    margin-left: var(--spacing-4);
+}

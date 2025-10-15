@@ -1,0 +1,25 @@
+import { LitElement, css, html, unsafeCSS } from 'lit';
+
+import { customElement } from 'lit/decorators.js';
+import style from './rux-table-header-row.scss?inline';
+
+/**
+ * RuxTableHeaderRow Component (LitElement Conversion)
+ * This component acts as a structural container for table header cells.
+ */
+@customElement('rux-table-header-row')
+export class RuxTableHeaderRow extends LitElement {
+
+    // Define the component's styles
+    static styles = css`
+        ${unsafeCSS(style)}
+    `;
+
+    render() {
+        // In Lit, the component itself is the equivalent of the <Host> element.
+        // We render the default slot directly to display any nested elements (like rux-table-header-cell).
+        return html`
+            <slot></slot>
+        `;
+    }
+}

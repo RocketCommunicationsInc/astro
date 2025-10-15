@@ -1,0 +1,382 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    /**
+     * @prop --slider-track-before-thumb-height: the height of the track before the thumb
+     */
+    --slider-track-before-thumb-height: var(--spacing-1); //4
+
+    --_slider-thumb-size: calc(var(--spacing-4) + var(--spacing-1)); //20
+    --_slider-value-percent: 50%;
+    --_slider-top: calc(var(--_slider-thumb-size) / -2.4);
+    --_start-value-percent: 20%;
+
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-flow: column;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+:host([disabled]) > .rux-form-field > .rux-slider {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+    .rux-range-overlay {
+        cursor: not-allowed;
+    }
+}
+:host([disabled]) > .rux-form-field > #steplist {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+    .tick-label {
+        .axis-label {
+            cursor: not-allowed;
+        }
+    }
+}
+
+.rux-form-field {
+    label {
+        margin-bottom: var(--spacing-2);
+    }
+}
+
+.rux-input-label {
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+}
+
+.with-axis-labels {
+    padding-bottom: var(--spacing-8);
+}
+
+.rux-slider {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    height: calc(var(--spacing-4) + var(--spacing-1)); //20
+    position: relative;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    :hover {
+        cursor: pointer;
+    }
+    :disabled {
+        cursor: not-allowed;
+    }
+
+    &--range input[type='range'] {
+        position: absolute;
+        width: 100%;
+        height: var(--spacing-025);
+        background-color: var(--color-background-interactive-default);
+        pointer-events: none;
+    }
+}
+#steplist {
+    display: grid;
+    padding: var(--spacing-0) calc(var(--_slider-thumb-size) / 2); //center first and last dot on thumb at start and end
+    cursor: default;
+
+    .tick-label {
+        grid-row: 1;
+        width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: var(--font-body-3-font-family);
+        font-size: var(--font-body-3-font-size);
+        line-height: var(--font-body-3-line-height);
+        letter-spacing: var(--font-body-3-letter-spacing);
+        font-weight: var(--font-body-3-font-weight);
+
+        .axis-label {
+            padding-top: var(--spacing-1); //4px
+            cursor: default;
+        }
+    }
+    .tick {
+        background: var(--color-background-interactive-default);
+        height: var(--spacing-1); //4px
+        width: var(--spacing-1);
+        border-radius: var(--radius-circle);
+        cursor: default;
+    }
+    .tick-label:not(:first-child):not(:last-child) {
+        padding: 0;
+    }
+}
+
+.rux-slider + #steplist {
+    padding: var(--spacing-1) calc(var(--_slider-thumb-size) / 2);
+}
+
+.rux-range {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    background: none;
+    width: 100%;
+    height: calc(var(--spacing-4) + var(--spacing-1));
+    margin: var(--spacing-0);
+    color: transparent;
+    position: relative;
+}
+
+input[type='range']:focus {
+    outline: none;
+}
+
+/****** Track ******/
+
+/* Track -> WebKit */
+.rux-range::-webkit-slider-runnable-track {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    /* width: 100%; */
+    cursor: pointer;
+    min-height: var(--spacing-050);
+    max-height: var(--slider-track-before-thumb-height);
+    background-image: linear-gradient(
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        ),
+        linear-gradient(
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        ),
+        radial-gradient(
+            circle,
+            var(--color-background-interactive-default) 70%,
+            var(--color-background-interactive-default) 70%,
+            transparent 70%,
+            transparent 100%
+        );
+    background-size: calc(
+                var(--_slider-value-percent) - (var(--_slider-thumb-size) / 2)
+            )
+            var(--slider-track-before-thumb-height),
+        calc(100% - var(--_slider-thumb-size)) 1px,
+        var(--spacing-1) var(--spacing-1);
+    background-repeat: no-repeat no-repeat;
+    background-position: calc(var(--_slider-thumb-size) / 2),
+        calc(100% - (var(--_slider-thumb-size) / 2)),
+        calc((var(--_slider-thumb-size) / 2) - var(--spacing-050));
+}
+.rux-range--dual::-webkit-slider-runnable-track {
+    background-image: none;
+    z-index: 1;
+    min-block-size: auto;
+}
+.rux-range-overlay {
+    position: absolute;
+    height: var(--spacing-1);
+    background-color: var(--color-background-interactive-default);
+    left: var(--_start-value-percent);
+    width: calc(var(--_slider-value-percent) - var(--_start-value-percent));
+
+    &:hover {
+        cursor: default;
+    }
+}
+.rux-range:disabled::-webkit-slider-runnable-track {
+    cursor: not-allowed;
+}
+
+/* Track -> Moz */
+.rux-range::-moz-range-track {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    /* width: 100%; */
+    cursor: pointer;
+    min-height: var(--spacing-1);
+    max-height: var(--slider-track-before-thumb-height);
+    background-image: linear-gradient(
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        ),
+        linear-gradient(
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        ),
+        radial-gradient(
+            circle,
+            var(--color-background-interactive-default) 70%,
+            var(--color-background-interactive-default) 70%,
+            transparent 70%,
+            transparent 100%
+        );
+    background-size: calc(
+                var(--_slider-value-percent) - (var(--_slider-thumb-size) / 2)
+            )
+            var(--slider-track-before-thumb-height),
+        calc(100% - var(--_slider-thumb-size)) 1px,
+        var(--spacing-1) var(--spacing-1);
+    background-repeat: no-repeat no-repeat;
+    background-position: calc(var(--_slider-thumb-size) / 2),
+        calc(100% - (var(--_slider-thumb-size) / 2)),
+        calc((var(--_slider-thumb-size) / 2) - var(--spacing-050));
+}
+.rux-range:disabled::-moz-range-track,
+.rux-range:disabled::-moz-range-progress {
+    cursor: not-allowed;
+}
+
+.rux-input:disabled {
+    cursor: not-allowed;
+}
+
+/* Track -> Ms */
+.rux-range::-ms-track {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+
+    /* width: 100%; */
+    cursor: pointer;
+    border-radius: var(--radius-circle);
+    min-height: var(--spacing-025);
+    max-height: var(--spacing-1);
+    background-image: linear-gradient(
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        ),
+        linear-gradient(
+            var(--color-background-interactive-default),
+            var(--color-background-interactive-default)
+        );
+    background-size: var(--_slider-value-percent)
+            var(--slider-track-before-thumb-height),
+        100% 1px;
+    background-repeat: no-repeat no-repeat;
+    background-position: left, right;
+}
+.rux-range::-ms-fill-lower {
+    height: var(--spacing-050);
+    background-color: var(--color-background-interactive-default);
+}
+.rux-range::-ms-fill-upper {
+    height: var(--spacing-050);
+    background-color: var(--color-background-interactive-default);
+}
+
+/*****  Thumb ******/
+
+/* Thumb -> Webkit */
+.rux-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    position: relative;
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
+    border-radius: 100%;
+    border: 2px solid var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
+    cursor: pointer;
+    z-index: 6;
+    pointer-events: all;
+}
+
+.rux-range::-webkit-slider-thumb:hover {
+    border-color: var(--color-background-interactive-hover);
+    background-color: var(--color-background-base-default);
+}
+
+.rux-range:focus-visible::-webkit-slider-thumb {
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
+}
+
+.rux-range:disabled::-webkit-slider-thumb {
+    cursor: not-allowed;
+}
+
+.rux-range:disabled::-webkit-slider-thumb:hover {
+    border-color: var(--color-background-interactive-default);
+}
+
+.rux-range:not(:disabled)::-webkit-slider-thumb:active {
+    border-color: var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
+}
+
+.rux-range:not(:disabled)::-webkit-slider-thumb:focus,
+.rux-range:not(:disabled)::-webkit-slider-thumb:hover:not(:active) {
+    background-color: var(--color-background-base-default);
+}
+
+/* Thumb -> Moz */
+.rux-range::-moz-range-thumb {
+    -moz-appearance: none;
+    position: relative;
+    box-sizing: border-box;
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
+    border-radius: 100%;
+    border: 2px solid var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
+    cursor: pointer;
+    z-index: 6;
+}
+.rux-range:not(:disabled)::-moz-range-thumb:active {
+    border-color: var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
+}
+.rux-range::-moz-range-thumb:hover {
+    border-color: var(--color-background-interactive-hover);
+}
+
+.rux-range:focus-visible::-moz-range-thumb {
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
+}
+
+.rux-range:disabled::-moz-range-thumb {
+    cursor: not-allowed;
+}
+
+/* Thumb -> Ms */
+.rux-range::-ms-thumb {
+    position: relative;
+    top: var(--_slider-top);
+    height: var(--_slider-thumb-size);
+    width: var(--_slider-thumb-size);
+    border-radius: 100%;
+    border: 2px solid var(--color-background-interactive-default);
+    background-color: var(--color-background-base-default);
+    cursor: pointer;
+    z-index: 6;
+}
+.rux-range:disabled::-ms-thumb {
+    cursor: not-allowed;
+}
+.rux-range:focus-visible::-ms-thumb {
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
+}

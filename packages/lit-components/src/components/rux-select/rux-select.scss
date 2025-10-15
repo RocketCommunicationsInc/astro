@@ -1,0 +1,267 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    display: block;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+    scrollbar-color: var(--color-border-interactive-muted)
+        var(--color-background-surface-default);
+    ::-webkit-scrollbar {
+        width: var(--spacing-4); //16px
+        height: var(--spacing-4); //16px
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: var(
+            --color-border-interactive-muted,
+            rgb(43, 101, 155)
+        );
+        border-radius: var(--spacing-2); //8
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    ::-webkit-scrollbar-thumb:vertical {
+        border-left-width: var(--border-width-lg); //4px
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: var(--border-width-lg); //4px
+    }
+
+    ::-webkit-scrollbar-thumb:active,
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: var(
+            --color-background-interactive-default,
+            rgb(58, 129, 191)
+        );
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-corner {
+        background-color: var(
+            --color-background-surface-default,
+            rgb(27, 45, 62)
+        );
+
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    ::-webkit-scrollbar-track:vertical {
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        box-shadow: var(--scrollbar-shadow-inner-horizontal);
+    }
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: calc(var(--spacing-3) - 2px); //10px
+    color: var(--color-text-primary);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    line-height: var(--font-control-body-1-line-height);
+    .rux-label__asterisk {
+        margin-left: var(--spacing-1); //4px
+    }
+}
+
+.rux-select:not(.rux-select--multiple):not(.rux-select--inline) {
+    background-image: var(--dropdown-arrow),
+        linear-gradient(
+            to left,
+            var(--color-background-surface-selected) var(--spacing-8),
+            var(--color-background-base-default) var(--spacing-8)
+        );
+    background-position: center right var(--spacing-025),
+        center left var(--spacing-0);
+    background-repeat: no-repeat;
+    &:active:not(:disabled) {
+        background-image: var(--dropdown-arrow),
+            linear-gradient(
+                to left,
+                var(--color-background-surface-selected) var(--spacing-8),
+                var(--color-background-base-default) var(--spacing-8)
+            );
+    }
+    &:hover:not(:disabled) {
+        cursor: pointer;
+    }
+}
+
+.rux-select {
+    box-sizing: border-box;
+    position: relative;
+    background: var(--color-background-base-default);
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    border: 1px solid var(--color-border-interactive-muted);
+    border-radius: var(--radius-base);
+    color: var(--color-background-interactive-default);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    user-select: none;
+
+    //In the following, the right padding accounts for normal padding + size of drop down arrow
+    &--small {
+        padding: calc(var(--spacing-1) - 1px) var(--spacing-2); //3px 8px (leaving 2px height for border)
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
+    }
+    &--medium {
+        padding: calc(var(--spacing-2) - 1px) var(--spacing-2); //7px 8px (leaving 2px height for border)
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
+    }
+    &--large {
+        padding: calc(var(--spacing-3) - 1px) var(--spacing-2); //11px 8px (leaving 2px height for border)
+        padding-right: calc(var(--spacing-2) + var(--spacing-8));
+    }
+    &--inline:not(.rux-select--multiple) {
+        color: var(--color-text-primary);
+        background: transparent;
+        border: 1px solid transparent;
+        background-image: var(--dropdown-arrow);
+        background-position: center right var(--spacing-025),
+            center left var(--spacing-0);
+        background-repeat: no-repeat;
+        padding-right: 1.875rem;
+        &:disabled {
+            &:hover {
+                border: 1px solid transparent;
+            }
+        }
+    }
+    &--multiple {
+        background: var(--color-background-base-default);
+        padding: 0;
+        &:disabled {
+            cursor: not-allowed;
+            option:hover {
+                cursor: not-allowed;
+            }
+        }
+        option {
+            padding: calc(var(--spacing-2) - 1px) var(--spacing-0)
+                calc(var(--spacing-2) - 1px) var(--spacing-4); // 7px 0px 7px 16px
+            text-indent: var(--spacing-4);
+            &:hover {
+                color: var(--color-background-interactive-hover);
+                background-color: var(--color-background-surface-hover);
+                cursor: pointer;
+            }
+            &:checked {
+                background: var(--color-background-surface-selected);
+                color: var(--color-text-primary);
+            }
+            &:disabled {
+                cursor: not-allowed;
+                &:hover {
+                    color: var(--color-background-interactive-default);
+                    opacity: var(--opacity-disabled);
+                    background-color: linear-gradient(
+                        to left,
+                        var(--color-background-surface-selected)
+                            var(--spacing-8),
+                        var(--color-background-base-default) var(--spacing-8)
+                    );
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+
+    &:hover {
+        border: 1px solid var(--color-background-interactive-hover);
+    }
+
+    &:focus-visible {
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+        border: 1px solid var(--color-background-interactive-default);
+    }
+
+    &:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        &:hover:not(.rux-select--inline) {
+            border: 1px solid var(--color-border-interactive-muted);
+            option {
+                background: var(--color-background-base-default);
+                color: var(--color-background-interactive-default);
+            }
+        }
+    }
+
+    &::-ms-expand {
+        display: none;
+    }
+
+    &:focus::-ms-value {
+        background: transparent;
+    }
+
+    option {
+        opacity: 1;
+        color: var(--color-background-interactive-default);
+        border-radius: 0;
+
+        &:hover {
+            color: var(--color-background-interactive-hover);
+            background-color: var(--color-background-surface-hover);
+        }
+
+        &:focus {
+            color: var(--color-text-primary);
+            background-color: var(--color-background-surface-selected);
+        }
+        &:disabled {
+            cursor: not-allowed;
+            color: #4dacff66;
+        }
+    }
+
+    optgroup {
+        text-indent: var(--spacing-4);
+        color: var(--select-menu-text-color);
+        font-family: var(--font-body-1-font-family);
+        font-size: var(--font-body-1-font-size);
+        font-weight: var(--font-body-1-font-weight);
+        letter-spacing: var(--font-body-1-letter-spacing);
+        font-style: normal;
+    }
+}
+
+//no hover border color change when invalid and disabled
+.rux-select.rux-select--invalid {
+    border: 1px solid var(--color-text-error);
+    &:disabled {
+        &:hover {
+            border: 1px solid var(--color-text-error);
+        }
+    }
+    &:hover {
+        border: 1px solid var(--color-background-interactive-hover);
+    }
+}

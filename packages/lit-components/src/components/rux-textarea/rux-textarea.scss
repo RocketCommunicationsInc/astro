@@ -1,0 +1,148 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    display: block;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+textarea {
+    //scrollbars
+    scrollbar-color: var(--color-border-interactive-muted)
+        var(--color-background-surface-default);
+    &::-webkit-scrollbar {
+        width: var(--spacing-4); //16px
+        height: var(--spacing-4); //16px
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(
+            --color-border-interactive-muted,
+            rgb(43, 101, 155)
+        );
+        border-radius: var(--spacing-2); //8
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    &::-webkit-scrollbar-thumb:vertical {
+        border-left-width: var(--border-width-lg); //4px
+    }
+
+    &::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: var(--border-width-lg); //4px
+    }
+
+    &::-webkit-scrollbar-thumb:active,
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(
+            --color-background-interactive-default,
+            rgb(58, 129, 191)
+        );
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: var(
+            --color-background-surface-default,
+            rgb(27, 45, 62)
+        );
+
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    &::-webkit-scrollbar-corner {
+        background-color: var(
+            --color-background-surface-default,
+            rgb(27, 45, 62)
+        );
+    }
+
+    &::-webkit-scrollbar-track:vertical {
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    &::-webkit-scrollbar-track:horizontal {
+        box-shadow: var(--scrollbar-shadow-inner-horizontal);
+    }
+}
+
+.rux-textarea {
+    box-sizing: border-box;
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-base-default);
+    min-height: var(--spacing-16); //64
+    width: 100%;
+    padding: var(--spacing-2);
+    margin: var(--spacing-0);
+    border: 1px solid var(--color-border-interactive-muted);
+    border-radius: var(--radius-base);
+
+    &--invalid {
+        border: 1px solid var(--color-text-error);
+    }
+    &--disabled {
+        opacity: 0.4;
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+    }
+    &--small {
+        padding: var(--spacing-1) var(--spacing-2); //4px 8px
+        min-height: var(--spacing-14); //56px
+    }
+    &--large {
+        min-height: calc(var(--spacing-16) + var(--spacing-2)); //72px
+        padding: var(--spacing-3) var(--spacing-2); //12px 8px
+    }
+
+    &:focus-visible {
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+    &:hover {
+        border-color: var(--color-background-interactive-hover);
+        outline: none;
+    }
+    &--disabled:hover {
+        border: 1px solid var(--color-border-interactive-muted);
+        color: var(--color-text-primary);
+    }
+    &--invalid:hover {
+        border: 1px solid var(--color-text-error);
+    }
+    &::placeholder {
+        color: var(--color-text-placeholder);
+    }
+}
+
+.rux-textarea-field {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-primary);
+}
+
+.rux-textarea-label {
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    margin-bottom: var(--spacing-2);
+    text-align: left;
+    &__asterisk {
+        margin-left: var(--spacing-1);
+    }
+}
+
+::selection {
+    background-color: var(--color-palette-brightblue-400);
+}

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+    <body>
+        <!-- PARTS TESTING -->
+        <!-- <style>
+            rux-accordion-item::part(container) {
+                border: 3px solid green;
+                border-radius: 20px;
+                padding: 0;
+                background-color: black;
+            }
+
+            rux-accordion-item::part(label-wrapper) {
+                
+            }
+            rux-accordion-item::part(label) {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            rux-accordion-item::part(icon),
+            rux-accordion-item::part(indicator) {
+                color: white;
+            }
+        </style> -->
+
+        <div>
+            <rux-accordion>
+                <rux-accordion-item>
+                    <div slot="label">Test1</div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Atque porro odio recusandae aut cupiditate id,
+                        voluptatibus illo distinctio, asperiores quas nulla,
+                        maiores modi at? Harum quas voluptatem eius illo ex!
+                    </p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
+                    <div slot="label">Test2</div>
+                    <form id="form">
+                        <rux-input
+                            id="ruxInput"
+                            name="ruxInput"
+                            label="Input Field"
+                        ></rux-input>
+                        <p>Add all the things!</p>
+                        <rux-checkbox-group>
+                            <rux-checkbox>one</rux-checkbox>
+                            <rux-checkbox>two</rux-checkbox>
+                            <rux-checkbox>three</rux-checkbox>
+                        </rux-checkbox-group>
+                    </form>
+                </rux-accordion-item>
+                <rux-accordion-item disabled>
+                    <rux-icon slot="prefix" size="auto" icon="apps"></rux-icon>
+                    <div slot="label">
+                        this is a really really long title that we're doing over
+                        here where it might wrap and stuff this is a really
+                        really long title that we're doing over here where it
+                        might wrap and stuff
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Repellendus assumenda adipisci error quas dolore nulla
+                        reiciendis soluta praesentium excepturi pariatur ipsum,
+                        eos provident sed, quisquam doloremque labore tenetur
+                        consequuntur numquam!
+                    </p>
+                    <img
+                        src="https://www.rd.com/wp-content/uploads/2021/04/GettyImages-138468381-scaled-e1619028416767.jpg"
+                        alt="KITTIES!"
+                        style="width: 80%; margin: 10px auto"
+                    />
+                </rux-accordion-item>
+            </rux-accordion>
+
+            <h3>Second test bed</h3>
+            <rux-accordion disallow-multiple>
+                <rux-accordion-item expanded>
+                    <div slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </div>
+                    content in here
+                </rux-accordion-item>
+                <rux-accordion-item expanded>
+                    <div slot="label">second one</div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                    eos impedit tempora labore magnam magni maiores esse unde,
+                    praesentium sed eaque ducimus in odit,</rux-accordion-item
+                >
+                <rux-accordion-item>
+                    <div slot="label">third one</div>
+                    stuff in here
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </div>
+                    stuff in here
+                </rux-accordion-item>
+            </rux-accordion>
+            <h3>Truncate test bed</h3>
+            <style>
+                #truncated [slot='label'] {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            </style>
+            <rux-accordion id="truncated">
+                <rux-accordion-item expanded>
+                    <rux-icon icon="star" size="auto" slot="prefix"></rux-icon>
+                    <span slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </span>
+                    content in here
+                </rux-accordion-item>
+                <rux-accordion-item expanded>
+                    <rux-status slot="prefix" status="critical"></rux-status>
+                    <span slot="label">second one</span>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                    eos impedit tempora labore magnam magni maiores esse unde,
+                    praesentium sed eaque ducimus in odit,</rux-accordion-item
+                >
+                <rux-accordion-item>
+                    <h1 slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </h1>
+                    stuff in here
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <rux-icon size="auto" icon="star" slot="prefix"></rux-icon
+                    ><rux-status status="normal" slot="prefix"></rux-status>
+                    <div slot="label">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. A eos impedit tempora labore magnam magni maiores
+                        esse unde, praesentium sed eaque ducimus in odit
+                    </div>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. A
+                    eos impedit tempora labore magnam magni maiores esse unde,
+                    praesentium sed eaque ducimus in odit Lorem, ipsum dolor sit
+                    amet consectetur adipisicing elit. A eos impedit tempora
+                    labore magnam magni maiores esse unde, praesentium sed eaque
+                    ducimus in odit Lorem, ipsum dolor sit amet consectetur
+                    adipisicing elit. A eos impedit tempora labore magnam magni
+                    maiores esse unde, praesentium sed eaque ducimus in odit
+                </rux-accordion-item>
+            </rux-accordion>
+        </div>
+
+        <!-- <section>
+            <h2>Figma Testing Stuff</h2>
+            <ftl-belt file-id="7tni7pdpLodbs6dGiKwGMz">
+                <ftl-holster name="Single Item Closed" node='39895:127969'>
+                    <div>
+                        <rux-accordion>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Single Item Open" node='39895:127996'>
+                    <div style="width: 450px">
+                        <rux-accordion>
+                            <rux-accordion-item expanded>
+                                <div slot="label">Parent item</div>
+                                <div>Place your text-based content here. If you need more advanced content options, consider creating a component and replacing the Slot layer.</div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Single Item Disabled" node='39895:127978'>
+                    <div>
+                        <rux-accordion>
+                            <rux-accordion-item disabled>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Long Title Wrap Text" node='I39895:127904;39895:127964'>
+                    <div style="width: 450px">
+                        <rux-accordion>
+                            <rux-accordion-item>
+                                <div slot="label">Testing multiple line text Testing multiple line text Testing multiple line text Testing multiple line text</div>
+                                <div>Testing multiple line text Testing multiple line text Testing multiple line text Testing multiple line text </div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Left Icon" node='I39895:127911;39895:127964'>
+                    <div style="width: 450px">
+                        <rux-accordion>
+                            <rux-accordion-item>
+                                <div slot="prefix">
+                                    <rux-icon icon="satellite-transmit" size="20px"></rux-icon>
+                                </div>
+                                <div slot="label">Parent item</div>
+                                <div>Testing multiple line text Testing multiple line text Testing multiple line text Testing multiple line text </div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="all closed" node="39895:127960">
+                    <div>
+                        <rux-accordion>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                            <rux-accordion-item>
+                                <div slot="label">Parent Item</div>
+                                <div>Content goes here</div>
+                            </rux-accordion-item>
+                        </rux-accordion>
+                    </div>
+                </ftl-holster>
+
+
+            </ftl-belt> 
+
+        </section>-->
+    </body>
+</html>

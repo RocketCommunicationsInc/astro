@@ -1,0 +1,104 @@
+:host {
+    display: block;
+    font-size: var(
+        --font-body-1-bold-font-size
+    ); /*This is here to fix the issue of setting font-size on parent and having it override the component styling*/
+    line-height: var(
+        --line-height-base
+    ); /*This is here to fix the issue of setting line-height on parent and having it override the component styling*/
+    text-align: center;
+}
+
+:host([tag]) {
+    display: inline-block;
+    font-size: var(
+        --font-body-2-bold-font-size
+    ); /*This is here to fix the issue of setting font-size on parent and having it override the component styling*/
+    line-height: var(
+        --line-height-base
+    ); /*This is here to fix the issue of setting line-height on parent and having it override the component styling*/
+    text-align: left;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+.rux-classification {
+    padding: 0 var(--spacing-2);
+    font-family: var(--font-body-1-bold-font-family);
+    font-size: var(--font-body-1-bold-font-size);
+    font-weight: var(--font-body-1-bold-font-weight);
+    letter-spacing: var(--font-body-1-bold-letter-spacing);
+    line-height: var(--font-body-1-bold-line-height);
+    color: var(--color-text-white);
+    background-color: var(
+        --classification-banner-color-background-unclassified
+    );
+    text-transform: uppercase;
+}
+
+.rux-classification--banner {
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: var(--spacing-6);
+    overflow-wrap: anywhere;
+    color: var(--color-text-white);
+    background-color: var(
+        --classification-banner-color-background-unclassified
+    );
+    position: sticky;
+    top: 0;
+    left: 0;
+    flex-wrap: nowrap;
+    flex-grow: 1;
+    &__footer {
+        bottom: 0;
+        top: inherit;
+        position: sticky;
+    }
+}
+
+.rux-classification--tag {
+    width: fit-content;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-1) var(--spacing-3);
+    line-height: var(--font-body-2-bold-line-height);
+    border-radius: var(--radius-base);
+    font-family: var(--font-body-2-bold-font-family);
+    font-size: var(--font-body-2-bold-font-size);
+    font-weight: var(--font-body-2-bold-font-weight);
+    letter-spacing: var(--font-body-2-bold-letter-spacing);
+}
+
+:host([classification='top-secret-sci']) .rux-classification {
+    background-color: var(
+        --classification-banner-color-background-topsecretsci
+    );
+    color: var(--color-text-black);
+}
+
+:host([classification='top-secret']) .rux-classification {
+    background-color: var(--classification-banner-color-background-topsecret);
+    color: var(--color-text-black);
+}
+:host([classification='secret']) .rux-classification {
+    background-color: var(--classification-banner-color-background-secret);
+}
+:host([classification='confidential']) .rux-classification {
+    background-color: var(
+        --classification-banner-color-background-confidential
+    );
+}
+:host([classification='cui']) .rux-classification,
+:host([classification='controlled']) .rux-classification {
+    background-color: var(--classification-banner-color-background-cui);
+}
+:host([classification='unclassified']) .rux-classification {
+    background-color: var(
+        --classification-banner-color-background-unclassified
+    );
+}

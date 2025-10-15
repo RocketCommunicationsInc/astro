@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Accordion</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-accordion>
+                <rux-accordion-item data-test-id="default">
+                    <div slot="label">Title 1</div>
+                    <p>Content 1</p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">Title 2</div>
+                    <p>Content 2</p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">Title 3</div>
+                    <p>Content 3</p>
+                </rux-accordion-item>
+            </rux-accordion>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-accordion>
+                <rux-accordion-item disabled>
+                    <div slot="label">Disabled Item</div>
+                    <p>Content 1</p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">Title 2</div>
+                    <p>Content 2</p>
+                </rux-accordion-item>
+            </rux-accordion>
+            <rux-accordion>
+                <rux-accordion-item expanded>
+                    <div slot="label">expanded Item</div>
+                    <p>Content 1</p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">Title 2</div>
+                    <p>Content 2</p>
+                </rux-accordion-item>
+            </rux-accordion>
+            <rux-accordion disabled>
+                <rux-accordion-item disabled>
+                    <div slot="label">Disabled Item</div>
+                    <p>Content 1</p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">Title 2</div>
+                    <p>Content 2</p>
+                </rux-accordion-item>
+            </rux-accordion>
+        </section>
+        <section>
+            <h2>Truncated</h2>
+            <style>
+                #truncated [slot='label'] {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                }
+            </style>
+            <rux-accordion id="truncated">
+                <rux-accordion-item>
+                    <div slot="label">
+                        Title 1 - Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. A eos impedit tempora labore magnam
+                        magni maiores esse unde, praesentium sed eaque ducimus
+                        in odit
+                    </div>
+                    <p>Content 1</p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">
+                        Title 2 - Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. A eos impedit tempora labore magnam
+                        magni maiores esse unde, praesentium sed eaque ducimus
+                        in odit
+                    </div>
+                    <p>Content 2</p>
+                </rux-accordion-item>
+                <rux-accordion-item>
+                    <div slot="label">
+                        Title 3 - Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. A eos impedit tempora labore magnam
+                        magni maiores esse unde, praesentium sed eaque ducimus
+                        in odit
+                    </div>
+                    <p>
+                        Content 3 Long - Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. A eos impedit tempora labore magnam
+                        magni maiores esse unde, praesentium sed eaque ducimus
+                        in oditLorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. A eos impedit tempora labore magnam
+                        magni maiores esse unde
+                    </p>
+                </rux-accordion-item>
+            </rux-accordion>
+        </section>
+    </body>
+</html>

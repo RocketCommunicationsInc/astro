@@ -1,0 +1,27 @@
+:host {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: flex-start;
+    height: 100%;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+:host(:not(:focus-within)) {
+    contain: content; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+}
+:host([hidden]) {
+    display: none;
+}
+:host([compact]) {
+    align-items: end;
+    // background-color: var(--color-background-base-header);
+    box-shadow: inset 0px -1px var(--color-background-interactive-muted);
+    padding: 0 16px;
+    gap: 4px;
+}

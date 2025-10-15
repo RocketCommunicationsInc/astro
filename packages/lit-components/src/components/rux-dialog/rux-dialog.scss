@@ -1,0 +1,188 @@
+@use '../../global/mixins';
+
+:host {
+    display: contents;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+//  this styling is only used in storybook up for presentational purposes
+//  default flex position takes up the entire body element en spills overlay
+//  on top of the docs page
+
+:host([hidden]) {
+    display: none;
+}
+
+.rux-button-group {
+    margin-left: auto;
+}
+
+.rux-button-group rux-button:first-of-type {
+    margin-right: var(--spacing-2);
+}
+
+.rux-dialog {
+    &__wrapper {
+        position: fixed;
+        top: var(--spacing-0);
+        left: var(--spacing-0);
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1100;
+        background-color: rgba(0, 0, 0, 0.5);
+        @include mixins.animation(fadeIn, 0.5s);
+    }
+    &__dialog {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--color-background-surface-default);
+        width: 28rem;
+        border: var(--spacing-0);
+        margin: auto;
+        padding: var(--spacing-0);
+        user-select: none;
+        box-shadow: var(--shadow-outer-dialog);
+        max-height: 100%;
+    }
+
+    &__header {
+        box-sizing: border-box;
+        display: flex;
+        flex-grow: var(--spacing-0);
+        flex-shrink: var(--spacing-0);
+        align-items: center;
+        width: 100%;
+        padding: var(--spacing-4);
+        background-color: var(--color-background-surface-header);
+        color: var(--color-text-primary);
+        user-select: none;
+        font-family: var(--font-heading-2-font-family);
+        font-size: var(
+            --font-heading-2-font-size
+        ); //fixes issue where parent element with larger font-size causes layout shift.
+        line-height: var(
+            --font-heading-2-line-height
+        ); //fixes issue where parent element with larger line-height causes layout shift.
+        font-weight: var(--font-heading-2-font-weight);
+        letter-spacing: var(--font-heading-2-letter-spacing);
+        ::slotted(h6),
+        ::slotted(h5),
+        ::slotted(h4),
+        ::slotted(h3),
+        ::slotted(h2),
+        ::slotted(h1) {
+            margin-block-start: var(--spacing-0);
+            margin-block-end: var(--spacing-0);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        color: var(--color-text-primary);
+        overflow: auto;
+        scrollbar-color: var(
+                --color-border-interactive-muted,
+                rgb(43, 101, 155)
+            )
+            var(--color-background-surface-default, rgb(27, 45, 62));
+        &::-webkit-scrollbar {
+            width: var(--spacing-4);
+            height: var(--spacing-4);
+            background-color: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(
+                --color-border-interactive-muted,
+                rgb(43, 101, 155)
+            );
+            border-radius: 8px;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+        &::-webkit-scrollbar-thumb:vertical {
+            border-left-width: var(--border-width-lg); //4px
+        }
+
+        &::-webkit-scrollbar-thumb:horizontal {
+            border-top-width: var(--border-width-lg); //4px
+        }
+
+        &::-webkit-scrollbar-thumb:active,
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: var(
+                --color-background-interactive-default,
+                rgb(58, 129, 191)
+            );
+        }
+
+        &::-webkit-scrollbar-track,
+        &::-webkit-scrollbar-corner {
+            background-color: var(--color-background-surface-default);
+            box-shadow: var(--scrollbar-shadow-inner-vertical);
+        }
+
+        &::-webkit-scrollbar-track:vertical {
+            box-shadow: var(--scrollbar-shadow-inner-vertical);
+        }
+
+        &::-webkit-scrollbar-track:horizontal {
+            box-shadow: var(--scrollbar-shadow-inner-vertical);
+        }
+    }
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        padding: var(--spacing-4);
+        color: var(--color-text-primary);
+    }
+
+    &__message {
+        padding: var(--spacing-4) var(--spacing-4) var(--spacing-1)
+            var(--spacing-4); //spacing 4 on bottom so there isn't double padding when footer is showing, BUT there needs to be padding so focus states are visible. Developer can add back padding if no footer using part.
+        font-size: var(
+            --font-body-1-font-size
+        ); //fixes issue where parent element with larger font-size causes layout shift.
+        line-height: var(
+            --font-body-1-line-height
+        ); //fixes issue where parent element with larger line-height causes layout shift.
+        text-align: left; //fixes issue where parent element with different text-align causes text-shift shift.
+    }
+    .rux-button {
+        box-shadow: none !important;
+    }
+    &__header.hidden {
+        display: none;
+    }
+    &__message.hidden {
+        display: none;
+    }
+}
+
+rux-icon {
+    margin-right: var(--spacing-3);
+}
+
+@include mixins.keyframes(fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

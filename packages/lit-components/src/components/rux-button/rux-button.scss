@@ -1,0 +1,150 @@
+:host {
+    display: inline-block;
+    width: auto;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+:host([disabled]) {
+    pointer-events: none;
+}
+.rux-button {
+    border: none;
+    display: flex;
+    position: relative;
+    margin: var(--spacing-0);
+    width: inherit;
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-base);
+    color: var(--color-text-inverse);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    rux-icon,
+    ::slotted(rux-icon) {
+        height: calc(var(--spacing-4) + var(--spacing-1)); //20
+        width: calc(var(--spacing-4) + var(--spacing-1)); //20
+        margin-right: var(--spacing-1); //4
+        color: var(--color-text-inverse);
+    }
+
+    &:disabled {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    &:focus-visible {
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+
+    &:hover:not([disabled]) {
+        cursor: pointer;
+    }
+
+    &--default {
+        background-color: var(--color-background-interactive-default);
+        &:hover:not([disabled]) {
+            border-color: transparent;
+            background-color: var(--color-background-interactive-hover);
+        }
+        &:active:not([disabled]) {
+            border-color: var(--color-background-interactive-default);
+            background-color: var(--color-background-interactive-default);
+        }
+    }
+
+    &--secondary {
+        color: var(--color-background-interactive-default);
+        background-color: transparent;
+        //use box-shadow instead of border
+        box-shadow: var(--color-border-interactive-default) 0 0 0 1px inset;
+
+        &:hover:not([disabled]) {
+            color: var(--color-background-interactive-hover);
+            background-color: transparent;
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--color-background-interactive-hover);
+            }
+        }
+
+        &:active:not([disabled]) {
+            box-shadow: var(--color-background-interactive-default) 0 0 0 1px
+                inset;
+            background-color: transparent;
+            color: var(--color-background-interactive-default);
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--color-background-interactive-default);
+            }
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--color-background-interactive-default);
+        }
+    }
+    &--borderless {
+        color: var(--color-background-interactive-default);
+        box-shadow: none;
+        background: none;
+        &:hover:not([disabled]) {
+            color: var(--color-background-interactive-hover);
+            background: none;
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--color-background-interactive-hover);
+            }
+        }
+        &:active:not([disabled]) {
+            color: var(--color-background-interactive-default);
+            rux-icon,
+            ::slotted(rux-icon) {
+                color: var(--color-background-interactive-default);
+            }
+            background: none;
+        }
+        rux-icon,
+        ::slotted(rux-icon) {
+            color: var(--color-background-interactive-default);
+        }
+    }
+
+    &--small {
+        padding: var(--spacing-1) var(--spacing-4);
+        &.rux-button--icon-only {
+            padding: var(--spacing-1);
+        }
+    }
+
+    &--large {
+        padding: var(--spacing-3) var(--spacing-4);
+        &.rux-button--icon-only {
+            padding: var(--spacing-3);
+        }
+    }
+
+    &--icon-only {
+        font-size: 0;
+        padding: var(--spacing-2);
+    }
+}
+
+.rux-button--icon-only ::slotted(rux-icon),
+.rux-button--icon-only rux-icon {
+    margin: 0;
+}

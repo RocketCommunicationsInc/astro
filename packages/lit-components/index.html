@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite + Lit + TS</title>
+        <link ref="stylesheet" href="https://astro-components.netlify.app/astro-web-components/astro-web-components.css" />
+        <link rel="stylesheet" href="./src/index.css" />
+        <script type="module" src="/src/components/rux-accordion/rux-accordion-item/rux-accordion-item.ts"></script>
+        <script type="module" src="/src/components/rux-accordion/rux-accordion.ts"></script>
+        <script type="module" src="/src/components/rux-breadcrumb/rux-breadcrumb-item/rux-breadcrumb-item.ts"></script>
+        <script type="module" src="/src/components/rux-breadcrumb/rux-breadcrumb.ts"></script>
+        <script type="module" src="/src/components/rux-button/rux-button.ts"></script>
+        <script type="module" src="/src/components/rux-card/rux-card.ts"></script>
+        <script type="module" src="/src/components/rux-checkbox-group/rux-checkbox-group.ts"></script>
+        <script type="module" src="/src/components/rux-checkbox/rux-checkbox.ts"></script>
+        <script type="module" src="/src/components/rux-classification-marking/rux-classification-marking.ts"></script>
+        <script type="module" src="/src/components/rux-clock/rux-clock.ts"></script>
+        <script type="module" src="/src/components/rux-container/rux-container.ts"></script>
+        <script type="module" src="/src/components/rux-datetime/rux-datetime.ts"></script>
+        <script type="module" src="/src/components/rux-dialog/rux-dialog.ts"></script>
+        <script type="module" src="/src/components/rux-global-status-bar/appMeta/appMeta.ts"></script>
+        <script type="module" src="/src/components/rux-global-status-bar/rux-global-status-bar.ts"></script>
+        <script type="module" src="/src/components/rux-indeterminate-progress/rux-indeterminate-progress.ts"></script>
+        <script type="module" src="/src/components/rux-input/rux-input.ts"></script>
+        <script type="module" src="/src/components/rux-log/rux-log.ts"></script>
+        <script type="module" src="/src/components/rux-menu-item-divider/rux-menu-item-divider.ts"></script>
+        <script type="module" src="/src/components/rux-menu-item/rux-menu-item.ts"></script>
+        <script type="module" src="/src/components/rux-menu/rux-menu.ts"></script>
+        <!-- <script type="module" src="/src/components/rux-monitoring-icon/rux-monitoring-icon.ts"></script> -->
+        <!-- <script type="module" src="/src/components/rux-monitoring-progress-icon/rux-monitoring-progress-icon.ts"></script> -->
+        <script type="module" src="/src/components/rux-notification/rux-notification.ts"></script>
+        <script type="module" src="/src/components/rux-option-group/rux-option-group.ts"></script>
+        <script type="module" src="/src/components/rux-option/rux-option.ts"></script>
+        <script type="module" src="/src/components/rux-pop-up/rux-pop-up.ts"></script>
+        <script type="module" src="/src/components/rux-progress/rux-progress.ts"></script>
+        <script type="module" src="/src/components/rux-push-button/rux-push-button.ts"></script>
+        <script type="module" src="/src/components/rux-radio-group/rux-radio-group.ts"></script>
+        <script type="module" src="/src/components/rux-radio/rux-radio.ts"></script>
+        <script type="module" src="/src/components/rux-segmented-button/rux-segmented-button.ts"></script>
+        <script type="module" src="/src/components/rux-select/rux-select.ts"></script>
+        <script type="module" src="/src/components/rux-slider/rux-slider.ts"></script>
+        <script type="module" src="/src/components/rux-status/rux-status.ts"></script>
+        <script type="module" src="/src/components/rux-switch/rux-switch.ts"></script>
+        <script type="module" src="/src/components/rux-table/rux-table-body/rux-table-body.ts"></script>
+        <script type="module" src="/src/components/rux-table/rux-table-cell/rux-table-cell.ts"></script>
+        <script type="module" src="/src/components/rux-table/rux-table-header-cell/rux-table-header-cell.ts"></script>
+        <script type="module" src="/src/components/rux-table/rux-table-header-row/rux-table-header-row.ts"></script>
+        <script type="module" src="/src/components/rux-table/rux-table-header/rux-table-header.ts"></script>
+        <script type="module" src="/src/components/rux-table/rux-table-row/rux-table-row.ts"></script>
+        <script type="module" src="/src/components/rux-table/rux-table.ts"></script>
+        <script type="module" src="/src/components/rux-tabs/rux-tab-panel/rux-tab-panel.ts"></script>
+        <script type="module" src="/src/components/rux-tabs/rux-tab-panels/rux-tab-panels.ts"></script>
+        <script type="module" src="/src/components/rux-tabs/rux-tab/rux-tab.ts"></script>
+        <script type="module" src="/src/components/rux-tabs/rux-tabs.ts"></script>
+        <script type="module" src="/src/components/rux-tag/rux-tag.ts"></script>
+        <script type="module" src="/src/components/rux-textarea/rux-textarea.ts"></script>
+        <script type="module" src="/src/components/rux-toast-stack/rux-toast-stack.ts"></script>
+        <script type="module" src="/src/components/rux-toast/rux-toast.ts"></script>
+        <script type="module" src="/src/components/rux-tooltip/rux-tooltip.ts"></script>
+        <script type="module" src="/src/components/rux-tree/rux-tree-node/rux-tree-node.ts"></script>
+        <script type="module" src="/src/components/rux-tree/rux-tree.ts"></script>
+    </head>
+    <body>
+        <rux-global-status-bar include-icon="true" app-domain="Astro" app-name="Dashboard" app-version="4.0 Alpha" menu-icon="apps" username="" app-state-color="" app-state="">
+        </rux-global-status-bar>
+        <!-- <rux-button>Button</rux-button> -->
+        <rux-accordion>
+            <rux-accordion-item>
+                <div slot="label">Label</div>
+                <div>Item</div>
+            </rux-accordion-item>
+        </rux-accordion>
+        <rux-breadcrumb id="testCrumb">
+            <rux-breadcrumb-item href="https://google.com">First</rux-breadcrumb-item>
+            <rux-breadcrumb-item href="#">Second</rux-breadcrumb-item>
+            <rux-breadcrumb-item href="#"> <rux-icon size="20px" icon="border-clear"></rux-icon>Third</rux-breadcrumb-item>
+            <rux-breadcrumb-item href="#"> <rux-icon icon="border-clear"></rux-icon>Forth<rux-icon icon="border-clear"></rux-icon> </rux-breadcrumb-item>
+            <rux-breadcrumb-item><rux-icon icon="border-clear"></rux-icon>Last</rux-breadcrumb-item>
+        </rux-breadcrumb>
+        <rux-button-group>
+            <rux-button>One</rux-button>
+            <rux-button>Two</rux-button>
+        </rux-button-group>
+        <rux-card>
+            <div slot="header">Test Header</div>
+            <rux-accordion>
+                <rux-accordion-item>
+                    <div>item</div>
+                    <div slot="label">Label</div>
+                </rux-accordion-item>
+            </rux-accordion>
+        </rux-card>
+        <rux-checkbox>Check</rux-checkbox>
+        <rux-checkbox-group>
+            <rux-checkbox>Check</rux-checkbox>
+            <rux-checkbox>Check2</rux-checkbox>
+        </rux-checkbox-group>
+        <rux-classification-marking classification="cui"></rux-classification-marking>
+        <rux-clock></rux-clock>
+        <rux-container>
+            <div slot="header">Marking</div>
+            <rux-classification-marking></rux-classification-marking>
+        </rux-container>
+        <rux-datetime></rux-datetime>
+        <rux-dialog open="" message="Dialog message" header="Dialog header" confirm-text="Release" deny-text="Cancel"></rux-dialog>
+        <rux-indeterminate-progress></rux-indeterminate-progress>
+        <rux-input></rux-input>
+        <rux-log id="log" data="[{timestamp: new Date(), status: 'off', message: 'Antenna DGS 1 went offline.',}]"></rux-log>
+        <rux-menu>
+            <rux-menu-item>Menu Item</rux-menu-item>
+            <rux-menu-item-divider></rux-menu-item-divider>
+            <rux-menu-item>Menu Item</rux-menu-item>
+            <rux-menu-item>Menu Item</rux-menu-item>
+        </rux-menu>
+        <rux-notification open="" status="standby" message="This is a notification banner. It won’t disappear until the user dismisses it."></rux-notification>
+        <rux-progress value="30"></rux-progress>
+        <rux-select label="Select Menu" input-id="1" label-id="1" name="default" size="medium">
+            <rux-option value="" selected="" label="Select an option"></rux-option>
+            <rux-option value="1.1" label="Option 1.1"></rux-option>
+            <rux-option value="1.2" label="Option 1.2"></rux-option>
+            <rux-option value="1.3" label="Option 1.3"></rux-option>
+            <rux-option value="1.4" disabled="" label="Option 1.4 (disabled)"></rux-option>
+        </rux-select>
+        <rux-pop-up open="true" placement="auto" disable-auto-update="">
+            <rux-button slot="trigger">Trigger</rux-button>
+            <rux-menu>
+                <rux-menu-item href="#">Menu Item 1</rux-menu-item>
+                <rux-menu-item href="#">Menu Item 2</rux-menu-item>
+                <rux-menu-item href="#">Menu Item 3</rux-menu-item>
+            </rux-menu>
+        </rux-pop-up>
+        <rux-push-button label="Push Button"></rux-push-button>
+        <rux-radio-group name="radios" label="Radio group">
+            <rux-radio value="one" name="radios">One</rux-radio>
+            <rux-radio value="two" name="radios">Two</rux-radio>
+            <rux-radio value="three" name="radios">Three</rux-radio>
+        </rux-radio-group>
+        <rux-segmented-button id="segmented-button"></rux-segmented-button>
+        <rux-slider max="100" min="0" step="1" value="50" help-text="" error-text="" label="" name=""></rux-slider>
+        <rux-status style="margin: auto" status="critical"></rux-status>
+        <rux-switch checked></rux-switch>
+        <rux-table>
+            <rux-table-header>
+                <rux-table-header-row>
+                    <rux-table-header-cell>First</rux-table-header-cell>
+                    <rux-table-header-cell>Second</rux-table-header-cell>
+                </rux-table-header-row>
+            </rux-table-header>
+            <rux-table-body>
+                <rux-table-row>
+                    <rux-table-cell>First</rux-table-cell>
+                    <rux-table-cell>Row</rux-table-cell>
+                </rux-table-row>
+                <rux-table-row>
+                    <rux-table-cell>Second</rux-table-cell>
+                    <rux-table-cell>Row</rux-table-cell>
+                </rux-table-row>
+            </rux-table-body>
+        </rux-table>
+        <div>
+            <rux-tabs id="tab-set-id-2" small="">
+                <rux-tab id="tab-id-2-1">Tab 1</rux-tab>
+                <rux-tab id="tab-id-2-2">Tab 2</rux-tab>
+                <rux-tab id="tab-id-2-3" disabled="">Tab 3 (disabled) </rux-tab>
+            </rux-tabs>
+            <rux-tab-panels aria-labelledby="tab-set-id-2">
+                <rux-tab-panel aria-labelledby="tab-id-2-1">
+                    <pre style="padding: 1vw; border: rgba(255, 255, 255, 0.15) dashed 1px; margin: 0">&lt;<span>!-- Small tab 1 HTML content --</span>&gt;</pre>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-2-2">
+                    <pre style="padding: 1vw; border: rgba(255, 255, 255, 0.15) dashed 1px; margin: 0">&lt;<span>!-- Small tab 2 HTML content --</span>&gt;</pre>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-2-3">
+                    <pre style="padding: 1vw; border: rgba(255, 255, 255, 0.15) dashed 1px; margin: 0">&lt;<span>!-- Small tab 3 HTML content --</span>&gt;</pre>
+                </rux-tab-panel>
+            </rux-tab-panels>
+        </div>
+        <rux-tag status="pass">Pass</rux-tag>
+        <rux-textarea label="Textarea label" help-text="" max-length="" min-length="" rows="" value="" type=""></rux-textarea>
+        <rux-toast-stack position="top-right">
+            <rux-toast message="Toast 1"></rux-toast>
+            <rux-toast message="Toast 2"></rux-toast>
+        </rux-toast-stack>
+        <rux-tooltip message="Tooltip" placement="top" delay="800" strategy="absolute" offset="8" disable-auto-update="false" open="true">
+            <rux-button>Trigger</rux-button>
+        </rux-tooltip>
+        <rux-tree>
+            <rux-tree-node>
+                The first item has a long line of text
+                <rux-tree-node slot="node">One</rux-tree-node>
+                <rux-tree-node slot="node">Two</rux-tree-node>
+                <rux-tree-node slot="node">Three</rux-tree-node>
+            </rux-tree-node>
+            <rux-tree-node>
+                Two
+                <rux-tree-node slot="node">One</rux-tree-node>
+                <rux-tree-node slot="node">Two</rux-tree-node>
+                <rux-tree-node slot="node">Three</rux-tree-node>
+            </rux-tree-node>
+            <rux-tree-node>
+                Three
+                <rux-tree-node slot="node">One</rux-tree-node>
+                <rux-tree-node slot="node">Two</rux-tree-node>
+                <rux-tree-node slot="node">Three</rux-tree-node>
+            </rux-tree-node>
+            <rux-tree-node>
+                Four score and seven years ago
+                <rux-tree-node slot="node">One</rux-tree-node>
+                <rux-tree-node slot="node">Two</rux-tree-node>
+                <rux-tree-node slot="node">Three</rux-tree-node>
+            </rux-tree-node>
+        </rux-tree>
+
+        <script>
+            document.getElementById('log').data = [{ timestamp: new Date(), status: 'off', message: 'Antenna DGS 1 went offline.' }]
+            document.getElementById('segmented-button').data = [
+                {
+                    label: 'First item',
+                    selected: false,
+                },
+                {
+                    label: 'Second item',
+                    selected: true,
+                },
+                {
+                    label: 'Third item',
+                    selected: false,
+                },
+            ]
+        </script>
+    </body>
+</html>
+
+<!--
+rux-classification-marking
+rux-clock
+rux-container
+rux-datetime
+rux-dialog
+rux-global-status-bar
+rux-indeterminate-progress
+rux-input
+rux-log
+rux-menu
+rux-menu-item
+rux-menu-item-divider
+rux-monitoring-icon
+rux-monitoring-progress-icon
+rux-notification
+rux-option
+rux-option-group
+rux-pop-up
+rux-progress
+rux-push-button
+rux-radio
+rux-radio-group
+rux-segmented-button
+rux-select
+rux-slider
+rux-status
+rux-switch
+rux-table
+rux-tabs
+rux-tag
+rux-textarea
+rux-timeline
+rux-toast
+rux-toast-stack
+rux-tooltip
+rux-tree
+rux-tree-node
+-->

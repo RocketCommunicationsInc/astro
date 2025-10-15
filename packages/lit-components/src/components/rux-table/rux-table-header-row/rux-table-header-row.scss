@@ -1,0 +1,7 @@
+:host {
+    display: table-row;
+}
+
+:host([hidden]) {
+    display: none;
+}

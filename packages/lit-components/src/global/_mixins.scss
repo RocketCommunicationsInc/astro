@@ -1,0 +1,33 @@
+@mixin animation($name, $duration) {
+    animation: $name $duration;
+    -webkit-animation: $name $duration;
+    -moz-animation: $name $duration;
+    -o-animation: $name $duration;
+    -ms-animation: $name $duration;
+}
+
+@mixin keyframes($name) {
+    @keyframes #{$name} {
+        @content;
+    }
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+    @-o-keyframes #{$name} {
+        @content;
+    }
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+}
+
+@mixin box-sizing($type) {
+    *,
+    *:before,
+    *:after {
+        box-sizing: $type;
+    }
+}

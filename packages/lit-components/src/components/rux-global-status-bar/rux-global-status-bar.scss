@@ -1,0 +1,245 @@
+@use '../../../node_modules/@astrouxds/tokens/dist/scss/base.system.scss' as system;
+@use 'sass:meta';
+
+:host {
+    display: block;
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    left: 0;
+    height: var(--spacing-24);
+    width: -webkit-fill-available;
+    width: -moz-available;
+    width: stretch;
+    padding: 0 calc(var(--spacing-6) - var(--spacing-1)); // to account for padding to child so that focus can show
+    box-sizing: border-box;
+    background-color: var(--gsb-color-background);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    contain: layout; /* This improves CSS performance see: https://developers.google.com/web/updates/2016/06/css-containment */
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+
+    ::-webkit-scrollbar {
+        width: 16px;
+        height: 16px;
+        background-color: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(
+            --color-border-interactive-muted,
+            rgb(43, 101, 155)
+        );
+        border-radius: 8px;
+        border: 3px solid transparent;
+        background-clip: padding-box;
+    }
+
+    /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
+    ::-webkit-scrollbar-thumb:vertical {
+        border-left-width: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:horizontal {
+        border-top-width: 4px;
+    }
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-corner {
+        background-color: var(
+            --color-background-surface-default,
+            rgb(27, 45, 62)
+        );
+    }
+
+    ::-webkit-scrollbar-track:vertical {
+        box-shadow: var(--scrollbar-shadow-inner-vertical);
+    }
+
+    ::-webkit-scrollbar-track:horizontal {
+        box-shadow: var(--scrollbar-shadow-inner-horizontal);
+    }
+}
+
+:host([hidden]) {
+    display: none;
+}
+:host([compact]) {
+    min-height: var(--spacing-14);
+    height: var(--spacing-14);
+    --font-heading-1-bold-font-size: 1.5rem;
+    --font-heading-1-font-size: 1.5rem;
+    --font-heading-6-font-size: 1rem;
+
+    ::slotted(rux-clock) {
+        --font-monospace-1-font-size: 1.5rem;
+    }
+}
+
+:host::part(app-meta) {
+    --spacing-10: auto;
+}
+
+header {
+    display: flex;
+    overflow: hidden;
+    padding: 0 var(--spacing-1); // so focus does not get cut off by overflow: hidden
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    &::-webkit-scrollbar-thumb:active,
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(
+            --color-background-interactive-default,
+            rgb(58, 129, 191)
+        );
+    }
+}
+
+slot[name='left-side'] > *,
+::slotted(*[slot='left-side']) {
+    margin-right: var(--spacing-2);
+}
+
+slot[name='left-side'] > rux-icon,
+::slotted(rux-icon[slot='left-side']) {
+    height: calc(var(--spacing-8) + var(--spacing-050)); //38px
+    font-size: var(
+        --spacing-8
+    ); //32px to prevent icon moving if larger font-size set on parents.
+}
+
+slot[name='left-side'] > .shifted-up,
+::slotted(.shifted-up[slot='left-side']) {
+    height: calc(var(--spacing-14) + var(--spacing-050)); //58px
+}
+
+slot[name='right-side'] > rux-monitoring-icon,
+::slotted(rux-monitoring-icon[slot='right-side']) {
+    display: flex;
+    align-items: center;
+    padding-right: calc(var(--spacing-4) + var(--spacing-2)); //24px
+    padding-top: var(--spacing-2);
+}
+
+.app-meta,
+::slotted(*[slot='app-meta']) {
+    display: inline-flex;
+    flex-wrap: wrap;
+    padding: var(--spacing-0);
+    margin: var(--spacing-0) auto var(--spacing-0) var(--spacing-0);
+    color: var(--color-palette-neutral-000);
+    white-space: nowrap;
+}
+
+.app-info-wrapper {
+    flex-basis: 100%;
+    display: flex;
+    align-items: baseline;
+    min-height: var(--spacing-10); //40px
+    padding-bottom: var(--spacing-1);
+    min-width: 10.625rem;
+}
+
+.app-meta h1 {
+    margin-bottom: var(--spacing-0);
+    margin-top: var(--spacing-0);
+    font-family: var(--font-heading-1-font-family);
+    font-size: var(--font-heading-1-font-size);
+    font-weight: var(--font-heading-1-font-weight);
+    letter-spacing: var(--font-heading-1-letter-spacing);
+    line-height: var(--font-heading-1-line-height);
+}
+
+.app-meta h1.app-domain {
+    margin-right: var(--spacing-2);
+    font-family: var(--font-heading-1-bold-font-family);
+    font-size: var(--font-heading-1-bold-font-size);
+    font-weight: var(--font-heading-1-bold-font-weight);
+    letter-spacing: var(--font-heading-1-bold-letter-spacing);
+    line-height: var(--font-heading-1-line-height);
+}
+
+.app-name {
+    margin-right: var(--spacing-2); //8px
+}
+
+.app-version {
+    display: inline-block;
+    font-family: var(--font-heading-6-font-family);
+    font-size: var(--font-heading-6-font-size);
+    font-weight: var(--font-heading-6-font-weight);
+    letter-spacing: var(--font-heading-6-letter-spacing);
+    line-height: var(--font-heading-6-line-height);
+}
+
+.app-state-wrapper {
+    display: flex;
+}
+
+// all temp classes and their subsequent styling will be replaced with internal component styles.
+.app-state {
+    box-sizing: border-box;
+    color: var(--color-palette-neutral-000);
+    background-color: var(--color-palette-neutral-1000);
+    border-radius: var(--radius-base);
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--line-height-xs);
+    padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-2); //3px 8px
+    text-align: center;
+    margin-right: var(--spacing-2); //6px
+    white-space: nowrap;
+}
+
+.username {
+    box-sizing: border-box;
+    flex-basis: 50%;
+    font-family: var(--font-body-2-font-family);
+    font-size: var(--font-body-2-font-size);
+    font-weight: var(--font-body-2-font-weight);
+    letter-spacing: var(--font-body-2-letter-spacing);
+    line-height: var(--line-height-xs);
+    padding: calc(var(--spacing-050) + var(--spacing-025)) var(--spacing-0); //3px 0
+    height: calc(var(--spacing-6) - var(--spacing-050)); //22px
+}
+
+.slotted-content {
+    display: inline-flex;
+    justify-content: center;
+    flex-basis: 100%;
+}
+
+//Preserves dark theme defaults for slotted elements in GSB since content must always be rendered in dark theme.
+::slotted(*) {
+    @each $name, $value in meta.module-variables(system) {
+        --#{$name}: #{$value};
+    }
+}
+
+.app-state.tag1 {
+    background: var(--color-palette-teal-600);
+}
+
+.app-state.tag2 {
+    background: var(--color-palette-purple-600);
+}
+
+.app-state.tag3 {
+    background: var(--color-palette-pink-600);
+}
+
+.app-state.tag4 {
+    background: var(--color-palette-hotorange-600);
+}

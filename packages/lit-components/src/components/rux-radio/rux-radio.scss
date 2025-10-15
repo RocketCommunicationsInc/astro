@@ -1,0 +1,134 @@
+:host {
+    *,
+    *::before,
+    *::after {
+        box-sizing: inherit;
+    }
+
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.rux-form-field {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    font-weight: var(--font-control-body-1-font-weight);
+    color: var(--color-text-primary);
+}
+
+.rux-radio {
+    display: flex;
+    position: relative;
+    line-height: 1.2;
+
+    input[type='radio'] {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+
+        + label {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: var(--color-text-primary);
+            cursor: pointer;
+
+            &::before {
+                box-sizing: border-box;
+                display: flex;
+                flex-shrink: 0;
+                flex-grow: 0;
+                content: '';
+                align-self: start;
+                height: calc(var(--spacing-4) + var(--spacing-1));
+                width: calc(var(--spacing-4) + var(--spacing-1));
+                margin: calc(var(--spacing-1) / 2); //2
+                margin-right: calc(
+                    var(--spacing-2) + (var(--spacing-1) / 2)
+                ); //2 + 8 margin for label
+                border: 1px solid var(--color-border-interactive-muted);
+                border-radius: var(--radius-circle);
+                background-color: var(--color-background-base-default);
+            }
+
+            &::after {
+                position: absolute;
+                top: 5px;
+                display: flex;
+                content: '';
+            }
+        }
+        //If no label is passed in we don't want the margin
+        + .rux-radio--no-label {
+            &::before {
+                margin-right: calc(var(--spacing-1) / 2); //2;
+            }
+        }
+
+        &:checked {
+            + label {
+                &::before {
+                    background-color: var(--color-background-base-default);
+                    border-color: var(--color-border-interactive-muted);
+                }
+
+                &::after {
+                    position: absolute;
+                    top: var(--spacing-2);
+                    display: flex;
+                    content: '';
+                    left: var(--spacing-2);
+                    height: var(--spacing-2);
+                    width: var(--spacing-2);
+                    border-radius: var(--radius-circle);
+
+                    /* box-shadow: inset 0 0 1px 0 rgba(255, 255, 255, 0.9); */
+
+                    background-color: var(
+                        --color-background-interactive-default
+                    );
+                }
+            }
+        }
+
+        &:disabled {
+            + label {
+                cursor: not-allowed;
+                opacity: var(--opacity-disabled);
+            }
+        }
+
+        &:not(:disabled) {
+            &:hover,
+            &:checked:hover {
+                + label {
+                    &::before {
+                        border-color: var(--color-background-interactive-hover);
+                    }
+                    &::after {
+                        background-color: var(
+                            --color-background-interactive-default
+                        );
+                    }
+                }
+            }
+            &:focus-visible,
+            &:checked:focus-visible {
+                + label {
+                    border-radius: var(--radius-base);
+                    outline: var(--border-width-focus-default) solid
+                        var(--color-border-focus-default);
+                    outline-offset: var(--spacing-focus-default);
+                }
+            }
+        }
+    }
+}
+
+:host([hidden]) {
+    display: none;
+}

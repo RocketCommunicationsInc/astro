@@ -1,0 +1,17 @@
+:host {
+    display: block;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+li {
+    list-style: none;
+    pointer-events: none;
+    border-top: 1px solid var(--menu-divider-color-fill);
+}
+
+.wrapper {
+    padding: var(--spacing-1) var(--spacing-2); // 4px 8px
+}

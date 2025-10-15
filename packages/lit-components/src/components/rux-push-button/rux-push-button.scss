@@ -1,0 +1,133 @@
+:host {
+    display: block;
+    margin: (--spacing-0) (--spacing-050);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    text-align: left;
+
+    &[disabled] {
+        opacity: var(--opacity-disabled);
+        cursor: not-allowed;
+    }
+
+    input {
+        appearance: none;
+        -webkit-appearance: none;
+        position: absolute; //remove spacing while not affecting screenreaders
+        &:focus-visible + .rux-push-button__button {
+            outline: var(--border-width-focus-default) solid
+                var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
+        }
+    }
+
+    .rux-push-button {
+        &__button {
+            cursor: pointer;
+            font-family: var(--font-control-body-1-font-family);
+            font-size: var(--font-control-body-1-font-size);
+            font-weight: var(--font-control-body-1-font-weight);
+            line-height: var(--font-control-body-1-line-height);
+            letter-spacing: var(--font-control-body-1-letter-spacing);
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--color-text-interactive-default);
+            border-radius: var(--radius-base);
+            // use box shadow instead of border to create borders
+            box-shadow: var(--color-border-interactive-default) 0 0 0 1px inset;
+            padding: var(--spacing-2) var(--spacing-4); // 8 16
+
+            &:hover {
+                cursor: pointer;
+                color: var(--color-background-interactive-hover);
+                box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                    inset;
+                rux-icon {
+                    color: var(--color-background-interactive-hover);
+                }
+            }
+
+            &--small {
+                padding: var(--spacing-1) var(--spacing-4); //4 16
+                &.rux-push-button__button--icon-only {
+                    padding: var(--spacing-1); //4
+                }
+            }
+
+            &--large {
+                padding: var(--spacing-3) var(--spacing-4); //12 16
+                &.rux-push-button__button--icon-only {
+                    padding: var(--spacing-3); //12
+                }
+            }
+
+            rux-icon {
+                height: calc(var(--spacing-4) + var(--spacing-1));
+                width: calc(var(--spacing-4) + var(--spacing-1));
+                margin-right: var(--spacing-1); //4
+            }
+
+            &--icon-only {
+                font-size: 0 !important;
+                padding: var(--spacing-2); //8
+                rux-icon {
+                    margin-right: var(--spacing-0);
+                }
+            }
+        }
+
+        //active
+        &__input:checked + .rux-push-button__button {
+            display: inline-flex;
+            color: var(--color-text-black);
+            background-color: var(--color-palette-green-500);
+            box-shadow: var(--color-palette-green-500) 0 0 0 1px inset;
+            rux-icon {
+                color: var(--color-text-black);
+            }
+            &:hover {
+                background-color: var(--color-palette-green-400);
+            }
+        }
+
+        //active, disabled
+        &__input:checked:disabled + .rux-push-button__button {
+            &:hover {
+                color: var(--color-text-black);
+                background-color: var(--color-palette-green-500);
+                box-shadow: var(--color-palette-green-500) 0 0 0 1px inset;
+                rux-icon {
+                    color: var(--color-text-black);
+                }
+            }
+        }
+
+        //disabled, not active
+        &__input:disabled + .rux-push-button__button {
+            opacity: var(--opacity-disabled);
+            cursor: not-allowed;
+            &:hover {
+                box-shadow: var(--color-border-interactive-default) 0 0 0 1px
+                    inset;
+                color: var(--color-text-interactive-default);
+                rux-icon {
+                    color: var(--color-text-interactive-default);
+                }
+            }
+        }
+    }
+}
+
+:host([hidden]) {
+    display: none;
+}

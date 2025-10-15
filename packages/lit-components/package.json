@@ -1,0 +1,29 @@
+{
+  "name": "lit-components",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@astrouxds/tokens": "^1.14.0",
+    "@date-fns/tz": "^1.4.1",
+    "@date-fns/utc": "^2.1.1",
+    "@floating-ui/dom": "^1.7.4",
+    "date-fns": "^4.1.0",
+    "lit": "^3.3.1"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^4.0.0",
+    "@playwright/test": "^1.55.0",
+    "@types/jest": "^30.0.0",
+    "sass-embedded": "^1.92.1",
+    "typescript": "~5.8.3",
+    "vite": "^7.1.2",
+    "vitest": "^3.2.4"
+  }
+}

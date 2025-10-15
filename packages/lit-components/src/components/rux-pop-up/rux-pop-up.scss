@@ -1,0 +1,72 @@
+:host {
+    display: block;
+    width: min-content;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+.hidden {
+    display: none !important;
+}
+
+::slotted(*[slot='trigger']) {
+    cursor: pointer;
+}
+::slotted(*[slot='trigger']:focus-visible) {
+    border-radius: var(--radius-base);
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
+}
+
+.rux-popup {
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    text-align: left;
+}
+
+.rux-popup__content {
+    position: absolute;
+    padding: var(--spacing-0); //no spacing, slotted content handles padding
+    border-radius: var(--radius-base);
+    background: var(--color-background-base-default);
+    border: 1px solid var(--color-border-interactive-muted);
+    transform-style: preserve-3d;
+    z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
+}
+
+.rux-popup__trigger {
+    display: contents;
+}
+
+.rux-popup__content--menu {
+    padding: 0;
+}
+.rux-popup__arrow-left {
+    border-right: 2px solid var(--color-border-interactive-muted);
+}
+
+.rux-popup__arrow-top {
+    border-bottom: 2px solid var(--color-border-interactive-muted);
+}
+.rux-popup__arrow-right {
+    border-left: 2px solid var(--color-border-interactive-muted);
+}
+.rux-popup__arrow-bottom {
+    border-top: 2px solid var(--color-border-interactive-muted);
+}
+
+.rux-popup-arrow {
+    position: absolute;
+    background: var(--color-border-interactive-muted);
+    width: var(--spacing-4); //16
+    height: var(--spacing-4); //16
+    transform: translateZ(-1px) rotate(45deg);
+}

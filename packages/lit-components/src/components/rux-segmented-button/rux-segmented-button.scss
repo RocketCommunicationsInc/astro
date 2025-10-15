@@ -1,0 +1,157 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); //fixes issue where parent element with larger line-height causes layout shift.
+    text-align: left;
+}
+
+:host([disabled]) {
+    opacity: var(--opacity-disabled);
+    cursor: not-allowed;
+    pointer-events: none;
+
+    label {
+        border-color: var(--color-background-interactive-default);
+    }
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.rux-segmented-button {
+    display: inline-flex;
+    padding: var(--spacing-0);
+    margin: var(--spacing-0);
+    list-style: none;
+    border-radius: var(--radius-base);
+    background-color: var(--color-background-base-default);
+}
+
+.rux-segmented-button__segment {
+    width: auto;
+    margin: var(--spacing-0);
+    padding: var(--spacing-0);
+
+    //mimic the border radius of the interior button
+    &:first-child {
+        border-radius: var(--radius-base) 0 0 var(--radius-base);
+    }
+    &:last-child {
+        border-radius: 0 var(--radius-base) var(--radius-base) 0;
+    }
+
+    //omit the right border on next sibling to avoid double borders
+    + .rux-segmented-button__segment {
+        label {
+            border-right: none;
+        }
+    }
+
+    // on hover, change the next segment's button left border to hover color.
+    &:hover {
+        + .rux-segmented-button__segment {
+            label {
+                border-left-color: var(--color-background-interactive-hover);
+            }
+        }
+    }
+    //apply focus state when input within in selected and raise so that full outline is visible
+    &.--focused {
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+        z-index: 1;
+    }
+
+    label {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 100%;
+        margin: var(--spacing-0);
+        border: 1px solid var(--color-background-interactive-default);
+        color: var(--color-background-interactive-default);
+        background-color: var(--color-background-base-default);
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        font-weight: var(--font-control-body-1-font-weight);
+        line-height: var(--font-control-body-1-line-height);
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+
+        &:hover {
+            background-color: var(--color-background-surface-hover);
+            border-color: var(--color-background-interactive-hover);
+            color: var(--color-background-interactive-default);
+            outline: none;
+        }
+    }
+
+    .rux-segmented-button-label {
+        // Defaults to medium
+        height: calc(var(--spacing-8) + var(--spacing-1)); //36px
+        padding: var(--spacing-2) var(--spacing-4); //8px 16px
+        cursor: pointer;
+
+        &--small {
+            height: calc(var(--spacing-6) + var(--spacing-1)); //28px
+            padding: var(--spacing-1) var(--spacing-4); // 4px 16px for small
+        }
+
+        &--large {
+            height: calc(var(--spacing-10) + var(--spacing-1)); //44px
+            padding: var(--spacing-3) var(--spacing-4); //12px 16px
+        }
+    }
+
+    input {
+        //allow normal radio keyboard functionality while hiding the input from view
+        position: absolute;
+        opacity: 0;
+
+        &:checked + label {
+            background-color: var(--color-background-surface-selected);
+            color: var(--color-text-primary);
+        }
+
+        &:checked:hover + label {
+            background-color: var(--color-background-surface-selected);
+            color: var(--color-text-primary);
+            border-color: var(--color-background-interactive-hover);
+        }
+    }
+
+    &:first-child label {
+        border-radius: var(--radius-base) 0 0 var(--radius-base);
+        border-right: none;
+
+        &:hover {
+            border-color: var(--color-background-interactive-hover);
+        }
+    }
+
+    &:last-child label {
+        border-radius: 0 var(--radius-base) var(--radius-base) 0;
+        border-right: 1px solid var(--color-background-interactive-default);
+        &:hover {
+            border-right-color: var(--color-background-interactive-hover);
+        }
+    }
+}

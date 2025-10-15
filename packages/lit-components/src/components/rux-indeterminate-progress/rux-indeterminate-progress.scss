@@ -1,0 +1,92 @@
+:host {
+    /**
+    * @prop --size: Used to determine the overall size of rux-indeterminate-progress, and used in multiple CSS calculations. 
+    */
+    --size: calc(
+        var(--spacing-14) + var(--spacing-050)
+    ); //need to account for border
+
+    // These are used to determine nub-size
+    --container-height: calc(var(--size) + var(--spacing-1));
+    --second-div-height: calc(var(--size) * 0.9 - var(--spacing-1));
+
+    --nub-size: calc(
+        ((var(--container-height) - var(--second-div-height)) / 2) - 0.187rem
+    );
+
+    // .5 here to prevent hard stops in mask in color
+    --mask: radial-gradient(
+        farthest-side,
+        transparent calc((((100% - 1px) * 0.9) - 4px)),
+        var(--color-background-interactive-default)
+            calc((((100% - 1px) * 0.9) - 3.5px))
+    );
+    --border-width: 1px;
+    display: inline-block;
+}
+
+.rux-indeterminate-container {
+    height: var(--size);
+    width: var(--size);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--border-width) solid var(--color-border-interactive-default);
+    background: var(--color-background-base-default);
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+}
+
+.rux-indeterminate-animated-spinner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--indeterminate-gradient);
+    height: calc(100% - var(--border-width) * 2);
+    width: calc(100% - var(--border-width) * 2);
+    border-radius: 100%;
+
+    animation: spin 1.367s infinite linear;
+
+    &::after {
+        position: absolute;
+        content: '';
+        background: var(--indeterminate-nub-color);
+        width: var(--nub-size);
+        height: var(--nub-size);
+        top: 0;
+        margin: 0;
+        padding: 0;
+        border-radius: 100%;
+    }
+}
+
+.rux-indeterminate-inner-spinner-gap {
+    height: calc(90% - var(--spacing-1));
+    width: calc(90% - var(--spacing-1));
+    background: transparent;
+    border-radius: 100%;
+    border: var(--border-width) solid var(--color-background-base-default);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rux-indeterminate-inner-circle {
+    height: calc(100% - var(--border-width) * 2);
+    width: calc(100% - var(--border-width) * 2);
+    border: var(--border-width) solid
+        var(--color-background-interactive-default);
+    border-radius: 100%;
+    background-color: transparent;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

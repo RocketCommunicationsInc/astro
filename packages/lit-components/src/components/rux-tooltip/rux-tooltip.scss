@@ -1,0 +1,49 @@
+:host {
+    //default tooltip delay when it is not set by the component
+
+    /**
+   * @prop --delay: how long until the tooltip shows
+   */
+    --delay: 800ms;
+}
+* {
+    box-sizing: border-box;
+}
+span {
+    display: contents;
+}
+.tooltip {
+    display: inline-block;
+    background: var(--tooltip-color-background);
+    padding: calc(var(--spacing-1) / 2) var(--spacing-2);
+    color: var(--tooltip-color-text);
+    width: fit-content;
+    border-radius: var(--tooltip-radius);
+    z-index: 100; // overlays every component except for rux-dialog and rux-classification-marking
+    width: max-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 200ms ease-in;
+    font-size: var(--font-body-2-font-size);
+    line-height: var(--font-body-2-line-height);
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.rux-tooltip__trigger {
+    display: inline;
+    flex-basis: 100%; // Necessary so that it takes up 100% of its container
+}
+
+:host([open]) .tooltip {
+    transition-delay: var(--delay);
+    transition-property: opacity;
+}
+
+.hidden {
+    opacity: 0 !important;
+    visibility: hidden;
+}

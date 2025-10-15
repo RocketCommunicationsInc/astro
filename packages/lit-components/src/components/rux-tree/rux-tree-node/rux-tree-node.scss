@@ -1,0 +1,128 @@
+:host {
+    display: block;
+}
+
+.tree-node {
+    color: var(--color-text-primary);
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(--font-control-body-1-line-height);
+    padding-block: var(--spacing-050);
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+:host([aria-selected='true']) {
+    .parent {
+        background-color: var(--color-background-surface-selected);
+    }
+}
+
+:host([aria-level='1']) {
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: var(--spacing-8);
+        }
+    }
+}
+
+:host([aria-level='2']) {
+    .parent {
+        padding-left: var(--spacing-8);
+    }
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: var(--spacing-14);
+        }
+    }
+}
+
+:host([aria-level='3']) {
+    .parent {
+        padding-left: var(--spacing-14);
+    }
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: var(--spacing-20);
+        }
+    }
+}
+
+:host([aria-level='4']) {
+    .parent {
+        padding-left: var(--spacing-20);
+    }
+    .tree-node:not(.tree-node--has-children) {
+        .parent {
+            padding-left: calc(var(--spacing-14) + var(--spacing-12));
+        }
+    }
+}
+
+.parent {
+    padding: var(--spacing-1) var(--spacing-2);
+    display: flex;
+    gap: var(--spacing-050);
+
+    &:hover {
+        background-color: var(--color-background-surface-hover);
+    }
+
+    &:focus-visible {
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+}
+
+.arrow {
+    cursor: pointer;
+    min-width: 20px;
+    min-height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.74167 13.2333L10.975 10L7.74167 6.76668C7.41667 6.44168 7.41667 5.91668 7.74167 5.59168C8.06667 5.26668 8.59167 5.26668 8.91667 5.59168L12.7417 9.41668C13.0667 9.74168 13.0667 10.2667 12.7417 10.5917L8.91667 14.4167C8.59167 14.7417 8.06667 14.7417 7.74167 14.4167C7.42501 14.0917 7.41667 13.5583 7.74167 13.2333Z' fill='%234DACFF'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+
+    &:hover {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.74167 13.2333L10.975 10L7.74167 6.76668C7.41667 6.44168 7.41667 5.91668 7.74167 5.59168C8.06667 5.26668 8.59167 5.26668 8.91667 5.59168L12.7417 9.41668C13.0667 9.74168 13.0667 10.2667 12.7417 10.5917L8.91667 14.4167C8.59167 14.7417 8.06667 14.7417 7.74167 14.4167C7.42501 14.0917 7.41667 13.5583 7.74167 13.2333Z' fill='%2392CBFF'/%3E%3C/svg%3E");
+    }
+}
+
+.prefix {
+    display: flex;
+    align-self: center;
+    margin: var(--spacing-0) var(--spacing-1);
+}
+
+.suffix {
+    margin-left: auto;
+    display: flex;
+}
+
+.children {
+    display: none;
+}
+
+.tree-node--expanded {
+    > .children {
+        display: block !important;
+    }
+
+    .arrow {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.76668 7.74167L10 10.975L13.2333 7.74167C13.5583 7.41667 14.0833 7.41667 14.4083 7.74167C14.7333 8.06667 14.7333 8.59167 14.4083 8.91667L10.5833 12.7417C10.2583 13.0667 9.73335 13.0667 9.40835 12.7417L5.58335 8.91667C5.25835 8.59167 5.25835 8.06667 5.58335 7.74167C5.90835 7.42501 6.44168 7.41667 6.76668 7.74167Z' fill='%234DACFF'/%3E%3C/svg%3E");
+
+        &:hover {
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.76665 7.74167L9.99999 10.975L13.2333 7.74167C13.5583 7.41667 14.0833 7.41667 14.4083 7.74167C14.7333 8.06667 14.7333 8.59167 14.4083 8.91667L10.5833 12.7417C10.2583 13.0667 9.73332 13.0667 9.40832 12.7417L5.58332 8.91667C5.25832 8.59167 5.25832 8.06667 5.58332 7.74167C5.90832 7.42501 6.44165 7.41667 6.76665 7.74167Z' fill='%2392CBFF'/%3E%3C/svg%3E");
+        }
+    }
+}
+
+:host::part(text) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

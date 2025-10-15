@@ -1,0 +1,215 @@
+// @use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    display: block;
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    line-height: var(
+        --line-height-base
+    ); // Solves the issue of a parent element with a larger line-height causing extra space to be taken up on some elements.
+
+    .rux-form-field {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        color: var(--color-text-primary);
+    }
+
+    rux-icon {
+        cursor: pointer;
+    }
+
+    input[type='date' i]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        --webkit-appearance: none;
+        background: var(--color-background-base-default)
+            var(--rux-input-calendar-icon);
+        background-position: center;
+    }
+
+    input[type='datetime-local' i]::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+        --webkit-appearance: none;
+        background: var(--color-background-base-default)
+            var(--rux-input-calendar-icon);
+        background-position: center;
+    }
+
+    input[type='time' i]::-webkit-calendar-picker-indicator {
+        background: var(--color-background-base-default)
+            var(--rux-input-time-icon);
+        cursor: pointer;
+        background-position: center;
+    }
+
+    input::placeholder {
+        color: var(--color-text-placeholder);
+    }
+
+    .rux-input {
+        user-select: none; // prevents caret navigation from appearing inside the input
+
+        input {
+            user-select: auto;
+            border: none;
+            background: none;
+            box-shadow: none;
+            padding: var(--spacing-0);
+            margin: var(--spacing-0);
+            color: inherit;
+            font-family: inherit;
+            font-size: inherit;
+            font-weight: inherit;
+            -webkit-appearance: none;
+            //Sets input area input area to correct height
+            height: var(--line-height-sm);
+            appearance: none;
+            outline: none;
+            width: 100%;
+
+            &:disabled {
+                cursor: not-allowed;
+            }
+        }
+
+        width: 100%;
+        overflow: hidden;
+        flex: 1 1 auto;
+        display: inline-flex;
+        align-items: center;
+        justify-content: start;
+        position: relative;
+        box-sizing: border-box;
+        order: 2;
+        // use box shadow instead of border to create borders
+        box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
+        border-radius: var(--radius-base);
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        font-weight: var(--font-control-body-1-font-weight);
+        line-height: var(--font-control-body-1-line-height);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        color: var(--color-text-primary);
+        background-color: var(--color-background-base-default);
+
+        &--invalid {
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
+        }
+
+        &--disabled {
+            opacity: var(--opacity-disabled);
+            cursor: not-allowed;
+        }
+
+        &--small {
+            padding: var(--spacing-1) var(--spacing-2); // 4px 8px
+        }
+
+        &--medium {
+            padding: var(--spacing-2); //8px
+        }
+
+        &--large {
+            padding: var(--spacing-3) var(--spacing-2); //12px 8px
+        }
+
+        &--search {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding-left: var(--spacing-8); //32px
+            background-color: var(--color-background-base-default);
+            background-image: var(--rux-input-search-icon);
+            background-repeat: no-repeat;
+            background-position: 8px center;
+            background-size: 1.05rem;
+        }
+
+        &--focused {
+            outline: var(--border-width-focus-default) solid
+                var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
+        }
+
+        &:hover {
+            box-shadow: var(--color-background-interactive-hover) 0 0 0 1px
+                inset;
+            outline: 2px solid transparent;
+        }
+
+        &--disabled:hover {
+            box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
+            color: var(--color-text-primary);
+        }
+
+        &--invalid:hover {
+            box-shadow: var(--color-border-error) 0 0 0 1px inset;
+        }
+
+        .rux-input-prefix,
+        .rux-input-suffix {
+            display: inline-flex;
+            flex: 0 0 auto;
+            align-items: center;
+            cursor: default;
+        }
+
+        .rux-input-prefix {
+            ::slotted(*) {
+                padding-right: var(--spacing-1);
+            }
+        }
+
+        .rux-input-suffix {
+            ::slotted(*) {
+                padding-left: var(--spacing-1);
+            }
+        }
+    }
+
+    .rux-input-label {
+        font-family: var(--font-control-body-1-font-family);
+        font-size: var(--font-control-body-1-font-size);
+        font-weight: var(--font-control-body-1-font-weight);
+        letter-spacing: var(--font-control-body-1-letter-spacing);
+        margin-bottom: var(--spacing-2);
+
+        &__asterisk {
+            margin-left: var(--spacing-1);
+        }
+    }
+
+    ::selection {
+        background-color: var(--color-palette-brightblue-400);
+    }
+}
+
+.pw-button::part(container) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.pw-button {
+    border: none;
+    background: transparent;
+    height: calc(var(--spacing-6) - var(--spacing-1)); //20px
+    width: var(--spacing-4);
+    padding: var(--spacing-0);
+    line-height: var(--line-height-sm);
+    width: calc(var(--spacing-6) - var(--spacing-1));
+}
+
+.pw-button:focus-visible {
+    outline: var(--border-width-focus-default) solid
+        var(--color-border-focus-default);
+    outline-offset: var(--spacing-focus-default);
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}

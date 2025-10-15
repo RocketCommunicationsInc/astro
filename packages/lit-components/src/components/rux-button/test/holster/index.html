@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <div style="padding: 10%; display: flex; justify-content: center">
+            <form id="form">
+                <input type="text" name="myname" value="mark" />
+                <rux-button type="submit">submit</rux-button>
+            </form>
+            <ul id="log"></ul>
+            <script>
+                const log = document.getElementById('log')
+                const form = document.getElementById('form')
+                form.addEventListener('submit', (e) => {
+                    event.preventDefault()
+                    // trigger formdata event
+                    new FormData(form)
+                })
+                form.addEventListener('formdata', (e) => {
+                    log.innerHTML = ''
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const values = data.values()
+                    for (var value of data.entries()) {
+                        const item = document.createElement('li')
+                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                        log.appendChild(item)
+                    }
+                })
+            </script>
+        </div>
+        <!-- <section>
+            <h2>Figma Testing</h2>
+            <ftl-belt access-token="" file-id="">
+<ftl-holster name="Title only" node="467:993">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         size="medium"
+                     >Primary button</rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Title only small" node="467:987">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         size="small"
+                     >Primary button</rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Title only large" node="467:999">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         size="large"
+                         label="Push button"
+                     >Primary button</rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Title and icon" node="467:995">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         icon="border-clear"
+                         label="Push button"
+                         size="medium"
+                     >Primary button</rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Title and icon small" node="467:989">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         size="small"
+                         icon="border-clear"
+                         secondary
+                     >Primary button</rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Title and icon large" node="467:1001">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         size="large"
+                         icon="border-clear"
+                     >Primary button</rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Icon only" node="467:997">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         icon="border-clear"
+                         size="medium"
+                         icon-only
+                     >Primary button</rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Icon only small" node="467:991">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         icon="border-clear"
+                         size="small"
+                         icon-only
+                     ></rux-button>
+                 </ftl-holster>
+                 <ftl-holster name="Icon only large" node="467:1003">
+                     <rux-button
+                         name="ruxPushStyling"
+                         id="ruxPushStyling"
+                         value="true"
+                         icon="border-clear"
+                         size="large"
+                         icon-only
+                         secondary
+                     ></rux-button>
+                 </ftl-holster>
+
+            </ftl-belt>
+            <rux-button-group h-align="right">
+                <rux-button
+                    name="ruxPushStyling"
+                    id="ruxPushStyling"
+                    value="true"
+                    size="large"
+                >Primary button</rux-button>
+                <rux-button
+                    name="ruxPushStyling"
+                    id="ruxPushStyling"
+                    value="true"
+                    icon="border-clear"
+                    size="large"
+                >Button</rux-button>
+                <rux-button
+                    name="ruxPushStyling"
+                    id="ruxPushStyling"
+                    value="true"
+                    icon="border-clear"
+                    size="large"
+                    icon-only
+                    secondary
+                ></rux-button>
+            </rux-button-group>
+        </section> -->
+    </body>
+</html>

@@ -1,0 +1,147 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+:host {
+    display: block;
+}
+.rux-switch {
+    position: relative;
+    display: flex;
+    height: calc(var(--spacing-4) + var(--spacing-1)); //20
+    white-space: nowrap;
+
+    // Default Styling
+    &__button {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        // Track
+        &::before {
+            position: relative;
+            display: flex;
+            content: '';
+            border-radius: var(--switch-radius-track);
+            border: 0;
+            box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
+            background-color: var(--color-background-base-default);
+            height: var(--spacing-3); //12
+            width: var(--spacing-8); //32
+            margin: var(--spacing-1);
+            z-index: 2;
+            transition: 0.1s background-color linear;
+        }
+
+        // Button
+        &::after {
+            position: absolute;
+            content: '';
+            left: 0;
+            z-index: 3;
+            height: calc(var(--spacing-4) + var(--spacing-1)); //20
+            width: calc(var(--spacing-4) + var(--spacing-1)); //20
+            border-radius: var(--radius-circle);
+            box-shadow: var(--color-background-interactive-default) 0 0 0 1px
+                inset;
+            background-color: var(--color-background-base-default);
+            transition: 0.1s left linear, 0.1s border-color linear;
+        }
+    }
+
+    &__input {
+        appearance: none;
+        -webkit-appearance: none;
+        margin: 0;
+
+        // Active Styling
+        &:checked {
+            + .rux-switch__button {
+                &::before {
+                    box-shadow: var(--color-background-interactive-default) 0 0
+                        0 1px inset;
+                    background-color: var(
+                        --color-background-interactive-default
+                    );
+                }
+                &::after {
+                    left: calc(var(--spacing-4) + var(--spacing-1)); //20
+                    background-color: var(--color-background-base-default);
+                    box-shadow: var(--color-background-interactive-default) 0 0
+                        0 1px inset;
+                }
+            }
+        }
+
+        //focus styling
+        &:focus-visible + .rux-switch__button {
+            border-radius: var(--radius-base);
+            outline: var(--border-width-focus-default) solid
+                var(--color-border-focus-default);
+            outline-offset: var(--spacing-focus-default);
+        }
+
+        // Disabled
+        &:disabled {
+            + .rux-switch__button {
+                cursor: not-allowed;
+                opacity: var(--opacity-disabled);
+            }
+        }
+    }
+
+    // :before -> Track, :after -> Button
+    &:hover {
+        .rux-switch__input {
+            &:not(:disabled),
+            &:checked:not(:disabled) {
+                + .rux-switch__button {
+                    &::before {
+                        border-color: var(
+                            --color-background-interactive-default
+                        );
+                    }
+                    &::after {
+                        box-shadow: var(--color-background-interactive-hover) 0
+                            0 0 1px inset;
+                    }
+                }
+            }
+
+            &:not(:disabled) {
+                + .rux-switch__button {
+                    &::before {
+                        background-color: var(--color-background-base-default);
+                    }
+                }
+            }
+
+            &:checked:not(:disabled) {
+                + .rux-switch__button {
+                    &::before {
+                        background-color: var(
+                            --color-background-interactive-default
+                        );
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rux-switch__label {
+    font-family: var(--font-body-1-font-family);
+    font-size: var(--font-body-1-font-size);
+    font-weight: var(--font-body-1-font-weight);
+    letter-spacing: var(--font-body-1-letter-spacing);
+    margin-left: 0.75rem;
+    color: var(--color-text-primary);
+}
+
+.rux-form-field {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-text-primary);
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}

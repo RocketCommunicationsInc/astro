@@ -1,0 +1,19 @@
+:host {
+    display: table-row;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+:host(.is-selected) {
+    background: var(--color-background-surface-selected);
+    ::slotted(rux-table-cell) {
+        border-color: var(--color-background-base-default);
+    }
+}
+
+:host(:hover:not(.is-selected)) {
+    background: var(--color-background-surface-hover);
+    color: var(--color-text-primary);
+}

@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+}
+
+::slotted(rux-icon) {
+    color: inherit;
+}
+
+a {
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    line-height: var(--font-control-body-1-line-height);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+
+    display: inline-flex;
+    gap: var(--spacing-2);
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &[href] {
+        color: var(--color-text-interactive-default);
+        &:hover {
+            color: var(--color-text-interactive-hover);
+        }
+    }
+
+    &:not([href]) {
+        color: inherit;
+    }
+
+    &:focus-visible {
+        border-radius: var(--radius-base);
+        outline: var(--border-width-focus-default) solid
+            var(--color-border-focus-default);
+        outline-offset: var(--spacing-focus-default);
+    }
+}

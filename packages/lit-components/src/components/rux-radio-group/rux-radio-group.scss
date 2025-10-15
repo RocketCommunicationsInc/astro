@@ -1,0 +1,44 @@
+@use '../../common/functional-components/FormFieldMessage/form-field-message.scss';
+
+:host {
+    display: block;
+}
+
+.hidden,
+:host([hidden]) {
+    display: none;
+}
+
+::slotted(rux-radio) {
+    display: block;
+    margin-bottom: var(--spacing-2); //8
+}
+
+::slotted(rux-radio:last-of-type) {
+    margin-bottom: var(--spacing-0);
+}
+
+.rux-radio-group {
+    padding: var(--spacing-4); //16
+    //use inset shadow rather than border
+    box-shadow: var(--color-border-interactive-muted) 0 0 0 1px inset;
+    border-radius: var(--radius-base);
+    width: fit-content;
+}
+.rux-radio-group--invalid {
+    box-shadow: var(--color-border-error) 0 0 0 1px inset;
+}
+
+.rux-label {
+    color: var(--color-text-primary);
+    font-family: var(--font-control-body-1-font-family);
+    font-size: var(--font-control-body-1-font-size);
+    font-weight: var(--font-control-body-1-font-weight);
+    letter-spacing: var(--font-control-body-1-letter-spacing);
+    line-height: var(--font-control-body-1-line-height);
+    margin-bottom: var(--spacing-2);
+    &__asterisk {
+        margin-left: var(--spacing-1);
+    }
+    text-align: left; // Solves the issue of a parent element with a different text-align overriding.
+}

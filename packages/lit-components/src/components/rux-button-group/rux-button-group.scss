@@ -1,0 +1,26 @@
+:host {
+    display: inline;
+}
+
+:host([hidden]) {
+    display: none;
+}
+
+.rux-button-group {
+    display: flex;
+    ::slotted(rux-button:not(:last-child)) {
+        margin-right: var(--spacing-2);
+    }
+
+    &--left {
+        justify-content: flex-start;
+    }
+
+    &--right {
+        justify-content: flex-end;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+}
