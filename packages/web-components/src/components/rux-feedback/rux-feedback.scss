@@ -96,6 +96,7 @@
     justify-items: stretch;
     flex: 1;
     overflow: hidden;
+    gap: var(--spacing-4);
 
     /* body/body-2 */
     font-family: var(--font-body-2-font-family);
@@ -114,7 +115,6 @@
     align-items: center;
     justify-content: flex-start;
     gap: var(--spacing-2);
-    margin-bottom: var(--spacing-4);
 }
 
 :host::part(sentiment-group) {
@@ -158,7 +158,7 @@
     flex-direction: column;
     gap: var(--spacing-4);
     text-align: left;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .rux-feedback__success {
@@ -245,5 +245,34 @@
     &.active .sentiment-button__label,
     &:hover .sentiment-button__label {
         color: var(--color-text-white, #ffffff);
+    }
+}
+
+:host::part(file-upload-zone) {
+    border: 1px solid var(--color-border-interactive-muted);
+    border-radius: var(--radius-base);
+    padding: var(--spacing-4);
+    text-align: center;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+    gap: var(--spacing-2);
+
+    .file-upload-zone__icon {
+        font-size: 2rem;
+        color: var(--color-text-interactive-default);
+    }
+
+    &:hover {
+        background: var(--color-background-surface-hover);
+        border-color: var(--color-text-interactive-default);
+        color: var(--color-text-interactive-default);
+
+        .file-upload-zone__icon {
+            color: var(--color-text-interactive-default);
+        }
     }
 }
