@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Table</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section style="width: 100%">
+            <h2>Default</h2>
+            <rux-table>
+                <rux-table-header>
+                    <rux-table-header-row>
+                        <rux-table-header-cell>
+                            Current tag
+                        </rux-table-header-cell>
+
+                        <rux-table-header-cell>
+                            Original tag
+                        </rux-table-header-cell>
+
+                        <rux-table-header-cell> Sensor </rux-table-header-cell>
+
+                        <rux-table-header-cell> ASTAT </rux-table-header-cell>
+
+                        <rux-table-header-cell>
+                            Obs time
+                        </rux-table-header-cell>
+
+                        <rux-table-header-cell> Ob type </rux-table-header-cell>
+
+                        <rux-table-header-cell>
+                            Az/Rt asc
+                        </rux-table-header-cell>
+
+                        <rux-table-header-cell> El/Dec </rux-table-header-cell>
+
+                        <rux-table-header-cell> Range </rux-table-header-cell>
+
+                        <rux-table-header-cell>
+                            Range rate
+                        </rux-table-header-cell>
+                    </rux-table-header-row>
+                </rux-table-header>
+                <rux-table-body>
+                    <rux-table-row data-test-id="default" selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected>
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+
+                    <rux-table-row selected="false">
+                        <rux-table-cell> 19999999 </rux-table-cell>
+                        <rux-table-cell> 000011111 </rux-table-cell>
+                        <rux-table-cell> 450 </rux-table-cell>
+                        <rux-table-cell> FULL </rux-table-cell>
+                        <rux-table-cell> 2020 158 01:23:45:678 </rux-table-cell>
+                        <rux-table-cell> OBTYPE_5 </rux-table-cell>
+                        <rux-table-cell> 150 </rux-table-cell>
+                        <rux-table-cell> 3500 </rux-table-cell>
+                        <rux-table-cell> 7500 </rux-table-cell>
+                        <rux-table-cell> 100 </rux-table-cell>
+                    </rux-table-row>
+                </rux-table-body>
+            </rux-table>
+        </section>
+    </body>
+</html>

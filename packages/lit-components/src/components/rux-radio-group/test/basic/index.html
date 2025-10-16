@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Radio Group</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+    <style>
+        #left-example::part(form-field) {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #left-example::part(label) {
+            margin-right: var(--spacing-2, 0.5rem);
+        }
+    </style>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-radio-group>
+                <rux-radio name="radio1" value="1"></rux-radio>
+                <rux-radio name="radio1" value="2"></rux-radio>
+                <rux-radio name="radio1" value="3"></rux-radio>
+            </rux-radio-group>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-radio-group label="Label Here">
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+            </rux-radio-group>
+            <rux-radio-group label="Required" required>
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+            </rux-radio-group>
+            <rux-radio-group label="Invalid" invalid>
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+            </rux-radio-group>
+            <rux-radio-group label="Help Text" help-text="Help text here!">
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+            </rux-radio-group>
+            <rux-radio-group label="Error Text" error-text="Error text here!">
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+                <rux-radio label="Label Here"></rux-radio>
+            </rux-radio-group>
+
+            <rux-radio-group
+                id="left-example"
+                name="radios"
+                label="Horizontal"
+                help-text=""
+                error-text=""
+            >
+                <rux-radio value="1">one</rux-radio>
+                <rux-radio value="2">two</rux-radio>
+                <rux-radio value="3">three</rux-radio>
+            </rux-radio-group>
+        </section>
+    </body>
+</html>

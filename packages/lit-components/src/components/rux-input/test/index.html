@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+        <style>
+            #form > div:not(:last-child) {
+                margin-bottom: 15px;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <rux-input>
+            <div slot="error-text">ERROR SLOT</div>
+        </rux-input>
+        <section style="padding-inline: 2rem">
+            <h2>Prop/Slot Testing</h2>
+            <rux-input id="test-this" label="this the input label"></rux-input>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+                <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+                <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+                <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpProp">Add Help Prop</rux-button>
+                <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+                <rux-button id="addErrorProp">Add Error Prop</rux-button>
+                <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+            </div>
+            <select id="changeType">
+                <option>text</option>
+                <option>password</option>
+                <option>date</option>
+                <option>time</option>
+            </select>
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const select = document.getElementById('changeType')
+            const input = document.getElementById('test-this')
+
+            /**Change input type**/
+            window.addEventListener('change', (e) => {
+                if (e.target !== select) return
+                input.setAttribute('type', e.target.value)
+            })
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = input.querySelector(`[slot='help-text']`)
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = input.querySelector(`[slot='error-text']`)
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                input.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                input.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                input.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                input.removeAttribute('error-text')
+            })
+        </script>
+        <!--<h2>Figma spacing test</h2>
+        <ftl-belt access-token="" file-id="SNsCCfIiWdfvZbBilZXTbW">
+         <ftl-holster name="search small" node="41357:132326" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    size="small"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster>
+
+        <ftl-holster name="search medium" node="26010:126254" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster>
+
+        <ftl-holster name="search large" node="41357:132341" style="position:relative;">
+            <div style="width: 170px">
+                <rux-input
+                    type="search"
+                    size="large"
+                    placeholder="Search..."
+                ></rux-input>
+            </div>
+        </ftl-holster> -->
+
+        <h1>Previous Tests</h1>
+        <!--
+                        IMPORTANT FOR CYPRESS TESTING | DO NOT MODIFY | DO NOT USE THESE IDs ELSEWHERE
+                    -->
+        <div style="padding: 10%; display: flex; justify-content: center">
+            <form id="form">
+                <div>
+                    <rux-input
+                        id="ruxInput"
+                        name="ruxInput"
+                        label="Input Field"
+                    >
+                    </rux-input>
+                    <input type="text" id="nativeInput" name="nativeInput" />
+                </div>
+
+                <div>
+                    <rux-input
+                        label="Disabled with value"
+                        id="ruxInput2"
+                        name="ruxInput2"
+                        value="Hello World"
+                        disabled
+                    >
+                    </rux-input>
+                    <input
+                        type="text"
+                        id="nativeInput2"
+                        name="nativeInput2"
+                        value="Hello World"
+                        disabled
+                    />
+                </div>
+
+                <div>
+                    <rux-input
+                        label="Required"
+                        id="ruxInput3"
+                        name="ruxInput3"
+                        required
+                        help-text="Test Help Text"
+                    >
+                    </rux-input>
+                    <input type="text" id="nativeInput3" name="nativeInput3" />
+                </div>
+
+                <div>
+                    <rux-input
+                        label="Password"
+                        id="ruxInput4"
+                        name="ruxInput4"
+                        type="password"
+                    >
+                    </rux-input>
+                </div>
+                <div>
+                    <rux-input
+                        label="Read Only"
+                        id="readonly"
+                        name="readonly"
+                        value="Should remain the same"
+                        readonly
+                    >
+                    </rux-input>
+                </div>
+                <div>
+                    <rux-input
+                        label="Spellcheck"
+                        id="spellcheck"
+                        name="spellcheck"
+                        spellcheck
+                    >
+                    </rux-input>
+                </div>
+                <div>
+                    <rux-input
+                        label="Autocomplete"
+                        id="autocomplete"
+                        name="autocomplete"
+                        autocomplete="on"
+                    >
+                    </rux-input>
+                </div>
+                <div>
+                    <rux-input
+                        label="Autocomplete to off"
+                        id="autocomplete-to-off"
+                        name="autocomplete-to-off"
+                        autocomplete="on"
+                        type="password"
+                    >
+                    </rux-input>
+                </div>
+                <div>
+                    <rux-input
+                        label="Date type"
+                        id="date-type"
+                        name="date-type"
+                        type="date"
+                    >
+                    </rux-input>
+                    <input
+                        type="date"
+                        id="native-date"
+                        value="2022-10-05"
+                        name="native-date"
+                    />
+                </div>
+                <div>
+                    <rux-input
+                        label="Datetime-local type"
+                        id="datetime-local"
+                        name="datetime-local"
+                        type="datetime-local"
+                    >
+                    </rux-input>
+                    <input
+                        type="datetime-local"
+                        id="native-datetime-local"
+                        value="2022-10-05T13:25"
+                        name="native-datetime-local"
+                    />
+                </div>
+                <div>
+                    <rux-input
+                        label="Time type"
+                        id="time"
+                        name="time"
+                        type="time"
+                    >
+                    </rux-input>
+                    <input
+                        type="time"
+                        id="native-time"
+                        value="01:25:00"
+                        name="native-time"
+                    />
+                </div>
+
+                <button id="formSubmitBtn" type="submit">submit</button>
+            </form>
+            <ul id="log"></ul>
+            <script>
+                const log = document.getElementById('log')
+                const form = document.getElementById('form')
+                form.addEventListener('submit', (e) => {
+                    event.preventDefault()
+                    // trigger formdata event
+                    new FormData(form)
+                })
+                form.addEventListener('formdata', (e) => {
+                    log.innerHTML = ''
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const values = data.values()
+                    for (var value of data.entries()) {
+                        const item = document.createElement('li')
+                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                        log.appendChild(item)
+                    }
+                })
+            </script>
+        </div>
+        <!-- END CYPRESS TESTING BLOCK -->
+    </body>
+</html>

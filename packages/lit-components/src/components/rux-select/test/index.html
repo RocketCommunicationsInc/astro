@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <style>
+            body {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+
+            h2 {
+                margin: 0;
+                margin-bottom: 1rem;
+            }
+
+            button {
+                margin-top: 1rem;
+            }
+
+            section {
+                margin-bottom: 1rem;
+            }
+        </style>
+    </head>
+
+    <body class="dark-theme">
+        <section>
+            <h2>Prop/Slot Testing</h2>
+            <rux-select id="test-this" label="this the select label">
+                <rux-option label="Select an option" value=""></rux-option>
+                <rux-option label="Redddd" value="redddd"></rux-option>
+                <rux-option value="blueeee" label="Blueeee"></rux-option>
+                <rux-option value="greennnn" label="Greennnn"></rux-option>
+            </rux-select>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+                <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+                <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+                <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpProp">Add Help Prop</rux-button>
+                <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+                <rux-button id="addErrorProp">Add Error Prop</rux-button>
+                <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+            </div>
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const select = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                select.innerHTML += `
+              <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = select.querySelector(`[slot='help-text']`)
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                select.innerHTML += `
+              <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = select.querySelector(
+                    `[slot='error-text']`
+                )
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                select.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                select.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                select.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                select.removeAttribute('error-text')
+            })
+        </script>
+        <!-- <ftl-belt file-id="7tni7pdpLodbs6dGiKwGMz">
+            <ftl-holster name="Select Menu" node="25921:122587">
+                <rux-select
+                    id="ruxSelect"
+                    label=""
+                    name="bestThing"
+                    size="medium"
+                    invalid
+                >
+                    <rux-option label="Select menu" value=""></rux-option>
+                    <rux-option label="Red" value="red"></rux-option>
+                    <rux-option value="blue" label="Blue"></rux-option>
+                    <rux-option value="green" label="Green"></rux-option>
+                </rux-select>
+            </ftl-holster>
+        </ftl-belt> -->
+        <section>
+            <h2>Single Select</h2>
+
+            <form id="form" method="POST" action="/form" style="width: 200px">
+                <rux-select
+                    id="ruxSelect"
+                    label="Best Thing?"
+                    name="bestThing"
+                    size="large"
+                >
+                    <rux-option
+                        label="Select an option that is the best thing"
+                        value=""
+                    ></rux-option>
+                    <rux-option
+                        label="Red is definitely the best for sure forever"
+                        value="red"
+                    ></rux-option>
+                    <rux-option
+                        value="blue"
+                        label="Blue is clearly supperior to all others"
+                    ></rux-option>
+                    <rux-option
+                        value="green"
+                        label="green is fine"
+                    ></rux-option>
+                </rux-select>
+                <button id="formSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
+        <hr />
+        <section>
+            <h2>Single Select W/ Opt Groups</h2>
+
+            <form id="form" method="POST" action="/form">
+                <rux-select id="ruxSelect" label="Best Thing?" name="bestThing">
+                    <rux-option label="Select an option" value=""></rux-option>
+                    <rux-option-group label="Group 1">
+                        <rux-option label="Yellow" value="yellow"></rux-option>
+                        <rux-option label="Orange" value="orange"></rux-option>
+                    </rux-option-group>
+                    <rux-option-group label="Group 2">
+                        <rux-option label="Red" value="red"></rux-option>
+                        <rux-option value="blue" label="Blue"></rux-option>
+                        <rux-option value="green" label="Green"></rux-option>
+                    </rux-option-group>
+                </rux-select>
+                <button id="formSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
+        <section>
+            <h2>Multi Select</h2>
+
+            <form id="multiSelectForm" method="POST" action="/form">
+                <rux-select
+                    id="ruxMultiSelect"
+                    label="Best Thing?"
+                    name="bestThing"
+                    multiple
+                >
+                    <rux-option value="red" label="Red"></rux-option>
+                    <rux-option value="blue" label="Blue"></rux-option>
+                    <rux-option value="green" label="Green"></rux-option>
+                    <rux-option value="purple" label="Purple"></rux-option>
+                    <rux-option value="yellow" label="Yellow"></rux-option>
+                </rux-select>
+                <button id="multiSelectSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
+        <section>
+            <h2>Multi Select W/ OptGroup</h2>
+
+            <form id="multiSelectForm" method="POST" action="/form">
+                <div style="width: 400px">
+                    <rux-select
+                        id="ruxMultiSelectGroup"
+                        label="Best Thing?"
+                        name="bestThing"
+                        multiple
+                    >
+                        <rux-option-group label="Group 1">
+                            <rux-option value="red" label="Red"></rux-option>
+                            <rux-option value="blue" label="Blue"></rux-option>
+                        </rux-option-group>
+                        <rux-option-group label="Group 2">
+                            <rux-option
+                                value="green"
+                                label="Green"
+                            ></rux-option>
+                            <rux-option
+                                value="purple"
+                                label="Purple"
+                            ></rux-option>
+                            <rux-option
+                                disabled
+                                value="yellow"
+                                label="Yellow"
+                            ></rux-option>
+                        </rux-option-group>
+                    </rux-select>
+                </div>
+                <button id="multiSelectSubmitBtn" type="submit">submit</button>
+            </form>
+        </section>
+    </body>
+</html>

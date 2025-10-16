@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <section>
+            <h2>Prop/Slot Testing</h2>
+            <rux-radio-group id="test-this" label="this the radio-group label">
+                <rux-radio>One</rux-radio>
+                <rux-radio>Two</rux-radio>
+                <rux-radio>Three</rux-radio>
+            </rux-radio-group>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+                <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+                <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+                <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpProp">Add Help Prop</rux-button>
+                <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+                <rux-button id="addErrorProp">Add Error Prop</rux-button>
+                <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+            </div>
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const radioGroup = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                radioGroup.innerHTML += `
+              <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = radioGroup.querySelector(
+                    `[slot='help-text']`
+                )
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                radioGroup.innerHTML += `
+              <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = radioGroup.querySelector(
+                    `[slot='error-text']`
+                )
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                radioGroup.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                radioGroup.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                radioGroup.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                radioGroup.removeAttribute('error-text')
+            })
+        </script>
+        <div style="padding: 10%; display: flex; justify-content: center">
+            <div style="width: 60%">
+                <form id="form-default">
+                    <rux-radio-group name="ruxColor">
+                        <rux-radio
+                            id="ruxRadioDefaultOne"
+                            name="ruxColorDefault"
+                            value="green"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioDefaultTwo"
+                            name="ruxColorDefault"
+                            value="purple"
+                        ></rux-radio>
+                    </rux-radio-group>
+                    <button type="submit">submit</button>
+                </form>
+                <form id="form">
+                    <rux-radio-group name="ruxColor">
+                        <rux-radio
+                            id="ruxRadioGreen"
+                            name="ruxColor"
+                            value="green"
+                        ></rux-radio>
+                        <rux-radio
+                            disabled
+                            id="ruxRadioPurpleDisabled"
+                            name="ruxColor"
+                            checked
+                            value="purple"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioBlue"
+                            name="ruxColor"
+                            value="blue"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioRed"
+                            name="ruxColor"
+                            value="red"
+                        ></rux-radio>
+                    </rux-radio-group>
+                    <input
+                        id="nativeRadioGreen"
+                        type="radio"
+                        name="nativeColor"
+                        value="green"
+                    />
+
+                    <input
+                        id="nativeRadioBlue"
+                        type="radio"
+                        name="nativeColor"
+                        value="blue"
+                    />
+                    <input
+                        id="nativeRadioRed"
+                        type="radio"
+                        name="nativeColor"
+                        value="red"
+                    />
+
+                    <button type="submit">submit</button>
+                </form>
+
+                <form id="form-checked-disabled">
+                    <rux-radio-group value="red" name="ruxColor">
+                        <rux-radio
+                            id="ruxRadioGreen2"
+                            name="ruxColor2"
+                            value="green"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioBlue2"
+                            name="ruxColor2"
+                            value="blue"
+                        ></rux-radio>
+                        <rux-radio
+                            id="ruxRadioRed2"
+                            name="ruxColor2"
+                            disabled
+                            value="red"
+                        ></rux-radio>
+                    </rux-radio-group>
+                    <input
+                        id="nativeRadioGreen2"
+                        type="radio"
+                        name="nativeColor"
+                        value="green"
+                    />
+                    <input
+                        id="nativeRadioBlue2"
+                        type="radio"
+                        name="nativeColor"
+                        value="blue"
+                    />
+                    <input
+                        id="nativeRadioRed2"
+                        type="radio"
+                        name="nativeColor"
+                        checked
+                        disabled
+                        value="red"
+                    />
+
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+            <div style="width: 30%">
+                <ul id="log"></ul>
+            </div>
+            <script>
+                const log = document.getElementById('log')
+
+                const forms = document.querySelectorAll('form')
+
+                for (const form of forms) {
+                    form.addEventListener('submit', (e) => {
+                        event.preventDefault()
+                        // trigger formdata event
+                        new FormData(form)
+                    })
+
+                    form.addEventListener('formdata', logFormData)
+                }
+
+                function logFormData(e) {
+                    const status = document.getElementById('status')
+                    log.innerHTML = ''
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const values = data.values()
+                    for (var value of data.entries()) {
+                        const item = document.createElement('li')
+                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                        log.appendChild(item)
+                    }
+                }
+            </script>
+        </div>
+        <h2>Figma Spacing Test</h2>
+        <ftl-belt access-token="" file-id="">
+            <ftl-holster name="Grouping Test" node="24760:115486">
+                <div style="width: 137px">
+                    <rux-radio-group name="ruxFigma">
+                        <rux-radio id="ruxFigma1" name="ruxFigma" value="green"
+                            >Radio test</rux-radio
+                        >
+                        <rux-radio
+                            disabled
+                            id="ruxFigma2d"
+                            name="ruxFigma"
+                            checked
+                            value="purple"
+                            >Radio test</rux-radio
+                        >
+                        <rux-radio id="ruxFigma3" name="ruxColor" value="blue"
+                            >Radio test</rux-radio
+                        >
+                        <rux-radio id="ruxFigma4" name="ruxFigma" value="red"
+                            >Radio test</rux-radio
+                        >
+                    </rux-radio-group>
+                </div>
+            </ftl-holster>
+        </ftl-belt>
+    </body>
+</html>

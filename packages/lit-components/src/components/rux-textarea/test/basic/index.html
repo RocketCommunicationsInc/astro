@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Textarea</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-textarea data-test-id="default"></rux-textarea>
+        </section>
+        <section>
+            <h2>Sizes</h2>
+            <rux-textarea size="small"></rux-textarea>
+            <rux-textarea size="medium"></rux-textarea>
+            <rux-textarea size="large"></rux-textarea>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-textarea disabled></rux-textarea>
+            <rux-textarea required></rux-textarea>
+            <rux-textarea invalid></rux-textarea>
+            <rux-textarea placeholder="Placeholder Text"></rux-textarea>
+            <rux-textarea
+                placeholder="Placeholder Text"
+                disabled
+            ></rux-textarea>
+            <rux-textarea disabled invalid></rux-textarea>
+            <rux-textarea label="With Label"></rux-textarea>
+            <rux-textarea
+                label="With Label, placeholder"
+                placeholder="Placeholder Text"
+            ></rux-textarea>
+            <rux-textarea label="With Label, disabled" disabled></rux-textarea>
+            <rux-textarea label="With Label, invalid" invalid></rux-textarea>
+            <rux-textarea label="With Label, required" required></rux-textarea>
+            <rux-textarea
+                label="With Label, help text"
+                help-text="Help text here!"
+            ></rux-textarea>
+            <rux-textarea
+                label="With Label, error text"
+                error-text="Error text here!"
+            ></rux-textarea>
+            <rux-textarea
+                label="With Label, help text, disabeld"
+                disabled
+                help-text="Help text here!"
+            ></rux-textarea>
+            <rux-textarea
+                label="With Label, error text, disabled"
+                disabled
+                error-text="Error text here!"
+            ></rux-textarea>
+        </section>
+        <section>
+            <h2>With Scrollbars</h2>
+            <rux-textarea
+                value="Tempus velit eleifend torquent potenti molestie maximus luctus tellus diam curae eros porta nostra nulla, urna fusce facilisis senectus sem magnis laoreet dis a metus feugiat consequat. Consequat eu ad arcu eleifend elementum aliquet pellentesque conubia rutrum lectus risus, augue velit nibh vel sit placerat lacus cubilia dolor. Dictumst fames curae suspendisse morbi feugiat nam lorem finibus felis habitant facilisis, augue senectus risus dignissim massa cras leo quam vel."
+            >
+            </rux-textarea>
+        </section>
+    </body>
+</html>

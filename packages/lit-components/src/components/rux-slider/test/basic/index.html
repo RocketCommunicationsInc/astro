@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Slider</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-slider data-test-id="default"></rux-slider>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-slider disabled></rux-slider>
+            <rux-slider label="With Label"></rux-slider>
+            <rux-slider label="Disabled" disabled></rux-slider>
+            <rux-slider
+                label="With help text"
+                help-text="Help text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With error text"
+                error-text="Error text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With help text, disabled"
+                disabled
+                help-text="Help text here!"
+            ></rux-slider>
+            <rux-slider
+                label="With error text, disabled"
+                disabled
+                error-text="Error text here!"
+            ></rux-slider>
+        </section>
+        <section>
+            <h2>Axis Labels and Ticks</h2>
+            <rux-slider id="axis1"></rux-slider>
+            <rux-slider id="axis2" ticks-only></rux-slider>
+            <rux-slider id="axis3" disabled></rux-slider>
+            <rux-slider
+                label="Axis lables, default label"
+                id="axis4"
+            ></rux-slider>
+            <rux-slider
+                label="Axis lables, disabled, ticks only"
+                ticks-only
+                id="axis5"
+                disabled
+            ></rux-slider>
+        </section>
+        <section>
+            <h2>Dual Range</h2>
+            <rux-slider
+                id="dual-1"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-with-label"
+                label="Dual With Label"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-help-text"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+                help-text="Help Text Here"
+            ></rux-slider>
+            <rux-slider
+                id="dual-error-text"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+                error-text="Error text here"
+            ></rux-slider>
+            <rux-slider
+                id="dual-help-text-label"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+                help-text="Help Text Here"
+                label="Help Text with Label"
+            ></rux-slider>
+            <rux-slider
+                id="dual-error-text-label"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+                error-text="Error text here"
+                label="Error Text with Label"
+            ></rux-slider>
+            <rux-slider
+                id="dual-axis-labels"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-axis-labels-label"
+                label="With axis labels"
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-axis-labels-ticks-only"
+                ticks-only
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-disabled"
+                disabled
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+            ></rux-slider>
+            <rux-slider
+                id="dual-axis-labels-disabled"
+                disabled
+                value="80"
+                min-val="20"
+                min="0"
+                max="100"
+                label="Dual, Disabled, Axis Labels"
+            ></rux-slider>
+        </section>
+        <script>
+            document.getElementById('axis1').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis2').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis3').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis4').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('axis5').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('dual-axis-labels').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById('dual-axis-labels-label').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+            document.getElementById(
+                'dual-axis-labels-ticks-only'
+            ).axisLabels = ['0', '25', '50', '75', '100']
+            document.getElementById('dual-axis-labels-disabled').axisLabels = [
+                '0',
+                '25',
+                '50',
+                '75',
+                '100',
+            ]
+        </script>
+    </body>
+</html>

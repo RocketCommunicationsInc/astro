@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+
+    <body>
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button id="changeTest"></rux-segmented-button>
+        </div>
+        <section>
+            <select
+                id="segSelect"
+                style="width: 200px; margin: 20px 80px; padding: 8px 12px"
+            >
+                <option value="First segment">1</option>
+                <option value="Second segment" selected>2</option>
+                <option value="Third segment">3</option>
+            </select>
+        </section>
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button size="small"></rux-segmented-button>
+        </div>
+
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button size="medium"></rux-segmented-button>
+        </div>
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button size="large"></rux-segmented-button>
+        </div>
+        <div style="padding: 2.5% 5%">
+            <rux-segmented-button id="disabled" disabled></rux-segmented-button>
+        </div>
+        <script>
+            const segs = document.querySelectorAll('rux-segmented-button')
+            const disabled = document.getElementById('disabled')
+            const data = [
+                { label: 'First segment' },
+                { label: 'Second segment', selected: true },
+                { label: 'Third segment' },
+            ]
+
+            for (let seg of segs) {
+                seg.data = data
+                seg.addEventListener('click', () => {
+                    console.log('heard click')
+                })
+                seg.addEventListener('ruxchange', () => {
+                    console.log('heard change')
+                })
+            }
+
+            disabled.data = data
+            disabled.addEventListener('click', () => {
+                console.log('Disabled --- heard click')
+            })
+            disabled.addEventListener('ruxchange', () => {
+                console.log('disabled --- heard change')
+            })
+
+            const testSeg = document.getElementById('changeTest')
+            const select = document.getElementById('segSelect')
+
+            select.addEventListener('change', (e) => {
+                testSeg.selected = e.target.value
+            })
+        </script>
+
+        <!-- <ftl-belt access-token="" file-id="">
+        <section>
+            <h2>Figma testing</h2>
+            <div style="padding: 5rem">
+                <ftl-holster name="Small" node="19977:128342">
+                    <rux-segmented-button
+                        id="FigmaTest"
+                    ></rux-segmented-button>
+                </ftl-holster>
+                <ftl-holster name="Medium" node="19977:128352">
+                    <div><rux-segmented-button
+                        id="FigmaTest"
+                        size="medium"
+                    ></rux-segmented-button></div>
+                </ftl-holster>
+                <ftl-holster name="Large" node="19977:128362">
+                    <rux-segmented-button
+                        id="FigmaTest"
+                        size="large"
+                    ></rux-segmented-button>
+                </ftl-holster>
+            </div>
+
+            <script>
+                const buttonSets = document.querySelectorAll('#FigmaTest')
+                const options = [
+                    { label: 'Option', selected: true},
+                    { label: 'Option' },
+                    { label: 'Option' },
+                    { label: 'Option' },
+                ]
+
+                for (let buttonSet of buttonSets) {
+                    buttonSet.data = options
+                }
+            </script>
+        </section>
+    </ftl-belt> -->
+    </body>
+</html>

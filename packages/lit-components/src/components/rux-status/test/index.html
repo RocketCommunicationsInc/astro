@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+
+        <script
+            type="module"
+            src="https://cdn.jsdelivr.net/npm/@rocketmark/figma-testing-library/dist/figma-testing-library/figma-testing-library.esm.js"
+        ></script>
+    </head>
+
+    <body>
+        <style>
+            #standby-dark::part(status) {
+                width: 49px;
+            }
+
+            #standby-light::part(status) {
+                width: 42px;
+                margin: auto;
+            }
+
+            #critical-dark::part(status) {
+                width: 53px;
+            }
+
+            #critical-light::part(status) {
+                width: 41px;
+            }
+
+            #normal-dark::part(status) {
+                width: 53px;
+            }
+
+            #normal-light::part(status) {
+                width: 42px;
+            }
+
+            #off-dark::part(status) {
+                width: 46px;
+            }
+
+            #off-light::part(status) {
+                width: 46px;
+            }
+
+            #serious-dark::part(status) {
+                width: 42px;
+            }
+
+            #serious-light::part(status) {
+                width: 42px;
+            }
+
+            #caution-dark::part(status) {
+                width: 50px;
+            }
+
+            #caution-light::part(status) {
+                width: 42px;
+            }
+
+            ftl-belt {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            ftl-holster {
+                padding: 1rem;
+            }
+        </style>
+        <h2>This should be normal</h2>
+        <rux-status></rux-status>
+
+        <!-- FTL testing -->
+        <section>
+            <h2>Figma Testing</h2>
+            <ftl-belt access-token="" file-id="o3VDbrHZ1oZpiqwMHW7mqj">
+                <ftl-holster name="standby-dark" node="3882:30839">
+                    <rux-status id="standby-dark" status="standby"></rux-status>
+                </ftl-holster>
+                <ftl-holster name="standby-light" node="17872:116411">
+                    <rux-status
+                        id="standby-light"
+                        status="standby"
+                        class="light-theme"
+                    ></rux-status>
+                </ftl-holster>
+                <ftl-holster name="critical-dark" node="I3882:30824;3865:29914">
+                    <rux-status
+                        id="critical-dark"
+                        status="critical"
+                    ></rux-status>
+                </ftl-holster>
+                <ftl-holster name="critical-light" node="17872:116402">
+                    <rux-status
+                        id="critical-light"
+                        status="critical"
+                        class="light-theme"
+                    ></rux-status>
+                </ftl-holster>
+                <ftl-holster name="normal-dark" node="3882:30828">
+                    <rux-status id="normal-dark" status="normal"></rux-status>
+                </ftl-holster>
+                <ftl-holster name="normal-light" node="17872:116412">
+                    <rux-status
+                        id="normal-light"
+                        status="normal"
+                        class="light-theme"
+                    ></rux-status>
+                </ftl-holster>
+                <ftl-holster name="off-light" node="17872:116410">
+                    <rux-status
+                        id="off-light"
+                        status="off"
+                        class="light-theme"
+                    ></rux-status>
+                </ftl-holster>
+                <ftl-holster name="off-dark" node="3882:30831">
+                    <rux-status id="off-dark" status="off"></rux-status>
+                </ftl-holster>
+                <ftl-holster name="caution-light" node="17872:116413">
+                    <rux-status
+                        id="caution-light"
+                        status="caution"
+                        class="light-theme"
+                    ></rux-status>
+                </ftl-holster>
+                <ftl-holster name="caution-dark" node="3882:30836">
+                    <rux-status id="caution-dark" status="caution"></rux-status>
+                </ftl-holster>
+                <ftl-holster name="serious-light" node="17872:116414">
+                    <rux-status
+                        id="serious-light"
+                        status="serious"
+                        class="light-theme"
+                    ></rux-status>
+                </ftl-holster>
+                <ftl-holster name="serious-dark" node="3882:30826">
+                    <rux-status id="serious-dark" status="serious"></rux-status>
+                </ftl-holster>
+            </ftl-belt>
+        </section>
+        <section>
+            <h4>Helpful theme and status switching boilerplate</h4>
+            <style>
+                #theme-status::part(status) {
+                    width: 52px;
+                }
+            </style>
+            <rux-status id="theme-status" status="standby"></rux-status>
+            <rux-button id="change-status">Change Status</rux-button>
+            <rux-button id="theme">Theme Switch</rux-button>
+            <script>
+                const statusSwap = document.getElementById('change-status')
+                const themeBtn = document.getElementById('theme')
+                const status = document.getElementById('theme-status')
+                const stati = [
+                    'normal',
+                    'critical',
+                    'off',
+                    'serious',
+                    'caution',
+                    'standby',
+                ]
+                let count = 0
+                statusSwap.addEventListener('click', () => {
+                    status.status = stati[count]
+                    count++
+                    if (count >= stati.length) {
+                        count = 0
+                    }
+                })
+                themeBtn.addEventListener('click', () => {
+                    const body = document.querySelector('body')
+                    if (body.classList.contains('light-theme')) {
+                        body.classList.remove('light-theme')
+                    } else {
+                        body.classList.add('light-theme')
+                    }
+                })
+            </script>
+        </section>
+    </body>
+</html>

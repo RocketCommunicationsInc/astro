@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body>
+        <div style="padding: 10% 5%; display: flex">
+            <rux-pop-up disable-auto-update placement="top-start" id="top">
+                <rux-icon icon="star" slot="trigger">Top</rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1" selected href="#"
+                        >Pop Up Test Option</rux-menu-item
+                    >
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="2" href="#"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3" href="#"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up>
+        </div>
+        <!-- Top -->
+        <div style="padding: 10% 5%; display: flex">
+            <rux-pop-up disable-auto-update placement="top-start" id="top">
+                <rux-button slot="trigger">Top</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="2"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up>
+            <div
+                style="
+                    background: black;
+                    color: white;
+                    width: 100px;
+                    height: 100px;
+                    margin-left: 200px;
+                "
+                id="results"
+            ></div>
+        </div>
+        <!-- Right -->
+        <div style="padding: 5%">
+            <rux-pop-up placement="right-start" id="right">
+                <rux-button slot="trigger">Right</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up option test</rux-menu-item
+                    >
+                    <rux-menu-item value="2">Pop up option test</rux-menu-item>
+                    <rux-menu-item value="3">Pop up option test</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+        </div>
+        <!-- Bottom -->
+        <div style="padding: 5%">
+            <rux-pop-up placement="bottom-start" id="bottom">
+                <rux-button slot="trigger">Bottom</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="2"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up>
+        </div>
+        <!-- Left -->
+        <div style="padding: 5% 20%">
+            <rux-pop-up placement="left-start" id="left">
+                <rux-button slot="trigger">Left</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1" selected
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="2"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                    <rux-menu-item value="3"
+                        >Pop up menu option test</rux-menu-item
+                    >
+                </rux-menu>
+            </rux-pop-up>
+        </div>
+        <!-- Form Test -->
+        <div style="margin: 10%; display: flex">
+            <rux-pop-up id="form-pop">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-input
+                    id="1"
+                    type="text"
+                    placeholder="Warrior"
+                    value=""
+                ></rux-input>
+                <rux-input
+                    id="2"
+                    type="text"
+                    placeholder="Of Light"
+                    value=""
+                ></rux-input>
+                <rux-button type="submit" id="submit">Submit</rux-button>
+            </rux-pop-up>
+            <div
+                id="form-test"
+                style="
+                    background: gray;
+                    width: 100px;
+                    height: 100px;
+                    margin-left: 100px;
+                "
+            ></div>
+        </div>
+        <!-- Show() test -->
+        <div style="margin: 5%">
+            <rux-pop-up id="toggle" placement="top">
+                <rux-button slot="trigger">Toggle</rux-button>
+                <rux-menu>
+                    <rux-menu-item value="1">Option 1</rux-menu-item>
+                    <rux-menu-item value="2">Option 2</rux-menu-item>
+                    <rux-menu-item value="3">Option 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <div style="padding-top: 5%">
+                <rux-button id="show">Show</rux-button>
+                <rux-button id="hide">Hide</rux-button>
+            </div>
+            <!-- hide() test -->
+            <div style="margin: 15%">
+                <rux-pop-up id="open-def" open>
+                    <rux-button slot="trigger">Open by Def</rux-button>
+                    <rux-menu>
+                        <rux-menu-item value="1" selected
+                            >Pop up menu option test</rux-menu-item
+                        >
+                        <rux-menu-item value="2"
+                            >Pop up menu option test</rux-menu-item
+                        >
+                        <rux-menu-item value="3"
+                            >Pop up menu option test</rux-menu-item
+                        >
+                    </rux-menu>
+                </rux-pop-up>
+            </div>
+        </div>
+        <script>
+            let resultDiv = document.getElementById('results')
+            let topPop = document.getElementById('top')
+            topPop.addEventListener('ruxpopupselected', (e) => {
+                resultDiv.innerText = e.detail.value
+            })
+            const testDiv = document.getElementById('form-test')
+            const input1 = document.getElementById('1')
+            const input2 = document.getElementById('2')
+            const submitBtn = document.getElementById('submit')
+            const show = document.getElementById('show')
+            const hide = document.getElementById('hide')
+            const togglePopup = document.getElementById('toggle')
+            const openDef = document.getElementById('open-def')
+
+            show.addEventListener('click', () => {
+                togglePopup.show()
+            })
+            hide.addEventListener('click', () => {
+                openDef.hide()
+            })
+
+            submitBtn.addEventListener('click', (e) => {
+                e.preventDefault()
+                testDiv.innerText = input1.value + ' ' + input2.value
+            })
+        </script>
+        <!-- <ftl-belt access-token="" file-id="">
+        <section>
+            <h2>Figma Testing</h2>
+            <ftl-holster name="Bottom Center Menu test" node="42751:130506">
+                <div style="margin-top: -52px; display: flex; justify-content: center">
+                    <rux-pop-up placement="bottom" open>
+                        <rux-icon
+                            size="normal"
+                            icon="menu"
+                            slot="trigger"
+                        ></rux-icon>
+                        <rux-menu style="width:175px;">
+                            <rux-menu-item value="1"
+                                >Menu option</rux-menu-item
+                            >
+                            <rux-menu-item value="2"
+                                >Menu option</rux-menu-item
+                            >
+                        </rux-menu>
+                    </rux-pop-up>
+                </div>
+            </ftl-holster>
+            <ftl-holster name="Top start custom content" node="27047:115928">
+                <div style="margin-top:60px;">
+                    <rux-pop-up placement="top-start" open>
+                        <rux-icon
+                            size="small"
+                            icon="menu"
+                            slot="trigger"
+                        ></rux-icon>
+                        <rux-switch label="Aliquam in lorem" style="padding:8px 4px;"></rux-switch>
+                    </rux-pop-up>
+                </div>
+            </ftl-holster>
+        </section>
+    </ftl-belt> -->
+    </body>
+</html>

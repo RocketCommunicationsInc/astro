@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Tooltip</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+        <style>
+            .tooltips {
+                list-style: none;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                display: grid;
+                gap: 4rem;
+                padding: 8rem;
+            }
+            .trigger {
+                padding: 0.75rem;
+                border: 2px solid red;
+                /* width: 150px; */
+            }
+        </style>
+    </head>
+
+    <body class="dark-theme">
+        <ul class="tooltips">
+            <li>
+                <rux-tooltip message="Content" placement="top-start" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="top" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="top-end" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="right-start" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="right" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="right-end" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="bottom-start" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="bottom" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="bottom-end" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="left-start" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="left" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="left-end" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" placement="auto" open>
+                    <div class="trigger">Trigger</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" offset="79" open>
+                    <div class="trigger">Offset</div>
+                </rux-tooltip>
+            </li>
+            <li>
+                <rux-tooltip message="Content" offset="79" open="false">
+                    <div class="trigger">Closed</div>
+                </rux-tooltip>
+            </li>
+        </ul>
+    </body>
+</html>

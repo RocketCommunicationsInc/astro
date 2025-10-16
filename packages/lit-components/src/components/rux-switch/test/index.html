@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <h2>Default</h2>
+        <ftl-belt access-token="" file-id="">
+            <div style="padding: 10%; display: flex; justify-content: center">
+                <div style="width: 60%">
+                    <form id="form" style="width: 100%">
+                        <rux-switch id="ruxSwitch" name="ruxSwitch" value="foo">
+                            Checkbox
+                        </rux-switch>
+
+                        <rux-switch
+                            id="ruxSwitchDisabled"
+                            name="ruxSwitchDisabled"
+                            disabled
+                        >
+                            Disabled
+                        </rux-switch>
+                        <input
+                            id="nativeCheckbox"
+                            type="checkbox"
+                            name="nativeCheckbox"
+                            value="foo"
+                        />
+                        <button id="submit" type="submit">submit</button>
+                    </form>
+
+                    <form
+                        id="form-no-value"
+                        style="margin-top: 1rem; width: 100%"
+                    >
+                        <rux-switch id="ruxSwitch2" name="ruxSwitch">
+                            Checkbox
+                        </rux-switch>
+
+                        <input
+                            id="nativeCheckbox2"
+                            type="checkbox"
+                            name="nativeCheckbox"
+                        />
+                        <button type="submit">submit</button>
+                    </form>
+                </div>
+                <div style="width: 30%">
+                    <ul id="log"></ul>
+                </div>
+                <script>
+                    const log = document.getElementById('log')
+                    const forms = document.querySelectorAll('form')
+
+                    for (const form of forms) {
+                        form.addEventListener('submit', (e) => {
+                            event.preventDefault()
+                            // trigger formdata event
+                            new FormData(form)
+                        })
+
+                        form.addEventListener('formdata', logFormData)
+                    }
+
+                    function logFormData(e) {
+                        const status = document.getElementById('status')
+                        log.innerHTML = ''
+                        // Get the form data from the event object
+                        let data = e.formData
+                        const values = data.values()
+                        for (var value of data.entries()) {
+                            const item = document.createElement('li')
+                            item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                            log.appendChild(item)
+                        }
+                    }
+                </script>
+            </div>
+
+            <!--Spacing tests-->
+            <ftl-holster name="Switch On" node="2739:21011">
+                <rux-switch
+                    id="ruxSwitchOn"
+                    name="ruxSwitchOn"
+                    checked
+                ></rux-switch>
+            </ftl-holster>
+            <ftl-holster name="Switch Off" node="2739:21023">
+                <rux-switch id="ruxSwitchOff" name="ruxSwitchOff"></rux-switch>
+            </ftl-holster>
+        </ftl-belt>
+    </body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Classification Marking</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-classification-marking></rux-classification-marking>
+        </section>
+
+        <section>
+            <h2>With Label</h2>
+            <rux-classification-marking
+                label="label"
+            ></rux-classification-marking>
+        </section>
+
+        <section>
+            <h2>Classifications</h2>
+            <rux-classification-marking
+                classification="unclassified"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                classification="cui"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                classification="controlled"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                classification="confidential"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                classification="secret"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                classification="top-secret"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                classification="top-secret-sci"
+            ></rux-classification-marking>
+        </section>
+
+        <section>
+            <h2>Tags</h2>
+            <rux-classification-marking
+                tag
+                classification="unclassified"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="cui"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="controlled"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="confidential"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="secret"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="top-secret"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="top-secret-sci"
+            ></rux-classification-marking>
+        </section>
+    </body>
+</html>

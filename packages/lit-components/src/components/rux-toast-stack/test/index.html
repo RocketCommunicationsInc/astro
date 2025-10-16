@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+        <style>
+            rux-card {
+                margin: 0.5rem;
+            }
+            rux-toast-stack {
+                top: 96px;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    </head>
+
+    <body>
+        <rux-global-status-bar
+            include-icon="true"
+            app-domain="Astro"
+            app-name="Dashboard"
+            app-version="4.0 Alpha"
+            menu-icon="apps"
+            username=""
+            app-state-color=""
+            app-state=""
+        >
+            <div slot="right-side">
+                <rux-monitoring-icon
+                    icon="antenna"
+                    status="caution"
+                    label="label"
+                    sublabel="sub-label"
+                    notifications="100"
+                ></rux-monitoring-icon>
+            </div>
+        </rux-global-status-bar>
+        <rux-container>
+            <div slot="header">A sample container</div>
+            <div style="display: flex; flex-wrap: wrap; width: 1000px">
+                <rux-card>
+                    <div slot="header">Simple Toast</div>
+                    Simple toast, count up.
+                    <div slot="footer">
+                        <rux-button id="simple-toast"
+                            >Add Simple Toast</rux-button
+                        >
+                    </div>
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Auto Close Toast</div>
+                    Auto close toast.
+                    <div slot="footer">
+                        <rux-button id="close-toast"
+                            >Add Auto Close Toast</rux-button
+                        >
+                    </div>
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Move Stack to Top Right</div>
+                    change toast-stack to top right.
+                    <div slot="footer">
+                        <rux-button id="top-right">Move Top Right</rux-button>
+                    </div>
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Move Stack to Top Left</div>
+                    change toast-stack to top left.
+                    <div slot="footer">
+                        <rux-button id="top-left">Move Top Left</rux-button>
+                    </div>
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Move Stack to Bottom Right</div>
+                    change toast-stack to bottom right.
+                    <div slot="footer">
+                        <rux-button id="bottom-right"
+                            >Move Bottom Right</rux-button
+                        >
+                    </div>
+                </rux-card>
+                <rux-card>
+                    <div slot="header">Move Stack to Bottom Left</div>
+                    change toast-stack to bottom left.
+                    <div slot="footer">
+                        <rux-button id="bottom-left"
+                            >Move Bottom Leftt</rux-button
+                        >
+                    </div>
+                </rux-card>
+                <rux-toast-stack></rux-toast-stack>
+            </div>
+        </rux-container>
+
+        <script>
+            const body = document.body
+            const remove = document.getElementById('remove')
+            const simpleButton = document.getElementById('simple-toast')
+            const autoCloseButton = document.getElementById('close-toast')
+            const topRightButton = document.getElementById('top-right')
+            const topLeftButton = document.getElementById('top-left')
+            const bottomLeftButton = document.getElementById('bottom-left')
+            const bottomRightButton = document.getElementById('bottom-right')
+            let toastCount = 0
+
+            function addToastFromMethod(message, closeAfter, hideClose) {
+                let stack = document.querySelector('rux-toast-stack')
+
+                if (!stack) {
+                    stack = document.createElement('rux-toast-stack')
+                    body.appendChild(stack)
+                }
+
+                toastCount = toastCount + 1
+
+                stack.addToast({
+                    message: `${message} ${toastCount}!`,
+                    hideClose: hideClose,
+                    closeAfter: closeAfter,
+                })
+            }
+
+            function changeStackPosition(position) {
+                const stack = document.querySelector('rux-toast-stack')
+                stack.position = position
+            }
+
+            let toastNumber = 1
+            simpleButton.addEventListener('click', () => {
+                addToastFromMethod('Simple toast')
+            })
+            autoCloseButton.addEventListener('click', () => {
+                addToastFromMethod('This toast will auto close', 3000)
+            })
+            topRightButton.addEventListener('click', () => {
+                changeStackPosition('top-right')
+            })
+            topLeftButton.addEventListener('click', () => {
+                changeStackPosition('top-left')
+            })
+            bottomLeftButton.addEventListener('click', () => {
+                changeStackPosition('bottom-left')
+            })
+            bottomRightButton.addEventListener('click', () => {
+                changeStackPosition('bottom-right')
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Checkbox Group</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <rux-checkbox-group>
+            <rux-checkbox label="One"></rux-checkbox>
+            <rux-checkbox label="Two"></rux-checkbox>
+            <rux-checkbox label="Three"></rux-checkbox>
+        </rux-checkbox-group>
+
+        <section>
+            <h2>States</h2>
+            <rux-checkbox-group invalid>
+                <rux-checkbox label="One"></rux-checkbox>
+                <rux-checkbox label="Two"></rux-checkbox>
+                <rux-checkbox label="Three"></rux-checkbox>
+            </rux-checkbox-group>
+        </section>
+
+        <section>
+            <h2>With Help Text</h2>
+            <rux-checkbox-group help-text="Help Text">
+                <rux-checkbox label="One"></rux-checkbox>
+                <rux-checkbox label="Two"></rux-checkbox>
+                <rux-checkbox label="Three"></rux-checkbox>
+            </rux-checkbox-group>
+        </section>
+
+        <section>
+            <h2>With Error Text</h2>
+            <rux-checkbox-group error-text="Error Text">
+                <rux-checkbox label="One"></rux-checkbox>
+                <rux-checkbox label="Two"></rux-checkbox>
+                <rux-checkbox label="Three"></rux-checkbox>
+            </rux-checkbox-group>
+        </section>
+
+        <section>
+            <h2>With Help + Error Text</h2>
+            <rux-checkbox-group error-text="Error Text" help-text="Help Text">
+                <rux-checkbox label="One"></rux-checkbox>
+                <rux-checkbox label="Two"></rux-checkbox>
+                <rux-checkbox label="Three"></rux-checkbox>
+            </rux-checkbox-group>
+        </section>
+
+        <section>
+            <h2>With Label</h2>
+            <rux-checkbox-group label="Label">
+                <rux-checkbox label="One"></rux-checkbox>
+                <rux-checkbox label="Two"></rux-checkbox>
+                <rux-checkbox label="Three"></rux-checkbox>
+            </rux-checkbox-group>
+
+            <rux-checkbox-group label="Label" required>
+                <rux-checkbox label="One"></rux-checkbox>
+                <rux-checkbox label="Two"></rux-checkbox>
+                <rux-checkbox label="Three"></rux-checkbox>
+            </rux-checkbox-group>
+
+            <rux-checkbox-group>
+                <div slot="label">Label</div>
+                <rux-checkbox label="One"></rux-checkbox>
+                <rux-checkbox label="Two"></rux-checkbox>
+                <rux-checkbox label="Three"></rux-checkbox>
+            </rux-checkbox-group>
+        </section>
+    </body>
+</html>

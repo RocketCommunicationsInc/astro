@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+    <body class="dark-theme">
+        <div style="padding: 10%; display: flex; justify-content: center">
+            <form id="form">
+                <rux-push-button
+                    name="ruxPushButton"
+                    id="ruxPushButton"
+                    value="true"
+                ></rux-push-button>
+                <input
+                    type="checkbox"
+                    id="nativeCheckbox"
+                    name="nativeCheckbox"
+                    value="true"
+                />
+                <rux-push-button
+                    name="ruxPushButtonDisabled"
+                    id="ruxPushButtonDisabled"
+                    value="true"
+                    disabled
+                >
+                </rux-push-button>
+                <rux-push-button
+                    name="ruxPushButtonNoVal"
+                    id="ruxPushButtonNoVal"
+                >
+                </rux-push-button>
+                <button type="submit">submit</button>
+            </form>
+            <ul id="log"></ul>
+            <script>
+                const log = document.getElementById('log')
+                const form = document.getElementById('form')
+                form.addEventListener('submit', (e) => {
+                    event.preventDefault()
+                    // trigger formdata event
+                    new FormData(form)
+                })
+                form.addEventListener('formdata', (e) => {
+                    log.innerHTML = ''
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const values = data.values()
+                    for (var value of data.entries()) {
+                        const item = document.createElement('li')
+                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                        log.appendChild(item)
+                    }
+                })
+            </script>
+        </div>
+        <!-- <section>
+            <h2>Figma Testing</h2>
+            <ftl-belt access-token="" file-id="">
+                <ftl-holster name="Title only" node="4240:29476">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        label="Push button"
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Title only small" node="4240:29490">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        size="small"
+                        label="Push button"
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Title only large" node="4240:29502">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        size="large"
+                        label="Push button"
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Title and icon" node="4240:29482">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        icon="border-clear"
+                        label="Push button"
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Title and icon small" node="4240:29494">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        size="small"
+                        icon="border-clear"
+                        label="Push button"
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Title and icon large" node="4240:29506">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        size="large"
+                        icon="border-clear"
+                        label="Push button"
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Icon only" node="4240:29486">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        icon="border-clear"
+                        icon-only
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Icon only small" node="4240:29498">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        icon="border-clear"
+                        size="small"
+                        icon-only
+                    ></rux-push-button>
+                </ftl-holster>
+                <ftl-holster name="Icon only large" node="4240:29510">
+                    <rux-push-button
+                        name="ruxPushStyling"
+                        id="ruxPushStyling"
+                        value="true"
+                        icon="border-clear"
+                        size="large"
+                        icon-only
+                    ></rux-push-button>
+                </ftl-holster>
+            </ftl-belt>
+        </section> -->
+    </body>
+</html>

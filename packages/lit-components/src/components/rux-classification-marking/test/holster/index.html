@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+    <body>
+        <!-- <ftl-belt file-id="xn47jC9ZYiOita8mXjmghp">
+            <ftl-holster
+                name="Classification Marking - Unclassified"
+                node='6943:146912'
+            >
+                <rux-classification-marking
+                tag
+                    classification="unclassified"
+                ></rux-classification-marking>
+            </ftl-holster>
+            <ftl-holster
+                name="Classification Marking - CUI"
+                node="I6943:146915;6943:146908;4275:35678"
+            >
+                <rux-classification-marking
+                    tag
+                    classification="cui"
+                ></rux-classification-marking>
+            </ftl-holster>
+            <ftl-holster
+                name="Classification Marking - Confidential"
+                node="I6943:146917;6943:146908;4275:35678"
+            >
+                <rux-classification-marking
+                    tag
+                    classification="confidential"
+                ></rux-classification-marking>
+            </ftl-holster>
+            <ftl-holster
+                name="Classification Marking - Secret"
+                node="I6943:146919;6943:146908;4275:35678"
+            >
+                <rux-classification-marking
+                    tag
+                    classification="secret"
+                ></rux-classification-marking>
+            </ftl-holster>
+            <ftl-holster
+                name="Classification Marking - Top Secret"
+                node="I6943:146921;6943:146908;4275:35678"
+            >
+                <rux-classification-marking
+                    tag
+                    classification="top-secret"
+                ></rux-classification-marking>
+            </ftl-holster>
+            <ftl-holster
+                name="Classification Marking - Top Secret // Sci"
+                node="I6943:146923;6943:146908;4275:35678"
+            >
+                <rux-classification-marking
+                    tag
+                    classification="top-secret-sci"
+                ></rux-classification-marking>
+            </ftl-holster>
+        </ftl-belt> -->
+        <div>
+            <rux-classification-marking></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="cui"
+            ></rux-classification-marking>
+            <rux-classification-marking
+                tag
+                classification="secret"
+            ></rux-classification-marking>
+        </div>
+    </body>
+</html>

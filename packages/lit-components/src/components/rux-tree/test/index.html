@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body>
+        <!-- <style>
+            /* add Parts: tree-text-color */
+            rux-tree-node::part(node) {
+                color: red;
+            }
+
+            /* add Parts: tree-border-color*/
+            rux-tree {
+                border: 1px solid purple;
+            }
+            rux-tree-node {
+                border: 1px solid orange;
+            }
+            /* add Parts: tree-accent-color*/
+            rux-tree-node::part(icon)::after {
+                border-color: transparent transparent transparent white;
+            }
+
+            /*add Parts: tree-hover-background-color*/
+            /* add Parts: tree-hover-text-color */
+            rux-tree-node::part(node):hover {
+                background-color: orange;
+                color: green;
+            }
+
+            /*add Parts: Tree-selected-border-color*/
+            rux-tree-node[selected] {
+                border: 1px solid blue;
+            }
+
+            /* add Parts: tree-selected-accent-color */
+            rux-tree-node[selected]::part(node) {
+                color: green;
+            }
+            rux-tree-node[selected] {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='33' viewBox='0 0 5 33' fill='none'%3E%3Crect width='5' height='33' fill='%23ffffff'/%3E%3C/svg%3E%0A");;
+            }
+
+            /*add Parts: Tree-expanded-border-color */
+            rux-tree-node[expanded] {
+                border-color: pink;
+            }
+        </style> -->
+        <rux-tree role="tree" class="hydrated">
+            <rux-tree-node
+                role="treeitem"
+                aria-expanded="true"
+                aria-selected="false"
+                expanded=""
+                aria-level="1"
+                class="hydrated"
+            >
+                Tree item 1
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="true"
+                    aria-selected="false"
+                    expanded=""
+                    aria-level="2"
+                    class="hydrated"
+                >
+                    Tree item 1.1
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="false"
+                        class="hydrated"
+                        aria-level="3"
+                    >
+                        Tree item 1.1.1
+                    </rux-tree-node>
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="true"
+                        selected=""
+                        class="hydrated"
+                        aria-level="3"
+                    >
+                        Tree item 1.1.2
+                    </rux-tree-node>
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="false"
+                        class="hydrated"
+                        aria-level="3"
+                    >
+                        Tree item 1.1.3
+                    </rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="false"
+                    aria-selected="false"
+                    class="hydrated"
+                    aria-level="2"
+                >
+                    Tree item 1.2
+                </rux-tree-node>
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="false"
+                    aria-selected="false"
+                    aria-level="2"
+                    class="hydrated"
+                >
+                    Tree item 1.3
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="false"
+                        aria-level="3"
+                        class="hydrated"
+                    >
+                        Tree item 1.3.1
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.1.1
+                        </rux-tree-node>
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.1.2
+                        </rux-tree-node>
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.1.3
+                        </rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="false"
+                        aria-level="3"
+                        class="hydrated"
+                    >
+                        Tree item 1.3.2
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.1.1
+                        </rux-tree-node>
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.1.2
+                        </rux-tree-node>
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.1.3
+                        </rux-tree-node>
+                    </rux-tree-node>
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="true"
+                        aria-selected="false"
+                        expanded=""
+                        aria-level="3"
+                        class="hydrated"
+                    >
+                        Tree item 1.3.3
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.3.3.1
+                        </rux-tree-node>
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.3.3.2
+                        </rux-tree-node>
+                        <rux-tree-node
+                            slot="node"
+                            role="treeitem"
+                            aria-expanded="false"
+                            aria-selected="false"
+                            class="hydrated"
+                            aria-level="4"
+                        >
+                            Tree item 1.3.3.3
+                        </rux-tree-node>
+                    </rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="false"
+                    aria-selected="false"
+                    aria-level="2"
+                    class="hydrated"
+                >
+                    Tree item 1.4
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="false"
+                        class="hydrated"
+                        aria-level="3"
+                    >
+                        Tree item 1.4.1
+                    </rux-tree-node>
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="false"
+                        class="hydrated"
+                        aria-level="3"
+                    >
+                        Tree item 1.4.2
+                    </rux-tree-node>
+                    <rux-tree-node
+                        slot="node"
+                        role="treeitem"
+                        aria-expanded="false"
+                        aria-selected="false"
+                        class="hydrated"
+                        aria-level="3"
+                    >
+                        Tree item 1.4.3
+                    </rux-tree-node>
+                </rux-tree-node>
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="false"
+                    aria-selected="false"
+                    class="hydrated"
+                    aria-level="2"
+                    >Tree item 1.5
+                </rux-tree-node>
+            </rux-tree-node>
+            <rux-tree-node
+                id="test-expanded"
+                role="treeitem"
+                aria-expanded="false"
+                aria-selected="false"
+                aria-level="1"
+                class="hydrated"
+                >Tree item 2
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="false"
+                    aria-selected="false"
+                    class="hydrated"
+                    aria-level="2"
+                    >Tree item 2.1
+                </rux-tree-node>
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="false"
+                    aria-selected="false"
+                    class="hydrated"
+                    aria-level="2"
+                >
+                    Tree item 2.2
+                </rux-tree-node>
+                <rux-tree-node
+                    slot="node"
+                    role="treeitem"
+                    aria-expanded="false"
+                    aria-selected="false"
+                    class="hydrated"
+                    aria-level="2"
+                >
+                    Tree item 2.3
+                </rux-tree-node>
+            </rux-tree-node>
+            <rux-tree-node
+                role="treeitem"
+                aria-expanded="false"
+                aria-selected="false"
+                class="hydrated"
+                aria-level="1"
+            >
+                Tree item 3
+            </rux-tree-node>
+        </rux-tree>
+        <script>
+            document.addEventListener('ruxtreenodeexpanded', function (event) {
+                console.log('rux-tree-node-expanded', event.detail)
+            })
+            document.addEventListener('ruxtreenodecollapsed', function (event) {
+                console.log('rux-tree-node-collapsed', event.detail)
+            })
+            document.addEventListener('ruxtreenodeselected', function (event) {
+                console.log('rux-tree-node-selected', event.detail)
+            })
+        </script>
+
+        <!-- <style>
+            #truncate-width-test {
+                width: 324px;
+            }
+
+            #wrap-me {
+                white-space: normal;
+            }
+
+            #append-test {
+                padding: 48px 24px;
+            }
+
+            #truncated-text {
+                width: 250px;
+            }
+
+            #wrapped-text {
+                width: 250px;
+            }
+
+            #wrapped-text rux-tree-node::part(text) {
+                white-space: normal;
+            }
+
+            #right-slot {
+                width: 287px;
+            }
+        </style> -->
+
+        <!-- <div id="truncate-width-test">
+            <rux-tree id="partsTest">
+                <rux-tree-node expanded="">
+                    Level 1 - Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Reiciendis, consequuntur!
+                    <rux-tree-node slot="node" expanded="">
+                        Level 2 - Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Reiciendis, consequuntur!
+                        <rux-tree-node slot="node" expanded="">
+                            <span id="wrap-me">
+                                Level 3 - Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Reiciendis, consequuntur!
+                            </span>
+                            <rux-tree-node slot="node">
+                                Level 4 - Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Reiciendis, consequuntur!
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree-node>
+                </rux-tree-node>
+            </rux-tree>
+        </div> -->
+
+        <!-- <ftl-belt access-token="" file-id="3tYLyBkvKYOdUysPk6Fu60">
+            <div style="display: flex; gap: 1rem">
+                <ftl-holster name="Without Icon" node="44828:128729">
+                    <rux-tree>
+                        <rux-tree-node>
+                            One
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Two
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Three
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node selected="">
+                            Four
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node expanded="">
+                            Five
+                            <rux-tree-node slot="node">
+                                Two
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Three
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                One
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Four
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node" expanded="">
+                                Five
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                                <rux-tree-node slot="node">Four</rux-tree-node>
+                                <rux-tree-node slot="node">Five</rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree>
+                </ftl-holster>
+                <ftl-holster name="With Icon" node="44828:128727">
+                    <rux-tree>
+                        <rux-tree-node>
+                            <rux-icon
+                                slot="prefix"
+                                size="1rem"
+                                icon="star"
+                            ></rux-icon>
+                            One
+                            <rux-tree-node slot="node"> One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-icon
+                                    slot="prefix"
+                                    size="1rem"
+                                    icon="star"
+                                ></rux-icon>
+                                Three</rux-tree-node
+                            >
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            <rux-icon
+                                slot="prefix"
+                                size="1rem"
+                                icon="star"
+                            ></rux-icon>
+                            Two
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            <rux-icon
+                                slot="prefix"
+                                size="1rem"
+                                icon="star"
+                            ></rux-icon>
+                            Three
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            <rux-icon
+                                slot="prefix"
+                                size="1rem"
+                                icon="star"
+                            ></rux-icon>
+                            Four
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node expanded="">
+                            <rux-icon
+                                slot="prefix"
+                                size="1rem"
+                                icon="star"
+                            ></rux-icon>
+                            Five
+                            <rux-tree-node slot="node" selected="">
+                                <rux-icon
+                                    slot="prefix"
+                                    size="1rem"
+                                    icon="star"
+                                ></rux-icon>
+                                Two
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-icon
+                                    slot="prefix"
+                                    size="1rem"
+                                    icon="star"
+                                ></rux-icon>
+                                Three
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-icon
+                                    slot="prefix"
+                                    size="1rem"
+                                    icon="star"
+                                ></rux-icon>
+                                One
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-icon
+                                    slot="prefix"
+                                    size="1rem"
+                                    icon="star"
+                                ></rux-icon>
+                                Four
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node" expanded="">
+                                <rux-icon
+                                    slot="prefix"
+                                    size="1rem"
+                                    icon="star"
+                                ></rux-icon>
+                                Five
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    <rux-icon
+                                        slot="prefix"
+                                        size="1rem"
+                                        icon="star"
+                                    ></rux-icon>
+                                    Two</rux-tree-node
+                                >
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                                <rux-tree-node slot="node">Four</rux-tree-node>
+                                <rux-tree-node slot="node">Five</rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree>
+                </ftl-holster>
+                <ftl-holster name="With Status" node="44828:128743">
+                    <rux-tree>
+                        <rux-tree-node>
+                            <rux-status
+                                slot="prefix"
+                                status="caution"
+                            ></rux-status>
+                            One
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-status
+                                    slot="prefix"
+                                    status="caution"
+                                ></rux-status>
+                                Three</rux-tree-node
+                            >
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            <rux-status
+                                slot="prefix"
+                                status="caution"
+                            ></rux-status>
+                            Two
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            <rux-status
+                                slot="prefix"
+                                status="caution"
+                            ></rux-status>
+                            Three
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            <rux-status
+                                slot="prefix"
+                                status="caution"
+                            ></rux-status>
+                            Four
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node expanded="">
+                            <rux-status
+                                slot="prefix"
+                                status="caution"
+                            ></rux-status>
+                            Five
+                            <rux-tree-node slot="node">
+                                <rux-status
+                                    slot="prefix"
+                                    status="caution"
+                                ></rux-status>
+                                Two
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-status
+                                    slot="prefix"
+                                    status="caution"
+                                ></rux-status>
+                                Three
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-status
+                                    slot="prefix"
+                                    status="caution"
+                                ></rux-status>
+                                One
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                <rux-status
+                                    slot="prefix"
+                                    status="caution"
+                                ></rux-status>
+                                Four
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node" expanded="">
+                                <rux-status
+                                    slot="prefix"
+                                    status="caution"
+                                ></rux-status>
+                                Five
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">
+                                    <rux-status
+                                        slot="prefix"
+                                        status="caution"
+                                    ></rux-status>
+
+                                    Three</rux-tree-node
+                                >
+                                <rux-tree-node slot="node">Four</rux-tree-node>
+                                <rux-tree-node slot="node">Five</rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree>
+                </ftl-holster>
+                <ftl-holster name="Truncated text" node="44828:128779">
+                    <rux-tree id="truncated-text">
+                        <rux-tree-node>
+                            The first item has a long line of text
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Two
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Three
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node selected="">
+                            Four score and seven years ago
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node expanded="">
+                            Five people went to the store
+                            <rux-tree-node slot="node">
+                                One
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Two
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Three
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Four
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                The fifth little piggy went to the market
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree>
+                </ftl-holster>
+                <ftl-holster name="Wrapped text" node="44828:128785">
+                    <rux-tree id="wrapped-text">
+                        <rux-tree-node>
+                            The first item has a long line of text
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Two
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Three
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node selected="">
+                            Four score and seven years ago
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node expanded="">
+                            Five people went to the store
+                            <rux-tree-node slot="node">
+                                One
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Two
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Three
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Four
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                The fifth little piggy went to the store
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree>
+                </ftl-holster>
+                <ftl-holster name="Right Slot" node="44828:128782">
+                    <rux-tree id="right-slot">
+                        <rux-tree-node>
+                            The first item has a long line of text
+                            <rux-icon
+                                slot="suffix"
+                                icon="star"
+                                size="1.25rem"
+                            ></rux-icon>
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Two
+                            <rux-icon
+                                slot="suffix"
+                                icon="star-border"
+                                size="1.25rem"
+                            ></rux-icon>
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node>
+                            Three
+                            <rux-icon
+                                slot="suffix"
+                                icon="star-border"
+                                size="1.25rem"
+                            ></rux-icon>
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node selected="">
+                            <span id="wrap-me">
+                                Four score and seven years ago
+                            </span>
+                            <rux-icon
+                                slot="suffix"
+                                icon="star-border"
+                                size="1.25rem"
+                            ></rux-icon>
+                            <rux-tree-node slot="node">One</rux-tree-node>
+                            <rux-tree-node slot="node">Two</rux-tree-node>
+                            <rux-tree-node slot="node">Three</rux-tree-node>
+                        </rux-tree-node>
+                        <rux-tree-node expanded="">
+                            Five people went to the store
+                            <rux-icon
+                                slot="suffix"
+                                icon="star-border"
+                                size="1.25rem"
+                            ></rux-icon>
+                            <rux-tree-node slot="node">
+                                One
+                                <rux-icon
+                                    slot="suffix"
+                                    icon="star-border"
+                                    size="1.25rem"
+                                ></rux-icon>
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Two
+                                <rux-icon
+                                    slot="suffix"
+                                    icon="star"
+                                    size="1.25rem"
+                                ></rux-icon>
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Three
+                                <rux-icon
+                                    slot="suffix"
+                                    icon="star"
+                                    size="1.25rem"
+                                ></rux-icon>
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node slot="node">
+                                Four
+                                <rux-icon
+                                    slot="suffix"
+                                    icon="star-border"
+                                    size="1.25rem"
+                                ></rux-icon>
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                            <rux-tree-node wrap slot="node">
+                                <span id="wrap-me">
+                                    The fifth little piggy went to the store
+                                </span>
+                                <rux-icon
+                                    slot="suffix"
+                                    icon="star-border"
+                                    size="1.25rem"
+                                ></rux-icon>
+                                <rux-tree-node slot="node">One</rux-tree-node>
+                                <rux-tree-node slot="node">Two</rux-tree-node>
+                                <rux-tree-node slot="node">Three</rux-tree-node>
+                            </rux-tree-node>
+                        </rux-tree-node>
+                    </rux-tree>
+                </ftl-holster>
+            </div>
+        </ftl-belt> -->
+
+        <!-- <div id="append-test">
+            Apppend prefix and suffix test
+            <rux-tree-node id="whatup" style="width: 300px">
+                whatup tree node
+            </rux-tree-node>
+            <button id="prefix">add a prefix</button>
+            <button id="suffix">add a suffix</button>
+            <script>
+                prefix.addEventListener('click', (e) => {
+                    console.log(e.target)
+                    const el = document.querySelector('#whatup')
+                    const icon = document.createElement('rux-status')
+                    icon.setAttribute('status', 'critical')
+                    icon.setAttribute('slot', 'prefix')
+                    el.appendChild(icon)
+                })
+                suffix.addEventListener('click', (e) => {
+                    console.log(e.target)
+                    const el = document.querySelector('#whatup')
+                    const icon = document.createElement('rux-status')
+                    icon.setAttribute('status', 'normal')
+                    icon.setAttribute('slot', 'suffix')
+                    el.appendChild(icon)
+                })
+            </script>
+        </div> -->
+
+        <!-- <style>
+            /* add Parts: tree-text-color */
+            rux-tree-node::part(node){
+                color: red;
+            }
+
+            /* add Parts: tree-border-color*/
+            rux-tree{border: 1px solid purple;}
+            rux-tree-node{border: 1px solid orange;}
+            /* add Parts: tree-accent-color*/
+            rux-tree-node::part(indicator){
+                color: white;
+            }
+
+            /*add Parts: tree-hover-background-color*/
+            /* add Parts: tree-hover-text-color */
+            rux-tree-node::part(node):hover{
+                background-color: orange;
+                color: green;
+            }
+
+            /*add Parts: Tree-selected-border-color*/
+            rux-tree-node[selected]{border: 1px solid blue;}
+
+            /* add Parts: tree-selected-accent-color */
+            rux-tree-node[selected]::part(indicator){
+                color:green;
+            }
+
+            /*add Parts: Tree-expanded-border-color */
+            rux-tree-node[expanded]{
+                border-color: pink;
+            }
+
+
+        </style> -->
+    </body>
+</html>

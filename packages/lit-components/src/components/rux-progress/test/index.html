@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body>
+        <style>
+            rux-progress {
+                margin: 2rem;
+            }
+            section {
+                width: 400px;
+                margin: 0 auto;
+            }
+        </style>
+        <section>
+            <rux-progress></rux-progress>
+            <rux-progress max="100" min="0" value="1"></rux-progress>
+            <rux-progress max="100" min="0" value="50"></rux-progress>
+            <rux-progress max="100" min="0" value="100"></rux-progress>
+        </section>
+        <!-- <ftl-belt
+            access-token=""
+            file-id=""
+        >
+            <ftl-holster name="Progress Empty" node="24958:114399">
+                <div style="width: 381px">
+                    <rux-progress max="100" min="0" value="0"></rux-progress>
+                </div>
+            </ftl-holster>
+            <ftl-holster name="Progress Half" node="25864:114700">
+                <div style="width: 390px">
+                    <rux-progress max="100" min="0" value="50"></rux-progress>
+                </div>
+            </ftl-holster>
+            <ftl-holster name="Progress Full" node="25864:114706">
+                <div style="width: 399px">
+                    <rux-progress max="100" min="0" value="100"></rux-progress>
+                </div>
+            </ftl-holster>
+        </ftl-belt> -->
+    </body>
+</html>

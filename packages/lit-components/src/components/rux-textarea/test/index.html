@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <h2>Prop/Slot Testing</h2>
+        <rux-textarea
+            id="test-this"
+            label="this the input label"
+        ></rux-textarea>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem">
+            <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+            <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+            <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+            <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem">
+            <rux-button id="addHelpProp">Add Help Prop</rux-button>
+            <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+            <rux-button id="addErrorProp">Add Error Prop</rux-button>
+            <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+        </div>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const input = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = input.querySelector(`[slot='help-text']`)
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = input.querySelector(`[slot='error-text']`)
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                input.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                input.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                input.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                input.removeAttribute('error-text')
+            })
+        </script>
+        <div style="padding: 10%; display: flex; justify-content: center">
+            <form id="form">
+                <rux-textarea
+                    id="textarea1"
+                    name="test1"
+                    value="TextArea Test 1"
+                ></rux-textarea>
+                <br />
+                <rux-textarea
+                    id="disTextArea"
+                    name="disTextArea"
+                    value="Disabled"
+                    disabled
+                ></rux-textarea>
+                <br />
+                <rux-textarea id="noval" name="noval"></rux-textarea>
+                <br />
+                <rux-textarea
+                    id="errorText"
+                    name="errorText"
+                    error-text="ERROR"
+                ></rux-textarea>
+                <br />
+                <rux-textarea id="helpText" name="helpText" help-text="HELP">
+                </rux-textarea>
+                <br />
+                <style>
+                    #bothText::part(textarea) {
+                        resize: none;
+                        height: 200px;
+                    }
+                </style>
+                <rux-textarea
+                    id="bothText"
+                    name="bothText"
+                    help-text="PLZ NO"
+                    error-text="PLZ YES"
+                ></rux-textarea>
+                <br />
+                <textarea
+                    id="nativeTextArea"
+                    name="native"
+                    style="padding: 8px"
+                >
+Native Text Area</textarea
+                >
+
+                <button id="formSumbitBtn" type="submit">submit</button>
+            </form>
+            <ul id="log"></ul>
+            <script>
+                const log = document.getElementById('log')
+                const form = document.getElementById('form')
+                form.addEventListener('submit', (e) => {
+                    event.preventDefault()
+                    // trigger formdata event
+                    new FormData(form)
+                })
+                form.addEventListener('formdata', (e) => {
+                    log.innerHTML = ''
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const values = data.values()
+                    for (var value of data.entries()) {
+                        const item = document.createElement('li')
+                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                        log.appendChild(item)
+                    }
+                })
+            </script>
+        </div>
+
+        <!--<ftl-belt
+            access-token=""
+            file-id=""
+        >
+            <section>
+                <h2>Figma Testing</h2>
+                <ftl-holster name="Small text area" node="1043:6671">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Small textarea"
+                            size="small"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
+
+                <ftl-holster name="Medium text area" node="1043:6665">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Medium textarea"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
+
+                <ftl-holster name="Large text area" node="1043:6689">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Large textarea"
+                            size="large"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
+
+                <ftl-holster name="With Help Text" node="1043:6604">
+                    <div style="width: 170px">
+                        <rux-textarea
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            value="Textarea"
+                            help-text="help"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
+
+                <ftl-holster name="With Error Text" node="1057:3759">
+                    <div style="min-width: 170px">
+                        <rux-textarea
+                            invalid
+                            id="figmatextarea1"
+                            name="figmatest1"
+                            placeholder="Textarea"
+                            error-text="error"
+                        ></rux-textarea>
+                    </div>
+                </ftl-holster>
+            </section>
+        </ftl-belt>-->
+    </body>
+</html>

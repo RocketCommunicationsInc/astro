@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <!-- <ftl-belt access-token="" file-id="3tYLyBkvKYOdUysPk6Fu60">
+            <ftl-holster name="Test 1 Name" node="25916:114906">
+                <form id="form" style="width: 100%">
+                    <rux-checkbox
+                        id="ruxCheckbox"
+                        name="ruxCheckbox"
+                        value="foo"
+                    >
+                        Checkbox
+                    </rux-checkbox>
+                </form>
+            </ftl-holster>
+        </ftl-belt> -->
+        <div>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+            <rux-checkbox></rux-checkbox>
+        </div>
+        <div>
+            <rux-checkbox label="Label Prop"></rux-checkbox>
+            <rux-checkbox>Label Slot</rux-checkbox>
+            <rux-checkbox label="Label Prop">Label Slot wth Prop</rux-checkbox>
+            <rux-checkbox checked>Checked</rux-checkbox>
+            <rux-checkbox indeterminate>Indeterminate</rux-checkbox>
+            <rux-checkbox disabled>Disabled</rux-checkbox>
+            <rux-checkbox checked disabled>Checked Disabled</rux-checkbox>
+            <rux-checkbox indeterminate disabled>
+                Indeterminate Disabled
+            </rux-checkbox>
+        </div>
+        <div>
+            <rux-checkbox help-text="Help Text">With Help Text</rux-checkbox>
+        </div>
+        <button id="add">Add</button>
+        <script>
+            add.addEventListener('click', () => {
+                const els = document.querySelectorAll('rux-checkbox')
+                els.forEach((el) => {
+                    const div = document.createElement('div')
+                    div.innerText = 'Hey now default slot!'
+                    el.appendChild(div)
+                })
+            })
+        </script>
+        <div style="padding: 10%; display: flex; justify-content: center">
+            <div style="width: 60%">
+                <form id="form" style="width: 100%">
+                    <rux-checkbox
+                        id="ruxCheckbox"
+                        name="ruxCheckbox"
+                        value="foo"
+                    >
+                        Checkbox
+                    </rux-checkbox>
+
+                    <rux-checkbox
+                        id="ruxCheckboxDisabled"
+                        name="ruxCheckboxDisabled"
+                        disabled
+                    >
+                        Disabled
+                    </rux-checkbox>
+
+                    <input
+                        id="nativeCheckbox"
+                        type="checkbox"
+                        name="nativeCheckbox"
+                        value="foo"
+                    />
+                    <button id="submit" type="submit">submit</button>
+                </form>
+
+                <form id="form-no-value" style="margin-top: 1rem; width: 100%">
+                    <rux-checkbox id="ruxCheckbox2" name="ruxCheckbox">
+                        Checkbox
+                    </rux-checkbox>
+
+                    <input
+                        id="nativeCheckbox2"
+                        type="checkbox"
+                        name="nativeCheckbox"
+                    />
+                    <button type="submit">submit</button>
+                </form>
+            </div>
+            <div style="width: 30%">
+                <ul id="log"></ul>
+            </div>
+            <script>
+                const log = document.getElementById('log')
+                const forms = document.querySelectorAll('form')
+
+                for (const form of forms) {
+                    form.addEventListener('submit', (e) => {
+                        event.preventDefault()
+                        // trigger formdata event
+                        new FormData(form)
+                    })
+
+                    form.addEventListener('formdata', logFormData)
+                }
+
+                function logFormData(e) {
+                    const status = document.getElementById('status')
+                    log.innerHTML = ''
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const values = data.values()
+                    for (var value of data.entries()) {
+                        const item = document.createElement('li')
+                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                        log.appendChild(item)
+                    }
+                }
+            </script>
+
+            <script>
+                add.addEventListener('click', () => {
+                    const els = document.querySelectorAll('rux-checkbox')
+                    els.forEach((el) => {
+                        const div = document.createElement('div')
+                        div.innerText = 'Hey now default slot!'
+                        el.appendChild(div)
+                    })
+                })
+            </script>
+        </div>
+        <section>
+            <h2>Prop Testing</h2>
+            <rux-checkbox
+                id="test-this"
+                label="this the checkbox label"
+            ></rux-checkbox>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+                <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpProp">Add Help Prop</rux-button>
+                <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+            </div>
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const checkBox = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                checkBox.innerHTML += `
+                    <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+                `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = checkBox.querySelector(
+                    `[slot='help-text']`
+                )
+                helpTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                checkBox.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                checkBox.removeAttribute('help-text')
+            })
+        </script>
+    </body>
+</html>

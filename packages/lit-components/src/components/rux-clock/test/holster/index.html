@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+
+    <body>
+        <!-- <ftl-belt
+            access-token="ACCESS_TOKEN"
+            file-id="oj8NRemkyC8dBRHHpo95f3"
+        >
+            <ftl-holster name="Clock" node="24933:115282">
+                <rux-clock
+                    aos="1557503698781"
+                    los="2019-05-10T16:21:12.000Z"
+                ></rux-clock>
+            </ftl-holster>
+        </ftl-belt> -->
+        <section>
+            <h2>Default</h2>
+            <rux-clock></rux-clock>
+        </section>
+        <section>
+            <h2>With Military Timezone</h2>
+            <rux-clock timezone="A"></rux-clock>
+        </section>
+        <section>
+            <h2>With date-in</h2>
+            <rux-clock date-in="2022-04-22T23:59:55.000Z"></rux-clock>
+        </section>
+        <section>
+            <h2>With Unix date-in</h2>
+            <rux-clock date-in="1652129256662"></rux-clock>
+        </section>
+        <section>
+            <h2>With a date-in added after render</h2>
+            <rux-clock id="add"></rux-clock>
+            <rux-button id="btn">Set date-in</rux-button>
+            <rux-button style="padding: 3%" id="again"
+                >Change to UNIX</rux-button
+            >
+        </section>
+        <script>
+            const btn = document.getElementById('btn')
+            const again = document.getElementById('again')
+
+            const clock = document.getElementById('add')
+            btn.addEventListener('click', () => {
+                clock.setAttribute('date-in', '2022-04-22T23:59:55.000Z')
+            })
+            again.addEventListener('click', () => {
+                clock.setAttribute('date-in', '1652129256662')
+            })
+        </script>
+    </body>
+</html>

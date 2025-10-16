@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Tag</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+    <style>
+        rux-tag {
+            box-sizing: border-box;
+        }
+        #custom {
+            width: 100px;
+            background: #003655;
+            border-color: #2b659b;
+        }
+    </style>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-tag></rux-tag>
+        </section>
+        <section>
+            <h2>Status's</h2>
+            <rux-tag status="fail"></rux-tag>
+            <rux-tag status="pass"></rux-tag>
+            <rux-tag status="unkown"></rux-tag>
+            <rux-tag id="custom">Custom</rux-tag>
+        </section>
+    </body>
+</html>

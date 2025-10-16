@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Notification</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <style>
+            .wrapper {
+                margin-bottom: 1rem;
+            }
+        </style>
+        <section>
+            <h2>Default</h2>
+            <div class="wrapper">
+                <rux-notification open> Notification banner </rux-notification>
+            </div>
+        </section>
+        <section>
+            <h2>With Status</h2>
+            <div class="wrapper">
+                <rux-notification open status="normal">
+                    Normal Status
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="standby">
+                    Standby Status
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="off">
+                    Off Status
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="caution">
+                    Caution Status
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="serious">
+                    Serious Status
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="critical">
+                    Critical Status
+                </rux-notification>
+            </div>
+        </section>
+        <section>
+            <h2>Small</h2>
+            <div class="wrapper">
+                <rux-notification open small> Default small </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open small status="standby">
+                    Standby small
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open small status="off">
+                    Off small
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open small status="normal">
+                    Normal small
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open small status="caution">
+                    Caution small
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open small status="serious">
+                    Serious small
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open small status="critical">
+                    Critical small
+                </rux-notification>
+            </div>
+        </section>
+        <section>
+            <h2>Slots</h2>
+            <div class="wrapper">
+                <rux-notification open>
+                    <rux-classification-marking
+                        classification="unclassified"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix Slot
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open>
+                    Default Slot <a href="#">Link here</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open small>
+                    Default Slot Small <a href="#">Link here</a>
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open>
+                    <rux-button slot="actions">Confirm</rux-button>
+                    Action Slot
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open>
+                    <rux-classification-marking
+                        classification="unclassified"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix and Action Slot
+                    <rux-button slot="actions">Confirm</rux-button>
+                </rux-notification>
+            </div>
+
+            <div class="wrapper">
+                <rux-notification open>
+                    <rux-classification-marking
+                        classification="unclassified"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix, Action, Default Slot <a href="#">Link</a>
+                    <rux-button slot="actions">Confirm</rux-button>
+                </rux-notification>
+            </div>
+        </section>
+        <section>
+            <h2>Prefix with Status</h2>
+            <div class="wrapper">
+                <rux-notification open status="off">
+                    <rux-classification-marking
+                        classification="unclassified"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix Slot
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="standby">
+                    <rux-classification-marking
+                        classification="cui"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix Slot
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="normal">
+                    <rux-classification-marking
+                        classification="confidential"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix Slot
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="caution">
+                    <rux-classification-marking
+                        classification="secret"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix Slot
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="serious">
+                    <rux-classification-marking
+                        classification="top-secret-sci"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix Slot
+                </rux-notification>
+            </div>
+            <div class="wrapper">
+                <rux-notification open status="critical">
+                    <rux-classification-marking
+                        classification="top-secret"
+                        tag
+                        slot="prefix"
+                    >
+                    </rux-classification-marking>
+                    Prefix Slot
+                </rux-notification>
+            </div>
+        </section>
+    </body>
+</html>

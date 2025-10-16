@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+        <style>
+            rux-card {
+                margin: 0.5rem;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+        />
+    </head>
+
+    <body>
+        <rux-toast-stack position="top-right">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
+        <rux-toast-stack position="top-left">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
+        <rux-toast-stack position="bottom-right">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
+        <rux-toast-stack position="bottom-left">
+            <rux-toast>Toast 1</rux-toast>
+            <rux-toast>Toast 2</rux-toast>
+        </rux-toast-stack>
+    </body>
+</html>

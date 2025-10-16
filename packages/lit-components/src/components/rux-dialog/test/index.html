@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+    <!-- <style>
+        rux-dialog::part(container) {
+            position: absolute;
+            top: -105px;
+            left: -12px;
+            /* width: 100%;
+            height: 100%; */
+        }
+    </style> -->
+
+    <body>
+        <!-- <ftl-belt file-id="xn47jC9ZYiOita8mXjmghp">
+            <ftl-holster name="Dialog" node="27298:115203">
+                <section>
+                <rux-dialog open id="slot">
+                    <span slot="header">Dialog title</span>
+                    <div slot="message">
+                        <span>Slot Message</span>
+                        <rux-input placeholder="input time"></rux-input>
+                    </div>
+                    <div slot="footer">
+                        <rux-button-group h-align="right">
+                            <rux-button secondary>Secondary action</rux-button>
+                            <rux-button id="slotconfirm">Primary action</rux-button>
+                        </rux-button-group>
+                    </div>
+                </rux-dialog>
+            </section>
+                <section>
+                    <rux-dialog
+                        open
+                        id="ftl"
+                        dialog-message="Props Message"
+                        dialog-title="Props Title"
+                    >
+                        <h2 slot="header">Header Content</h2>
+                        Lorem ipsum dolor
+                    </rux-dialog>
+                </section>
+            </ftl-holster>
+        </ftl-belt> -->
+        <section>
+            <rux-dialog open header="hello" message="world"></rux-dialog>
+        </section>
+        <section>
+            <rux-dialog
+                id="props"
+                message="Props Message"
+                header="Props Title"
+            ></rux-dialog>
+            <rux-button id="openprops">Open Props Version</rux-button>
+        </section>
+        <section>
+            <rux-dialog id="slots">
+                <span slot="header">Slot Header</span>
+                <div>
+                    <span>Slot Message</span>
+                    <rux-input placeholder="input time"></rux-input>
+                </div>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slot Cancel</rux-button>
+                        <rux-button id="slotconfirm">Slot Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-dialog>
+            <rux-button id="openslots" style="padding: 15px 0px"
+                >Open Slots Version</rux-button
+            >
+        </section>
+        <section>
+            <rux-dialog id="mix" header="Mixed" deny-text="Custom Deny Text">
+                <div>
+                    <span>Slot Message</span>
+                    <rux-input placeholder="input time"></rux-input>
+                </div>
+                <div slot="footer">
+                    <rux-button-group h-align="right">
+                        <rux-button secondary>Slot Cancel</rux-button>
+                        <rux-button id="confirm">Slot Confirm</rux-button>
+                    </rux-button-group>
+                </div>
+            </rux-dialog>
+            <rux-button id="openmix">Open Mixed Version</rux-button>
+        </section>
+        <section>
+            <rux-button id="dyn" style="padding: 15px 0px"
+                >Open changing slot</rux-button
+            >
+            <rux-dialog id="change" dialog-title="Title"> </rux-dialog>
+        </section>
+        <script>
+            const props = document.getElementById('props')
+            const openProps = document.getElementById('openprops')
+
+            openProps.addEventListener('click', () => {
+                props.open = !props.open
+            })
+
+            props.addEventListener('ruxdialogopened', () =>
+                console.log('props ruxdialogopened')
+            )
+            props.addEventListener('ruxdialogclosed', () =>
+                console.log('props ruxdialogclosed')
+            )
+
+            const slots = document.getElementById('slots')
+            const openSlots = document.getElementById('openslots')
+            const slotconfirm = document.getElementById('slotconfirm')
+
+            slotconfirm.addEventListener('click', () => {
+                slots.open = false
+            })
+
+            openSlots.addEventListener('click', () => {
+                slots.open = !slots.open
+            })
+            slots.addEventListener('ruxdialogopened', () =>
+                console.log('heard ruxdialogopened')
+            )
+            slots.addEventListener('ruxdialogclosed', () =>
+                console.log('heard ruxdialogclosed')
+            )
+
+            const mixed = document.getElementById('mix')
+            const openMixed = document.getElementById('openmix')
+            openMixed.addEventListener('click', () => {
+                mixed.open = !mixed.open
+            })
+
+            //Focus the confirm button on mixed modal
+
+            const confirmBtn = document.getElementById('confirm')
+            mixed.addEventListener('ruxdialogopened', () => {
+                const shadowBtn = confirmBtn.shadowRoot.querySelector('button')
+                setTimeout(() => shadowBtn.focus())
+            })
+
+            const dyn = document.getElementById('dyn')
+            const changeModal = document.getElementById('change')
+
+            const newFooter = document.createElement('span')
+            const newMessage = document.createElement('span')
+
+            newFooter.innerHTML = 'Slot Footer'
+            newFooter.slot = 'footer'
+            newMessage.innerHTML = 'Slot Message'
+            newMessage.classList.add('test')
+
+            dyn.addEventListener('click', () => {
+                changeModal.open = true
+            })
+            changeModal.addEventListener('ruxdialogopened', () => {
+                setTimeout(() => {
+                    console.log('heard')
+                    changeModal.append(newFooter)
+                    changeModal.append(newMessage)
+                    //The assertion in the e2e test will timeout after 4000 ms of not finding the appended stuff
+                }, 500)
+            })
+        </script>
+    </body>
+</html>

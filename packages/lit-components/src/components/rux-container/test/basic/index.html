@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Container</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <rux-container style="--body-padding: 0">
+                <div slot="header">Parent container title</div>
+                <div slot="tab-bar">
+                    <rux-tabs id="tab-set-id-2" small="">
+                        <rux-tab id="tab-id-4">Tab 1</rux-tab>
+                        <rux-tab id="tab-id-5">Tab 2</rux-tab>
+                        <rux-tab id="tab-id-6" disabled="">
+                            Tab 3 (disabled)
+                        </rux-tab>
+                    </rux-tabs>
+                </div>
+                <div slot="toolbar">
+                    <rux-slider></rux-slider>
+                </div>
+                <div>
+                    <rux-tab-panels aria-labelledby="tab-set-id-2">
+                        <rux-tab-panel aria-labelledby="tab-id-4">
+                            <rux-table>
+                                <rux-table-header>
+                                    <rux-table-header-row>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                        <rux-table-header-cell>
+                                            Header text
+                                        </rux-table-header-cell>
+                                    </rux-table-header-row>
+                                </rux-table-header>
+                                <rux-table-body>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                    <rux-table-row>
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                        <rux-table-cell
+                                            >Table text</rux-table-cell
+                                        >
+                                    </rux-table-row>
+                                </rux-table-body>
+                            </rux-table>
+                        </rux-tab-panel>
+                        <rux-tab-panel aria-labelledby="tab-id-5">
+                            <div style="padding: 1.25rem">
+                                Tab 2 HTML content
+                            </div>
+                        </rux-tab-panel>
+                        <rux-tab-panel aria-labelledby="tab-id-6"
+                            >Tab 3 HTML content</rux-tab-panel
+                        >
+                    </rux-tab-panels>
+                </div>
+                <div slot="footer">
+                    <rux-button style="width: 100%">Primary Button</rux-button>
+                </div>
+            </rux-container>
+        </section>
+    </body>
+</html>

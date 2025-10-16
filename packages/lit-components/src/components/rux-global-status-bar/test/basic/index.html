@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - GSB</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default GSB</h2>
+            <rux-global-status-bar
+                include-icon="true"
+                app-domain="Default"
+                app-name="Global Status Bar"
+                app-version="Default"
+                menu-icon="apps"
+                username="Default"
+                app-state-color="tag1"
+                app-state="Default"
+            >
+            </rux-global-status-bar>
+        </section>
+        <section>
+            <h2>No Icon</h2>
+            <rux-global-status-bar
+                app-domain="App Domain"
+                app-name="App Name"
+                app-version="App Version"
+                username="Username"
+                app-state-color="tag1"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+            <h2>No App Name</h2>
+            <rux-global-status-bar
+                app-domain="App Domain"
+                app-version="App Version"
+                username="Username"
+                app-state-color="tag1"
+                include-icon="true"
+                menu-icon="apps"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+            <h2>No App Domain</h2>
+            <rux-global-status-bar
+                app-name="App Name"
+                app-version="App Version"
+                username="Username"
+                app-state-color="tag1"
+                include-icon="true"
+                menu-icon="apps"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+            <h2>No App Version</h2>
+            <rux-global-status-bar
+                app-name="App Name"
+                app-domain="App Domain"
+                username="Username"
+                app-state-color="tag1"
+                include-icon="true"
+                menu-icon="apps"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+
+            <h2>App State Tags</h2>
+            <rux-global-status-bar
+                app-name="App Name"
+                app-domain="App Domain"
+                username="Username"
+                app-state-color="tag1"
+                include-icon="true"
+                menu-icon="apps"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+            <rux-global-status-bar
+                app-name="App Name"
+                app-domain="App Domain"
+                username="Username"
+                app-state-color="tag2"
+                include-icon="true"
+                menu-icon="apps"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+            <rux-global-status-bar
+                app-name="App Name"
+                app-domain="App Domain"
+                username="Username"
+                app-state-color="tag3"
+                include-icon="true"
+                menu-icon="apps"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+            <rux-global-status-bar
+                app-name="App Name"
+                app-domain="App Domain"
+                username="Username"
+                app-state-color="tag4"
+                include-icon="true"
+                menu-icon="apps"
+                app-state="App State"
+            >
+            </rux-global-status-bar>
+        </section>
+    </body>
+</html>

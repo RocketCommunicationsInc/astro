@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Input</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-input data-test-id="default"></rux-input>
+        </section>
+        <section>
+            <h2>Sizes</h2>
+            <rux-input size="small"></rux-input>
+            <rux-input size="medium"></rux-input>
+            <rux-input size="large"></rux-input>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-input disabled></rux-input>
+            <rux-input required label="Required"></rux-input>
+            <rux-input invalid></rux-input>
+            <rux-input placeholder="Placeholder"></rux-input>
+            <rux-input label="With label (non-required)"></rux-input>
+        </section>
+        <section>
+            <h2>Input Types</h2>
+            <rux-input type="text" label="Text"></rux-input>
+            <rux-input type="password" label="Password"></rux-input>
+            <rux-input type="number" label="Number"></rux-input>
+            <rux-input type="email" label="Email"></rux-input>
+            <rux-input type="url" label="URL"></rux-input>
+            <rux-input type="search" label="Search"></rux-input>
+            <rux-input type="date" label="Date"></rux-input>
+            <rux-input type="datetime-local" label="Datetime-local"></rux-input>
+            <rux-input type="time" label="Time"></rux-input>
+            <rux-input type="tel" label="Tel"></rux-input>
+        </section>
+        <section>
+            <h2>Prefix and Suffix</h2>
+            <rux-input label="Prefix">
+                <rux-icon
+                    icon="apps"
+                    slot="prefix"
+                    size="extra-small"
+                ></rux-icon>
+            </rux-input>
+            <rux-input label="Suffix">
+                <rux-icon
+                    icon="apps"
+                    slot="suffix"
+                    size="extra-small"
+                ></rux-icon>
+            </rux-input>
+            <rux-input label="Prefix and Suffix">
+                <rux-icon
+                    icon="apps"
+                    slot="suffix"
+                    size="extra-small"
+                ></rux-icon>
+                <rux-icon
+                    icon="apps"
+                    slot="prefix"
+                    size="extra-small"
+                ></rux-icon>
+            </rux-input>
+        </section>
+        <section>
+            <h2>Error and Help Text</h2>
+            <rux-input label="Help Text" help-text="Help Text Here"></rux-input>
+            <rux-input
+                label="Error Text"
+                error-text="Error Text Here"
+            ></rux-input>
+        </section>
+    </body>
+</html>

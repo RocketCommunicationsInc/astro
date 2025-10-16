@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body>
+        <rux-global-status-bar
+            include-icon
+            app-domain="App Domain"
+            app-state="App State"
+            app-name="App Name"
+            username="Username"
+        >
+            <div
+                slot="right-side"
+                style="
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                "
+            >
+                <rux-monitoring-icon
+                    label="Label"
+                    sublabel="Sub"
+                    icon="antenna-transmit"
+                    notifications="999"
+                    status="critical"
+                ></rux-monitoring-icon>
+                <rux-monitoring-icon
+                    icon="antenna-receive"
+                    label="Label"
+                    sublabel="Sub"
+                    notifications="123456789"
+                    status="standby"
+                >
+                </rux-monitoring-icon>
+            </div>
+        </rux-global-status-bar>
+
+        <!-- <section>
+        <h3>Basic</h3>
+        <ftl-belt access-token="" file-id="J77M8jPxzOBoxQeevckKwb">
+            <ftl-holster node="1626:8219">
+                <rux-global-status-bar app-domain="GLOBAL" app-name="STATUS BAR" app-state="App state"
+                    username="User Name" include-icon="true">
+                </rux-global-status-bar>
+            </ftl-holster>
+            <ftl-holster node="1628:8594">
+                <rux-global-status-bar app-domain="Testing Text" app-name="Testing Text" app-state="App state"
+                    username="User Name" include-icon="true">
+                </rux-global-status-bar>
+            </ftl-holster>
+            <ftl-holster node="1628:8698"> -->
+        <!-- This one is differnet from figma on the left and right due to our padding. -->
+        <!-- <rux-global-status-bar style="width: 329px" app-domain="Testing Text" app-name="Testing Text"
+                    username="Jane Doe test" include-icon="true">
+                </rux-global-status-bar>
+            </ftl-holster>
+            <ftl-holster node="1628:8722">
+                <rux-global-status-bar app-domain="Testing Text" app-name="Testing Text" app-state="App state test"
+                    username="Jane Doe test" include-icon="true">
+                </rux-global-status-bar>
+            </ftl-holster>
+            <ftl-holster node="39040:129519">
+                <rux-global-status-bar app-domain="GLOBAL" app-name="STATUS BAR" app-state="App state"
+                    username="User Name" include-icon="true">
+                    <rux-clock></rux-clock>
+                    <rux-monitoring-icon slot="right-side" icon="antenna-transmit" status="critical" notifications="99"
+                        label="Label" sublabel="Sub">
+                    </rux-monitoring-icon>
+                </rux-global-status-bar>
+            </ftl-holster>
+        </ftl-belt>
+    </section> -->
+    </body>
+</html>

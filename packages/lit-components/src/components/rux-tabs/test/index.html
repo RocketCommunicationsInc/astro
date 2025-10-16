@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        /> -->
+    </head>
+    <body>
+        <!--Previous Tests-->
+        <div style="display: flex; flex-flow: column">
+            <rux-tabs id="tab-set-id-1">
+                <rux-tab id="tab-id-1"><span>Tab 1</span></rux-tab>
+                <rux-tab id="tab-id-2">Tab 2</rux-tab>
+                <rux-tab id="tab-id-3">Tab 3</rux-tab>
+            </rux-tabs>
+            <rux-tab-panels aria-labelledby="tab-set-id-1">
+                <rux-tab-panel aria-labelledby="tab-id-1">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 1 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-2">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 2 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="tab-id-3">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 3 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+            </rux-tab-panels>
+        </div>
+
+        <!--Figma Spacing Tests-->
+        <h2>Large Tabs</h2>
+        <div
+            style="
+                display: flex;
+                flex-flow: column;
+                padding-top: 20px;
+                padding-left: 20px;
+            "
+        >
+            <rux-tabs large id="tabs-spacing-large">
+                <rux-tab id="spacing-large-id-1">Tab large</rux-tab>
+                <rux-tab id="spacing-large-id-2">Tab large</rux-tab>
+                <rux-tab id="spacing-large-id-3">Tab large</rux-tab>
+            </rux-tabs>
+            <rux-tab-panels aria-labelledby="tabs-spacing-large">
+                <rux-tab-panel aria-labelledby="spacing-large-id-1">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 1 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="spacing-large-id-2">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 2 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="spacing-large-id-3">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 3 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+            </rux-tab-panels>
+        </div>
+
+        <h2>Parts Styling Tabs</h2>
+        <style>
+            #tabs-spacing-styling rux-tab::part(container) {
+                color: red;
+                border: 1px solid greenyellow;
+            }
+            #tabs-spacing-styling rux-tab[selected]::part(container) {
+                color: black;
+                background: white;
+                border-color: blueviolet;
+            }
+            #tabs-spacing-styling rux-tab::part(container):hover {
+                background: pink;
+                color: darkblue;
+            }
+        </style>
+        <div
+            style="
+                display: flex;
+                flex-flow: column;
+                padding-top: 20px;
+                padding-left: 20px;
+            "
+        >
+            <rux-tabs id="tabs-spacing-styling" small>
+                <rux-tab id="spacing-small-id-1">Tab One</rux-tab>
+                <rux-tab id="spacing-small-id-2" disabled>Tab Two</rux-tab>
+                <rux-tab id="spacing-small-id-3">Tab Three</rux-tab>
+            </rux-tabs>
+            <rux-tab-panels aria-labelledby="tabs-spacing-styling">
+                <rux-tab-panel aria-labelledby="spacing-small-id-1">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 1 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="spacing-small-id-2">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 2 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+                <rux-tab-panel aria-labelledby="spacing-small-id-3">
+                    <div
+                        style="
+                            padding: 1vw;
+                            border: rgba(255, 255, 255, 0.15) dashed 1px;
+                            font-family: monospace;
+                        "
+                    >
+                        <pre><<span>!-- Tab 3 HTML content --</span>></pre>
+                    </div>
+                </rux-tab-panel>
+            </rux-tab-panels>
+        </div>
+    </body>
+</html>

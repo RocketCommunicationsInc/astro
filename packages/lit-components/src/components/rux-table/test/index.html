@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <!-- example -->
+        <rux-table>
+            <rux-table-header>
+                <rux-table-header-row>
+                    <rux-table-header-cell> Header text </rux-table-header-cell>
+                    <rux-table-header-cell> Header text </rux-table-header-cell>
+                    <rux-table-header-cell> Header text </rux-table-header-cell>
+                    <rux-table-header-cell> Header text </rux-table-header-cell>
+                </rux-table-header-row>
+            </rux-table-header>
+            <rux-table-body>
+                <rux-table-row>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                </rux-table-row>
+                <rux-table-row>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                </rux-table-row>
+                <rux-table-row>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                </rux-table-row>
+                <rux-table-row>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                </rux-table-row>
+                <rux-table-row>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                </rux-table-row>
+                <rux-table-row>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                </rux-table-row>
+                <rux-table-row>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                    <rux-table-cell> Table text </rux-table-cell>
+                </rux-table-row>
+            </rux-table-body>
+        </rux-table>
+        <!-- end example -->
+        <style>
+            .centered rux-table-cell {
+                text-align: center;
+            }
+        </style>
+
+        <!-- <section>
+            <h2>Figma Testing</h2>
+            <ftl-belt file-id="SNsCCfIiWdfvZbBilZXTbW">
+                <ftl-holster name="Default Table" node="9847:170202">
+                    <rux-table>
+                        <rux-table-header>
+                            <rux-table-header-row>
+                                <rux-table-header-cell> Header text </rux-table-header-cell>
+                                <rux-table-header-cell> Header text </rux-table-header-cell>
+                                <rux-table-header-cell> Header text </rux-table-header-cell>
+                                <rux-table-header-cell> Header text </rux-table-header-cell>
+                            </rux-table-header-row>
+                        </rux-table-header>
+                        <rux-table-body>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                            <rux-table-row>
+                                <rux-table-cell> Table text</rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                                <rux-table-cell> Table text </rux-table-cell>
+                            </rux-table-row>
+                        </rux-table-body>
+                    </rux-table>
+                </ftl-holster>
+
+                <ftl-holster name="Checkbox testing" node="9994:180211">
+                    <rux-table class="centered"><rux-table-row><rux-table-cell><rux-checkbox checked></rux-checkbox></rux-table-cell></rux-table-row></rux-table>
+                </ftl-holster>-->
+        <!--note that extra-small icon for star has some extra spacing above the icon so I moved it a touch to align. Other sizes don't have this issue-->
+        <!--<ftl-holster name="Icon extra small" node="9994:180205">
+                    <rux-table class="centered"><rux-table-row><rux-table-cell><rux-icon icon="star" size="extra-small" style="margin-top: -4px" ></rux-icon></rux-table-cell></rux-table-row></rux-table>
+                </ftl-holster>
+                <ftl-holster name="Icon 20px" node="9994:180199">
+                    <rux-table class="centered"><rux-table-row><rux-table-cell><rux-icon icon="star" size="20px" ></rux-icon></rux-table-cell></rux-table-row></rux-table>
+                </ftl-holster>
+                <ftl-holster name="Status" node="9994:180193">
+                    <rux-table class="centered"><rux-table-row><rux-table-cell><rux-status status="critical" style="margin:auto; width:fit-content;"></rux-status></rux-table-cell></rux-table-row></rux-table>
+                </ftl-holster>
+            </ftl-belt>
+        </section>-->
+    </body>
+</html>

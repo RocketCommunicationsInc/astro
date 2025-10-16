@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        /> -->
+        <style>
+            #filterInput {
+                margin: 2rem;
+            }
+        </style>
+    </head>
+    <body>
+        <rux-log id="testing"></rux-log>
+        <rux-input id="filterInput" placeholder="Filter Test" />
+        <script>
+            const log = document.getElementById('testing')
+            const data = [
+                {
+                    timestamp: new Date(1663804800000),
+                    status: 'normal',
+                    message: 'Quisque in arcu quis metus gravida bibendum',
+                },
+                {
+                    timestamp: new Date(1663808844000),
+                    status: 'critical',
+                    message:
+                        'Nullam non felis felis. Donec tempus faucibus gravida',
+                },
+                {
+                    timestamp: new Date(1663839915000),
+                    status: 'normal',
+                    message: 'Aenean venenatis fringilla lorem non posuere',
+                },
+                {
+                    timestamp: new Date(1663886320000),
+                    status: 'standby',
+                    message:
+                        'Phasellus vulputate dolor non elit rutrum, in imperdiet augue tristique',
+                },
+                {
+                    timestamp: new Date(1663885342000),
+                    status: 'caution',
+                    message: 'Nullam faucibus euismod facilisis',
+                },
+                {
+                    timestamp: new Date(1663856520000),
+                    status: 'serious',
+                    message:
+                        'Nam sed erat et nunc dictum lacinia id non libero',
+                },
+                {
+                    timestamp: new Date(1663888271000),
+                    status: 'normal',
+                    message:
+                        'Aliquam at fringilla turpis. Donec pharetra molestie ultrices',
+                },
+                {
+                    timestamp: new Date(1663855620000),
+                    status: 'off',
+                    message:
+                        'Vivamus interdum condimentum dolor et sollicitudin',
+                },
+                {
+                    timestamp: new Date(1663889640000),
+                    status: 'normal',
+                    message: 'Curabitur vel viverra arcu, eu viverro odio',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'standby',
+                    message:
+                        'In feugiat dui magna, a sodales lectus vestibulum in ',
+                },
+            ]
+
+            log.data = data
+
+            const filterInput = document.querySelector('#filterInput')
+            filterInput.addEventListener('input', (e) => {
+                log.setAttribute('filter', e.target.value)
+            })
+        </script>
+
+        <!-- <section>
+            <h2>Figma testing</h2>
+            <ftl-belt file-id="SNsCCfIiWdfvZbBilZXTbW">
+                <ftl-holster name="Big Test" node="11938:205142">
+                    <rux-log id="testing"></rux-log>
+                </ftl-holster>
+            </ftl-belt>
+            <script>
+                const log = document.getElementById('testing')
+                const data = [
+                    {
+                        timestamp: new Date(1663804800000),
+                        status: 'normal',
+                        message: 'Quisque in arcu quis metus gravida bibendum',
+                    },
+                    {
+                        timestamp: new Date(1663808844000),
+                        status: 'critical',
+                        message:
+                            'Nullam non felis felis. Donec tempus faucibus gravida',
+                    },
+                    {
+                        timestamp: new Date(1663839915000),
+                        status: 'normal',
+                        message: 'Aenean venenatis fringilla lorem non posuere',
+                    },
+                    {
+                        timestamp: new Date(1663886320000),
+                        status: 'standby',
+                        message:
+                            'Phasellus vulputate dolor non elit rutrum, in imperdiet augue tristique',
+                    },
+                    {
+                        timestamp: new Date(1663885342000),
+                        status: 'caution',
+                        message: 'Nullam faucibus euismod facilisis',
+                    },
+                    {
+                        timestamp: new Date(1663856520000),
+                        status: 'serious',
+                        message:
+                            'Nam sed erat et nunc dictum lacinia id non libero',
+                    },
+                    {
+                        timestamp: new Date(1663888271000),
+                        status: 'normal',
+                        message:
+                            'Aliquam at fringilla turpis. Donec pharetra molestie ultrices',
+                    },
+                    {
+                        timestamp: new Date(1663855620000),
+                        status: 'off',
+                        message:
+                            'Vivamus interdum condimentum dolor et sollicitudin',
+                    },
+                    {
+                        timestamp: new Date(1663889640000),
+                        status: 'normal',
+                        message: 'Curabitur vel viverra arcu, eu viverro odio',
+                    },
+                    {
+                        timestamp: new Date(1557503698781),
+                        status: 'standby',
+                        message:
+                            'In feugiat dui magna, a sodales lectus vestibulum in ',
+                    },
+                ]
+
+                log.data = data
+            </script>
+        </section> -->
+    </body>
+</html>

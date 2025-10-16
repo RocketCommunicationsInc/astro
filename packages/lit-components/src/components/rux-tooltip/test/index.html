@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <!-- <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script type="module" src="/build/astro-web-components.esm.js"></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="/build/astro-web-components.css" />
+    </head> -->
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Tooltip</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <div style="margin: 1rem">
+            <h2>Placements Around Trigger</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P">
+                    <rux-button>TOP</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip
+                    placement="top-start"
+                    message="Print ⌘ + P"
+                    delay="0"
+                >
+                    <rux-button>TOP START LONG BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top-end" message="Print ⌘ + P">
+                    <rux-button>TOP END LONG BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="right" message="Print ⌘ + P">
+                    <rux-button>RIGHT</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="bottom" message="Print ⌘ + P">
+                    <rux-button>BOTTOM</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="bottom-start" message="Print ⌘ + P">
+                    <rux-button>BOTTOM START LONG BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="bottom-end" message="Print ⌘ + P">
+                    <rux-button>BOTTOM END LONG BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="left" message="Print ⌘ + P">
+                    <rux-button>LEFT</rux-button>
+                </rux-tooltip>
+            </div>
+            <h2>Delay Time</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P">
+                    <rux-button>NORMAL DELAY</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="2000">
+                    <rux-button>DELAY 2s</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="5000">
+                    <rux-button>DELAY 5s</rux-button>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="0">
+                    <rux-button>NO DELAY</rux-button>
+                </rux-tooltip>
+            </div>
+            <h2>Various Triggers</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="">
+                    I am a text trigger
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip message="I am an icon!">
+                    <rux-icon icon="star"></rux-icon>
+                </rux-tooltip>
+            </div>
+            <div style="margin: 3rem 7rem">
+                <h4>A group of buttons</h4>
+                <rux-tooltip placement="top" message="Print ⌘ + P" delay="">
+                    <rux-button>FIRST BUTTON</rux-button>
+                    <rux-button>SECOND BUTTON</rux-button>
+                    <rux-button>THIRD BUTTON</rux-button>
+                </rux-tooltip>
+            </div>
+            <h2>Misc States</h2>
+            <div style="margin: 3rem 7rem">
+                <rux-tooltip open message="Print ⌘ + P">
+                    <rux-button>DEFAULT OPEN</rux-button>
+                </rux-tooltip>
+            </div>
+        </div>
+    </body>
+</html>

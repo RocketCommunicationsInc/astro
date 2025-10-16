@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Pop Up</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+    <style>
+        rux-pop-up {
+            margin-bottom: 12rem;
+        }
+    </style>
+    <body>
+        <section style="display: block">
+            <h2>Default</h2>
+            <div>
+                <div id="default"></div>
+                <rux-pop-up open="true" enable-animation-frame>
+                    <rux-icon
+                        icon="apps"
+                        slot="trigger"
+                        id="move-trigger"
+                    ></rux-icon>
+                    <rux-menu>
+                        <rux-menu-item value="1"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                        <rux-menu-item value="2"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                        <rux-menu-item-divider></rux-menu-item-divider>
+                        <rux-menu-item value="3"
+                            ><a href="https://google.com"
+                                >Pop up menu option test with link</a
+                            ></rux-menu-item
+                        >
+                    </rux-menu>
+                </rux-pop-up>
+            </div>
+        </section>
+        <section>
+            <h2>Placements</h2>
+            <rux-pop-up open="true" placement="top-start" disable-auto-update>
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" placement="auto" disable-auto-update>
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" placement="top-end">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" placement="right-start" disable-auto-update>
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" disable-auto-update>
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" placement="right-end">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" placement="bottom-start">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" placement="bottom">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true" placement="bottom-end">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+            <rux-pop-up open="true">
+                <rux-icon icon="apps" slot="trigger"></rux-icon>
+                <rux-menu>
+                    <rux-menu-item value="1">Menu Item 1</rux-menu-item>
+                    <rux-menu-item value="2">Menu Item 2</rux-menu-item>
+                    <rux-menu-item-divider></rux-menu-item-divider>
+                    <rux-menu-item value="3">Menu Item 3</rux-menu-item>
+                </rux-menu>
+            </rux-pop-up>
+        </section>
+    </body>
+</html>

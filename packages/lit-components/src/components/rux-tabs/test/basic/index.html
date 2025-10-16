@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Tabs</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+    <style>
+        .tabs-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <div class="tabs-wrapper">
+                <rux-tabs id="tab-set-id-1">
+                    <rux-tab id="tab-id-1" data-test-id="default"
+                        >Tab 1 title</rux-tab
+                    >
+                    <rux-tab id="tab-id-2">Tab 2 title</rux-tab>
+                    <rux-tab id="tab-id-3">Tab 3 title</rux-tab>
+                </rux-tabs>
+
+                <rux-tab-panels aria-labelledby="tab-set-id-1">
+                    <rux-tab-panel aria-labelledby="tab-id-1"
+                        >Tab 1 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-2"
+                        >Tab 2 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-3"
+                        >Tab 3 HTML content</rux-tab-panel
+                    >
+                </rux-tab-panels>
+            </div>
+        </section>
+        <section>
+            <h2>Small</h2>
+            <div class="tabs-wrapper">
+                <rux-tabs id="tab-set-id-11" small>
+                    <rux-tab id="tab-id-11">Tab 1 title</rux-tab>
+                    <rux-tab id="tab-id-21">Tab 2 title</rux-tab>
+                    <rux-tab id="tab-id-31">Tab 3 title</rux-tab>
+                </rux-tabs>
+
+                <rux-tab-panels aria-labelledby="tab-set-id-11">
+                    <rux-tab-panel aria-labelledby="tab-id-11"
+                        >Tab 1 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-21"
+                        >Tab 2 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-31"
+                        >Tab 3 HTML content</rux-tab-panel
+                    >
+                </rux-tab-panels>
+            </div>
+        </section>
+        <section>
+            <h2>Disabled Tab</h2>
+            <div class="tabs-wrapper">
+                <rux-tabs id="tab-set-id-12">
+                    <rux-tab id="tab-id-12">Tab 1 title</rux-tab>
+                    <rux-tab id="tab-id-22" disabled>Tab 2 title</rux-tab>
+                    <rux-tab id="tab-id-32" disabled>Tab 3 title</rux-tab>
+                </rux-tabs>
+
+                <rux-tab-panels aria-labelledby="tab-set-id-12">
+                    <rux-tab-panel aria-labelledby="tab-id-12"
+                        >Tab 1 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-22"
+                        >Tab 2 HTML content</rux-tab-panel
+                    >
+                    <rux-tab-panel aria-labelledby="tab-id-32"
+                        >Tab 3 HTML content</rux-tab-panel
+                    >
+                </rux-tab-panels>
+            </div>
+        </section>
+    </body>
+</html>

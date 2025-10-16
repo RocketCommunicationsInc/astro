@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.js"></script>
+
+        <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        />
+    </head>
+    <body>
+        <section>
+            <h2>Prop/Slot Testing</h2>
+            <rux-checkbox-group
+                id="test-this"
+                label="this the checkbox-group label"
+            >
+                <rux-checkbox>one</rux-checkbox>
+                <rux-checkbox>two</rux-checkbox>
+                <rux-checkbox>three</rux-checkbox>
+            </rux-checkbox-group>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+                <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+                <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+                <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+            </div>
+            <div
+                style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem"
+            >
+                <rux-button id="addHelpProp">Add Help Prop</rux-button>
+                <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+                <rux-button id="addErrorProp">Add Error Prop</rux-button>
+                <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+            </div>
+        </section>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const checkboxGroup = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                checkboxGroup.innerHTML += `
+              <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = checkboxGroup.querySelector(
+                    `[slot='help-text']`
+                )
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                checkboxGroup.innerHTML += `
+              <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+          `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = checkboxGroup.querySelector(
+                    `[slot='error-text']`
+                )
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                checkboxGroup.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                checkboxGroup.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                checkboxGroup.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                checkboxGroup.removeAttribute('error-text')
+            })
+        </script>
+        <!-- <ftl-belt
+            access-token="ACCESS_TOKEN"
+            file-id="7a5JMdh1FoXwhg64Tqv9F1"
+        >
+            <ftl-holster name="Checkbox Group with Border" node="25916:114892">
+                <rux-checkbox-group>
+                    <rux-checkbox>Checkbox</rux-checkbox>
+                    <rux-checkbox>Checkbox</rux-checkbox>
+                    <rux-checkbox>Checkbox</rux-checkbox>
+                    <rux-checkbox>Checkbox</rux-checkbox>
+                </rux-checkbox-group>
+            </ftl-holster>
+        </ftl-belt> -->
+        <rux-checkbox-group>
+            <rux-checkbox>one</rux-checkbox>
+            <rux-checkbox>two</rux-checkbox>
+            <rux-checkbox>three</rux-checkbox>
+        </rux-checkbox-group>
+    </body>
+</html>

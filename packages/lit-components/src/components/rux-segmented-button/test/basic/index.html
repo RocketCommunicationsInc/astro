@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Segmented Button</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-segmented-button data-test-id="default"></rux-segmented-button>
+        </section>
+        <section>
+            <h2>Sizes</h2>
+            <rux-segmented-button size="small"></rux-segmented-button>
+            <rux-segmented-button size="medium"></rux-segmented-button>
+            <rux-segmented-button size="large"></rux-segmented-button>
+        </section>
+        <section>
+            <h2>Types</h2>
+            <rux-segmented-button disabled></rux-segmented-button>
+        </section>
+        <section>
+            <h2>Button Amounts</h2>
+            <rux-segmented-button id="four"></rux-segmented-button>
+            <rux-segmented-button id="five"></rux-segmented-button>
+        </section>
+        <div style="margin: 3rem auto">
+            <rux-segmented-button id="eight"></rux-segmented-button>
+        </div>
+
+        <script>
+            let data = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                    selected: true,
+                },
+                {
+                    label: 'Third item',
+                },
+            ]
+            let fourData = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                    selected: true,
+                },
+                {
+                    label: 'Third item',
+                },
+                {
+                    label: 'Fourth item',
+                },
+            ]
+            let fiveData = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                },
+                {
+                    label: 'Third item',
+                },
+                {
+                    label: 'Fourth item',
+                },
+                {
+                    label: 'Fifth item',
+                    selected: true,
+                },
+            ]
+            let eightData = [
+                {
+                    label: 'First item',
+                },
+                {
+                    label: 'Second item',
+                },
+                {
+                    label: 'Third item',
+                },
+                {
+                    label: 'Fourth item',
+                },
+                {
+                    label: 'Fifth item',
+                    selected: true,
+                },
+                {
+                    label: 'Sixth item',
+                },
+                {
+                    label: 'Seventh item',
+                },
+                {
+                    label: 'Eigth item',
+                },
+            ]
+            document
+                .querySelectorAll('rux-segmented-button')
+                .forEach((btn) => (btn.data = data))
+            document.getElementById('four').data = fourData
+            document.getElementById('five').data = fiveData
+            document.getElementById('eight').data = eightData
+        </script>
+    </body>
+</html>

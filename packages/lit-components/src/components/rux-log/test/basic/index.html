@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Test - Log</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+
+        <link rel="stylesheet" href="../../../../../src/global/test.css" />
+    </head>
+
+    <body>
+        <section>
+            <h2>Default</h2>
+            <rux-log></rux-log>
+        </section>
+
+        <script>
+            const data = [
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'off',
+                    message: 'Antenna DGS 1 went offline.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'serious',
+                    message: 'USA-177 experienced solar panel misalignment.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'caution',
+                    message: 'USA-168 suffered power degradation.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'standby',
+                    message: 'Antenna DGS 2 has weak signal.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'off',
+                    message: 'Black FEP 121 is offline.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'off',
+                    message: 'Antenna DGS 1 went offline.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'serious',
+                    message: 'USA-177 experienced solar panel misalignment.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'caution',
+                    message: 'USA-168 suffered power degradation.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'standby',
+                    message: 'Antenna DGS 2 has weak signal.',
+                },
+                {
+                    timestamp: new Date(1557503698781),
+                    status: 'off',
+                    message: 'Black FEP 121 is offline.',
+                },
+            ]
+
+            const el = document.querySelector('rux-log')
+            el.data = data
+        </script>
+    </body>
+</html>

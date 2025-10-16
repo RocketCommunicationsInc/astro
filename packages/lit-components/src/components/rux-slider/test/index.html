@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+        />
+        <title>Stencil Component Starter</title>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            type="module"
+            src="../../../../../dist/astro-web-components/astro-web-components.esm.js"
+        ></script>
+        <script nomodule src="/build/astro-web-components.esm.js"></script>
+
+        <!-- <link
+            rel="stylesheet"
+            href="../../../../../dist/astro-web-components/astro-web-components.css"
+        /> -->
+        <link
+            rel="stylesheet"
+            href="../../../../../src/global/test-reset.css"
+        />
+    </head>
+
+    <body class="dark-theme">
+        <h2>Prop/Slot Testing</h2>
+        <rux-slider id="test-this" label="this the input label"></rux-slider>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem">
+            <rux-button id="addHelpSlot">Add Help Slot</rux-button>
+            <rux-button id="removeHelpSlot">Remove Help Slot</rux-button>
+            <rux-button id="addErrorSlot">Add Error Slot</rux-button>
+            <rux-button id="removeErrorSlot">Remove Error Slot</rux-button>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem">
+            <rux-button id="addHelpProp">Add Help Prop</rux-button>
+            <rux-button id="removeHelpProp">Remove Help Prop</rux-button>
+            <rux-button id="addErrorProp">Add Error Prop</rux-button>
+            <rux-button id="removeErrorProp">Remove Error Prop</rux-button>
+        </div>
+        <script>
+            const helpSlotButton = document.getElementById('addHelpSlot')
+            const removeHelpSlotButton = document.getElementById(
+                'removeHelpSlot'
+            )
+            const helpPropButton = document.getElementById('addHelpProp')
+            const removeHelpPropButton = document.getElementById(
+                'removeHelpProp'
+            )
+            const errorSlotButton = document.getElementById('addErrorSlot')
+            const removeErrorSlotButton = document.getElementById(
+                'removeErrorSlot'
+            )
+            const errorPropButton = document.getElementById('addErrorProp')
+            const removeErrorPropButton = document.getElementById(
+                'removeErrorProp'
+            )
+            const input = document.getElementById('test-this')
+
+            /**add/remove slots**/
+
+            helpSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="help-text">HELP SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeHelpSlotButton.addEventListener('click', () => {
+                const helpTextSlot = input.querySelector(`[slot='help-text']`)
+                helpTextSlot.remove()
+            })
+            errorSlotButton.addEventListener('click', () => {
+                input.innerHTML += `
+                  <div slot="error-text">ERROR SLOT <a href="http://www.google.com">Link</a></div>
+              `
+            })
+            removeErrorSlotButton.addEventListener('click', () => {
+                const errorTextSlot = input.querySelector(`[slot='error-text']`)
+                errorTextSlot.remove()
+            })
+
+            /**add/remove props**/
+            helpPropButton.addEventListener('click', () => {
+                input.setAttribute('help-text', 'Help text PROP')
+            })
+            removeHelpPropButton.addEventListener('click', () => {
+                input.removeAttribute('help-text')
+            })
+            errorPropButton.addEventListener('click', () => {
+                input.setAttribute('error-text', 'Error text PROP')
+            })
+            removeErrorPropButton.addEventListener('click', () => {
+                input.removeAttribute('error-text')
+            })
+        </script>
+        <div style="padding: 10%; display: flex; justify-content: center">
+            <form id="form">
+                <rux-slider name="ruxSlider" id="ruxSlider"></rux-slider>
+                <input type="range" id="nativeSlider" name="nativeSlider" />
+
+                <rux-slider name="ruxSliderTicks" id="ticks"></rux-slider>
+
+                <rux-slider id="change-test" max="100" value="50"></rux-slider>
+
+                <button type="submit">submit</button>
+            </form>
+            <ul id="log"></ul>
+            <script>
+                const log = document.getElementById('log')
+                const ticks = document.getElementById('ticks')
+                ticks.axisLabels = ['0', '25', '50', '75', '100']
+                const form = document.getElementById('form')
+                form.addEventListener('submit', (e) => {
+                    event.preventDefault()
+                    // trigger formdata event
+                    new FormData(form)
+                })
+                form.addEventListener('formdata', (e) => {
+                    log.innerHTML = ''
+                    // Get the form data from the event object
+                    let data = e.formData
+                    const values = data.values()
+                    for (var value of data.entries()) {
+                        const item = document.createElement('li')
+                        item.innerHTML = `<strong>${value[0]}:</strong>${value[1]}`
+                        log.appendChild(item)
+                    }
+                })
+            </script>
+        </div>
+        <!-- <ftl-belt access-token="" file-id="">
+            <section>
+                <h2>Figma Testing</h2>
+                <ftl-holster name="Rux Slider 0" node="26066:119527">
+                    <div style="padding: 0  0  0">
+                        <rux-slider name="ruxSliderFigma" id="ruxSliderFigma" min="0" max="100" value="0"></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider 50%" node="26066:120187">
+                    <div style="padding: 0">
+                        <rux-slider name="ruxSliderFigma" id="ruxSliderFigma" min="0" max="100" value="50"></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider 100%" node="26066:118867">
+                    <div style="padding: 0 8px 0 0">
+                        <rux-slider name="ruxSliderFigma" id="ruxSliderFigma" min="0" max="100" value="100"></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider with ticks" node="25997:117470">
+                    <div style="padding: 0">
+                        <rux-slider id="noAxisLabels" max="100" min="0" step="" help-text="" error-text=""  label=""></rux-slider>
+                    </div>
+                </ftl-holster>
+                <ftl-holster name="Rux Slider with labels" node="25997:117459">
+                    <div style="padding: 0 8px 0 0;">
+                        <rux-slider id="axisLabels" max="100" min="0" value="100" step="" help-text="" error-text="" label=""></rux-slider>
+                    </div>
+                </ftl-holster>
+
+                <script>
+                    const labels = document.getElementById('axisLabels')
+                    labels.axisLabels = [1,2,3,4,5,6,7,8,9]
+                    const noLabels = document.getElementById('noAxisLabels')
+                    noLabels.axisLabels = [1,2,3,4,5,6,7,8,9]
+                </script>
+
+            </section>
+        </ftl-belt> -->
+    </body>
+</html>
