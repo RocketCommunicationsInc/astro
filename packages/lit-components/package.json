@@ -14,13 +14,15 @@
     "@date-fns/tz": "^1.4.1",
     "@date-fns/utc": "^2.1.1",
     "@floating-ui/dom": "^1.7.4",
+    "@vitest/browser": "^3.2.4",
     "date-fns": "^4.1.0",
     "lit": "^3.3.1"
   },
   "devDependencies": {
     "@open-wc/testing": "^4.0.0",
-    "@playwright/test": "^1.55.0",
+    "@playwright/test": "1.47",
     "@types/jest": "^30.0.0",
+    "@types/node": "^24.8.0",
     "sass-embedded": "^1.92.1",
     "typescript": "~5.8.3",
     "vite": "^7.1.2",

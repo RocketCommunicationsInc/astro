@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tree Node', () => {
     test('it renders children', async ({ page }) => {
@@ -30,9 +30,7 @@ test.describe('Tree Node', () => {
             e.appendChild(slot)
         })
 
-        await expect(el.locator('.parent span:first-child')).toHaveClass(
-            'prefix'
-        )
+        await expect(el.locator('.parent span:first-child')).toHaveClass('prefix')
     })
 
     test('handles suffix slot change', async ({ page }) => {
@@ -48,9 +46,7 @@ test.describe('Tree Node', () => {
             e.appendChild(slot)
         })
 
-        await expect(el.locator('.parent span:last-child')).toHaveClass(
-            'suffix'
-        )
+        await expect(el.locator('.parent span:last-child')).toHaveClass('suffix')
     })
 
     test('emits ruxtreenodecollapsed', async ({ page }) => {
@@ -98,9 +94,7 @@ test.describe('Tree Node', () => {
         await arrow.click()
         expect(eventSpy).toHaveReceivedEventTimes(1)
     })
-    test('does not select the tree node if tree node was not the target of a click', async ({
-        page,
-    }) => {
+    test('does not select the tree node if tree node was not the target of a click', async ({ page }) => {
         const template = `
     <rux-tree>
     <rux-tree-node>

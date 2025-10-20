@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Tree Node', () => {
     test.use({ component: 'rux-tree-node' })

@@ -1,4 +1,4 @@
-import { test, expect } from '../../../../../tests/utils/_astro-fixtures'
+import { expect, test } from '../../../../../tests/utils/_astro-fixtures'
 
 test.describe('Toast-Stack', () => {
     test.use({ component: 'rux-toast-stack' })
