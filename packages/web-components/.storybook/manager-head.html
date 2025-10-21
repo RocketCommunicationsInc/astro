@@ -17,3 +17,24 @@
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet"
 />
+
+<script>
+    // Listen for auth events coming from the preview iframe
+    window.addEventListener('message', (ev) => {
+        try {
+            const msg = ev && ev.data
+            if (!msg || msg.type !== 'storybook-auth') return
+
+            const { isAuthenticated } = msg.payload || {}
+            const root =
+                document.getElementById('storybook-root') || document.body
+            if (!isAuthenticated) {
+                root.classList.add('sb-leftnav-locked')
+            } else {
+                root.classList.remove('sb-leftnav-locked')
+            }
+        } catch (e) {
+            // ignore
+        }
+    })
+</script>

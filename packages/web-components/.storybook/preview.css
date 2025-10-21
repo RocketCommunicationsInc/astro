@@ -1,117 +1,211 @@
 /* stylelint-disable selector-id-pattern */
 .sbdocs.sbdocs-wrapper {
-  background: var(--color-background-base-default);
+    background: var(--color-background-base-default);
 }
 
 .sbdocs .docs-story {
-  background: var(--color-background-surface-default);
+    background: var(--color-background-surface-default);
 }
 
 .sbdocs h1 {
-  font-size: 2.125rem;
-  font-weight: 400;
-  color: var(--color-text-primary);
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0;
-  margin-inline-end: 0;
+    font-size: 2.125rem;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 }
 
 .sbdocs h2,
 .sbdocs h3 {
-  color: var(--color-text-primary);
+    color: var(--color-text-primary);
 }
 
-.sbdocs p, .sbdocs.sbdocs-content p {
-  margin: 0 0 1rem;
-  font-size: 17px;
-  color: var(--color-text-primary);
-  font-weight: 300;
-  line-height: 1.6;
+.sbdocs p,
+.sbdocs.sbdocs-content p {
+    margin: 0 0 1rem;
+    font-size: 17px;
+    color: var(--color-text-primary);
+    font-weight: 300;
+    line-height: 1.6;
 }
 
-.sbdocs li, .sbdocs.sbdocs-content li {
-  font-size: 17px;
-  color: var(--color-text-primary);
-  font-weight: 300;
-  line-height: 1.6;
+.sbdocs li,
+.sbdocs.sbdocs-content li {
+    font-size: 17px;
+    color: var(--color-text-primary);
+    font-weight: 300;
+    line-height: 1.6;
 }
 
 .sbdocs.sbdocs-content .docblock-argstable-body a {
-  color: var(--color-background-interactive-default);
-  text-decoration: none;
+    color: var(--color-background-interactive-default);
+    text-decoration: none;
 }
 
 .sbdocs a,
 .sbdocs a p,
-.sbdocs.sbdocs-content a p
- {
-  color: var(--color-background-interactive-default);
-  text-decoration: none;
+.sbdocs.sbdocs-content a p {
+    color: var(--color-background-interactive-default);
+    text-decoration: none;
 }
 
 .sbdocs code {
-  color: var(--color-text-primary);
+    color: var(--color-text-primary);
 }
 
 .sbdocs #story--components-dialog--dialog,
 .sbdocs #story--components-modal--modal {
-  display: block;
-  min-height: 500px;
+    display: block;
+    min-height: 500px;
 }
 
 .sbdocs #story--components-dialog--dialog rux-dialog::part(container),
 .sbdocs #story--components-modal--modal rux-modal::part(wrapper) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .sbdocs #story--components-dialog--with-slots,
 .sbdocs #story--components-modal--with-slots {
-  display: block;
-  min-height: 500px;
+    display: block;
+    min-height: 500px;
 }
 
 .sbdocs #story--components-dialog--with-slots rux-dialog::part(container),
 .sbdocs #story--components-modal--with-slots rux-modal::part(wrapper) {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .sbdocs .banner-text p,
 .sbdocs .banner-text code {
-  color: var(--color-text-inverse);
+    color: var(--color-text-inverse);
 }
 
 .sbdocs .css-15ysoxh .banner-text p {
-  margin-top: 1rem;
+    margin-top: 1rem;
 }
 
 .sbdocs .css-wzniqs {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .sbdocs .framework {
-  padding: 1rem;
-  text-align: center;
-  border-radius: var(--radius-base);
-  border: 1px solid var(--color-background-interactive-default);
-  cursor: pointer;
+    padding: 1rem;
+    text-align: center;
+    border-radius: var(--radius-base);
+    border: 1px solid var(--color-background-interactive-default);
+    cursor: pointer;
 }
 
-.sbdocs .framework  svg {
-  margin-bottom: 2rem;
-  width: 100px;
-  height: 100px;
+.sbdocs .framework svg {
+    margin-bottom: 2rem;
+    width: 100px;
+    height: 100px;
 }
 
 .sbdocs .framework a p {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
+}
+
+/* Auth overlay to block Storybook preview until login */
+.sb-auth-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(2 6 23 / 85%);
+    z-index: 99999;
+}
+
+.sb-auth-overlay-panel {
+    background: var(--color-background-surface-default, #0b1220);
+    color: var(--color-text-primary, #fff);
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 8px 30px rgb(0 0 0 / 60%);
+}
+
+.sb-auth-overlay-panel h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.sb-auth-overlay-info {
+    margin: 0 0 1rem;
+    opacity: 0.9;
+}
+
+.sb-auth-overlay-btn {
+    background: var(--color-background-interactive-default, #4dacff);
+    color: var(--color-text-inverse, #001);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.sb-auth-overlay-user {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* When locked, blur and disable interactions on the main content */
+.sb-auth-locked body > *:not(#sb-auth-overlay) {
+    filter: blur(6px) saturate(80%);
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Also ensure the canvas area is non-interactive (covers custom elements) */
+.sb-auth-locked #root,
+.sb-auth-locked #storybook-preview-iframe {
+    pointer-events: none;
+}
+
+/* But the overlay itself must stay interactive */
+#sb-auth-overlay {
+    pointer-events: auto;
+}
+
+/* Federated logout button inside overlay */
+.sb-auth-logout-btn {
+    margin-left: 0.5rem;
+    background: transparent;
+    color: var(--color-background-interactive-default, #4dacff);
+    border: 1px solid rgb(255 255 255 / 8%);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/* Floating logout button visible when signed in */
+.sb-auth-floating-logout {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 100000;
+    background: var(--color-background-surface-default, rgb(11 18 32 / 90%));
+    color: var(--color-text-primary, #fff);
+    border: 1px solid rgb(255 255 255 / 8%);
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
 }
