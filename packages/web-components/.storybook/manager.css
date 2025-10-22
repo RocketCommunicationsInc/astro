@@ -227,3 +227,53 @@ body {
 .sb-leftnav-locked .css-c3junj {
     opacity: 0.5;
 }
+
+/* Manager logout button styling: match floating button appearance but place in sidebar */
+.sidebar-container .sb-manager-logout-btn,
+.sidebar-header .sb-manager-logout-btn {
+    display: block !important;
+    margin: 10px 12px 6px;
+    padding: 6px 10px;
+    background: var(--color-background-surface-default, rgb(11 18 32 / 90%));
+    color: var(--color-text-primary, #fff);
+    border: 1px solid rgb(255 255 255 / 8%);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    width: calc(100% - 24px);
+}
+
+/* If the button retains the floating class, neutralize fixed positioning */
+.sidebar-container .sb-manager-logout-btn.sb-auth-floating-logout {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    z-index: auto !important;
+}
+
+/* Defensive styles to ensure logout sits below the search input */
+#sb-manager-logout-container {
+    display: block !important;
+    width: 100% !important;
+    padding: 6px 12px 12px !important;
+}
+
+#sb-manager-logout-container .sb-manager-logout-btn,
+#sb-manager-logout-dom {
+    display: block !important;
+    width: calc(100% - 24px) !important;
+    margin: 8px 12px 12px !important;
+    box-sizing: border-box !important;
+    flex-basis: 100% !important;
+    flex-shrink: 0 !important;
+    align-self: stretch !important;
+}
+
+/* If Storybook puts the button inside the search wrapper, force it to break to a new row */
+.search-field > #sb-manager-logout-dom,
+.search-field #sb-manager-logout-dom {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+}

@@ -42,7 +42,8 @@ function ensureAuthOverlay() {
     const newAccountLink = document.createElement('a')
     newAccountLink.className = 'sb-auth-new-account'
     newAccountLink.textContent = 'Create a new account'
-    newAccountLink.href = 'http://localhost:3000/#create-account'
+    newAccountLink.href =
+        'https://deploy-preview-437--astrouxds.netlify.app/#create-account'
     newAccountLink.target = '_blank'
     newAccountLink.rel = 'noopener noreferrer'
     newAccountLink.setAttribute('role', 'link')
@@ -84,22 +85,7 @@ function ensureAuthOverlay() {
     const rootEl = document.body || document.documentElement
     rootEl.appendChild(overlay)
 
-    // Create a floating logout button outside the overlay so it's available when stories are visible
-    const floatingLogout = document.createElement('button')
-    floatingLogout.className = 'sb-auth-floating-logout'
-    floatingLogout.textContent = 'Log out'
-    floatingLogout.style.display = 'none'
-    floatingLogout.addEventListener('click', async () => {
-        try {
-            if (window.storybookAuthManager) {
-                await window.storybookAuthManager.logout({ federated: true })
-            }
-        } catch (e) {
-            // eslint-disable-next-line no-console
-            console.error('Floating logout failed', e)
-        }
-    })
-    rootEl.appendChild(floatingLogout)
+    // Floating logout removed — manager now exposes the logout control in the left nav
 
     // Helper to toggle locked state (blur + disable interactions)
     function setLocked(locked) {
@@ -139,11 +125,9 @@ function ensureAuthOverlay() {
             federatedLogoutBtn.style.display = unlocked
                 ? 'inline-block'
                 : 'none'
-            floatingLogout.style.display = unlocked ? 'inline-block' : 'none'
         } else {
             userSpan.textContent = ''
             federatedLogoutBtn.style.display = 'none'
-            floatingLogout.style.display = 'none'
         }
     })
 
@@ -189,7 +173,6 @@ function ensureAuthOverlay() {
             federatedLogoutBtn.style.display = unlocked
                 ? 'inline-block'
                 : 'none'
-            floatingLogout.style.display = unlocked ? 'inline-block' : 'none'
         })
     }
 
