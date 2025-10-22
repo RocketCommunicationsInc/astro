@@ -1,6 +1,6 @@
 [build]
   base = "."
-  publish = "packages/web-components/storybook-static"
+  publish = "packages/web-components/www"
   command = "npm run build.web-comps"
 
 [build.environment]
