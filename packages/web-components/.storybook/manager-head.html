@@ -17,3 +17,55 @@
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&family=Roboto:wght@100;300;400;500;700;900&display=swap"
     rel="stylesheet"
 />
+
+<script>
+    // Listen for auth events coming from the preview iframe
+    window.addEventListener('message', (ev) => {
+        try {
+            const msg = ev && ev.data
+            if (!msg || msg.type !== 'storybook-auth') return
+
+            const { isAuthenticated } = msg.payload || {}
+            const root =
+                document.getElementById('storybook-root') || document.body
+            if (!isAuthenticated) {
+                root.classList.add('sb-leftnav-locked')
+            } else {
+                root.classList.remove('sb-leftnav-locked')
+            }
+        } catch (e) {
+            // ignore
+        }
+    })
+</script>
+
+<script>
+    // When the manager loads, ask the preview iframe to ensure the auth overlay exists.
+    // This helps in docs view where the preview may not auto-run the same initialization path.
+    function requestPreviewForceOverlay() {
+        try {
+            const previewIframe =
+                document.getElementById('storybook-preview-iframe') ||
+                document.querySelector('iframe[src*="iframe.html"]')
+            if (!previewIframe || !previewIframe.contentWindow) return
+            // Post a one-time message to the preview to ask it to create/force the auth overlay
+            previewIframe.contentWindow.postMessage(
+                { type: 'storybook-manager-force-overlay' },
+                '*'
+            )
+            // Also request auth state if preview can reply
+            previewIframe.contentWindow.postMessage(
+                { type: 'storybook-manager-request-auth-state' },
+                '*'
+            )
+        } catch (err) {
+            // ignore silently
+        }
+    }
+
+    // Try once on load; also try after a short delay in case frames are still initializing
+    window.addEventListener('load', () => {
+        requestPreviewForceOverlay()
+        setTimeout(requestPreviewForceOverlay, 1500)
+    })
+</script>

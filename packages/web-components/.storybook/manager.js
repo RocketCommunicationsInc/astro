@@ -1,6 +1,8 @@
 import themes from './theme'
 import { addons } from '@storybook/addons'
 import './manager.css'
+// Register the manager-side logout addon (renders a React button into the manager)
+import './manager-addon-logout'
 
 addons.setConfig({
     panelPosition: 'right',

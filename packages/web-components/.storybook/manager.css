@@ -1,222 +1,279 @@
 /* sidebar outer wrapper */
 .sidebar-container .css-d3imve {
-  padding-left: 0;
-  padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* search input */
 .sidebar-container .search-field {
-  margin-inline: 1rem;
+    margin-inline: 1rem;
 }
 
 .sidebar-container .css-y6bzay {
-  appearance: none;
-  height: 28px;
-  padding-left: 28px;
-  padding-right: 28px;
-  border: 1px solid rgba(153 153 153 / 40%);
-  background: transparent;
-  border-radius: 28px;
-  font-size: 12px;
-  font-family: inherit;
-  transition: 150ms;
-  color: white;
+    appearance: none;
+    height: 28px;
+    padding-left: 28px;
+    padding-right: 28px;
+    border: 1px solid rgba(153 153 153 / 40%);
+    background: transparent;
+    border-radius: 28px;
+    font-size: 12px;
+    font-family: inherit;
+    transition: 150ms;
+    color: white;
 }
 
 .sidebar-container .sidebar-item {
-  font-size: 16px;
-  line-height: 20px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-bottom: 1px solid rgba(140 142 145 / 15%);
-  align-items: baseline;
-  font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(140 142 145 / 15%);
+    align-items: baseline;
+    font-weight: 500;
 }
 
 .sidebar-item .css-caedy5,
 .sidebar-item .css-154pbrb,
 .sidebar-item button {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 /* component icon */
 .sidebar-item .css-1j7mmb8 {
- color: rgb(77 172 255);
+    color: rgb(77 172 255);
 }
 
 /* drop down caret & active caret */
 .sidebar-container .css-5ba62h,
 .sidebar-container .sidebar-item css-1yuef8z {
-  color: rgb(77 172 255);
-  border-top-width: 5px;
-  border-bottom-width: 5px;
-  border-left-width: 5px;
-  margin-right: 10px;
+    color: rgb(77 172 255);
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    margin-right: 10px;
 }
 
 /* folder icon & grid icon */
 .sidebar-container .sidebar-item .css-1res6at,
 .sidebar-container .sidebar-item .css-12curbu {
-  display: none;
+    display: none;
 }
 
 .sidebar-header .css-l8z9zc {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 .css-1d2iskc > .css-sqdry3 {
-  border: 1px solid rgba(255 255 255 / 12.5%);
+    border: 1px solid rgba(255 255 255 / 12.5%);
 }
 
 /* component list */
 
 /* only the outermost children */
 nav.sidebar-container .css-0 section > a > div {
-  padding-left: 12px;
+    padding-left: 12px;
 }
 
 nav.sidebar-container .css-0 section > a > div > span:first-child {
-  border-left-color: rgb(77 172 255);
-  border-top-width: 5px;
-  border-bottom-width: 5px;
-  border-left-width: 5px;
-  margin-right: 10px;
+    border-left-color: rgb(77 172 255);
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-left-width: 5px;
+    margin-right: 10px;
 }
 
 /* group icons */
 nav.sidebar-container .css-0 section > a > div > svg {
-  display: none;
+    display: none;
 }
 
 /* only the innermost children */
 nav.sidebar-container .css-0 section .css-0 > a > div {
-  padding-left: 18px;
+    padding-left: 18px;
 }
 
 nav.sidebar-container .css-0 section .css-0 > a > div > svg {
-  margin-right: 10px;
+    margin-right: 10px;
 }
 
 nav.sidebar-container .css-0 section .css-0 > a > div > span:last-child {
-  overflow: hidden;
-  text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 nav.sidebar-container .css-0 section > div[type='section'] {
-  font-weight: bold;
-  margin: 0;
-  padding: 0 20px 5px;
-  border-bottom: 1px solid rgba(140 142 145 / 15%);
+    font-weight: bold;
+    margin: 0;
+    padding: 0 20px 5px;
+    border-bottom: 1px solid rgba(140 142 145 / 15%);
 }
 
 /* addons panel */
 #storybook-panel-root .css-0 a,
 #storybook-panel-root .css-0 a span {
-  color: rgb(77 172 255);
+    color: rgb(77 172 255);
 }
 
 .storybook-readme-story {
-  padding: 10px;
+    padding: 10px;
 }
 
 .storybook-readme-story p code,
 .storybook-readme-story li code {
-  background: #182635;
-  border-radius: 2px;
+    background: #182635;
+    border-radius: 2px;
 }
 
 .storybook-readme-story code[class*='language-'],
 .storybook-readme-story pre[class*='language-'] {
-  background: #060708;
-  -webkit-font-smoothing: auto;
+    background: #060708;
+    -webkit-font-smoothing: auto;
 }
 
 .storybook-readme-story .token.punctuation {
-  color: #a1acba;
+    color: #a1acba;
 }
 
 .storybook-readme-story code.language-sh,
 .storybook-readme-story code.language-xml,
 .storybook-readme-story code.language-html,
 .storybook-readme-story code.language-js {
-  color: #ccd5e0;
+    color: #ccd5e0;
 }
 
 /* component search input */
 .sidebar-container input[type='search'] {
-  color: white;
+    color: white;
 }
 
 .storybook-readme-story .markdown-body table thead tr {
-  background-color: #141f2c;
+    background-color: #141f2c;
 }
 
 /* theme switcher icon color override */
 .css-c3junj .css-ynalaq {
-  color: white;
-  background: rgb(32 50 70);
+    color: white;
+    background: rgb(32 50 70);
 }
 
 /* scrollbars */
 body {
-  scrollbar-color: var(
-          --color-border-interactive-muted,
-          rgb(43 101 155)
-      )
-      var(--color-background-surface-default, rgb(27 45 62));
+    scrollbar-color: var(--color-border-interactive-muted, rgb(43 101 155))
+        var(--color-background-surface-default, rgb(27 45 62));
 }
 
 ::-webkit-scrollbar {
-  width: 16px;
-  height: 16px;
-  background-color: transparent;
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(
-      --color-border-interactive-muted,
-      rgb(43 101 155)
-  );
-  border-radius: 8px;
-  border: 3px solid transparent;
-  background-clip: padding-box;
+    background-color: var(--color-border-interactive-muted, rgb(43 101 155));
+    border-radius: 8px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
 }
 
 /* visually "centers" because the dark edge of the shadow gives the illusion this is offset */
 ::-webkit-scrollbar-thumb:vertical {
-  border-left-width: 4px;
+    border-left-width: 4px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-  border-top-width: 4px;
+    border-top-width: 4px;
 }
 
 ::-webkit-scrollbar-thumb:active,
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(
-      --color-background-interactive-default,
-      rgb(58 129 191)
-  );
+    background-color: var(
+        --color-background-interactive-default,
+        rgb(58 129 191)
+    );
 }
 
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background-color: var(--color-background-surface-default);
+    background-color: var(--color-background-surface-default);
 }
 
 ::-webkit-scrollbar-track:vertical {
-  box-shadow: inset 3px 3px 3px 0 rgba(0 0 0 / 50%);
+    box-shadow: inset 3px 3px 3px 0 rgba(0 0 0 / 50%);
 }
 
 ::-webkit-scrollbar-track:horizontal {
-  box-shadow: inset 1px 3px 3px 0 rgba(0 0 0 / 50%);
+    box-shadow: inset 1px 3px 3px 0 rgba(0 0 0 / 50%);
 }
 
 @media (min-width: 600px) {
-  .css-1nolumm {
-      grid-template-columns: minmax(0, 230px) minmax(100px, 1fr) minmax(
-              0,
-              400px
-          );
-  }
+    .css-1nolumm {
+        grid-template-columns: minmax(0, 230px) minmax(100px, 1fr) minmax(
+                0,
+                400px
+            );
+    }
+}
+
+/* When left nav is locked, dim it and prevent interactions */
+.sb-leftnav-locked .sidebar-container {
+    opacity: 0.35;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Also visually indicate the header/theme switcher is disabled */
+.sb-leftnav-locked .sidebar-header,
+.sb-leftnav-locked .css-c3junj {
+    opacity: 0.5;
+}
+
+/* Manager logout button styling: match floating button appearance but place in sidebar */
+.sidebar-container .sb-manager-logout-btn,
+.sidebar-header .sb-manager-logout-btn {
+    display: block !important;
+    margin: 10px 12px 6px;
+    padding: 6px 10px;
+    background: var(--color-background-surface-default, rgb(11 18 32 / 90%));
+    color: var(--color-text-primary, #fff);
+    border: 1px solid rgb(255 255 255 / 8%);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    text-align: center;
+    width: calc(100% - 24px);
+}
+
+/* If the button retains the floating class, neutralize fixed positioning */
+.sidebar-container .sb-manager-logout-btn.sb-auth-floating-logout {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    z-index: auto !important;
+}
+
+/* Defensive styles to ensure logout sits below the search input */
+#sb-manager-logout-container {
+    display: block !important;
+    width: 100% !important;
+    padding: 6px 12px 12px !important;
+}
+
+#sb-manager-logout-container .sb-manager-logout-btn,
+#sb-manager-logout-dom {
+    display: block !important;
+    width: calc(100% - 24px) !important;
+    margin: 8px 12px 12px !important;
+    box-sizing: border-box !important;
+    flex-basis: 100% !important;
+    flex-shrink: 0 !important;
+    align-self: stretch !important;
+}
+
+/* If Storybook puts the button inside the search wrapper, force it to break to a new row */
+.search-field > #sb-manager-logout-dom,
+.search-field #sb-manager-logout-dom {
+    display: block !important;
+    width: 100% !important;
+    margin-top: 8px !important;
 }
