@@ -38,3 +38,34 @@
         }
     })
 </script>
+
+<script>
+    // When the manager loads, ask the preview iframe to ensure the auth overlay exists.
+    // This helps in docs view where the preview may not auto-run the same initialization path.
+    function requestPreviewForceOverlay() {
+        try {
+            const previewIframe =
+                document.getElementById('storybook-preview-iframe') ||
+                document.querySelector('iframe[src*="iframe.html"]')
+            if (!previewIframe || !previewIframe.contentWindow) return
+            // Post a one-time message to the preview to ask it to create/force the auth overlay
+            previewIframe.contentWindow.postMessage(
+                { type: 'storybook-manager-force-overlay' },
+                '*'
+            )
+            // Also request auth state if preview can reply
+            previewIframe.contentWindow.postMessage(
+                { type: 'storybook-manager-request-auth-state' },
+                '*'
+            )
+        } catch (err) {
+            // ignore silently
+        }
+    }
+
+    // Try once on load; also try after a short delay in case frames are still initializing
+    window.addEventListener('load', () => {
+        requestPreviewForceOverlay()
+        setTimeout(requestPreviewForceOverlay, 1500)
+    })
+</script>
