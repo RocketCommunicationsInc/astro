@@ -1,0 +1,485 @@
+import { Meta, Story, Canvas, Controls } from '@storybook/blocks';
+import * as FeedbackStories from './feedback.stories';
+
+<Meta of={FeedbackStories} />
+
+# Feedback
+
+The Feedback component provides a comprehensive, configurable feedback collection system with multiple topic types, file uploads, and customization options.
+
+## Features
+
+- **Multiple Feedback Topics**: Issue, Idea, Bug, Other, and Custom forms
+- **File Upload Support**: Drag-and-drop or click to upload with validation
+- **URL Collection**: Automatic capture of current page URL
+- **Form Validation**: Real-time validation with inline error messages
+- **Sentiment Tracking**: Emoji-based sentiment for "Other" feedback
+- **Classification Marking**: Optional security classification display
+- **Highly Configurable**: Control which forms to display and their behavior
+- **Custom Events**: Emits strongly-typed `feedback-submitted` event
+
+## When to Use
+
+Use the Feedback component when you need to:
+
+- Collect user feedback about issues, bugs, or feature requests
+- Enable users to report problems with specific pages or features
+- Gather sentiment data about user experience
+- Allow file attachments (screenshots, logs, etc.) with feedback
+- Track feedback with security classifications
+- Create custom feedback forms for specific use cases
+
+<Story of={FeedbackStories.NoFloating} />
+
+
+## API
+
+<Controls />
+
+## Variants
+
+## Form Configuration
+
+### Limited Forms
+
+Control which feedback forms are available using the `included-forms` prop. This is useful when you only need specific types of feedback.
+
+<Canvas>
+  <Story of={FeedbackStories.LimitedForms} />
+</Canvas>
+
+```html
+<!-- Only show Bug and Issue forms -->
+<rux-feedback included-forms="bug,issue"></rux-feedback>
+```
+
+### Custom Forms
+
+Create custom feedback forms with your own labels and icons using the `custom-form` prop. Custom forms include a page URL field and description field.
+
+<Canvas>
+  <Story of={FeedbackStories.CustomFormOnly} />
+</Canvas>
+
+```html
+<!-- Single custom form -->
+<rux-feedback 
+  custom-form='{"icon":"lightbulb","label":"Feature Request"}'
+  included-forms="custom">
+</rux-feedback>
+```
+
+### Mixed Standard and Custom Forms
+
+Combine standard forms with custom forms for maximum flexibility.
+
+<Canvas>
+  <Story of={FeedbackStories.MixedForms} />
+</Canvas>
+
+```html
+<!-- Standard forms + custom form -->
+<rux-feedback 
+  custom-form='{"icon":"support","label":"Support Ticket"}'
+  included-forms="bug,issue,custom">
+</rux-feedback>
+```
+
+## File Upload
+
+### Basic File Upload
+
+Enable file uploads for all forms with type and size validation.
+
+<Canvas>
+  <Story of={FeedbackStories.WithFileUpload} />
+</Canvas>
+
+```html
+<!-- Images and PDFs up to 5MB -->
+<rux-feedback 
+  allowed-file-types="image/*,.pdf"
+  max-file-size="5242880"
+  show-file-description>
+</rux-feedback>
+```
+
+### Selective File Upload
+
+Restrict file uploads to specific feedback topics.
+
+<Canvas>
+  <Story of={FeedbackStories.SelectiveFileUpload} />
+</Canvas>
+
+```html
+<!-- Only Bug reports support file uploads -->
+<rux-feedback 
+  uploadable-topics="bug"
+  allowed-file-types="image/*,.pdf,.log"
+  max-file-size="10485760"
+  show-file-description>
+</rux-feedback>
+```
+
+### Screenshots Only
+
+Restrict uploads to specific image formats.
+
+<Canvas>
+  <Story of={FeedbackStories.ScreenshotsOnly} />
+</Canvas>
+
+```html
+<!-- Only PNG and JPEG images, 2MB limit -->
+<rux-feedback 
+  allowed-file-types="image/png,image/jpeg,image/jpg"
+  max-file-size="2097152"
+  uploadable-topics="bug,issue">
+</rux-feedback>
+```
+
+### Disable File Uploads
+
+Completely disable file upload functionality.
+
+<Canvas>
+  <Story of={FeedbackStories.NoFileUploads} />
+</Canvas>
+
+```html
+<!-- No file uploads allowed -->
+<rux-feedback uploadable-topics="none"></rux-feedback>
+```
+
+## URL Collection
+
+The component can automatically collect the current page URL where the feedback form is being used.
+
+### Hidden URL Collection
+
+Collect the URL in the background without showing it to the user.
+
+<Canvas>
+  <Story of={FeedbackStories.HiddenURLCollection} />
+</Canvas>
+
+```html
+<!-- Collect URL but don't display it -->
+<rux-feedback disable-display-url></rux-feedback>
+```
+
+### Read-Only URL
+
+Display the URL to users but prevent them from editing it.
+
+<Canvas>
+  <Story of={FeedbackStories.ReadOnlyURL} />
+</Canvas>
+
+```html
+<!-- Show URL as read-only -->
+<rux-feedback disable-edit-url></rux-feedback>
+```
+
+### No URL Collection
+
+Disable URL collection entirely - users must manually enter URLs if needed.
+
+<Canvas>
+  <Story of={FeedbackStories.NoURLCollection} />
+</Canvas>
+
+```html
+<!-- Don't collect URL automatically -->
+<rux-feedback disable-url-collection></rux-feedback>
+```
+
+## Classification Marking
+
+Add optional security classification markings to the feedback form.
+
+<Canvas>
+  <Story of={FeedbackStories.WithClassification} />
+</Canvas>
+
+```html
+<!-- Display CUI classification -->
+<rux-feedback classification="cui"></rux-feedback>
+```
+
+Available classification values:
+- `unclassified`
+- `cui`
+- `controlled`
+- `confidential`
+- `secret`
+- `top-secret`
+- `top-secret-sci`
+
+## Use Case Examples
+
+### Minimal Setup
+
+Simple feedback form with just the Issue topic.
+
+<Canvas>
+  <Story of={FeedbackStories.MinimalSetup} />
+</Canvas>
+
+### Bug Reporting Setup
+
+Optimized configuration for bug reports with file uploads and locked URL.
+
+<Canvas>
+  <Story of={FeedbackStories.BugReportingSetup} />
+</Canvas>
+
+```html
+<rux-feedback 
+  included-forms="bug"
+  allowed-file-types="image/*,.log,.txt"
+  max-file-size="5242880"
+  show-file-description
+  disable-edit-url>
+</rux-feedback>
+```
+
+### Sentiment Feedback
+
+Collect user sentiment with emoji-based options.
+
+<Canvas>
+  <Story of={FeedbackStories.SentimentFeedback} />
+</Canvas>
+
+```html
+<!-- Only show "Other" form with sentiment -->
+<rux-feedback included-forms="other"></rux-feedback>
+```
+
+### Multiple Custom Forms
+
+Example showing different custom form configurations.
+
+<Canvas>
+  <Story of={FeedbackStories.MultipleCustomFormsExample} />
+</Canvas>
+
+## Event Handling
+
+The component emits a `feedback-submitted` event when the user submits feedback. The event detail contains all form data including attachments.
+
+<Canvas>
+  <Story of={FeedbackStories.FullyConfigured} />
+</Canvas>
+
+### Event Listener Example
+
+```javascript
+const feedbackComponent = document.querySelector('rux-feedback');
+
+feedbackComponent.addEventListener('feedback-submitted', (event) => {
+  console.log('Feedback submitted:', event.detail);
+  
+  // Event detail structure:
+  // {
+  //   topic: 'bug',
+  //   description: 'The button doesn't work',
+  //   pageUrl: 'https://example.com/page',
+  //   browser: 'Chrome 120.0.0',
+  //   sentiment: 'negative',  // Only for "other" topic
+  //   attachments: [          // Only if files uploaded
+  //     {
+  //       file: File,
+  //       description: 'Screenshot of the error'
+  //     }
+  //   ]
+  // }
+  
+  // Send to your API
+  const formData = new FormData();
+  formData.append('topic', event.detail.topic);
+  formData.append('description', event.detail.description);
+  
+  if (event.detail.pageUrl) {
+    formData.append('pageUrl', event.detail.pageUrl);
+  }
+  
+  if (event.detail.attachments) {
+    event.detail.attachments.forEach((attachment, index) => {
+      formData.append(`file_${index}`, attachment.file);
+      if (attachment.description) {
+        formData.append(`file_${index}_description`, attachment.description);
+      }
+    });
+  }
+  
+  fetch('/api/feedback', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => console.log('Success:', data))
+  .catch(error => console.error('Error:', error));
+});
+```
+
+## Validation
+
+The component includes built-in validation:
+
+### Required Fields
+
+- **Description**: Always required, minimum 10 characters
+- **Page URL**: Required for Issue and Bug topics (if displayed)
+- **Browser**: Required for Bug topic
+
+### File Validation
+
+- **File Type**: Checked against `allowed-file-types` prop
+- **File Size**: Checked against `max-file-size` prop
+- **Error Display**: Validation errors shown inline with helpful messages
+
+### URL Validation
+
+- URLs must be valid format (checked with URL constructor)
+- Invalid URLs show inline error message
+
+## Accessibility
+
+The component follows accessibility best practices:
+
+- Semantic HTML with proper form labels
+- ARIA attributes for screen readers
+- Keyboard navigation support
+- Focus management
+- Error messages associated with form fields
+- High contrast error states
+
+## CSS Parts
+
+The component exposes CSS parts for styling customization:
+
+```css
+/* Style the container */
+rux-feedback::part(container) {
+  /* Your styles */
+}
+
+/* Style the tab */
+rux-feedback::part(tab) {
+  /* Your styles */
+}
+
+/* Style the header */
+rux-feedback::part(header) {
+  /* Your styles */
+}
+
+/* Style the form */
+rux-feedback::part(form) {
+  /* Your styles */
+}
+
+/* Style topic selector */
+rux-feedback::part(topic-selector) {
+  /* Your styles */
+}
+
+/* Style file upload zone */
+rux-feedback::part(file-upload-zone) {
+  /* Your styles */
+}
+
+/* Style uploaded files list */
+rux-feedback::part(uploaded-files) {
+  /* Your styles */
+}
+
+/* Style sentiment buttons */
+rux-feedback::part(sentiment-group) {
+  /* Your styles */
+}
+
+/* Style individual forms */
+rux-feedback::part(issue) { }
+rux-feedback::part(idea) { }
+rux-feedback::part(bug) { }
+rux-feedback::part(other) { }
+rux-feedback::part(custom) { }
+
+/* Style success message */
+rux-feedback::part(success) {
+  /* Your styles */
+}
+```
+
+## Playground
+
+Experiment with all available props in the interactive playground.
+
+<Canvas>
+  <Story of={FeedbackStories.Playground} />
+</Canvas>
+
+## Best Practices
+
+### Form Selection
+
+- Only include forms relevant to your use case
+- Use custom forms for domain-specific feedback
+- Consider user cognitive load - fewer options are often better
+
+### File Uploads
+
+- Set reasonable file size limits (5-10MB recommended)
+- Restrict file types to what you can handle on the backend
+- Enable file descriptions for context
+- Consider storage and bandwidth costs
+
+### URL Collection
+
+- Enable URL collection to help identify problem areas
+- Use read-only URLs to prevent user error
+- Hide URLs in public-facing forms for cleaner UX
+
+### Validation
+
+- Provide clear, helpful error messages
+- Validate on submit, not on blur (better UX)
+- Keep minimum description length reasonable (10-20 chars)
+
+### Backend Integration
+
+- Store all feedback data including metadata
+- Process file uploads asynchronously
+- Send confirmation emails when appropriate
+- Implement rate limiting to prevent abuse
+
+## Browser Support
+
+The component works in all modern browsers that support:
+- Web Components
+- Shadow DOM
+- ES6+ JavaScript
+- Custom Elements
+- File API for uploads
+- Drag and Drop API
+
+## Related Components
+
+- `rux-classification-marking` - Used for classification display
+- `rux-input` - Form input fields
+- `rux-textarea` - Text area fields
+- `rux-button` - Form action buttons
+- `rux-icon` - Icons throughout the component
+
+## Cherry Picking
+
+If you're already utilizing a build system that supports tree shaking and want to only import this individual component:
+
+```js
+import { RuxFeedback } from '@astrouxds/astro-web-components/dist/components/rux-feedback'
+customElements.define('rux-feedback', RuxFeedback)
+```
