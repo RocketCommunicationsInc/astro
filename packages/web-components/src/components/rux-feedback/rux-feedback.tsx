@@ -90,6 +90,9 @@ export class RuxFeedback {
     // Custom form configuration as JSON string (e.g., '{"icon":"help","label":"Feature Request"}')
     @Prop({ reflect: true }) customForm?: string = ''
 
+    // Disable floating and expand/collapse behavior
+    @Prop({ reflect: true }) disableFloating?: boolean = false
+
     // STATE
     /////////////////////////////////////////////////////////////////////////
 
@@ -100,7 +103,7 @@ export class RuxFeedback {
     @State() activeSentiment: Sentiment = 'positive'
 
     // Is feedback form open or closed
-    @State() isOpen: boolean = true
+    @State() isOpen: boolean = false
 
     // Form data
     @State() formData: FeedbackFormData = {
@@ -653,11 +656,13 @@ export class RuxFeedback {
                 Feedback
                 {this.isOpen ? (
                     <rux-icon
+                        class="rux-feedback__tab-icon"
                         icon="keyboard-arrow-down"
                         size="extra-small"
                     ></rux-icon>
                 ) : (
                     <rux-icon
+                        class="rux-feedback__tab-icon"
                         icon="keyboard-arrow-up"
                         size="extra-small"
                     ></rux-icon>
@@ -965,7 +970,10 @@ export class RuxFeedback {
         return (
             <Host>
                 <div
-                    class={`rux-feedback ${this.isOpen ? 'open' : ''}`}
+                    class={`
+                        rux-feedback 
+                        ${this.isOpen ? 'open' : ''} 
+                        ${this.disableFloating ? 'disable-floating' : ''}`}
                     part="container"
                 >
                     {this.renderFeedbackTab()}

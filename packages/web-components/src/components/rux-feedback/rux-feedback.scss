@@ -32,6 +32,18 @@
             transform: translateY(-100%);
         }
     }
+
+    &.disable-floating {
+        position: static;
+        left: unset;
+        top: unset;
+        transform: none;
+        margin: 0;
+
+        &:hover {
+            transform: none;
+        }
+    }
 }
 
 :host::part(tab) {
@@ -63,6 +75,18 @@
     font-weight: var(--font-control-body-1-font-weight);
     line-height: var(--font-control-body-1-line-height);
     letter-spacing: var(--font-control-body-1-letter-spacing);
+}
+
+.rux-feedback__tab {
+    .disable-floating & {
+        cursor: default;
+    }
+}
+
+.rux-feedback__tab-icon {
+    .disable-floating & {
+        display: none;
+    }
 }
 
 :host::part(header) {
