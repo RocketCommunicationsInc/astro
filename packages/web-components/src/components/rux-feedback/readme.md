@@ -5,31 +5,60 @@
 <!-- Auto Generated Below -->
 
 
-## Slots
+## Properties
 
-| Slot          | Description        |
-| ------------- | ------------------ |
-| `"(default)"` | The card's content |
-| `"footer"`    | The cards footer   |
-| `"header"`    | The card's header  |
+| Property         | Attribute        | Description | Type                                                                                                                     | Default     |
+| ---------------- | ---------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------ | ----------- |
+| `classification` | `classification` |             | `"confidential" \| "controlled" \| "cui" \| "secret" \| "top-secret" \| "top-secret-sci" \| "unclassified" \| undefined` | `undefined` |
+
+
+## Events
+
+| Event                | Description | Type                            |
+| -------------------- | ----------- | ------------------------------- |
+| `feedback-submitted` |             | `CustomEvent<FeedbackFormData>` |
 
 
 ## Shadow Parts
 
-| Part          | Description                       |
-| ------------- | --------------------------------- |
-| `"body"`      | The card's outside body element   |
-| `"container"` | The card's outtermost container   |
-| `"footer"`    | The card's outside footer element |
-| `"header"`    | The card's outside header element |
+| Part                | Description |
+| ------------------- | ----------- |
+| `"bug"`             |             |
+| `"container"`       |             |
+| `"form"`            |             |
+| `"header"`          |             |
+| `"idea"`            |             |
+| `"issue"`           |             |
+| `"other"`           |             |
+| `"sentiment-group"` |             |
+| `"success"`         |             |
+| `"tab"`             |             |
+| `"title"`           |             |
+| `"topic-selector"`  |             |
 
 
-## CSS Custom Properties
+## Dependencies
 
-| Name             | Description             |
-| ---------------- | ----------------------- |
-| `--body-padding` | the card's body padding |
+### Depends on
 
+- [rux-icon](../rux-icon)
+- [rux-input](../rux-input)
+- [rux-textarea](../rux-textarea)
+- [rux-button](../rux-button)
+- [rux-classification-marking](../rux-classification-marking)
+
+### Graph
+```mermaid
+graph TD;
+  rux-feedback --> rux-icon
+  rux-feedback --> rux-input
+  rux-feedback --> rux-textarea
+  rux-feedback --> rux-button
+  rux-feedback --> rux-classification-marking
+  rux-input --> rux-icon
+  rux-button --> rux-icon
+  style rux-feedback fill:#f9f,stroke:#333,stroke-width:4px
+```
 
 ----------------------------------------------
 
