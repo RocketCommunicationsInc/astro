@@ -1,0 +1,353 @@
+import { html } from 'lit-html'
+import '../components/rux-button/rux-button.ts'
+
+const Base = (args) => {
+    return html`
+        <div style="padding: 10%; display: flex; justify-content: center;">
+            <rux-button
+                ?disabled="${args.disabled}"
+                ?icon-only="${args.iconOnly}"
+                ?secondary="${args.secondary}"
+                ?borderless="${args.borderless}"
+                .size="${args.size}"
+                .icon="${args.icon}"
+            >
+                Button
+            </rux-button>
+        </div>
+    `
+}
+
+const SlottedContent = (args) => {
+    return html`
+        <div style="padding: 10%; display: flex; justify-content: center;">
+            <rux-button
+                ?disabled="${args.disabled}"
+                ?icon-only="${args.iconOnly}"
+                ?secondary="${args.secondary}"
+                ?borderless="${args.borderless}"
+                .size="${args.size}"
+                .icon="${args.icon}"
+            >
+                <span>✨</span>
+                Slotted content button
+            </rux-button>
+        </div>
+    `
+}
+
+const WithAllVariants = () => {
+    return html`
+        <style>
+            .button-list {
+                list-style-type: none;
+                margin: 0 1rem 0 0;
+                padding: 0;
+                display: flex;
+                flex-flow: column;
+            }
+            .button-list li {
+                margin: 0 1rem 1rem 0;
+                display: flex;
+            }
+            .button-list li rux-button:not(:last-child) {
+                margin-right: 1rem;
+            }
+        </style>
+        <div style="padding: 8vh 2vw; display: flex; flex-flow: row wrap; justify-content: space-evenly;">
+            <ul class="button-list">
+                <li>
+                    <rux-button size="small" icon-only icon="settings">Small icon-only button</rux-button>
+                    <rux-button size="small">Small button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" icon="settings">Small button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" icon-only disabled icon="settings">Small disabled icon-only button</rux-button>
+                    <rux-button size="small" disabled>Small disabled button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" disabled icon="settings">Small disabled button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" icon-only secondary icon="settings">Small secondary icon-only button</rux-button>
+                    <rux-button size="small" secondary>Small secondary button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" secondary icon="settings">Small secondary button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" icon-only disabled secondary icon="settings">Small disabled secondary icon-only button</rux-button>
+                    <rux-button size="small" secondary disabled>Small disabled secondary button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="small" secondary disabled icon="settings">Small disabled secondary button with icon</rux-button>
+                </li>
+            </ul>
+            <ul class="button-list">
+                <li>
+                    <rux-button icon-only icon="settings">Medium icon-only button</rux-button>
+                    <rux-button>Medium button</rux-button>
+                </li>
+                <li>
+                    <rux-button icon="settings">Medium button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button icon-only disabled icon="settings">Medium disabled icon-only button</rux-button>
+                    <rux-button disabled>Medium disabled button</rux-button>
+                </li>
+                <li>
+                    <rux-button disabled icon="settings">Medium disabled button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button icon-only secondary icon="settings">Medium secondary icon-only button</rux-button>
+                    <rux-button secondary>Medium secondary button</rux-button>
+                </li>
+                <li>
+                    <rux-button secondary icon="settings">Medium secondary button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button icon-only disabled secondary icon="settings">Medium disabled secondary icon-only button</rux-button>
+                    <rux-button secondary disabled>Medium disabled secondary button</rux-button>
+                </li>
+                <li>
+                    <rux-button secondary disabled icon="settings">Medium disabled secondary button with icon</rux-button>
+                </li>
+            </ul>
+            <ul class="button-list">
+                <li>
+                    <rux-button size="large" icon-only icon="settings">Large icon-only button</rux-button>
+                    <rux-button size="large">Large button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" icon="settings">Large button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" icon-only disabled icon="settings">Large disabled icon-only button</rux-button>
+                    <rux-button size="large" disabled>Large disabled button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" disabled icon="settings">Large disabled button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" icon-only secondary icon="settings">Large secondary icon-only button</rux-button>
+                    <rux-button size="large" secondary>Large secondary button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" secondary icon="settings">Large secondary button with icon</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" icon-only disabled secondary icon="settings">Large disabled secondary icon-only button</rux-button>
+                    <rux-button size="large" secondary disabled>Large disabled secondary button</rux-button>
+                </li>
+                <li>
+                    <rux-button size="large" secondary disabled icon="settings">Large disabled secondary button with icon</rux-button>
+                </li>
+            </ul>
+            <ul class="button-list">
+                <li>
+                    <rux-button icon-only icon="settings" borderless> </rux-button>
+                    <rux-button borderless> Borderless button </rux-button>
+                </li>
+                <li>
+                    <rux-button borderless icon="settings"> Borderless button with icon </rux-button>
+                </li>
+                <li>
+                    <rux-button icon-only icon="settings" borderless disabled> </rux-button>
+                    <rux-button borderless disabled> Disabled borderless button </rux-button>
+                </li>
+                <li>
+                    <rux-button borderless icon="settings" disabled> Disabled borderless button with icon </rux-button>
+                </li>
+            </ul>
+        </div>
+    `
+}
+
+export default {
+    title: 'Components/Button',
+    component: 'rux-button',
+    tags: ['autodocs'],
+    argTypes: {
+        disabled: {
+            control: 'boolean',
+            description: 'Disables the button',
+            table: {
+                defaultValue: { summary: false },
+            },
+        },
+        iconOnly: {
+            control: 'boolean',
+            description: 'Hides the button text and shows only the icon',
+            table: {
+                defaultValue: { summary: false },
+            },
+        },
+        secondary: {
+            control: 'boolean',
+            description: 'Changes button style to secondary',
+            table: {
+                defaultValue: { summary: false },
+            },
+        },
+        borderless: {
+            control: 'boolean',
+            description: 'Changes button style to borderless',
+            table: {
+                defaultValue: { summary: false },
+            },
+        },
+        size: {
+            control: 'select',
+            options: ['small', 'medium', 'large'],
+            description: 'Sets the size of the button',
+            table: {
+                defaultValue: { summary: 'medium' },
+            },
+        },
+        icon: {
+            control: 'text',
+            description: 'Name of the icon to display',
+            table: {
+                defaultValue: { summary: '' },
+            },
+        },
+        type: {
+            control: 'select',
+            options: ['button', 'submit'],
+            description: 'The button type',
+            table: {
+                defaultValue: { summary: 'button' },
+            },
+        },
+    },
+}
+
+export const Default = {
+    render: Base.bind(),
+    name: 'Default',
+
+    args: {
+        disabled: false,
+        iconOnly: false,
+        secondary: false,
+        borderless: false,
+        size: 'medium',
+        icon: '',
+        type: 'button',
+    },
+
+    argTypes: {
+        size: {
+            control: 'select',
+        },
+
+        type: {
+            control: 'select',
+        },
+    },
+}
+
+export const WithSlottedIcon = {
+    render: SlottedContent.bind(),
+    name: 'With Slotted Content',
+
+    args: {
+        disabled: false,
+        iconOnly: false,
+        secondary: false,
+        size: 'medium',
+        icon: '',
+        type: 'button',
+    },
+
+    argTypes: {
+        size: {
+            control: 'select',
+        },
+
+        type: {
+            control: 'select',
+        },
+    },
+}
+
+export const Secondary = {
+    render: Base.bind(),
+
+    args: {
+        secondary: true,
+        borderless: false,
+        disabled: false,
+        iconOnly: false,
+        size: 'medium',
+        icon: '',
+        type: 'button',
+    },
+
+    argTypes: {
+        size: {
+            control: 'select',
+        },
+
+        type: {
+            control: 'select',
+        },
+    },
+
+    name: 'Secondary',
+}
+
+export const Borderless = {
+    render: Base.bind(),
+
+    args: {
+        borderless: true,
+    },
+
+    name: 'Borderless',
+}
+
+export const AllVariants = {
+    render: WithAllVariants.bind(),
+    name: 'All Variants',
+
+    argTypes: {
+        disabled: {
+            table: {
+                disable: true,
+            },
+        },
+
+        icon: {
+            table: {
+                disable: true,
+            },
+        },
+
+        iconOnly: {
+            table: {
+                disable: true,
+            },
+        },
+
+        secondary: {
+            table: {
+                disable: true,
+            },
+        },
+
+        size: {
+            table: {
+                disable: true,
+            },
+        },
+
+        type: {
+            table: {
+                disable: true,
+            },
+        },
+    },
+}

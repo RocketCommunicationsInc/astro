@@ -1,0 +1,94 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Astro UXDS/Welcome/Start Here" />
+
+# Astro UXDS Lit Components
+
+Welcome to the **Lit Components** version of Astro UXDS! 
+
+This is a conversion of the Astro Web Components library from Stencil to Lit Element.
+
+## What's Different?
+
+- **Framework**: Built with [Lit](https://lit.dev/) instead of Stencil
+- **Build Tool**: Uses Vite instead of Stencil's compiler
+- **Same API**: Components maintain the same props, events, and slots as the Stencil versions
+- **Same Styling**: Uses the same SCSS and design tokens from `@astrouxds/tokens`
+
+## Component Status
+
+This is a work in progress. Not all components have been converted yet.
+
+### Converted Components
+
+- Accordion
+- Breadcrumb
+- Button
+- Card
+- Checkbox
+- Checkbox Group
+- Classification Marking
+- Clock
+- Container
+- DateTime
+- Dialog
+- Global Status Bar
+- Input
+- Log
+- Menu & Menu Items
+- Notification
+- Option & Option Group
+- Pop-up
+- Progress
+- Push Button
+- Radio & Radio Group
+- Segmented Button
+- Select
+- Slider
+- Status
+- Switch
+- Table
+- Tabs
+- Tag
+- Textarea
+- Timeline
+- Toast & Toast Stack
+- Tooltip
+- Tree
+
+## Resources
+
+- [Astro UXDS Website](https://www.astrouxds.com/)
+- [Astro Design Guidelines](https://www.astrouxds.com/design-guidelines/getting-started/)
+- [GitHub Repository](https://github.com/RocketCommunicationsInc/astro)
+- [Lit Documentation](https://lit.dev/)
+
+## Getting Started
+
+### Installation
+
+```bash
+npm install @astrouxds/astro-lit-components
+```
+
+### Usage
+
+Import and use components in your application:
+
+```html
+<script type="module">
+  import '@astrouxds/astro-lit-components/components/rux-button/rux-button.js'
+</script>
+
+<rux-button>Click Me</rux-button>
+```
+
+### With a Build Tool
+
+```javascript
+import '@astrouxds/astro-lit-components/components/rux-button/rux-button.js'
+```
+
+```html
+<rux-button secondary>Secondary Button</rux-button>
+```

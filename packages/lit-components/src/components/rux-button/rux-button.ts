@@ -95,7 +95,7 @@ export class RuxButton extends LitElement {
 
         return html`
             <button type="button" @click=${this.handleClick} class=${classMap(buttonClasses)} ?disabled=${disabled} aria-disabled=${disabled ? 'true' : 'false'} part="container">
-                ${icon ? html` <rux-icon size="auto" icon=${icon} exportparts="icon" color=${secondary ? 'primary' : 'dark'}></rux-icon> ` : null}
+                ${icon ? html`<span class="icon-placeholder">[${icon}]</span>` : null}
                 <slot></slot>
             </button>
         `

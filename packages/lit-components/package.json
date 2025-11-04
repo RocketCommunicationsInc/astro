@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest",
+    "storybook": "storybook dev -p 6007",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@astrouxds/tokens": "^1.14.0",
@@ -21,9 +23,22 @@
   "devDependencies": {
     "@open-wc/testing": "^4.0.0",
     "@playwright/test": "1.47",
+    "@storybook/addon-a11y": "^8.6.14",
+    "@storybook/addon-actions": "^8.6.14",
+    "@storybook/addon-docs": "^8.6.14",
+    "@storybook/addon-essentials": "^8.6.14",
+    "@storybook/addon-links": "^8.6.14",
+    "@storybook/addons": "^7.6.17",
+    "@storybook/blocks": "^8.6.14",
+    "@storybook/theming": "^8.6.14",
+    "@storybook/web-components": "^8.6.14",
+    "@storybook/web-components-vite": "^8.6.14",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.8.0",
+    "lit-html": "^3.3.1",
     "sass-embedded": "^1.92.1",
+    "storybook": "^8.6.14",
+    "storybook-addon-themes": "~6.1.0",
     "typescript": "~5.8.3",
     "vite": "^7.1.2",
     "vitest": "^3.2.4"
