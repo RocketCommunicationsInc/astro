@@ -1,6 +1,6 @@
 import { Directive, ElementRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ValueAccessor } from './value-accessor';
 
 @Directive({
@@ -10,6 +10,7 @@ import { ValueAccessor } from './value-accessor';
     '(ruxinput)': 'handleChangeEvent($event.target.value)',
     '(ruxchange)': 'handleChangeEvent($event.target.value)'
   },
+  standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

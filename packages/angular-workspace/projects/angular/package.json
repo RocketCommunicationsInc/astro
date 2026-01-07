@@ -8,8 +8,8 @@
     "url": "https://github.com/RocketCommunicationsInc/astro/tree/main/packages/angular"
   },
   "peerDependencies": {
-    "@angular/common": ">=12.0.0",
-    "@angular/core": ">=12.0.0"
+    "@angular/common": ">=20.0.0",
+    "@angular/core": ">=20.0.0"
   },
   "dependencies": {
     "@astrouxds/astro-web-components": "^7.27.0",

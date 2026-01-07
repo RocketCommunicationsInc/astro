@@ -1,11 +1,10 @@
 /* tslint:disable */
 /* auto-generated angular directive proxies */
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, ElementRef, EventEmitter, NgZone } from '@angular/core';
-
 import { ProxyCmp, proxyOutputs } from './angular-component-lib/utils';
 
 import { Components } from '@astrouxds/astro-web-components';
-
+import { TextValueAccessor } from './text-value-accessor';
 
 @ProxyCmp({
   inputs: ['disabled', 'disallowMultiple']
@@ -175,6 +174,7 @@ export declare interface RuxCard extends Components.RuxCard {}
 @Component({
   selector: 'rux-checkbox',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  hostDirectives: [TextValueAccessor],
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['checked', 'disabled', 'helpText', 'indeterminate', 'label', 'name', 'value'],
@@ -23700,6 +23700,7 @@ export declare interface RuxIndeterminateProgress extends Components.RuxIndeterm
   selector: 'rux-input',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
+  hostDirectives: [TextValueAccessor],
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['autocomplete', 'disabled', 'errorText', 'helpText', 'invalid', 'label', 'max', 'maxlength', 'min', 'minlength', 'name', 'placeholder', 'readonly', 'required', 'size', 'spellcheck', 'step', 'type', 'value'],
 })
@@ -24062,6 +24063,7 @@ export declare interface RuxRadio extends Components.RuxRadio {
 @Component({
   selector: 'rux-radio-group',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  hostDirectives: [TextValueAccessor],
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['errorText', 'helpText', 'invalid', 'label', 'name', 'required', 'value'],
@@ -24141,6 +24143,7 @@ export declare interface RuxSegmentedButton extends Components.RuxSegmentedButto
 @Component({
   selector: 'rux-select',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  hostDirectives: [TextValueAccessor],
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'errorText', 'helpText', 'inline', 'inputId', 'invalid', 'label', 'labelId', 'multiple', 'name', 'required', 'size', 'value'],
@@ -24174,6 +24177,7 @@ export declare interface RuxSelect extends Components.RuxSelect {
   selector: 'rux-slider',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
+  hostDirectives: [TextValueAccessor],
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['axisLabels', 'disabled', 'errorText', 'helpText', 'label', 'max', 'min', 'minVal', 'name', 'step', 'strict', 'ticksOnly', 'value'],
 })
@@ -24231,6 +24235,7 @@ export declare interface RuxStatus extends Components.RuxStatus {}
 @Component({
   selector: 'rux-switch',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  hostDirectives: [TextValueAccessor],
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['checked', 'disabled', 'label', 'name', 'value'],
@@ -24542,6 +24547,7 @@ export declare interface RuxTag extends Components.RuxTag {}
 @Component({
   selector: 'rux-textarea',
   changeDetection: ChangeDetectionStrategy.OnPush,
+  hostDirectives: [TextValueAccessor],
   template: '<ng-content></ng-content>',
   // eslint-disable-next-line @angular-eslint/no-inputs-metadata-property
   inputs: ['disabled', 'errorText', 'helpText', 'invalid', 'label', 'maxLength', 'minLength', 'name', 'placeholder', 'readonly', 'required', 'rows', 'size', 'value'],
