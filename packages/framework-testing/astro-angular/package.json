@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^20.0.3",
-    "@angular/cli": "^20.0.0",
+    "@angular/cli": "^20.3.15",
     "@angular/compiler-cli": "^20.0.0",
     "@astrouxds/angular": "^8.0.0",
     "@astrouxds/astro-web-components": "^7.27.0",
