@@ -21,6 +21,13 @@
   | `NumericValueAccessor` | `rux-input[type=number]` |
   | `TextValueAccessor` | `rux-input`, `rux-textarea`, `rux-slider`, `rux-radio-group`, `rux-select` |
 
+  **Removed exports: `RadioValueAccessor`, `SelectValueAccessor`**
+
+  These two classes are removed from the public API because they were never functional:
+
+  - `RadioValueAccessor` targeted `rux-radio`, but the `rux-radio` element only emits a `ruxblur` event — it has no `ruxchange` event. The accessor's `handleChangeEvent` could never be called. Radio group value binding is correctly handled by `TextValueAccessor` via `rux-radio-group`.
+  - `SelectValueAccessor` targeted `rux-slider, rux-radio-group` — an exact duplicate of selectors already covered by `TextValueAccessor`. Having both active would register two `NG_VALUE_ACCESSOR` providers on the same elements, breaking Angular's form binding resolution.
+
 ## 8.0.0
 
 ### Major Changes
