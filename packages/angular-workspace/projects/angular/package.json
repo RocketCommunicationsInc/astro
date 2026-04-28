@@ -1,6 +1,6 @@
 {
   "name": "@astrouxds/angular",
-  "version": "8.0.0",
+  "version": "8.0.1",
   "description": "Astro Web Components Angular Wrapper",
   "license": "MIT",
   "repository": {
