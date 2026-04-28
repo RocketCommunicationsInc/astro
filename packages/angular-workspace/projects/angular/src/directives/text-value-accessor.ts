@@ -5,10 +5,10 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'rux-input, rux-textarea, rux-slider, rux-radio-group, rux-select',
+  selector: 'rux-input:not([type=number]), rux-textarea, rux-slider, rux-radio-group, rux-select',
   host: {
-    '(ruxinput)': 'handleChangeEvent($event.target.value)',
-    '(ruxchange)': 'handleChangeEvent($event.target.value)'
+    '(ruxinput)': 'handleChangeEvent($any($event).target.value)',
+    '(ruxchange)': 'handleChangeEvent($any($event).target.value)'
   },
   providers: [
     {

@@ -5,9 +5,9 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'my-input[type=number]',
+  selector: 'rux-input[type=number]',
   host: {
-    '(myChange)': 'handleChangeEvent($event.target.value)',
+    '(ruxchange)': 'handleChangeEvent($any($event).target.value)',
   },
   providers: [
     {

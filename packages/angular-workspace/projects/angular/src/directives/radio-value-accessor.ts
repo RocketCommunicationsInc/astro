@@ -5,9 +5,9 @@ import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'my-radio',
+  selector: 'rux-radio',
   host: {
-    '(mySelect)': 'handleChangeEvent($event.target.checked)',
+    '(ruxchange)': 'handleChangeEvent($any($event).target.checked)',
   },
   providers: [
     {

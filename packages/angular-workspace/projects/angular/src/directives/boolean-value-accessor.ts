@@ -7,7 +7,7 @@ import { ValueAccessor } from './value-accessor';
   /* tslint:disable-next-line:directive-selector */
   selector: 'rux-checkbox, rux-switch',
   host: {
-    '(ruxchange)': 'handleChangeEvent($event.target.checked)'
+    '(ruxchange)': 'handleChangeEvent($any($event).target.checked)'
   },
   providers: [
     {
