@@ -17,8 +17,6 @@ jobs:
           cache-dependency-path: "**/package-lock.json"
       - name: Install modules
         run: npm i
-      - name: Bootstrap packages
-        run: npx lerna bootstrap
       - name: Ensure access
         run: npm whoami
       - name: Configure Git
