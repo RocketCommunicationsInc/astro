@@ -3,6 +3,7 @@
   "private": true,
   "devDependencies": {
     "@changesets/cli": "^2.31.0",
+    "concurrently": "^10.0.3",
     "lefthook": "^2.1.9",
     "lerna": "^9.0.7",
     "prettier": "^3.8.4",
@@ -12,7 +13,18 @@
     "postbuild": "npx pretty-quick",
     "build.web-comps": "npm run build --workspace=@astrouxds/astro-web-components",
     "build.angular": "npm run build --workspace=angular",
-    "build.react": "npm run build --workspace=@astrouxds/react"
+    "build.react": "npm run build --workspace=@astrouxds/react",
+    "build": "npm run build.web-comps && concurrently \"npm run build.angular\" \"npm run build.react\"",
+    "dev": "npm run dev --workspace=@astrouxds/astro-web-components",
+    "dev.react": "npm run dev --workspace=@astrouxds/react",
+    "dev.angular": "npm run dev --workspace=angular",
+    "release": "node ./.scripts/release.js && changeset publish",
+    "test.web-comps": "npm run test --workspace=@astrouxds/astro-web-components",
+    "test.web-comps.unit": "npm run test.unit --workspace=@astrouxds/astro-web-components",
+    "test.web-comps.e2e": "npm run test.e2e --workspace=@astrouxds/astro-web-components",
+    "test.angular": "npm run test --workspace=angular",
+    "test.react": "npm run test --workspace=@astrouxds/react",
+    "test": "concurrently \"npm run test.web-comps\" \"npm run test.react\""
   },
   "engines": {
     "node": ">=26",

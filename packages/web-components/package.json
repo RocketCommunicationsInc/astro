@@ -47,7 +47,8 @@
     "test.vrt.update": "docker run -i --rm --ipc=host -v \"${PWD}:/var/app/\" mcr.microsoft.com/playwright:v1.33.0-focal /bin/bash -c 'cd /var/app; npx playwright install; npx playwright test --project=chromium-vrt-dark --project=chromium-vrt-light --update-snapshots'",
     "test.wk": "npx playwright test --project=webkit --grep-invert @vrt",
     "test.cr": "npx playwright test --project=chromium --grep-invert @vrt",
-    "test.ff": "npx playwright test --project=firefox --grep-invert @vrt"
+    "test.ff": "npx playwright test --project=firefox --grep-invert @vrt",
+    "dev": "npm run start.watch"
   },
   "dependencies": {
     "@floating-ui/dom": "~1.0.6",
