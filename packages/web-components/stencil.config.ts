@@ -51,9 +51,9 @@ export const config: Config = {
         angularOutputTarget({
             componentCorePackage: '@astrouxds/astro-web-components',
             directivesProxyFile:
-                '../angular-workspace/projects/angular/src/directives/proxies.ts',
+                '../angular/projects/angular/src/directives/proxies.ts',
             directivesArrayFile:
-                '../angular-workspace/projects/angular/src/directives/proxies-list.ts',
+                '../angular/projects/angular/src/directives/proxies-list.ts',
             valueAccessorConfigs: angularValueAccessorBindings,
         }),
         {

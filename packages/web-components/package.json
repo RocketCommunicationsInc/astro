@@ -3,18 +3,21 @@
   "version": "7.27.0",
   "description": "Astro Web Components",
   "homepage": "https://astro-components.netlify.app/?path=/story/astro-uxds-welcome-start-here--page",
+  "bugs": {
+    "url": "https://github.com/RocketCommunicationsInc/astro/issues"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/RocketCommunicationsInc/astro"
+    "url": "git+https://github.com/RocketCommunicationsInc/astro.git"
   },
+  "license": "MIT",
+  "author": "",
+  "type": "commonjs",
   "main": "dist/index.cjs.js",
-  "module": "dist/index.js",
-  "es2015": "dist/esm/index.mjs",
-  "es2017": "dist/esm/index.mjs",
   "types": "dist/types/components.d.ts",
-  "collection": "dist/collection/collection-manifest.json",
-  "collection:main": "dist/collection/index.js",
-  "jsdelivr": "dist/astro-web-components/astro-web-components.esm.js",
+  "directories": {
+    "test": "tests"
+  },
   "files": [
     "dist/",
     "loader/"
@@ -52,7 +55,6 @@
     "date-fns": "~2.21.3",
     "date-fns-tz": "~1.3.7"
   },
-  "license": "MIT",
   "devDependencies": {
     "@astrouxds/astro-figma-export": "~1.0.1",
     "@astrouxds/postcss-custom-property-token-fallback": "~0.0.2",
@@ -98,5 +100,11 @@
     "stylelint-config-prettier": "~9.0.4",
     "stylelint-config-standard": "~26.0.0",
     "svgo": "~2.3.1"
-  }
+  },
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "jsdelivr": "dist/astro-web-components/astro-web-components.esm.js"
 }

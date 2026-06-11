@@ -1,6 +1,15 @@
 {
-  "name": "angular-workspace",
+  "name": "angular",
   "version": "8.0.0",
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "dist/angular-lib/fesm2015/angular-lib.js",
+  "types": "dist/angular-lib/public_api.d.ts",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,12 +18,6 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-  "files": [
-    "dist/"
-  ],
-  "module": "dist/angular-lib/fesm2015/angular-lib.js",
-  "main": "dist/angular-lib/fesm2015/angular-lib.js",
-  "types": "dist/angular-lib/public_api.d.ts",
   "dependencies": {
     "@angular/animations": "~20.0.0",
     "@angular/common": "~20.0.0",
@@ -43,5 +46,6 @@
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^20.0.0",
     "typescript": "~5.8.0"
-  }
+  },
+  "module": "dist/angular-lib/fesm2015/angular-lib.js"
 }

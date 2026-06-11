@@ -2,7 +2,6 @@
   "name": "root",
   "private": true,
   "devDependencies": {
-    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
     "@changesets/cli": "^2.31.0",
     "lefthook": "^2.1.9",
     "lerna": "^9.0.7",
@@ -10,28 +9,18 @@
     "pretty-quick": "^4.2.2"
   },
   "scripts": {
-    "dev": "lerna run --scope='@astrouxds/astro-web-components' --stream start.watch",
-    "dev.react": "lerna run --scope='astro-react' --stream dev",
-    "dev.vue": "lerna run --scope='astro-vue' --stream dev",
-    "dev.angular": "lerna run --scope='astro-angular' --stream start",
-    "build": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react,angular-workspace}' build",
-    "build.tests": "lerna run --scope '{@astrouxds/astro-web-components,@astrouxds/react}' build",
-    "build.web-comps": "lerna run --scope '@astrouxds/astro-web-components' build",
-    "build.react": "lerna run --scope '@astrouxds/react' build",
     "postbuild": "npx pretty-quick",
-    "test": "lerna run --ignore @astrouxds/angular test",
-    "release": "node ./.scripts/release.js && changeset publish",
-    "test.web-comps.unit": "lerna run --scope '@astrouxds/astro-web-components' test.unit",
-    "test.web-comps.e2e": "lerna run --scope '@astrouxds/astro-web-components' test.e2e",
-    "web-comps.install": "cd ./packages/web-components && npm ci",
-    "react.install": "cd ./packages/react && npm ci",
-    "test.react": "lerna run --scope '@astrouxds/react' test"
+    "build.web-comps": "npm run build --workspace=@astrouxds/astro-web-components",
+    "build.angular": "npm run build --workspace=angular",
+    "build.react": "npm run build --workspace=@astrouxds/react"
   },
   "engines": {
-    "node": ">=18",
-    "npm": ">=10.7.0"
+    "node": ">=26",
+    "npm": ">=11.0.0"
   },
   "workspaces": [
-    "packages/*"
+    "packages/web-components",
+    "packages/angular",
+    "packages/react"
   ]
 }

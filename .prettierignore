@@ -13,7 +13,7 @@ src/globals.d.ts
 *attachProps.ts
 
 # Ignore wrappers
-packages/angular-workspace/
+packages/angular/
 packages/react
 
 #Ignore WC Tests

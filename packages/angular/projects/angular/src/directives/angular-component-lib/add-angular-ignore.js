@@ -2,7 +2,7 @@ const fs = require('fs')
 
 const addIgnore = () => {
     const proxiesListPath =
-        '../angular-workspace/projects/angular/src/directives/proxies-list.ts'
+        '../angular/projects/angular/src/directives/proxies-list.ts'
     fs.readFile(proxiesListPath, 'utf8', (err, data) => {
         if (err) {
             throw err
