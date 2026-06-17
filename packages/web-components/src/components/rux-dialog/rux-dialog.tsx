@@ -114,12 +114,11 @@ export class RuxDialog {
     handleKeyDown(ev: KeyboardEvent) {
         // prevent this from running if the slots version is being used
         if (this.open && !this.hasFooter) {
-            const btns: NodeListOf<HTMLRuxButtonElement> = this.element.shadowRoot!.querySelectorAll(
-                'rux-button'
-            )
+            const btns: NodeListOf<HTMLRuxButtonElement> =
+                this.element.shadowRoot!.querySelectorAll('rux-button')
             if (ev.key === 'Enter') {
                 //If enter is hit but the cancel/deny button is focused, we want to click that instead.
-                let activeEl: any = this.element.shadowRoot?.activeElement
+                const activeEl: any = this.element.shadowRoot?.activeElement
                 if (activeEl && activeEl === btns[0]) {
                     this._userInput = false
                     btns[0].click()

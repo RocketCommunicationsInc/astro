@@ -1,4 +1,4 @@
-import { Component, h, Prop, State, Watch } from '@stencil/core'
+import { Component, Prop, State, h, Watch } from '@stencil/core'
 import { Status } from '../../common/commonTypes.module'
 import MonitoringBadge from '../../common/functional-components/MonitoringBadge/MonitoringBadge'
 import MonitoringLabel from '../../common/functional-components/MonitoringLabel'

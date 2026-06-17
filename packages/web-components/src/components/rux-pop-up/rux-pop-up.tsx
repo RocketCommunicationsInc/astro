@@ -216,7 +216,7 @@ export class RuxPopUp {
                 bottom: 'top',
                 left: 'right',
             }[placement.split('-')[0]]
-            Object.assign(this.arrowEl!.style, {
+            Object.assign(this.arrowEl.style, {
                 left: arrowX != null ? `${arrowX}px` : '',
                 top: arrowY != null ? `${arrowY}px` : '',
                 right: '',
@@ -332,9 +332,7 @@ export class RuxPopUp {
         return !!this.content
             ?.querySelector('slot')
             .assignedElements({ flatten: true })
-            .filter(
-                (el) => el.tagName.toLowerCase() === 'rux-menu'
-            )[0] as HTMLRuxMenuElement
+            .filter((el) => el.tagName.toLowerCase() === 'rux-menu')[0]
     }
 
     render() {

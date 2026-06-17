@@ -1,7 +1,6 @@
 import {
     Component,
     Host,
-    h,
     Prop,
     Element,
     Event,
@@ -10,6 +9,7 @@ import {
     Method,
     State,
     Listen,
+    h,
 } from '@stencil/core'
 import {
     computePosition,
@@ -39,7 +39,7 @@ export class RuxTooltip {
 
     @Element() el!: HTMLRuxTooltipElement
 
-    @State() currentSlotted: any
+    @State() currentSlotted: HTMLElement | undefined
     @State() hasTriggerSlot = false
     @State() delegatedFocus = false //Keeps track of whether the element in trigger slot is focusable
 
@@ -154,7 +154,7 @@ export class RuxTooltip {
         this._handleTooltipHide = this._handleTooltipHide.bind(this)
     }
     disconnectedCallback() {
-        this.el!.shadowRoot!.removeEventListener(
+        this.el.shadowRoot!.removeEventListener(
             'slotchange',
             this._handleSlotChange
         )
@@ -256,11 +256,8 @@ export class RuxTooltip {
     }
 
     render() {
-        const {
-            _handleSlotChange,
-            _handleTooltipShow,
-            _handleTooltipHide,
-        } = this
+        const { _handleSlotChange, _handleTooltipShow, _handleTooltipHide } =
+            this
         return (
             <Host>
                 <span

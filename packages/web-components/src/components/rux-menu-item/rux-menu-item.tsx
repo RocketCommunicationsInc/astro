@@ -18,6 +18,7 @@ export class RuxMenuItem {
     /**
      * the value returned when item is selected.
      */
+    //eslint-disable-next-line stencil/strict-mutable
     @Prop({ mutable: true }) value?: string
 
     /**

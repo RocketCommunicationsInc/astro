@@ -416,6 +416,7 @@ To find certain elements on the page, use the `findBy...` and `getBy...` queries
 ```jsx
 import { RuxButton } from "@astrouxds/react"
 import { render, fireEvent } from "@testing-library/react";
+import { vi, test, expect } from "@stencil/vitest";
 
 declare interface Props {
     handleClick: React.MouseEventHandler<HTMLRuxButtonElement>
@@ -430,7 +431,7 @@ const Comp = (props: Props) =>{
 }
 
 test('Can find and click a rux-button', async () => {
-    const mockClick = jest.fn();
+    const mockClick = vi.fn();
     const { getByTestId } = render(<Comp handleClick={mockClick}/>)
     let btn = getByTestId('btn')
     expect(btn).not.toBeNull()
@@ -501,8 +502,5 @@ describe('RuxInput', () => {
     })
 })
 ```
-
-Depending on your enviornment, you may also need to update the test command. For example, in a create-react-app you might need to change the test script to be: `test: "react-scripts test --transformIgnorePatterns=\"node_modules/(?!@astrouxds/react)/\" --env=jsdom"`,
-or otherwise configure Jest to use jsdom and set the `--transformIgnorePatterns` inside `jest.config`. More info can be found at [Jest's documentation](https://jestjs.io/docs/configuration#transformignorepatterns-arraystring).
 
 For more React testing examples, see our React repo [here](https://github.com/RocketCommunicationsInc/astro/tree/v7.7.0/packages/react/test-app).

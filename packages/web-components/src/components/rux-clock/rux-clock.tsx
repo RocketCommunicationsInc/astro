@@ -1,8 +1,9 @@
 import { Watch, Prop, State, Component, Host, h } from '@stencil/core'
-import { getDayOfYear } from 'date-fns'
-import { format, utcToZonedTime } from 'date-fns-tz'
+import { getDayOfYear, format } from 'date-fns'
 import { militaryTimezones } from './military-timezones'
 import { MilitaryTimezone } from './rux-clock.model'
+import { TZDate } from '@date-fns/tz/date'
+import { tz } from '@date-fns/tz/tz'
 
 /**
  * @part container - the container for the clock
@@ -137,11 +138,11 @@ export class RuxClock {
         this._updateTime()
     }
 
-    private _formatTime(time: Date, timezone: string): string {
+    private _formatTime(time: Date | TZDate, timezone: string): string {
         return format(
-            utcToZonedTime(time, timezone),
+            new TZDate(time, timezone),
             `HH:mm:ss ${this.hideTimezone ? '' : this.tzFormat}`,
-            { timeZone: timezone }
+            { in: tz(timezone) }
         )
     }
 
@@ -175,15 +176,15 @@ export class RuxClock {
         if (this.dateIn) {
             if (!this.hasRun) {
                 this._time = this._formatTime(this._rawTime, this._timezone)
-                const clockDate = utcToZonedTime(this._rawTime, this._timezone)
+                const clockDate = new TZDate(this._rawTime, this._timezone)
 
                 this.dayOfYear = getDayOfYear(clockDate)
                 this.hasRun = true
             } else {
-                let seconds = this._rawTime.getSeconds() + 1
+                const seconds = this._rawTime.getSeconds() + 1
                 this._rawTime.setSeconds(seconds)
                 this._time = this._formatTime(this._rawTime, this._timezone)
-                const clockDate = utcToZonedTime(this._rawTime, this._timezone)
+                const clockDate = new TZDate(this._rawTime, this._timezone)
                 this.dayOfYear = getDayOfYear(clockDate)
             }
         } else {
@@ -194,7 +195,7 @@ export class RuxClock {
              * before we get the day of the year.
              */
             const localDate = new Date(Date.now())
-            const clockDate = utcToZonedTime(localDate, this._timezone)
+            const clockDate = new TZDate(localDate, this._timezone)
             this.dayOfYear = getDayOfYear(clockDate)
         }
     }
@@ -211,11 +212,11 @@ export class RuxClock {
             // If date-in is provided and matches the conversion made if it's a unix stamp, then
             // we need to handle it as a unix stamp.
             if (this.dateIn && parseInt(this.dateIn) === dateTime) {
-                let d = new Date(dateTime)
+                const d = new Date(dateTime)
                 this._rawTime = d
             }
         }
-        return format(utcToZonedTime(dateTime, this._timezone), 'HH:mm:ss')
+        return format(new TZDate(dateTime as any, this._timezone), 'HH:mm:ss')
     }
 
     private _convertTimezone(timezone: string) {

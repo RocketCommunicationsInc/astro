@@ -150,10 +150,8 @@ export class RuxTreeNode {
     }
 
     private _handleSlotChange() {
-        const children = Array.from(
-            this.el.querySelectorAll(`[slot="node"]`)
-        ) as HTMLRuxTreeNodeElement[]
-        this.children = children
+        const children = Array.from(this.el.querySelectorAll(`[slot="node"]`))
+        this.children = children as Array<HTMLRuxTreeNodeElement>
         this._setAriaLevel()
     }
 
@@ -173,9 +171,11 @@ export class RuxTreeNode {
     private _handleArrowClick(e: MouseEvent) {
         e.stopPropagation()
         this.setExpanded(!this.expanded)
-        this.expanded
-            ? this.ruxTreeNodeExpanded.emit(this.componentId)
-            : this.ruxTreeNodeCollapsed.emit(this.componentId)
+        if (this.expanded) {
+            this.ruxTreeNodeExpanded.emit(this.componentId)
+        } else {
+            this.ruxTreeNodeCollapsed.emit(this.componentId)
+        }
     }
 
     private _handleTreeNodeClick(e: MouseEvent) {
@@ -203,12 +203,8 @@ export class RuxTreeNode {
         if (this.expanded) {
             this.setExpanded(false)
         } else if (this.el.parentElement) {
-            const parentTreeItemNode:
-                | Element
-                | null
-                | undefined = this.el.parentElement!.closest(
-                "[role='treeitem']"
-            )
+            const parentTreeItemNode: Element | null | undefined =
+                this.el.parentElement!.closest("[role='treeitem']")
 
             if (parentTreeItemNode) {
                 this._focusItem(parentTreeItemNode as HTMLRuxTreeNodeElement)

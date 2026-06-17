@@ -1,4 +1,4 @@
-import { Component, h, Element, Prop, Watch } from '@stencil/core'
+import { Component, Element, Prop, h, Watch } from '@stencil/core'
 import { Status, StatusTypes } from '../../common/commonTypes.module'
 import MonitoringBadge from '../../common/functional-components/MonitoringBadge/MonitoringBadge'
 import MonitoringLabel from '../../common/functional-components/MonitoringLabel'
@@ -70,7 +70,7 @@ export class RuxMonitoringIcon {
         }
     }
 
-    handleNotificatonWidth() {
+    private handleNotificatonWidth() {
         const badge = this.el.shadowRoot!.querySelector(
             '.rux-advanced-status__badge'
         )

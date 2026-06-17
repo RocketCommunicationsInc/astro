@@ -1,4 +1,4 @@
-import { Component, Host, h, Element } from '@stencil/core'
+import { Component, Host, Element, h } from '@stencil/core'
 
 /**
  * @slot (default) - Used to render any additional content inside a rux-tab-panel.

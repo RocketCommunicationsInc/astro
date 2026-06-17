@@ -1,4 +1,4 @@
-import { Component, Host, h, Event, Element, EventEmitter } from '@stencil/core'
+import { Component, Host, Event, Element, h, EventEmitter } from '@stencil/core'
 
 @Component({
     tag: 'rux-menu',

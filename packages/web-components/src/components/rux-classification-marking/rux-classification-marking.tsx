@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h, Element, Listen, State } from '@stencil/core'
+import { Component, Host, Prop, Element, Listen, h, State } from '@stencil/core'
 import { Classification } from '../../common/commonTypes.module'
 import { hasSlot } from '../../utils/utils'
 
@@ -40,7 +40,7 @@ export class RuxClassificationMarking {
     }
 
     disconnectedCallback() {
-        this.el!.shadowRoot!.removeEventListener(
+        this.el.shadowRoot!.removeEventListener(
             'slotchange',
             this._handleSlotChange
         )

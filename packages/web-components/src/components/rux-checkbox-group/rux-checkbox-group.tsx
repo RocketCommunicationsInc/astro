@@ -1,4 +1,4 @@
-import { Prop, Host, Component, h, State, Element } from '@stencil/core'
+import { Prop, Host, Component, State, h, Element } from '@stencil/core'
 import { hasSlot } from '../../utils/utils'
 
 /**
@@ -55,7 +55,7 @@ export class RuxCheckboxGroup {
     }
 
     disconnectedCallback() {
-        this.el!.shadowRoot!.removeEventListener(
+        this.el.shadowRoot!.removeEventListener(
             'slotchange',
             this._handleSlotChange
         )

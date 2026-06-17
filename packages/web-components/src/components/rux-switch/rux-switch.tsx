@@ -84,7 +84,7 @@ export class RuxSwitch {
     }
 
     disconnectedCallback() {
-        this.el!.shadowRoot!.removeEventListener(
+        this.el.shadowRoot!.removeEventListener(
             'slotchange',
             this._handleSlotChange
         )

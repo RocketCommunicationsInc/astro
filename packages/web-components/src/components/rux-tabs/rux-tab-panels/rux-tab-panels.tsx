@@ -1,4 +1,4 @@
-import { Component, Host, h, Element, Event, EventEmitter } from '@stencil/core'
+import { Component, Host, Element, Event, EventEmitter, h } from '@stencil/core'
 
 /**
  * @slot (default) - Used for instances of rux-tab-panel

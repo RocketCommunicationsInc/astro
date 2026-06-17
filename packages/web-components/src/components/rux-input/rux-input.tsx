@@ -213,7 +213,7 @@ export class RuxInput implements FormFieldInterface {
     }
 
     disconnectedCallback() {
-        this.el!.shadowRoot!.removeEventListener(
+        this.el.shadowRoot!.removeEventListener(
             'slotchange',
             this._handleSlotChange
         )

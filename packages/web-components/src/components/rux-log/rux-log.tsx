@@ -1,5 +1,5 @@
 /* eslint react/jsx-no-bind: 0 */ // --> OFF
-import { Prop, Component, Host, h, Watch, Element } from '@stencil/core'
+import { Prop, Component, Host, Watch, h, Element } from '@stencil/core'
 import { LogRow } from './rux-log.model'
 
 /**

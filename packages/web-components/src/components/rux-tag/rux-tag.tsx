@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Element, State } from '@stencil/core'
+import { Component, Host, Prop, Element, State, h } from '@stencil/core'
 import { StatusTags } from '../../common/commonTypes.module'
 import { hasSlot } from '../../utils/utils'
 

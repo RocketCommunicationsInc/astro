@@ -1,8 +1,8 @@
 export const hasShadowDom = (el: HTMLElement) => {
-    return !!el.shadowRoot && !!(el as any).attachShadow
+    return !!el.shadowRoot && !!el.attachShadow
 }
 
-export function hasSlot(el: HTMLElement, name?: string | undefined): boolean {
+export function hasSlot(el: HTMLElement, name?: string): boolean {
     // Look for a named slot
     if (name) {
         return el.querySelector(`[slot="${name}"]`) !== null
@@ -66,7 +66,7 @@ export const renderHiddenInput = (
     if (always || hasShadowDom(container)) {
         if (checked || checked == undefined) {
             if (!input) {
-                input = container.ownerDocument!.createElement('input')
+                input = container.ownerDocument.createElement('input')
                 input.type = 'hidden'
                 input.classList.add('aux-input')
                 container.appendChild(input)
@@ -100,7 +100,9 @@ export const renderHiddenSliderInput = (
     } else {
         if (always || hasShadowDom(container)) {
             // doesn't exist, create it
-            input = container.ownerDocument!.createElement('input')
+            input = container.ownerDocument.createElement(
+                'input'
+            ) as HTMLInputElement
             input.type = 'hidden'
             input.classList.add('aux-input')
             input.value = value || ''
@@ -128,9 +130,7 @@ export const renderHiddenSelect = (
     disabled: boolean
 ) => {
     // Clear any existing hidden options. May be more performant to edit their values instead though.
-    let inputs = container.querySelectorAll(
-        'input.aux-select'
-    ) as NodeListOf<HTMLInputElement>
+    const inputs = container.querySelectorAll('input.aux-select')
     if (inputs) {
         for (const elem of inputs) {
             elem.remove()
@@ -139,21 +139,21 @@ export const renderHiddenSelect = (
 
     if (always || hasShadowDom(container)) {
         if (Array.isArray(value)) {
-            for (const el in value) {
-                let input = container.ownerDocument!.createElement('input')
+            for (const el of value) {
+                const input = container.ownerDocument.createElement('input')
                 input.type = 'hidden'
                 input.classList.add('aux-select')
                 input.classList.add(`aux-select-${el}`)
                 input.disabled = disabled
                 input.name = name
 
-                if (value[el]) {
-                    input.value = value[el]
+                if (el) {
+                    input.value = el
                 }
                 container.appendChild(input)
             }
         } else {
-            let input = container.ownerDocument!.createElement('input')
+            const input = container.ownerDocument.createElement('input')
             input.type = 'hidden'
             input.classList.add('aux-select')
             input.classList.add(`aux-select-0`)

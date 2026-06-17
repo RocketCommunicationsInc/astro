@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Listen, Element } from '@stencil/core'
+import { Component, Host, Prop, Listen, h, Element } from '@stencil/core'
 //import { hasShadowDom } from '../../utils/utils'
 
 @Component({

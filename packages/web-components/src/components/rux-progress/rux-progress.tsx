@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core'
+import { Component, Host, Prop, h, Watch } from '@stencil/core'
 
 /**
  * @part progress - the native progress element

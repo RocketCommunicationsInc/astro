@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop, Element } from '@stencil/core'
+import { Component, Host, Prop, h, Element } from '@stencil/core'
 
 /**
  * @slot (default) - The breadcrumb item content

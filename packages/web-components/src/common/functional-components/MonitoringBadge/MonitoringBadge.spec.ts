@@ -1,4 +1,5 @@
 import { collapseNotifications } from './MonitoringBadge'
+import { describe, it, expect } from '@stencil/vitest'
 
 describe('collapses notifications', () => {
     it('does not collapse 3 digit numbers', () => {

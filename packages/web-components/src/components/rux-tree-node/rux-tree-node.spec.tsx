@@ -1,12 +1,12 @@
-import { h } from '@stencil/core'
-import { newSpecPage, SpecPage } from '@stencil/core/testing'
+import { render, describe, it, expect, beforeEach, vi } from '@stencil/vitest'
 import { RuxTreeNode } from './rux-tree-node'
+import { h } from '@stencil/core'
 
 describe('RuxTreeNode', () => {
-    let page: SpecPage
-    const buttonSpy = jest.fn()
+    let page: any
+    const buttonSpy = vi.fn()
     beforeEach(async () => {
-        page = await newSpecPage({
+        page = await render({
             components: [RuxTreeNode],
             template: () => (
                 <rux-tree-node

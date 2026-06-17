@@ -37,7 +37,7 @@ exports.svgOptimizerPlugin = () => {
                         {
                             name: 'removeAttrs',
                             params: {
-                                attr: 'path:fill',
+                                attr: '(path:fill)',
                             },
                         },
                     ],
@@ -56,7 +56,7 @@ exports.svgOptimizerPlugin = () => {
                         {
                             name: 'removeAttrs',
                             params: {
-                                attr: 'path:fill',
+                                attr: '(path:fill)',
                             },
                         },
                     ],

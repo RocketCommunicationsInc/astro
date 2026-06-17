@@ -1,4 +1,4 @@
-import { Prop, Host, Component, h, Watch, Element } from '@stencil/core'
+import { Prop, h, Host, Component, Watch, Element } from '@stencil/core'
 import { Status, StatusTypes } from '../../common/commonTypes.module'
 // import DarkStatus from './statuses/dark-theme'
 import StatusSVG from './statuses/light-theme'

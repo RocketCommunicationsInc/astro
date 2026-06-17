@@ -62,7 +62,7 @@ export class RuxSlider implements FormFieldInterface {
      * Current value of the slider. The default value is halfway between the specified minimum and maximum. - [HTMLElement/input_type_range>](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range) In dual-range, this value should be higher than the min-val.
      */
     @Prop({ mutable: true, reflect: true }) value: number =
-        (this.max! - this.min!) / 2 + this.min!
+        (this.max - this.min) / 2 + this.min
 
     /**
      *  Shows tick marks and labels in the order provided and aligns evenly based on the length.
@@ -141,7 +141,7 @@ export class RuxSlider implements FormFieldInterface {
     }
 
     disconnectedCallback() {
-        this.el!.shadowRoot!.removeEventListener(
+        this.el.shadowRoot!.removeEventListener(
             'slotchange',
             this._handleSlotChange
         )
@@ -204,8 +204,7 @@ export class RuxSlider implements FormFieldInterface {
             }
             //if not in dual slider
         } else {
-            const dif =
-                ((this.value! - this.min!) / (this.max! - this.min!)) * 100
+            const dif = ((this.value - this.min) / (this.max - this.min)) * 100
             this.el.style.setProperty('--_slider-value-percent', `${dif}%`)
         }
     }
@@ -226,9 +225,9 @@ export class RuxSlider implements FormFieldInterface {
     private _onMinValInput(e: Event) {
         const target = e.target as HTMLInputElement
         this.minVal = parseFloat(target.value)
-        if (this.minVal >= this.value! && this.strict) {
+        if (this.minVal >= this.value && this.strict) {
             this.minVal = this.value
-            target.value = this.minVal!.toString()
+            target.value = this.minVal.toString()
         }
         this._setValuePercent()
         this.ruxInput.emit()
@@ -324,8 +323,8 @@ export class RuxSlider implements FormFieldInterface {
             return
         }
         // compares minValPercent and maxValPercent to percentFromLeft, and returns which one is the closest.
-        let counts = [minValPercent, maxValPercent]
-        var closest = counts.reduce(function (prev, curr) {
+        const counts = [minValPercent, maxValPercent]
+        const closest = counts.reduce(function (prev, curr) {
             return Math.abs(curr - percentFromLeft) <
                 Math.abs(prev - percentFromLeft)
                 ? curr
