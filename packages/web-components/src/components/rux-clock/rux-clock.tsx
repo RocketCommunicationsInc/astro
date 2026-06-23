@@ -180,7 +180,9 @@ export class RuxClock {
                 this.dayOfYear = getDayOfYear(clockDate)
                 this.hasRun = true
             } else {
-                let seconds = this._rawTime.getSeconds() + 1
+                let seconds = this.static
+                    ? this._rawTime.getSeconds()
+                    : this._rawTime.getSeconds() + 1
                 this._rawTime.setSeconds(seconds)
                 this._time = this._formatTime(this._rawTime, this._timezone)
                 const clockDate = utcToZonedTime(this._rawTime, this._timezone)

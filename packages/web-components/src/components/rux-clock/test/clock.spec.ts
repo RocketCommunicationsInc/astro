@@ -440,6 +440,28 @@ test.describe('Clock', () => {
         await expect(segment).toContainText('12:12:12')
     })
 
+    test('does not add a second to a static date-in when date-in changes', async ({
+        page,
+    }) => {
+        // Regression test: when date-in is updated, _updateTime() was hitting the
+        // `else` branch (hasRun already true) and incrementing seconds by 1 before
+        // displaying, so "12:00:00" would appear as "12:00:01".
+        const template = `<rux-clock static date-in="2022-04-22T23:59:55.000Z"></rux-clock>`
+
+        await page.setContent(template)
+        const el = await page.locator('rux-clock')
+        const segment = await el.locator('.rux-clock__segment__value').nth(1)
+
+        await expect(segment).toHaveText('23:59:55 UTC')
+
+        await el.evaluate((node) =>
+            node.setAttribute('date-in', '2022-04-22T12:00:00.000Z')
+        )
+
+        // Bug would display 12:00:01 instead of 12:00:00
+        await expect(segment).toHaveText('12:00:00 UTC')
+    })
+
     /*
         Need to test: 
         - timein
