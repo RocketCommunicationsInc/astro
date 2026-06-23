@@ -5,6 +5,7 @@ import { AstroComponentsModule } from '@astrouxds/angular';
 
 import { AppComponent } from './app.component';
 import { StandaloneFormComponent } from './standalone-form.component';
+import { StandaloneAstroComponent } from './standalone-astro.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,6 +15,7 @@ import { StandaloneFormComponent } from './standalone-form.component';
     ReactiveFormsModule,
     FormsModule,
     StandaloneFormComponent,
+    StandaloneAstroComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],

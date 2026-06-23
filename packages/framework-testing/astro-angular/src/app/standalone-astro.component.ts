@@ -18,21 +18,40 @@ import {
  *
  *   import { BooleanValueAccessor, TextValueAccessor, NumericValueAccessor } from '@astrouxds/angular';
  */
-import { AstroComponentsModule } from '@astrouxds/angular';
+import {
+  RuxButton,
+  RuxCheckbox,
+  RuxContainer,
+  RuxInput,
+  RuxOption,
+  RuxRadio,
+  RuxRadioGroup,
+  RuxSelect,
+  RuxSwitch,
+  RuxTextarea,
+} from '@astrouxds/angular';
 
 @Component({
   standalone: true,
-  selector: 'app-standalone-form',
+  selector: 'app-standalone-astro',
   imports: [
-    // Module imported directly in the component — no AppModule involvement
-    AstroComponentsModule,
     ReactiveFormsModule,
     FormsModule,
+    RuxContainer,
+    RuxInput,
+    RuxTextarea,
+    RuxSelect,
+    RuxOption,
+    RuxRadioGroup,
+    RuxRadio,
+    RuxCheckbox,
+    RuxSwitch,
+    RuxButton,
   ],
   template: `
     <rux-container>
       <header slot="header">
-        Standalone Component — Direct Imports (<code>standalone: true</code>)
+        Standalone Astro — Direct Imports (<code>standalone: true</code>)
       </header>
 
       <form
@@ -42,39 +61,39 @@ import { AstroComponentsModule } from '@astrouxds/angular';
       >
         <rux-input
           label="Text input"
-          formControlName="textInput2"
+          formControlName="textInput3"
           placeholder="Type something..."
         ></rux-input>
 
         <rux-input
           label="Number input"
           type="number"
-          formControlName="numberInput2"
+          formControlName="numberInput3"
           placeholder="0"
         ></rux-input>
 
         <rux-textarea
           label="Textarea"
-          formControlName="textArea2"
+          formControlName="textArea3"
           placeholder="Type something..."
         ></rux-textarea>
 
-        <rux-select label="Select" formControlName="selectValue2">
+        <rux-select label="Select" formControlName="selectValue3">
           <rux-option value="" label="-- choose --"></rux-option>
           <rux-option value="a" label="Option A"></rux-option>
           <rux-option value="b" label="Option B"></rux-option>
           <rux-option value="c" label="Option C"></rux-option>
         </rux-select>
 
-        <rux-radio-group label="Radio group" formControlName="radioGroup2">
+        <rux-radio-group label="Radio group" formControlName="radioGroup3">
           <rux-radio value="one">One</rux-radio>
           <rux-radio value="two">Two</rux-radio>
           <rux-radio value="three">Three</rux-radio>
         </rux-radio-group>
 
-        <rux-checkbox formControlName="checkboxValue2">Checkbox</rux-checkbox>
+        <rux-checkbox formControlName="checkboxValue3">Checkbox</rux-checkbox>
 
-        <rux-switch formControlName="switchValue2">Switch</rux-switch>
+        <rux-switch formControlName="switchValue3">Switch</rux-switch>
 
         <rux-input
           label="ngModel text input"
@@ -96,15 +115,15 @@ import { AstroComponentsModule } from '@astrouxds/angular';
     </rux-container>
   `,
 })
-export class StandaloneFormComponent {
+export class StandaloneAstroComponent {
   form = new FormGroup({
-    textInput2: new FormControl(''),
-    numberInput2: new FormControl<number | null>(null),
-    textArea2: new FormControl(''),
-    selectValue2: new FormControl(''),
-    radioGroup2: new FormControl(''),
-    checkboxValue2: new FormControl(false),
-    switchValue2: new FormControl(false),
+    textInput3: new FormControl(''),
+    numberInput3: new FormControl<number | null>(null),
+    textArea3: new FormControl(''),
+    selectValue3: new FormControl(''),
+    radioGroup3: new FormControl(''),
+    checkboxValue3: new FormControl(false),
+    switchValue3: new FormControl(false),
   });
 
   ngModelText = '';

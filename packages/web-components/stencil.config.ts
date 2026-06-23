@@ -48,14 +48,6 @@ export const config: Config = {
             attatchPropsFile:
                 '../../react/src/react-component-lib/utils/attachProps.ts',
         }),
-        angularOutputTarget({
-            componentCorePackage: '@astrouxds/astro-web-components',
-            directivesProxyFile:
-                '../angular-workspace/projects/angular/src/directives/proxies.ts',
-            directivesArrayFile:
-                '../angular-workspace/projects/angular/src/directives/proxies-list.ts',
-            valueAccessorConfigs: angularValueAccessorBindings,
-        }),
         {
             type: 'dist',
             esmLoaderPath: '../loader',
@@ -66,7 +58,17 @@ export const config: Config = {
         },
         {
             type: 'dist-custom-elements',
+            customElementsExportBehavior: 'single-export-module',
         },
+        angularOutputTarget({
+            componentCorePackage: '@astrouxds/astro-web-components',
+            directivesProxyFile:
+                '../angular-workspace/projects/angular/src/directives/proxies.ts',
+            directivesArrayFile:
+                '../angular-workspace/projects/angular/src/directives/proxies-list.ts',
+            valueAccessorConfigs: angularValueAccessorBindings,
+            outputType: 'standalone',
+        }),
         {
             type: 'docs-readme',
             strict: true,

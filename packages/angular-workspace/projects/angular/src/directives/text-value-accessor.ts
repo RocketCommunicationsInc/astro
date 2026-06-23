@@ -1,19 +1,19 @@
-import { Directive, ElementRef } from '@angular/core';
+import { Directive, ElementRef, forwardRef } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { ValueAccessor } from './value-accessor';
 
 @Directive({
   /* tslint:disable-next-line:directive-selector */
-  selector: 'rux-input:not([type=number]), rux-textarea, rux-slider, rux-radio-group, rux-select',
+  selector: 'rux-input, rux-textarea, rux-slider, rux-radio-group, rux-select',
   host: {
-    '(ruxinput)': 'handleChangeEvent($any($event).target.value)',
-    '(ruxchange)': 'handleChangeEvent($any($event).target.value)'
+    '(ruxinput)': 'handleChangeEvent($event.target?.["value"])',
+    '(ruxchange)': 'handleChangeEvent($event.target?.["value"])'
   },
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: TextValueAccessor,
+      useExisting: forwardRef(() => TextValueAccessor),
       multi: true
     }
   ]
