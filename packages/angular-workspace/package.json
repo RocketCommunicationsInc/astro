@@ -7,7 +7,7 @@
     "prebuild": "node projects/angular/src/directives/angular-component-lib/add-angular-ignore.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test --watch=false"
   },
   "files": [
     "dist/"
