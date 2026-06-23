@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "allowUnreachableCode": false,
     "allowSyntheticDefaultImports": true,
     "declaration": true,
