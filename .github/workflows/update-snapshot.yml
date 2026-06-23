@@ -29,7 +29,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout and do a deep fetch to load all commit IDs
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7.0.0
         with:
           fetch-depth: 0 # Load all commits
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -52,7 +52,7 @@ jobs:
       - name: Checkout Branch
         run: git checkout ${{ steps.get-branch-and-sha.outputs.branch }}
       # Setup testing environment
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v6.4.0
         with:
           node-version: 26
       - name: Install dependencies
@@ -69,7 +69,7 @@ jobs:
         run: npm run test.vrt.update
         working-directory: ./packages/web-components
       # Commit the changes to the pull request branch
-      - uses: stefanzweifel/git-auto-commit-action@v4
+      - uses: stefanzweifel/git-auto-commit-action@v7.1.0
         with:
           file_pattern: "*.png"
           commit_message: "[CI] Update Snapshots"
