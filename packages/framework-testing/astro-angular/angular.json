@@ -54,10 +54,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "astro-angular:build:production"
+              "buildTarget": "astro-angular:build:production"
             },
             "development": {
-              "browserTarget": "astro-angular:build:development"
+              "buildTarget": "astro-angular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -65,7 +65,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "astro-angular:build"
+            "buildTarget": "astro-angular:build"
           }
         },
         "test": {

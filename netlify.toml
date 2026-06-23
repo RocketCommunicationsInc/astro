@@ -4,4 +4,4 @@
   command = "npm run build.web-comps && cd packages/web-components && npm run build.storybook"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "26"

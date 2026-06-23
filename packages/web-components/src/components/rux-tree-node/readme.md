@@ -26,6 +26,12 @@
 
 Sets the expanded state
 
+#### Parameters
+
+| Name    | Type      | Description |
+| ------- | --------- | ----------- |
+| `value` | `boolean` |             |
+
 #### Returns
 
 Type: `Promise<void>`
@@ -35,6 +41,12 @@ Type: `Promise<void>`
 ### `setSelected(value: boolean) => Promise<void>`
 
 Sets the selected state
+
+#### Parameters
+
+| Name    | Type      | Description |
+| ------- | --------- | ----------- |
+| `value` | `boolean` |             |
 
 #### Returns
 

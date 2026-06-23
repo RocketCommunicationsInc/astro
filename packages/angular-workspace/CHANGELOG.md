@@ -1,5 +1,33 @@
 # @astrouxds/angular
 
+## 8.0.1
+
+### Patch Changes
+
+#### Form Elements
+
+- Fix Angular form element support (`ngModel` / `formControl`) for `rux-*` components
+  - `BooleanValueAccessor`, `TextValueAccessor`, and `NumericValueAccessor` are now properly declared and exported from `AstroComponentsModule` — previously `declarations` and `exports` were empty, so form bindings had no effect on any `rux-*` form element
+  - Fixed incorrect element selectors in value accessors — all were leftover Stencil proxy generation placeholders referencing non-existent `my-*` elements instead of `rux-*` elements
+  - Fixed incorrect event names (`mySelect`, `myChange`) — updated to the correct `ruxchange` custom events emitted by the web components
+  - Added `:not([type=number])` to `TextValueAccessor`'s `rux-input` selector to prevent conflict with `NumericValueAccessor`
+  - Removed `ɵb`–`ɵg` internal Angular API aliases from `public-api.ts`; value accessor classes are now exported under their real public names — the `ɵ` prefix symbols are removed in Angular 20
+
+  **Form element to accessor mapping:**
+
+  | Accessor | Elements |
+  |---|---|
+  | `BooleanValueAccessor` | `rux-checkbox`, `rux-switch` |
+  | `NumericValueAccessor` | `rux-input[type=number]` |
+  | `TextValueAccessor` | `rux-input`, `rux-textarea`, `rux-slider`, `rux-radio-group`, `rux-select` |
+
+  **Removed exports: `RadioValueAccessor`, `SelectValueAccessor`**
+
+  These two classes are removed from the public API because they were never functional:
+
+  - `RadioValueAccessor` targeted `rux-radio`, but the `rux-radio` element only emits a `ruxblur` event — it has no `ruxchange` event. The accessor's `handleChangeEvent` could never be called. Radio group value binding is correctly handled by `TextValueAccessor` via `rux-radio-group`.
+  - `SelectValueAccessor` targeted `rux-slider, rux-radio-group` — an exact duplicate of selectors already covered by `TextValueAccessor`. Having both active would register two `NG_VALUE_ACCESSOR` providers on the same elements, breaking Angular's form binding resolution.
+
 ## 8.0.0
 
 ### Major Changes

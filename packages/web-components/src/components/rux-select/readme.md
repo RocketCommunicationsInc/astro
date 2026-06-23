@@ -80,6 +80,12 @@ Select Menu renders a native `<select>` element and allows native `<option>` and
 
 Sets element as focused
 
+#### Parameters
+
+| Name      | Type                        | Description |
+| --------- | --------------------------- | ----------- |
+| `options` | `FocusOptions \| undefined` |             |
+
 #### Returns
 
 Type: `Promise<void>`
