@@ -1,5 +1,22 @@
 # @astrouxds/angular
 
+## 9.0.0
+
+### Major Changes
+
+- 9753a87: Updated core dependencies; Moved node support to v26; Fixed rux-clock bug; Fixed Angular standalone form components
+
+  After a long wait we've updated dependencies to move towards better supported versions. That includes dropping support for super old versions of node.
+
+  Fixed a bug in rux-clock where passed-in dates would incorrectly increment seconds.
+
+  Angular standalone components now work properly in forms, and can be imported wholesale with AstroComponentsModule, or individually.
+
+### Patch Changes
+
+- Updated dependencies [9753a87]
+  - @astrouxds/astro-web-components@8.0.0
+
 ## 8.0.1
 
 ### Patch Changes
@@ -7,6 +24,7 @@
 #### Form Elements
 
 - Fix Angular form element support (`ngModel` / `formControl`) for `rux-*` components
+
   - `BooleanValueAccessor`, `TextValueAccessor`, and `NumericValueAccessor` are now properly declared and exported from `AstroComponentsModule` — previously `declarations` and `exports` were empty, so form bindings had no effect on any `rux-*` form element
   - Fixed incorrect element selectors in value accessors — all were leftover Stencil proxy generation placeholders referencing non-existent `my-*` elements instead of `rux-*` elements
   - Fixed incorrect event names (`mySelect`, `myChange`) — updated to the correct `ruxchange` custom events emitted by the web components
@@ -15,11 +33,11 @@
 
   **Form element to accessor mapping:**
 
-  | Accessor | Elements |
-  |---|---|
-  | `BooleanValueAccessor` | `rux-checkbox`, `rux-switch` |
-  | `NumericValueAccessor` | `rux-input[type=number]` |
-  | `TextValueAccessor` | `rux-input`, `rux-textarea`, `rux-slider`, `rux-radio-group`, `rux-select` |
+  | Accessor               | Elements                                                                   |
+  | ---------------------- | -------------------------------------------------------------------------- |
+  | `BooleanValueAccessor` | `rux-checkbox`, `rux-switch`                                               |
+  | `NumericValueAccessor` | `rux-input[type=number]`                                                   |
+  | `TextValueAccessor`    | `rux-input`, `rux-textarea`, `rux-slider`, `rux-radio-group`, `rux-select` |
 
   **Removed exports: `RadioValueAccessor`, `SelectValueAccessor`**
 

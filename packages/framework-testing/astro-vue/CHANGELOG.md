@@ -1,5 +1,12 @@
 # astro-vue
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [9753a87]
+  - @astrouxds/astro-web-components@8.0.0
+
 ## 0.7.0
 
 ### Minor Changes

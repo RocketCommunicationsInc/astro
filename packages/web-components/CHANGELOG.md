@@ -1,5 +1,17 @@
 # @astrouxds/astro-web-components
 
+## 8.0.0
+
+### Major Changes
+
+-   9753a87: Updated core dependencies; Moved node support to v26; Fixed rux-clock bug; Fixed Angular standalone form components
+
+    After a long wait we've updated dependencies to move towards better supported versions. That includes dropping support for super old versions of node.
+
+    Fixed a bug in rux-clock where passed-in dates would incorrectly increment seconds.
+
+    Angular standalone components now work properly in forms, and can be imported wholesale with AstroComponentsModule, or individually.
+
 ## 7.27.0
 
 ### Minor Changes
