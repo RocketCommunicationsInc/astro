@@ -1,5 +1,8 @@
 # AstroUXDS Web Components [![NPM version](https://img.shields.io/npm/v/@astrouxds/astro-web-components.svg?style=flat)](https://www.npmjs.com/package/npm-install-global) [![NPM monthly downloads](https://img.shields.io/npm/dm/@astrouxds/astro-web-components.svg?style=flat)](https://npmjs.org/package/@astrouxds/astro-web-components) [![NPM total downloads](https://img.shields.io/npm/dt/@astrouxds/astro-web-components.svg?style=flat)](https://npmjs.org/package/@astrouxds/astro-web-components) [![](https://data.jsdelivr.com/v1/package/npm/@astrouxds/astro-web-components/badge)](https://www.jsdelivr.com/package/npm/@astrouxds/astro-web-components)
 
+> [!WARNING]
+> __Documentation and code is not currently being actively maintained and may be outdated. Contact Rocket Communications to discuss support options.__
+
 The Astro UXDS Web Component and CSS libraries provide a starting point to build in-browser space app experiences and custom applications following today’s web development best practices. The Astro UXDS Web Components are designed to be as platform and implementation-agnostic as possible, easy to implement or extend in existing projects, and generic by default.
 
 <!-- ## Monthly Meeting
