@@ -74,7 +74,9 @@ export class RuxTreeNode {
 
     @Watch('selected')
     handleSelectedChange(newValue: boolean) {
-        this.setSelected(newValue)
+        if (newValue) {
+            this.ruxTreeNodeSelected.emit(this.componentId)
+        }
     }
 
     @Listen('keydown', { passive: false })
@@ -143,8 +145,11 @@ export class RuxTreeNode {
      */
     @Method()
     async setSelected(value: boolean) {
+        // A change of value emits from the `selected` watcher, so only
+        // emit here when re-selecting a node that is already selected.
+        const unchanged = this.selected === value
         this.selected = value
-        if (value) {
+        if (value && unchanged) {
             this.ruxTreeNodeSelected.emit(this.componentId)
         }
     }
