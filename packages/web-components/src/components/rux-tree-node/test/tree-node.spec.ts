@@ -115,4 +115,105 @@ test.describe('Tree Node', () => {
         await btn.click()
         expect(eventSpy).toHaveReceivedEventTimes(0)
     })
+    test('emits ruxtreenodeselected once when setSelected(true) is called on an unselected node', async ({
+        page,
+    }) => {
+        const template = `<rux-tree-node>Node</rux-tree-node>`
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+
+        await el.evaluate(async (node: HTMLRuxTreeNodeElement) => {
+            await node.setSelected(true)
+        })
+
+        await expect(el).toHaveAttribute('selected', '')
+        expect(eventSpy).toHaveReceivedEventTimes(1)
+    })
+
+    test('emits ruxtreenodeselected once when setSelected(true) is called on a node in a tree', async ({
+        page,
+    }) => {
+        const template = `
+            <rux-tree>
+                <rux-tree-node data-test-id="first" selected>First</rux-tree-node>
+                <rux-tree-node data-test-id="second">Second</rux-tree-node>
+            </rux-tree>
+        `
+        await page.setContent(template)
+        const first = await page.locator('[data-test-id="first"]')
+        const second = await page.locator('[data-test-id="second"]')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+
+        await second.evaluate(async (node: HTMLRuxTreeNodeElement) => {
+            await node.setSelected(true)
+        })
+
+        await expect(second).toHaveAttribute('selected', '')
+        await expect(first).not.toHaveAttribute('selected', '')
+        expect(eventSpy).toHaveReceivedEventTimes(1)
+    })
+
+    test('emits ruxtreenodeselected once when an already selected node is set selected again', async ({
+        page,
+    }) => {
+        const template = `<rux-tree-node selected>Node</rux-tree-node>`
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+
+        await el.evaluate(async (node: HTMLRuxTreeNodeElement) => {
+            await node.setSelected(true)
+        })
+
+        await expect(el).toHaveAttribute('selected', '')
+        expect(eventSpy).toHaveReceivedEventTimes(1)
+    })
+
+    test('emits ruxtreenodeselected once when the selected prop is set', async ({
+        page,
+    }) => {
+        const template = `<rux-tree-node>Node</rux-tree-node>`
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+
+        await el.evaluate((node: HTMLRuxTreeNodeElement) => {
+            node.selected = true
+        })
+
+        await expect(el).toHaveAttribute('selected', '')
+        expect(eventSpy).toHaveReceivedEventTimes(1)
+    })
+
+    test('emits ruxtreenodeselected once when selected with the Enter key', async ({
+        page,
+    }) => {
+        const template = `<rux-tree-node>Node</rux-tree-node>`
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+
+        await el.locator('.parent').focus()
+        await page.keyboard.press('Enter')
+
+        await expect(el).toHaveAttribute('selected', '')
+        expect(eventSpy).toHaveReceivedEventTimes(1)
+    })
+
+    test('does not emit ruxtreenodeselected when setSelected(false) is called', async ({
+        page,
+    }) => {
+        const template = `<rux-tree-node selected>Node</rux-tree-node>`
+        await page.setContent(template)
+        const el = await page.locator('rux-tree-node')
+        const eventSpy = await page.spyOnEvent('ruxtreenodeselected')
+
+        await el.evaluate(async (node: HTMLRuxTreeNodeElement) => {
+            await node.setSelected(false)
+        })
+
+        await expect(el).not.toHaveAttribute('selected', '')
+        expect(eventSpy).toHaveReceivedEventTimes(0)
+    })
 })
