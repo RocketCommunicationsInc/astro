@@ -1,5 +1,11 @@
 # @astrouxds/astro-web-components
 
+## 8.0.1
+
+### Patch Changes
+
+-   Fixed icon rendering when using framework wrappers
+
 ## 8.0.0
 
 ### Major Changes
