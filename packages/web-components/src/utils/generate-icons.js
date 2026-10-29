@@ -4,7 +4,28 @@ const main = () => {
     fs.readdir('./src/icons', (err, files) => {
         if (err) throw err
 
-        files.forEach((file) => {
+        const iconFiles = files.filter((file) => file.endsWith('.svg')).sort()
+        const iconLoaders = iconFiles
+            .map((file) => {
+                const iconName = file.replace('.svg', '')
+                return `    '${iconName}': () => import('../../icons/${file}'),`
+            })
+            .join('\n')
+
+        fs.writeFile(
+            './src/components/rux-icon/icon-loaders.ts',
+            `/* eslint-disable */
+    /* tslint:disable */
+    export const iconLoaders: Record<string, () => Promise<{ default: string }>> = {
+    ${iconLoaders}
+    }
+    `,
+            (err) => {
+                if (err) throw err
+            }
+        )
+
+        iconFiles.forEach((file) => {
             const iconName = file.replace('.svg', '')
 
             const template = getTemplateSvg(file, iconName)
