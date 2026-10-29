@@ -273,13 +273,9 @@ test.describe('Input with form', () => {
         //Act
         await ruxInputIcon.click()
 
-        //Arrange
-        const ruxInputIconVisibilityOff = ruxInputIcon.locator(
-            'rux-icon-visibility-off'
-        )
-
         //Assert
-        await expect(ruxInputIconVisibilityOff).toBeVisible()
+        await expect(ruxInputIcon).toHaveJSProperty('icon', 'visibility-off')
+        await expect(ruxInputIcon.locator('svg')).toBeVisible()
     })
     test('cannot have its value changed if readonly is true', async ({
         page,

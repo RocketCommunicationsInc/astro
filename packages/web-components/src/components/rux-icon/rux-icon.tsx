@@ -1,4 +1,4 @@
-import { Component, Host, Prop, Watch, h } from '@stencil/core'
+import { Component, Host, Prop, State, Watch, h } from '@stencil/core'
 import { iconLoaders } from './icon-loaders'
 
 /**
@@ -10,7 +10,7 @@ import { iconLoaders } from './icon-loaders'
     shadow: true,
 })
 export class RuxIcon {
-    svg: string = ''
+    @State() svg: string = ''
     private iconLoadGeneration = 0
 
     /**
